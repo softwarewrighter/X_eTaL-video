@@ -1,0 +1,8 @@
+number = 1
+slug = "scaffold"
+status = "in-progress"
+description = "Scaffold the repository after ../X_eTaL-demos and ../X_eTaL-libraries: CLAUDE..."
+role = "legacy"
+context_files = []
+created_at = "2026-11-12T18:45:50"
+commits = []

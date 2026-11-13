@@ -1,0 +1,1 @@
+Saga foundation initialized from docs/plan.md (agentrail setup); briefing applied to CLAUDE.md.

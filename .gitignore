@@ -1,0 +1,52 @@
+# the X_eTaL clone (scripts/xetal.sh; XETAL_COMMIT is tracked), its
+# binary's symlink, local scratch
+/tmp/
+work/
+bin/xetal
+
+# generated media: audio, frames, clips, rendered video (docs/plan.md V11)
+/out/
+*.mp4
+*.mov
+*.webm
+*.wav
+*.mp3
+
+# Remotion (remotion/ is its own Node project; package-lock.json is tracked)
+node_modules/
+remotion/out/
+remotion/build/
+.remotion/
+
+# cargo, should a tool be added (every workspace shares ./target)
+/target/
+**/target/
+
+# reg-rs: .rgt + .out/.err baselines are committed; .tdb* files are caches
+libs/*/tests/*.tdb*
+
+# the Python venv, should a script need one (uv venv; never system python)
+.venv/
+__pycache__/
+
+# agentrail raw session transcripts (large, local only)
+.agentrail/sessions/*.jsonl
+.agentrail-archive/*/sessions/*.jsonl
+
+# Claude Code local state (shared slash commands may live in .claude/commands/)
+.claude/*
+!.claude/commands/
+
+# secrets never belong here
+.env
+.env.*
+
+# editors and OS
+.idea/
+.vscode/
+*.swp
+*~
+.DS_Store
+
+# the archival research conversation: local until the user confirms it is to be public
+/docs/research.txt

@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+# The pinned xetal (bin/xetal, scripts/xetal.sh) with every library on
+# the search path: each libs/<Name>/src on XETAL_PATH, written relative
+# to the current directory so messages and baselines do not depend on
+# where the repository is checked out. "xt run FILE" adds --seed 1
+# --ascii (as the tests run); any other command passes through.
+#   scripts/xt run prog.xtl
+#   scripts/xt type ../src/Timeline.xtl
+#   scripts/xt eval -e '"tl:" u_se< "Timeline"; tl:s_tarts 90 150 60'
+set -euo pipefail
+root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd -P)"
+xetal="${XETAL_BIN:-$root/bin/xetal}"
+[ -x "$xetal" ] || "$root/scripts/xetal.sh" >&2
+# The way from the current directory up to the root ("" at the root,
+# "../../../" in libs/<Name>/tests); outside the repository, the root.
+here="$(pwd -P)"; up=""
+case "$here/" in
+  "$root/"*) rest="${here#"$root"}"; while [ -n "$rest" ]; do up="../$up"; rest="${rest%/*}"; done ;;
+  *) up="$root/" ;;
+esac
+path=""
+for d in "$root"/libs/*/src; do
+  [ -d "$d" ] || continue
+  path="${path:+$path:}$up${d#"$root"/}"
+done
+export XETAL_PATH="$path"
+if [ "${1:-}" = run ]; then shift; exec "$xetal" run --seed 1 --ascii "$@"; fi
+exec "$xetal" "$@"
