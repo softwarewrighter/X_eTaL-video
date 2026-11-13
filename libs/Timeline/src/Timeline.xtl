@@ -1,0 +1,59 @@
+## Timeline: a video's schedule as arrays. Frames and seconds, where
+## each scene starts and ends given the scenes' lengths, which scene a
+## frame is in, and how far through it the frame is.
+## Import it with an alias of your choice: "tl:" u_se< "Timeline".
+## Put libs/Timeline/src on XETAL_PATH ("just path").
+## Names with l: are exported; those under h: are private to this file.
+##
+## Ported from the arithmetic of Remotion's <Series> and <Sequence>:
+## scenes play one after another, a scene of d frames that starts at
+## frame s covers the frames s to s + d - 1, and frames count from 0.
+## Scenes are numbered from 1, as X_eTaL numbers items. Every function
+## takes one frame or a whole vector of frames.
+
+### Frames and seconds
+
+## fps l:f_rames secs: the number of frames in secs seconds at fps
+## frames a second, rounded to the nearest frame (a half rounds up),
+## never fewer than 1: a scene has at least one frame.
+l:f_rames := { fps secs -> 1 m_ax f_loor 0.5 + (f_loat fps) * f_loat secs }
+
+## fps l:s_econds frames: the length of frames frames in seconds.
+l:s_econds := { fps frames -> (f_loat frames) / f_loat fps }
+
+### The schedule
+
+## l:e_nds durs: the frame after each scene's last, the running sum of
+## the scenes' lengths in frames. The last is the video's length.
+l:e_nds := { durs -> '+ s_\ durs }
+
+## l:s_tarts durs: the frame each scene starts at: 0, then each
+## earlier scene's end.
+l:s_tarts := { durs -> 0 c_at -1 d_rop l:e_nds durs }
+
+## l:t_otal durs: the video's length in frames.
+l:t_otal := { durs -> '+ r_/ durs }
+
+### A frame's place in it
+
+## durs l:s_cene f: the number of the scene frame f is in, from 1:
+## one more than the number of scenes that have ended by f. A frame
+## past the end is in the last scene, and one before 0 in the first.
+l:s_cene := { durs f ->
+  ends := l:e_nds durs
+  '{ (t_ally ends) m_in 1 + '+ r_/ _r >= ends } e_ach f
+}
+
+## durs l:l_ocal f: the frame f counted from the start of its scene
+## (Remotion's useCurrentFrame inside a <Sequence>).
+l:l_ocal := { durs f -> f - (durs l:s_cene f) s_elect l:s_tarts durs }
+
+## durs l:p_rogress f: how far frame f is through its scene, from 0.0
+## at its first frame up to (but not reaching) 1.0 at its last; a
+## frame past the end of the video gives 1.0 or more.
+l:p_rogress := { durs f -> (f_loat durs l:l_ocal f) / f_loat (durs l:s_cene f) s_elect durs }
+
+## durs l:a_ctive f: a Bool matrix, a row for each frame and a column
+## for each scene, 1 where the scene is on screen at that frame: the
+## whole schedule as one table of comparisons.
+l:a_ctive := { durs f -> (f '>= t_able l:s_tarts durs) & f '< t_able l:e_nds durs }

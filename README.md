@@ -8,8 +8,8 @@ arrays, a deterministic renderer draws every frame, and the existing
 video tools assemble the result.
 
 Status: early. The X_eTaL libraries for timing are being written and
-tested; the renderer (Remotion) is not installed yet, and no video
-has been rendered. `docs/plan.md` has the roadmap.
+tested; the renderer (Remotion) is not installed yet. `docs/plan.md`
+has the roadmap.
 
 ## How it fits
 
@@ -23,10 +23,26 @@ has been rendered. `docs/plan.md` has the roadmap.
 
 | Path | What |
 | ---- | ---- |
-| `libs/` | X_eTaL libraries for video timing and animation (the first are in progress; `docs/plan.md` lists them) |
+| `libs/` | X_eTaL libraries for video timing and animation (below) |
 | `docs/plan.md` | the plan: decisions, the survey of the existing video pipelines, libraries, lessons, roadmap, open questions |
 | `docs/remotion-scripts.md` | the proposed scripts: voice, timing, capture, render, assemble (proposals, not yet run) |
 | `docs/xetal-asks.md` | what this work needs from X_eTaL |
+
+## Libraries
+
+| Library | What |
+| ------- | ---- |
+| [Timeline](libs/Timeline/) | frames and seconds; where each scene starts and ends; the scene a frame is in and its progress through it |
+
+```
+"tl:" u_se< "Timeline"
+durs := 30 tl:f_rames 3 5 2      # 90 150 60: three scenes, in frames
+tl:s_tarts durs                  # 0 90 240
+durs tl:s_cene 0 89 90 299       # 1 1 2 3
+```
+
+`just run Timeline` runs its test programs; `just test-lib Timeline`
+checks its baselines.
 
 ## Build
 

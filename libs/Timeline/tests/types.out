@@ -1,0 +1,9 @@
+l:f_rames : (Num a, Num b) => a -> b -> Int
+l:s_econds : (Num a, Num b) => a -> b -> Float
+l:e_nds : Num a => a -> a
+l:s_tarts : Num a => a -> a
+l:t_otal : Num a => a -> a
+l:s_cene : Num a => a -> a -> Int
+l:l_ocal : Num a => a -> a -> a
+l:p_rogress : Num a => a -> a -> Float
+l:a_ctive : (Num a, Truthy b) => a -> a -> b

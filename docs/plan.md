@@ -117,11 +117,11 @@ and print stages:
 Goal: the process, the pinned interpreter, the gate, and the first
 libraries, tested.
 
-1. scaffold -- CLAUDE.md and AGENTS.md, COPYRIGHT, LICENSE, README,
+1. scaffold [DONE] -- CLAUDE.md and AGENTS.md, COPYRIGHT, LICENSE, README,
    CHANGES.md, .gitignore, justfile, `scripts/xetal.sh`,
    `scripts/gate.sh`, this plan, `docs/xetal-asks.md`,
    `docs/remotion-scripts.md` (the proposed scripts).
-2. timeline-lib -- `libs/Timeline` with tests and baselines;
+2. timeline-lib [DONE] -- `libs/Timeline` with tests and baselines;
    `scripts/test-libs.sh` in the gate.
 3. ease-lib -- `libs/Ease`.
 4. spring-lib -- `libs/Spring`.

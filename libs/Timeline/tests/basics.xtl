@@ -1,0 +1,27 @@
+#!/usr/bin/env xetal
+# Timeline: three scenes of 3, 5 and 2 seconds at 30 frames a second.
+"tl:" u_se< "Timeline"
+fps := 30
+secs := 3 5 2
+# The scenes' lengths in frames, and back in seconds.
+durs := fps tl:f_rames secs
+durs
+fps tl:s_econds durs
+# Rounding: to the nearest frame, a half up, never fewer than one.
+30 tl:f_rames 1.5 2.02 0.01 0.0
+# Where each scene starts and ends, and the video's length.
+tl:s_tarts durs
+tl:e_nds durs
+tl:t_otal durs
+# Which scene some frames are in: the first, a middle one, each
+# boundary, the last frame, and one past the end.
+f := 0 45 89 90 239 240 299 300
+durs tl:s_cene f
+durs tl:l_ocal f
+durs tl:p_rogress f
+# One frame works as a vector of frames does.
+durs tl:s_cene 100
+durs tl:l_ocal 100
+durs tl:p_rogress 165
+# The schedule as a table: a row a frame, a column a scene.
+durs tl:a_ctive 0 89 90 239 240 299
