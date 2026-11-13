@@ -1,0 +1,12 @@
+l:c_lamp : Num a => a -> Float
+l:r_amp : (Num a, Num b) => a -> b -> Float
+l:l_erp : (Num a, Num b) => a -> b -> Float
+l:i_nQuad : Num a => a -> Float
+l:o_utQuad : Num a => a -> Float
+l:i_nOutQuad : Num a => a -> Float
+l:i_nCubic : Num a => a -> Float
+l:o_utCubic : Num a => a -> Float
+l:i_nOutCubic : Num a => a -> Float
+l:i_nOutSine : Num a => a -> Float
+l:s_mooth : Num a => a -> Float
+l:s_tagger : (Num a, Num b, Num c) => (a, b) -> (c, Int) -> Float

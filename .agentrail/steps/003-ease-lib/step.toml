@@ -1,6 +1,6 @@
 number = 3
 slug = "ease-lib"
-status = "pending"
+status = "in-progress"
 description = "libs/Ease"
 role = "legacy"
 context_files = []

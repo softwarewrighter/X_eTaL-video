@@ -33,6 +33,7 @@ has the roadmap.
 | Library | What |
 | ------- | ---- |
 | [Timeline](libs/Timeline/) | frames and seconds; where each scene starts and ends; the scene a frame is in and its progress through it |
+| [Ease](libs/Ease/) | ramps, lerps and easing curves, after Remotion's `interpolate` and `Easing`; a stagger table for things that appear in turn |
 
 ```
 "tl:" u_se< "Timeline"

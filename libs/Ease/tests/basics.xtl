@@ -1,0 +1,32 @@
+#!/usr/bin/env xetal
+# Ease: ramps, lerps and curves, each at the ends, the quarters and
+# the middle.
+"ez:" u_se< "Ease"
+t := 0.0 0.25 0.5 0.75 1.0
+# Clamping, and a ramp from frame 10 to frame 40.
+ez:c_lamp -0.5 0.0 0.3 1.0 1.5
+10 40 ez:r_amp 0 10 25 40 99
+# A lerp from 0 to 200, and one going down; not clamped.
+0 200 ez:l_erp t
+100 20 ez:l_erp t
+0 200 ez:l_erp -0.5 1.5
+# Remotion's interpolate(frame, [10, 40], [0, 200]) for five frames.
+0 200 ez:l_erp 10 40 ez:r_amp 0 10 25 40 99
+# The curves: every one keeps 0 and 1.
+ez:i_nQuad t
+ez:o_utQuad t
+ez:i_nOutQuad t
+ez:i_nCubic t
+ez:o_utCubic t
+ez:i_nOutCubic t
+ez:s_mooth t
+# The in-out curves pass through a half at a half; out mirrors in.
+(a_bs (ez:i_nOutSine 0.5) - 0.5) < 0.000000001
+(a_bs (ez:i_nOutSine 0.0 1.0) - 0.0 1.0) < 0.000000001
+(ez:o_utCubic t) + ez:i_nCubic r_ev t
+# One number works as a vector does.
+ez:s_mooth 0.5
+0 200 ez:l_erp ez:o_utCubic 10 40 ez:r_amp 25
+# Three lines appearing 4 frames apart, each over 8 frames: a row a
+# frame (0, 4, 8, 12, 16), a column a line.
+(4, 8) ez:s_tagger (0 4 8 12 16, 3)

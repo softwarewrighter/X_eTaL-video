@@ -1,0 +1,2 @@
+command = "../../../scripts/xt type ../src/Ease.xtl"
+exit_code = 0

@@ -1,0 +1,90 @@
+## Ease: animation as arithmetic on whole arrays. A ramp turns frames
+## into progress (0.0 to 1.0), an easing curve bends progress, and a
+## lerp turns progress into a position, a size or an opacity.
+## Import it with an alias of your choice: "ez:" u_se< "Ease".
+## Put libs/Ease/src on XETAL_PATH ("just path").
+## Names with l: are exported; those under h: are private to this file.
+##
+## Ported from Remotion's interpolate (with extrapolation clamped on
+## both sides) and its Easing curves. Remotion's
+##   interpolate(frame, [10, 40], [0, 200], {easing: Easing.out(Easing.cubic)})
+## is here
+##   0 200 ez:l_erp ez:o_utCubic 10 40 ez:r_amp frame
+## and frame may be every frame of the video at once.
+
+### Progress
+
+## l:c_lamp t: t held within 0.0 to 1.0.
+l:c_lamp := { t -> 0.0 m_ax 1.0 m_in f_loat t }
+
+## range l:r_amp x: how far x is from the first of range's two numbers
+## to the second, 0.0 at or before the first and 1.0 at or after the
+## second: an animation that runs from frame 10 to frame 40 is at
+## 10 40 l:r_amp frame.
+l:r_amp := { range x ->
+  lo := f_loat 1 s_elect range
+  hi := f_loat 2 s_elect range
+  l:c_lamp ((f_loat x) - lo) / hi - lo
+}
+
+## range l:l_erp t: the value t of the way from the first of range's
+## two numbers to the second (linear interpolation); t is not clamped,
+## so a curve that overshoots stays overshot.
+l:l_erp := { range t ->
+  lo := f_loat 1 s_elect range
+  hi := f_loat 2 s_elect range
+  lo + (f_loat t) * hi - lo
+}
+
+### Curves: progress in, eased progress out, 0.0 and 1.0 kept
+
+## The mirror of a number in 0.0 to 1.0.
+h:f_lip := { t -> 1.0 - f_loat t }
+
+## Where t is below a half, as a Float mask.
+h:e_arly := { t -> f_loat (f_loat t) < 0.5 }
+
+## l:i_nQuad t: starts slowly (t squared). Remotion's Easing.quad.
+l:i_nQuad := { t -> (f_loat t) * f_loat t }
+
+## l:o_utQuad t: ends slowly. Easing.out(Easing.quad).
+l:o_utQuad := { t -> h:f_lip l:i_nQuad h:f_lip t }
+
+## l:i_nOutQuad t: starts and ends slowly. Easing.inOut(Easing.quad).
+l:i_nOutQuad := { t ->
+  k := h:e_arly t
+  (k * 0.5 * l:i_nQuad 2.0 * f_loat t) + (1.0 - k) * 1.0 - 0.5 * l:i_nQuad 2.0 * h:f_lip t
+}
+
+## l:i_nCubic t: starts more slowly (t cubed). Easing.cubic.
+l:i_nCubic := { t -> (f_loat t) * (f_loat t) * f_loat t }
+
+## l:o_utCubic t: ends more slowly. Easing.out(Easing.cubic).
+l:o_utCubic := { t -> h:f_lip l:i_nCubic h:f_lip t }
+
+## l:i_nOutCubic t: starts and ends more slowly.
+## Easing.inOut(Easing.cubic).
+l:i_nOutCubic := { t ->
+  k := h:e_arly t
+  (k * 0.5 * l:i_nCubic 2.0 * f_loat t) + (1.0 - k) * 1.0 - 0.5 * l:i_nCubic 2.0 * h:f_lip t
+}
+
+## l:i_nOutSine t: starts and ends slowly, half a cosine wave.
+## Easing.inOut(Easing.sin).
+l:i_nOutSine := { t -> 0.5 * 1.0 - c_os (p_i @) * f_loat t }
+
+## l:s_mooth t: smoothstep, 3t^2 - 2t^3: starts and ends at rest, the
+## usual curve for a fade.
+l:s_mooth := { t -> (l:i_nQuad t) * 3.0 - 2.0 * f_loat t }
+
+### Many things, one after another
+
+## (gap, length) l:s_tagger (frame, n): n things animated one after
+## another: a matrix, a row for each frame and a column for each
+## thing, of each thing's progress, the k-th starting gap * (k - 1)
+## frames after frame 0 and taking length frames. A list's lines
+## appearing in turn is the columns of this table.
+l:s_tagger := { (gap, length) (frame, n) ->
+  begin := (f_loat gap) * f_loat o_ffsets n
+  l:c_lamp ((f_loat frame) '- t_able begin) / f_loat length
+}

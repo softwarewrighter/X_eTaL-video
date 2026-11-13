@@ -90,7 +90,7 @@ arrays, tested, and handed to any renderer.
 | Library | What | Ported from | Saga |
 | ------- | ---- | ----------- | ---- |
 | Timeline | frames and seconds; where each scene starts and ends from the scenes' lengths; which scene a frame is in; progress within it | Remotion's `<Sequence>` and `<Series>` arithmetic | 1 |
-| Ease | clamp, linear interpolation over a range and over many ranges, easing curves (quad, cubic, sine, in, out, in-out) | Remotion's `interpolate` and `Easing` | 1 |
+| Ease | clamp, a ramp and a lerp over a range, easing curves (quad, cubic, sine, smoothstep; in, out, in-out), a stagger table; to come: many-point interpolation, bezier | Remotion's `interpolate` and `Easing` | 1 |
 | Spring | a damped spring's position at each frame, and how many frames it takes to settle | Remotion's `spring` and `measureSpring` | 1 |
 | Captions | words and their times grouped into caption pages; the word being spoken at a frame | `@remotion/captions` | 3 |
 | Lesson | a lesson's scenes as arrays: lengths in, a timing table out, printed as the JSON the renderer reads | (new) | 2 |
@@ -123,7 +123,7 @@ libraries, tested.
    `docs/remotion-scripts.md` (the proposed scripts).
 2. timeline-lib [DONE] -- `libs/Timeline` with tests and baselines;
    `scripts/test-libs.sh` in the gate.
-3. ease-lib -- `libs/Ease`.
+3. ease-lib [DONE] -- `libs/Ease`.
 4. spring-lib -- `libs/Spring`.
 5. lesson-schema -- `schemas/lesson.schema.json`, a checker with no
    dependencies to install, a first `lessons/timeline/lesson.json`,
