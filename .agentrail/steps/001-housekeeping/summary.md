@@ -1,0 +1,1 @@
+research.txt trimmed and tracked; Remotion skills installed (lock tracked); foundation archived; saga life planned in docs/plan.md. Gate passes.
