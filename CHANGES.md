@@ -13,6 +13,7 @@ Categories: `feat` new capability, `fix` a bug or wrong behavior,
 
 ## 2026-11-14
 
+- 11:30 `docs` The site published with the N-body short (gh-pages from main 5df611d) and images/screencapture.png retaken from it.
 - 10:01 `chore` Saga step nbody-short completed.
 - 10:01 `lesson` The N-body short (saga nbody; the user: N-body next): lessons/nbody, seven scenes in 60 seconds: the figure-eight, every pair's displacement as tables stacked into a cube, every pair's pull, one reduce to the accelerations, the step repeated (data.xtl: the demo's own program, 420 steps of positions), then the published page recorded with fifty bodies, and the link. Boards gain `points` (bodies with trails, a step a frame) and number cells that fit any numbers. out/nbody-portrait-remotion.mp4 and out/nbody-landscape-remotion.mp4, 60.0 s.
 - 08:55 `chore` Saga step readme-screenshot completed.
