@@ -1,0 +1,1 @@
+images/screencapture.png from the live site, linked at the top of README; scripts/screencapture.sh. Site published and verified live. Gate passes.
