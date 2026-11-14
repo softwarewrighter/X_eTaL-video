@@ -39,7 +39,7 @@ the language's argument by existing.
 | V4 | The renderer is Remotion (React, TypeScript) in `remotion/`, its own Node project (installed 2026-11-13, 4.0.543, `package-lock.json` tracked). A composition computes no timing: `scripts/props.sh` hands it the lesson and every frame's numbers as X_eTaL computed them. The gate checks the project (eslint, tsc) when its packages are installed and renders nothing. `scripts/frames.mjs` is a second, draft renderer of the same numbers with nothing to install. | The Node and React toolchain stays in one directory of one repository, away from the Rust and X_eTaL repositories. |
 | V5 | Every component reads its size from the composition (`useVideoConfig()`), and every lesson renders in two formats: landscape 1920x1080 at 30 fps for long-form (`../video-publishing`) and portrait 1080x1920 for shorts (`../shorts`). | One lesson, two channels' formats; the shorts and long-form repositories stay the assemblers. |
 | V6 | Narration is generated before rendering: text to speech (the VoxCPM server the shorts use, through `vid-tts`), one WAV per scene, its measured length (`ffprobe`) written into the lesson's timing. Scene lengths follow the audio, never the reverse. | The shorts' rule (stretch the picture to the narration); a deterministic renderer needs the lengths as input. |
-| V7 | Assembly uses the Rust `vid-*` tools of `../video-publishing/tools` (`vid-concat --reencode`, `vid-volume --normalize`, `vid-music`, `vid-scale`), never a bare `ffmpeg` concat. Bare `ffmpeg` and `ffprobe` are for probing and for encoding numbered frames only. | The video repositories' hard rule: a raw ffmpeg concat goes silent mid-video. |
+| V7 | Assembly uses the Rust `vid-*` tools of `../video-publishing/tools` (`vid-concat --reencode`, `vid-volume --normalize`, `vid-music`, `vid-scale`), never a bare `ffmpeg` concat. Bare `ffmpeg` and `ffprobe` are for probing, for encoding numbered frames, and for cutting a page recording to a constant frame rate (`scripts/capture.mjs`), only. | The video repositories' hard rule: a raw ffmpeg concat goes silent mid-video. |
 | V8 | Pictures of the live demos come from the demos themselves: the published pages recorded in headless Chrome (Playwright, as the shorts capture slides), or the demo's own X_eTaL output drawn by a Remotion component. Never a redrawn imitation of what a page shows. | The demos' rule (a page shows only what X_eTaL computes) carries over: a video shows the real program and its real output. |
 | V9 | A feature X_eTaL lacks, or a bug this work uncovers, is not worked around silently and not fixed here: it is recorded in `docs/xetal-asks.md`, and the library or lesson uses a documented workaround or waits. | X_eTaL owns its language decisions; this repository is a consumer. |
 | V10 | `just` is the entry point; recipes call `scripts/*.sh`. Python, where a script needs it, runs in a uv-managed venv, never the system python. Tools with no dependencies to install are preferred in the gate. | One way to do things, as in the siblings. |
@@ -163,8 +163,11 @@ pick the better one"; Life first).
    each frame's step and the fade into it. The draft renderer does
    not draw boards (it says so): with Remotion installed it stays
    for lessons of text and code only.
-3. life-capture -- Playwright records the published page; a
-   `capture` scene kind plays it.
+3. life-capture [DONE] -- `lessons/life-capture`: Playwright (in
+   `remotion/`) records the published page at each format's capture
+   area while the scenes' actions run (`scripts/capture.mjs`); a
+   scene's `capture` plays the recording; the schedule gains the
+   recording's frame for every frame.
 4. compare -- both rendered, both formats, for the user to choose.
 
 ## Later -- remotion  [PLANNED; steps 1 and 4 done in saga 1]

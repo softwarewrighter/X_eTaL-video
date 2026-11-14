@@ -355,7 +355,8 @@ Read before working:
 5. Never run a bare `ffmpeg` concat, and prefer the Rust `vid-*`
    tools of `../video-publishing/tools` for every operation they
    cover (`docs/plan.md` V7). `ffmpeg` and `ffprobe` directly only for
-   probing and for encoding numbered frames.
+   probing, for encoding numbered frames, and for cutting a page
+   recording to a constant frame rate (`scripts/capture.mjs`).
 6. Generated media is never tracked: audio, frames, clips and video
    go to `work/` and `out/` (gitignored).
 7. No third-party paid or hosted service (text to speech, image,
@@ -410,7 +411,8 @@ just test-lib NAME        # its baselines; just bless NAME rewrites them
 just render SLUG [portrait]   # a lesson through Remotion, into out/
 just still SLUG N         # one frame through Remotion
 just studio SLUG          # Remotion Studio at http://localhost:8427
-just draft SLUG           # the same lesson without Remotion
+just capture SLUG         # record the lesson's live demo page (network)
+just draft SLUG           # a text-and-code lesson without Remotion
 just check-lessons        # lessons: the schema, and their X_eTaL timing
 agentrail status          # current saga state
 agentrail next            # current step + context

@@ -37,6 +37,24 @@
           "heading": { "type": "string", "minLength": 1 },
           "narration": { "description": "What is spoken over the scene (at most 320 characters, vid-tts's limit).", "type": "string", "maxLength": 320 },
           "curves": { "description": "Show the three easing curves as moving dots.", "type": "boolean" },
+          "capture": {
+            "description": "Show the recording of the lesson's demo page (scripts/capture.mjs) instead of lines. Scenes with a capture follow one another and are one recording; a scene's actions run when it starts.",
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "actions": {
+                "type": "array",
+                "items": {
+                  "oneOf": [
+                    { "type": "object", "required": ["wait"], "additionalProperties": false, "properties": { "wait": { "description": "Seconds.", "type": "number", "minimum": 0 } } },
+                    { "type": "object", "required": ["click"], "additionalProperties": false, "properties": { "click": { "description": "A Playwright selector.", "type": "string", "minLength": 1 } } },
+                    { "type": "object", "required": ["scroll"], "additionalProperties": false, "properties": { "scroll": { "description": "A selector to bring to the top, or 'top'.", "type": "string", "minLength": 1 } } },
+                    { "type": "object", "required": ["select"], "additionalProperties": false, "properties": { "select": { "description": "A select's selector, then the option's label.", "type": "array", "minItems": 2, "items": { "type": "string" } } } }
+                  ]
+                }
+              }
+            }
+          },
           "boards": {
             "description": "Arrays drawn as grids under the lines, each one printed by the lesson's data.xtl after a '== name' line.",
             "type": "array",

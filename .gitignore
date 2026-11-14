@@ -19,6 +19,8 @@ node_modules/
 remotion/.agents/
 remotion/.claude/
 remotion/out/
+# recordings of the live pages (scripts/capture.mjs)
+remotion/public/captures/
 remotion/build/
 .remotion/
 

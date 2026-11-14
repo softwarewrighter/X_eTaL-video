@@ -37,7 +37,7 @@ const rgba = ([r, g, b], a = 1) => `rgba(${r},${g},${b},${Math.max(0, Math.min(1
 const lesson = JSON.parse(readFileSync(join(root, "lessons", slug, "lesson.json"), "utf8"));
 const rows = readFileSync(join(root, "work", slug, "schedule.txt"), "utf8").trim().split("\n").map((l) => l.trim().split(/\s+/).map(Number));
 const [durs, starts, ends, [total], scene, local, progress, fade, linear, inOut, out] = rows;
-const stagger = rows.slice(13);   // rows 12 and 13 are for boards, which only Remotion draws
+const stagger = rows.slice(14);   // rows 12 to 14 are for boards and captures, which only Remotion draws
 if (lesson.scenes.some((s) => s.boards || s.capture)) {
   console.error(`frames: ${slug} has boards or captures, which the draft renderer does not draw (just render ${slug})`);
   process.exit(1);

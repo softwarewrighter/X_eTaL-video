@@ -1,6 +1,6 @@
 number = 3
 slug = "life-capture"
-status = "pending"
+status = "in-progress"
 description = "Playwright recording of the published page (capture scene kind)"
 role = "legacy"
 context_files = []

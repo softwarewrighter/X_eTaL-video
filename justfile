@@ -80,6 +80,10 @@ render slug format="landscape":
 still slug n format="landscape":
     scripts/render.sh "$1" "$3" --still "$2"
 
+# Record a lesson's live demo page in headless Chromium, both formats (needs the network): just capture life-capture
+capture slug *formats:
+    scripts/capture.mjs "$@"
+
 # Remotion Studio on a lesson, at http://localhost:8427 (this repository's port)
 studio slug="making-of":
     cd remotion && npx remotion studio src/index.ts --port 8427 --props="../$(../scripts/props.sh "$1")"

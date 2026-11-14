@@ -36,4 +36,5 @@ for d in lessons/*/; do
   fi
 done
 node --check scripts/frames.mjs
+node --check scripts/capture.mjs
 echo "check-lessons: ok ($n lessons)"

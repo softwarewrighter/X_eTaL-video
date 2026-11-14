@@ -26,7 +26,7 @@ made (below). Narration and lessons from the live demos come next;
 | Path | What |
 | ---- | ---- |
 | `libs/` | X_eTaL libraries for video timing and animation (below) |
-| `lessons/` | lessons as data, each with the schedule X_eTaL computes from it: [making-of](lessons/making-of/), [life](lessons/life/) |
+| `lessons/` | lessons as data, each with the schedule X_eTaL computes from it: [making-of](lessons/making-of/), [life](lessons/life/), [life-capture](lessons/life-capture/) |
 | `schemas/` | `lesson.schema.json`: what a lesson file may contain, checked by the gate |
 | `remotion/` | the [Remotion](remotion/) renderer: one composition that renders any lesson, in both formats |
 | `docs/plan.md` | the plan: decisions, the survey of the existing video pipelines, libraries, lessons, roadmap, open questions |
@@ -82,6 +82,12 @@ Conway's Life as the
 demo writes it: the one-line rule, the nine shifted copies of the
 board, their sum, the comparison, then 47 generations. Every board on
 screen is an array X_eTaL printed (`lessons/life/data.xtl`).
+
+The same lesson exists a second way, to compare:
+[`lessons/life-capture`](lessons/life-capture/) shows the published
+page itself, recorded in headless Chromium while a script clicks
+through it (`just capture life-capture`, then `just render
+life-capture`).
 
 ## Build
 

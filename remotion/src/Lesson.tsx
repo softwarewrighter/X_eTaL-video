@@ -1,4 +1,4 @@
-import { AbsoluteFill, useCurrentFrame, useVideoConfig } from "remotion";
+import { AbsoluteFill, OffthreadVideo, Sequence, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import { Boards } from "./Boards";
 import { theme } from "./theme";
 import { LessonProps, Line } from "./types";
@@ -7,7 +7,11 @@ import { LessonProps, Line } from "./types";
 // and how far along, every animation is was computed by X_eTaL for
 // every frame at once (props.frames), so there is no interpolate() or
 // spring() here: a frame looks its numbers up.
-export const Lesson: React.FC<LessonProps> = ({ lesson, timing, frames, data }) => {
+// The capture area of each format: scripts/capture.mjs records the
+// page at exactly this size, so a recorded pixel is a pixel here.
+const AREAS = { landscape: [1720, 700], portrait: [940, 1480] } as const;
+
+export const Lesson: React.FC<LessonProps> = ({ lesson, timing, frames, data, captures }) => {
   const frame = Math.min(useCurrentFrame(), timing.total - 1);
   const { width, height } = useVideoConfig();
   const tall = height > width;
@@ -100,7 +104,31 @@ export const Lesson: React.FC<LessonProps> = ({ lesson, timing, frames, data }) 
       >
         <span style={{ color: theme.accent, fontWeight: 700 }}>X_eTaL-video</span>
         <span style={{ color: theme.dim }}>{lesson.title}</span>
+        {scene.capture ? <span style={{ color: theme.ink, fontWeight: 700, opacity: show }}>{scene.heading}</span> : null}
       </div>
+
+      {/* A scene that shows the demo's page: the recording, at its own size, in a frame.
+          Which frame of it shows is X_eTaL's number for this frame (frames.capture):
+          the recording is mounted where that number is 0. */}
+      {scene.capture && captures ? (
+        <div
+          style={{
+            position: "absolute",
+            left: (width - AREAS[tall ? "portrait" : "landscape"][0]) / 2,
+            top: tall ? 150 : 112,
+            width: AREAS[tall ? "portrait" : "landscape"][0],
+            height: AREAS[tall ? "portrait" : "landscape"][1],
+            borderRadius: 10,
+            overflow: "hidden",
+            outline: `2px solid ${theme.rule}`,
+            opacity: show,
+          }}
+        >
+          <Sequence from={frame - frames.capture[frame]} layout="none">
+            <OffthreadVideo src={staticFile(tall ? captures.portrait : captures.landscape)} muted style={{ width: "100%", height: "100%" }} />
+          </Sequence>
+        </div>
+      ) : null}
 
       {/* The scene: heading, then its lines, each with its own column of the stagger table. */}
       <div
@@ -110,7 +138,7 @@ export const Lesson: React.FC<LessonProps> = ({ lesson, timing, frames, data }) 
           width: wide,
           top: tall ? 260 : 150,
           height: height - (tall ? 190 : 130) - 52 - 36 - (tall ? 260 : 150),
-          display: "flex",
+          display: scene.capture ? "none" : "flex",
           flexDirection: "column",
         }}
       >

@@ -25,7 +25,10 @@ just render making-of portrait    # out/making-of-portrait-remotion.mp4
 just studio making-of             # Remotion Studio at http://localhost:8427
 ```
 
-The first render downloads Remotion's headless browser. Fonts are
+`playwright` is here too, for `../scripts/capture.mjs` (recordings of
+the live demo pages go to `public/captures/`, not tracked; `npx
+playwright install chromium` once). The first render downloads
+Remotion's headless browser. Fonts are
 system fonts (Arial, Menlo).
 
 Remotion has its own license: free for individuals and for companies

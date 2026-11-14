@@ -1,0 +1,68 @@
+{
+  "slug": "life-capture",
+  "title": "Life in one line",
+  "fps": 30,
+  "demo": { "repo": "X_eTaL-demos", "slug": "life-microscope" },
+  "scenes": [
+    {
+      "id": "title",
+      "seconds": 5,
+      "heading": "Life in one line",
+      "narration": "Conway's Game of Life, in one line of X_eTaL.",
+      "lines": [
+        "Conway's Game of Life, in X_eTaL.",
+        "The whole rule is one line of array code."
+      ]
+    },
+    {
+      "id": "rule",
+      "seconds": 9,
+      "heading": "The rule: read it right to left",
+      "narration": "Here is the whole rule. Read it right to left: rotate the board, add the copies up, and compare.",
+      "lines": [],
+      "capture": { "actions": [{ "wait": 3 }, { "click": "button:has-text('Step')" }, { "wait": 2 }, { "click": "button:has-text('Step')" }] }
+    },
+    {
+      "id": "rotate",
+      "seconds": 10,
+      "heading": "1. Nine shifted copies",
+      "narration": "Rotate the board by minus one, zero and one along both axes. That gives nine shifted copies: one for each neighbor, and the cell itself.",
+      "lines": [],
+      "capture": { "actions": [{ "click": "button.stage:has-text('rotate')" }, { "wait": 2 }, { "scroll": "button:has-text('Step')" }, { "wait": 2.5 }, { "click": "button:has-text('Step')" }, { "wait": 2.5 }, { "click": "button:has-text('Step')" }] }
+    },
+    {
+      "id": "sum",
+      "seconds": 9,
+      "heading": "2. Add them up",
+      "narration": "Add the nine copies. Now every cell holds its own value plus its eight neighbors.",
+      "lines": [],
+      "capture": { "actions": [{ "click": "button.stage:has-text('sum')" }, { "wait": 1 }, { "scroll": "h2:has-text('2. Sum over')" }] }
+    },
+    {
+      "id": "compare",
+      "seconds": 9,
+      "heading": "3. Compare",
+      "narration": "A cell lives next when the sum is three, or when it is alive and the sum is four.",
+      "lines": [],
+      "capture": { "actions": [{ "click": "button.stage:has-text('compare')" }, { "wait": 1 }, { "scroll": "h2:has-text('3. Compare')" }] }
+    },
+    {
+      "id": "run",
+      "seconds": 16,
+      "heading": "Run it: the R-pentomino",
+      "narration": "Run it. Five cells, the R pentomino, on a sixteen by sixteen board that wraps around.",
+      "lines": [],
+      "capture": { "actions": [{ "scroll": "top" }, { "wait": 1.2 }, { "click": "button.stage:has-text('board')" }, { "select": ["select", "R-pentomino"] }, { "wait": 1.5 }, { "scroll": "button:has-text('Step')" }, { "wait": 1 }, { "click": "button:has-text('Play')" }] }
+    },
+    {
+      "id": "live",
+      "seconds": 6,
+      "heading": "Try it live",
+      "narration": "Step through it yourself in the browser.",
+      "lines": [
+        "That was the real page, recorded. Open it:",
+        { "code": "softwarewrighter.github.io/X_eTaL-demos/life-microscope" }
+      ]
+    }
+  ]
+}

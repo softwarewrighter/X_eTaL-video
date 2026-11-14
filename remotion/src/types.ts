@@ -18,6 +18,7 @@ export type Scene = {
   lines: Line[];
   curves?: boolean;
   boards?: Board[];
+  capture?: { actions?: unknown[] }; // show the recording of the demo's page
   narration?: string;
 };
 
@@ -48,6 +49,7 @@ export type Frames = {
   out: number[];
   step: number[]; // for boards that step: which step, from 0
   stepT: number[]; // and how far the change into it has gone
+  capture: number[]; // the frame of the page's recording this frame shows
   stagger: number[][]; // a row a frame, a column a line
 };
 
@@ -56,4 +58,5 @@ export type LessonProps = {
   timing: Timing;
   frames: Frames;
   data: Record<string, number[][][]>; // the lesson's arrays, each a list of boards
+  captures: { landscape: string; portrait: string } | null; // recordings, under public/
 };

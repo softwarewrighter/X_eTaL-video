@@ -23,8 +23,10 @@ node -e '
   const props = {
     lesson,
     timing: { fps: lesson.fps, durations: r[0], starts: r[1], ends: r[2], total },
-    frames: { scene: r[4], local: r[5], progress: r[6], fade: r[7], linear: r[8], inOut: r[9], out: r[10], step: r[11], stepT: r[12], stagger: r.slice(13) },
+    frames: { scene: r[4], local: r[5], progress: r[6], fade: r[7], linear: r[8], inOut: r[9], out: r[10], step: r[11], stepT: r[12], capture: r[13], stagger: r.slice(14) },
     data: {},
+    // The recordings of the demo page (scripts/capture.mjs), under remotion/public.
+    captures: lesson.scenes.some((s) => s.capture) ? { landscape: `captures/${lesson.slug}-landscape.mp4`, portrait: `captures/${lesson.slug}-portrait.mp4` } : null,
   };
   let name = null;
   for (const line of fs.readFileSync(dataFile, "utf8").split("\n")) {
