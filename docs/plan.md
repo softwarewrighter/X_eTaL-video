@@ -156,8 +156,13 @@ pick the better one"; Life first).
 1. housekeeping -- `docs/research.txt` trimmed to the conversation
    and tracked; Remotion's agent skills installed (`skills-lock.json`
    tracked, the skills ignored); saga 1 archived.
-2. life-drawn -- `lessons/life`: X_eTaL runs Life and prints every
-   generation; a `board` scene kind draws them.
+2. life-drawn [DONE] -- `lessons/life`: `data.xtl` prints the
+   lesson's arrays (the glider, its nine rotations, the sum, the next
+   board, 48 generations of an R-pentomino); a scene's `boards` name
+   them; `remotion/src/Boards.tsx` draws them; the schedule gains
+   each frame's step and the fade into it. The draft renderer does
+   not draw boards (it says so): with Remotion installed it stays
+   for lessons of text and code only.
 3. life-capture -- Playwright records the published page; a
    `capture` scene kind plays it.
 4. compare -- both rendered, both formats, for the user to choose.

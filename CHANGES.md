@@ -13,6 +13,7 @@ Categories: `feat` new capability, `fix` a bug or wrong behavior,
 
 ## 2026-11-13
 
+- 17:44 `lesson` The Life lesson, drawn (saga life, step 2): lessons/life (lesson.json with narration for later, data.xtl, timing.json): the one-line rule, the nine shifted copies, their sum, the comparison and 47 generations of an R-pentomino, every board an array X_eTaL printed (data.xtl, after "== name" lines). scripts/props.sh carries a lesson's arrays; the schedule gains each frame's step and the fade into it; the schema gains stepFrames and a scene's boards; remotion/src/Boards.tsx draws them fitted to the room left. out/life-landscape-remotion.mp4 and out/life-portrait-remotion.mp4, 64 s. The draft renderer refuses lessons with boards.
 - 16:36 `chore` Saga step housekeeping completed.
 - 16:36 `docs` Housekeeping (saga life, step 1; the user's answers): docs/research.txt tracked, trimmed to the conversation (the chat application's sidebar and footer removed); Remotion's agent skills installed (`npx remotion skills add`, 13 skills; remotion/skills-lock.json tracked, the skills ignored); the foundation saga archived and saga life started (the Life lesson both ways: drawn from X_eTaL's output, and recorded from the published page); plan updated.
 - 16:27 `chore` Saga step lesson-schema completed.

@@ -27,6 +27,9 @@ export const sample: LessonProps = {
     linear: ramp,
     inOut: ramp,
     out: ramp,
+    step: ramp.map(() => 0),
+    stepT: ramp.map(() => 1),
     stagger: ramp.map(() => [1, 1]),
   },
+  data: {},
 };

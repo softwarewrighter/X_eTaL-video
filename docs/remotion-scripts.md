@@ -21,6 +21,10 @@ lessons/SLUG/lesson.json           the lesson, as data (written by hand or by an
   -> just assemble SLUG            intro, outro, music, loudness (vid-* tools)
 ```
 
+The Life lesson (`lessons/life`) settled one more thing the
+proposals left open: a demo's stages are drawn from arrays the
+lesson's own `data.xtl` prints, with no trace library yet.
+
 ## 0. Install (saga 2, step 1; the user's go-ahead)
 
 `scripts/remotion-install.sh`:

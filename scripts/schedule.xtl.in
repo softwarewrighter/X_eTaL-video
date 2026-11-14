@@ -1,7 +1,8 @@
 # A lesson's schedule and every frame's animation numbers, computed by
 # X_eTaL (libs/Timeline, libs/Ease). scripts/schedule.sh fills in
-# __FPS__, __SECS__ (each scene's seconds) and __LINES__ (the most
-# lines a scene has) from the lesson and runs it; scripts/frames.mjs
+# __FPS__, __SECS__ (each scene's seconds), __LINES__ (the most
+# lines a scene has) and __STEP__ (the frames a board holds each
+# step) from the lesson and runs it; scripts/frames.mjs
 # reads what it prints, in this order.
 "tl:" u_se< "Timeline"
 "ez:" u_se< "Ease"
@@ -28,6 +29,11 @@ mid := 0.15 0.85 ez:r_amp p
 mid
 ez:i_nOutCubic mid
 ez:o_utCubic mid
+# 12 and 13: a board that steps (a generation every __STEP__ frames):
+# which step each frame is in, from 0, and how far the change into
+# it has gone, done 40% of the way through the step.
+local d_iv __STEP__
+ez:s_mooth 0.0 0.4 ez:r_amp (f_loat local m_od __STEP__) / f_loat __STEP__
 # Then a row a frame, a column a line: each line's progress, the
 # first starting 8 frames into the scene, the rest 10 frames apart,
 # each over 14 frames.

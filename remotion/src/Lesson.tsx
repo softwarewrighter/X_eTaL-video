@@ -1,4 +1,5 @@
 import { AbsoluteFill, useCurrentFrame, useVideoConfig } from "remotion";
+import { Boards } from "./Boards";
 import { theme } from "./theme";
 import { LessonProps, Line } from "./types";
 
@@ -6,7 +7,7 @@ import { LessonProps, Line } from "./types";
 // and how far along, every animation is was computed by X_eTaL for
 // every frame at once (props.frames), so there is no interpolate() or
 // spring() here: a frame looks its numbers up.
-export const Lesson: React.FC<LessonProps> = ({ lesson, timing, frames }) => {
+export const Lesson: React.FC<LessonProps> = ({ lesson, timing, frames, data }) => {
   const frame = Math.min(useCurrentFrame(), timing.total - 1);
   const { width, height } = useVideoConfig();
   const tall = height > width;
@@ -26,6 +27,7 @@ export const Lesson: React.FC<LessonProps> = ({ lesson, timing, frames }) => {
       .split("{{starts}}").join(timing.starts.join(" "))
       .split("{{total}}").join(String(timing.total))
       .split("{{f}}").join(String(frame).padStart(pad ? 4 : 0))
+      .split("{{step}}").join(String(frames.step[frame]).padStart(pad ? 2 : 0))
       .split("{{scene}}").join(String(frames.scene[frame]))
       .split("{{local}}").join(String(frames.local[frame]).padStart(pad ? 3 : 0))
       .split("{{progress}}").join(progress.toFixed(3));
@@ -101,7 +103,17 @@ export const Lesson: React.FC<LessonProps> = ({ lesson, timing, frames }) => {
       </div>
 
       {/* The scene: heading, then its lines, each with its own column of the stagger table. */}
-      <div style={{ position: "absolute", left: margin, width: wide, top: tall ? 260 : 150 }}>
+      <div
+        style={{
+          position: "absolute",
+          left: margin,
+          width: wide,
+          top: tall ? 260 : 150,
+          height: height - (tall ? 190 : 130) - 52 - 36 - (tall ? 260 : 150),
+          display: "flex",
+          flexDirection: "column",
+        }}
+      >
         <div
           style={{
             fontFamily: theme.text,
@@ -127,6 +139,13 @@ export const Lesson: React.FC<LessonProps> = ({ lesson, timing, frames }) => {
           }}
         />
         {scene.lines.map(renderLine)}
+
+        {/* The scene's arrays, drawn in the room the lines leave. */}
+        {scene.boards ? (
+          <div style={{ flex: 1, minHeight: 0, marginTop: 36 }}>
+            <Boards boards={scene.boards} data={data} step={frames.step[frame]} stepT={frames.stepT[frame]} opacity={show} />
+          </div>
+        ) : null}
 
         {/* Three curves over the scene: a dot each, placed by X_eTaL's numbers. */}
         {scene.curves ? (

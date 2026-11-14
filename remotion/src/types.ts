@@ -4,18 +4,29 @@
 // entry per frame of the video.
 export type Line = string | { code: string };
 
+export type Board = {
+  data: string; // an array's name in the lesson's data.xtl
+  label?: string;
+  numbers?: boolean;
+  animate?: boolean;
+};
+
 export type Scene = {
   id: string;
   seconds: number;
   heading: string;
   lines: Line[];
   curves?: boolean;
+  boards?: Board[];
+  narration?: string;
 };
 
 export type Lesson = {
   slug: string;
   title: string;
   fps: number;
+  stepFrames?: number;
+  demo?: { repo: string; slug: string };
   scenes: Scene[];
 };
 
@@ -35,6 +46,8 @@ export type Frames = {
   linear: number[];
   inOut: number[];
   out: number[];
+  step: number[]; // for boards that step: which step, from 0
+  stepT: number[]; // and how far the change into it has gone
   stagger: number[][]; // a row a frame, a column a line
 };
 
@@ -42,4 +55,5 @@ export type LessonProps = {
   lesson: Lesson;
   timing: Timing;
   frames: Frames;
+  data: Record<string, number[][][]>; // the lesson's arrays, each a list of boards
 };

@@ -26,7 +26,7 @@ made (below). Narration and lessons from the live demos come next;
 | Path | What |
 | ---- | ---- |
 | `libs/` | X_eTaL libraries for video timing and animation (below) |
-| `lessons/` | lessons as data, each with the schedule X_eTaL computes from it ([making-of](lessons/making-of/)) |
+| `lessons/` | lessons as data, each with the schedule X_eTaL computes from it: [making-of](lessons/making-of/), [life](lessons/life/) |
 | `schemas/` | `lesson.schema.json`: what a lesson file may contain, checked by the gate |
 | `remotion/` | the [Remotion](remotion/) renderer: one composition that renders any lesson, in both formats |
 | `docs/plan.md` | the plan: decisions, the survey of the existing video pipelines, libraries, lessons, roadmap, open questions |
@@ -69,6 +69,19 @@ frame's numbers up. The numbers on screen are the video's own. Two
 renderers read the same numbers: Remotion (React), and a draft
 renderer with nothing to install beyond `node`, `magick` and
 `ffmpeg`. [`lessons/making-of/`](lessons/making-of/) has the details.
+
+## A lesson from a live demo: Life
+
+```bash
+just render life             # out/life-landscape-remotion.mp4 (64 s)
+just render life portrait
+```
+
+Conway's Life as the
+[life-microscope](https://softwarewrighter.github.io/X_eTaL-demos/life-microscope/)
+demo writes it: the one-line rule, the nine shifted copies of the
+board, their sum, the comparison, then 47 generations. Every board on
+screen is an array X_eTaL printed (`lessons/life/data.xtl`).
 
 ## Build
 

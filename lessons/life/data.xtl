@@ -1,0 +1,40 @@
+#!/usr/bin/env xetal
+## The Life lesson's arrays, computed by X_eTaL: everything a board in
+## the video shows is printed here, each array after a "== name" line
+## (scripts/props.sh reads them; a rank-3 array is a list of boards).
+## The rule and the glider are X_eTaL-demos' life-microscope's.
+
+## u:l_ife board: the next generation of a 0/1 board (the edges wrap).
+u:l_ife := { ('+ r_/_12 -1 0 1 o_-_12 _r) { (_l = 3) + _r * _l = 4 } _r }
+
+## u:p_lane x: the matrix x as a list of one board.
+u:p_lane := { x -> (1 c_at s_hape x) r_eshape x }
+
+## n u:r_un x: x and its next n generations, a list of n + 1 boards.
+u:r_un := { n x -> n = 0 ? u:p_lane x; (u:p_lane x) c_at (n - 1) u:r_un u:l_ife x }
+
+## b: a glider in a 6 by 6 board.
+b := 6 6 r_eshape 0 1 0 0 0 0  0 0 1 0 0 0  1 1 1 0 0 0  0 0 0 0 0 0  0 0 0 0 0 0  0 0 0 0 0 0
+"== b"
+b
+
+## r: the board rotated by every offset -1 0 1 along both axes: nine
+## shifted copies, here as a list of nine boards.
+r := -1 0 1 o_-_12 b
+"== copies"
+9 6 6 r_eshape r
+
+## s: the nine copies added: each cell plus its eight neighbors.
+s := '+ r_/_12 r
+"== s"
+s
+
+"== next"
+(s = 3) + b * s = 4
+
+## world: an R-pentomino in a 16 by 16 board: five cells that take a
+## long time to settle. Six empty rows, its three rows, seven more.
+start := (0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0) c_at (0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0) c_at 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0
+world := 16 16 r_eshape ((16 * 6) r_eshape 0) c_at start c_at (16 * 7) r_eshape 0
+"== gens"
+47 u:r_un world

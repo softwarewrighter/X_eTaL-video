@@ -13,6 +13,7 @@
     },
     "title": { "type": "string", "minLength": 1 },
     "fps": { "description": "Frames a second.", "type": "integer", "minimum": 1 },
+    "stepFrames": { "description": "The frames a stepping board holds each step (15 if not given).", "type": "integer", "minimum": 1 },
     "demo": {
       "description": "The live demo the lesson is about, if any.",
       "type": "object",
@@ -36,8 +37,23 @@
           "heading": { "type": "string", "minLength": 1 },
           "narration": { "description": "What is spoken over the scene (at most 320 characters, vid-tts's limit).", "type": "string", "maxLength": 320 },
           "curves": { "description": "Show the three easing curves as moving dots.", "type": "boolean" },
+          "boards": {
+            "description": "Arrays drawn as grids under the lines, each one printed by the lesson's data.xtl after a '== name' line.",
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["data"],
+              "additionalProperties": false,
+              "properties": {
+                "data": { "description": "The array's name in data.xtl.", "type": "string", "pattern": "^[A-Za-z][A-Za-z0-9_]*$" },
+                "label": { "type": "string" },
+                "numbers": { "description": "Write each cell's number in it.", "type": "boolean" },
+                "animate": { "description": "A list of boards shown one at a time, a step each; otherwise all at once, side by side.", "type": "boolean" }
+              }
+            }
+          },
           "lines": {
-            "description": "Text, or code as {\"code\": ...}. {{f}}, {{scene}}, {{local}}, {{progress}}, {{total}}, {{secs}}, {{durs}} and {{starts}} are replaced by the frame's own numbers.",
+            "description": "Text, or code as {\"code\": ...}. {{f}}, {{scene}}, {{local}}, {{progress}}, {{total}}, {{secs}}, {{durs}} and {{starts}} and {{step}} are replaced by the frame's own numbers.",
             "type": "array",
             "items": {
               "oneOf": [
