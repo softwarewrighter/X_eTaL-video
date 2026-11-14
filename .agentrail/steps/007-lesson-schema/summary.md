@@ -1,0 +1,1 @@
+schemas/lesson.schema.json, scripts/check-schema.mjs (self-tested), check-lessons.sh uses it; docs updated. Gate passes. Saga foundation complete.

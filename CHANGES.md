@@ -13,6 +13,7 @@ Categories: `feat` new capability, `fix` a bug or wrong behavior,
 
 ## 2026-11-13
 
+- 16:27 `chore` Saga step lesson-schema completed.
 - 16:27 `build` The lesson schema (saga foundation, step 7, its last): schemas/lesson.schema.json (a lesson's form, nothing else allowed) and scripts/check-schema.mjs, a JSON Schema validator with nothing to install for the keywords it uses (an unknown keyword is an error; --self-test: two good lessons, twelve wrong ones); scripts/check-lessons.sh validates every lesson with it, then the slug and unique scene ids, then the timing.
 - 16:24 `chore` Saga step spring-lib completed.
 - 16:24 `lib` libs/Spring (saga foundation, step 6): Remotion's spring and measureSpring in closed form on whole arrays: `l:s_pring` (position at any time, a spring is (mass, damping, stiffness)), `l:s_ettle` (frames to settle), `l:r_atio`, `l:d_efault`, `l:s_mooth`. Checked against Remotion 4.0.543's own numbers (four places at nine frames; settle times 28, 23, 23, 56); as in Remotion, damping past critical moves as critical does. Tests basics.xtl and types.rgt.
