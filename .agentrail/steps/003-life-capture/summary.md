@@ -1,0 +1,1 @@
+scripts/capture.mjs (Playwright), lessons/life-capture, schedule capture row, schema capture, Lesson.tsx capture area; rendered both formats. Gate passes.

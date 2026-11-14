@@ -13,6 +13,7 @@ Categories: `feat` new capability, `fix` a bug or wrong behavior,
 
 ## 2026-11-13
 
+- 18:47 `chore` Saga step life-capture completed.
 - 18:47 `lesson` The Life lesson, recorded (saga life, step 3): lessons/life-capture shows the published life-microscope page itself: scripts/capture.mjs records it in headless Chromium (Playwright, a dev dependency of remotion/) at each format's capture area while the scenes' actions run (click, select, scroll, wait), one recording as long as its scenes; a scene's `capture` plays it, the recording's frame for every frame one more row of X_eTaL's schedule. just capture. out/life-capture-landscape-remotion.mp4 and out/life-capture-portrait-remotion.mp4, 64 s. Recordings are not tracked.
 - 17:45 `chore` Saga step life-drawn completed.
 - 17:44 `lesson` The Life lesson, drawn (saga life, step 2): lessons/life (lesson.json with narration for later, data.xtl, timing.json): the one-line rule, the nine shifted copies, their sum, the comparison and 47 generations of an R-pentomino, every board an array X_eTaL printed (data.xtl, after "== name" lines). scripts/props.sh carries a lesson's arrays; the schedule gains each frame's step and the fade into it; the schema gains stepFrames and a scene's boards; remotion/src/Boards.tsx draws them fitted to the room left. out/life-landscape-remotion.mp4 and out/life-portrait-remotion.mp4, 64 s. The draft renderer refuses lessons with boards.
