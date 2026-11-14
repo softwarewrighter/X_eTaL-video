@@ -1,8 +1,9 @@
 number = 1
 slug = "code-pan"
-status = "in-progress"
+status = "completed"
 description = "A code or xtl line too long for its panel at a readable size keeps that size ..."
 role = "legacy"
 context_files = []
 created_at = "2026-11-13T19:46:30"
-commits = []
+completed_at = "2026-11-13T20:04:18"
+commits = ["90320633befa58c42e490da53900e054e2b9e9ac"]

@@ -1,0 +1,1 @@
+Lesson.tsx pans long code lines at full size; Boards label size; rule 4b; Life and making-of re-rendered. Gate passes.
