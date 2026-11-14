@@ -1,0 +1,1 @@
+xtl lines rendered by pinned xetal into props, JuliaMono + syntax colors in Remotion, fetch-fonts.sh, lessons converted, six videos re-rendered, rule 4a/V13. Gate passes.
