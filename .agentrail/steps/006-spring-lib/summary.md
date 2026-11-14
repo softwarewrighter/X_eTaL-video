@@ -1,0 +1,1 @@
+libs/Spring with basics.xtl and types baselines, README; verified against Remotion 4.0.543 spring/measureSpring; README and plan updated. Gate passes.
