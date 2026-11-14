@@ -1,0 +1,66 @@
+#!/usr/bin/env xetal
+## The Mandelbrot lesson's arrays, computed by X_eTaL with the program
+## of X_eTaL-demos' mandelbrot (its view, its c by broadcasting, its
+## u:s_tep), for a picture of square cells. Each array is printed
+## after a "== name" line (scripts/props.sh reads them; a rank-3 array
+## is a list of boards).
+
+### The view
+
+## rows, cols: the picture's size. cx, cy, w: the view's center and
+## width in the plane. k: how many steps.
+rows := 48
+cols := 60
+cx := -0.6
+cy := 0.0
+w := 3.0
+k := 24
+
+## Numbers centered on 0 (u:c_entred n): 0 1 2 3 becomes
+## -1.5 -0.5 0.5 1.5.
+u:c_entred := { n -> (f_loat o_ffsets n) - (f_loat n - 1) / 2 }
+
+### c for every point, by broadcasting
+
+## re, im: one row of real parts and one column of imaginary parts.
+## cr, ci: c's real and imaginary parts spread over the whole grid.
+re := cx + w * (u:c_entred cols) / f_loat cols
+im := cy - w * (u:c_entred rows) / f_loat cols
+cr := (o_ffsets rows) 'r_ight t_able re
+ci := im 'l_eft t_able o_ffsets cols
+"== cr"
+cr
+"== ci"
+ci
+
+### One step for every point at once
+
+## u:s_tep (zr, zi, counts): z * z + c everywhere, kept where the point
+## has already left the disk |z|^2 > 4, the points still inside counted.
+u:s_tep := { (zr, zi, counts) ->
+  inside := f_loat 4 >= (zr * zr) + zi * zi
+  a := (inside * cr + (zr * zr) - zi * zi) + (1 - inside) * zr
+  b := (inside * ci + 2 * zr * zi) + (1 - inside) * zi
+  (a, b, inside + counts)
+}
+
+### The counts after every step
+
+## u:p_lane x: the matrix x as a list of one board.
+u:p_lane := { x -> (1 c_at s_hape x) r_eshape x }
+
+## n u:c_ounts state: the counts of state and of its next n steps, a
+## list of n + 1 boards.
+u:c_ounts := { n (zr, zi, counts) ->
+  n = 0 ? u:p_lane counts
+  (u:p_lane counts) c_at (n - 1) u:c_ounts u:s_tep (zr, zi, counts)
+}
+## start: z = 0 at every point, and no steps counted yet.
+start := (0.0 * cr, 0.0 * cr, 0.0 * cr)
+grown := k u:c_ounts start
+"== counts"
+grown
+
+## The picture after all k steps.
+"== set"
+(k + 1) s_elect grown

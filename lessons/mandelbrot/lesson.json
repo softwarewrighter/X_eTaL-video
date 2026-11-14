@@ -1,0 +1,76 @@
+{
+  "slug": "mandelbrot",
+  "title": "Mandelbrot without a loop",
+  "fps": 30,
+  "stepFrames": 18,
+  "demo": { "repo": "X_eTaL-demos", "slug": "mandelbrot" },
+  "scenes": [
+    {
+      "id": "hook",
+      "seconds": 5,
+      "heading": "Mandelbrot, without a loop",
+      "narration": "The Mandelbrot set, with no loop over pixels. Every point is iterated at once.",
+      "lines": [
+        "Every pixel iterated at once, as arrays."
+      ],
+      "boards": [{ "data": "set", "heat": "escape" }]
+    },
+    {
+      "id": "plane",
+      "seconds": 10,
+      "heading": "1. A number for every pixel",
+      "narration": "First, a complex number for every pixel. One row of real parts, one column of imaginary parts, and a table spreads them over the whole grid.",
+      "lines": [
+        { "xtl": "cr := (o_ffsets rows) 'r_ight t_able re" },
+        { "xtl": "ci := im 'l_eft t_able o_ffsets cols" },
+        "One row spread down. One column spread across."
+      ],
+      "boards": [
+        { "data": "cr", "label": "real parts", "heat": "ramp" },
+        { "data": "ci", "label": "imaginary parts", "heat": "ramp" }
+      ]
+    },
+    {
+      "id": "step",
+      "seconds": 12,
+      "heading": "2. One step, every pixel",
+      "narration": "One step squares z and adds c, for every pixel at once. A mask keeps the points that have already escaped where they are.",
+      "lines": [
+        { "xtl": "inside := f_loat 4 >= (zr * zr) + zi * zi" },
+        { "xtl": "a := (inside * cr + (zr * zr) - zi * zi) + (1 - inside) * zr" },
+        { "xtl": "b := (inside * ci + 2 * zr * zi) + (1 - inside) * zi" },
+        "z squared plus c, wherever z is still inside.",
+        "A mask, not an if: escaped points stay put."
+      ]
+    },
+    {
+      "id": "grow",
+      "seconds": 15,
+      "heading": "3. Repeat",
+      "narration": "Now repeat the step. Black points are still inside. After a couple dozen steps, what is left is the set.",
+      "lines": [
+        { "xtl": "{{step}} 'u:s_tep p_ower start" },
+        "Start with z = 0 everywhere. Black: still inside."
+      ],
+      "boards": [{ "data": "counts", "heat": "escape", "animate": true }]
+    },
+    {
+      "id": "live",
+      "seconds": 12,
+      "heading": "The live page",
+      "narration": "This is the real page. It runs the same program in your browser. Click a point to see its orbit.",
+      "lines": [],
+      "capture": { "actions": [{ "wait": 1 }, { "click": "button:has-text('Play steps')" }, { "wait": 5.5 }, { "click": "canvas.big" }] }
+    },
+    {
+      "id": "cta",
+      "seconds": 6,
+      "heading": "Try it",
+      "narration": "Try it yourself. The link is below.",
+      "lines": [
+        "Step it, zoom it, click a point for its orbit:",
+        { "code": "softwarewrighter.github.io/X_eTaL-demos/mandelbrot" }
+      ]
+    }
+  ]
+}

@@ -106,8 +106,8 @@ and print stages:
 
 | Lesson (slug) | Demo | The one idea |
 | ------------- | ---- | ------------ |
-| life | X_eTaL-demos life-microscope | a neighborhood count is nine rotations summed |
-| mandelbrot | X_eTaL-demos mandelbrot | broadcasting: every pixel iterated at once |
+| life (built, drawn and recorded) | X_eTaL-demos life-microscope | a neighborhood count is nine rotations summed |
+| mandelbrot (built) | X_eTaL-demos mandelbrot | broadcasting: every pixel iterated at once |
 | nbody | X_eTaL-demos nbody | all pairs is one table, forces are one reduce |
 | attention | X_eTaL-ML attention | rows meet columns: Q, K, V and a softmax |
 | sudoku | X_eTaL-games sudoku | constraints as arrays, a move as a mask |
@@ -199,9 +199,10 @@ short; and a fix to Life first.
 1. code-pan [DONE] -- a code line too long for its panel keeps its
    size and pans left to right over the scene (by X_eTaL's in-out
    row) instead of shrinking; board labels sized by the picture.
-2. mandelbrot-short -- `lessons/mandelbrot`: 60 seconds; the demo's
-   own program computes the counts after every step; a heat board
-   draws the set growing; one recorded scene of the live page.
+2. mandelbrot-short [DONE] -- `lessons/mandelbrot`: 60 seconds,
+   six scenes, mixed; `data.xtl` is the demo's own program printing
+   the counts after each of 24 steps; boards gain `heat` (`ramp`,
+   `escape`); one recorded scene of the live page.
 
 ## Later -- remotion  [PLANNED; steps 1 and 4 done in saga 1]
 

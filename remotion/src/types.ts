@@ -9,6 +9,7 @@ export type Board = {
   data: string; // an array's name in the lesson's data.xtl
   label?: string;
   numbers?: boolean;
+  heat?: "ramp" | "escape";
   animate?: boolean;
 };
 

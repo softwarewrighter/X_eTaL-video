@@ -66,6 +66,7 @@
                 "data": { "description": "The array's name in data.xtl.", "type": "string", "pattern": "^[A-Za-z][A-Za-z0-9_]*$" },
                 "label": { "type": "string" },
                 "numbers": { "description": "Write each cell's number in it.", "type": "boolean" },
+                "heat": { "description": "Color each cell by its number, cells touching: 'ramp' from the least to the most; 'escape' for counts of steps, the cells that have never left (as many steps as there have been) black.", "type": "string", "enum": ["ramp", "escape"] },
                 "animate": { "description": "A list of boards shown one at a time, a step each; otherwise all at once, side by side.", "type": "boolean" }
               }
             }

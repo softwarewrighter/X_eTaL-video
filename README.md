@@ -26,7 +26,7 @@ made (below). Narration and lessons from the live demos come next;
 | Path | What |
 | ---- | ---- |
 | `libs/` | X_eTaL libraries for video timing and animation (below) |
-| `lessons/` | lessons as data, each with the schedule X_eTaL computes from it: [making-of](lessons/making-of/), [life](lessons/life/), [life-capture](lessons/life-capture/) |
+| `lessons/` | lessons as data, each with the schedule X_eTaL computes from it: [making-of](lessons/making-of/), [life](lessons/life/), [life-capture](lessons/life-capture/), [mandelbrot](lessons/mandelbrot/) |
 | `schemas/` | `lesson.schema.json`: what a lesson file may contain, checked by the gate |
 | `remotion/` | the [Remotion](remotion/) renderer: one composition that renders any lesson, in both formats |
 | `docs/plan.md` | the plan: decisions, the survey of the existing video pipelines, libraries, lessons, roadmap, open questions |
@@ -88,6 +88,18 @@ The same lesson exists a second way, to compare:
 page itself, recorded in headless Chromium while a script clicks
 through it (`just capture life-capture`, then `just render
 life-capture`).
+
+## A 60 second short: Mandelbrot
+
+```bash
+just capture mandelbrot             # record the live page (network)
+just render mandelbrot portrait     # out/mandelbrot-portrait-remotion.mp4
+```
+
+The Mandelbrot set with no loop over pixels: a number for every pixel
+by broadcasting, one step for every pixel at once, the step repeated
+while the set appears (the demo's own program, run by X_eTaL for the
+video), then the published page itself, recorded.
 
 ## X_eTaL as rendered
 

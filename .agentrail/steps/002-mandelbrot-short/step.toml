@@ -1,6 +1,6 @@
 number = 2
 slug = "mandelbrot-short"
-status = "pending"
+status = "in-progress"
 description = "lessons/mandelbrot, a 60 second mixed short"
 role = "legacy"
 context_files = []

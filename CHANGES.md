@@ -11,6 +11,10 @@ Categories: `feat` new capability, `fix` a bug or wrong behavior,
 `chore` agentrail bookkeeping (step complete, saga archive),
 `vendor` a move of the pinned X_eTaL.
 
+## 2026-11-14
+
+- 08:40 `lesson` The Mandelbrot short (saga mandelbrot, step 2; the user: Mandelbrot, 60 seconds, mixed): lessons/mandelbrot, six scenes: the set, a number for every pixel by broadcasting, one step with a mask, the step repeated while the set appears (data.xtl: the demo's own program, the counts after each of 24 steps), then the published page recorded, and the link. Boards gain `heat` (ramp, escape). out/mandelbrot-portrait-remotion.mp4 and out/mandelbrot-landscape-remotion.mp4, 60.0 s.
+
 ## 2026-11-13
 
 - 20:04 `chore` Saga step code-pan completed.
