@@ -1,0 +1,1 @@
+build-catalog.mjs, build-pages.sh, publish-pages.sh, serve-pages.mjs, images/ (gray logo, light-gray favicon), lesson summary/order/poster, README link at top. Gate passes; published next.

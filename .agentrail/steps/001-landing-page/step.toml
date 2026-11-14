@@ -1,8 +1,9 @@
 number = 1
 slug = "landing-page"
-status = "in-progress"
+status = "completed"
 description = "The live page (the user, 2026-11-14): images/ (gray logo, favicon on a very l..."
 role = "legacy"
 context_files = []
 created_at = "2026-11-14T08:42:43"
-commits = []
+completed_at = "2026-11-14T08:50:38"
+commits = ["d7d6011642c8b4c66ea6ebd5a0bead939b1d8887"]
