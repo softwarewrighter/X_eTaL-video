@@ -1,0 +1,8 @@
+number = 1
+slug = "code-pan"
+status = "in-progress"
+description = "A code or xtl line too long for its panel at a readable size keeps that size ..."
+role = "legacy"
+context_files = []
+created_at = "2026-11-13T19:46:30"
+commits = []

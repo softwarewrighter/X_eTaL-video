@@ -13,6 +13,7 @@ Categories: `feat` new capability, `fix` a bug or wrong behavior,
 
 ## 2026-11-13
 
+- 20:04 `fix` Long code lines pan, they are not shrunk (saga mandelbrot, step 1; the user: "fix size of '1 line' to be readable, pan from left to right, it doesn't have to fit in portrait mode"): a code or X_eTaL line keeps its full size and, when wider than its panel, pans from its start to its end over the scene by X_eTaL's in-out row; board labels sized by the picture. Life and making-of re-rendered. CLAUDE.md rule 4b.
 - 19:27 `chore` Saga step xtl-lines completed.
 - 19:27 `feat` X_eTaL shown as rendered, never as typed (saga rendered-code; the user: "I prefer to see as-rendered (and color syntax highlighted)"): a lesson line {"xtl": ...} is rendered by the pinned `xetal render --html` (scripts/props.mjs) and drawn in JuliaMono with X_eTaL's syntax colors (remotion theme; scripts/fetch-fonts.sh fetches the font, checksummed, not tracked); {"code": ...} stays for what is not X_eTaL. making-of and life converted; all six videos re-rendered. CLAUDE.md rule 4a, plan V13.
 - 18:57 `chore` Saga step compare completed.

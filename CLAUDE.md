@@ -360,6 +360,10 @@ Read before working:
    X_eTaL's colors); `{"code": ...}` is only for what is not X_eTaL
    (JSON, shell, a link). Never put X_eTaL in a `code` line or in
    running text.
+4b. Code in a video is never shrunk to fit (the user, 2026-11-13: "it
+   doesn't have to fit in portrait mode"): a line keeps a readable
+   size, and one too long for its panel pans from its start to its
+   end over the scene.
 5. Never run a bare `ffmpeg` concat, and prefer the Rust `vid-*`
    tools of `../video-publishing/tools` for every operation they
    cover (`docs/plan.md` V7). `ffmpeg` and `ffprobe` directly only for

@@ -1,0 +1,1 @@
+A code or xtl line too long for its panel at a readable size keeps that size and pans left to right over the scene (the pan's progress from X_eTaL's in-out row), instead of shrinking; board labels sized sensibly. Re-render Life. Docs, CHANGES, commit, push.

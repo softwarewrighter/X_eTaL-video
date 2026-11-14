@@ -81,25 +81,40 @@ export const Lesson: React.FC<LessonProps> = ({ lesson, timing, frames, data, ca
     const xtl = "xtl" in line;
     const code = fill(xtl ? rendered[line.xtl] ?? line.xtl : line.code, true);
     const shown = xtl ? code.replace(/<[^>]*>/g, "").replace(/&[a-z]+;/g, "x").replace(/\u0332/g, "") : code;
+    // A line keeps a readable size. One too long for the panel at that
+    // size is not shrunk: it pans from its start to its end over the
+    // scene, by X_eTaL's in-out curve for this frame.
+    const size = tall ? 34 : 38;
+    const room = wide - 6 - 24 - 24; // the panel less its rule and padding
+    const long = 0.6 * size * shown.length; // JuliaMono is 0.6 em a character
+    const pan = long > room ? -(long - room) * frames.inOut[frame] : 0;
     return (
       <div
         key={j}
         style={{
           ...style,
-          fontFamily: theme.mono,
-          fontSize: Math.min(tall ? 34 : 38, (wide - 56) / (0.605 * shown.length)),
           height: 66,
-          lineHeight: "66px",
-          whiteSpace: "pre",
-          color: xtl ? theme.xtl : theme.code,
           background: theme.panel,
           borderLeft: `6px solid ${theme.accent}`,
           paddingLeft: 24,
+          paddingRight: 24,
+          overflow: "hidden",
           marginTop: typeof before === "string" ? 14 : 0,
         }}
-        className={xtl ? "xtl" : undefined}
-        {...(xtl ? { dangerouslySetInnerHTML: { __html: code } } : { children: code })}
-      />
+      >
+        <div
+          style={{
+            fontFamily: theme.mono,
+            fontSize: size,
+            lineHeight: "66px",
+            whiteSpace: "pre",
+            color: xtl ? theme.xtl : theme.code,
+            transform: `translateX(${pan}px)`,
+          }}
+          className={xtl ? "xtl" : undefined}
+          {...(xtl ? { dangerouslySetInnerHTML: { __html: code } } : { children: code })}
+        />
+      </div>
     );
   };
 

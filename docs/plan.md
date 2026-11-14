@@ -191,6 +191,18 @@ show the page is real.
    converted and re-rendered. The draft renderer still draws X_eTaL
    as typed (it has no font for it) and is for quick checks only.
 
+## Saga 4 -- mandelbrot  [ACTIVE]
+
+The user (2026-11-13): mixed scenes, Mandelbrot next, a 60 second
+short; and a fix to Life first.
+
+1. code-pan [DONE] -- a code line too long for its panel keeps its
+   size and pans left to right over the scene (by X_eTaL's in-out
+   row) instead of shrinking; board labels sized by the picture.
+2. mandelbrot-short -- `lessons/mandelbrot`: 60 seconds; the demo's
+   own program computes the counts after every step; a heat board
+   draws the set growing; one recorded scene of the live page.
+
 ## Later -- remotion  [PLANNED; steps 1 and 4 done in saga 1]
 
 Goal: one lesson rendered to MP4 in both formats, silent.
@@ -248,7 +260,7 @@ Goal: finished files for both channels.
 3. Demo pictures: both are built for Life (saga 2, step 4 has the
    comparison). Which for the lessons to come: drawn, recorded, or
    mixed?
-4. Which lesson first: Life (the user). Still open: a 60 second
-   short or a 3 to 5 minute explainer?
+4. Answered (the user, 2026-11-13): Life first, then Mandelbrot;
+   60 second shorts; scenes mixed, drawn and recorded.
 5. Should the libraries here that prove general (Ease, Spring) move
    to X_eTaL-libraries later?

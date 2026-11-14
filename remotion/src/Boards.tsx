@@ -55,7 +55,7 @@ export const Boards: React.FC<{
         return (
           <g key={n} transform={`translate(${left}, ${top})`}>
             {block.label ? (
-              <text x={0} y={-3.2} fontFamily={theme.mono} fontSize={4.6} fill={theme.dim}>
+              <text x={0} y={-3.2} fontFamily={theme.mono} fontSize={Math.min(4.6, width * 0.034)} fill={theme.dim}>
                 {block.label}
               </text>
             ) : null}

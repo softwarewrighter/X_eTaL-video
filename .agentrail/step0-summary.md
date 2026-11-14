@@ -1,1 +1,1 @@
-Saga rendered-code initialized.
+Saga mandelbrot initialized.
