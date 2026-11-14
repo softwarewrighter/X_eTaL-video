@@ -1,0 +1,1 @@
+lessons/mandelbrot (lesson, data.xtl, timing, README), heat boards, recorded live scene; rendered both formats (60 s). Gate passes.
