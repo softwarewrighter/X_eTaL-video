@@ -7,9 +7,10 @@ demos: a lesson is data, X_eTaL computes its timing and animation as
 arrays, a deterministic renderer draws every frame, and the existing
 video tools assemble the result.
 
-Status: early. The X_eTaL libraries for timing are being written and
-tested; the renderer (Remotion) is not installed yet. `docs/plan.md`
-has the roadmap.
+Status: early. Two X_eTaL libraries for timing and animation are
+tested, and a first video is built from them: a silent 58 second
+draft that describes how it was made (below). The renderer for real
+lessons (Remotion) is being set up. `docs/plan.md` has the roadmap.
 
 ## How it fits
 
@@ -24,6 +25,7 @@ has the roadmap.
 | Path | What |
 | ---- | ---- |
 | `libs/` | X_eTaL libraries for video timing and animation (below) |
+| `lessons/` | lessons as data, each with the schedule X_eTaL computes from it ([making-of](lessons/making-of/)) |
 | `docs/plan.md` | the plan: decisions, the survey of the existing video pipelines, libraries, lessons, roadmap, open questions |
 | `docs/remotion-scripts.md` | the proposed scripts: voice, timing, capture, render, assemble (proposals, not yet run) |
 | `docs/xetal-asks.md` | what this work needs from X_eTaL |
@@ -44,6 +46,21 @@ durs tl:s_cene 0 89 90 299       # 1 1 2 3
 
 `just run Timeline` runs its test programs; `just test-lib Timeline`
 checks its baselines.
+
+## A first video: how it was made
+
+```bash
+just draft making-of             # out/making-of-landscape.mp4 (1920x1080, 58 s)
+just draft making-of portrait    # out/making-of-portrait.mp4 (1080x1920)
+```
+
+`lessons/making-of/lesson.json` is the content. X_eTaL (Timeline and
+Ease) computes the schedule and every frame's animation numbers, all
+1740 frames at once; a script draws each frame from those numbers
+with ImageMagick; ffmpeg encodes them. The numbers on screen are the
+video's own. Needs `node`, `magick` and `ffmpeg`; nothing to install
+beyond them. [`lessons/making-of/`](lessons/making-of/) has the
+details.
 
 ## Build
 

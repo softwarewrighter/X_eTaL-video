@@ -52,7 +52,27 @@ test-lib name:
 bless name:
     XETAL_BLESS=1 scripts/test-libs.sh "$1"
 
-# The full pre-commit gate: pinned X_eTaL, libraries, spelling, ASCII-only markdown
+# The lessons
+lessons:
+    @ls lessons
+
+# Check every lesson and that its timing.json is what X_eTaL computes
+check-lessons:
+    scripts/check-lessons.sh
+
+# A lesson's schedule as X_eTaL computes it (the JSON a renderer reads): just timing making-of
+timing slug:
+    @scripts/schedule.sh "$1" --timing
+
+# A silent draft video of a lesson with nothing to install (ImageMagick, ffmpeg): out/SLUG-FORMAT.mp4
+draft slug format="landscape":
+    scripts/draft-video.sh "$1" "$2"
+
+# One frame of a lesson's draft as a PNG: just frame making-of 850 portrait
+frame slug n format="landscape":
+    @mkdir -p "work/$1" && scripts/schedule.sh "$1" > "work/$1/schedule.txt" && scripts/frames.mjs "$1" "$3" --frame "$2"
+
+# The full pre-commit gate: pinned X_eTaL, libraries, lessons, spelling, ASCII-only markdown
 gate:
     scripts/gate.sh
 

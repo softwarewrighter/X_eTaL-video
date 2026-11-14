@@ -1,0 +1,34 @@
+# A lesson's schedule and every frame's animation numbers, computed by
+# X_eTaL (libs/Timeline, libs/Ease). scripts/schedule.sh fills in
+# __FPS__, __SECS__ (each scene's seconds) and __LINES__ (the most
+# lines a scene has) from the lesson and runs it; scripts/frames.mjs
+# reads what it prints, in this order.
+"tl:" u_se< "Timeline"
+"ez:" u_se< "Ease"
+durs := __FPS__ tl:f_rames __SECS__
+f := o_ffsets tl:t_otal durs
+scene := durs tl:s_cene f
+local := durs tl:l_ocal f
+left := (scene s_elect durs) - local
+p := durs tl:p_rogress f
+# 1 to 4: the schedule.
+durs
+tl:s_tarts durs
+tl:e_nds durs
+tl:t_otal durs
+# 5 to 7: each frame's scene, its frame within the scene, its progress.
+scene
+local
+p
+# 8: each frame's fade: in over a scene's first 12 frames, out over
+# its last 10.
+(ez:s_mooth 0 12 ez:r_amp local) * ez:s_mooth 0 10 ez:r_amp left
+# 9 to 11: three curves over each scene's middle (from 15% to 85%).
+mid := 0.15 0.85 ez:r_amp p
+mid
+ez:i_nOutCubic mid
+ez:o_utCubic mid
+# Then a row a frame, a column a line: each line's progress, the
+# first starting 8 frames into the scene, the rest 10 frames apart,
+# each over 14 frames.
+ez:o_utCubic (10, 14) ez:s_tagger (local - 8, __LINES__)

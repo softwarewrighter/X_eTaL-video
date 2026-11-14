@@ -1,0 +1,85 @@
+{
+  "slug": "making-of",
+  "title": "How this video was made",
+  "fps": 30,
+  "scenes": [
+    {
+      "id": "title",
+      "seconds": 5,
+      "heading": "How this video was made",
+      "lines": [
+        "A video about X_eTaL, scheduled by X_eTaL.",
+        "No timeline editor. No keyframes. Data and arrays."
+      ]
+    },
+    {
+      "id": "lesson",
+      "seconds": 8,
+      "heading": "1. A lesson is data",
+      "lines": [
+        "Each scene is a heading, some lines and a length in seconds:",
+        { "code": "{ \"id\": \"lesson\", \"seconds\": 8," },
+        { "code": "  \"heading\": \"1. A lesson is data\"," },
+        { "code": "  \"lines\": [ ... ] }" },
+        "The whole video is one file: lessons/making-of/lesson.json"
+      ]
+    },
+    {
+      "id": "schedule",
+      "seconds": 10,
+      "heading": "2. X_eTaL computes the schedule",
+      "lines": [
+        { "code": "durs := 30 tl:f_rames {{secs}}" },
+        { "code": "# {{durs}}" },
+        { "code": "tl:s_tarts durs" },
+        { "code": "# {{starts}}" },
+        "Seconds become frames. Where each scene starts is one running sum.",
+        "The bar below is that array, drawn."
+      ]
+    },
+    {
+      "id": "frame",
+      "seconds": 10,
+      "heading": "3. Every frame knows its place",
+      "lines": [
+        { "code": "durs tl:s_cene {{f}}        # {{scene}}" },
+        { "code": "durs tl:l_ocal {{f}}        # {{local}}" },
+        { "code": "durs tl:p_rogress {{f}}     # {{progress}}" },
+        "These numbers are live: this is frame {{f}} of {{total}}.",
+        "All {{total}} frames are computed at once, as arrays."
+      ]
+    },
+    {
+      "id": "ease",
+      "seconds": 10,
+      "heading": "4. Motion is arithmetic",
+      "curves": true,
+      "lines": [
+        { "code": "(10, 14) ez:s_tagger (local, n)" },
+        "Each line's fade-in is a column of that table.",
+        "Three curves over this scene: linear, in-out cubic, out cubic."
+      ]
+    },
+    {
+      "id": "render",
+      "seconds": 8,
+      "heading": "5. Frames, then a file",
+      "lines": [
+        "A script draws one picture per frame from those numbers.",
+        "ImageMagick makes {{total}} PNGs. ffmpeg encodes them:",
+        { "code": "ffmpeg -framerate 30 -i %05d.png -c:v libx264 out.mp4" }
+      ]
+    },
+    {
+      "id": "next",
+      "seconds": 7,
+      "heading": "Next",
+      "lines": [
+        "Remotion replaces the drawing step with React components.",
+        "Narration sets each scene's length.",
+        "Lessons from the live demos: Life, Mandelbrot, N-body.",
+        { "code": "github.com/softwarewrighter/X_eTaL-video" }
+      ]
+    }
+  ]
+}

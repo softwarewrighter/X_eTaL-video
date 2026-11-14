@@ -110,7 +110,7 @@ and print stages:
 | nbody | X_eTaL-demos nbody | all pairs is one table, forces are one reduce |
 | attention | X_eTaL-ML attention | rows meet columns: Q, K, V and a softmax |
 | sudoku | X_eTaL-games sudoku | constraints as arrays, a move as a mask |
-| timeline | this repository | this video's own schedule is one scan |
+| making-of (built, as a draft) | this repository | this video's own schedule is one scan |
 
 ## Saga 1 -- foundation  [ACTIVE]
 
@@ -124,8 +124,15 @@ libraries, tested.
 2. timeline-lib [DONE] -- `libs/Timeline` with tests and baselines;
    `scripts/test-libs.sh` in the gate.
 3. ease-lib [DONE] -- `libs/Ease`.
-4. spring-lib -- `libs/Spring`.
-5. lesson-schema -- `schemas/lesson.schema.json`, a checker with no
+4. making-of [DONE] -- the user asked for a demo video that describes
+   how it was created: `lessons/making-of/` (lesson.json, timing.json),
+   `scripts/schedule.sh` (X_eTaL computes the schedule and every
+   frame's numbers), `scripts/frames.mjs` (a PNG per frame,
+   ImageMagick), `scripts/draft-video.sh` (ffmpeg), both formats;
+   `scripts/check-lessons.sh` in the gate. A draft renderer with
+   nothing to install; Remotion replaces `frames.mjs`, not the rest.
+5. spring-lib -- `libs/Spring`.
+6. lesson-schema -- `schemas/lesson.schema.json`, a checker with no
    dependencies to install, a first `lessons/timeline/lesson.json`,
    both in the gate.
 

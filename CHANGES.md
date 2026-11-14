@@ -13,6 +13,7 @@ Categories: `feat` new capability, `fix` a bug or wrong behavior,
 
 ## 2026-11-13
 
+- 16:01 `lesson` The making-of video (saga foundation, step 4; the user: "create a demo video that describes how it was created"): lessons/making-of/lesson.json (seven scenes as data), scripts/schedule.sh and schedule.xtl.in (X_eTaL computes the schedule and every frame's scene, progress, fade, easing curves and line stagger, 1740 frames at once, with Timeline and Ease), scripts/frames.mjs (a PNG per frame with ImageMagick, layout only), scripts/draft-video.sh (ffmpeg encodes them): out/making-of-landscape.mp4 and out/making-of-portrait.mp4, 58 s, silent, not tracked. timing.json tracked and checked against X_eTaL by scripts/check-lessons.sh in the gate. just draft, frame, timing, lessons, check-lessons. A draft renderer with nothing to install; Remotion comes next.
 - 13:39 `chore` Saga step ease-lib completed.
 - 13:39 `lib` libs/Ease (saga foundation, step 3): ramps, lerps and easing curves ported from Remotion's interpolate and Easing: `l:c_lamp`, `l:r_amp`, `l:l_erp`, the quad and cubic curves in, out and in-out, `l:i_nOutSine`, `l:s_mooth`, and `l:s_tagger` (things animated in turn, a table of progress). Tests basics.xtl and types.rgt.
 - 13:00 `chore` Saga step timeline-lib completed.

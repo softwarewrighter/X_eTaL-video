@@ -1,0 +1,8 @@
+number = 4
+slug = "making-of"
+status = "in-progress"
+description = "The user asked (2026-11-12): create a demo video that describes how it was cr..."
+role = "production"
+context_files = []
+created_at = "2026-11-13T13:40:32"
+commits = []
