@@ -1,0 +1,1 @@
+The user (2026-11-14): the link to the video landing page near the top of README, with a thumbnail using images/screencapture.png. Screenshot of the live page, linked; a recipe to retake it.

@@ -391,7 +391,9 @@ Read before working:
 11a. The live site (https://softwarewrighter.github.io/X_eTaL-video/)
     is built locally into `pages/` (`just pages`), never tracked on
     `main`: `just publish` makes it the only commit of the `gh-pages`
-    branch. Publish after a step that adds or changes a video. A
+    branch. Publish after a step that adds or changes a video, then
+    `just screencapture` (the README's picture of the page, linked
+    near its top). A
     lesson's `summary`, `order` and `poster` are its card. This
     repository's color is a very light gray (`images/`), as the
     demos are blue and the libraries violet.

@@ -3,9 +3,11 @@
 <img src="images/xetal-logo-gray.png" alt="X_eTaL" width="130">
 
 <p align="center">
-  <b><a href="https://softwarewrighter.github.io/X_eTaL-video/">Watch the videos</a></b>
-  -- the live page: every video, in landscape and in portrait
+  <b><a href="https://softwarewrighter.github.io/X_eTaL-video/">Watch the videos: softwarewrighter.github.io/X_eTaL-video</a></b>
+  <br>the live page: every video, in landscape and in portrait
 </p>
+
+[![The live page: a thumbnail for every video](images/screencapture.png)](https://softwarewrighter.github.io/X_eTaL-video/)
 
 Educational videos about
 [X_eTaL](https://github.com/softwarewrighter/X_eTaL), the
@@ -36,7 +38,7 @@ made (below). Narration and lessons from the live demos come next;
 | `lessons/` | lessons as data, each with the schedule X_eTaL computes from it: [making-of](lessons/making-of/), [life](lessons/life/), [life-capture](lessons/life-capture/), [mandelbrot](lessons/mandelbrot/) |
 | `schemas/` | `lesson.schema.json`: what a lesson file may contain, checked by the gate |
 | `remotion/` | the [Remotion](remotion/) renderer: one composition that renders any lesson, in both formats |
-| `images/` | this repository's logo and favicon: X_eTaL's, in a very light gray |
+| `images/` | this repository's logo and favicon (X_eTaL's, in a very light gray) and the live page's picture above (`just screencapture` retakes it) |
 | `docs/plan.md` | the plan: decisions, the survey of the existing video pipelines, libraries, lessons, roadmap, open questions |
 | `docs/remotion-scripts.md` | the proposed scripts: voice, timing, capture, render, assemble (proposals, not yet run) |
 | `docs/research.txt` | the conversation the idea came from (archival, trimmed) |

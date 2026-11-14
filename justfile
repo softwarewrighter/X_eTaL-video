@@ -100,6 +100,10 @@ serve-pages port="8427":
 publish:
     scripts/publish-pages.sh
 
+# Retake images/screencapture.png (the README's picture) from the published page
+screencapture *url:
+    scripts/screencapture.sh "$@"
+
 # Render images/favicon.ico from images/favicon.svg
 favicon:
     scripts/favicon.sh

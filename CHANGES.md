@@ -13,6 +13,7 @@ Categories: `feat` new capability, `fix` a bug or wrong behavior,
 
 ## 2026-11-14
 
+- 08:55 `docs` README: a picture of the live page under the link at the top (images/screencapture.png, taken from the published site; the user asked for it), both linking to https://softwarewrighter.github.io/X_eTaL-video/; just screencapture retakes it. The site is published and checked live (gh-pages from main 2c64dbb): the page and its videos load, a thumbnail plays.
 - 08:50 `chore` Saga step landing-page completed.
 - 08:50 `feat` The live page (saga site; the user: a landing page with thumbnails to the videos, its URL at the top of the README, the favicon the peers' logo in a very light gray): scripts/build-catalog.mjs and build-pages.sh build pages/ (a card a lesson: thumbnail, length, summary, both formats, the live demo, the lesson; videos rendered when missing or stale), publish-pages.sh publishes it as gh-pages, serve-pages.mjs previews it on port 8427; images/ has the gray logo and the favicon (X_eTaL's design on #f1f3f5, scripts/favicon.sh); lessons gain summary, order and poster; README links https://softwarewrighter.github.io/X_eTaL-video/ at the top.
 - 08:40 `chore` Saga step mandelbrot-short completed.
