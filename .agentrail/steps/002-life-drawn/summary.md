@@ -1,0 +1,1 @@
+lessons/life (lesson, data.xtl, timing), props data, schedule step rows, schema boards, Boards.tsx; rendered both formats (64 s). Gate passes.
