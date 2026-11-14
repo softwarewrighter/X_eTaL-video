@@ -1,0 +1,1 @@
+lessons/making-of (lesson.json, timing.json, README), schedule.sh/.xtl.in, frames.mjs, draft-video.sh, check-lessons.sh in the gate, just recipes; rendered out/making-of-{landscape,portrait}.mp4 (58 s, untracked). Gate passes.
