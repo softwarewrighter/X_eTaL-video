@@ -388,6 +388,13 @@ Read before working:
     talk lives only in `docs/plan.md`.
 11. `CHANGES.md` gets a line for every commit (newest first, grouped
     by day, Pacific time, a category), as in `../X_eTaL`.
+11a. The live site (https://softwarewrighter.github.io/X_eTaL-video/)
+    is built locally into `pages/` (`just pages`), never tracked on
+    `main`: `just publish` makes it the only commit of the `gh-pages`
+    branch. Publish after a step that adds or changes a video. A
+    lesson's `summary`, `order` and `poster` are its card. This
+    repository's color is a very light gray (`images/`), as the
+    demos are blue and the libraries violet.
 12. NEVER run `sw-install` unless the user explicitly asks.
 13. This repository's local port is 8427 (Remotion Studio, any
     preview server); each X_eTaL repository has its own.
@@ -426,6 +433,9 @@ just studio SLUG          # Remotion Studio at http://localhost:8427
 just capture SLUG         # record the lesson's live demo page (network)
 just draft SLUG           # a text-and-code lesson without Remotion
 just check-lessons        # lessons: the schema, and their X_eTaL timing
+just pages                # build the live site into pages/
+just serve-pages          # preview it at http://127.0.0.1:8427/X_eTaL-video/
+just publish              # publish it as the gh-pages branch
 agentrail status          # current saga state
 agentrail next            # current step + context
 agentrail plan            # the saga plan

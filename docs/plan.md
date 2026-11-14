@@ -45,6 +45,7 @@ the language's argument by existing.
 | V10 | `just` is the entry point; recipes call `scripts/*.sh`. Python, where a script needs it, runs in a uv-managed venv, never the system python. Tools with no dependencies to install are preferred in the gate. | One way to do things, as in the siblings. |
 | V11 | Generated media is never tracked: audio, frames, clips and rendered video go to `work/` and `out/` (gitignored). Tracked: lessons, schemas, libraries, scripts, docs. | A video is megabytes per version; the lesson and the pinned tools reproduce it. |
 | V13 | X_eTaL source in a video is shown **as rendered, never as typed** (the user, 2026-11-13): a lesson's `{"xtl": ...}` line is rendered by the pinned `xetal render --html` (decorated: underlined function letters, raised namespaces, subscript axes, the APL glyphs; each token classed) and drawn in JuliaMono with X_eTaL's own dark-theme colors (`remotion/src/theme.ts`; the font fetched by `scripts/fetch-fonts.sh`, not tracked). | The live pages show X_eTaL this way; a video that shows it as typed teaches a different-looking language than the one a viewer meets at the link. |
+| V14 | The live site is a landing page of the videos, built locally into `pages/` and published as the `gh-pages` branch's only commit (`just publish`), as the siblings do; the videos themselves are in that branch (about 30 MB for four lessons). This repository's color is a very light gray. | One place to watch everything; nothing built is tracked on `main`. If the videos outgrow a Pages site (1 GB), they move to YouTube and the cards link there. |
 | V12 | Third-party services need the user's say: a hosted text-to-speech or image model is used only when the user names it; the default is the user's own servers. Remotion's license (free for individuals and companies of three or fewer; a company license beyond that) is stated in the README. | No surprise costs or data leaving the machine. |
 
 This repository's local port is 8427 (Remotion Studio and any preview
@@ -203,6 +204,17 @@ short; and a fix to Life first.
    six scenes, mixed; `data.xtl` is the demo's own program printing
    the counts after each of 24 steps; boards gain `heat` (`ramp`,
    `escape`); one recorded scene of the live page.
+
+## Saga 5 -- site  [DONE 2026-11-14]
+
+1. landing-page -- the live page, https://softwarewrighter.github.io/X_eTaL-video/:
+   `scripts/build-catalog.mjs` (a card for every lesson: thumbnail,
+   summary, both formats, the live demo, the lesson),
+   `scripts/build-pages.sh` (videos rendered when missing or stale,
+   posters), `publish-pages.sh` (gh-pages, as the siblings),
+   `serve-pages.mjs`; `images/` (the gray logo; the favicon, X_eTaL's
+   design on a very light gray, `scripts/favicon.sh`); the link at
+   the top of the README.
 
 ## Later -- remotion  [PLANNED; steps 1 and 4 done in saga 1]
 

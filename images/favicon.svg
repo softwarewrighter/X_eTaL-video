@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- X_eTaL-video's icon: X_eTaL's favicon design (an italic X,
+       underlined, with a raised ellipsis: the logo's X, the rest
+       implied) on this repository's color, a very light gray (each
+       X_eTaL repository has its own: X_eTaL yellow, the libraries
+       violet, the demos blue, the games green). scripts/favicon.sh
+       renders images/favicon.ico from it. -->
+  <rect width="512" height="512" fill="#f1f3f5"/>
+  <g fill="#1f2937">
+    <text x="236" y="368" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif"
+          font-style="italic" font-size="380">X</text>
+    <rect x="40" y="420" width="300" height="34"/>
+    <circle cx="366" cy="84" r="22"/><circle cx="418" cy="84" r="22"/><circle cx="470" cy="84" r="22"/>
+  </g>
+</svg>

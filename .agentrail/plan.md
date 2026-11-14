@@ -1,18 +1,15 @@
-# mandelbrot
+# site
 
-Saga 4 of X_eTaL-video: the second demo lesson, the Mandelbrot set
-(X_eTaL-demos mandelbrot), as a 60 second short, mixed: drawn scenes
-for the idea, a recorded scene of the live page (the user,
-2026-11-13: mixed, Mandelbrot, a 60-second short). First a fix to
-Life the user asked for.
+Saga 5 of X_eTaL-video: the live page (the user, 2026-11-14: "where
+is the live demo page URL and why isn't it prominent in the
+README.md near the top? There should be a landing page with
+thumbnails to videos"; and the favicon: the same logo as the peers in
+a very light, almost-white gray).
 
 ## Steps
 
-1. code-pan -- a code line too long for its panel keeps a readable
-   size and pans left to right over the scene instead of shrinking
-   (the user: "it doesn't have to fit in portrait mode"); board
-   labels a sensible size. Life re-rendered.
-2. mandelbrot-short -- lessons/mandelbrot: 60 seconds, portrait
-   first; data.xtl computes the counts after every step with the
-   demo's own program; a heat board draws them growing; one recorded
-   scene of the published page.
+1. landing-page -- images/ (the gray logo, a favicon on a very light
+   gray), scripts/build-pages.sh and build-catalog.mjs (pages/: a
+   landing page with a thumbnail a video, each lesson's two formats),
+   publish-pages.sh (gh-pages, as the siblings), serve-pages, the
+   link at the top of the README; published and checked.

@@ -1,0 +1,8 @@
+number = 1
+slug = "landing-page"
+status = "in-progress"
+description = "The live page (the user, 2026-11-14): images/ (gray logo, favicon on a very l..."
+role = "legacy"
+context_files = []
+created_at = "2026-11-14T08:42:43"
+commits = []

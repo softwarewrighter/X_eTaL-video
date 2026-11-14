@@ -13,6 +13,9 @@
     },
     "title": { "type": "string", "minLength": 1 },
     "fps": { "description": "Frames a second.", "type": "integer", "minimum": 1 },
+    "summary": { "description": "One or two sentences for the landing page.", "type": "string", "minLength": 1 },
+    "order": { "description": "Where the lesson comes on the landing page (lower first).", "type": "integer", "minimum": 0 },
+    "poster": { "description": "The frame used as the lesson's thumbnail (its middle if not given).", "type": "integer", "minimum": 0 },
     "stepFrames": { "description": "The frames a stepping board holds each step (15 if not given).", "type": "integer", "minimum": 1 },
     "demo": {
       "description": "The live demo the lesson is about, if any.",

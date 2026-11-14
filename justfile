@@ -88,6 +88,22 @@ capture slug *formats:
 studio slug="making-of":
     cd remotion && npx remotion studio src/index.ts --port 8427 --props="../$(../scripts/props.sh "$1")"
 
+# Build the live site into pages/ (not tracked): the landing page, every lesson's videos and thumbnail
+pages *args:
+    scripts/build-pages.sh "$@"
+
+# Serve the built pages/ as GitHub Pages will: http://127.0.0.1:8427/X_eTaL-video/
+serve-pages port="8427":
+    scripts/serve-pages.mjs "$1"
+
+# Publish the site: build pages/ from this commit and make it the gh-pages branch's only commit (needs a clean work tree)
+publish:
+    scripts/publish-pages.sh
+
+# Render images/favicon.ico from images/favicon.svg
+favicon:
+    scripts/favicon.sh
+
 # The full pre-commit gate: pinned X_eTaL, libraries, lessons, spelling, ASCII-only markdown
 gate:
     scripts/gate.sh

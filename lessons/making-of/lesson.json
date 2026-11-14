@@ -1,6 +1,9 @@
 {
   "slug": "making-of",
   "title": "How this video was made",
+  "summary": "How these videos are made: a lesson is data, X_eTaL computes the schedule and every frame's animation at once, and the numbers on screen are the video's own.",
+  "order": 4,
+  "poster": 850,
   "fps": 30,
   "scenes": [
     {

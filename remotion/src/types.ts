@@ -28,6 +28,9 @@ export type Lesson = {
   slug: string;
   title: string;
   fps: number;
+  summary?: string;
+  order?: number;
+  poster?: number;
   stepFrames?: number;
   demo?: { repo: string; slug: string };
   scenes: Scene[];

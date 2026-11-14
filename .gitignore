@@ -4,6 +4,10 @@
 work/
 bin/xetal
 
+# the built site: published as the gh-pages branch (just publish), never
+# tracked on main
+/pages/
+
 # generated media: audio, frames, clips, rendered video (docs/plan.md V11)
 /out/
 *.mp4

@@ -1,6 +1,9 @@
 {
   "slug": "life",
   "title": "Life in one line",
+  "summary": "Conway's Game of Life as one line of X_eTaL, taken apart: nine shifted copies of the board, their sum, one comparison. Every board is an array X_eTaL printed.",
+  "order": 2,
+  "poster": 1500,
   "fps": 30,
   "stepFrames": 10,
   "demo": { "repo": "X_eTaL-demos", "slug": "life-microscope" },

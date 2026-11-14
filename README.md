@@ -1,5 +1,12 @@
 # X_eTaL video
 
+<img src="images/xetal-logo-gray.png" alt="X_eTaL" width="130">
+
+<p align="center">
+  <b><a href="https://softwarewrighter.github.io/X_eTaL-video/">Watch the videos</a></b>
+  -- the live page: every video, in landscape and in portrait
+</p>
+
 Educational videos about
 [X_eTaL](https://github.com/softwarewrighter/X_eTaL), the
 eXperimental Extensible Typed Array Language, built from its live
@@ -29,6 +36,7 @@ made (below). Narration and lessons from the live demos come next;
 | `lessons/` | lessons as data, each with the schedule X_eTaL computes from it: [making-of](lessons/making-of/), [life](lessons/life/), [life-capture](lessons/life-capture/), [mandelbrot](lessons/mandelbrot/) |
 | `schemas/` | `lesson.schema.json`: what a lesson file may contain, checked by the gate |
 | `remotion/` | the [Remotion](remotion/) renderer: one composition that renders any lesson, in both formats |
+| `images/` | this repository's logo and favicon: X_eTaL's, in a very light gray |
 | `docs/plan.md` | the plan: decisions, the survey of the existing video pipelines, libraries, lessons, roadmap, open questions |
 | `docs/remotion-scripts.md` | the proposed scripts: voice, timing, capture, render, assemble (proposals, not yet run) |
 | `docs/research.txt` | the conversation the idea came from (archival, trimmed) |
@@ -100,6 +108,22 @@ The Mandelbrot set with no loop over pixels: a number for every pixel
 by broadcasting, one step for every pixel at once, the step repeated
 while the set appears (the demo's own program, run by X_eTaL for the
 video), then the published page itself, recorded.
+
+## The live page
+
+<https://softwarewrighter.github.io/X_eTaL-video/> is a landing
+page with a thumbnail for every video; choosing one plays it, and
+each has links to both formats, to its live demo and to its lesson.
+
+```bash
+just pages          # build it into pages/ (renders what is missing or stale)
+just serve-pages    # preview at http://127.0.0.1:8427/X_eTaL-video/
+just publish        # make pages/ the gh-pages branch, which GitHub Pages serves
+```
+
+A lesson's `summary`, `order` and `poster` (the frame used as its
+thumbnail) in its `lesson.json` are what the page shows. `pages/` is
+not tracked on `main`.
 
 ## X_eTaL as rendered
 

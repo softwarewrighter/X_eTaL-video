@@ -1,6 +1,9 @@
 {
   "slug": "mandelbrot",
   "title": "Mandelbrot without a loop",
+  "summary": "The Mandelbrot set with no loop over pixels: a number for every pixel by broadcasting, one step for all of them at once, and the set appearing as the step repeats. Ends on the live page.",
+  "order": 1,
+  "poster": 60,
   "fps": 30,
   "stepFrames": 18,
   "demo": { "repo": "X_eTaL-demos", "slug": "mandelbrot" },

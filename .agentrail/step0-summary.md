@@ -1,1 +1,1 @@
-Saga mandelbrot initialized.
+Saga site initialized.

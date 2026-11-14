@@ -1,6 +1,9 @@
 {
   "slug": "life-capture",
-  "title": "Life in one line",
+  "title": "Life in one line, on the live page",
+  "summary": "The same Life lesson told with the live page itself: the published demo recorded while a script steps through it.",
+  "order": 3,
+  "poster": 1500,
   "fps": 30,
   "demo": { "repo": "X_eTaL-demos", "slug": "life-microscope" },
   "scenes": [

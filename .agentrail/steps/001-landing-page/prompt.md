@@ -1,0 +1,1 @@
+The live page (the user, 2026-11-14): images/ (gray logo, favicon on a very light gray), scripts/build-pages.sh + build-catalog.mjs (pages/: landing page with a thumbnail per video, both formats), publish-pages.sh (gh-pages), serve-pages, the link at the top of README; publish and check.
