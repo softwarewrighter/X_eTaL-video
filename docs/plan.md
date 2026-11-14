@@ -91,7 +91,7 @@ arrays, tested, and handed to any renderer.
 | ------- | ---- | ----------- | ---- |
 | Timeline | frames and seconds; where each scene starts and ends from the scenes' lengths; which scene a frame is in; progress within it | Remotion's `<Sequence>` and `<Series>` arithmetic | 1 |
 | Ease | clamp, a ramp and a lerp over a range, easing curves (quad, cubic, sine, smoothstep; in, out, in-out), a stagger table; to come: many-point interpolation, bezier | Remotion's `interpolate` and `Easing` | 1 |
-| Spring | a damped spring's position at each frame, and how many frames it takes to settle | Remotion's `spring` and `measureSpring` | 1 |
+| Spring | a damped spring's position at any time, in closed form, and how many frames it takes to settle; as in Remotion, damping past critical moves as critical does | Remotion's `spring` and `measureSpring` | 1 |
 | Captions | words and their times grouped into caption pages; the word being spoken at a frame | `@remotion/captions` | 3 |
 | Lesson | a lesson's scenes as arrays: lengths in, a timing table out, printed as the JSON the renderer reads | (new) | 2 |
 | Trace | a demo's stages (name, shape, value) as a table a `TracePlayer` component steps through | the demos' microscope | 4 |
@@ -139,7 +139,8 @@ libraries, tested.
    file), `scripts/render.sh`, `just render`, `still`, `studio`; the
    making-of lesson rendered in both formats. This is saga 2's steps
    1 and 4, done early. The agent skills are not installed yet.
-6. spring-lib -- `libs/Spring`.
+6. spring-lib [DONE] -- `libs/Spring`, checked against Remotion
+   4.0.543's own `spring` and `measureSpring`.
 7. lesson-schema -- `schemas/lesson.schema.json`, a checker with no
    dependencies to install, a first `lessons/timeline/lesson.json`,
    both in the gate.

@@ -1,0 +1,5 @@
+l:d_efault : Any a => a -> (Float, Float, Float)
+l:s_mooth : Any a => a -> (Float, Float, Float)
+l:r_atio : Num a => (a, Float, a) -> Float
+l:s_pring : (Num a, Num b) => (a, Float, a) -> b -> Float
+l:s_ettle : Num a => (a, Float, a) -> Int -> Int

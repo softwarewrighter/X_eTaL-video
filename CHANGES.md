@@ -13,6 +13,7 @@ Categories: `feat` new capability, `fix` a bug or wrong behavior,
 
 ## 2026-11-13
 
+- 16:24 `lib` libs/Spring (saga foundation, step 6): Remotion's spring and measureSpring in closed form on whole arrays: `l:s_pring` (position at any time, a spring is (mass, damping, stiffness)), `l:s_ettle` (frames to settle), `l:r_atio`, `l:d_efault`, `l:s_mooth`. Checked against Remotion 4.0.543's own numbers (four places at nine frames; settle times 28, 23, 23, 56); as in Remotion, damping past critical moves as critical does. Tests basics.xtl and types.rgt.
 - 16:15 `chore` Saga step remotion-making-of completed.
 - 16:15 `feat` Remotion renders the making-of lesson (saga foundation, step 5; the user installed Remotion 4.0.543 and asked to try it): remotion/ (Root: LessonLandscape 1920x1080 and LessonPortrait 1080x1920, length from X_eTaL's timing; Lesson: layout only, no interpolate or spring, every number looked up), scripts/props.sh (the lesson and every frame's numbers from X_eTaL as one props file), scripts/render.sh, just render, still and studio (port 8427): out/making-of-landscape-remotion.mp4 and out/making-of-portrait-remotion.mp4, 58 s, about 20 s a render. The gate lints and type-checks remotion/ when its packages are installed. The lesson's last two scenes reworded to be true of both renderers. Voice is blocked: the TTS host is down.
 - 16:01 `chore` Saga step making-of completed.

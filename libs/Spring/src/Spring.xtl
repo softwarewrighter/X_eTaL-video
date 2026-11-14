@@ -1,0 +1,62 @@
+## Spring: a damped spring pulled from 0.0 to 1.0, as arithmetic on
+## whole arrays: its position at any time, and how long it takes to
+## settle.
+## Import it with an alias of your choice: "sp:" u_se< "Spring".
+## Put libs/Spring/src on XETAL_PATH ("just path").
+## Names with l: are exported; those under h: are private to this file.
+##
+## Ported from Remotion's spring and measureSpring. Remotion steps the
+## spring frame by frame, each step the exact solution of
+## m x'' + c x' + k (x - 1) = 0; here the same solution is written once,
+## from rest at 0.0, for every time asked at once. A spring is a tuple
+## (mass, damping, stiffness); Remotion's default is (1, 10, 100).
+## Remotion's
+##   spring({frame, fps: 30, config: {damping: 200}})
+## is here
+##   (1.0, 200.0, 100.0) sp:s_pring frame / 30
+## and frame may be every frame of the video.
+
+## l:d_efault @: Remotion's default spring, (1.0, 10.0, 100.0): it
+## overshoots to about 1.16 and settles in under a second.
+l:d_efault := { _u -> (1.0, 10.0, 100.0) }
+
+## l:s_mooth @: a spring that does not overshoot, (1.0, 200.0, 100.0),
+## Remotion's {damping: 200}; it settles in 23 frames at 30 a second.
+l:s_mooth := { _u -> (1.0, 200.0, 100.0) }
+
+## l:r_atio spring: the damping ratio: below 1 the spring overshoots
+## and rings; at 1 or more it does not.
+l:r_atio := { (mass, damping, stiffness) -> damping / 2.0 * s_qrt stiffness * mass }
+
+## Below 1: e^(-z w t) (cos(w1 t) + (z w / w1) sin(w1 t)), w1 = w sqrt(1 - z^2).
+h:u_nder := { (z, w) t ->
+  w1 := w * s_qrt 1.0 - z * z
+  (e_xp n_eg z * w * t) * (c_os w1 * t) + ((z * w) / w1) * s_in w1 * t
+}
+
+## At 1 or more: e^(-w t) (1 + w t), the critically damped spring.
+h:c_ritical := { w t -> (e_xp n_eg w * t) * 1.0 + w * t }
+
+## spring l:s_pring t: the spring's position t seconds after it is let
+## go at 0.0, at rest, pulled toward 1.0. t is a number or an array of
+## times, none negative. As in Remotion, a damping ratio of 1 or more
+## moves as the critically damped spring does: more damping than
+## that does not slow it (a real overdamped spring would creep), so
+## {damping: 200} and {damping: 20} are the same motion.
+l:s_pring := { (mass, damping, stiffness) t ->
+  s := f_loat t
+  w := s_qrt stiffness / mass
+  z := damping / 2.0 * s_qrt stiffness * mass
+  z < 1.0 ? 1.0 - (z, w) h:u_nder s
+  1.0 - w h:c_ritical s
+}
+
+## spring l:s_ettle fps: the number of frames, at fps frames a second,
+## until the spring stays within 0.005 of 1.0 (Remotion's
+## measureSpring and its threshold): the last frame it is farther
+## away, plus one. Looks at the first 20 seconds.
+l:s_ettle := { spring fps ->
+  f := o_ffsets 20 * fps
+  far := (a_bs 1.0 - spring l:s_pring (f_loat f) / f_loat fps) >= 0.005
+  1 + 'm_ax r_/ far * f
+}

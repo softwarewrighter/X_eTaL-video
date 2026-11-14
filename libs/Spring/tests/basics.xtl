@@ -1,0 +1,40 @@
+#!/usr/bin/env xetal
+# Spring: the default spring and a smooth one, at 30 frames a second.
+# The numbers in comments are Remotion 4.0.543's own, from
+# spring({frame, fps: 30, config}) and measureSpring.
+"sp:" u_se< "Spring"
+d := sp:d_efault @
+s := sp:s_mooth @
+# The damping ratios: 0.5 rings, 10 does not.
+sp:r_atio d
+sp:r_atio s
+# Rounded to 4 places, so the baseline does not hang on a last bit.
+u:r_4 := { x -> (f_loat f_loor 0.5 + 10000.0 * x) / 10000.0 }
+# The default spring's first 12 frames: from 0, past 1.
+# Remotion: 0 0.0494 0.1738 0.3403 0.5214 0.6959 ...
+u:r_4 d sp:s_pring (f_loat o_ffsets 12) / 30.0
+# It starts at 0, at rest (the first step is small), and ends at 1.
+d sp:s_pring 0.0
+u:r_4 d sp:s_pring 5.0
+# Its highest point: 1 + e^(-pi z / sqrt(1 - z^2)), 1.163 for z = 0.5.
+u:r_4 'm_ax r_/ d sp:s_pring (f_loat o_ffsets 60) / 30.0
+u:r_4 1.0 + e_xp n_eg (p_i @) * 0.5 / s_qrt 0.75
+# The smooth spring never passes 1 and never goes back.
+# Remotion ({damping: 200}): 0 0.0446 0.1443 0.2642 0.3849 0.4963
+x := s sp:s_pring (f_loat o_ffsets 120) / 30.0
+'m_ax r_/ x <= 1.0
+'m_in r_/ (1 d_rop x) >= -1 d_rop x
+u:r_4 6 t_ake x
+# A critically damped spring, (1, 20, 100): 1 - e^(-10 t)(1 + 10 t);
+# more damping than that is the same motion, as in Remotion.
+u:r_4 (1.0, 20.0, 100.0) sp:s_pring 0.0 0.1 0.2 0.5
+u:r_4 1.0 - (e_xp -1.0 -2.0 -5.0) * 2.0 3.0 6.0
+u:r_4 s sp:s_pring 0.1 0.2 0.5
+# One time works as an array does.
+u:r_4 d sp:s_pring 0.2
+# How long each takes to settle, in frames. Remotion's measureSpring:
+# 28, 23, 23, and 56 at 60 frames a second.
+d sp:s_ettle 30
+s sp:s_ettle 30
+(1.0, 20.0, 100.0) sp:s_ettle 30
+d sp:s_ettle 60

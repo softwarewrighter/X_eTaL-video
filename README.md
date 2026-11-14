@@ -7,7 +7,7 @@ demos: a lesson is data, X_eTaL computes its timing and animation as
 arrays, a deterministic renderer draws every frame, and the existing
 video tools assemble the result.
 
-Status: early. Two X_eTaL libraries for timing and animation are
+Status: early. Three X_eTaL libraries for timing and animation are
 tested, and a first video is built from them, rendered with Remotion
 in landscape and portrait: 58 silent seconds that describe how it was
 made (below). Narration and lessons from the live demos come next;
@@ -38,6 +38,7 @@ made (below). Narration and lessons from the live demos come next;
 | ------- | ---- |
 | [Timeline](libs/Timeline/) | frames and seconds; where each scene starts and ends; the scene a frame is in and its progress through it |
 | [Ease](libs/Ease/) | ramps, lerps and easing curves, after Remotion's `interpolate` and `Easing`; a stagger table for things that appear in turn |
+| [Spring](libs/Spring/) | a damped spring's position at any time and its settle time, after Remotion's `spring` and `measureSpring`, checked against Remotion's own numbers |
 
 ```
 "tl:" u_se< "Timeline"
