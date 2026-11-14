@@ -14,7 +14,12 @@ type Plane = number[][];
 // in. For counts of steps, `steps` is how many there have been at
 // each: a cell with that many has never left, and is black.
 type Grid = { x: number; y: number; now: Plane; before: Plane; t: number; steps: [number, number] };
-type Block = { label?: string; numbers: boolean; heat?: "ramp" | "escape"; low: number; high: number; width: number; height: number; grids: Grid[] };
+type Block = { label?: string; numbers: boolean; heat?: "ramp" | "escape"; low: number; high: number; width: number; height: number; grids: Grid[]; sky?: { planes: Plane[]; k: number } };
+
+// Bodies: a square of sky, in the SVG's units, and a color a body.
+const SKY = 120;
+const TRAIL = 110; // the steps of trail behind a body
+const bodies = [theme.accent, "#ffd43b", "#ff8787", "#69db7c", "#da77f2", "#ffa94d"];
 
 // From deep blue through the accent to white, for 0 to 1.
 const stops = [[8, 16, 56], [88, 166, 255], [255, 255, 255]];
@@ -39,6 +44,10 @@ export const Boards: React.FC<{
     const all = planes.flat(2);
     const low = Math.min(...all), high = Math.max(...all);
     const base = { label: board.label, numbers: !!board.numbers, heat: board.heat, low, high };
+    if (board.points) {
+      // Positions: the bodies where this step has them (all of them at the last step, when not stepping).
+      return { ...base, width: SKY, height: SKY, grids: [], sky: { planes, k: board.animate ? Math.min(step, planes.length - 1) : planes.length - 1 } };
+    }
     if (board.animate) {
       // One board at a time: this step's, fading in over the last one.
       const k = Math.min(step, planes.length - 1);
@@ -74,6 +83,31 @@ export const Boards: React.FC<{
                 {block.label}
               </text>
             ) : null}
+            {block.sky
+              ? (() => {
+                  const { planes, k } = block.sky;
+                  // One scale for both axes, the whole path in view.
+                  const xs = planes.flatMap((p) => p[0]), ys = planes.flatMap((p) => p[1]);
+                  const cx = (Math.min(...xs) + Math.max(...xs)) / 2, cy = (Math.min(...ys) + Math.max(...ys)) / 2;
+                  const scale = (SKY * 0.86) / Math.max(Math.max(...xs) - Math.min(...xs), Math.max(...ys) - Math.min(...ys), 1e-9);
+                  const at = (p: Plane, b: number) => [SKY / 2 + (p[0][b] - cx) * scale, SKY / 2 - (p[1][b] - cy) * scale];
+                  const from = Math.max(0, k - TRAIL);
+                  return (
+                    <g>
+                      <rect x={0} y={0} width={SKY} height={SKY} rx={3} fill={theme.panel} />
+                      {planes[0][0].map((_, b) => (
+                        <g key={b}>
+                          {planes.slice(from + 1, k + 1).map((p, i) => {
+                            const [x1, y1] = at(planes[from + i], b), [x2, y2] = at(p, b);
+                            return <line key={i} x1={x1} y1={y1} x2={x2} y2={y2} stroke={bodies[b % bodies.length]} strokeWidth={0.9} strokeLinecap="round" opacity={0.75 * ((i + 1) / (k - from))} />;
+                          })}
+                          <circle cx={at(planes[k], b)[0]} cy={at(planes[k], b)[1]} r={2.6} fill={bodies[b % bodies.length]} />
+                        </g>
+                      ))}
+                    </g>
+                  );
+                })()
+              : null}
             {block.grids.map((grid, g) => (
               <g key={g} transform={`translate(${grid.x}, ${grid.y})`}>
                 {block.heat
@@ -96,13 +130,16 @@ export const Boards: React.FC<{
                 {(block.heat ? [] : grid.now).map((row, i) =>
                   row.map((value, j) => {
                     const was = grid.before[i][j];
-                    const lit = block.numbers ? Math.min(value, 9) / 9 : was + (value - was) * grid.t;
+                    const most = Math.max(Math.abs(block.low), Math.abs(block.high), 1e-9);
+                    const whole = Number.isInteger(block.low) && Number.isInteger(block.high);
+                    const digits = Math.max(...grid.now.flat().map((v) => String(v).length));
+                    const lit = block.numbers ? (whole ? Math.min(value, 9) / 9 : Math.abs(value) / most) : was + (value - was) * grid.t;
                     return (
                       <g key={`${i}-${j}`}>
                         <rect x={j * CELL + 0.5} y={i * CELL + 0.5} width={CELL - 1} height={CELL - 1} rx={1.4} fill={theme.panel} />
                         <rect x={j * CELL + 0.5} y={i * CELL + 0.5} width={CELL - 1} height={CELL - 1} rx={1.4} fill={theme.accent} opacity={block.numbers ? lit * 0.75 : lit} />
                         {block.numbers ? (
-                          <text x={j * CELL + CELL / 2} y={i * CELL + CELL / 2 + 1.9} textAnchor="middle" fontFamily={theme.mono} fontSize={5.2} fill={value ? theme.hot : theme.dim}>
+                          <text x={j * CELL + CELL / 2} y={i * CELL + CELL / 2 + 1.9} textAnchor="middle" fontFamily={theme.mono} fontSize={Math.min(5.2, 8.4 / (0.6 * digits))} fill={value ? theme.hot : theme.dim}>
                             {value}
                           </text>
                         ) : null}

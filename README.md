@@ -35,7 +35,7 @@ made (below). Narration and lessons from the live demos come next;
 | Path | What |
 | ---- | ---- |
 | `libs/` | X_eTaL libraries for video timing and animation (below) |
-| `lessons/` | lessons as data, each with the schedule X_eTaL computes from it: [making-of](lessons/making-of/), [life](lessons/life/), [life-capture](lessons/life-capture/), [mandelbrot](lessons/mandelbrot/) |
+| `lessons/` | lessons as data, each with the schedule X_eTaL computes from it: [making-of](lessons/making-of/), [life](lessons/life/), [life-capture](lessons/life-capture/), [mandelbrot](lessons/mandelbrot/), [nbody](lessons/nbody/) |
 | `schemas/` | `lesson.schema.json`: what a lesson file may contain, checked by the gate |
 | `remotion/` | the [Remotion](remotion/) renderer: one composition that renders any lesson, in both formats |
 | `images/` | this repository's logo and favicon (X_eTaL's, in a very light gray) and the live page's picture above (`just screencapture` retakes it) |
@@ -99,7 +99,12 @@ page itself, recorded in headless Chromium while a script clicks
 through it (`just capture life-capture`, then `just render
 life-capture`).
 
-## A 60 second short: Mandelbrot
+## 60 second shorts: N-body gravity, Mandelbrot
+
+`lessons/nbody`: three bodies round a figure-eight with no loop over
+pairs: every pair's displacement is a table, every pull one
+expression, every acceleration one reduce (`just capture nbody`, then
+`just render nbody portrait`).
 
 ```bash
 just capture mandelbrot             # record the live page (network)

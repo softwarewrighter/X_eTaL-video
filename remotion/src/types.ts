@@ -10,6 +10,7 @@ export type Board = {
   label?: string;
   numbers?: boolean;
   heat?: "ramp" | "escape";
+  points?: boolean;
   animate?: boolean;
 };
 

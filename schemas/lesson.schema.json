@@ -70,6 +70,7 @@
                 "label": { "type": "string" },
                 "numbers": { "description": "Write each cell's number in it.", "type": "boolean" },
                 "heat": { "description": "Color each cell by its number, cells touching: 'ramp' from the least to the most; 'escape' for counts of steps, the cells that have never left (as many steps as there have been) black.", "type": "string", "enum": ["ramp", "escape"] },
+                "points": { "description": "The array is positions, each board 2 by N (the x row, the y row): draw the N bodies, and with animate their trails.", "type": "boolean" },
                 "animate": { "description": "A list of boards shown one at a time, a step each; otherwise all at once, side by side.", "type": "boolean" }
               }
             }

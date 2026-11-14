@@ -1,0 +1,88 @@
+{
+  "slug": "nbody",
+  "title": "Gravity without a loop",
+  "summary": "Three bodies chasing each other round a figure-eight, with no loop over pairs: every pair's displacement is one table, every pull one expression, every acceleration one reduce. Ends on the live page.",
+  "order": 0,
+  "poster": 1480,
+  "fps": 30,
+  "stepFrames": 1,
+  "demo": { "repo": "X_eTaL-demos", "slug": "nbody" },
+  "scenes": [
+    {
+      "id": "hook",
+      "seconds": 5,
+      "heading": "Gravity, without a loop",
+      "narration": "Three bodies, pulling on each other. No loop over pairs.",
+      "lines": [
+        "Every pair of bodies at once, as arrays."
+      ],
+      "boards": [{ "data": "orbit", "points": true, "animate": true }]
+    },
+    {
+      "id": "cube",
+      "seconds": 11,
+      "heading": "1. Every pair, one table",
+      "narration": "First, how far apart is every pair? Subtract every x from every x. That is one table. The same for y. Stack the two, and you have a cube.",
+      "lines": [
+        { "xtl": "(u:p_lane x '- t_able x) c_at u:p_lane y '- t_able y" },
+        "Every x minus every x: a table. The same for y.",
+        "Stack them: a cube of every pair's displacement."
+      ],
+      "boards": [
+        { "data": "dx", "label": "x apart", "numbers": true },
+        { "data": "dy", "label": "y apart", "numbers": true }
+      ]
+    },
+    {
+      "id": "pull",
+      "seconds": 9,
+      "heading": "2. Every pair's pull",
+      "narration": "Gravity is an inverse square. One expression gives the pull between every pair at once.",
+      "lines": [
+        { "xtl": "u:p_ull := { d -> g * mj / (('+ r_/ d * d) + eps2) ^ 1.5 }" },
+        "The inverse square law, for all pairs at once."
+      ],
+      "boards": [{ "data": "pullx", "label": "each pair's pull along x", "numbers": true }]
+    },
+    {
+      "id": "reduce",
+      "seconds": 9,
+      "heading": "3. One reduce",
+      "narration": "Now add up each row. One reduce turns every pair's pull into each body's acceleration.",
+      "lines": [
+        { "xtl": "n_eg '+ r_/_3 d * (2 c_at s_hape w) r_eshape w" },
+        "Sum over the second body: each body's acceleration."
+      ],
+      "boards": [{ "data": "acc", "label": "accelerations: a column a body, x above y", "numbers": true }]
+    },
+    {
+      "id": "orbit",
+      "seconds": 12,
+      "heading": "4. Step, and repeat",
+      "narration": "Kick, drift, kick. Repeat the step, and three bodies chase each other around a figure eight.",
+      "lines": [
+        { "xtl": "{{step}} 'u:s_tep p_ower s0" },
+        "Kick, drift, kick. Three equal masses, one figure-eight."
+      ],
+      "boards": [{ "data": "orbit", "points": true, "animate": true }]
+    },
+    {
+      "id": "live",
+      "seconds": 9,
+      "heading": "The live page: fifty bodies",
+      "narration": "The live page runs the same program in your browser. Here it is with fifty bodies.",
+      "lines": [],
+      "capture": { "actions": [{ "wait": 2 }, { "select": ["select", "Cluster (50 bodies)"] }] }
+    },
+    {
+      "id": "cta",
+      "seconds": 5,
+      "heading": "Try it",
+      "narration": "Try it yourself. The link is below.",
+      "lines": [
+        "Four systems to try. Click a body for its row of the cube:",
+        { "code": "softwarewrighter.github.io/X_eTaL-demos/nbody" }
+      ]
+    }
+  ]
+}

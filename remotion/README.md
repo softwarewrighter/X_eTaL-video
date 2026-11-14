@@ -10,7 +10,7 @@ animation numbers are computed by X_eTaL (`../libs/Timeline`,
 | ---- | ---- |
 | `src/Root.tsx` | two compositions of one component, `LessonLandscape` (1920x1080) and `LessonPortrait` (1080x1920); length and frame rate from the props |
 | `src/Lesson.tsx` | the lesson: heading, lines (text, X_eTaL as rendered, other code; a line too long for its panel pans, it is never shrunk), three easing curves, the schedule as a bar. Layout only: a frame looks its numbers up, there is no `interpolate()` or `spring()` here |
-| `src/Boards.tsx` | a scene's arrays (from the lesson's `data.xtl`) as grids, fitted to the room left: one board, several side by side, a list all at once, or a list stepped through; cells by on and off, with their numbers, or as a heat map |
+| `src/Boards.tsx` | a scene's arrays (from the lesson's `data.xtl`) as grids, fitted to the room left: one board, several side by side, a list all at once, or a list stepped through; cells by on and off, with their numbers, or as a heat map; or positions as bodies with trails |
 | `src/types.ts` | the props' shape |
 | `src/theme.ts` | colors and fonts, X_eTaL's syntax colors among them |
 | `src/sample.ts` | what Studio shows with no props |

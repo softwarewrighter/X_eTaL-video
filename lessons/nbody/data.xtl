@@ -1,0 +1,88 @@
+#!/usr/bin/env xetal
+## The N-body lesson's arrays, computed by X_eTaL with the program of
+## X_eTaL-demos' nbody (its cube, its pull, its reduce, its leapfrog
+## step) for its figure-eight: three equal masses chasing each other
+## round one curve. Each array is printed after a "== name" line
+## (scripts/props.sh reads them; a rank-3 array is a list of boards).
+
+## g, eps2, dt, m: G = 1, the softening, the time step, the masses.
+## The time step is twice the demo's, so that a step a frame takes the
+## bodies round the figure-eight in about ten seconds.
+g := 1.0
+eps2 := 0.000001
+dt := 0.02
+m := 1.0 1.0 1.0
+
+## n, mj: mj is N x N, row i column j holds m_j, the mass pulling on
+## body i.
+n := t_ally m
+mj := (o_ffsets n) 'r_ight t_able m
+## u:p_lane a: a matrix as one plane of a rank-3 array, to stack planes.
+u:p_lane := { a -> (1 c_at s_hape a) r_eshape a }
+
+### The cube: every pair's displacement, by broadcasting
+
+## u:c_ube p: p is 2 x N, the x row and the y row; x_i - x_j for every
+## pair, and the same for y, stacked: 2 x N x N.
+u:c_ube := { p ->
+  x := 1 s_elect p
+  y := 2 s_elect p
+  (u:p_lane x '- t_able x) c_at u:p_lane y '- t_able y
+}
+
+### The pull: softened inverse-square
+
+## u:p_ull d: g m_j / (r^2 + eps2)^(3/2) for every pair.
+u:p_ull := { d -> g * mj / (('+ r_/ d * d) + eps2) ^ 1.5 }
+
+### The reduction: sum over the second body
+
+## u:a_cc p: each plane of the cube times the pull, summed along j:
+## the 2 x N accelerations.
+u:a_cc := { p ->
+  d := u:c_ube p
+  w := u:p_ull d
+  n_eg '+ r_/_3 d * (2 c_at s_hape w) r_eshape w
+}
+
+### One step: kick, drift, kick
+
+## u:s_tep s: the state s is 4 x N: positions, then velocities.
+u:s_tep := { s ->
+  p := 2 t_ake s
+  h := (2 d_rop s) + (dt / 2.0) * u:a_cc p
+  p1 := p + dt * h
+  p1 c_at h + (dt / 2.0) * u:a_cc p1
+}
+
+### What the video shows
+
+## Two places are plenty on screen.
+u:r_ound := { a -> (f_loat f_loor 0.5 + a * 100.0) / 100.0 }
+
+## The figure-eight's start (Chenciner and Montgomery's orbit).
+p0 := 2 3 r_eshape 0.97000436 -0.97000436 0.0 -0.24308753 0.24308753 0.0
+v0 := 2 3 r_eshape 0.466203685 0.466203685 -0.93240737 0.43236573 0.43236573 -0.86473146
+s0 := p0 c_at v0
+
+## The cube at the start: its x plane and its y plane.
+d0 := u:c_ube p0
+"== dx"
+u:r_ound 1 s_elect d0
+"== dy"
+u:r_ound 2 s_elect d0
+
+## Every pair's pull along x: the cube's x plane times the pull (a
+## body does not pull itself: its 0 displacement times its pull).
+"== pullx"
+u:r_ound (1 s_elect d0) * u:p_ull d0
+
+## The accelerations at the start: a column a body, x above y.
+"== acc"
+u:r_ound u:a_cc p0
+
+## k u:t_rack s: the positions of s and of its next k steps: a list of
+## k + 1 boards, each 2 x N.
+u:t_rack := { k s -> k = 0 ? u:p_lane 2 t_ake s; (u:p_lane 2 t_ake s) c_at (k - 1) u:t_rack u:s_tep s }
+"== orbit"
+419 u:t_rack s0

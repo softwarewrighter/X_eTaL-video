@@ -109,7 +109,7 @@ and print stages:
 | ------------- | ---- | ------------ |
 | life (built, drawn and recorded) | X_eTaL-demos life-microscope | a neighborhood count is nine rotations summed |
 | mandelbrot (built) | X_eTaL-demos mandelbrot | broadcasting: every pixel iterated at once |
-| nbody | X_eTaL-demos nbody | all pairs is one table, forces are one reduce |
+| nbody (built) | X_eTaL-demos nbody | all pairs is one table, forces are one reduce |
 | attention | X_eTaL-ML attention | rows meet columns: Q, K, V and a softmax |
 | sudoku | X_eTaL-games sudoku | constraints as arrays, a move as a mask |
 | making-of (built, as a draft) | this repository | this video's own schedule is one scan |
@@ -215,6 +215,14 @@ short; and a fix to Life first.
    `serve-pages.mjs`; `images/` (the gray logo; the favicon, X_eTaL's
    design on a very light gray, `scripts/favicon.sh`); the link at
    the top of the README.
+
+## Saga 6 -- nbody  [DONE 2026-11-14]
+
+1. nbody-short -- `lessons/nbody`: 60 seconds, seven scenes, mixed;
+   `data.xtl` is the demo's own program on its figure-eight; boards
+   gain `points` (bodies with trails, a step a frame) and number
+   cells that fit and tint any numbers; the live page recorded with
+   its fifty-body cluster.
 
 ## Later -- remotion  [PLANNED; steps 1 and 4 done in saga 1]
 

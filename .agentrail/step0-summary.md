@@ -1,1 +1,1 @@
-Saga site initialized.
+Saga nbody initialized.

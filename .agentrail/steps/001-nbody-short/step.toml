@@ -1,0 +1,8 @@
+number = 1
+slug = "nbody-short"
+status = "in-progress"
+description = "lessons/nbody: a 60 second mixed short on N-body gravity (the demo's own prog..."
+role = "legacy"
+context_files = []
+created_at = "2026-11-14T09:49:33"
+commits = []

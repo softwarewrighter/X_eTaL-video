@@ -1,0 +1,1 @@
+lessons/nbody: a 60 second mixed short on N-body gravity (the demo's own program; the cube, the pull, the reduce, the step; a points board with trails; one recorded scene); render both formats, publish the site, retake the README screenshot; docs, CHANGES, commit, push.
