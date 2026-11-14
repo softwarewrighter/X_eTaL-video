@@ -1,6 +1,6 @@
 number = 4
 slug = "compare"
-status = "pending"
+status = "in-progress"
 description = "both versions rendered for the user to choose"
 role = "legacy"
 context_files = []

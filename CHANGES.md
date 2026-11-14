@@ -13,6 +13,7 @@ Categories: `feat` new capability, `fix` a bug or wrong behavior,
 
 ## 2026-11-13
 
+- 18:57 `plan` The two Life lessons compared (saga life, step 4, its last): docs/plan.md has the table (drawn from X_eTaL's arrays: reproducible, laid out for each format; recorded from the page: the real demo, not reproducible, the page's own layout); the user chooses, and a lesson can mix both. Saga life done.
 - 18:47 `chore` Saga step life-capture completed.
 - 18:47 `lesson` The Life lesson, recorded (saga life, step 3): lessons/life-capture shows the published life-microscope page itself: scripts/capture.mjs records it in headless Chromium (Playwright, a dev dependency of remotion/) at each format's capture area while the scenes' actions run (click, select, scroll, wait), one recording as long as its scenes; a scene's `capture` plays it, the recording's frame for every frame one more row of X_eTaL's schedule. just capture. out/life-capture-landscape-remotion.mp4 and out/life-capture-portrait-remotion.mp4, 64 s. Recordings are not tracked.
 - 17:45 `chore` Saga step life-drawn completed.

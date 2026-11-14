@@ -147,7 +147,7 @@ libraries, tested.
    `scripts/check-lessons.sh` uses it. The first lesson is
    `lessons/making-of` (step 4).
 
-## Saga 2 -- life  [ACTIVE]
+## Saga 2 -- life  [DONE 2026-11-13; the user to choose]
 
 Goal: the first lesson about a live demo, Life, made both ways V8
 names so the user can pick (the user, 2026-11-13: "both? so I can
@@ -168,7 +168,19 @@ pick the better one"; Life first).
    area while the scenes' actions run (`scripts/capture.mjs`); a
    scene's `capture` plays the recording; the schedule gains the
    recording's frame for every frame.
-4. compare -- both rendered, both formats, for the user to choose.
+4. compare [DONE] -- both rendered, both formats; the user chooses.
+
+| | Drawn (`lessons/life`) | Recorded (`lessons/life-capture`) |
+| - | - | - |
+| What is on screen | arrays X_eTaL printed (`data.xtl`), drawn in the video's own style | the published page itself: its typography, chips, inspector |
+| Reproducible | yes: the pinned X_eTaL and the lesson give the same frames | no: real time in a browser, the page as published that day; needs the network |
+| Fits the frame | laid out for each format; one idea a scene, large | the page's own layout; much on screen at once, small in a short |
+| Shows the real demo | no: a redrawing of its arrays (the numbers are real) | yes: what a viewer will find at the link |
+| Cost of a new lesson | a `data.xtl` and scenes naming its arrays; a new kind of picture needs a component | actions with selectors; breaks if the page's markup changes |
+| Build | render only, about 25 s | record about 1 minute a format, then render |
+
+A lesson can mix them: drawn scenes for the idea, a recorded scene to
+show the page is real.
 
 ## Later -- remotion  [PLANNED; steps 1 and 4 done in saga 1]
 
@@ -224,8 +236,9 @@ Goal: finished files for both channels.
 2. Voice: `curiosity` is down for repairs and VoxCPM is to be
    installed on another system (the user, 2026-11-13). Which host
    and port then? Silent videos until it is up.
-3. Demo pictures: both, to compare (the user, 2026-11-13); to be
-   decided after saga 2.
+3. Demo pictures: both are built for Life (saga 2, step 4 has the
+   comparison). Which for the lessons to come: drawn, recorded, or
+   mixed?
 4. Which lesson first: Life (the user). Still open: a 60 second
    short or a 3 to 5 minute explainer?
 5. Should the libraries here that prove general (Ease, Spring) move
