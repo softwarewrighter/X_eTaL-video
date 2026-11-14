@@ -1,0 +1,1 @@
+Remotion 4.0.543 in remotion/ (Root, Lesson, types, theme, sample), scripts/props.sh and render.sh, just render/still/studio, gate lints remotion when installed; making-of rendered in both formats (58 s). Docs updated. Gate passes.
