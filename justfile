@@ -72,6 +72,18 @@ draft slug format="landscape":
 frame slug n format="landscape":
     @mkdir -p "work/$1" && scripts/schedule.sh "$1" > "work/$1/schedule.txt" && scripts/frames.mjs "$1" "$3" --frame "$2"
 
+# Render a lesson with Remotion: out/SLUG-FORMAT-remotion.mp4 (needs: cd remotion && npm install)
+render slug format="landscape":
+    scripts/render.sh "$1" "$2"
+
+# One frame of a lesson through Remotion as a PNG: just still making-of 850 portrait
+still slug n format="landscape":
+    scripts/render.sh "$1" "$3" --still "$2"
+
+# Remotion Studio on a lesson, at http://localhost:8427 (this repository's port)
+studio slug="making-of":
+    cd remotion && npx remotion studio src/index.ts --port 8427 --props="../$(../scripts/props.sh "$1")"
+
 # The full pre-commit gate: pinned X_eTaL, libraries, lessons, spelling, ASCII-only markdown
 gate:
     scripts/gate.sh

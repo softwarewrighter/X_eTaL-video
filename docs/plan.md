@@ -36,7 +36,7 @@ the language's argument by existing.
 | V1 | X_eTaL is **pinned**: `XETAL_COMMIT` holds the full SHA of a committed X_eTaL ref. `scripts/xetal.sh` clones X_eTaL into `work/xetal/` (gitignored), checks that commit out, builds the CLI and links `bin/xetal` (X_eTaL's `docs/vendoring.md`). Every recipe runs that binary, never one on the PATH. | As in every sibling: goldens are tied to one interpreter, moved deliberately, never under a step. |
 | V2 | The reusable X_eTaL lives in `libs/<Name>/` (`src/<Name>.xtl`, `tests/*.xtl` with reg-rs baselines, `README.md`), the layout of `../X_eTaL-libraries`. Exports are `l:`, private helpers `h:`. | The video libraries are ordinary X_eTaL libraries; a library that proves generally useful can move to X_eTaL-libraries unchanged. |
 | V3 | A lesson is **data**: `lessons/<slug>/lesson.json` (scenes, narration text, the demo each scene shows, code to display), checked against `schemas/lesson.schema.json`. A renderer never contains a lesson's content. | One master composition renders every lesson; an agent writes a lesson by writing data, not animation math. |
-| V4 | The renderer is Remotion (React, TypeScript) in `remotion/`, its own Node project. **Not installed yet** (the user installs it; saga 2): until then `docs/remotion-scripts.md` holds the proposed scripts, and nothing in the gate needs Node packages. | The Node and React toolchain stays in one directory of one repository, away from the Rust and X_eTaL repositories. |
+| V4 | The renderer is Remotion (React, TypeScript) in `remotion/`, its own Node project (installed 2026-11-13, 4.0.543, `package-lock.json` tracked). A composition computes no timing: `scripts/props.sh` hands it the lesson and every frame's numbers as X_eTaL computed them. The gate checks the project (eslint, tsc) when its packages are installed and renders nothing. `scripts/frames.mjs` is a second, draft renderer of the same numbers with nothing to install. | The Node and React toolchain stays in one directory of one repository, away from the Rust and X_eTaL repositories. |
 | V5 | Every component reads its size from the composition (`useVideoConfig()`), and every lesson renders in two formats: landscape 1920x1080 at 30 fps for long-form (`../video-publishing`) and portrait 1080x1920 for shorts (`../shorts`). | One lesson, two channels' formats; the shorts and long-form repositories stay the assemblers. |
 | V6 | Narration is generated before rendering: text to speech (the VoxCPM server the shorts use, through `vid-tts`), one WAV per scene, its measured length (`ffprobe`) written into the lesson's timing. Scene lengths follow the audio, never the reverse. | The shorts' rule (stretch the picture to the narration); a deterministic renderer needs the lengths as input. |
 | V7 | Assembly uses the Rust `vid-*` tools of `../video-publishing/tools` (`vid-concat --reencode`, `vid-volume --normalize`, `vid-music`, `vid-scale`), never a bare `ffmpeg` concat. Bare `ffmpeg` and `ffprobe` are for probing and for encoding numbered frames only. | The video repositories' hard rule: a raw ffmpeg concat goes silent mid-video. |
@@ -131,12 +131,20 @@ libraries, tested.
    ImageMagick), `scripts/draft-video.sh` (ffmpeg), both formats;
    `scripts/check-lessons.sh` in the gate. A draft renderer with
    nothing to install; Remotion replaces `frames.mjs`, not the rest.
-5. spring-lib -- `libs/Spring`.
-6. lesson-schema -- `schemas/lesson.schema.json`, a checker with no
+5. remotion-making-of [DONE] -- the user installed Remotion
+   (`npx create-video@latest --yes --blank remotion`, 4.0.543):
+   `remotion/src` (Root: LessonLandscape and LessonPortrait, length
+   from the timing; Lesson: layout only, every number looked up),
+   `scripts/props.sh` (the lesson and X_eTaL's numbers as one props
+   file), `scripts/render.sh`, `just render`, `still`, `studio`; the
+   making-of lesson rendered in both formats. This is saga 2's steps
+   1 and 4, done early. The agent skills are not installed yet.
+6. spring-lib -- `libs/Spring`.
+7. lesson-schema -- `schemas/lesson.schema.json`, a checker with no
    dependencies to install, a first `lessons/timeline/lesson.json`,
    both in the gate.
 
-## Saga 2 -- remotion  [PLANNED; needs the user: install Remotion]
+## Saga 2 -- remotion  [PLANNED; steps 1 and 4 done in saga 1]
 
 Goal: one lesson rendered to MP4 in both formats, silent.
 
@@ -154,7 +162,7 @@ Goal: one lesson rendered to MP4 in both formats, silent.
 6. render -- `just render SLUG [landscape|portrait]`, a rendered
    still per scene as a baseline in the gate.
 
-## Saga 3 -- voice  [PLANNED; needs the user: which TTS]
+## Saga 3 -- voice  [BLOCKED: the TTS host is down (the user, 2026-11-13); VoxCPM is to be installed on another system]
 
 Goal: narrated lessons whose scene lengths follow the audio.
 
@@ -186,10 +194,11 @@ Goal: finished files for both channels.
 
 ## Open questions for the user
 
-1. Remotion: install it in `remotion/` here (saga 2, step 1)? Its
-   license is free for Software Wrighter LLC's size.
-2. Voice: VoxCPM on `curiosity:7860` through `vid-tts`, with the
-   user's voice reference, as the shorts do? Or silent first drafts?
+1. Remotion: answered, installed (2026-11-13). Still open: install
+   its agent skills (`npx remotion skills add`)?
+2. Voice: `curiosity` is down for repairs and VoxCPM is to be
+   installed on another system (the user, 2026-11-13). Which host
+   and port then? Silent videos until it is up.
 3. Demo pictures: record the published pages (real pixels, needs
    Playwright), draw X_eTaL's printed output in React (crisper, more
    work per demo), or both?

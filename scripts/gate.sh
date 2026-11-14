@@ -10,9 +10,16 @@ cd "$root"
 scripts/check-xetal.sh
 scripts/test-libs.sh
 scripts/check-lessons.sh
+# The Remotion project type-checks and lints (when its packages are installed).
+if [ -d remotion/node_modules ]; then
+  (cd remotion && npm run --silent lint) >/dev/null 2>&1 || { (cd remotion && npm run lint); echo "FAIL: remotion"; exit 1; }
+  echo "remotion: ok (eslint, tsc)"
+else
+  echo "remotion: skipped (cd remotion && npm ci)"
+fi
 scripts/check-spelling.py --self-test
 scripts/check-spelling.py
-md=(README.md CHANGES.md docs/plan.md docs/xetal-asks.md docs/remotion-scripts.md)
+md=(README.md CHANGES.md docs/plan.md docs/xetal-asks.md docs/remotion-scripts.md remotion/README.md)
 for f in libs/*/README.md lessons/*/README.md; do [ -e "$f" ] && md+=("$f"); done
 for f in "${md[@]}"; do sw-markdown-checker -f "$f" >/dev/null || { sw-markdown-checker -f "$f"; exit 1; }; done
 echo "markdown: ok (${#md[@]} files)"

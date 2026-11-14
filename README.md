@@ -8,9 +8,10 @@ arrays, a deterministic renderer draws every frame, and the existing
 video tools assemble the result.
 
 Status: early. Two X_eTaL libraries for timing and animation are
-tested, and a first video is built from them: a silent 58 second
-draft that describes how it was made (below). The renderer for real
-lessons (Remotion) is being set up. `docs/plan.md` has the roadmap.
+tested, and a first video is built from them, rendered with Remotion
+in landscape and portrait: 58 silent seconds that describe how it was
+made (below). Narration and lessons from the live demos come next;
+`docs/plan.md` has the roadmap.
 
 ## How it fits
 
@@ -26,6 +27,7 @@ lessons (Remotion) is being set up. `docs/plan.md` has the roadmap.
 | ---- | ---- |
 | `libs/` | X_eTaL libraries for video timing and animation (below) |
 | `lessons/` | lessons as data, each with the schedule X_eTaL computes from it ([making-of](lessons/making-of/)) |
+| `remotion/` | the [Remotion](remotion/) renderer: one composition that renders any lesson, in both formats |
 | `docs/plan.md` | the plan: decisions, the survey of the existing video pipelines, libraries, lessons, roadmap, open questions |
 | `docs/remotion-scripts.md` | the proposed scripts: voice, timing, capture, render, assemble (proposals, not yet run) |
 | `docs/xetal-asks.md` | what this work needs from X_eTaL |
@@ -50,23 +52,28 @@ checks its baselines.
 ## A first video: how it was made
 
 ```bash
-just draft making-of             # out/making-of-landscape.mp4 (1920x1080, 58 s)
-just draft making-of portrait    # out/making-of-portrait.mp4 (1080x1920)
+cd remotion && npm ci && cd ..   # once
+just render making-of            # out/making-of-landscape-remotion.mp4 (1920x1080, 58 s)
+just render making-of portrait   # out/making-of-portrait-remotion.mp4 (1080x1920)
+just studio making-of            # Remotion Studio at http://localhost:8427
+just draft making-of             # the same lesson without Remotion (ImageMagick, ffmpeg)
 ```
 
 `lessons/making-of/lesson.json` is the content. X_eTaL (Timeline and
 Ease) computes the schedule and every frame's animation numbers, all
-1740 frames at once; a script draws each frame from those numbers
-with ImageMagick; ffmpeg encodes them. The numbers on screen are the
-video's own. Needs `node`, `magick` and `ffmpeg`; nothing to install
-beyond them. [`lessons/making-of/`](lessons/making-of/) has the
-details.
+1740 frames at once; the renderer only places things, looking each
+frame's numbers up. The numbers on screen are the video's own. Two
+renderers read the same numbers: Remotion (React), and a draft
+renderer with nothing to install beyond `node`, `magick` and
+`ffmpeg`. [`lessons/making-of/`](lessons/making-of/) has the details.
 
 ## Build
 
 Needs: Rust (to build X_eTaL), [just](https://github.com/casey/just),
 `reg-rs` and `sw-markdown-checker` (Software Wrighter's tools), and
-`uv` (the spelling check runs through it).
+`uv` (the spelling check runs through it). Rendering needs Node
+(`cd remotion && npm ci`) and `ffmpeg`; the gate checks the Remotion
+project only when its packages are installed.
 
 ```bash
 just xetal        # clone X_eTaL at the commit in XETAL_COMMIT into work/xetal, build bin/xetal
@@ -78,9 +85,9 @@ just              # every recipe
 X_eTaL is pinned: `XETAL_COMMIT` names the commit every script uses,
 so results do not change under a lesson.
 
-## Rendering (not yet)
+## Remotion's license
 
-The renderer will be [Remotion](https://www.remotion.dev/) (React and
+The renderer is [Remotion](https://www.remotion.dev/) (React and
 TypeScript), in `remotion/`. Remotion has its own license: free for
 individuals and for companies of three or fewer people, a company
 license beyond that. If you build videos with this repository, check

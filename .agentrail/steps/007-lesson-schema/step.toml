@@ -1,7 +1,7 @@
-number = 5
-slug = "spring-lib"
+number = 7
+slug = "lesson-schema"
 status = "pending"
-description = "libs/Spring"
+description = "schemas/lesson.schema.json, checker, first lesson"
 role = "legacy"
 context_files = []
 created_at = "2026-11-12T18:45:50"

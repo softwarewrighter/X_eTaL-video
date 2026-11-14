@@ -65,9 +65,9 @@
       "seconds": 8,
       "heading": "5. Frames, then a file",
       "lines": [
-        "A script draws one picture per frame from those numbers.",
-        "ImageMagick makes {{total}} PNGs. ffmpeg encodes them:",
-        { "code": "ffmpeg -framerate 30 -i %05d.png -c:v libx264 out.mp4" }
+        "A renderer draws one picture per frame from those numbers.",
+        "Draft: ImageMagick and ffmpeg. Final: Remotion, in React.",
+        { "code": "npx remotion render LessonLandscape out.mp4 --props=props.json" }
       ]
     },
     {
@@ -75,9 +75,9 @@
       "seconds": 7,
       "heading": "Next",
       "lines": [
-        "Remotion replaces the drawing step with React components.",
-        "Narration sets each scene's length.",
+        "Narration will set each scene's length.",
         "Lessons from the live demos: Life, Mandelbrot, N-body.",
+        "Every lesson in landscape and portrait, from one file.",
         { "code": "github.com/softwarewrighter/X_eTaL-video" }
       ]
     }

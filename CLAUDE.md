@@ -309,8 +309,8 @@ Array Language, developed in `../X_eTaL`), built from the live demos
 of its sibling repositories. X_eTaL is the content engine: the
 libraries in `libs/` compute a video's timing and animation as arrays,
 a lesson is data (`lessons/<slug>/lesson.json`), a deterministic
-renderer (Remotion, in `remotion/`, not installed yet) draws every
-frame from that data, and the existing video tools
+renderer (Remotion, in `remotion/`) draws every frame from that
+data, and the existing video tools
 (`../video-publishing/tools`, `../shorts`) assemble and publish.
 Sibling of `../X_eTaL-demos` and `../X_eTaL-libraries`, whose layout
 and scripts it follows.
@@ -345,7 +345,10 @@ Read before working:
    workaround). Do not fix X_eTaL from this repo and do not hide a
    workaround: name it in the ask and in the library's README.
 4. A lesson is data (`docs/plan.md` V3): no lesson content in a
-   renderer component, no timing typed twice. Scene lengths follow
+   renderer component, no timing typed twice. A Remotion component
+   computes no timing or easing of its own (no `interpolate()`, no
+   `spring()`): X_eTaL computes it for every frame
+   (`scripts/schedule.xtl.in`), `scripts/props.sh` hands it in. Scene lengths follow
    the narration's audio.
 5. Never run a bare `ffmpeg` concat, and prefer the Rust `vid-*`
    tools of `../video-publishing/tools` for every operation they
@@ -402,6 +405,11 @@ just eval "EXPR"          # evaluate with the pinned xetal, libs on the path
 just libs                 # the libraries
 just run NAME [TEST]      # run a library's test programs
 just test-lib NAME        # its baselines; just bless NAME rewrites them
+just render SLUG [portrait]   # a lesson through Remotion, into out/
+just still SLUG N         # one frame through Remotion
+just studio SLUG          # Remotion Studio at http://localhost:8427
+just draft SLUG           # the same lesson without Remotion
+just check-lessons        # lessons and their X_eTaL timing
 agentrail status          # current saga state
 agentrail next            # current step + context
 agentrail plan            # the saga plan

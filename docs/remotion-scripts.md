@@ -1,10 +1,12 @@
 # Proposed scripts: Remotion videos from the live demos
 
-Status: **proposals, not run**. Remotion is not installed in this
-repository yet, so nothing here has been executed; flags are from
-Remotion's documentation as recalled and from `docs/research.txt`,
-and each must be checked against `npx remotion --help` when the
-project exists. Each script becomes a real `scripts/*.sh` with a
+Status: sections 0 and 5 are **done** and differ from the proposal
+below where the real thing taught better: see `scripts/props.sh`,
+`scripts/render.sh`, `remotion/README.md` (the composition takes one
+props file holding the lesson and every frame's numbers from X_eTaL;
+`just render`, `just still`, `just studio`). The other sections are
+still **proposals, not run**; their flags are from documentation as
+recalled and must be checked when each is built. Each script becomes a real `scripts/*.sh` with a
 `just` recipe in the saga named beside it (`docs/plan.md`).
 
 The pipeline, one lesson (`SLUG`) at a time:
