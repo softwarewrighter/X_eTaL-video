@@ -1,0 +1,1 @@
+Comparison of drawn vs recorded recorded in docs/plan.md; all four Life videos rendered. Saga life complete.

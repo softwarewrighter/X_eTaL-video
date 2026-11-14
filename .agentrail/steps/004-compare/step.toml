@@ -1,8 +1,9 @@
 number = 4
 slug = "compare"
-status = "in-progress"
+status = "completed"
 description = "both versions rendered for the user to choose"
 role = "legacy"
 context_files = []
 created_at = "2026-11-13T16:31:41"
-commits = []
+completed_at = "2026-11-13T18:57:21"
+commits = ["57a5caedc3a9d9c8d8537e00a20c22c97e0a8faf"]
