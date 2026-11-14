@@ -1,1 +1,1 @@
-Saga life initialized.
+Saga rendered-code initialized.

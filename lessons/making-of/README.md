@@ -34,7 +34,8 @@ How it is made, which is also what it says:
    (a PNG per frame with ImageMagick, encoded by `ffmpeg`), which
    needs nothing installed.
 
-In a line of text, `{{f}}`, `{{scene}}`, `{{local}}`, `{{progress}}`,
+A line `{"xtl": ...}` is X_eTaL and is shown as rendered (decorated,
+colored); `{"code": ...}` is other code. In any line, `{{f}}`, `{{scene}}`, `{{local}}`, `{{progress}}`,
 `{{total}}`, `{{secs}}`, `{{durs}}` and `{{starts}}` are replaced by
 the frame's own numbers. A scene with `"curves": true` shows the
 three curves as moving dots.

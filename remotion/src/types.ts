@@ -2,7 +2,8 @@
 // its schedule, and every frame's animation numbers, all computed by
 // X_eTaL (libs/Timeline, libs/Ease). Arrays under `frames` have one
 // entry per frame of the video.
-export type Line = string | { code: string };
+// Text; X_eTaL (shown as the pinned xetal renders it); other code.
+export type Line = string | { xtl: string } | { code: string };
 
 export type Board = {
   data: string; // an array's name in the lesson's data.xtl
@@ -59,4 +60,5 @@ export type LessonProps = {
   frames: Frames;
   data: Record<string, number[][][]>; // the lesson's arrays, each a list of boards
   captures: { landscape: string; portrait: string } | null; // recordings, under public/
+  rendered: Record<string, string>; // each X_eTaL line as `xetal render --html` gives it
 };

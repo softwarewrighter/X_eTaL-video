@@ -13,6 +13,7 @@ Categories: `feat` new capability, `fix` a bug or wrong behavior,
 
 ## 2026-11-13
 
+- 19:27 `feat` X_eTaL shown as rendered, never as typed (saga rendered-code; the user: "I prefer to see as-rendered (and color syntax highlighted)"): a lesson line {"xtl": ...} is rendered by the pinned `xetal render --html` (scripts/props.mjs) and drawn in JuliaMono with X_eTaL's syntax colors (remotion theme; scripts/fetch-fonts.sh fetches the font, checksummed, not tracked); {"code": ...} stays for what is not X_eTaL. making-of and life converted; all six videos re-rendered. CLAUDE.md rule 4a, plan V13.
 - 18:57 `chore` Saga step compare completed.
 - 18:57 `plan` The two Life lessons compared (saga life, step 4, its last): docs/plan.md has the table (drawn from X_eTaL's arrays: reproducible, laid out for each format; recorded from the page: the real demo, not reproducible, the page's own layout); the user chooses, and a lesson can mix both. Saga life done.
 - 18:47 `chore` Saga step life-capture completed.

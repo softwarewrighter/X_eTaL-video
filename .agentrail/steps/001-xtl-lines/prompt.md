@@ -1,0 +1,1 @@
+X_eTaL source shown as rendered and syntax-colored (the user, 2026-11-13): a line {"xtl": ...} rendered by the pinned xetal render --html into the props, drawn in JuliaMono with the sites' dark colors; {"code": ...} stays for non-X_eTaL; lessons converted, re-rendered; rule in CLAUDE.md; docs, CHANGES, commit, push.

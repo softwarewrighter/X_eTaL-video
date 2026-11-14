@@ -29,10 +29,10 @@
       "seconds": 10,
       "heading": "2. X_eTaL computes the schedule",
       "lines": [
-        { "code": "durs := 30 tl:f_rames {{secs}}" },
-        { "code": "# {{durs}}" },
-        { "code": "tl:s_tarts durs" },
-        { "code": "# {{starts}}" },
+        { "xtl": "durs := 30 tl:f_rames {{secs}}" },
+        { "xtl": "# {{durs}}" },
+        { "xtl": "tl:s_tarts durs" },
+        { "xtl": "# {{starts}}" },
         "Seconds become frames. Where each scene starts is one running sum.",
         "The bar below is that array, drawn."
       ]
@@ -42,9 +42,9 @@
       "seconds": 10,
       "heading": "3. Every frame knows its place",
       "lines": [
-        { "code": "durs tl:s_cene {{f}}        # {{scene}}" },
-        { "code": "durs tl:l_ocal {{f}}        # {{local}}" },
-        { "code": "durs tl:p_rogress {{f}}     # {{progress}}" },
+        { "xtl": "durs tl:s_cene {{f}}        # {{scene}}" },
+        { "xtl": "durs tl:l_ocal {{f}}        # {{local}}" },
+        { "xtl": "durs tl:p_rogress {{f}}     # {{progress}}" },
         "These numbers are live: this is frame {{f}} of {{total}}.",
         "All {{total}} frames are computed at once, as arrays."
       ]
@@ -55,7 +55,7 @@
       "heading": "4. Motion is arithmetic",
       "curves": true,
       "lines": [
-        { "code": "(10, 14) ez:s_tagger (local, n)" },
+        { "xtl": "(10, 14) ez:s_tagger (local, n)" },
         "Each line's fade-in is a column of that table.",
         "Three curves over this scene: linear, in-out cubic, out cubic."
       ]

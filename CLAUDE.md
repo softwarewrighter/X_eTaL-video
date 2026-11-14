@@ -352,6 +352,14 @@ Read before working:
    `spring()`): X_eTaL computes it for every frame
    (`scripts/schedule.xtl.in`), `scripts/props.sh` hands it in. Scene lengths follow
    the narration's audio.
+4a. X_eTaL source in a video is shown as rendered, never as typed
+   (the user, 2026-11-13): decorated and syntax-colored as the live
+   pages show it. In a lesson a line of X_eTaL is `{"xtl": ...}`
+   (typed as ASCII; `scripts/props.mjs` has the pinned `xetal render
+   --html` render it, and Remotion draws it in JuliaMono with
+   X_eTaL's colors); `{"code": ...}` is only for what is not X_eTaL
+   (JSON, shell, a link). Never put X_eTaL in a `code` line or in
+   running text.
 5. Never run a bare `ffmpeg` concat, and prefer the Rust `vid-*`
    tools of `../video-publishing/tools` for every operation they
    cover (`docs/plan.md` V7). `ffmpeg` and `ffprobe` directly only for

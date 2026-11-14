@@ -10,5 +10,20 @@ export const theme = {
   code: "rgb(165, 214, 255)",
   hot: "#ffffff",
   text: "Arial, Helvetica, sans-serif",
-  mono: "Menlo, Monaco, monospace",
+  mono: "JuliaMono, Menlo, Monaco, monospace",
+  // X_eTaL's own colors for rendered source (its doc site's dark theme).
+  syntax: {
+    "c-builtin": "#5b9cff",
+    "c-userfunc": "#3fbf5f",
+    "c-libfunc": "#22b8c8",
+    "c-lambdaarg": "#d25fd2",
+    "c-number": "#e0b400",
+    "c-exponent": "#e0b400",
+    "c-string": "#e8d27a",
+    "c-symbol": "#7fbfff",
+    "c-macro": "#e0b400",
+    "c-comment": "#8a90a0",
+    "c-doc": "#8fc79a",
+  },
+  xtl: "#d8dbe2", // a name or bracket with no class of its own
 };

@@ -12,7 +12,7 @@ animation numbers are computed by X_eTaL (`../libs/Timeline`,
 | `src/Lesson.tsx` | the lesson: heading, lines (text and code), three easing curves, the schedule as a bar. Layout only: a frame looks its numbers up, there is no `interpolate()` or `spring()` here |
 | `src/Boards.tsx` | a scene's arrays (from the lesson's `data.xtl`) as grids, fitted to the room left: one board, several side by side, a list all at once, or a list stepped through |
 | `src/types.ts` | the props' shape |
-| `src/theme.ts` | colors and fonts |
+| `src/theme.ts` | colors and fonts, X_eTaL's syntax colors among them |
 | `src/sample.ts` | what Studio shows with no props |
 
 From the repository's root:
@@ -28,8 +28,10 @@ just studio making-of             # Remotion Studio at http://localhost:8427
 `playwright` is here too, for `../scripts/capture.mjs` (recordings of
 the live demo pages go to `public/captures/`, not tracked; `npx
 playwright install chromium` once). The first render downloads
-Remotion's headless browser. Fonts are
-system fonts (Arial, Menlo).
+Remotion's headless browser. Text is in a system
+font (Arial); code and X_eTaL are in JuliaMono, which
+`../scripts/fetch-fonts.sh` fetches into `public/fonts/` (not
+tracked) and `just render` runs for you.
 
 Remotion has its own license: free for individuals and for companies
 of three or fewer people, a company license beyond that

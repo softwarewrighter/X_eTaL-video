@@ -107,7 +107,7 @@ function draw(f) {
       last = "text";
     } else {
       if (last === "text") y += 10;
-      const str = fill(line.code, 1);
+      const str = fill(line.code ?? line.xtl, 1);   // X_eTaL as typed: only Remotion draws it rendered
       const size = Math.min(tall ? 34 : 38, (wide - 56) / (0.605 * str.length));
       const high = 66;
       if (alpha > 0.004) {

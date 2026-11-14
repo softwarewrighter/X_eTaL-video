@@ -1,4 +1,4 @@
-import { AbsoluteFill, OffthreadVideo, Sequence, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
+import { AbsoluteFill, OffthreadVideo, Sequence, continueRender, delayRender, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import { Boards } from "./Boards";
 import { theme } from "./theme";
 import { LessonProps, Line } from "./types";
@@ -7,11 +7,28 @@ import { LessonProps, Line } from "./types";
 // and how far along, every animation is was computed by X_eTaL for
 // every frame at once (props.frames), so there is no interpolate() or
 // spring() here: a frame looks its numbers up.
+// JuliaMono, the font X_eTaL's pages draw decorated source in (the
+// combining underline, raised letters, APL glyphs): loaded before any
+// frame is drawn (scripts/fetch-fonts.sh puts it in public/fonts).
+if (typeof document !== "undefined") {
+  for (const [file, weight] of [["JuliaMono-Regular.woff2", "400"], ["JuliaMono-Bold.woff2", "700"]]) {
+    const handle = delayRender(`loading ${file}`);
+    const face = new FontFace("JuliaMono", `url(${staticFile(`fonts/${file}`)}) format("woff2")`, { weight });
+    face.load().then(() => {
+      document.fonts.add(face);
+      continueRender(handle);
+    });
+  }
+}
+
+// The classes xetal render --html gives tokens, in X_eTaL's colors.
+const syntaxCss = Object.entries(theme.syntax).map(([c, color]) => `.xtl .${c} { color: ${color}; }`).join("\n") + "\n.xtl .c-quote, .xtl .c-macro { font-weight: 700; }\n.xtl .c-doc { font-style: italic; }";
+
 // The capture area of each format: scripts/capture.mjs records the
 // page at exactly this size, so a recorded pixel is a pixel here.
 const AREAS = { landscape: [1720, 700], portrait: [940, 1480] } as const;
 
-export const Lesson: React.FC<LessonProps> = ({ lesson, timing, frames, data, captures }) => {
+export const Lesson: React.FC<LessonProps> = ({ lesson, timing, frames, data, captures, rendered }) => {
   const frame = Math.min(useCurrentFrame(), timing.total - 1);
   const { width, height } = useVideoConfig();
   const tall = height > width;
@@ -59,26 +76,30 @@ export const Lesson: React.FC<LessonProps> = ({ lesson, timing, frames, data, ca
         </div>
       );
     }
-    const code = fill(line.code, true);
+    // X_eTaL is shown as the pinned xetal rendered it (decorated, each
+    // token classed), never as typed; other code as it is.
+    const xtl = "xtl" in line;
+    const code = fill(xtl ? rendered[line.xtl] ?? line.xtl : line.code, true);
+    const shown = xtl ? code.replace(/<[^>]*>/g, "").replace(/&[a-z]+;/g, "x").replace(/\u0332/g, "") : code;
     return (
       <div
         key={j}
         style={{
           ...style,
           fontFamily: theme.mono,
-          fontSize: Math.min(tall ? 34 : 38, (wide - 56) / (0.605 * code.length)),
+          fontSize: Math.min(tall ? 34 : 38, (wide - 56) / (0.605 * shown.length)),
           height: 66,
           lineHeight: "66px",
           whiteSpace: "pre",
-          color: code.startsWith("#") ? theme.dim : theme.code,
+          color: xtl ? theme.xtl : theme.code,
           background: theme.panel,
           borderLeft: `6px solid ${theme.accent}`,
           paddingLeft: 24,
           marginTop: typeof before === "string" ? 14 : 0,
         }}
-      >
-        {code}
-      </div>
+        className={xtl ? "xtl" : undefined}
+        {...(xtl ? { dangerouslySetInnerHTML: { __html: code } } : { children: code })}
+      />
     );
   };
 
@@ -90,6 +111,7 @@ export const Lesson: React.FC<LessonProps> = ({ lesson, timing, frames, data, ca
 
   return (
     <AbsoluteFill style={{ background: theme.bg }}>
+      <style>{syntaxCss}</style>
       {/* The top line. */}
       <div
         style={{

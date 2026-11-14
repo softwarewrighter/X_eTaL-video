@@ -71,11 +71,17 @@
             }
           },
           "lines": {
-            "description": "Text, or code as {\"code\": ...}. {{f}}, {{scene}}, {{local}}, {{progress}}, {{total}}, {{secs}}, {{durs}} and {{starts}} and {{step}} are replaced by the frame's own numbers.",
+            "description": "Text, X_eTaL as {\"xtl\": ...}, or other code (JSON, shell, a link) as {\"code\": ...}. {{f}}, {{scene}}, {{local}}, {{progress}}, {{total}}, {{secs}}, {{durs}} and {{starts}} and {{step}} are replaced by the frame's own numbers.",
             "type": "array",
             "items": {
               "oneOf": [
                 { "type": "string" },
+                {
+                  "type": "object",
+                  "required": ["xtl"],
+                  "additionalProperties": false,
+                  "properties": { "xtl": { "description": "A line of X_eTaL, as typed; shown as the pinned xetal renders it (decorated, colored), never as typed.", "type": "string" } }
+                },
                 {
                   "type": "object",
                   "required": ["code"],

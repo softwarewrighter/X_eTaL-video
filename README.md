@@ -89,6 +89,15 @@ page itself, recorded in headless Chromium while a script clicks
 through it (`just capture life-capture`, then `just render
 life-capture`).
 
+## X_eTaL as rendered
+
+X_eTaL source in a video is shown as the live pages show it, never
+as typed: a lesson's `{"xtl": "u:l_ife := { ... _r }"}` line is
+rendered by the pinned `xetal render --html` (underlined function
+letters, raised namespaces, subscript axes) and drawn in JuliaMono
+with X_eTaL's syntax colors. `scripts/fetch-fonts.sh` fetches the
+font (SIL Open Font License; not tracked), and `just render` runs it.
+
 ## Build
 
 Needs: Rust (to build X_eTaL), [just](https://github.com/casey/just),

@@ -21,7 +21,7 @@
       "heading": "The rule",
       "narration": "Here is the whole rule. Read it right to left: rotate the board, add the copies up, and compare.",
       "lines": [
-        { "code": "u:l_ife := { ('+ r_/_12 -1 0 1 o_-_12 _r) { (_l = 3) + _r * _l = 4 } _r }" },
+        { "xtl": "u:l_ife := { ('+ r_/_12 -1 0 1 o_-_12 _r) { (_l = 3) + _r * _l = 4 } _r }" },
         "Read it right to left: rotate, add, compare.",
         "No loops over cells. No neighbor bookkeeping."
       ],
@@ -33,7 +33,7 @@
       "heading": "1. Nine shifted copies",
       "narration": "Rotate the board by minus one, zero and one along both axes. That gives nine shifted copies: one for each neighbor, and the cell itself.",
       "lines": [
-        { "code": "r := -1 0 1 o_-_12 b        # s_hape r is 3 3 6 6" },
+        { "xtl": "r := -1 0 1 o_-_12 b        # s_hape r is 3 3 6 6" },
         "One copy for each neighbor, and the cell itself."
       ],
       "boards": [{ "data": "copies" }]
@@ -44,7 +44,7 @@
       "heading": "2. Add them up",
       "narration": "Add the nine copies. Now every cell holds its own value plus its eight neighbors.",
       "lines": [
-        { "code": "s := '+ r_/_12 r" },
+        { "xtl": "s := '+ r_/_12 r" },
         "Every cell now holds itself plus its eight neighbors."
       ],
       "boards": [
@@ -58,7 +58,7 @@
       "heading": "3. Compare",
       "narration": "A cell lives next when the sum is three, or when it is alive and the sum is four.",
       "lines": [
-        { "code": "(s = 3) + b * s = 4" },
+        { "xtl": "(s = 3) + b * s = 4" },
         "Alive next: the sum is 3, or the cell is alive and the sum is 4."
       ],
       "boards": [
@@ -72,7 +72,7 @@
       "heading": "Run it",
       "narration": "Run it. Five cells, the R pentomino, on a sixteen by sixteen board that wraps around.",
       "lines": [
-        { "code": "{{step}} 'u:l_ife p_ower world" },
+        { "xtl": "{{step}} 'u:l_ife p_ower world" },
         "Five cells to start: the R-pentomino. The edges wrap."
       ],
       "boards": [{ "data": "gens", "animate": true }]

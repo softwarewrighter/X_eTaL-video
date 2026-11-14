@@ -12,6 +12,7 @@ case "$format" in
   portrait) comp=LessonPortrait ;;
   *) echo "render: the format is landscape or portrait" >&2; exit 2 ;;
 esac
+"$root/scripts/fetch-fonts.sh" >/dev/null
 [ -d "$root/remotion/node_modules" ] || { echo "render: Remotion is not installed (cd remotion && npm install)" >&2; exit 127; }
 props="$root/$("$root/scripts/props.sh" "$slug")"
 mkdir -p "$root/out"

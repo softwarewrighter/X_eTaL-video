@@ -21,6 +21,8 @@ remotion/.claude/
 remotion/out/
 # recordings of the live pages (scripts/capture.mjs)
 remotion/public/captures/
+# JuliaMono (third-party; scripts/fetch-fonts.sh fetches it)
+remotion/public/fonts/
 remotion/build/
 .remotion/
 

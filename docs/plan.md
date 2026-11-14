@@ -44,6 +44,7 @@ the language's argument by existing.
 | V9 | A feature X_eTaL lacks, or a bug this work uncovers, is not worked around silently and not fixed here: it is recorded in `docs/xetal-asks.md`, and the library or lesson uses a documented workaround or waits. | X_eTaL owns its language decisions; this repository is a consumer. |
 | V10 | `just` is the entry point; recipes call `scripts/*.sh`. Python, where a script needs it, runs in a uv-managed venv, never the system python. Tools with no dependencies to install are preferred in the gate. | One way to do things, as in the siblings. |
 | V11 | Generated media is never tracked: audio, frames, clips and rendered video go to `work/` and `out/` (gitignored). Tracked: lessons, schemas, libraries, scripts, docs. | A video is megabytes per version; the lesson and the pinned tools reproduce it. |
+| V13 | X_eTaL source in a video is shown **as rendered, never as typed** (the user, 2026-11-13): a lesson's `{"xtl": ...}` line is rendered by the pinned `xetal render --html` (decorated: underlined function letters, raised namespaces, subscript axes, the APL glyphs; each token classed) and drawn in JuliaMono with X_eTaL's own dark-theme colors (`remotion/src/theme.ts`; the font fetched by `scripts/fetch-fonts.sh`, not tracked). | The live pages show X_eTaL this way; a video that shows it as typed teaches a different-looking language than the one a viewer meets at the link. |
 | V12 | Third-party services need the user's say: a hosted text-to-speech or image model is used only when the user names it; the default is the user's own servers. Remotion's license (free for individuals and companies of three or fewer; a company license beyond that) is stated in the README. | No surprise costs or data leaving the machine. |
 
 This repository's local port is 8427 (Remotion Studio and any preview
@@ -181,6 +182,14 @@ pick the better one"; Life first).
 
 A lesson can mix them: drawn scenes for the idea, a recorded scene to
 show the page is real.
+
+## Saga 3 -- rendered-code  [DONE 2026-11-13]
+
+1. xtl-lines -- V13: `{"xtl": ...}` lines, `scripts/props.mjs`
+   (rendering through the pinned xetal; a `{{name}}` goes through as
+   a stand-in number and comes back), JuliaMono, the three lessons
+   converted and re-rendered. The draft renderer still draws X_eTaL
+   as typed (it has no font for it) and is for quick checks only.
 
 ## Later -- remotion  [PLANNED; steps 1 and 4 done in saga 1]
 
