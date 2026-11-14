@@ -409,7 +409,7 @@ just render SLUG [portrait]   # a lesson through Remotion, into out/
 just still SLUG N         # one frame through Remotion
 just studio SLUG          # Remotion Studio at http://localhost:8427
 just draft SLUG           # the same lesson without Remotion
-just check-lessons        # lessons and their X_eTaL timing
+just check-lessons        # lessons: the schema, and their X_eTaL timing
 agentrail status          # current saga state
 agentrail next            # current step + context
 agentrail plan            # the saga plan

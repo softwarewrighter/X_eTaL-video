@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "X_eTaL-video lesson",
+  "description": "A lesson as data (docs/plan.md V3): lessons/<slug>/lesson.json. Checked by scripts/check-schema.mjs, which reads the keywords used here and no others.",
+  "type": "object",
+  "required": ["slug", "title", "fps", "scenes"],
+  "additionalProperties": false,
+  "properties": {
+    "slug": {
+      "description": "The lesson's directory name under lessons/.",
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]*$"
+    },
+    "title": { "type": "string", "minLength": 1 },
+    "fps": { "description": "Frames a second.", "type": "integer", "minimum": 1 },
+    "demo": {
+      "description": "The live demo the lesson is about, if any.",
+      "type": "object",
+      "required": ["repo", "slug"],
+      "additionalProperties": false,
+      "properties": {
+        "repo": { "type": "string", "enum": ["X_eTaL", "X_eTaL-demos", "X_eTaL-ML", "X_eTaL-games", "X_eTaL-libraries"] },
+        "slug": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" }
+      }
+    },
+    "scenes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "seconds", "heading", "lines"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "description": "Unique in the lesson.", "type": "string", "pattern": "^[a-z][a-z0-9-]*$" },
+          "seconds": { "description": "The scene's length; with narration, the audio's length replaces it.", "type": "number", "exclusiveMinimum": 0 },
+          "heading": { "type": "string", "minLength": 1 },
+          "narration": { "description": "What is spoken over the scene (at most 320 characters, vid-tts's limit).", "type": "string", "maxLength": 320 },
+          "curves": { "description": "Show the three easing curves as moving dots.", "type": "boolean" },
+          "lines": {
+            "description": "Text, or code as {\"code\": ...}. {{f}}, {{scene}}, {{local}}, {{progress}}, {{total}}, {{secs}}, {{durs}} and {{starts}} are replaced by the frame's own numbers.",
+            "type": "array",
+            "items": {
+              "oneOf": [
+                { "type": "string" },
+                {
+                  "type": "object",
+                  "required": ["code"],
+                  "additionalProperties": false,
+                  "properties": { "code": { "type": "string" } }
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

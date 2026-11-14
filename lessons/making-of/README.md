@@ -5,7 +5,7 @@ construction, and whose on-screen numbers are its own schedule.
 
 | File | What |
 | ---- | ---- |
-| `lesson.json` | the lesson: seven scenes, each a heading, lines (text or code) and a length in seconds |
+| `lesson.json` | the lesson: seven scenes, each a heading, lines (text or code) and a length in seconds; its form is `schemas/lesson.schema.json` |
 | `timing.json` | the schedule X_eTaL computes from it (frames per scene, starts, ends, the total); checked by the gate, never typed |
 
 ```bash

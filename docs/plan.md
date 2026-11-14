@@ -112,7 +112,7 @@ and print stages:
 | sudoku | X_eTaL-games sudoku | constraints as arrays, a move as a mask |
 | making-of (built, as a draft) | this repository | this video's own schedule is one scan |
 
-## Saga 1 -- foundation  [ACTIVE]
+## Saga 1 -- foundation  [DONE 2026-11-13]
 
 Goal: the process, the pinned interpreter, the gate, and the first
 libraries, tested.
@@ -141,9 +141,11 @@ libraries, tested.
    1 and 4, done early. The agent skills are not installed yet.
 6. spring-lib [DONE] -- `libs/Spring`, checked against Remotion
    4.0.543's own `spring` and `measureSpring`.
-7. lesson-schema -- `schemas/lesson.schema.json`, a checker with no
-   dependencies to install, a first `lessons/timeline/lesson.json`,
-   both in the gate.
+7. lesson-schema [DONE] -- `schemas/lesson.schema.json`;
+   `scripts/check-schema.mjs`, a validator with nothing to install
+   (it checks itself first, and an unknown keyword is an error);
+   `scripts/check-lessons.sh` uses it. The first lesson is
+   `lessons/making-of` (step 4).
 
 ## Saga 2 -- remotion  [PLANNED; steps 1 and 4 done in saga 1]
 

@@ -27,6 +27,7 @@ made (below). Narration and lessons from the live demos come next;
 | ---- | ---- |
 | `libs/` | X_eTaL libraries for video timing and animation (below) |
 | `lessons/` | lessons as data, each with the schedule X_eTaL computes from it ([making-of](lessons/making-of/)) |
+| `schemas/` | `lesson.schema.json`: what a lesson file may contain, checked by the gate |
 | `remotion/` | the [Remotion](remotion/) renderer: one composition that renders any lesson, in both formats |
 | `docs/plan.md` | the plan: decisions, the survey of the existing video pipelines, libraries, lessons, roadmap, open questions |
 | `docs/remotion-scripts.md` | the proposed scripts: voice, timing, capture, render, assemble (proposals, not yet run) |

@@ -1,6 +1,6 @@
 number = 7
 slug = "lesson-schema"
-status = "pending"
+status = "in-progress"
 description = "schemas/lesson.schema.json, checker, first lesson"
 role = "legacy"
 context_files = []
