@@ -147,7 +147,22 @@ libraries, tested.
    `scripts/check-lessons.sh` uses it. The first lesson is
    `lessons/making-of` (step 4).
 
-## Saga 2 -- remotion  [PLANNED; steps 1 and 4 done in saga 1]
+## Saga 2 -- life  [ACTIVE]
+
+Goal: the first lesson about a live demo, Life, made both ways V8
+names so the user can pick (the user, 2026-11-13: "both? so I can
+pick the better one"; Life first).
+
+1. housekeeping -- `docs/research.txt` trimmed to the conversation
+   and tracked; Remotion's agent skills installed (`skills-lock.json`
+   tracked, the skills ignored); saga 1 archived.
+2. life-drawn -- `lessons/life`: X_eTaL runs Life and prints every
+   generation; a `board` scene kind draws them.
+3. life-capture -- Playwright records the published page; a
+   `capture` scene kind plays it.
+4. compare -- both rendered, both formats, for the user to choose.
+
+## Later -- remotion  [PLANNED; steps 1 and 4 done in saga 1]
 
 Goal: one lesson rendered to MP4 in both formats, silent.
 
@@ -197,15 +212,13 @@ Goal: finished files for both channels.
 
 ## Open questions for the user
 
-1. Remotion: answered, installed (2026-11-13). Still open: install
-   its agent skills (`npx remotion skills add`)?
+1. Remotion: answered, installed (2026-11-13), its agent skills too.
 2. Voice: `curiosity` is down for repairs and VoxCPM is to be
    installed on another system (the user, 2026-11-13). Which host
    and port then? Silent videos until it is up.
-3. Demo pictures: record the published pages (real pixels, needs
-   Playwright), draw X_eTaL's printed output in React (crisper, more
-   work per demo), or both?
-4. Which lesson first, and for which format: a 60 second short or a
-   3 to 5 minute explainer?
+3. Demo pictures: both, to compare (the user, 2026-11-13); to be
+   decided after saga 2.
+4. Which lesson first: Life (the user). Still open: a 60 second
+   short or a 3 to 5 minute explainer?
 5. Should the libraries here that prove general (Ease, Spring) move
    to X_eTaL-libraries later?

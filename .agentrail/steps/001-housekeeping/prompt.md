@@ -1,0 +1,1 @@
+docs/research.txt trimmed to the conversation and tracked (the user: trim); Remotion agent skills installed with npx remotion skills add (skills-lock.json tracked; .agents/ and .claude/ under remotion/ ignored, restored by the same command); the foundation saga archived; plan updated with the user's answers (both capture and drawn, Life first).

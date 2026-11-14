@@ -13,6 +13,7 @@ Categories: `feat` new capability, `fix` a bug or wrong behavior,
 
 ## 2026-11-13
 
+- 16:36 `docs` Housekeeping (saga life, step 1; the user's answers): docs/research.txt tracked, trimmed to the conversation (the chat application's sidebar and footer removed); Remotion's agent skills installed (`npx remotion skills add`, 13 skills; remotion/skills-lock.json tracked, the skills ignored); the foundation saga archived and saga life started (the Life lesson both ways: drawn from X_eTaL's output, and recorded from the published page); plan updated.
 - 16:27 `chore` Saga step lesson-schema completed.
 - 16:27 `build` The lesson schema (saga foundation, step 7, its last): schemas/lesson.schema.json (a lesson's form, nothing else allowed) and scripts/check-schema.mjs, a JSON Schema validator with nothing to install for the keywords it uses (an unknown keyword is an error; --self-test: two good lessons, twelve wrong ones); scripts/check-lessons.sh validates every lesson with it, then the slug and unique scene ids, then the timing.
 - 16:24 `chore` Saga step spring-lib completed.

@@ -31,6 +31,7 @@ made (below). Narration and lessons from the live demos come next;
 | `remotion/` | the [Remotion](remotion/) renderer: one composition that renders any lesson, in both formats |
 | `docs/plan.md` | the plan: decisions, the survey of the existing video pipelines, libraries, lessons, roadmap, open questions |
 | `docs/remotion-scripts.md` | the proposed scripts: voice, timing, capture, render, assemble (proposals, not yet run) |
+| `docs/research.txt` | the conversation the idea came from (archival, trimmed) |
 | `docs/xetal-asks.md` | what this work needs from X_eTaL |
 
 ## Libraries

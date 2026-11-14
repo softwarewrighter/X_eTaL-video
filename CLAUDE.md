@@ -322,7 +322,9 @@ Read before working:
   roadmap, the open questions
 - `docs/xetal-asks.md` -- what this work needs from X_eTaL
 - `docs/remotion-scripts.md` -- the proposed Remotion scripts
-- `docs/research.txt` -- the archival idea, NOT normative
+- `docs/research.txt` -- the archival idea (trimmed), NOT normative
+- `remotion/.agents/skills/` -- Remotion's own agent skills
+  (third-party, not tracked; `cd remotion && npx remotion skills add`)
 - `work/xetal/docs/reference.md`, `work/xetal/docs/learn-xetal.xtl`
   -- the language at the pinned commit (read that era, not newer)
 

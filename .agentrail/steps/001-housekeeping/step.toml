@@ -1,0 +1,8 @@
+number = 1
+slug = "housekeeping"
+status = "in-progress"
+description = "docs/research.txt trimmed to the conversation and tracked (the user: trim); R..."
+role = "legacy"
+context_files = []
+created_at = "2026-11-13T16:31:41"
+commits = []
