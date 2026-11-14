@@ -1,0 +1,1 @@
+lessons/nbody (lesson, data.xtl, timing, README), points boards, number cells, recorded live scene; rendered both formats (60 s). Gate passes; site published next.
