@@ -5,12 +5,12 @@
   "order": 1,
   "poster": 60,
   "fps": 30,
-  "stepFrames": 18,
+  "stepFrames": 9,
   "demo": { "repo": "X_eTaL-demos", "slug": "mandelbrot" },
   "scenes": [
     {
       "id": "hook",
-      "seconds": 5,
+      "seconds": 7.5,
       "heading": "Mandelbrot, without a loop",
       "narration": "The Mandelbrot set, with no loop over pixels. Every point is iterated at once.",
       "lines": [
@@ -20,7 +20,7 @@
     },
     {
       "id": "plane",
-      "seconds": 10,
+      "seconds": 10.8,
       "heading": "1. A number for every pixel",
       "narration": "First, a complex number for every pixel. One row of real parts, one column of imaginary parts, and a table spreads them over the whole grid.",
       "lines": [
@@ -35,9 +35,9 @@
     },
     {
       "id": "step",
-      "seconds": 12,
+      "seconds": 10,
       "heading": "2. One step, every pixel",
-      "narration": "One step squares z and adds c, for every pixel at once. A mask keeps the points that have already escaped where they are.",
+      "narration": "In one step, every z is squared and gets its c added, for every pixel at once. A mask keeps the points that have already escaped where they are.",
       "lines": [
         { "xtl": "inside := f_loat 4 >= (zr * zr) + zi * zi" },
         { "xtl": "a := (inside * cr + (zr * zr) - zi * zi) + (1 - inside) * zr" },
@@ -48,7 +48,7 @@
     },
     {
       "id": "grow",
-      "seconds": 15,
+      "seconds": 7.2,
       "heading": "3. Repeat",
       "narration": "Now repeat the step. Black points are still inside. After a couple dozen steps, what is left is the set.",
       "lines": [
@@ -59,15 +59,15 @@
     },
     {
       "id": "live",
-      "seconds": 12,
+      "seconds": 7.3,
       "heading": "The live page",
       "narration": "This is the real page. It runs the same program in your browser. Click a point to see its orbit.",
       "lines": [],
-      "capture": { "actions": [{ "wait": 1 }, { "click": "button:has-text('Play steps')" }, { "wait": 5.5 }, { "click": "canvas.big" }] }
+      "capture": { "actions": [{ "wait": 0.3 }, { "click": "button:has-text('Play steps')" }, { "wait": 2 }, { "click": "canvas.big" }] }
     },
     {
       "id": "cta",
-      "seconds": 6,
+      "seconds": 4.4,
       "heading": "Try it",
       "narration": "Try it yourself. The link is below.",
       "lines": [

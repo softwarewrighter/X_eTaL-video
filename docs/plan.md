@@ -250,6 +250,17 @@ shown in a local preview.
    captions (`SLUG.srt`, the exact sentences at their times: each
    scene's start from `timing.json` plus the sentence's offset, now
    recorded in `voice.json`) and `narration.txt`.
+3. narrate-life-mandelbrot -- both narrated (the user, 2026-11-18),
+   run at once to try the shared lock (`~/.cache/voxcpm-tts.lock`,
+   held only for the request: the server saw one request at a time,
+   each run's whisper checks ran during the other's turn). The
+   comparison learns contractions and "-1"; Life no longer names the
+   language aloud or says "pentomino" (whisper cannot spell it);
+   Mandelbrot's "squares z and adds c" reworded. Life 48.4 s (a
+   generation every 5 frames, poster 1260), Mandelbrot 47.2 s (a
+   step every 9 frames, so all 24 show; the page re-recorded, the
+   orbit click at the narration's "Click a point"). Titles and
+   descriptions; published.
 
 ## Later -- remotion  [PLANNED; steps 1 and 4 done in saga 1]
 

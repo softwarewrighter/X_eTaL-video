@@ -1,0 +1,135 @@
+{
+  "sample": "mike-medium-ref-1.wav",
+  "sampleSha256": "a57fe277f7ce93d5cac4e0e2ed21d770b7d05cab5b20b338dd55aece009d7211",
+  "server": "VoxCPM (Gradio /generate)",
+  "steps": 15,
+  "cfg": 2.0,
+  "scenes": [
+    {
+      "id": "hook",
+      "narration": "The Mandelbrot set, with no loop over pixels. Every point is iterated at once.",
+      "seconds": 7.5,
+      "sentences": [
+        {
+          "text": "The Mandelbrot set, with no loop over pixels.",
+          "heard": "The Mandelbrot set with no loop over pixels.",
+          "start": 0.4,
+          "end": 4.308
+        },
+        {
+          "text": "Every point is iterated at once.",
+          "heard": "Every point is iterated at once.",
+          "start": 4.658,
+          "end": 6.726
+        }
+      ]
+    },
+    {
+      "id": "plane",
+      "narration": "First, a complex number for every pixel. One row of real parts, one column of imaginary parts, and a table spreads them over the whole grid.",
+      "seconds": 10.8,
+      "sentences": [
+        {
+          "text": "First, a complex number for every pixel.",
+          "heard": "First, a complex number for every pixel.",
+          "start": 0.4,
+          "end": 3.486
+        },
+        {
+          "text": "One row of real parts, one column of imaginary parts, and a table spreads them over the whole grid.",
+          "heard": "One row of real parts, one column of imaginary parts, and a table spreads them over the whole grid.",
+          "start": 3.836,
+          "end": 10.024
+        }
+      ]
+    },
+    {
+      "id": "step",
+      "narration": "In one step, every z is squared and gets its c added, for every pixel at once. A mask keeps the points that have already escaped where they are.",
+      "seconds": 10.0,
+      "sentences": [
+        {
+          "text": "In one step, every z is squared and gets its c added, for every pixel at once.",
+          "heard": "In one step, every Z is squared and gets its C added, for every pixel at once.",
+          "start": 0.4,
+          "end": 5.646
+        },
+        {
+          "text": "A mask keeps the points that have already escaped where they are.",
+          "heard": "A mask keeps the points that have already escaped where they are.",
+          "start": 5.996,
+          "end": 9.247
+        }
+      ]
+    },
+    {
+      "id": "grow",
+      "narration": "Now repeat the step. Black points are still inside. After a couple dozen steps, what is left is the set.",
+      "seconds": 7.2,
+      "sentences": [
+        {
+          "text": "Now repeat the step.",
+          "heard": "Now repeat the step.",
+          "start": 0.4,
+          "end": 1.646
+        },
+        {
+          "text": "Black points are still inside.",
+          "heard": "Black points are still inside.",
+          "start": 1.996,
+          "end": 3.496
+        },
+        {
+          "text": "After a couple dozen steps, what is left is the set.",
+          "heard": "After a couple dozen steps, what is left is the set.",
+          "start": 3.846,
+          "end": 6.42
+        }
+      ]
+    },
+    {
+      "id": "live",
+      "narration": "This is the real page. It runs the same program in your browser. Click a point to see its orbit.",
+      "seconds": 7.3,
+      "sentences": [
+        {
+          "text": "This is the real page.",
+          "heard": "This is the real page.",
+          "start": 0.4,
+          "end": 1.965
+        },
+        {
+          "text": "It runs the same program in your browser.",
+          "heard": "It runs the same program in your browser.",
+          "start": 2.315,
+          "end": 4.427
+        },
+        {
+          "text": "Click a point to see its orbit.",
+          "heard": "Click a point to see its orbit.",
+          "start": 4.777,
+          "end": 6.549
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "narration": "Try it yourself. The link is below.",
+      "seconds": 4.4,
+      "sentences": [
+        {
+          "text": "Try it yourself.",
+          "heard": "Try it yourself.",
+          "start": 0.4,
+          "end": 1.172
+        },
+        {
+          "text": "The link is below.",
+          "heard": "The link is below.",
+          "start": 1.522,
+          "end": 2.528
+        }
+      ]
+    }
+  ]
+}

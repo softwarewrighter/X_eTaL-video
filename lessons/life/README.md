@@ -2,8 +2,9 @@
 
 Life in one line: Conway's Game of Life as X_eTaL-demos'
 [life-microscope](https://softwarewrighter.github.io/X_eTaL-demos/life-microscope/)
-writes it, one array at a time. 64 seconds, silent for now (each
-scene's narration is written, for when there is a voice).
+writes it, one array at a time. 48 seconds, narrated in the
+author's cloned voice (`just voice life`); each scene is as long as
+its narration, and the run shows a generation every 5 frames.
 
 This is the **drawn** version: every board on screen is an array
 X_eTaL printed, drawn by a Remotion component. `lessons/life-capture`
@@ -16,8 +17,10 @@ is the same lesson with the published page recorded instead.
 | `timing.json` | the schedule X_eTaL computes from the lesson; checked by the gate |
 
 ```bash
+just voice life              # narrate (VoxCPM on queenbee), scene lengths from the audio
 just render life             # out/life-landscape-remotion.mp4
 just render life portrait    # out/life-portrait-remotion.mp4
+just youtube life            # out/life-youtube/: videos, title, description, captions
 just still life 1500         # one frame (the run, generation 24)
 just studio life             # scrub it at http://localhost:8427
 scripts/xt run lessons/life/data.xtl    # the arrays themselves

@@ -1,7 +1,8 @@
 """Narrate a lesson in the user's cloned voice (scripts/voice.sh runs it).
 
 Each scene's `narration` is split into sentences; each sentence goes
-on its own call (one at a time, never in parallel) to VoxCPM's Gradio
+on its own call (one at a time, never in parallel: every narration on
+this machine queues on one lock, --lock) to VoxCPM's Gradio
 API with the user's voice sample and its exact transcript, the sample
 and transcript this year's narrated shorts used. Every clip is checked
 by a local whisper (whisper-cli, ggml-medium.en): one whose words are
@@ -17,6 +18,9 @@ whisper heard, and the sample used.
 """
 
 import argparse
+import contextlib
+import fcntl
+import os
 import hashlib
 import json
 import math
@@ -68,8 +72,17 @@ def spelled(n: int) -> str:
     return str(n)
 
 
+CONTRACTIONS = {"here's": "here is", "it's": "it is", "that's": "that is", "there's": "there is",
+                "what's": "what is", "let's": "let us", "you're": "you are", "we're": "we are",
+                "they're": "they are", "isn't": "is not", "doesn't": "does not", "don't": "do not",
+                "can't": "cannot", "won't": "will not", "i'll": "i will", "you'll": "you will"}
+
+
 def words(text: str) -> list[str]:
-    text = re.sub(r"\d+", lambda m: spelled(int(m.group())), text.lower().replace(",", ""))
+    """The words, as compared: whisper writes 50 for fifty and here's for here is."""
+    text = re.sub(r"(?<![a-z0-9])-(?=\d)", "minus ", text.lower())
+    text = re.sub(r"\d+", lambda m: spelled(int(m.group())), text.replace(",", "").replace("\u2019", "'"))
+    text = re.sub(r"[a-z]+'[a-z]+", lambda m: CONTRACTIONS.get(m.group(), m.group()), text)
     return re.sub(r"[^a-z' ]", " ", text.replace("-", " ")).split()
 
 
@@ -79,6 +92,26 @@ def sox(*args: str) -> None:
 
 def seconds(wav: Path) -> float:
     return float(subprocess.run(["soxi", "-D", str(wav)], check=True, capture_output=True, text=True).stdout)
+
+
+@contextlib.contextmanager
+def voxcpm_turn(lock: Path, what: str):
+    """The one request at a time VoxCPM can take: an exclusive lock on a
+    file every narration on this machine shares, held only for the
+    request itself. Any number of narrations (terminals, agents) can run
+    at once; their requests to the server queue here, and everything
+    else (whisper, sox, rendering) runs in parallel."""
+    lock.parent.mkdir(parents=True, exist_ok=True)
+    with open(lock, "a") as f:
+        try:
+            fcntl.flock(f, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        except BlockingIOError:
+            print(f"voice: {what}: waiting for VoxCPM (another narration is using it)", flush=True)
+            fcntl.flock(f, fcntl.LOCK_EX)
+        try:
+            yield
+        finally:
+            fcntl.flock(f, fcntl.LOCK_UN)
 
 
 def heard(wav: Path, model: Path) -> str:
@@ -99,6 +132,9 @@ def main() -> None:
     ap.add_argument("--steps", type=int, default=15)
     ap.add_argument("--cfg", type=float, default=2.0)
     ap.add_argument("--tries", type=int, default=3)
+    ap.add_argument("--lock", type=Path, default=Path(os.environ.get(
+        "XETAL_TTS_LOCK", Path.home() / ".cache" / "voxcpm-tts.lock")),
+        help="the lock every narration shares: one request to VoxCPM at a time")
     ap.add_argument("--check", action="store_true", help="only lint the narration")
     a = ap.parse_args()
 
@@ -149,15 +185,16 @@ def main() -> None:
                 for attempt in range(1, a.tries + 1):
                     print(f"voice: {scene['id']} {k + 1}: {sentence!r} (try {attempt})", flush=True)
                     client = client or Client(a.server, verbose=False)
-                    raw = client.predict(
-                        text_input=sentence,
-                        prompt_wav_path_input=handle_file(str(a.reference.resolve())),
-                        prompt_text_input=prompt,
-                        cfg_value_input=a.cfg,
-                        inference_timesteps_input=a.steps,
-                        do_normalize=False,
-                        api_name="/generate",
-                    )
+                    with voxcpm_turn(a.lock, f"{a.slug} {scene['id']} {k + 1}"):
+                        raw = client.predict(
+                            text_input=sentence,
+                            prompt_wav_path_input=handle_file(str(a.reference.resolve())),
+                            prompt_text_input=prompt,
+                            cfg_value_input=a.cfg,
+                            inference_timesteps_input=a.steps,
+                            do_normalize=False,
+                            api_name="/generate",
+                        )
                     # Trim the silence the model leaves at either end.
                     sox(raw, "-r", "44100", "-c", "1", str(clip),
                         "silence", "1", "0.05", "0.3%", "reverse", "silence", "1", "0.05", "0.3%", "reverse")

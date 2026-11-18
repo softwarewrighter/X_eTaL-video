@@ -3,16 +3,16 @@
   "title": "Life in one line",
   "summary": "Conway's Game of Life as one line of X_eTaL, taken apart: nine shifted copies of the board, their sum, one comparison. Every board is an array X_eTaL printed.",
   "order": 2,
-  "poster": 1500,
+  "poster": 1260,
   "fps": 30,
-  "stepFrames": 10,
+  "stepFrames": 5,
   "demo": { "repo": "X_eTaL-demos", "slug": "life-microscope" },
   "scenes": [
     {
       "id": "title",
-      "seconds": 5,
+      "seconds": 4.3,
       "heading": "Life in one line",
-      "narration": "Conway's Game of Life, in one line of X_eTaL.",
+      "narration": "Conway's Game of Life, in a single line of code.",
       "lines": [
         "Conway's Game of Life, in X_eTaL.",
         "The whole rule is one line of array code."
@@ -20,9 +20,9 @@
     },
     {
       "id": "rule",
-      "seconds": 9,
+      "seconds": 8,
       "heading": "The rule",
-      "narration": "Here is the whole rule. Read it right to left: rotate the board, add the copies up, and compare.",
+      "narration": "Here is the whole rule. Read it from right to left. Rotate the board, add up the copies, and compare.",
       "lines": [
         { "xtl": "u:l_ife := { ('+ r_/_12 -1 0 1 o_-_12 _r) { (_l = 3) + _r * _l = 4 } _r }" },
         "Read it right to left: rotate, add, compare.",
@@ -32,9 +32,9 @@
     },
     {
       "id": "rotate",
-      "seconds": 10,
+      "seconds": 10.6,
       "heading": "1. Nine shifted copies",
-      "narration": "Rotate the board by minus one, zero and one along both axes. That gives nine shifted copies: one for each neighbor, and the cell itself.",
+      "narration": "Rotate the board by minus one, zero, and one, along both axes. That gives nine shifted copies, one for each neighbor, and one for the cell itself.",
       "lines": [
         { "xtl": "r := -1 0 1 o_-_12 b        # s_hape r is 3 3 6 6" },
         "One copy for each neighbor, and the cell itself."
@@ -43,9 +43,9 @@
     },
     {
       "id": "sum",
-      "seconds": 9,
+      "seconds": 6.4,
       "heading": "2. Add them up",
-      "narration": "Add the nine copies. Now every cell holds its own value plus its eight neighbors.",
+      "narration": "Add up the nine copies. Now every cell holds its own value, plus its eight neighbors.",
       "lines": [
         { "xtl": "s := '+ r_/_12 r" },
         "Every cell now holds itself plus its eight neighbors."
@@ -57,9 +57,9 @@
     },
     {
       "id": "compare",
-      "seconds": 9,
+      "seconds": 5.9,
       "heading": "3. Compare",
-      "narration": "A cell lives next when the sum is three, or when it is alive and the sum is four.",
+      "narration": "A cell lives on when the sum is three, or when it is alive and the sum is four.",
       "lines": [
         { "xtl": "(s = 3) + b * s = 4" },
         "Alive next: the sum is 3, or the cell is alive and the sum is 4."
@@ -71,9 +71,9 @@
     },
     {
       "id": "run",
-      "seconds": 16,
+      "seconds": 7.3,
       "heading": "Run it",
-      "narration": "Run it. Five cells, the R pentomino, on a sixteen by sixteen board that wraps around.",
+      "narration": "Run it. Start with just five cells, on a sixteen by sixteen board that wraps around.",
       "lines": [
         { "xtl": "{{step}} 'u:l_ife p_ower world" },
         "Five cells to start: the R-pentomino. The edges wrap."
@@ -82,9 +82,9 @@
     },
     {
       "id": "live",
-      "seconds": 6,
+      "seconds": 5.9,
       "heading": "Try it live",
-      "narration": "Step through it yourself in the browser.",
+      "narration": "Step through it yourself in your browser. The link is below.",
       "lines": [
         "Every array in this video, in your browser:",
         { "code": "softwarewrighter.github.io/X_eTaL-demos/life-microscope" }

@@ -18,8 +18,9 @@ video tools assemble the result.
 
 Status: early. Three X_eTaL libraries for timing and animation are
 tested, and five lessons are rendered with Remotion in landscape and
-portrait. The N-body short is narrated in the author's cloned voice
-(`just voice`, below); the others are silent so far. `docs/plan.md`
+portrait. Life, Mandelbrot and N-body are narrated in the author's
+cloned voice (`just voice`, below); making-of and life-capture are
+silent so far. `docs/plan.md`
 has the roadmap.
 
 ## Narration
@@ -29,7 +30,13 @@ cloned voice: VoxCPM (its Gradio API, on `queenbee.local:7860` by
 default, `XETAL_TTS` to change it) with the voice sample and exact
 transcript in `../video-publishing/reference/voice/`
 (`mike-medium-ref-1.wav`, `prompt-text.txt`; not tracked anywhere).
-A sentence a call, one call at a time; every clip is checked by a
+A sentence a call. VoxCPM garbles audio when it gets two requests
+at once, so every narration on this machine queues its requests on
+one lock (`~/.cache/voxcpm-tts.lock`, `XETAL_TTS_LOCK` to change it),
+held only for the request: several lessons (several terminals or
+agents) can be narrated at once, their whisper checks and everything
+else in parallel, and the server still sees one request at a time.
+Every clip is checked by a
 local whisper (`whisper-cli`, `ggml-medium.en` in
 `~/.local/share/whisper-cpp/models/`) and made again when its words
 differ. Each scene's length becomes its audio's, `timing.json` is
@@ -106,14 +113,14 @@ renderer with nothing to install beyond `node`, `magick` and
 ## A lesson from a live demo: Life
 
 ```bash
-just render life             # out/life-landscape-remotion.mp4 (64 s)
+just render life             # out/life-landscape-remotion.mp4 (48 s, narrated)
 just render life portrait
 ```
 
 Conway's Life as the
 [life-microscope](https://softwarewrighter.github.io/X_eTaL-demos/life-microscope/)
 demo writes it: the one-line rule, the nine shifted copies of the
-board, their sum, the comparison, then 47 generations. Every board on
+board, their sum, the comparison, then 43 generations. Every board on
 screen is an array X_eTaL printed (`lessons/life/data.xtl`).
 
 The same lesson exists a second way, to compare:
@@ -122,7 +129,7 @@ page itself, recorded in headless Chromium while a script clicks
 through it (`just capture life-capture`, then `just render
 life-capture`).
 
-## 60 second shorts: N-body gravity, Mandelbrot
+## Narrated shorts: N-body gravity, Mandelbrot
 
 `lessons/nbody`: three bodies round a figure-eight with no loop over
 pairs: every pair's displacement is a table, every pull one

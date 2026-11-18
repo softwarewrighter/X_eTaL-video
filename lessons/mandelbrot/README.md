@@ -1,9 +1,10 @@
 # mandelbrot
 
-Mandelbrot without a loop: a 60 second short about X_eTaL-demos'
+Mandelbrot without a loop: a 47 second short about X_eTaL-demos'
 [mandelbrot](https://softwarewrighter.github.io/X_eTaL-demos/mandelbrot/),
-made portrait first (it renders in landscape too). Silent for now;
-each scene's narration is written.
+made portrait first (it renders in landscape too), narrated in the
+author's cloned voice (`just voice mandelbrot`); each scene is as
+long as its narration, and the set grows a step every 9 frames.
 
 It mixes the two kinds of scene: four drawn from arrays X_eTaL
 printed, then one of the published page itself, recorded.
@@ -16,8 +17,10 @@ printed, then one of the published page itself, recorded.
 
 ```bash
 just capture mandelbrot             # record the page (network), both formats
+just voice mandelbrot               # narrate (VoxCPM on queenbee), scene lengths from the audio
 just render mandelbrot portrait     # out/mandelbrot-portrait-remotion.mp4
 just render mandelbrot              # out/mandelbrot-landscape-remotion.mp4
+just youtube mandelbrot             # out/mandelbrot-youtube/: videos, title, description, captions
 ```
 
 A board with `"heat"` is colored by its numbers, cells touching:

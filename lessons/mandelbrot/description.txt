@@ -1,0 +1,15 @@
+The Mandelbrot set with no loop over pixels: every point is iterated at once, in X_eTaL, an experimental typed array language.
+
+1. A complex number for every pixel: one row of real parts, one column of imaginary parts, spread over the grid by a table
+2. One step for every pixel at once: z squared plus c, with a mask (not an if) keeping escaped points where they are
+3. Repeat the step: after a couple dozen steps, what is left is the set
+
+Then the live page runs the same program in your browser. Click a point to see its orbit.
+
+Try it: https://softwarewrighter.github.io/X_eTaL-demos/mandelbrot/
+More X_eTaL videos: https://softwarewrighter.github.io/X_eTaL-video/
+
+Blog: https://software-wrighter-lab.github.io/
+Discord: https://discord.gg/Ctzk5uHggZ
+
+#Shorts #XeTaL #Mandelbrot #Fractal #ArrayProgramming #Programming

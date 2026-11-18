@@ -1,0 +1,15 @@
+Conway's Game of Life, the whole rule, in a single line of X_eTaL, an experimental typed array language. Read it right to left:
+
+1. Rotate the board by -1, 0 and 1 along both axes: nine shifted copies, one for each neighbor and one for the cell itself
+2. Add the nine copies: every cell now holds itself plus its eight neighbors
+3. Compare: a cell is alive next when the sum is 3, or when it is alive and the sum is 4
+
+No loops over cells, no neighbor bookkeeping. Then it runs: the R-pentomino on a 16 by 16 board that wraps around.
+
+Step through every array yourself: https://softwarewrighter.github.io/X_eTaL-demos/life-microscope/
+More X_eTaL videos: https://softwarewrighter.github.io/X_eTaL-video/
+
+Blog: https://software-wrighter-lab.github.io/
+Discord: https://discord.gg/Ctzk5uHggZ
+
+#Shorts #XeTaL #GameOfLife #ArrayProgramming #Conway #Programming #APL

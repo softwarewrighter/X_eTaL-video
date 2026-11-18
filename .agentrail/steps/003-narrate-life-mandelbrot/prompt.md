@@ -1,0 +1,1 @@
+Narrate the Life and Mandelbrot shorts as N-body was: reword each scene's narration for VoxCPM (just voice SLUG --check), just voice SLUG (queenbee, the user's sample, whisper-verified), re-record their live pages to the new lengths, check posters, title.txt and description.txt for each, render both formats, just youtube SLUG, publish the site, retake the README screenshot.
