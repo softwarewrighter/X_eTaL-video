@@ -1,8 +1,9 @@
 number = 2
 slug = "youtube-files"
-status = "in-progress"
+status = "completed"
 description = "For each narrated lesson, what a YouTube upload needs, as in the user's short..."
 role = "production"
 context_files = []
 created_at = "2026-11-18T14:14:58"
-commits = []
+completed_at = "2026-11-18T14:16:15"
+commits = ["4479f248f7229202ea8275a6f760fb91586616dd"]

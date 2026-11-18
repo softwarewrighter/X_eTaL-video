@@ -1,0 +1,1 @@
+just youtube SLUG: out/SLUG-youtube/ with both videos, title.txt, description.txt (tracked in lessons/SLUG/), SLUG.srt captions (exact sentences, times from timing.json + per-sentence offsets now in voice.json), narration.txt. N-body done. Site still unpublished pending the user's review of the local preview.
