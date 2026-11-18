@@ -1,0 +1,8 @@
+number = 12
+slug = "kmeans-short"
+status = "pending"
+description = "A new narrated portrait short lessons/k-means from X_eTaL-ML k-means. Subagen..."
+role = "production"
+context_files = []
+created_at = "2026-11-18T15:08:21"
+commits = []
