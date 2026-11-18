@@ -268,6 +268,10 @@ landscape only. `scripts/format.sh` decides from `timing.json`;
 `render.sh`, `capture.mjs`, `build-pages.sh`, `build-catalog.mjs`
 and `youtube.mjs` follow it.
 
+`docs/curriculum.md` (the user, 2026-11-18) is the plan beyond the
+shorts: tutorials and series to teach and showcase the language; the
+sagas that follow build it.
+
 ## Later -- remotion  [PLANNED; steps 1 and 4 done in saga 1]
 
 Goal: one lesson rendered to MP4 in both formats, silent.

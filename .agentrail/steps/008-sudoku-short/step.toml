@@ -1,8 +1,9 @@
 number = 8
 slug = "sudoku-short"
-status = "pending"
+status = "completed"
 description = "A new lesson lessons/sudoku from X_eTaL-games' sudoku: constraints as arrays,..."
 role = "production"
 context_files = []
 created_at = "2026-11-18T14:45:55"
-commits = []
+completed_at = "2026-11-18T15:08:01"
+commits = ["d31fc2f0952b9274080cb46523e5e4e0977fd9de"]
