@@ -215,7 +215,7 @@ def main() -> None:
         # Each sentence's start and end within the scene (for captions).
         parts, at = [], 0.0
         for k, c in enumerate(clips):
-            pad = cache / f"pad-{c.stem}-{'l' if k == 0 else 'g'}.wav"
+            pad = out / f"pad-{c.stem}-{'l' if k == 0 else 'g'}.wav"  # this lesson's own
             sox(str(c), str(pad), "pad", str(LEAD if k == 0 else GAP), "0")
             parts.append(str(pad))
             at += LEAD if k == 0 else GAP
