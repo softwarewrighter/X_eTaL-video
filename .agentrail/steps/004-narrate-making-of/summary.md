@@ -1,0 +1,1 @@
+making-of narrated by a subagent (69.1 s, portrait, 18 captions); reviewed, lesson.json layout restored, committed.
