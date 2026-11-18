@@ -1,0 +1,8 @@
+number = 1
+slug = "narrate-nbody"
+status = "in-progress"
+description = "just voice SLUG: each scene's narration of a lesson, a sentence a call, sent ..."
+role = "production"
+context_files = []
+created_at = "2026-11-18T13:41:12"
+commits = []

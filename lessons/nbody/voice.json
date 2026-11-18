@@ -1,0 +1,114 @@
+{
+  "sample": "mike-medium-ref-1.wav",
+  "sampleSha256": "a57fe277f7ce93d5cac4e0e2ed21d770b7d05cab5b20b338dd55aece009d7211",
+  "server": "VoxCPM (Gradio /generate)",
+  "steps": 15,
+  "cfg": 2.0,
+  "scenes": [
+    {
+      "id": "hook",
+      "narration": "Three bodies, all pulling on each other. And there is no loop over the pairs.",
+      "seconds": 6.3,
+      "sentences": [
+        {
+          "text": "Three bodies, all pulling on each other.",
+          "heard": "Three bodies, all pulling on each other."
+        },
+        {
+          "text": "And there is no loop over the pairs.",
+          "heard": "and there is no loop over the pairs."
+        }
+      ]
+    },
+    {
+      "id": "cube",
+      "narration": "First, find how far apart every pair is. Subtract every x from every x, and that is one table. Do the same for y. Stack the two tables, and you have a cube.",
+      "seconds": 11.9,
+      "sentences": [
+        {
+          "text": "First, find how far apart every pair is.",
+          "heard": "First find how far apart every pair is."
+        },
+        {
+          "text": "Subtract every x from every x, and that is one table.",
+          "heard": "subtract every X from every X, and that is one table."
+        },
+        {
+          "text": "Do the same for y.",
+          "heard": "Do the same for Y."
+        },
+        {
+          "text": "Stack the two tables, and you have a cube.",
+          "heard": "Stack the two tables and you have a cube."
+        }
+      ]
+    },
+    {
+      "id": "pull",
+      "narration": "Gravity falls off with the square of the distance. One expression gives the pull between every pair at once.",
+      "seconds": 7.1,
+      "sentences": [
+        {
+          "text": "Gravity falls off with the square of the distance.",
+          "heard": "gravity falls off with the square of the distance."
+        },
+        {
+          "text": "One expression gives the pull between every pair at once.",
+          "heard": "One expression gives the pull between every pair at once."
+        }
+      ]
+    },
+    {
+      "id": "reduce",
+      "narration": "Now add up each row. That one sum turns every pull into each body's acceleration.",
+      "seconds": 6.7,
+      "sentences": [
+        {
+          "text": "Now add up each row.",
+          "heard": "Now add up each row."
+        },
+        {
+          "text": "That one sum turns every pull into each body's acceleration.",
+          "heard": "That one sum turns every pull into each body's acceleration."
+        }
+      ]
+    },
+    {
+      "id": "orbit",
+      "narration": "Kick, drift, kick. Repeat that step, and the three bodies chase each other around a figure eight.",
+      "seconds": 8.0,
+      "sentences": [
+        {
+          "text": "Kick, drift, kick.",
+          "heard": "Kick, drift, kick."
+        },
+        {
+          "text": "Repeat that step, and the three bodies chase each other around a figure eight.",
+          "heard": "Repeat that step and the three bodies chase each other around a figure eight."
+        }
+      ]
+    },
+    {
+      "id": "live",
+      "narration": "The live page runs the same program in your browser, here with fifty bodies.",
+      "seconds": 5.8,
+      "sentences": [
+        {
+          "text": "The live page runs the same program in your browser, here with fifty bodies.",
+          "heard": "The live page runs the same program in your browser, here with 50 bodies."
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "narration": "Try it yourself, the link is below.",
+      "seconds": 4.4,
+      "sentences": [
+        {
+          "text": "Try it yourself, the link is below.",
+          "heard": "Try it yourself, the link is below."
+        }
+      ]
+    }
+  ]
+}

@@ -17,10 +17,27 @@ arrays, a deterministic renderer draws every frame, and the existing
 video tools assemble the result.
 
 Status: early. Three X_eTaL libraries for timing and animation are
-tested, and a first video is built from them, rendered with Remotion
-in landscape and portrait: 58 silent seconds that describe how it was
-made (below). Narration and lessons from the live demos come next;
-`docs/plan.md` has the roadmap.
+tested, and five lessons are rendered with Remotion in landscape and
+portrait. The N-body short is narrated in the author's cloned voice
+(`just voice`, below); the others are silent so far. `docs/plan.md`
+has the roadmap.
+
+## Narration
+
+`just voice SLUG` speaks each scene's `narration` in the author's
+cloned voice: VoxCPM (its Gradio API, on `queenbee.local:7860` by
+default, `XETAL_TTS` to change it) with the voice sample and exact
+transcript in `../video-publishing/reference/voice/`
+(`mike-medium-ref-1.wav`, `prompt-text.txt`; not tracked anywhere).
+A sentence a call, one call at a time; every clip is checked by a
+local whisper (`whisper-cli`, `ggml-medium.en` in
+`~/.local/share/whisper-cpp/models/`) and made again when its words
+differ. Each scene's length becomes its audio's, `timing.json` is
+recomputed, and `lessons/SLUG/voice.json` records what was said and
+heard. Narration is checked before any call (`just voice SLUG
+--check`): words, commas and periods only, no digits or all-caps
+words, short sentences, which is what VoxCPM speaks cleanly. Needs
+`sox`, `whisper-cpp` and `uv` (the client runs in `.venv`).
 
 ## How it fits
 
@@ -28,7 +45,7 @@ made (below). Narration and lessons from the live demos come next;
 | ----- | ----- | -------------- |
 | The language and its demos | [X_eTaL](https://github.com/softwarewrighter/X_eTaL), [X_eTaL-demos](https://github.com/softwarewrighter/X_eTaL-demos), [X_eTaL-ML](https://github.com/softwarewrighter/X_eTaL-ML), [X_eTaL-games](https://github.com/softwarewrighter/X_eTaL-games), [X_eTaL-libraries](https://github.com/softwarewrighter/X_eTaL-libraries) | what a video is about: programs, their output, the live pages |
 | This repository | `libs/`, `lessons/`, `remotion/` | lessons as data; timing and animation computed in X_eTaL; scenes rendered in landscape (1920x1080) and portrait (1080x1920) |
-| Assembly and publishing | the author's video repositories (long-form and shorts) | narration, loudness, intro and outro, concatenation, upload |
+| Assembly and publishing | the author's video repositories (long-form and shorts) | loudness, intro and outro, concatenation, upload |
 
 ## What is here
 

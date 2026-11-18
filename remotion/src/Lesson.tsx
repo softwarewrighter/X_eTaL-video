@@ -1,3 +1,4 @@
+import { Audio } from "@remotion/media";
 import { AbsoluteFill, OffthreadVideo, Sequence, continueRender, delayRender, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import { Boards } from "./Boards";
 import { theme } from "./theme";
@@ -28,7 +29,7 @@ const syntaxCss = Object.entries(theme.syntax).map(([c, color]) => `.xtl .${c} {
 // page at exactly this size, so a recorded pixel is a pixel here.
 const AREAS = { landscape: [1720, 700], portrait: [940, 1480] } as const;
 
-export const Lesson: React.FC<LessonProps> = ({ lesson, timing, frames, data, captures, rendered }) => {
+export const Lesson: React.FC<LessonProps> = ({ lesson, timing, frames, data, captures, rendered, voice }) => {
   const frame = Math.min(useCurrentFrame(), timing.total - 1);
   const { width, height } = useVideoConfig();
   const tall = height > width;
@@ -127,6 +128,15 @@ export const Lesson: React.FC<LessonProps> = ({ lesson, timing, frames, data, ca
   return (
     <AbsoluteFill style={{ background: theme.bg }}>
       <style>{syntaxCss}</style>
+      {/* The narration: each scene's audio over that scene, which is as long as it is
+          (scripts/voice.sh), starting where X_eTaL's schedule starts the scene. */}
+      {lesson.scenes.map((sc, i) =>
+        voice?.[sc.id] ? (
+          <Sequence key={sc.id} from={timing.starts[i]} durationInFrames={timing.durations[i]} layout="none">
+            <Audio src={staticFile(voice[sc.id])} />
+          </Sequence>
+        ) : null,
+      )}
       {/* The top line. */}
       <div
         style={{

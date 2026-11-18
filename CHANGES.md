@@ -11,6 +11,11 @@ Categories: `feat` new capability, `fix` a bug or wrong behavior,
 `chore` agentrail bookkeeping (step complete, saga archive),
 `vendor` a move of the pinned X_eTaL.
 
+## 2026-11-18
+
+- 14:30 `feat` Narration in the author's cloned voice (saga voice, step narrate-nbody; the user: curiosity is down, queenbee runs VoxCPM with Gradio, use the voice sample of this year's videos, verify with a local whisper, reword to avoid VoxCPM artifacts): `just voice SLUG` (scripts/voice.sh, voice.py) speaks each scene's narration a sentence a call with mike-medium-ref-1.wav and its exact transcript, checks every clip with whisper-cli (ggml-medium.en) and remakes mismatches, sets each scene's seconds to its audio, recomputes timing.json, records lessons/SLUG/voice.json; props.mjs refuses stale or missing audio; Lesson.tsx plays each scene's audio at its start (@remotion/media 4.0.543). The N-body narration reworded and spoken: 50.2 s, its page re-recorded, poster at frame 1300, both formats rendered.
+- 13:41 `chore` Saga nbody archived; saga voice started.
+
 ## 2026-11-14
 
 - 11:30 `docs` The site published with the N-body short (gh-pages from main 5df611d) and images/screencapture.png retaken from it.

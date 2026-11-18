@@ -7,7 +7,7 @@
 // timing and renders no X_eTaL of its own.
 //   scripts/props.mjs SLUG      # writes work/SLUG/props.json
 import { execFileSync } from "node:child_process";
-import { readFileSync, writeFileSync } from "node:fs";
+import { copyFileSync, existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -64,6 +64,27 @@ if (sources.length) {
     if (html[i].includes("c-error")) fail(`this xtl line does not lex as X_eTaL: ${s}`);
     props.rendered[s] = names.reduce((t, n, k) => t.split(stand(k)).join(`{{${n}}}`), html[i]);
   });
+}
+
+// The narration (scripts/voice.sh): each narrated scene's audio, copied
+// where Remotion serves it from. A lesson with a voice.json is never
+// rendered silent or with stale audio.
+props.voice = {};
+const voiceFile = join(root, "lessons", slug, "voice.json");
+if (existsSync(voiceFile)) {
+  const voice = JSON.parse(readFileSync(voiceFile, "utf8"));
+  const pub = join(root, "remotion", "public", "voice", slug);
+  mkdirSync(pub, { recursive: true });
+  for (const s of lesson.scenes) {
+    const v = voice.scenes.find((x) => x.id === s.id);
+    if (!s.narration) continue;
+    if (!v || v.narration !== s.narration) fail(`scene ${s.id}: its narration changed since it was spoken (just voice ${slug})`);
+    if (v.seconds !== s.seconds) fail(`scene ${s.id}: its seconds are not its audio's (just voice ${slug})`);
+    const wav = join(work, "voice", `${s.id}.wav`);
+    if (!existsSync(wav)) fail(`no narration audio ${wav} (just voice ${slug})`);
+    copyFileSync(wav, join(pub, `${s.id}.wav`));
+    props.voice[s.id] = `voice/${slug}/${s.id}.wav`;
+  }
 }
 
 writeFileSync(join(work, "props.json"), JSON.stringify(props));

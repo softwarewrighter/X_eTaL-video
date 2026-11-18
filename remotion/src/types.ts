@@ -66,4 +66,5 @@ export type LessonProps = {
   data: Record<string, number[][][]>; // the lesson's arrays, each a list of boards
   captures: { landscape: string; portrait: string } | null; // recordings, under public/
   rendered: Record<string, string>; // each X_eTaL line as `xetal render --html` gives it
+  voice?: Record<string, string>; // a narrated scene's audio, under public/, by scene id
 };

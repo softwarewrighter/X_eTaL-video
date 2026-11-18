@@ -80,6 +80,10 @@ render slug format="landscape":
 still slug n format="landscape":
     scripts/render.sh "$1" "$3" --still "$2"
 
+# Narrate a lesson in the author's cloned voice (VoxCPM on queenbee, checked by local whisper): just voice nbody [--check]
+voice slug *args:
+    scripts/voice.sh "$@"
+
 # Record a lesson's live demo page in headless Chromium, both formats (needs the network): just capture life-capture
 capture slug *formats:
     scripts/capture.mjs "$@"

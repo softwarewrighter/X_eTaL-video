@@ -38,7 +38,7 @@ the language's argument by existing.
 | V3 | A lesson is **data**: `lessons/<slug>/lesson.json` (scenes, narration text, the demo each scene shows, code to display), checked against `schemas/lesson.schema.json`. A renderer never contains a lesson's content. | One master composition renders every lesson; an agent writes a lesson by writing data, not animation math. |
 | V4 | The renderer is Remotion (React, TypeScript) in `remotion/`, its own Node project (installed 2026-11-13, 4.0.543, `package-lock.json` tracked). A composition computes no timing: `scripts/props.sh` hands it the lesson and every frame's numbers as X_eTaL computed them. The gate checks the project (eslint, tsc) when its packages are installed and renders nothing. `scripts/frames.mjs` is a second, draft renderer of the same numbers with nothing to install. | The Node and React toolchain stays in one directory of one repository, away from the Rust and X_eTaL repositories. |
 | V5 | Every component reads its size from the composition (`useVideoConfig()`), and every lesson renders in two formats: landscape 1920x1080 at 30 fps for long-form (`../video-publishing`) and portrait 1080x1920 for shorts (`../shorts`). | One lesson, two channels' formats; the shorts and long-form repositories stay the assemblers. |
-| V6 | Narration is generated before rendering: text to speech (the VoxCPM server the shorts use, through `vid-tts`), one WAV per scene, its measured length (`ffprobe`) written into the lesson's timing. Scene lengths follow the audio, never the reverse. | The shorts' rule (stretch the picture to the narration); a deterministic renderer needs the lengths as input. |
+| V6 | Narration is generated before rendering: text to speech (the VoxCPM server the shorts use, through its Gradio API as the shorts' `tts/client.py` does: `vid-tts` wraps the deprecated VibeVoice), a sentence a call, checked by a local whisper, one WAV per scene, its measured length (`soxi`) written as the scene's seconds (`just voice`). Scene lengths follow the audio, never the reverse. | The shorts' rule (stretch the picture to the narration); a deterministic renderer needs the lengths as input. |
 | V7 | Assembly uses the Rust `vid-*` tools of `../video-publishing/tools` (`vid-concat --reencode`, `vid-volume --normalize`, `vid-music`, `vid-scale`), never a bare `ffmpeg` concat. Bare `ffmpeg` and `ffprobe` are for probing, for encoding numbered frames, and for cutting a page recording to a constant frame rate (`scripts/capture.mjs`), only. | The video repositories' hard rule: a raw ffmpeg concat goes silent mid-video. |
 | V8 | Pictures of the live demos come from the demos themselves: the published pages recorded in headless Chrome (Playwright, as the shorts capture slides), or the demo's own X_eTaL output drawn by a Remotion component. Never a redrawn imitation of what a page shows. | The demos' rule (a page shows only what X_eTaL computes) carries over: a video shows the real program and its real output. |
 | V9 | A feature X_eTaL lacks, or a bug this work uncovers, is not worked around silently and not fixed here: it is recorded in `docs/xetal-asks.md`, and the library or lesson uses a documented workaround or waits. | X_eTaL owns its language decisions; this repository is a consumer. |
@@ -192,7 +192,7 @@ show the page is real.
    converted and re-rendered. The draft renderer still draws X_eTaL
    as typed (it has no font for it) and is for quick checks only.
 
-## Saga 4 -- mandelbrot  [ACTIVE]
+## Saga 4 -- mandelbrot  [DONE 2026-11-14]
 
 The user (2026-11-13): mixed scenes, Mandelbrot next, a 60 second
 short; and a fix to Life first.
@@ -224,6 +224,27 @@ short; and a fix to Life first.
    cells that fit and tint any numbers; the live page recorded with
    its fifty-body cluster.
 
+## Saga 7 -- voice  [ACTIVE]
+
+The user (2026-11-18): curiosity is still down; queenbee runs VoxCPM
+with Gradio; narrate an existing short in the user's own voice (the
+sample and transcript of this year's shorts), verified by a local
+whisper, the narration reworded to avoid VoxCPM's artifacts, and
+shown in a local preview.
+
+1. narrate-nbody -- `just voice SLUG` (`scripts/voice.sh`,
+   `voice.py`): a sentence a call to VoxCPM's `/generate` with
+   `mike-medium-ref-1.wav` and its transcript, one at a time; each
+   clip trimmed, checked by `whisper-cli` (ggml-medium.en, numbers
+   compared as words) and made again on a mismatch; cached by a hash
+   of all that made it; a scene's audio is lead, sentences, pauses,
+   tail (longer on the last scene), peaks at -1 dB; its length is the
+   scene's `seconds`; `voice.json` records it. `props.mjs` refuses
+   stale or missing audio; `Lesson.tsx` plays each scene's audio
+   from where X_eTaL's schedule starts it (`@remotion/media`).
+   The N-body narration reworded (no question mark, no digits, no
+   sentence VoxCPM starts with an extra "And"): 50.2 s.
+
 ## Later -- remotion  [PLANNED; steps 1 and 4 done in saga 1]
 
 Goal: one lesson rendered to MP4 in both formats, silent.
@@ -242,7 +263,7 @@ Goal: one lesson rendered to MP4 in both formats, silent.
 6. render -- `just render SLUG [landscape|portrait]`, a rendered
    still per scene as a baseline in the gate.
 
-## Saga 3 -- voice  [BLOCKED: the TTS host is down (the user, 2026-11-13); VoxCPM is to be installed on another system]
+## Saga 3 -- voice  [step 1 and part of 4 done in saga 7 (just voice, VoxCPM on queenbee); captions and loudness to come]
 
 Goal: narrated lessons whose scene lengths follow the audio.
 
@@ -275,9 +296,9 @@ Goal: finished files for both channels.
 ## Open questions for the user
 
 1. Remotion: answered, installed (2026-11-13), its agent skills too.
-2. Voice: `curiosity` is down for repairs and VoxCPM is to be
-   installed on another system (the user, 2026-11-13). Which host
-   and port then? Silent videos until it is up.
+2. Voice: answered (the user, 2026-11-18): VoxCPM with Gradio on
+   `queenbee.local:7860` while `curiosity` is repaired; the voice
+   sample and transcript of this year's shorts.
 3. Demo pictures: both are built for Life (saga 2, step 4 has the
    comparison). Which for the lessons to come: drawn, recorded, or
    mixed?

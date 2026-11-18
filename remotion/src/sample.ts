@@ -34,5 +34,6 @@ export const sample: LessonProps = {
   },
   data: {},
   captures: null,
+  voice: {},
   rendered: {},
 };
