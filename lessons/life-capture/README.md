@@ -5,7 +5,7 @@ Life in one line, the **recorded** version: the same lesson as
 published
 [life-microscope](https://softwarewrighter.github.io/X_eTaL-demos/life-microscope/)
 page itself, recorded in headless Chromium while a script clicks
-through it. 64 seconds, silent for now.
+through it. 60 seconds, narrated (`just voice life-capture`), portrait.
 
 | File | What |
 | ---- | ---- |
@@ -13,8 +13,7 @@ through it. 64 seconds, silent for now.
 | `timing.json` | the schedule X_eTaL computes from the lesson; checked by the gate |
 
 ```bash
-just capture life-capture             # record the page, both formats (about 2 minutes; needs the network)
-just render life-capture              # out/life-capture-landscape-remotion.mp4
+just capture life-capture portrait    # record the page (about a minute; needs the network)
 just render life-capture portrait     # out/life-capture-portrait-remotion.mp4
 ```
 

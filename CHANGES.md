@@ -13,6 +13,7 @@ Categories: `feat` new capability, `fix` a bug or wrong behavior,
 
 ## 2026-11-18
 
+- 17:40 `lesson` life-capture narrated (saga voice, step narrate-life-capture, by a subagent in parallel): Life's reworded narration reused (cached clips), the rule and run scenes reworded so the page's Step and Play clicks land as they are spoken; the page re-recorded; 60.0 s, portrait; title and description.
 - 17:35 `lesson` making-of narrated (saga voice, step narrate-making-of, by a subagent in parallel): a narration for each of its seven scenes (the language, Remotion and ffmpeg never named aloud), 69.1 s, portrait; poster 1080; the on-screen JSON shows the real 9.5 s; title and description.
 - 17:20 `build` One format a video (the user: portrait only for 2.5 minutes or less, landscape only for longer): scripts/format.sh decides from the lesson's timing; just render, just still and just capture default to it, the site renders and links only that format (a portrait thumbnail centered on the page background, lengths over a minute as m:ss), just youtube gathers only it and refuses a video older than its narration.
 - 16:40 `docs` The site published with Life and Mandelbrot narrated (gh-pages from main f398415); images/screencapture.png retaken; out/SLUG-youtube/ built for life, mandelbrot, nbody. voice.py pads a clip in the lesson's own folder, so lessons narrated at once never share a temporary file.

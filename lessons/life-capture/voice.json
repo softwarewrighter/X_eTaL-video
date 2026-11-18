@@ -1,0 +1,154 @@
+{
+  "sample": "mike-medium-ref-1.wav",
+  "sampleSha256": "a57fe277f7ce93d5cac4e0e2ed21d770b7d05cab5b20b338dd55aece009d7211",
+  "server": "VoxCPM (Gradio /generate)",
+  "steps": 15,
+  "cfg": 2.0,
+  "scenes": [
+    {
+      "id": "title",
+      "narration": "Conway's Game of Life, in a single line of code.",
+      "seconds": 4.3,
+      "sentences": [
+        {
+          "text": "Conway's Game of Life, in a single line of code.",
+          "heard": "Conway's Game of Life in a single line of code.",
+          "start": 0.4,
+          "end": 3.571
+        }
+      ]
+    },
+    {
+      "id": "rule",
+      "narration": "Here is the whole rule, on the live page. Read it from right to left. Rotate the board, add up the copies, and compare. Each click on step moves the board one generation.",
+      "seconds": 13.0,
+      "sentences": [
+        {
+          "text": "Here is the whole rule, on the live page.",
+          "heard": "Here's the whole rule on the live page.",
+          "start": 0.4,
+          "end": 3.085
+        },
+        {
+          "text": "Read it from right to left.",
+          "heard": "read it from right to left.",
+          "start": 3.435,
+          "end": 4.889
+        },
+        {
+          "text": "Rotate the board, add up the copies, and compare.",
+          "heard": "Rotate the board, add up the copies, and compare.",
+          "start": 5.239,
+          "end": 8.695
+        },
+        {
+          "text": "Each click on step moves the board one generation.",
+          "heard": "Each click-on step moves the board one generation.",
+          "start": 9.045,
+          "end": 12.295
+        }
+      ]
+    },
+    {
+      "id": "rotate",
+      "narration": "Rotate the board by minus one, zero, and one, along both axes. That gives nine shifted copies, one for each neighbor, and one for the cell itself.",
+      "seconds": 10.6,
+      "sentences": [
+        {
+          "text": "Rotate the board by minus one, zero, and one, along both axes.",
+          "heard": "Rotate the board by -1, 0, and 1 along both axes.",
+          "start": 0.4,
+          "end": 5.124
+        },
+        {
+          "text": "That gives nine shifted copies, one for each neighbor, and one for the cell itself.",
+          "heard": "That gives nine shifted copies, one for each neighbor and one for the cell itself.",
+          "start": 5.474,
+          "end": 9.813
+        }
+      ]
+    },
+    {
+      "id": "sum",
+      "narration": "Add up the nine copies. Now every cell holds its own value, plus its eight neighbors.",
+      "seconds": 6.4,
+      "sentences": [
+        {
+          "text": "Add up the nine copies.",
+          "heard": "Add up the nine copies.",
+          "start": 0.4,
+          "end": 2.047
+        },
+        {
+          "text": "Now every cell holds its own value, plus its eight neighbors.",
+          "heard": "Now every cell holds its own value plus its eight neighbors.",
+          "start": 2.397,
+          "end": 5.633
+        }
+      ]
+    },
+    {
+      "id": "compare",
+      "narration": "A cell lives on when the sum is three, or when it is alive and the sum is four.",
+      "seconds": 5.9,
+      "sentences": [
+        {
+          "text": "A cell lives on when the sum is three, or when it is alive and the sum is four.",
+          "heard": "A cell lives on when the sum is 3 or when it is alive and the sum is 4.",
+          "start": 0.4,
+          "end": 5.14
+        }
+      ]
+    },
+    {
+      "id": "run",
+      "narration": "Run it. Start with just five cells, on a sixteen by sixteen board that wraps around. Press play, and watch it grow, one generation after another. Every step is that same single line.",
+      "seconds": 13.9,
+      "sentences": [
+        {
+          "text": "Run it.",
+          "heard": "Run it.",
+          "start": 0.4,
+          "end": 1.028
+        },
+        {
+          "text": "Start with just five cells, on a sixteen by sixteen board that wraps around.",
+          "heard": "Start with just five cells on a 16 by 16 board that wraps around.",
+          "start": 1.378,
+          "end": 6.501
+        },
+        {
+          "text": "Press play, and watch it grow, one generation after another.",
+          "heard": "Press play and watch it grow one generation after another.",
+          "start": 6.851,
+          "end": 10.897
+        },
+        {
+          "text": "Every step is that same single line.",
+          "heard": "Every step is that same single line.",
+          "start": 11.247,
+          "end": 13.12
+        }
+      ]
+    },
+    {
+      "id": "live",
+      "narration": "Step through it yourself in your browser. The link is below.",
+      "seconds": 5.9,
+      "sentences": [
+        {
+          "text": "Step through it yourself in your browser.",
+          "heard": "Step through it yourself in your browser.",
+          "start": 0.4,
+          "end": 2.672
+        },
+        {
+          "text": "The link is below.",
+          "heard": "The link is below.",
+          "start": 3.022,
+          "end": 4.028
+        }
+      ]
+    }
+  ]
+}
