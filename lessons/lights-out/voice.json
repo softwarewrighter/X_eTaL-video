@@ -1,0 +1,135 @@
+{
+  "sample": "mike-medium-ref-1.wav",
+  "sampleSha256": "a57fe277f7ce93d5cac4e0e2ed21d770b7d05cab5b20b338dd55aece009d7211",
+  "server": "VoxCPM (Gradio /generate)",
+  "steps": 15,
+  "cfg": 2.0,
+  "scenes": [
+    {
+      "id": "hook",
+      "narration": "Lights out, played with no loop over the board. Every light is worked on at once.",
+      "seconds": 6.2,
+      "sentences": [
+        {
+          "text": "Lights out, played with no loop over the board.",
+          "heard": "lights out, played with no loop over the board.",
+          "start": 0.4,
+          "end": 2.987
+        },
+        {
+          "text": "Every light is worked on at once.",
+          "heard": "Every light is worked on at once.",
+          "start": 3.337,
+          "end": 5.414
+        }
+      ]
+    },
+    {
+      "id": "press",
+      "narration": "A press flips a light and its four neighbors, a plus shape. That plus is one row of a table. Two tables of distances build all twenty five presses at once.",
+      "seconds": 11.8,
+      "sentences": [
+        {
+          "text": "A press flips a light and its four neighbors, a plus shape.",
+          "heard": "A press flips a light and its four neighbors a plus shape.",
+          "start": 0.4,
+          "end": 4.577
+        },
+        {
+          "text": "That plus is one row of a table.",
+          "heard": "That plus is one row of a table.",
+          "start": 4.927,
+          "end": 6.812
+        },
+        {
+          "text": "Two tables of distances build all twenty five presses at once.",
+          "heard": "Two tables of distances build all 25 presses at once.",
+          "start": 7.162,
+          "end": 11.086
+        }
+      ]
+    },
+    {
+      "id": "move",
+      "narration": "A move adds that mask to the board, then keeps the remainder after two. On turns off, and off turns on. Every light changes in one step.",
+      "seconds": 10.0,
+      "sentences": [
+        {
+          "text": "A move adds that mask to the board, then keeps the remainder after two.",
+          "heard": "A move adds that mask to the board, then keeps the remainder after two.",
+          "start": 0.4,
+          "end": 5.041
+        },
+        {
+          "text": "On turns off, and off turns on.",
+          "heard": "on turns off and off turns on.",
+          "start": 5.391,
+          "end": 7.598
+        },
+        {
+          "text": "Every light changes in one step.",
+          "heard": "Every light changes in one step.",
+          "start": 7.948,
+          "end": 9.29
+        }
+      ]
+    },
+    {
+      "id": "solve",
+      "narration": "To solve it, set the board beside the table of presses, and reduce it, row by row. Adding a light twice turns it back off. Out come five presses, and every light goes dark.",
+      "seconds": 12.6,
+      "sentences": [
+        {
+          "text": "To solve it, set the board beside the table of presses, and reduce it, row by row.",
+          "heard": "To solve it, set the board beside the table of presses and reduce it row by row.",
+          "start": 0.4,
+          "end": 5.64
+        },
+        {
+          "text": "Adding a light twice turns it back off.",
+          "heard": "Adding a light twice turns it back off.",
+          "start": 5.99,
+          "end": 7.967
+        },
+        {
+          "text": "Out come five presses, and every light goes dark.",
+          "heard": "Out come five presses and every light goes dark.",
+          "start": 8.317,
+          "end": 11.872
+        }
+      ]
+    },
+    {
+      "id": "live",
+      "narration": "This is the live page. Click a light, watch its plus flip, and ask for a hint, right in your browser.",
+      "seconds": 7.2,
+      "sentences": [
+        {
+          "text": "This is the live page.",
+          "heard": "This is the live page.",
+          "start": 0.4,
+          "end": 1.671
+        },
+        {
+          "text": "Click a light, watch its plus flip, and ask for a hint, right in your browser.",
+          "heard": "Click a light, watch its plus flip, and ask for a hint right in your browser.",
+          "start": 2.021,
+          "end": 6.411
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "narration": "Try it yourself, the link is below.",
+      "seconds": 4.4,
+      "sentences": [
+        {
+          "text": "Try it yourself, the link is below.",
+          "heard": "Try it yourself, the link is below.",
+          "start": 0.4,
+          "end": 2.526
+        }
+      ]
+    }
+  ]
+}

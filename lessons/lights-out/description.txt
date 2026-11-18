@@ -1,0 +1,17 @@
+Lights out on a 5 by 5 board, and the program has no loop over the lights.
+
+In X_eTaL, an experimental typed array language:
+1. A press is a plus-shaped mask, one row of a table of all 25 presses, built from two tables of distances
+2. A move is the board plus that mask, mod 2: every light toggled at once
+3. Pressing many squares at once is one inner product with that table
+4. The solver is the same table, reduced mod 2 (Gaussian elimination): out come the presses that turn every light off
+
+Then the live page runs the game in your browser: click a light, or ask for a hint.
+
+Try it: https://softwarewrighter.github.io/X_eTaL-games/lights-out/
+More X_eTaL videos: https://softwarewrighter.github.io/X_eTaL-video/
+
+Blog: https://software-wrighter-lab.github.io/
+Discord: https://discord.gg/Ctzk5uHggZ
+
+#Shorts #XeTaL #ArrayProgramming #LightsOut #Puzzle #LinearAlgebra #Programming

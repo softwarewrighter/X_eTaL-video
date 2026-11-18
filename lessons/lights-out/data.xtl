@@ -1,0 +1,94 @@
+#!/usr/bin/env xetal
+## The Lights out lesson's arrays, computed by X_eTaL with the program
+## of X_eTaL-games' lights-out (its press matrix, its move, its solver
+## by elimination mod 2) on one puzzle. Each array is printed after a
+## "== name" line (scripts/props.sh reads them; a rank-3 array is a
+## list of boards).
+##
+## The game's functions are copied here from its Lamps.xtl (X_eTaL-games
+## at its own pinned X_eTaL, 0b3b3be) as they are, the l: names of the
+## library made u: names of this program (h: helpers stay h:); they run
+## unchanged under this repository's pinned X_eTaL. The library itself
+## is not used: it draws its board with the games' Svg library, which is
+## not here, and makes its puzzles at random.
+
+### The press matrix
+
+# The row and column of each square, from 0.
+row := ((r_ange 25) - 1) d_iv 5
+col := ((r_ange 25) - 1) m_od 5
+## u:p_resses @: which lights each press toggles: row i is square i's
+## press, a 1 on every square at most one step away (itself and its
+## four neighbors), all 625 pairs at once by two tables of distances.
+u:p_resses := { @ -> 0 + 1 >= (a_bs row '- t_able row) + a_bs col '- t_able col }
+## b u:a_fter p: the board after pressing the squares p (a 0/1 vector
+## of 25) on board b: each light flips once for every press that
+## reaches it, mod 2, one inner product for all of them.
+u:a_fter := { b p -> (b + p '+ '* i_nner u:p_resses @) m_od 2 }
+
+### Solving it
+
+## One column of Gaussian elimination mod 2 on the augmented matrix m
+## (the press matrix, the board as its last column), (r, c) the next
+## pivot row and the column.
+h:s_tep := { m (r, c) ->
+  (c > 25) | r > 25 ? m
+  cand := w_here (1 = c s_elect_2 m) & (r_ange 25) >= r
+  0 = t_ally cand ? m h:s_tep (r, c + 1)
+  p := f_irst cand
+  k := r_ange 25
+  up := (k + ((p - r) * k = r) + (r - p) * k = p) s_elect m
+  hit := 0 + (1 = c s_elect_2 up) & k != r
+  ((up + hit '* t_able r s_elect up) m_od 2) h:s_tep (r + 1, c + 1)
+}
+## u:s_olve b: the presses that turn board b off (a 0/1 vector of 25):
+## the matrix reduced mod 2, each pivot's press read from the board's
+## column; the free presses (5 by 5 has two) left 0.
+u:s_olve := { b ->
+  m := ((u:p_resses @) c_at_2 b) h:s_tep (1, 1)
+  lead := '{ i -> f_irst (w_here 1 = 25 t_ake i s_elect m) c_at 0 } e_ach r_ange 25
+  last := 26 s_elect_2 m
+  '{ j -> '+ r_/ (lead = j) * last } e_ach r_ange 25
+}
+
+### What the video shows
+
+P := u:p_resses @
+
+## One press: the middle square's plus (row 13 of the press matrix),
+## and the whole 25 by 25 press matrix.
+"== plus"
+5 5 r_eshape 13 s_elect P
+"== presses"
+P
+
+## The puzzle: made as the game makes one, squares pressed on a board
+## all off (here five chosen ones, not random ones).
+made := 0 + (r_ange 25) '= t_able 3 7 13 19 22
+b := (25 r_eshape 0) u:a_fter '+ r_/_2 made
+"== board"
+5 5 r_eshape b
+
+## One move: square 7 pressed (row 2, column 2), its mask, and the
+## board after it.
+"== mask"
+5 5 r_eshape 7 s_elect P
+"== after"
+5 5 r_eshape b u:a_fter 0 + 7 = r_ange 25
+
+## The solution: the presses that turn every light off.
+x := u:s_olve b
+"== solution"
+5 5 r_eshape x
+
+## The puzzle and the board after each press of the solution, one at a
+## time, a list of boards, each 5 by 5, then the dark board held.
+u:p_lane := { a -> (1 c_at s_hape a) r_eshape a }
+u:s_teps := { b ks -> 0 = t_ally ks ? u:p_lane 5 5 r_eshape b; (u:p_lane 5 5 r_eshape b) c_at (b u:a_fter 0 + (f_irst ks) = r_ange 25) u:s_teps 1 d_rop ks }
+"== steps"
+b u:s_teps w_here x
+
+## The solve scene's stepping board: the puzzle held while the
+## narration says how it is solved (seven steps), then the same presses.
+"== solving"
+((7 5 5 r_eshape b) c_at b u:s_teps w_here x)
