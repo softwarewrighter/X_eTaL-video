@@ -1,8 +1,9 @@
 number = 1
 slug = "narrate-nbody"
-status = "in-progress"
+status = "completed"
 description = "just voice SLUG: each scene's narration of a lesson, a sentence a call, sent ..."
 role = "production"
 context_files = []
 created_at = "2026-11-18T13:41:12"
-commits = []
+completed_at = "2026-11-18T14:14:35"
+commits = ["ea552f0c48478402f380436979687880b2786338"]
