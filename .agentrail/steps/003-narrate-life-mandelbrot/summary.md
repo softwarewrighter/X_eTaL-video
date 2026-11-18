@@ -1,0 +1,1 @@
+Life (48.4 s) and Mandelbrot (47.2 s) narrated in parallel through the new machine-wide VoxCPM lock; whisper comparison learns contractions and -1; narration reworded; stepFrames/posters adjusted; Mandelbrot page re-recorded; titles/descriptions; published; screenshot retaken; youtube folders built.
