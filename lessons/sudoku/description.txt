@@ -1,0 +1,17 @@
+A sudoku solved with no loop over cells: the rules are a table, the candidates a mask, and a move a mask added to the grid.
+
+In X_eTaL, an experimental typed array language:
+1. The rules are a table: 27 units (9 rows, 9 columns, 9 boxes), one select and one sum count every digit in every unit
+2. Every cell's candidates at once: a digit is open where none of the cell's three units holds it
+3. A move is a mask: every single found at once and added to the grid in one step
+4. Round after round until nothing changes: five rounds solve Wikipedia's example
+
+Then the live page plays the game at a terminal and runs the solver as a notebook, in your browser.
+
+Try it: https://softwarewrighter.github.io/X_eTaL-games/sudoku/
+More X_eTaL videos: https://softwarewrighter.github.io/X_eTaL-video/
+
+Blog: https://software-wrighter-lab.github.io/
+Discord: https://discord.gg/Ctzk5uHggZ
+
+#Shorts #XeTaL #ArrayProgramming #Sudoku #Puzzles #Programming

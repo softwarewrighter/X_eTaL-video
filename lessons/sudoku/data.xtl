@@ -1,0 +1,100 @@
+#!/usr/bin/env xetal
+## The Sudoku lesson's arrays, computed by X_eTaL with the program of
+## X_eTaL-games' sudoku (its units, its one-hot grid, its counts per
+## unit, its candidates, its singles, its round), on its first puzzle
+## (Wikipedia's example). Each array is printed after a "== name" line
+## (scripts/props.sh reads them; a rank-3 array is a list of boards).
+##
+## The game's functions are copied here from its SudokuGrid.xtl
+## (X_eTaL-games at its own pinned X_eTaL, 0b3b3be) as they are, the
+## l: names of the library made u: names of this program; they run
+## unchanged under this repository's pinned X_eTaL. The library itself
+## is not used: it reads its puzzles from a TOML file with the Text
+## library, neither of which is here.
+
+j := (r_ange 9) - 1
+cell := (r_ange 81) - 1
+
+### The rules as arrays
+
+## u:u_nits @: the 27 units (9 rows, 9 columns, 9 boxes) as a 27 by 9
+## table of the cells (from 1) in each.
+u:u_nits := { @ -> 1 + ((9 * j) '+ t_able j) c_at (j '+ t_able 9 * j) c_at ((27 * j d_iv 3) + 3 * j m_od 3) '+ t_able (9 * j d_iv 3) + j m_od 3 }
+## u:h_omes @: each cell's three units (from 1), its row's, its
+## column's and its box's, as a 3 by 81 table.
+u:h_omes := { @ -> 3 81 r_eshape 1 + (cell d_iv 9) c_at (9 + cell m_od 9) c_at 18 + (3 * cell d_iv 27) + (cell m_od 9) d_iv 3 }
+
+## u:o_nehot g: the digits placed, 81 by 9, a 1 at each filled cell's
+## digit.
+u:o_nehot := { g -> 0 + g '= t_able r_ange 9 }
+## u:p_erUnit m: how many times each digit appears in each unit, all
+## 27 at once (27 by 9).
+u:p_erUnit := { m -> '+ r_/_2 (u:u_nits @) s_elect m }
+## u:p_erCell t: back to the cells: each cell's sum of its three
+## units' rows of t (27 by 9 in, 81 by 9 out).
+u:p_erCell := { t ->
+  h := u:h_omes @
+  ((1 s_elect h) s_elect t) + ((2 s_elect h) s_elect t) + (3 s_elect h) s_elect t
+}
+
+### Candidates, singles, a round
+
+## u:c_andidates g: 81 by 9, a digit open in an empty cell when none of
+## the cell's units holds it yet; a filled cell keeps its digit.
+u:c_andidates := { g ->
+  f := u:o_nehot g
+  open := (g = 0) '* t_able 9 r_eshape 1
+  0 + (0 < f) | (0 < open) & 0 = u:p_erCell u:p_erUnit f
+}
+## g u:s_ingles c: the singles, one-hot (81 by 9): an empty cell with
+## one candidate left, or a digit with one place left in a unit.
+u:s_ingles := { g c ->
+  empty := 0 < (g = 0) '* t_able 9 r_eshape 1
+  naked := (0 < c) & (1 = '+ r_/_2 c) '* t_able 9 r_eshape 1
+  hidden := (0 < c) & 0 < u:p_erCell 0 + 1 = u:p_erUnit c
+  0 + empty & naked | hidden
+}
+## u:r_ound g: every single filled at once (-1 everywhere when a cell
+## gets two digits: no solution).
+u:r_ound := { g ->
+  s := g u:s_ingles u:c_andidates g
+  1 < 'm_ax r_/ '+ r_/_2 s ? 81 r_eshape -1
+  g + '+ r_/_2 s * 81 9 r_eshape r_ange 9
+}
+
+### What the video shows
+
+## The puzzle: Wikipedia's example, 30 givens.
+g := 5 3 0 0 7 0 0 0 0 6 0 0 1 9 5 0 0 0 0 9 8 0 0 0 0 6 0 8 0 0 0 6 0 0 0 3 4 0 0 8 0 3 0 0 1 7 0 0 0 2 0 0 0 6 0 6 0 0 0 0 2 8 0 0 0 0 4 1 9 0 0 5 0 0 0 0 8 0 0 7 9
+"== puzzle"
+9 9 r_eshape g
+
+## The units: the 27 by 9 table of cells, and how many times each
+## digit is in each unit already (27 by 9, unit by digit).
+"== units"
+u:u_nits @
+"== counts"
+u:p_erUnit u:o_nehot g
+
+## The candidates: how many each cell has (a placed cell keeps its own
+## digit, 1), and row 1 column 3's mask of the nine digits.
+c := u:c_andidates g
+"== many"
+9 9 r_eshape '+ r_/_2 c
+"== cell"
+1 9 r_eshape 3 s_elect c
+
+## One round: the singles' digits (the move, 0 where no single), and
+## the grid after it.
+s := g u:s_ingles c
+"== move"
+9 9 r_eshape '+ r_/_2 s * 81 9 r_eshape r_ange 9
+"== after"
+9 9 r_eshape u:r_ound g
+
+## k u:r_ounds g: the grid and its next k rounds, a list of k + 1
+## boards, each 9 by 9.
+u:p_lane := { a -> (1 c_at s_hape a) r_eshape a }
+u:r_ounds := { k g -> k = 0 ? u:p_lane 9 9 r_eshape g; (u:p_lane 9 9 r_eshape g) c_at (k - 1) u:r_ounds u:r_ound g }
+"== rounds"
+6 u:r_ounds g

@@ -1,0 +1,100 @@
+{
+  "slug": "sudoku",
+  "title": "Sudoku without a loop",
+  "summary": "A sudoku solved with no loop over cells: the rules as a table of units, every cell's candidates as one mask, every single found at once, and a move as a mask added to the grid, repeated until nothing changes. Ends on the live page.",
+  "order": 14,
+  "poster": 1110,
+  "fps": 30,
+  "stepFrames": 24,
+  "demo": { "repo": "X_eTaL-games", "slug": "sudoku" },
+  "scenes": [
+    {
+      "id": "hook",
+      "seconds": 6.3,
+      "heading": "Sudoku, without a loop",
+      "narration": "A sudoku, solved with no loop over cells. Every cell is worked on at once.",
+      "lines": [
+        "Every cell at once, as arrays."
+      ],
+      "boards": [{ "data": "rounds", "numbers": true, "animate": true }]
+    },
+    {
+      "id": "units",
+      "seconds": 12.9,
+      "heading": "1. The rules are a table",
+      "narration": "First, the rules become a table. Nine rows, nine columns and nine boxes, each a list of its cells. One select and one sum count every digit in every unit.",
+      "lines": [
+        { "xtl": "l:p_erUnit := { m -> '+ r_/_2 (l:u_nits @) s_elect m }" },
+        "27 units: 9 rows, 9 columns, 9 boxes.",
+        "Each unit's cells, and the digits it holds already."
+      ],
+      "boards": [
+        { "data": "units", "label": "cells of each unit", "numbers": true },
+        { "data": "counts", "label": "digits 1 to 9 it holds" }
+      ]
+    },
+    {
+      "id": "candidates",
+      "seconds": 11.1,
+      "heading": "2. Every cell's candidates",
+      "narration": "Next, the candidates of every cell at once. A digit is open where none of the three units of that cell holds it. This cell can be one, two or four.",
+      "lines": [
+        { "xtl": "open := (g = 0) '* t_able 9 r_eshape 1" },
+        { "xtl": "0 + (0 < f) | (0 < open) & 0 = l:p_erCell l:p_erUnit f" },
+        "Open where none of the cell's three units holds it.",
+        "Row 1, column 3: 1, 2 or 4."
+      ],
+      "boards": [
+        { "data": "many", "label": "candidates per cell", "numbers": true },
+        { "data": "cell", "label": "row 1, column 3", "numbers": true }
+      ]
+    },
+    {
+      "id": "singles",
+      "seconds": 13.1,
+      "heading": "3. A move is a mask",
+      "narration": "Then find every single at once. A cell with one candidate left, or a digit with one place left in a unit. The move is a mask of digits, added to the grid in one step.",
+      "lines": [
+        { "xtl": "naked := (0 < c) & (1 = '+ r_/_2 c) '* t_able 9 r_eshape 1" },
+        { "xtl": "hidden := (0 < c) & 0 < l:p_erCell 0 + 1 = l:p_erUnit c" },
+        { "xtl": "g + '+ r_/_2 s * 81 9 r_eshape r_ange 9" },
+        "One candidate left, or one place left in a unit.",
+        "Every single's digit, added to the grid at once."
+      ],
+      "boards": [
+        { "data": "move", "label": "the move", "numbers": true },
+        { "data": "after", "label": "the grid after it", "numbers": true }
+      ]
+    },
+    {
+      "id": "repeat",
+      "seconds": 10.1,
+      "heading": "4. Round after round",
+      "narration": "Repeat that round until nothing changes. Five rounds, and the puzzle is solved. When rounds stall, the solver guesses and backs up.",
+      "lines": [
+        { "xtl": "h := l:r_ound g" },
+        { "xtl": "h m_atch g ? g" },
+        "Every single, every round, until the grid stops changing."
+      ],
+      "boards": [{ "data": "rounds", "numbers": true, "animate": true }]
+    },
+    {
+      "id": "live",
+      "seconds": 8.1,
+      "heading": "The live page",
+      "narration": "This is the live page. Play it at the terminal, or watch the solver run as a notebook, right in your browser.",
+      "lines": [],
+      "capture": { "actions": [{ "wait": 3.5 }, { "scroll": "h2:has-text('The scripted game')" }, { "wait": 2 }, { "scroll": "text=The 27 units as a table of cells" }] }
+    },
+    {
+      "id": "cta",
+      "seconds": 4.4,
+      "heading": "Try it",
+      "narration": "Try it yourself, the link is below.",
+      "lines": [
+        "Pick a puzzle, play a move, ask for a hint:",
+        { "code": "softwarewrighter.github.io/X_eTaL-games/sudoku" }
+      ]
+    }
+  ]
+}

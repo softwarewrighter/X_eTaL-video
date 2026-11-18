@@ -1,0 +1,160 @@
+{
+  "sample": "mike-medium-ref-1.wav",
+  "sampleSha256": "a57fe277f7ce93d5cac4e0e2ed21d770b7d05cab5b20b338dd55aece009d7211",
+  "server": "VoxCPM (Gradio /generate)",
+  "steps": 15,
+  "cfg": 2.0,
+  "scenes": [
+    {
+      "id": "hook",
+      "narration": "A sudoku, solved with no loop over cells. Every cell is worked on at once.",
+      "seconds": 6.3,
+      "sentences": [
+        {
+          "text": "A sudoku, solved with no loop over cells.",
+          "heard": "A Sudoku solved with no loop over cells.",
+          "start": 0.4,
+          "end": 3.748
+        },
+        {
+          "text": "Every cell is worked on at once.",
+          "heard": "Every cell is worked on at once.",
+          "start": 4.098,
+          "end": 5.574
+        }
+      ]
+    },
+    {
+      "id": "units",
+      "narration": "First, the rules become a table. Nine rows, nine columns and nine boxes, each a list of its cells. One select and one sum count every digit in every unit.",
+      "seconds": 12.9,
+      "sentences": [
+        {
+          "text": "First, the rules become a table.",
+          "heard": "first, the rules become a table.",
+          "start": 0.4,
+          "end": 1.942
+        },
+        {
+          "text": "Nine rows, nine columns and nine boxes, each a list of its cells.",
+          "heard": "Nine rows, nine columns, and nine boxes. Each a list of its cells.",
+          "start": 2.292,
+          "end": 8.148
+        },
+        {
+          "text": "One select and one sum count every digit in every unit.",
+          "heard": "one select and one sum count, every digit in every unit.",
+          "start": 8.498,
+          "end": 12.114
+        }
+      ]
+    },
+    {
+      "id": "candidates",
+      "narration": "Next, the candidates of every cell at once. A digit is open where none of the three units of that cell holds it. This cell can be one, two or four.",
+      "seconds": 11.1,
+      "sentences": [
+        {
+          "text": "Next, the candidates of every cell at once.",
+          "heard": "Next, the candidates of every cell at once.",
+          "start": 0.4,
+          "end": 3.25
+        },
+        {
+          "text": "A digit is open where none of the three units of that cell holds it.",
+          "heard": "A digit is open where none of the three units of that cell holds it.",
+          "start": 3.6,
+          "end": 7.365
+        },
+        {
+          "text": "This cell can be one, two or four.",
+          "heard": "This cell can be one, two, or four.",
+          "start": 7.715,
+          "end": 10.359
+        }
+      ]
+    },
+    {
+      "id": "singles",
+      "narration": "Then find every single at once. A cell with one candidate left, or a digit with one place left in a unit. The move is a mask of digits, added to the grid in one step.",
+      "seconds": 13.1,
+      "sentences": [
+        {
+          "text": "Then find every single at once.",
+          "heard": "Then find every single at once.",
+          "start": 0.4,
+          "end": 2.802
+        },
+        {
+          "text": "A cell with one candidate left, or a digit with one place left in a unit.",
+          "heard": "a cell with one candidate left, or a digit with one place left in a unit.",
+          "start": 3.152,
+          "end": 7.449
+        },
+        {
+          "text": "The move is a mask of digits, added to the grid in one step.",
+          "heard": "The move is a mask of digits added to the grid in one step.",
+          "start": 7.799,
+          "end": 12.344
+        }
+      ]
+    },
+    {
+      "id": "repeat",
+      "narration": "Repeat that round until nothing changes. Five rounds, and the puzzle is solved. When rounds stall, the solver guesses and backs up.",
+      "seconds": 10.1,
+      "sentences": [
+        {
+          "text": "Repeat that round until nothing changes.",
+          "heard": "Repeat that round until nothing changes.",
+          "start": 0.4,
+          "end": 2.476
+        },
+        {
+          "text": "Five rounds, and the puzzle is solved.",
+          "heard": "Five rounds and the puzzle is solved.",
+          "start": 2.826,
+          "end": 5.423
+        },
+        {
+          "text": "When rounds stall, the solver guesses and backs up.",
+          "heard": "When rounds stall, the solver guesses and backs up.",
+          "start": 5.773,
+          "end": 9.38
+        }
+      ]
+    },
+    {
+      "id": "live",
+      "narration": "This is the live page. Play it at the terminal, or watch the solver run as a notebook, right in your browser.",
+      "seconds": 8.1,
+      "sentences": [
+        {
+          "text": "This is the live page.",
+          "heard": "This is the live page.",
+          "start": 0.4,
+          "end": 1.671
+        },
+        {
+          "text": "Play it at the terminal, or watch the solver run as a notebook, right in your browser.",
+          "heard": "play it at the terminal, or watch the solver run as a notebook right in your browser.",
+          "start": 2.021,
+          "end": 7.397
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "narration": "Try it yourself, the link is below.",
+      "seconds": 4.4,
+      "sentences": [
+        {
+          "text": "Try it yourself, the link is below.",
+          "heard": "Try it yourself, the link is below.",
+          "start": 0.4,
+          "end": 2.526
+        }
+      ]
+    }
+  ]
+}
