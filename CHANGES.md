@@ -13,6 +13,7 @@ Categories: `feat` new capability, `fix` a bug or wrong behavior,
 
 ## 2026-11-18
 
+- 17:20 `build` One format a video (the user: portrait only for 2.5 minutes or less, landscape only for longer): scripts/format.sh decides from the lesson's timing; just render, just still and just capture default to it, the site renders and links only that format (a portrait thumbnail centered on the page background, lengths over a minute as m:ss), just youtube gathers only it and refuses a video older than its narration.
 - 16:40 `docs` The site published with Life and Mandelbrot narrated (gh-pages from main f398415); images/screencapture.png retaken; out/SLUG-youtube/ built for life, mandelbrot, nbody. voice.py pads a clip in the lesson's own folder, so lessons narrated at once never share a temporary file.
 - 16:10 `lesson` Life and Mandelbrot narrated (saga voice, step narrate-life-mandelbrot; the user: narrate life and mandelbrot too, never more than one request to queenbee at a time): every narration now queues its VoxCPM request on one machine-wide lock (~/.cache/voxcpm-tts.lock, XETAL_TTS_LOCK), so lessons narrate in parallel safely; the whisper comparison accepts contractions and "-1" for "minus one". Narration reworded where VoxCPM or whisper stumbled. Life 48.4 s (stepFrames 5, poster 1260), Mandelbrot 47.2 s (stepFrames 9, the live page re-recorded with its clicks retimed); title.txt and description.txt for both.
 - 15:00 `docs` The site published with the narrated N-body short.

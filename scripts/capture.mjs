@@ -7,7 +7,7 @@
 // (click, select, scroll, wait) run when the scene starts, and the
 // recording lasts as long as those scenes do, so it lines up with the
 // schedule X_eTaL computes.
-//   scripts/capture.mjs SLUG [landscape|portrait]...
+//   scripts/capture.mjs SLUG [landscape|portrait]...   # default: the lesson's format (scripts/format.sh)
 // Writes remotion/public/captures/SLUG-FORMAT.mp4 (not tracked).
 import { execFileSync } from "node:child_process";
 import { mkdirSync, readFileSync, readdirSync, rmSync } from "node:fs";
@@ -22,7 +22,13 @@ const { chromium } = createRequire(join(root, "remotion", "package.json"))("play
 // recording at exactly this size).
 export const AREAS = { landscape: [1720, 700], portrait: [940, 1480] };
 
-const [slug, ...formats] = process.argv.slice(2);
+const [slug, ...asked] = process.argv.slice(2);
+// The lesson's own format when none is named: portrait for 150 s or
+// less, landscape for longer (as scripts/format.sh).
+const formats = asked.length || !slug ? asked : (() => {
+  const t = JSON.parse(readFileSync(join(root, "lessons", slug, "timing.json"), "utf8"));
+  return [t.total / t.fps > 150 ? "landscape" : "portrait"];
+})();
 if (!slug || formats.some((f) => !AREAS[f])) {
   console.error("usage: capture.mjs SLUG [landscape|portrait]...");
   process.exit(2);

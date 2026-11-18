@@ -1,13 +1,14 @@
 #!/usr/bin/env node
 // What a YouTube upload of a narrated lesson needs, in one folder,
-// out/SLUG-youtube/: both videos (rendered by just render), the title
+// out/SLUG-youtube/: its video in its one format (portrait for 150 s or
+// less, landscape for longer; rendered by just render), the title
 // and description (lessons/SLUG/title.txt, description.txt, written
 // for the lesson), the closed captions (SLUG.srt: the exact sentences
 // of voice.json, each at its time in the video: its scene's start from
 // the schedule X_eTaL computed, timing.json, plus its offset in the
 // scene's audio), and the narration as plain text (narration.txt).
 //   scripts/youtube.mjs SLUG
-import { copyFileSync, existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { copyFileSync, existsSync, mkdirSync, readFileSync, rmSync, statSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -49,9 +50,10 @@ writeFileSync(join(out, `${slug}.srt`), srt);
 writeFileSync(join(out, "narration.txt"), lesson.scenes.filter((s) => s.narration).map((s) => s.narration).join("\n") + "\n");
 writeFileSync(join(out, "title.txt"), title + "\n");
 writeFileSync(join(out, "description.txt"), description);
-for (const f of ["portrait", "landscape"]) {
-  const v = join(root, "out", `${slug}-${f}-remotion.mp4`);
-  if (existsSync(v)) copyFileSync(v, join(out, `${slug}-${f}.mp4`));
-  else console.error(`youtube: no ${f} video yet (just render ${slug} ${f})`);
-}
-console.log(`youtube: out/${slug}-youtube/ (${cues.length} captions, ${(timing.total / timing.fps).toFixed(1)} s)`);
+const format = timing.total / timing.fps > 150 ? "landscape" : "portrait";
+const video = join(root, "out", `${slug}-${format}-remotion.mp4`);
+if (!existsSync(video)) fail(`no ${format} video yet (just render ${slug})`);
+if (statSync(video).mtimeMs < statSync(join(dir, "voice.json")).mtimeMs) fail(`the ${format} video is older than the narration (just render ${slug})`);
+for (const f of ["portrait", "landscape"]) rmSync(join(out, `${slug}-${f}.mp4`), { force: true });
+copyFileSync(video, join(out, `${slug}-${format}.mp4`));
+console.log(`youtube: out/${slug}-youtube/ (${format}, ${cues.length} captions, ${(timing.total / timing.fps).toFixed(1)} s)`);

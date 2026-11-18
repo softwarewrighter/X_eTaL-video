@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 // Write the live site's landing page, pages/index.html: a card for
 // every lesson (lessons/*/lesson.json, in the order of "order"), its
-// thumbnail, what it is, and its video in both formats. The videos
+// thumbnail, what it is, and its video in its one format (portrait for
+// 150 s or less, landscape for longer, as scripts/format.sh). The videos
 // and thumbnails are put beside it by scripts/build-pages.sh.
 //   scripts/build-catalog.mjs OUT.html COMMIT XETAL
 import { readdirSync, readFileSync, writeFileSync, existsSync } from "node:fs";
@@ -21,18 +22,19 @@ const lessons = readdirSync(join(root, "lessons"))
 
 const card = (l) => {
   const seconds = Math.round(l.timing.total / l.timing.fps);
+  const format = l.timing.total / l.timing.fps > 150 ? "landscape" : "portrait";
+  const length = seconds >= 60 ? `${Math.floor(seconds / 60)}:${String(seconds % 60).padStart(2, "0")}` : `${seconds} s`;
   const demo = l.demo ? `https://softwarewrighter.github.io/${l.demo.repo}/${l.demo.slug}/` : null;
   return `<article class="card" id="${esc(l.slug)}">
-  <button class="thumb" data-video="${esc(l.slug)}/landscape.mp4" aria-label="Play ${esc(l.title)}">
+  <button class="thumb" data-video="${esc(l.slug)}/${format}.mp4" aria-label="Play ${esc(l.title)}">
     <img src="${esc(l.slug)}/poster.jpg" alt="${esc(l.title)}: a frame of the video" width="960" height="540" loading="lazy">
-    <span class="play" aria-hidden="true"></span><span class="length">${seconds} s</span>
+    <span class="play" aria-hidden="true"></span><span class="length">${length}</span>
   </button>
   <div class="about">
     <h2>${esc(l.title)}</h2>
     <p>${esc(l.summary ?? "")}</p>
     <p class="links">
-      <a href="${esc(l.slug)}/landscape.mp4">Landscape (1920x1080)</a>
-      <a href="${esc(l.slug)}/portrait.mp4">Portrait, for shorts (1080x1920)</a>
+      ${format === "portrait" ? `<a href="${esc(l.slug)}/portrait.mp4">The short (portrait, 1080x1920)</a>` : `<a href="${esc(l.slug)}/landscape.mp4">The video (landscape, 1920x1080)</a>`}
       ${demo ? `<a href="${esc(demo)}">The live demo</a>` : ""}
       <a href="${repo}/tree/main/lessons/${esc(l.slug)}">The lesson, as data</a>
     </p>
@@ -84,7 +86,7 @@ footer { margin-top: 40px; color: var(--dim); font-size: .88rem; }
 <main>
 <div class="brand"><img class="logo" src="xetal-logo-gray.png" alt="X_eTaL"><h1>X_eTaL Video</h1></div>
 <p class="lede">Short videos about <a href="https://github.com/softwarewrighter/X_eTaL">X_eTaL</a>, the eXperimental Extensible Typed Array Language, built from its live demos. Pick one; each is about a minute.</p>
-<p class="how">Every video here is data: a lesson file, a schedule and animation computed by X_eTaL itself for every frame at once, drawn by one Remotion composition in landscape and in portrait. They are silent for now; narration is coming.</p>
+<p class="how">Every video here is data: a lesson file, a schedule and animation computed by X_eTaL itself for every frame at once, drawn by one Remotion composition, and narrated in the author's cloned voice. Shorts (two and a half minutes or less) are portrait; longer videos are landscape.</p>
 <div class="grid">
 ${lessons.map(card).join("\n")}
 </div>

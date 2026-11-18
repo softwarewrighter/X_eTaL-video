@@ -17,10 +17,12 @@ arrays, a deterministic renderer draws every frame, and the existing
 video tools assemble the result.
 
 Status: early. Three X_eTaL libraries for timing and animation are
-tested, and five lessons are rendered with Remotion in landscape and
-portrait. Life, Mandelbrot and N-body are narrated in the author's
-cloned voice (`just voice`, below); making-of and life-capture are
-silent so far. `docs/plan.md`
+tested, and the lessons are rendered with Remotion and narrated in
+the author's cloned voice (`just voice`, below). A video of two and a
+half minutes or less is a short, rendered in portrait only
+(1080x1920); a longer one is landscape only (1920x1080): the format
+follows the length (`scripts/format.sh`), and `just render`, `just
+capture`, `just youtube` and the site use it. `docs/plan.md`
 has the roadmap.
 
 ## Narration
@@ -67,7 +69,7 @@ words, short sentences, which is what VoxCPM speaks cleanly. Needs
 | `libs/` | X_eTaL libraries for video timing and animation (below) |
 | `lessons/` | lessons as data, each with the schedule X_eTaL computes from it: [making-of](lessons/making-of/), [life](lessons/life/), [life-capture](lessons/life-capture/), [mandelbrot](lessons/mandelbrot/), [nbody](lessons/nbody/) |
 | `schemas/` | `lesson.schema.json`: what a lesson file may contain, checked by the gate |
-| `remotion/` | the [Remotion](remotion/) renderer: one composition that renders any lesson, in both formats |
+| `remotion/` | the [Remotion](remotion/) renderer: one composition that renders any lesson, portrait or landscape |
 | `images/` | this repository's logo and favicon (X_eTaL's, in a very light gray) and the live page's picture above (`just screencapture` retakes it) |
 | `docs/plan.md` | the plan: decisions, the survey of the existing video pipelines, libraries, lessons, roadmap, open questions |
 | `docs/remotion-scripts.md` | the proposed scripts: voice, timing, capture, render, assemble (proposals, not yet run) |
@@ -150,7 +152,7 @@ video), then the published page itself, recorded.
 
 <https://softwarewrighter.github.io/X_eTaL-video/> is a landing
 page with a thumbnail for every video; choosing one plays it, and
-each has links to both formats, to its live demo and to its lesson.
+each has links to its video, to its live demo and to its lesson.
 
 ```bash
 just pages          # build it into pages/ (renders what is missing or stale)

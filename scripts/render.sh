@@ -1,12 +1,13 @@
 #!/usr/bin/env bash
 # Render a lesson with Remotion: out/SLUG-FORMAT-remotion.mp4, from the
 # lesson and the numbers X_eTaL computes for it (scripts/props.sh).
-#   scripts/render.sh SLUG [landscape|portrait]
-#   scripts/render.sh SLUG FORMAT --still N    # frame N as out/SLUG-FORMAT-N.png
+#   scripts/render.sh SLUG [landscape|portrait]   # default: the lesson's format (scripts/format.sh)
+#   scripts/render.sh SLUG FORMAT --still N    # frame N as out/SLUG-FORMAT-N.png (FORMAT may be "")
 # Needs remotion/node_modules (cd remotion && npm install).
 set -euo pipefail
 root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd -P)"
-slug="${1:?usage: render.sh SLUG [landscape|portrait] [--still N]}"; format="${2:-landscape}"
+slug="${1:?usage: render.sh SLUG [landscape|portrait] [--still N]}"; format="${2:-}"
+[ -n "$format" ] || format="$("$root/scripts/format.sh" "$slug")"
 case "$format" in
   landscape) comp=LessonLandscape ;;
   portrait) comp=LessonPortrait ;;

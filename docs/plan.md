@@ -262,6 +262,12 @@ shown in a local preview.
    orbit click at the narration's "Click a point"). Titles and
    descriptions; published.
 
+One format a video (the user, 2026-11-18, to save time): a lesson of
+150 s or less is a short, portrait only; a longer one is long-form,
+landscape only. `scripts/format.sh` decides from `timing.json`;
+`render.sh`, `capture.mjs`, `build-pages.sh`, `build-catalog.mjs`
+and `youtube.mjs` follow it.
+
 ## Later -- remotion  [PLANNED; steps 1 and 4 done in saga 1]
 
 Goal: one lesson rendered to MP4 in both formats, silent.

@@ -73,11 +73,11 @@ frame slug n format="landscape":
     @mkdir -p "work/$1" && scripts/schedule.sh "$1" > "work/$1/schedule.txt" && scripts/frames.mjs "$1" "$3" --frame "$2"
 
 # Render a lesson with Remotion: out/SLUG-FORMAT-remotion.mp4 (needs: cd remotion && npm install)
-render slug format="landscape":
+render slug format="":
     scripts/render.sh "$1" "$2"
 
 # One frame of a lesson through Remotion as a PNG: just still making-of 850 portrait
-still slug n format="landscape":
+still slug n format="":
     scripts/render.sh "$1" "$3" --still "$2"
 
 # Narrate a lesson in the author's cloned voice (VoxCPM on queenbee, checked by local whisper): just voice nbody [--check]
