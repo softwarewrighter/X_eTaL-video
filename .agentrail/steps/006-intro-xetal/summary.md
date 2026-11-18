@@ -1,0 +1,1 @@
+intro-xetal by a subagent: 3:20 landscape tutorial on the syntax poster, 16 scenes, narrated, 45 captions, chapters; reviewed, order 0, committed.

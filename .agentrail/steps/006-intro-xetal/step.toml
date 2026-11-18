@@ -1,8 +1,9 @@
 number = 6
 slug = "intro-xetal"
-status = "in-progress"
+status = "completed"
 description = "A new lesson lessons/intro-xetal: an introduction to X_eTaL, the language, bu..."
 role = "production"
 context_files = []
 created_at = "2026-11-18T14:45:55"
-commits = []
+completed_at = "2026-11-18T15:17:39"
+commits = ["16326155bdb03d90cc4fdef5018f0a175041c4f9"]
