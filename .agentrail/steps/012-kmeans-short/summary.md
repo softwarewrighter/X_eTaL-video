@@ -1,0 +1,1 @@
+k-means short by a subagent: 61.5 s portrait, matches the demo baseline; committed.

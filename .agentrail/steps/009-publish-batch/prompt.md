@@ -1,1 +1,1 @@
-Review and commit the batch (steps 4-8) as each lands, close each step with its commit, publish the site, retake the screenshot.
+Videos are hosted on YouTube, never in git (the user, 2026-11-18: 'videos are not text and git is text oriented'): the user uploads each out/SLUG-youtube/ by hand to softwarewrighter; just link SLUG URL records the video's YouTube id in lesson.json; the site embeds the YouTube player (or marks a lesson 'coming to YouTube'), gh-pages carries no MP4, just pages renders no videos (thumbnails only). Then publish the batch, retake the screenshot.

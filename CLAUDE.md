@@ -394,9 +394,14 @@ Read before working:
     branch. Publish after a step that adds or changes a video, then
     `just screencapture` (the README's picture of the page, linked
     near its top). A
-    lesson's `summary`, `order` and `poster` are its card. This
-    repository's color is a very light gray (`images/`), as the
+    lesson's `summary`, `order`, `poster` and `youtube` are its card.
+    This repository's color is a very light gray (`images/`), as the
     demos are blue and the libraries violet.
+11b. Videos are hosted on YouTube, never in git, not even on `gh-pages`
+    (the user, 2026-11-18: "videos are not text and git is text
+    oriented"). The user uploads `out/SLUG-youtube/` by hand to the
+    softwarewrighter channel; `just link SLUG URL` records the id and
+    the site embeds YouTube's player. Never commit or publish an MP4.
 12. NEVER run `sw-install` unless the user explicitly asks.
 13. This repository's local port is 8427 (Remotion Studio, any
     preview server); each X_eTaL repository has its own.

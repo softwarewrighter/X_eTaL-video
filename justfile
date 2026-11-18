@@ -88,6 +88,10 @@ voice slug *args:
 youtube slug:
     scripts/youtube.mjs "$1"
 
+# Record a lesson's YouTube video (uploaded by hand from out/SLUG-youtube/) so the site embeds it: just link nbody https://youtube.com/shorts/ID
+link slug url:
+    scripts/link.mjs "$1" "$2"
+
 # Record a lesson's live demo page in headless Chromium, both formats (needs the network): just capture life-capture
 capture slug *formats:
     scripts/capture.mjs "$@"
@@ -96,7 +100,7 @@ capture slug *formats:
 studio slug="making-of":
     cd remotion && npx remotion studio src/index.ts --port 8427 --props="../$(../scripts/props.sh "$1")"
 
-# Build the live site into pages/ (not tracked): the landing page, every lesson's videos and thumbnail
+# Build the live site into pages/ (not tracked): the landing page and every lesson's thumbnail (videos play from YouTube)
 pages *args:
     scripts/build-pages.sh "$@"
 

@@ -1,18 +1,16 @@
 #!/usr/bin/env bash
 # Build the live site into pages/ (not tracked; scripts/publish-pages.sh
 # publishes it): the landing page (scripts/build-catalog.mjs), the logo
-# and favicon, and for every lesson its video in its one format (portrait
-# for 150 s or less, landscape for longer: scripts/format.sh) and a
-# thumbnail (the lesson's "poster" frame, or its middle). A video is
-# rendered again only when it is missing or older than what it is made
-# from (the lesson, the libraries, the scripts, the composition); a
-# lesson that shows a recorded page is recorded first when it has no
-# recording yet (that needs the network).
-#   scripts/build-pages.sh [--fresh]     # --fresh renders everything again
+# and favicon, and for every lesson a thumbnail (the lesson's "poster"
+# frame, or its middle, in its format: scripts/format.sh). No video:
+# videos are hosted on YouTube, never in git (the user, 2026-11-18);
+# the page embeds a lesson's YouTube player once it is linked (just
+# link SLUG URL). A lesson that shows a recorded page is recorded first
+# when it has no recording yet (that needs the network).
+#   scripts/build-pages.sh
 set -euo pipefail
 root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd -P)"
 cd "$root"
-fresh="${1:-}"
 rm -rf pages; mkdir -p pages out
 for d in lessons/*/; do
   slug="$(basename "$d")"
@@ -27,11 +25,6 @@ for d in lessons/*/; do
   if [ "$captures" = 1 ] && [ ! -f "remotion/public/captures/$slug-$format.mp4" ]; then
     scripts/capture.mjs "$slug" "$format"
   fi
-  video="out/$slug-$format-remotion.mp4"
-  if [ "$fresh" = --fresh ] || [ ! -f "$video" ] || [ -n "$(find "$d" libs scripts remotion/src schemas XETAL_COMMIT -type f -newer "$video" -print -quit)" ]; then
-    scripts/render.sh "$slug" "$format"
-  fi
-  cp "$video" "pages/$slug/$format.mp4"
   # The thumbnail: the poster frame, fitted into 960x540 (a portrait
   # frame centered on the page's background).
   scripts/render.sh "$slug" "$format" --still "$poster" >/dev/null

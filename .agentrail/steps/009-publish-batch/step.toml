@@ -1,7 +1,7 @@
 number = 9
 slug = "publish-batch"
-status = "pending"
-description = "Review and commit the batch (steps 4-8) as each lands, close each step with i..."
+status = "in-progress"
+description = "Videos are hosted on YouTube, never in git (the user, 2026-11-18: 'videos are..."
 role = "production"
 context_files = []
 created_at = "2026-11-18T14:45:55"

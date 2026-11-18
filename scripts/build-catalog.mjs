@@ -1,8 +1,10 @@
 #!/usr/bin/env node
 // Write the live site's landing page, pages/index.html: a card for
 // every lesson (lessons/*/lesson.json, in the order of "order"), its
-// thumbnail, what it is, and its video in its one format (portrait for
-// 150 s or less, landscape for longer, as scripts/format.sh). The videos
+// thumbnail and what it is. A lesson linked to YouTube ("youtube", set
+// by just link) plays in YouTube's player on its card: the videos are
+// hosted by YouTube only, never here or in git (the user, 2026-11-18).
+// One not yet uploaded shows its thumbnail, marked as coming. The videos
 // and thumbnails are put beside it by scripts/build-pages.sh.
 //   scripts/build-catalog.mjs OUT.html COMMIT XETAL
 import { readdirSync, readFileSync, writeFileSync, existsSync } from "node:fs";
@@ -25,16 +27,24 @@ const card = (l) => {
   const format = l.timing.total / l.timing.fps > 150 ? "landscape" : "portrait";
   const length = seconds >= 60 ? `${Math.floor(seconds / 60)}:${String(seconds % 60).padStart(2, "0")}` : `${seconds} s`;
   const demo = l.demo ? `https://softwarewrighter.github.io/${l.demo.repo}/${l.demo.slug}/` : null;
-  return `<article class="card" id="${esc(l.slug)}">
-  <button class="thumb" data-video="${esc(l.slug)}/${format}.mp4" aria-label="Play ${esc(l.title)}">
-    <img src="${esc(l.slug)}/poster.jpg" alt="${esc(l.title)}: a frame of the video" width="960" height="540" loading="lazy">
+  const watch = l.youtube ? (format === "portrait" ? `https://www.youtube.com/shorts/${l.youtube}` : `https://www.youtube.com/watch?v=${l.youtube}`) : null;
+  const img = `<img src="${esc(l.slug)}/poster.jpg" alt="${esc(l.title)}: a frame of the video" width="960" height="540" loading="lazy">`;
+  const thumb = l.youtube
+    ? `<button class="thumb" data-youtube="${esc(l.youtube)}" aria-label="Play ${esc(l.title)} (YouTube)">
+    ${img}
     <span class="play" aria-hidden="true"></span><span class="length">${length}</span>
-  </button>
+  </button>`
+    : `<div class="thumb soon">
+    ${img}
+    <span class="badge">Coming to YouTube</span><span class="length">${length}</span>
+  </div>`;
+  return `<article class="card" id="${esc(l.slug)}">
+  ${thumb}
   <div class="about">
     <h2>${esc(l.title)}</h2>
     <p>${esc(l.summary ?? "")}</p>
     <p class="links">
-      ${format === "portrait" ? `<a href="${esc(l.slug)}/portrait.mp4">The short (portrait, 1080x1920)</a>` : `<a href="${esc(l.slug)}/landscape.mp4">The video (landscape, 1920x1080)</a>`}
+      ${watch ? `<a href="${esc(watch)}">${format === "portrait" ? "Watch the short on YouTube" : "Watch on YouTube"}</a>` : ""}
       ${demo ? `<a href="${esc(demo)}">The live demo</a>` : ""}
       <a href="${repo}/tree/main/lessons/${esc(l.slug)}">The lesson, as data</a>
     </p>
@@ -65,8 +75,10 @@ h1 { margin: 0; font-size: 1.9rem; color: var(--accent); }
 .card { background: var(--panel); border: 1px solid var(--rule); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; }
 .thumb { all: unset; display: block; position: relative; cursor: pointer; aspect-ratio: 16 / 9; background: #000; }
 .thumb:focus-visible { outline: 3px solid var(--link); outline-offset: -3px; }
-.thumb img, .card video { display: block; width: 100%; height: 100%; object-fit: cover; }
-.card video { aspect-ratio: 16 / 9; background: #000; }
+.thumb img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.card iframe { display: block; width: 100%; aspect-ratio: 16 / 9; border: 0; background: #000; }
+.soon { cursor: default; }
+.badge { position: absolute; left: 10px; top: 10px; background: rgba(13, 17, 23, .85); color: var(--ink); padding: 2px 10px; border-radius: 6px; font-size: .85rem; border: 1px solid var(--rule); }
 .play { position: absolute; left: 50%; top: 50%; width: 64px; height: 64px; margin: -32px 0 0 -32px; border-radius: 50%; background: rgba(13, 17, 23, .78); border: 2px solid var(--accent); }
 .play::after { content: ""; position: absolute; left: 25px; top: 18px; border-left: 20px solid var(--accent); border-top: 13px solid transparent; border-bottom: 13px solid transparent; }
 .thumb:hover .play { background: rgba(13, 17, 23, .95); }
@@ -85,7 +97,7 @@ footer { margin-top: 40px; color: var(--dim); font-size: .88rem; }
 <body>
 <main>
 <div class="brand"><img class="logo" src="xetal-logo-gray.png" alt="X_eTaL"><h1>X_eTaL Video</h1></div>
-<p class="lede">Short videos about <a href="https://github.com/softwarewrighter/X_eTaL">X_eTaL</a>, the eXperimental Extensible Typed Array Language, built from its live demos. Pick one; each is about a minute.</p>
+<p class="lede">Short videos about <a href="https://github.com/softwarewrighter/X_eTaL">X_eTaL</a>, the eXperimental Extensible Typed Array Language, built from its live demos: short demos, and longer tutorials on the language. They play from the softwarewrighter channel on YouTube.</p>
 <p class="how">Every video here is data: a lesson file, a schedule and animation computed by X_eTaL itself for every frame at once, drawn by one Remotion composition, and narrated in the author's cloned voice. Shorts (two and a half minutes or less) are portrait; longer videos are landscape.</p>
 <div class="grid">
 ${lessons.map(card).join("\n")}
@@ -107,12 +119,15 @@ Copyright (c) 2026 Michael A Wright &middot; MIT License &middot; <a href="${rep
 </footer>
 </main>
 <script>
-// A thumbnail becomes its video when chosen.
-for (const b of document.querySelectorAll(".thumb")) b.addEventListener("click", () => {
-  const v = document.createElement("video");
-  v.src = b.dataset.video; v.controls = true; v.autoplay = true; v.playsInline = true;
-  v.poster = b.querySelector("img").src;
-  b.replaceWith(v);
+// A thumbnail becomes YouTube's player when chosen (the video is
+// hosted by YouTube, not here).
+for (const b of document.querySelectorAll(".thumb[data-youtube]")) b.addEventListener("click", () => {
+  const f = document.createElement("iframe");
+  f.src = "https://www.youtube-nocookie.com/embed/" + b.dataset.youtube + "?autoplay=1&rel=0";
+  f.title = b.getAttribute("aria-label");
+  f.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
+  f.allowFullscreen = true;
+  b.replaceWith(f);
 });
 </script>
 </body>

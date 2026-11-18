@@ -67,7 +67,7 @@ words, short sentences, which is what VoxCPM speaks cleanly. Needs
 | Path | What |
 | ---- | ---- |
 | `libs/` | X_eTaL libraries for video timing and animation (below) |
-| `lessons/` | lessons as data, each with the schedule X_eTaL computes from it: [making-of](lessons/making-of/), [life](lessons/life/), [life-capture](lessons/life-capture/), [mandelbrot](lessons/mandelbrot/), [nbody](lessons/nbody/) |
+| `lessons/` | lessons as data, each with the schedule X_eTaL computes from it (the table below) |
 | `schemas/` | `lesson.schema.json`: what a lesson file may contain, checked by the gate |
 | `remotion/` | the [Remotion](remotion/) renderer: one composition that renders any lesson, portrait or landscape |
 | `images/` | this repository's logo and favicon (X_eTaL's, in a very light gray) and the live page's picture above (`just screencapture` retakes it) |
@@ -94,75 +94,65 @@ durs tl:s_cene 0 89 90 299       # 1 1 2 3
 `just run Timeline` runs its test programs; `just test-lib Timeline`
 checks its baselines.
 
-## A first video: how it was made
+## The videos
+
+Every lesson below is narrated and rendered in one format: a short (two
+and a half minutes or less) in portrait, a tutorial in landscape.
+
+| Lesson | Title | Length | Format |
+| ------ | ----- | ------ | ------ |
+| [intro-xetal](lessons/intro-xetal/) | Syntax you can see | 3:20 | landscape |
+| [nbody](lessons/nbody/) | Gravity without a loop | 0:50 | portrait |
+| [mandelbrot](lessons/mandelbrot/) | Mandelbrot without a loop | 0:47 | portrait |
+| [life](lessons/life/) | Life in one line | 0:48 | portrait |
+| [life-capture](lessons/life-capture/) | Life in one line, on the live page | 1:00 | portrait |
+| [making-of](lessons/making-of/) | How this video was made | 1:09 | portrait |
+| [attention](lessons/attention/) | Attention: rows meet columns | 0:59 | portrait |
+| [sudoku](lessons/sudoku/) | Sudoku without a loop | 1:06 | portrait |
+| [fourier-epicycles](lessons/fourier-epicycles/) | Circles that draw a heart | 1:01 | portrait |
+| [lights-out](lessons/lights-out/) | Lights out without a loop | 0:52 | portrait |
+| [k-means](lessons/k-means/) | k-means without a loop | 1:02 | portrait |
+
+Making one, after the lesson is written:
 
 ```bash
-cd remotion && npm ci && cd ..   # once
-just render making-of            # out/making-of-landscape-remotion.mp4 (1920x1080, 58 s)
-just render making-of portrait   # out/making-of-portrait-remotion.mp4 (1080x1920)
-just studio making-of            # Remotion Studio at http://localhost:8427
-just draft making-of             # the same lesson without Remotion (ImageMagick, ffmpeg)
+just voice SLUG        # narrate it (VoxCPM on queenbee, checked by whisper); scene lengths follow
+just capture SLUG      # record its live page, when a scene shows one (network)
+just render SLUG       # out/SLUG-FORMAT-remotion.mp4, the format from its length
+just youtube SLUG      # out/SLUG-youtube/: the video, title, description, captions (.srt)
+just link SLUG URL     # after uploading it to YouTube by hand: the site embeds it
+just studio SLUG       # Remotion Studio at http://localhost:8427
+just draft SLUG        # a silent draft without Remotion (ImageMagick, ffmpeg)
 ```
 
-`lessons/making-of/lesson.json` is the content. X_eTaL (Timeline and
-Ease) computes the schedule and every frame's animation numbers, all
-1740 frames at once; the renderer only places things, looking each
-frame's numbers up. The numbers on screen are the video's own. Two
-renderers read the same numbers: Remotion (React), and a draft
-renderer with nothing to install beyond `node`, `magick` and
-`ffmpeg`. [`lessons/making-of/`](lessons/making-of/) has the details.
+X_eTaL (Timeline and Ease) computes each lesson's schedule and every
+frame's animation numbers, all frames at once; the renderer only
+places things, looking each frame's numbers up.
+[`lessons/making-of/`](lessons/making-of/) shows how, with the video's
+own numbers on screen.
 
-## A lesson from a live demo: Life
+## Where the videos live
 
-```bash
-just render life             # out/life-landscape-remotion.mp4 (48 s, narrated)
-just render life portrait
-```
+On YouTube, never in git: video is not text. `out/` and `work/` are
+not tracked, and the site carries no video file. Each video is
+uploaded by hand from `out/SLUG-youtube/` to the softwarewrighter
+channel; `just link SLUG URL` records its YouTube id in the lesson,
+and the live page plays it in YouTube's player.
 
-Conway's Life as the
-[life-microscope](https://softwarewrighter.github.io/X_eTaL-demos/life-microscope/)
-demo writes it: the one-line rule, the nine shifted copies of the
-board, their sum, the comparison, then 43 generations. Every board on
-screen is an array X_eTaL printed (`lessons/life/data.xtl`).
-
-The same lesson exists a second way, to compare:
-[`lessons/life-capture`](lessons/life-capture/) shows the published
-page itself, recorded in headless Chromium while a script clicks
-through it (`just capture life-capture`, then `just render
-life-capture`).
-
-## Narrated shorts: N-body gravity, Mandelbrot
-
-`lessons/nbody`: three bodies round a figure-eight with no loop over
-pairs: every pair's displacement is a table, every pull one
-expression, every acceleration one reduce (`just capture nbody`, then
-`just render nbody portrait`).
+<https://softwarewrighter.github.io/X_eTaL-video/> is the landing page:
+a card for every lesson with its thumbnail, what it shows, its live
+demo and the lesson as data; a lesson not yet on YouTube is marked as
+coming.
 
 ```bash
-just capture mandelbrot             # record the live page (network)
-just render mandelbrot portrait     # out/mandelbrot-portrait-remotion.mp4
-```
-
-The Mandelbrot set with no loop over pixels: a number for every pixel
-by broadcasting, one step for every pixel at once, the step repeated
-while the set appears (the demo's own program, run by X_eTaL for the
-video), then the published page itself, recorded.
-
-## The live page
-
-<https://softwarewrighter.github.io/X_eTaL-video/> is a landing
-page with a thumbnail for every video; choosing one plays it, and
-each has links to its video, to its live demo and to its lesson.
-
-```bash
-just pages          # build it into pages/ (renders what is missing or stale)
+just pages          # build it into pages/ (thumbnails only)
 just serve-pages    # preview at http://127.0.0.1:8427/X_eTaL-video/
 just publish        # make pages/ the gh-pages branch, which GitHub Pages serves
 ```
 
-A lesson's `summary`, `order` and `poster` (the frame used as its
-thumbnail) in its `lesson.json` are what the page shows. `pages/` is
-not tracked on `main`.
+A lesson's `summary`, `order`, `poster` (the frame used as its
+thumbnail) and `youtube` in its `lesson.json` are what the page shows.
+`pages/` is not tracked on `main`.
 
 ## X_eTaL as rendered
 
