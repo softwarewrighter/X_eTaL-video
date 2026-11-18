@@ -1,0 +1,1 @@
+lights-out short by a subagent: 52.2 s portrait; reviewed, committed.
