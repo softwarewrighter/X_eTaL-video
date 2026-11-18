@@ -1,0 +1,1 @@
+Reword lessons/life-capture's narration for VoxCPM (as life was); just voice life-capture; re-record its page to the new lengths (just capture life-capture); title.txt, description.txt; render; just youtube. Subagent, in parallel; the main session commits.

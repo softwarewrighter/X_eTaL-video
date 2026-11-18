@@ -1,0 +1,1 @@
+Review and commit the batch (steps 4-8) as each lands, close each step with its commit, publish the site, retake the screenshot.

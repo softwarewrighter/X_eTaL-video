@@ -1,0 +1,1 @@
+A new lesson lessons/attention from X_eTaL-ML's attention demo: rows meet columns, Q K V and a softmax, as arrays; narrated short with the live page recorded; title, description. Subagent, in parallel; the main session commits.

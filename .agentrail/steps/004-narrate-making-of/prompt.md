@@ -1,0 +1,1 @@
+Write narration for lessons/making-of (it has none), fit for VoxCPM; just voice making-of; title.txt, description.txt; render both formats; just youtube making-of. Done by a subagent in parallel with steps 5-8; the main session commits.

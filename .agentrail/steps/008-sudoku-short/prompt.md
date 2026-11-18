@@ -1,0 +1,1 @@
+A new lesson lessons/sudoku from X_eTaL-games' sudoku: constraints as arrays, a move as a mask; narrated short with the live page recorded; title, description. Subagent, in parallel; the main session commits.
