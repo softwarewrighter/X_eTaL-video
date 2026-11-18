@@ -1,0 +1,154 @@
+{
+  "sample": "mike-medium-ref-1.wav",
+  "sampleSha256": "a57fe277f7ce93d5cac4e0e2ed21d770b7d05cab5b20b338dd55aece009d7211",
+  "server": "VoxCPM (Gradio /generate)",
+  "steps": 15,
+  "cfg": 2.0,
+  "scenes": [
+    {
+      "id": "hook",
+      "narration": "A heart, drawn by circles turning on circles. And there is no loop over the circles.",
+      "seconds": 7.3,
+      "sentences": [
+        {
+          "text": "A heart, drawn by circles turning on circles.",
+          "heard": "A heart, drawn by circles, turning on circles.",
+          "start": 0.4,
+          "end": 3.674
+        },
+        {
+          "text": "And there is no loop over the circles.",
+          "heard": "and there is no loop over the circles.",
+          "start": 4.024,
+          "end": 6.552
+        }
+      ]
+    },
+    {
+      "id": "angles",
+      "narration": "First, one table of angles. Every speed times every moment, in one outer product. Its cosines and sines are two more tables.",
+      "seconds": 9.9,
+      "sentences": [
+        {
+          "text": "First, one table of angles.",
+          "heard": "First, one table of angles.",
+          "start": 0.4,
+          "end": 2.68
+        },
+        {
+          "text": "Every speed times every moment, in one outer product.",
+          "heard": "Every speed times, every moment, in one outer product.",
+          "start": 3.03,
+          "end": 6.501
+        },
+        {
+          "text": "Its cosines and sines are two more tables.",
+          "heard": "Its cosines and sines are two more tables.",
+          "start": 6.851,
+          "end": 9.192
+        }
+      ]
+    },
+    {
+      "id": "transform",
+      "narration": "Then two matrix products turn the points of the heart into circles. Each speed gets one circle and its size. Sort them, biggest first.",
+      "seconds": 11.0,
+      "sentences": [
+        {
+          "text": "Then two matrix products turn the points of the heart into circles.",
+          "heard": "Then two matrix products turn the points of the heart into circles.",
+          "start": 0.4,
+          "end": 3.851
+        },
+        {
+          "text": "Each speed gets one circle and its size.",
+          "heard": "Each speed gets one circle and its size.",
+          "start": 4.201,
+          "end": 7.332
+        },
+        {
+          "text": "Sort them, biggest first.",
+          "heard": "Sort them. Biggest first.",
+          "start": 7.682,
+          "end": 10.21
+        }
+      ]
+    },
+    {
+      "id": "chain",
+      "narration": "Now chain the circles end to end. One running sum along the circles gives where each one ends, at every moment, all at once.",
+      "seconds": 10.1,
+      "sentences": [
+        {
+          "text": "Now chain the circles end to end.",
+          "heard": "Now chain the circles, end to end.",
+          "start": 0.4,
+          "end": 2.691
+        },
+        {
+          "text": "One running sum along the circles gives where each one ends, at every moment, all at once.",
+          "heard": "One running sum along the circles gives where each one ends. At every moment. All at once.",
+          "start": 3.041,
+          "end": 9.383
+        }
+      ]
+    },
+    {
+      "id": "rebuilt",
+      "narration": "So each column is the heart rebuilt from that many circles. One circle gives a circle. With eight, the error is gone.",
+      "seconds": 9.8,
+      "sentences": [
+        {
+          "text": "So each column is the heart rebuilt from that many circles.",
+          "heard": "So each column is the heart rebuilt from that many circles.",
+          "start": 0.4,
+          "end": 4.306
+        },
+        {
+          "text": "One circle gives a circle.",
+          "heard": "One circle gives a circle.",
+          "start": 4.656,
+          "end": 6.454
+        },
+        {
+          "text": "With eight, the error is gone.",
+          "heard": "With 8, the error is gone.",
+          "start": 6.804,
+          "end": 9.1
+        }
+      ]
+    },
+    {
+      "id": "live",
+      "narration": "The live page runs the same program in your browser. Pick a star or a flower, or draw your own curve.",
+      "seconds": 8.3,
+      "sentences": [
+        {
+          "text": "The live page runs the same program in your browser.",
+          "heard": "The Live page runs the same program in your browser.",
+          "start": 0.4,
+          "end": 3.61
+        },
+        {
+          "text": "Pick a star or a flower, or draw your own curve.",
+          "heard": "pick a star or a flower or draw your own curve.",
+          "start": 3.96,
+          "end": 7.589
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "narration": "Try it yourself, the link is below.",
+      "seconds": 4.4,
+      "sentences": [
+        {
+          "text": "Try it yourself, the link is below.",
+          "heard": "Try it yourself, the link is below.",
+          "start": 0.4,
+          "end": 2.526
+        }
+      ]
+    }
+  ]
+}

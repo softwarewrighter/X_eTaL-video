@@ -1,0 +1,95 @@
+{
+  "slug": "fourier-epicycles",
+  "title": "Circles that draw a heart",
+  "summary": "A heart drawn by circles turning on circles, with no loop over circles: the angles are one outer product, the transform two matrix products, and one running sum along the chain gives the curve rebuilt from every number of circles at once. Ends on the live page.",
+  "order": 15,
+  "poster": 1270,
+  "fps": 30,
+  "stepFrames": 1,
+  "demo": { "repo": "X_eTaL-demos", "slug": "fourier-epicycles" },
+  "scenes": [
+    {
+      "id": "hook",
+      "seconds": 7.3,
+      "heading": "A heart, drawn by circles",
+      "narration": "A heart, drawn by circles turning on circles. And there is no loop over the circles.",
+      "lines": [
+        "Every circle, at every moment, as arrays."
+      ],
+      "boards": [{ "data": "rebuilt", "points": true, "animate": true }]
+    },
+    {
+      "id": "angles",
+      "seconds": 9.9,
+      "heading": "1. One table of angles",
+      "narration": "First, one table of angles. Every speed times every moment, in one outer product. Its cosines and sines are two more tables.",
+      "lines": [
+        { "xtl": "A := (2.0 * (p_i @) / f_loat n) * k '* t_able k" },
+        { "xtl": "C := c_os A" },
+        { "xtl": "S := s_in A" },
+        "Row k, column j: the angle of speed k at moment j."
+      ],
+      "boards": [{ "data": "cosines", "label": "its cosines, the first 32 rows and columns", "heat": "ramp" }]
+    },
+    {
+      "id": "transform",
+      "seconds": 11,
+      "heading": "2. Two matrix products",
+      "narration": "Then two matrix products turn the points of the heart into circles. Each speed gets one circle and its size. Sort them, biggest first.",
+      "lines": [
+        { "xtl": "re := ((C '+ '* i_nner x) + S '+ '* i_nner y) / f_loat n" },
+        { "xtl": "im := ((C '+ '* i_nner y) - S '+ '* i_nner x) / f_loat n" },
+        { "xtl": "order := g_rade n_eg amp" },
+        "The eight biggest circles: speed above, size below."
+      ],
+      "boards": [{ "data": "strongest", "label": "speed, then size", "numbers": true }]
+    },
+    {
+      "id": "chain",
+      "seconds": 10.1,
+      "heading": "3. One running sum",
+      "narration": "Now chain the circles end to end. One running sum along the circles gives where each one ends, at every moment, all at once.",
+      "lines": [
+        { "xtl": "cx := '+ s_\\_2 vx" },
+        { "xtl": "cy := '+ s_\\_2 vy" },
+        "Each circle at six moments, then the sum along the row: where it ends."
+      ],
+      "boards": [
+        { "data": "vx", "label": "each circle, x", "numbers": true },
+        { "data": "cx", "label": "running sum", "numbers": true }
+      ]
+    },
+    {
+      "id": "rebuilt",
+      "seconds": 9.8,
+      "heading": "4. Every reconstruction at once",
+      "narration": "So each column is the heart rebuilt from that many circles. One circle gives a circle. With eight, the error is gone.",
+      "lines": [
+        { "xtl": "err := ('+ r_/ ((dx * dx) + dy * dy) ^ 0.5) / f_loat n" },
+        "The heart from 1, 2, 4 and 8 circles; beside it, the mean error from 1 to 8."
+      ],
+      "boards": [
+        { "data": "rebuilt", "points": true, "animate": true },
+        { "data": "error", "label": "error", "numbers": true }
+      ]
+    },
+    {
+      "id": "live",
+      "seconds": 8.3,
+      "heading": "The live page",
+      "narration": "The live page runs the same program in your browser. Pick a star or a flower, or draw your own curve.",
+      "lines": [],
+      "capture": { "actions": [{ "wait": 3.8 }, { "select": ["select", "Five-pointed star"] }, { "wait": 1.6 }, { "select": ["select", "Flower"] }] }
+    },
+    {
+      "id": "cta",
+      "seconds": 4.4,
+      "heading": "Try it",
+      "narration": "Try it yourself, the link is below.",
+      "lines": [
+        "Pick a curve or draw one, and slide the number of circles:",
+        { "code": "softwarewrighter.github.io/X_eTaL-demos/fourier-epicycles" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+#!/usr/bin/env xetal
+## The Fourier epicycles lesson's arrays, computed by X_eTaL with the
+## program of X_eTaL-demos' fourier-epicycles (its angles, its
+## transform, its circles, its chain, its error; the core of
+## fourier-epicycles.xtl, line for line) on the live page's heart: 128
+## points round it, as the page samples it. Each array is printed
+## after a "== name" line (scripts/props.sh reads them; a rank-3 array
+## is a list of boards).
+
+## x, y: the page's heart, 128 points: x = 16 sin^3 t, y = 13 cos t -
+## 5 cos 2t - 2 cos 3t - cos 4t, both over 17.
+t := (2.0 * (p_i @) / 128.0) * f_loat o_ffsets 128
+s := s_in t
+x := (16.0 * s * s * s) / 17.0
+y := ((13.0 * c_os t) - (5.0 * c_os 2.0 * t) + (2.0 * c_os 3.0 * t) + c_os 4.0 * t) / 17.0
+
+## -- the angles: one outer product. n: how many points. k: 0 .. n - 1.
+## A, C, S: row k, column j of A is 2 pi k j / n, the angle of
+## frequency k at sample j; C and S its cosine and sine.
+n := t_ally x
+k := f_loat o_ffsets n
+A := (2.0 * (p_i @) / f_loat n) * k '* t_able k
+C := c_os A
+S := s_in A
+
+### The transform: two matrix products
+
+## re, im, amp: each frequency's part of the curve, real and
+## imaginary, and its strength. f: each circle's speed.
+re := ((C '+ '* i_nner x) + S '+ '* i_nner y) / f_loat n
+im := ((C '+ '* i_nner y) - S '+ '* i_nner x) / f_loat n
+amp := ((re * re) + im * im) ^ 0.5
+f := k - f_loat n * 1 * k >= f_loat n d_iv 2
+
+### The circles, strongest first
+
+order := g_rade n_eg amp
+T := (2.0 * (p_i @) / f_loat n) * k '* t_able order s_elect f
+zr := (k 'r_ight t_able order s_elect re)
+zi := (k 'r_ight t_able order s_elect im)
+vx := (zr * c_os T) - zi * s_in T
+vy := (zr * s_in T) + zi * c_os T
+
+### The chain: a running sum along the circles
+
+## cx, cy: row time j, column c: where the first c circles end.
+cx := '+ s_\_2 vx
+cy := '+ s_\_2 vy
+
+### The error of each reconstruction
+
+dx := cx - x 'l_eft t_able k
+dy := cy - y 'l_eft t_able k
+err := ('+ r_/ ((dx * dx) + dy * dy) ^ 0.5) / f_loat n
+# -- end of the core -------------------------------------
+
+### What the video shows
+
+## Two places are plenty on screen.
+u:r_ound := { v -> (f_loat f_loor 0.5 + v * 100.0) / 100.0 }
+## u:p_lane a: a matrix as one plane of a rank-3 array, to stack planes.
+u:p_lane := { a -> (1 c_at s_hape a) r_eshape a }
+## cols u:j_oints: where the first c circles end, for each c of cols,
+## at every time: a list of n boards (a time each), each 2 x cols (x
+## above y), for a points board, three times round.
+u:j_oints := { cols ->
+  J := o_\_12 (u:p_lane cols s_elect_2 cx) c_at u:p_lane cols s_elect_2 cy
+  J c_at J c_at J
+}
+
+## The cosines of the angle table: its first 32 rows and columns.
+"== cosines"
+32 t_ake 32 t_ake_2 C
+
+## The eight strongest circles: their speeds, then their sizes.
+"== strongest"
+(1 8 r_eshape 8 t_ake order s_elect f) c_at 1 8 r_eshape u:r_ound 8 t_ake order s_elect amp
+
+## The chain, at six moments an eighth of a turn apart (from the
+## first eighth), and the first five circles:
+## each circle's own x (turned by its speed and the moment), and the
+## running sum along the circles, where each one ends.
+"== vx"
+u:r_ound (17 + 16 * o_ffsets 6) s_elect 5 t_ake_2 vx
+"== cx"
+u:r_ound (17 + 16 * o_ffsets 6) s_elect 5 t_ake_2 cx
+
+## The heart rebuilt from 1, 2, 4 and 8 circles, at every time.
+"== rebuilt"
+u:j_oints 1 2 4 8
+
+## The mean error rebuilt from 1, 2, ... 8 circles, a row a count: the
+## count, then its error.
+"== error"
+o_\ (1 8 r_eshape f_loat 1 + o_ffsets 8) c_at 1 8 r_eshape u:r_ound 8 t_ake err

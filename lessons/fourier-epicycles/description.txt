@@ -1,0 +1,17 @@
+A heart drawn by circles turning on circles, and the program has no loop over circles.
+
+In X_eTaL, an experimental typed array language:
+1. Every speed times every moment is one table of angles, an outer product
+2. Two matrix products turn the points of the curve into circles, sorted biggest first
+3. One running sum along the chain gives where every circle ends, at every moment
+4. Each column of that sum is the curve rebuilt from that many circles: eight circles give the heart exactly
+
+Then the live page runs the same program in your browser on a star, a flower, or a curve you draw.
+
+Try it: https://softwarewrighter.github.io/X_eTaL-demos/fourier-epicycles/
+More X_eTaL videos: https://softwarewrighter.github.io/X_eTaL-video/
+
+Blog: https://software-wrighter-lab.github.io/
+Discord: https://discord.gg/Ctzk5uHggZ
+
+#Shorts #XeTaL #ArrayProgramming #Fourier #Epicycles #Math #Programming
