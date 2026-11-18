@@ -1,8 +1,9 @@
 number = 7
 slug = "attention-short"
-status = "pending"
+status = "completed"
 description = "A new lesson lessons/attention from X_eTaL-ML's attention demo: rows meet col..."
 role = "production"
 context_files = []
 created_at = "2026-11-18T14:45:55"
-commits = []
+completed_at = "2026-11-18T15:06:08"
+commits = ["9eed66888a8707dcee10cbc420d5ade2ca0acd00"]

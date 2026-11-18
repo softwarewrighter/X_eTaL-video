@@ -1,6 +1,6 @@
 number = 6
 slug = "intro-xetal"
-status = "pending"
+status = "in-progress"
 description = "A new lesson lessons/intro-xetal: an introduction to X_eTaL, the language, bu..."
 role = "production"
 context_files = []
