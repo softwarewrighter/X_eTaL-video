@@ -1,0 +1,391 @@
+{
+  "sample": "mike-medium-ref-1.wav",
+  "sampleSha256": "a57fe277f7ce93d5cac4e0e2ed21d770b7d05cab5b20b338dd55aece009d7211",
+  "server": "VoxCPM (Gradio /generate)",
+  "steps": 15,
+  "cfg": 2.0,
+  "scenes": [
+    {
+      "id": "hook",
+      "narration": "Code is read far more often than it is written. So this array language puts the meaning where your eye already is, in how each name looks. Here is how to read it, one idea at a time, from its syntax poster.",
+      "seconds": 15.6,
+      "sentences": [
+        {
+          "text": "Code is read far more often than it is written.",
+          "heard": "Code is read far more often than it is written.",
+          "start": 0.4,
+          "end": 3.706
+        },
+        {
+          "text": "So this array language puts the meaning where your eye already is, in how each name looks.",
+          "heard": "So this array language puts the meaning where your eye already is in how each name looks.",
+          "start": 4.056,
+          "end": 9.749
+        },
+        {
+          "text": "Here is how to read it, one idea at a time, from its syntax poster.",
+          "heard": "Here is how to read it, one idea at a time, from its syntax poster.",
+          "start": 10.099,
+          "end": 14.89
+        }
+      ]
+    },
+    {
+      "id": "names",
+      "narration": "Start with the first letter. When it is underlined, the name is a function, like reverse. With no underline, the name is a value, a number, a list, or a table.",
+      "seconds": 13.6,
+      "sentences": [
+        {
+          "text": "Start with the first letter.",
+          "heard": "Start with the first letter.",
+          "start": 0.4,
+          "end": 1.616
+        },
+        {
+          "text": "When it is underlined, the name is a function, like reverse.",
+          "heard": "When it is underlined, the name is a function, like reverse.",
+          "start": 1.966,
+          "end": 6.584
+        },
+        {
+          "text": "With no underline, the name is a value, a number, a list, or a table.",
+          "heard": "With no underline, the name is a value, a number, a list, or a table.",
+          "start": 6.934,
+          "end": 12.831
+        }
+      ]
+    },
+    {
+      "id": "where",
+      "narration": "A small letter above the name says where it came from. One mark for your own program, another for a library's export, another for a helper that only this file can see. So you never hunt for a definition.",
+      "seconds": 12.7,
+      "sentences": [
+        {
+          "text": "A small letter above the name says where it came from.",
+          "heard": "A small letter above the name says where it came from.",
+          "start": 0.4,
+          "end": 2.929
+        },
+        {
+          "text": "One mark for your own program, another for a library's export, another for a helper that only this file can see.",
+          "heard": "One mark for your own program, another for a library's export, another for a helper that only this file can see.",
+          "start": 3.279,
+          "end": 10.02
+        },
+        {
+          "text": "So you never hunt for a definition.",
+          "heard": "so you never hunt for a definition.",
+          "start": 10.37,
+          "end": 11.934
+        }
+      ]
+    },
+    {
+      "id": "import",
+      "narration": "Importing a library gives it a short name of your choosing. That name then shows above every word you use from it, so a reader knows which import to open.",
+      "seconds": 10.7,
+      "sentences": [
+        {
+          "text": "Importing a library gives it a short name of your choosing.",
+          "heard": "Importing a library gives it a short name of your choosing.",
+          "start": 0.4,
+          "end": 3.171
+        },
+        {
+          "text": "That name then shows above every word you use from it, so a reader knows which import to open.",
+          "heard": "That name then shows above every word you use from it, so a reader knows which import to open.",
+          "start": 3.521,
+          "end": 9.953
+        }
+      ]
+    },
+    {
+      "id": "define",
+      "narration": "The left arrow binds a name, to a value or to a function. But the equals sign never binds. It only compares, and gives ones and zeros.",
+      "seconds": 11.6,
+      "sentences": [
+        {
+          "text": "The left arrow binds a name, to a value or to a function.",
+          "heard": "The left arrow binds a name to a value or to a function.",
+          "start": 0.4,
+          "end": 4.244
+        },
+        {
+          "text": "But the equals sign never binds.",
+          "heard": "But the equals sign never binds.",
+          "start": 4.594,
+          "end": 7.337
+        },
+        {
+          "text": "It only compares, and gives ones and zeros.",
+          "heard": "It only compares and gives ones and zeros.",
+          "start": 7.687,
+          "end": 10.806
+        }
+      ]
+    },
+    {
+      "id": "pass",
+      "narration": "Write a function next to a value, and it applies to it. Put a quote in front of a function, and you pass the function itself, as a value, to another function. That is how each and reduce get their work.",
+      "seconds": 14.1,
+      "sentences": [
+        {
+          "text": "Write a function next to a value, and it applies to it.",
+          "heard": "Write a function next to a value and it applies to it.",
+          "start": 0.4,
+          "end": 3.969
+        },
+        {
+          "text": "Put a quote in front of a function, and you pass the function itself, as a value, to another function.",
+          "heard": "Put a quote in front of a function and you pass the function itself as a value to another function.",
+          "start": 4.319,
+          "end": 10.451
+        },
+        {
+          "text": "That is how each and reduce get their work.",
+          "heard": "That is how each and reduce get their work.",
+          "start": 10.801,
+          "end": 13.333
+        }
+      ]
+    },
+    {
+      "id": "axes",
+      "narration": "A small number below a function attaches an axis to it. Reduce sums down the first axis by default. With a two below it, it sums along the second axis instead.",
+      "seconds": 12.0,
+      "sentences": [
+        {
+          "text": "A small number below a function attaches an axis to it.",
+          "heard": "A small number below a function attaches an axis to it.",
+          "start": 0.4,
+          "end": 3.716
+        },
+        {
+          "text": "Reduce sums down the first axis by default.",
+          "heard": "Reduce sums down the first axis by default.",
+          "start": 4.066,
+          "end": 6.982
+        },
+        {
+          "text": "With a two below it, it sums along the second axis instead.",
+          "heard": "With a 2 below it, it sums along the second axis instead.",
+          "start": 7.332,
+          "end": 11.243
+        }
+      ]
+    },
+    {
+      "id": "rotate",
+      "narration": "The same mark works for rotate and transpose. Rotate along axis two shifts every row. Transpose with no axis reverses them all, so rows become columns.",
+      "seconds": 11.8,
+      "sentences": [
+        {
+          "text": "The same mark works for rotate and transpose.",
+          "heard": "The same mark works for rotate and transpose.",
+          "start": 0.4,
+          "end": 2.717
+        },
+        {
+          "text": "Rotate along axis two shifts every row.",
+          "heard": "Rotate along axis 2 shifts every row.",
+          "start": 3.067,
+          "end": 5.468
+        },
+        {
+          "text": "Transpose with no axis reverses them all, so rows become columns.",
+          "heard": "Transpose with no axis reverses them all, so rows become columns.",
+          "start": 5.818,
+          "end": 11.014
+        }
+      ]
+    },
+    {
+      "id": "power",
+      "narration": "A small number above a value is a power, so x squared looks the way it does on paper. Above a function, it applies the function that many times. Life to the fourth runs four generations, and the glider moves.",
+      "seconds": 13.8,
+      "sentences": [
+        {
+          "text": "A small number above a value is a power, so x squared looks the way it does on paper.",
+          "heard": "A small number above a value is a power, so x squared looks the way it does on paper.",
+          "start": 0.4,
+          "end": 5.278
+        },
+        {
+          "text": "Above a function, it applies the function that many times.",
+          "heard": "Above a function, it applies the function that many times.",
+          "start": 5.628,
+          "end": 9.389
+        },
+        {
+          "text": "Life to the fourth runs four generations, and the glider moves.",
+          "heard": "Life to the fourth runs four generations and the glider moves.",
+          "start": 9.739,
+          "end": 13.078
+        }
+      ]
+    },
+    {
+      "id": "lambdas",
+      "narration": "Braces make a function with no name. Alpha is its left argument, and omega its right. Or name the arguments with an arrow, and even take a pair apart.",
+      "seconds": 10.6,
+      "sentences": [
+        {
+          "text": "Braces make a function with no name.",
+          "heard": "Braces make a function with no name.",
+          "start": 0.4,
+          "end": 2.208
+        },
+        {
+          "text": "Alpha is its left argument, and omega its right.",
+          "heard": "Alpha is its left argument and Omega its right.",
+          "start": 2.558,
+          "end": 5.458
+        },
+        {
+          "text": "Or name the arguments with an arrow, and even take a pair apart.",
+          "heard": "or name the arguments with an arrow, and even take a pair apart.",
+          "start": 5.808,
+          "end": 9.833
+        }
+      ]
+    },
+    {
+      "id": "system",
+      "narration": "A box in front of a name marks the system, the things a program asks of the world outside. Reading and writing files, reading a typed line, drawing cells, or showing a picture.",
+      "seconds": 12.4,
+      "sentences": [
+        {
+          "text": "A box in front of a name marks the system, the things a program asks of the world outside.",
+          "heard": "A box in front of a name marks the system, the things a program asks of the world outside.",
+          "start": 0.4,
+          "end": 5.694
+        },
+        {
+          "text": "Reading and writing files, reading a typed line, drawing cells, or showing a picture.",
+          "heard": "Reading and writing files, reading a typed line, drawing cells, or showing a picture.",
+          "start": 6.044,
+          "end": 11.693
+        }
+      ]
+    },
+    {
+      "id": "guard",
+      "narration": "Between a test and a result, a question mark is a guard. When the number is at most one, the answer is one. The diamond separates statements. At the end of a name, the same mark is just part of the name.",
+      "seconds": 15.3,
+      "sentences": [
+        {
+          "text": "Between a test and a result, a question mark is a guard.",
+          "heard": "between a test and a result. A question mark is a guard.",
+          "start": 0.4,
+          "end": 4.529
+        },
+        {
+          "text": "When the number is at most one, the answer is one.",
+          "heard": "When the number is at most 1, the answer is 1.",
+          "start": 4.879,
+          "end": 8.507
+        },
+        {
+          "text": "The diamond separates statements.",
+          "heard": "the diamond separates statements.",
+          "start": 8.857,
+          "end": 10.86
+        },
+        {
+          "text": "At the end of a name, the same mark is just part of the name.",
+          "heard": "At the end of a name, the same mark is just part of the name.",
+          "start": 11.21,
+          "end": 14.523
+        }
+      ]
+    },
+    {
+      "id": "ascii",
+      "narration": "You type all of this on an ordinary keyboard, with no special keys. An underscore after the first letter makes the underline, and a caret makes the small number above. The editor draws the rest.",
+      "seconds": 14.2,
+      "sentences": [
+        {
+          "text": "You type all of this on an ordinary keyboard, with no special keys.",
+          "heard": "You type all of this on an ordinary keyboard with no special keys.",
+          "start": 0.4,
+          "end": 4.624
+        },
+        {
+          "text": "An underscore after the first letter makes the underline, and a caret makes the small number above.",
+          "heard": "An underscore after the first letter makes the underline and a caret makes the small number above.",
+          "start": 4.974,
+          "end": 10.954
+        },
+        {
+          "text": "The editor draws the rest.",
+          "heard": "The editor draws the rest.",
+          "start": 11.304,
+          "end": 13.426
+        }
+      ]
+    },
+    {
+      "id": "trains",
+      "narration": "Square brackets build a train, functions joined with no argument named. Two functions run one after the other. Three make a fork, so the sum divided by the count is the mean.",
+      "seconds": 13.6,
+      "sentences": [
+        {
+          "text": "Square brackets build a train, functions joined with no argument named.",
+          "heard": "Square brackets, build a train, functions joined with no argument named.",
+          "start": 0.4,
+          "end": 5.073
+        },
+        {
+          "text": "Two functions run one after the other.",
+          "heard": "Two functions run one after the other.",
+          "start": 5.423,
+          "end": 7.662
+        },
+        {
+          "text": "Three make a fork, so the sum divided by the count is the mean.",
+          "heard": "3. Make a fork. So the sum divided by the count is the mean.",
+          "start": 8.012,
+          "end": 12.817
+        }
+      ]
+    },
+    {
+      "id": "poster",
+      "narration": "That is the whole poster, online, with every sample drawn by the language itself. Each train is checked against its spelled out form, so the poster cannot lie.",
+      "seconds": 10.2,
+      "sentences": [
+        {
+          "text": "That is the whole poster, online, with every sample drawn by the language itself.",
+          "heard": "That is the whole poster online with every sample drawn by the language itself.",
+          "start": 0.4,
+          "end": 4.689
+        },
+        {
+          "text": "Each train is checked against its spelled out form, so the poster cannot lie.",
+          "heard": "Each train is checked against its spelled out form so the poster cannot lie.",
+          "start": 5.039,
+          "end": 9.434
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "narration": "Try it in the playground in your browser, and keep the poster open beside it. The links are below.",
+      "seconds": 7.7,
+      "sentences": [
+        {
+          "text": "Try it in the playground in your browser, and keep the poster open beside it.",
+          "heard": "Try it in the Playground in your browser and keep the poster open beside it.",
+          "start": 0.4,
+          "end": 4.34
+        },
+        {
+          "text": "The links are below.",
+          "heard": "The links are below.",
+          "start": 4.69,
+          "end": 5.898
+        }
+      ]
+    }
+  ]
+}

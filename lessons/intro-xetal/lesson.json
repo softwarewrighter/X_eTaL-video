@@ -1,0 +1,231 @@
+{
+  "slug": "intro-xetal",
+  "title": "Syntax you can see",
+  "summary": "An introduction to reading X_eTaL, panel by panel after its syntax poster: an underline marks a function, a small letter above says where a name came from, a quote passes a function, small numbers pick an axis or a power, a box marks the system, a question mark guards, and square brackets make a train. Ends on the poster itself.",
+  "order": 0,
+  "poster": 5550,
+  "fps": 30,
+  "demo": { "repo": "X_eTaL", "slug": "poster" },
+  "scenes": [
+    {
+      "id": "hook",
+      "seconds": 15.6,
+      "heading": "Syntax you can see",
+      "narration": "Code is read far more often than it is written. So this array language puts the meaning where your eye already is, in how each name looks. Here is how to read it, one idea at a time, from its syntax poster.",
+      "lines": [
+        "Code is read more often than it is written.",
+        { "xtl": "u:s_quare := { _r * _r }" },
+        "So typography carries the meaning."
+      ]
+    },
+    {
+      "id": "names",
+      "seconds": 13.6,
+      "heading": "1. Function or value",
+      "narration": "Start with the first letter. When it is underlined, the name is a function, like reverse. With no underline, the name is a value, a number, a list, or a table.",
+      "lines": [
+        { "xtl": "r_ev" },
+        "Underlined first letter: a function.",
+        { "xtl": "x" },
+        "No underline: a value.",
+        { "xtl": "r_ev 1 2 3" }
+      ],
+      "boards": [{ "data": "rev", "label": "reversed", "numbers": true }]
+    },
+    {
+      "id": "where",
+      "seconds": 12.7,
+      "heading": "1. Where a name came from",
+      "narration": "A small letter above the name says where it came from. One mark for your own program, another for a library's export, another for a helper that only this file can see. So you never hunt for a definition.",
+      "lines": [
+        { "xtl": "u:s_quare" },
+        { "xtl": "l:m_ean" },
+        { "xtl": "h:j_oin" },
+        { "xtl": "m:w_hen<" },
+        "Your program's own; a library's export;",
+        "a helper, this file only; a macro library's export."
+      ]
+    },
+    {
+      "id": "import",
+      "seconds": 10.7,
+      "heading": "2. Import a library",
+      "narration": "Importing a library gives it a short name of your choosing. That name then shows above every word you use from it, so a reader knows which import to open.",
+      "lines": [
+        { "xtl": "\"c:\" u_se< \"Combinators\"" },
+        { "xtl": "c:K_ 42 17" },
+        "The alias you choose shows on every name it gives you."
+      ]
+    },
+    {
+      "id": "define",
+      "seconds": 11.6,
+      "heading": "3. Definitions",
+      "narration": "The left arrow binds a name, to a value or to a function. But the equals sign never binds. It only compares, and gives ones and zeros.",
+      "lines": [
+        { "xtl": "u:s_quare := { _r * _r }" },
+        { "xtl": "limit := 100" },
+        "The arrow binds.",
+        { "xtl": "3 = 3 4" },
+        "Equals only compares."
+      ],
+      "boards": [{ "data": "cmp", "label": "three equals three, four", "numbers": true }]
+    },
+    {
+      "id": "pass",
+      "seconds": 14.1,
+      "heading": "4. Apply or pass",
+      "narration": "Write a function next to a value, and it applies to it. Put a quote in front of a function, and you pass the function itself, as a value, to another function. That is how each and reduce get their work.",
+      "lines": [
+        { "xtl": "f_ x" },
+        "Next to a value: the function applies.",
+        { "xtl": "'n_eg e_ach 1 2 3" },
+        { "xtl": "'+ r_/ 1 2 3 4" },
+        "A quote in front: the function is passed."
+      ],
+      "boards": [
+        { "data": "each", "label": "negate, passed to each", "numbers": true },
+        { "data": "sum", "label": "plus, passed to reduce", "numbers": true }
+      ]
+    },
+    {
+      "id": "axes",
+      "seconds": 12,
+      "heading": "5. Axes",
+      "narration": "A small number below a function attaches an axis to it. Reduce sums down the first axis by default. With a two below it, it sums along the second axis instead.",
+      "lines": [
+        { "xtl": "'+ r_/ A" },
+        { "xtl": "'+ r_/_2 A" },
+        "A number below: the axis it works along."
+      ],
+      "boards": [
+        { "data": "A", "label": "A", "numbers": true },
+        { "data": "down", "label": "axis 1", "numbers": true },
+        { "data": "across", "label": "axis 2", "numbers": true }
+      ]
+    },
+    {
+      "id": "rotate",
+      "seconds": 11.8,
+      "heading": "5. Rotate and transpose",
+      "narration": "The same mark works for rotate and transpose. Rotate along axis two shifts every row. Transpose with no axis reverses them all, so rows become columns.",
+      "lines": [
+        { "xtl": "1 o_-_2 A" },
+        { "xtl": "o_\\ A" },
+        "Rotate along axis 2; transpose every axis."
+      ],
+      "boards": [
+        { "data": "A", "label": "A", "numbers": true },
+        { "data": "rot", "label": "rotated", "numbers": true },
+        { "data": "tr", "label": "transposed", "numbers": true }
+      ]
+    },
+    {
+      "id": "power",
+      "seconds": 13.8,
+      "heading": "6. Power",
+      "narration": "A small number above a value is a power, so x squared looks the way it does on paper. Above a function, it applies the function that many times. Life to the fourth runs four generations, and the glider moves.",
+      "lines": [
+        { "xtl": "x^2" },
+        "Above a value: a power.",
+        { "xtl": "u:l_ife^4 board" },
+        "Above a function: apply it that many times."
+      ],
+      "boards": [
+        { "data": "board", "label": "board" },
+        { "data": "life4", "label": "four generations on" }
+      ]
+    },
+    {
+      "id": "lambdas",
+      "seconds": 10.6,
+      "heading": "7. Lambdas",
+      "narration": "Braces make a function with no name. Alpha is its left argument, and omega its right. Or name the arguments with an arrow, and even take a pair apart.",
+      "lines": [
+        { "xtl": "{ _l + _r }" },
+        { "xtl": "1 2 3 { _l + _r } 10 20 30" },
+        "Alpha on the left, omega on the right.",
+        { "xtl": "{ (a, b) -> (b, a) }" },
+        "Named arguments: a pair taken apart and swapped."
+      ],
+      "boards": [{ "data": "lam", "label": "sums", "numbers": true }]
+    },
+    {
+      "id": "system",
+      "seconds": 12.4,
+      "heading": "8. System names",
+      "narration": "A box in front of a name marks the system, the things a program asks of the world outside. Reading and writing files, reading a typed line, drawing cells, or showing a picture.",
+      "lines": [
+        { "xtl": "[]R_EAD" },
+        { "xtl": "[]N_PUT" },
+        { "xtl": "[]G_RID" },
+        { "xtl": "flyover := []S_HOW []G_RID u:p_ass 11" },
+        "A box marks the system. It is still underlined: a function."
+      ]
+    },
+    {
+      "id": "guard",
+      "seconds": 15.3,
+      "heading": "9. The question mark",
+      "narration": "Between a test and a result, a question mark is a guard. When the number is at most one, the answer is one. The diamond separates statements. At the end of a name, the same mark is just part of the name.",
+      "lines": [
+        { "xtl": "u:f_act := { n -> n <= 1 ? 1; n * u:f_act n - 1 }" },
+        { "xtl": "'u:f_act e_ach 1 2 3 4 5" },
+        "A guard: when the test holds, this result.",
+        { "xtl": "e_mpty?" },
+        "At the end of a name: part of the name."
+      ],
+      "boards": [{ "data": "fact", "label": "factorials", "numbers": true }]
+    },
+    {
+      "id": "ascii",
+      "seconds": 14.2,
+      "heading": "10. Typed as ASCII",
+      "narration": "You type all of this on an ordinary keyboard, with no special keys. An underscore after the first letter makes the underline, and a caret makes the small number above. The editor draws the rest.",
+      "lines": [
+        "Typed on any keyboard, drawn like this:",
+        { "xtl": "u:l_ife^4 board" },
+        { "xtl": "[]R_EAD" },
+        { "xtl": "'+ r_/_2 A" },
+        "An underscore after the first letter: the underline.",
+        "A caret: the small number above."
+      ]
+    },
+    {
+      "id": "trains",
+      "seconds": 13.6,
+      "heading": "11. Trains",
+      "narration": "Square brackets build a train, functions joined with no argument named. Two functions run one after the other. Three make a fork, so the sum divided by the count is the mean.",
+      "lines": [
+        { "xtl": "[n_eg a_bs] -3 4" },
+        "Two: one after the other.",
+        { "xtl": "['+ r_/ / t_ally] 1 2 3 4" },
+        "Three, a fork: sum over count, the mean."
+      ],
+      "boards": [
+        { "data": "atop", "label": "negated absolute values", "numbers": true },
+        { "data": "v", "label": "the list", "numbers": true },
+        { "data": "mean", "label": "its mean", "numbers": true }
+      ]
+    },
+    {
+      "id": "poster",
+      "seconds": 10.2,
+      "heading": "The syntax poster",
+      "narration": "That is the whole poster, online, with every sample drawn by the language itself. Each train is checked against its spelled out form, so the poster cannot lie.",
+      "lines": [],
+      "capture": { "actions": [{ "wait": 2.5 }, { "scroll": ".p4" }, { "wait": 2.5 }, { "scroll": ".p11" }] }
+    },
+    {
+      "id": "cta",
+      "seconds": 7.7,
+      "heading": "Try it",
+      "narration": "Try it in the playground in your browser, and keep the poster open beside it. The links are below.",
+      "lines": [
+        "The poster, and a playground in your browser:",
+        { "code": "softwarewrighter.github.io/X_eTaL/poster" },
+        { "code": "softwarewrighter.github.io/X_eTaL" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+Code is read more often than it is written, so in X_eTaL the way a name looks tells you what it is. A tour of its syntax poster, one panel at a time.
+
+In X_eTaL, an experimental typed array language:
+1. An underlined first letter is a function; a name without one is a value
+2. A small letter above a name says where it came from: your program, a library, a helper, a macro library
+3. An import's alias shows above every name it gives you
+4. The arrow binds and equals only compares
+5. A function next to a value applies; a quote in front passes the function itself
+6. A small number below a function picks its axis: reduce, rotate, transpose
+7. A small number above a value is a power; above a function it repeats it (Life to the fourth)
+8. Braces make a lambda: alpha on its left, omega on its right, or named arguments
+9. A box marks the system: files, input, grids, pictures
+10. A question mark between a test and a result is a guard
+11. You type it all as ASCII, and it is drawn decorated
+12. Square brackets make a train: sum over count is the mean, with no argument named
+
+Chapters:
+0:00 Intro: syntax you can see
+0:15 Function or value
+0:29 Where a name came from
+0:41 Import a library
+0:52 Definitions
+1:04 Apply or pass
+1:18 Axes
+1:30 Rotate and transpose
+1:42 Power
+1:55 Lambdas
+2:06 System names
+2:18 The question mark
+2:34 Typed as ASCII
+2:48 Trains
+3:02 The syntax poster
+3:12 Try it
+
+The poster: https://softwarewrighter.github.io/X_eTaL/poster/
+Try it: https://softwarewrighter.github.io/X_eTaL/
+More X_eTaL videos: https://softwarewrighter.github.io/X_eTaL-video/
+
+Blog: https://software-wrighter-lab.github.io/
+Discord: https://discord.gg/Ctzk5uHggZ
+
+#XeTaL #ArrayProgramming #APL #Typography #ProgrammingLanguages #Programming
