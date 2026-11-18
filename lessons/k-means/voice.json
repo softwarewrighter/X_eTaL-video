@@ -1,0 +1,154 @@
+{
+  "sample": "mike-medium-ref-1.wav",
+  "sampleSha256": "a57fe277f7ce93d5cac4e0e2ed21d770b7d05cab5b20b338dd55aece009d7211",
+  "server": "VoxCPM (Gradio /generate)",
+  "steps": 15,
+  "cfg": 2.0,
+  "scenes": [
+    {
+      "id": "hook",
+      "narration": "Three hundred points, five centers. Each step, every point picks its nearest center, and the centers move. There is no loop over the points.",
+      "seconds": 10.1,
+      "sentences": [
+        {
+          "text": "Three hundred points, five centers.",
+          "heard": "300 points, 5 centers.",
+          "start": 0.4,
+          "end": 2.641
+        },
+        {
+          "text": "Each step, every point picks its nearest center, and the centers move.",
+          "heard": "Each step, every point picks its nearest center, and the centers move",
+          "start": 2.991,
+          "end": 7.119
+        },
+        {
+          "text": "There is no loop over the points.",
+          "heard": "There is no loop over the points.",
+          "start": 7.469,
+          "end": 9.312
+        }
+      ]
+    },
+    {
+      "id": "dist",
+      "narration": "First, the distance from every point to every center. One expression gives the whole table, a row for each point, a column for each center.",
+      "seconds": 10.1,
+      "sentences": [
+        {
+          "text": "First, the distance from every point to every center.",
+          "heard": "First, the distance from every point to every center.",
+          "start": 0.4,
+          "end": 3.513
+        },
+        {
+          "text": "One expression gives the whole table, a row for each point, a column for each center.",
+          "heard": "One expression gives the whole table, a row for each point, a column for each center.",
+          "start": 3.863,
+          "end": 9.369
+        }
+      ]
+    },
+    {
+      "id": "nearest",
+      "narration": "Then the smallest number in each row marks the nearest center. One reduce finds it for every point, as rows of zeros and ones.",
+      "seconds": 9.1,
+      "sentences": [
+        {
+          "text": "Then the smallest number in each row marks the nearest center.",
+          "heard": "Then the smallest number in each row marks the nearest center",
+          "start": 0.4,
+          "end": 3.665
+        },
+        {
+          "text": "One reduce finds it for every point, as rows of zeros and ones.",
+          "heard": "One reduce finds it for every point as rows of zeros and ones.",
+          "start": 4.015,
+          "end": 8.336
+        }
+      ]
+    },
+    {
+      "id": "means",
+      "narration": "Turn that table on its side and multiply by the points. That adds up each group. Divide by the counts, and you have the new centers.",
+      "seconds": 10.0,
+      "sentences": [
+        {
+          "text": "Turn that table on its side and multiply by the points.",
+          "heard": "Turn that table on its side and multiply by the points.",
+          "start": 0.4,
+          "end": 3.326
+        },
+        {
+          "text": "That adds up each group.",
+          "heard": "That adds up each group.",
+          "start": 3.676,
+          "end": 5.108
+        },
+        {
+          "text": "Divide by the counts, and you have the new centers.",
+          "heard": "Divide by the counts and you have the new centers.",
+          "start": 5.458,
+          "end": 9.261
+        }
+      ]
+    },
+    {
+      "id": "steps",
+      "narration": "Now repeat the step. From a poor start, three centers crowd one blob and get stuck. From a far apart start, each center finds its own blob.",
+      "seconds": 10.4,
+      "sentences": [
+        {
+          "text": "Now repeat the step.",
+          "heard": "Now repeat the step.",
+          "start": 0.4,
+          "end": 1.646
+        },
+        {
+          "text": "From a poor start, three centers crowd one blob and get stuck.",
+          "heard": "From a poor start, three centers crowd one blob and get stuck.",
+          "start": 1.996,
+          "end": 6.134
+        },
+        {
+          "text": "From a far apart start, each center finds its own blob.",
+          "heard": "From a far apart start, each center finds its own blob.",
+          "start": 6.484,
+          "end": 9.68
+        }
+      ]
+    },
+    {
+      "id": "live",
+      "narration": "The live page runs the same program in your browser. Press run, and watch the centers travel.",
+      "seconds": 7.4,
+      "sentences": [
+        {
+          "text": "The live page runs the same program in your browser.",
+          "heard": "The Live page runs the same program in your browser.",
+          "start": 0.4,
+          "end": 3.61
+        },
+        {
+          "text": "Press run, and watch the centers travel.",
+          "heard": "Press Run and watch the centers travel.",
+          "start": 3.96,
+          "end": 6.698
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "narration": "Try it yourself, the link is below.",
+      "seconds": 4.4,
+      "sentences": [
+        {
+          "text": "Try it yourself, the link is below.",
+          "heard": "Try it yourself, the link is below.",
+          "start": 0.4,
+          "end": 2.526
+        }
+      ]
+    }
+  ]
+}

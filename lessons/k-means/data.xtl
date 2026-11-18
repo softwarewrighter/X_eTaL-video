@@ -1,0 +1,114 @@
+#!/usr/bin/env xetal
+## The k-means lesson's arrays, computed by X_eTaL with the program of
+## X_eTaL-ML's k-means demo (its 300 points in five blobs, seeded; its
+## two starts) and the step of its Learn library (every point's
+## distance to every center as one table, the nearest center as one
+## reduce, the new centers as means by group). Each array is printed
+## after a "== name" line (scripts/props.sh reads them; a rank-3 array
+## is a list of boards).
+##
+## The demo uses two libraries of X_eTaL-ML (Learn, NN), which are not
+## on this repository's path: the lines it needs are copied here as
+## they are, their names as u: names.
+
+### The points, as the demo makes them: five blobs of 60
+
+n := 300
+i := o_ffsets n
+b := 1 + i d_iv 60
+cx := b s_elect -0.6 0.5 0.0 -0.5 0.6
+cy := b s_elect 0.5 0.6 -0.05 -0.6 -0.5
+spread := b s_elect 0.12 0.16 0.1 0.2 0.08
+u:n_oise := { m -> (f_loat (r_oll! m r_eshape 1001) + (r_oll! m r_eshape 1001) - 1002) / 1000.0 }
+X := o_\ (2 c_at n) r_eshape (cx + spread * u:n_oise n) c_at cy + spread * u:n_oise n
+
+### The step, as Learn and NN have it
+
+## NN's helpers and its a_rgmax and o_neHot.
+u:s_pread := { r m -> o_\ ((-1 t_ake s_hape m) c_at t_ally r) r_eshape r }
+u:r_ows := { m -> (('* r_/ -1 d_rop s_hape m) c_at -1 t_ake s_hape m) r_eshape m }
+u:a_rgmax := { a ->
+  m := u:r_ows a
+  n := f_irst -1 t_ake s_hape m
+  hit := f_loat m = ('m_ax r_/_2 m) u:s_pread m
+  (-1 d_rop s_hape a) r_eshape f_loor 'm_in r_/_2 (hit * (o_ffsets t_ally m) 'r_ight t_able f_loat r_ange n) + (1.0 - hit) * f_loat n + 1
+}
+u:o_neHot := { k y -> f_loat y '= t_able r_ange k }
+## Learn's: every row of A against every row of B, squared distance.
+u:d_ist := { A B -> (('+ r_/_2 A * A) '+ t_able '+ r_/_2 B * B) - 2.0 * A '+ '* i_nner o_\ B }
+u:a_ssign := { C X -> u:a_rgmax n_eg X u:d_ist C }
+u:k_step := { X C ->
+  O := (t_ally C) u:o_neHot C u:a_ssign X
+  n := ('+ r_/_1 O) 'l_eft t_able o_ffsets 2 s_elect s_hape X
+  (((o_\ O) '+ '* i_nner X) + C * f_loat n = 0.0) / 1.0 m_ax n
+}
+u:i_nertia := { C X -> '+ r_/ 'm_in r_/_2 X u:d_ist C }
+u:f_arthest := { k X ->
+  d := 2 s_elect s_hape X
+  (k - 1) '{ C -> C c_at_1 (1 c_at d) r_eshape (u:a_rgmax 'm_in r_/_2 X u:d_ist C) s_elect X } p_ower 1 t_ake X
+}
+
+### The two starts
+
+k := 5
+C0 := k t_ake X
+F0 := k u:f_arthest X
+
+## The demo's own results, to compare with its baseline
+## (reg/cli-k-means.out): the inertia after 0 to 10 steps from each
+## start, and the poor start's centers after 10 steps.
+u:r_ound3 := { a -> (f_loat f_loor 0.5 + 1000.0 * a) / 1000.0 }
+"== inertia-poor"
+u:r_ound3 '{ j -> (j '{ C -> X u:k_step C } p_ower C0) u:i_nertia X } e_ach o_ffsets 11
+"== inertia-farthest"
+u:r_ound3 '{ j -> (j '{ C -> X u:k_step C } p_ower F0) u:i_nertia X } e_ach o_ffsets 11
+"== c10"
+u:r_ound3 10 '{ C -> X u:k_step C } p_ower C0
+
+### What the video shows
+
+## Two places are plenty on screen.
+u:r_ound := { a -> (f_loat f_loor 0.5 + a * 100.0) / 100.0 }
+
+## Ten points to look at, two from each blob, and the farthest-first
+## centers, one in each blob.
+pick := 16 46 76 106 136 166 196 226 256 286
+P := pick s_elect X
+"== dist"
+u:r_ound P u:d_ist F0
+## The nearest: the place of each row's smallest, as one-hot rows.
+"== onehot"
+k u:o_neHot F0 u:a_ssign P
+## The centers before and after one step: a row a center, x and y.
+"== before"
+u:r_ound F0
+"== after"
+u:r_ound X u:k_step F0
+
+## The points drawn: every third, 100 of them.
+D := (1 + 3 * o_ffsets 100) s_elect X
+m := t_ally D
+## u:f_rame C: one board, 2 x (6m + 5), of the centers C and the drawn
+## points in the color of their nearest center. The renderer colors a
+## body by its place (modulo 6), so each point is six bodies: the copy
+## in its center's color sits on the point, the other copies sit under
+## their own center (the same color, unseen), and the sixth (the
+## renderer's sixth color) sits under the next point. Block 0 is the
+## centers, then the first point's sixth body.
+## (hit, C) u:a_xis j: one row of a frame, its x (j = 1) or its y (2).
+u:a_xis := { (hit, C) j ->
+  p := j s_elect o_\ D
+  c := j s_elect o_\ C
+  copies := (hit * p 'l_eft t_able o_ffsets k) + (1.0 - hit) * (o_ffsets m) 'r_ight t_able c
+  -1 d_rop r_avel (((1 c_at k) r_eshape c) c_at_1 copies) c_at_2 ((m + 1) c_at 1) r_eshape p c_at 0.0
+}
+u:f_rame := { C ->
+  hit := k u:o_neHot C u:a_ssign D
+  (1 c_at 2 c_at (6 * m) + 5) r_eshape ((hit, C) u:a_xis 1) c_at (hit, C) u:a_xis 2
+}
+## s u:t_rack C: the frames of C and of its next s steps, a list.
+u:t_rack := { s C -> s = 0 ? u:f_rame C; (u:f_rame C) c_at (s - 1) u:t_rack X u:k_step C }
+"== poor"
+10 u:t_rack C0
+"== farthest"
+10 u:t_rack F0

@@ -1,0 +1,17 @@
+Three hundred points find their clusters, and the program has no loop over points.
+
+In X_eTaL, an experimental typed array language:
+1. Every point's distance to every center is one table
+2. Each point's nearest center is one reduce, the place of each row's smallest, written as rows of 0s and 1s
+3. The new centers are means by group: that table turned on its side, times the points, over the counts
+4. Repeat the step: from a poor start three centers crowd one blob and get stuck; from a farthest-first start each center finds its own blob
+
+Then the live page runs the same program in your browser.
+
+Try it: https://softwarewrighter.github.io/X_eTaL-ML/k-means/
+More X_eTaL videos: https://softwarewrighter.github.io/X_eTaL-video/
+
+Blog: https://software-wrighter-lab.github.io/
+Discord: https://discord.gg/Ctzk5uHggZ
+
+#Shorts #XeTaL #ArrayProgramming #MachineLearning #KMeans #Clustering #Programming

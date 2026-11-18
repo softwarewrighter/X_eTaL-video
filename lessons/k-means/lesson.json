@@ -1,0 +1,96 @@
+{
+  "slug": "k-means",
+  "title": "k-means without a loop",
+  "summary": "Three hundred points find their five clusters with no loop over points: every point's distance to every center is one table, the nearest center one reduce, the new centers means by group. A poor start gets stuck, a far-apart one does not. Ends on the live page.",
+  "order": 17,
+  "poster": 1460,
+  "fps": 30,
+  "stepFrames": 25,
+  "demo": { "repo": "X_eTaL-ML", "slug": "k-means" },
+  "scenes": [
+    {
+      "id": "hook",
+      "seconds": 10.1,
+      "heading": "k-means, as arrays",
+      "narration": "Three hundred points, five centers. Each step, every point picks its nearest center, and the centers move. There is no loop over the points.",
+      "lines": [
+        "Each point in the color of its nearest center."
+      ],
+      "boards": [{ "data": "poor", "points": true, "animate": true }]
+    },
+    {
+      "id": "dist",
+      "seconds": 10.1,
+      "heading": "1. Every distance, one table",
+      "narration": "First, the distance from every point to every center. One expression gives the whole table, a row for each point, a column for each center.",
+      "lines": [
+        { "xtl": "h:d_ist := { A B -> (('+ r_/_2 A * A) '+ t_able '+ r_/_2 B * B) - 2.0 * A '+ '* i_nner o_\\ B }" },
+        "Squared distances: a row a point, a column a center.",
+        "Ten of the points, two from each blob."
+      ],
+      "boards": [{ "data": "dist", "numbers": true }]
+    },
+    {
+      "id": "nearest",
+      "seconds": 9.1,
+      "heading": "2. The nearest, one reduce",
+      "narration": "Then the smallest number in each row marks the nearest center. One reduce finds it for every point, as rows of zeros and ones.",
+      "lines": [
+        { "xtl": "l:a_ssign := { C X -> nn:a_rgmax n_eg X h:d_ist C }" },
+        { "xtl": "O := (t_ally C) nn:o_neHot C l:a_ssign X" },
+        "The place of each row's smallest: its nearest center."
+      ],
+      "boards": [
+        { "data": "dist", "label": "distances", "heat": "ramp" },
+        { "data": "onehot", "label": "nearest", "numbers": true }
+      ]
+    },
+    {
+      "id": "means",
+      "seconds": 10,
+      "heading": "3. Means by group",
+      "narration": "Turn that table on its side and multiply by the points. That adds up each group. Divide by the counts, and you have the new centers.",
+      "lines": [
+        { "xtl": "(((o_\\ O) '+ '* i_nner X) + C * f_loat n = 0.0) / 1.0 m_ax n" },
+        "O turned, times X: each group's sum. Over n: its mean.",
+        "A center with no points stays where it is."
+      ],
+      "boards": [
+        { "data": "before", "label": "centers", "numbers": true },
+        { "data": "after", "label": "one step later", "numbers": true }
+      ]
+    },
+    {
+      "id": "steps",
+      "seconds": 10.4,
+      "heading": "4. Step, and repeat",
+      "narration": "Now repeat the step. From a poor start, three centers crowd one blob and get stuck. From a far apart start, each center finds its own blob.",
+      "lines": [
+        { "xtl": "C10 := 10 '{ C -> X ml:k_step C } p_ower C0" },
+        "Left, a poor start. Right, farthest first."
+      ],
+      "boards": [
+        { "data": "poor", "label": "poor start", "points": true, "animate": true },
+        { "data": "farthest", "label": "farthest first", "points": true, "animate": true }
+      ]
+    },
+    {
+      "id": "live",
+      "seconds": 7.4,
+      "heading": "The live page",
+      "narration": "The live page runs the same program in your browser. Press run, and watch the centers travel.",
+      "lines": [],
+      "capture": { "actions": [{ "wait": 3.8 }, { "click": "button:has-text('Run')" }] }
+    },
+    {
+      "id": "cta",
+      "seconds": 4.4,
+      "heading": "Try it",
+      "narration": "Try it yourself, the link is below.",
+      "lines": [
+        "Change k, change the start, step or run:",
+        { "code": "softwarewrighter.github.io/X_eTaL-ML/k-means" }
+      ]
+    }
+  ]
+}
