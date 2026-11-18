@@ -1,0 +1,1 @@
+life-capture narrated by a subagent (60.0 s, portrait, clicks timed to narration, 16 captions); reviewed, committed.

@@ -1,8 +1,9 @@
 number = 5
 slug = "narrate-life-capture"
-status = "pending"
+status = "completed"
 description = "Reword lessons/life-capture's narration for VoxCPM (as life was); just voice ..."
 role = "production"
 context_files = []
 created_at = "2026-11-18T14:45:55"
-commits = []
+completed_at = "2026-11-18T15:04:47"
+commits = ["aeff276730cc8eb9336c0e995c67f4806a295ca0"]
