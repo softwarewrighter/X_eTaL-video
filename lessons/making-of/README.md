@@ -1,19 +1,20 @@
 # making-of
 
-How this video was made: a 58 second video that describes its own
+How this video was made: a 69 second narrated video that describes its own
 construction, and whose on-screen numbers are its own schedule.
 
 | File | What |
 | ---- | ---- |
-| `lesson.json` | the lesson: seven scenes, each a heading, lines (text or code) and a length in seconds; its form is `schemas/lesson.schema.json` |
+| `lesson.json` | the lesson: seven scenes, each a heading, lines (text or code), a narration and a length in seconds; its form is `schemas/lesson.schema.json` |
+| `voice.json` | what each scene says, as spoken and as heard, with each sentence's time (written by `just voice`) |
 | `timing.json` | the schedule X_eTaL computes from it (frames per scene, starts, ends, the total); checked by the gate, never typed |
 
 ```bash
 just render making-of            # out/making-of-landscape-remotion.mp4 (Remotion)
 just render making-of portrait   # out/making-of-portrait-remotion.mp4
-just still making-of 850         # one frame through Remotion, as a PNG
+just still making-of 1080        # one frame through Remotion, as a PNG
 just timing making-of            # the schedule, computed by libs/Timeline
-just frame making-of 850         # one frame as a PNG (work/making-of/landscape/frames/00850.png)
+just frame making-of 1080        # one frame as a PNG (work/making-of/landscape/frames/01080.png)
 just draft making-of             # out/making-of-landscape.mp4
 just draft making-of portrait    # out/making-of-portrait.mp4
 ```
@@ -40,7 +41,9 @@ colored); `{"code": ...}` is other code. In any line, `{{f}}`, `{{scene}}`, `{{l
 the frame's own numbers. A scene with `"curves": true` shows the
 three curves as moving dots.
 
-Both are silent. The video files
+The Remotion videos are narrated (`just voice making-of`; each
+scene's length is its narration's, recorded in `voice.json`); the
+draft is silent. The video files
 are not tracked (`out/`); the lesson and the pinned tools reproduce
 them. Fonts are macOS system fonts (Arial, Menlo); set `VIDEO_FONT`,
 `VIDEO_FONT_BOLD` and `VIDEO_FONT_MONO` to font files elsewhere.

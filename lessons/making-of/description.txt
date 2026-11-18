@@ -1,0 +1,18 @@
+A video about an array language, scheduled by that same language. No timeline editor, no keyframes: only data and arrays.
+
+How these X_eTaL videos are made:
+1. A lesson is data: each scene is a heading, a few lines, a narration and a length in seconds, all in one file
+2. X_eTaL computes the schedule: seconds become frames, and where each scene starts is one running sum
+3. Every frame knows its place: its scene, how far into the scene it is and its progress, all frames computed at once as arrays
+4. Motion is arithmetic: each line's fade-in is a column of one table, and the easing curves are arrays too
+5. A renderer (Remotion) draws one picture per frame from those numbers and computes no timing of its own
+
+The numbers on screen are the video's own schedule, live, frame by frame.
+
+Source: https://github.com/softwarewrighter/X_eTaL-video
+More X_eTaL videos: https://softwarewrighter.github.io/X_eTaL-video/
+
+Blog: https://software-wrighter-lab.github.io/
+Discord: https://discord.gg/Ctzk5uHggZ
+
+#Shorts #XeTaL #ArrayProgramming #Remotion #VideoProduction #Programming

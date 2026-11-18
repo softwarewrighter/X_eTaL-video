@@ -3,13 +3,14 @@
   "title": "How this video was made",
   "summary": "How these videos are made: a lesson is data, X_eTaL computes the schedule and every frame's animation at once, and the numbers on screen are the video's own.",
   "order": 4,
-  "poster": 850,
+  "poster": 1080,
   "fps": 30,
   "scenes": [
     {
       "id": "title",
-      "seconds": 5,
+      "seconds": 8.4,
       "heading": "How this video was made",
+      "narration": "This video was made by the array language it is about. There is no timeline editor and no keyframes, only data and arrays.",
       "lines": [
         "A video about X_eTaL, scheduled by X_eTaL.",
         "No timeline editor. No keyframes. Data and arrays."
@@ -17,11 +18,12 @@
     },
     {
       "id": "lesson",
-      "seconds": 8,
+      "seconds": 9.5,
       "heading": "1. A lesson is data",
+      "narration": "First, a lesson is data. Each scene is a heading, a few lines, and a length in seconds. The whole video is one file.",
       "lines": [
         "Each scene is a heading, some lines and a length in seconds:",
-        { "code": "{ \"id\": \"lesson\", \"seconds\": 8," },
+        { "code": "{ \"id\": \"lesson\", \"seconds\": 9.5," },
         { "code": "  \"heading\": \"1. A lesson is data\"," },
         { "code": "  \"lines\": [ ... ] }" },
         "The whole video is one file: lessons/making-of/lesson.json"
@@ -29,8 +31,9 @@
     },
     {
       "id": "schedule",
-      "seconds": 10,
+      "seconds": 12.2,
       "heading": "2. X_eTaL computes the schedule",
+      "narration": "Next, the language computes the schedule. Seconds become frames, and where each scene starts is one running sum. The bar below is that array, drawn.",
       "lines": [
         { "xtl": "durs := 30 tl:f_rames {{secs}}" },
         { "xtl": "# {{durs}}" },
@@ -42,8 +45,9 @@
     },
     {
       "id": "frame",
-      "seconds": 10,
+      "seconds": 11.9,
       "heading": "3. Every frame knows its place",
+      "narration": "So every frame knows its place. For each frame, we get its scene, how far into the scene it is, and its progress. Every frame is computed at once, as arrays.",
       "lines": [
         { "xtl": "durs tl:s_cene {{f}}        # {{scene}}" },
         { "xtl": "durs tl:l_ocal {{f}}        # {{local}}" },
@@ -54,8 +58,9 @@
     },
     {
       "id": "ease",
-      "seconds": 10,
+      "seconds": 9.4,
       "heading": "4. Motion is arithmetic",
+      "narration": "Motion is just arithmetic. Each line fades in from one column of a table. And three easing curves move across this scene.",
       "curves": true,
       "lines": [
         { "xtl": "(10, 14) ez:s_tagger (local, n)" },
@@ -65,8 +70,9 @@
     },
     {
       "id": "render",
-      "seconds": 8,
+      "seconds": 7.7,
       "heading": "5. Frames, then a file",
+      "narration": "Then a renderer draws one picture for each frame, from those numbers. It computes no timing of its own.",
       "lines": [
         "A renderer draws one picture per frame from those numbers.",
         "Draft: ImageMagick and ffmpeg. Final: Remotion, in React.",
@@ -75,10 +81,11 @@
     },
     {
       "id": "next",
-      "seconds": 7,
+      "seconds": 10,
       "heading": "Next",
+      "narration": "Now the narration sets the length of each scene. And every lesson comes in landscape and portrait, from the same file.",
       "lines": [
-        "Narration will set each scene's length.",
+        "Narration sets each scene's length.",
         "Lessons from the live demos: Life, Mandelbrot, N-body.",
         "Every lesson in landscape and portrait, from one file.",
         { "code": "github.com/softwarewrighter/X_eTaL-video" }

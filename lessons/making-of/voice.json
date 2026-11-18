@@ -1,0 +1,166 @@
+{
+  "sample": "mike-medium-ref-1.wav",
+  "sampleSha256": "a57fe277f7ce93d5cac4e0e2ed21d770b7d05cab5b20b338dd55aece009d7211",
+  "server": "VoxCPM (Gradio /generate)",
+  "steps": 15,
+  "cfg": 2.0,
+  "scenes": [
+    {
+      "id": "title",
+      "narration": "This video was made by the array language it is about. There is no timeline editor and no keyframes, only data and arrays.",
+      "seconds": 8.4,
+      "sentences": [
+        {
+          "text": "This video was made by the array language it is about.",
+          "heard": "This video was made by the array language it is about.",
+          "start": 0.4,
+          "end": 3.174
+        },
+        {
+          "text": "There is no timeline editor and no keyframes, only data and arrays.",
+          "heard": "There is no timeline editor and no keyframes, only data and arrays.",
+          "start": 3.524,
+          "end": 7.69
+        }
+      ]
+    },
+    {
+      "id": "lesson",
+      "narration": "First, a lesson is data. Each scene is a heading, a few lines, and a length in seconds. The whole video is one file.",
+      "seconds": 9.5,
+      "sentences": [
+        {
+          "text": "First, a lesson is data.",
+          "heard": "First, a lesson is data.",
+          "start": 0.4,
+          "end": 2.015
+        },
+        {
+          "text": "Each scene is a heading, a few lines, and a length in seconds.",
+          "heard": "Each scene is a heading, a few lines and a length in seconds.",
+          "start": 2.365,
+          "end": 6.521
+        },
+        {
+          "text": "The whole video is one file.",
+          "heard": "The whole video is one file.",
+          "start": 6.871,
+          "end": 8.728
+        }
+      ]
+    },
+    {
+      "id": "schedule",
+      "narration": "Next, the language computes the schedule. Seconds become frames, and where each scene starts is one running sum. The bar below is that array, drawn.",
+      "seconds": 12.2,
+      "sentences": [
+        {
+          "text": "Next, the language computes the schedule.",
+          "heard": "Next, the language computes the schedule.",
+          "start": 0.4,
+          "end": 2.525
+        },
+        {
+          "text": "Seconds become frames, and where each scene starts is one running sum.",
+          "heard": "Seconds become frames, and where each scene starts is one running sum.",
+          "start": 2.875,
+          "end": 8.156
+        },
+        {
+          "text": "The bar below is that array, drawn.",
+          "heard": "The bar below is that array drawn.",
+          "start": 8.506,
+          "end": 11.43
+        }
+      ]
+    },
+    {
+      "id": "frame",
+      "narration": "So every frame knows its place. For each frame, we get its scene, how far into the scene it is, and its progress. Every frame is computed at once, as arrays.",
+      "seconds": 11.9,
+      "sentences": [
+        {
+          "text": "So every frame knows its place.",
+          "heard": "so every frame knows its place.",
+          "start": 0.4,
+          "end": 2.88
+        },
+        {
+          "text": "For each frame, we get its scene, how far into the scene it is, and its progress.",
+          "heard": "For each frame, we get its scene, how far into the scene it is, and its progress.",
+          "start": 3.23,
+          "end": 7.668
+        },
+        {
+          "text": "Every frame is computed at once, as arrays.",
+          "heard": "Every frame is computed at once, as arrays.",
+          "start": 8.018,
+          "end": 11.106
+        }
+      ]
+    },
+    {
+      "id": "ease",
+      "narration": "Motion is just arithmetic. Each line fades in from one column of a table. And three easing curves move across this scene.",
+      "seconds": 9.4,
+      "sentences": [
+        {
+          "text": "Motion is just arithmetic.",
+          "heard": "Motion is just arithmetic.",
+          "start": 0.4,
+          "end": 2.156
+        },
+        {
+          "text": "Each line fades in from one column of a table.",
+          "heard": "Each line fades in from one column of a table.",
+          "start": 2.506,
+          "end": 5.65
+        },
+        {
+          "text": "And three easing curves move across this scene.",
+          "heard": "and three easing curves move across this scene.",
+          "start": 6.0,
+          "end": 8.688
+        }
+      ]
+    },
+    {
+      "id": "render",
+      "narration": "Then a renderer draws one picture for each frame, from those numbers. It computes no timing of its own.",
+      "seconds": 7.7,
+      "sentences": [
+        {
+          "text": "Then a renderer draws one picture for each frame, from those numbers.",
+          "heard": "Then a renderer draws one picture for each frame from those numbers.",
+          "start": 0.4,
+          "end": 4.575
+        },
+        {
+          "text": "It computes no timing of its own.",
+          "heard": "it computes no timing of its own.",
+          "start": 4.925,
+          "end": 6.948
+        }
+      ]
+    },
+    {
+      "id": "next",
+      "narration": "Now the narration sets the length of each scene. And every lesson comes in landscape and portrait, from the same file.",
+      "seconds": 10.0,
+      "sentences": [
+        {
+          "text": "Now the narration sets the length of each scene.",
+          "heard": "Now the narration sets the length of each scene.",
+          "start": 0.4,
+          "end": 3.525
+        },
+        {
+          "text": "And every lesson comes in landscape and portrait, from the same file.",
+          "heard": "And every lesson comes in landscape and portrait from the same file.",
+          "start": 3.875,
+          "end": 8.16
+        }
+      ]
+    }
+  ]
+}
