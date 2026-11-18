@@ -1,0 +1,17 @@
+Three bodies chase each other around a figure eight, and the program has no loop over pairs.
+
+In X_eTaL, an experimental typed array language:
+1. Every pair's displacement is one table, stacked into a cube
+2. Every pair's pull is one expression, the inverse square law for all pairs at once
+3. Every body's acceleration is one reduce
+4. Kick, drift, kick, repeated: the orbit
+
+Then the live page runs the same program in your browser with fifty bodies.
+
+Try it: https://softwarewrighter.github.io/X_eTaL-demos/nbody/
+More X_eTaL videos: https://softwarewrighter.github.io/X_eTaL-video/
+
+Blog: https://software-wrighter-lab.github.io/
+Discord: https://discord.gg/Ctzk5uHggZ
+
+#Shorts #XeTaL #ArrayProgramming #Physics #NBody #Gravity #Programming

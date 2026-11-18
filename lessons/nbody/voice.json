@@ -12,11 +12,15 @@
       "sentences": [
         {
           "text": "Three bodies, all pulling on each other.",
-          "heard": "Three bodies, all pulling on each other."
+          "heard": "Three bodies, all pulling on each other.",
+          "start": 0.4,
+          "end": 3.251
         },
         {
           "text": "And there is no loop over the pairs.",
-          "heard": "and there is no loop over the pairs."
+          "heard": "and there is no loop over the pairs.",
+          "start": 3.601,
+          "end": 5.57
         }
       ]
     },
@@ -27,19 +31,27 @@
       "sentences": [
         {
           "text": "First, find how far apart every pair is.",
-          "heard": "First find how far apart every pair is."
+          "heard": "First find how far apart every pair is.",
+          "start": 0.4,
+          "end": 2.641
         },
         {
           "text": "Subtract every x from every x, and that is one table.",
-          "heard": "subtract every X from every X, and that is one table."
+          "heard": "subtract every X from every X, and that is one table.",
+          "start": 2.991,
+          "end": 5.988
         },
         {
           "text": "Do the same for y.",
-          "heard": "Do the same for Y."
+          "heard": "Do the same for Y.",
+          "start": 6.338,
+          "end": 7.615
         },
         {
           "text": "Stack the two tables, and you have a cube.",
-          "heard": "Stack the two tables and you have a cube."
+          "heard": "Stack the two tables and you have a cube.",
+          "start": 7.965,
+          "end": 11.139
         }
       ]
     },
@@ -50,11 +62,15 @@
       "sentences": [
         {
           "text": "Gravity falls off with the square of the distance.",
-          "heard": "gravity falls off with the square of the distance."
+          "heard": "gravity falls off with the square of the distance.",
+          "start": 0.4,
+          "end": 2.922
         },
         {
           "text": "One expression gives the pull between every pair at once.",
-          "heard": "One expression gives the pull between every pair at once."
+          "heard": "One expression gives the pull between every pair at once.",
+          "start": 3.272,
+          "end": 6.306
         }
       ]
     },
@@ -65,11 +81,15 @@
       "sentences": [
         {
           "text": "Now add up each row.",
-          "heard": "Now add up each row."
+          "heard": "Now add up each row.",
+          "start": 0.4,
+          "end": 1.63
         },
         {
           "text": "That one sum turns every pull into each body's acceleration.",
-          "heard": "That one sum turns every pull into each body's acceleration."
+          "heard": "That one sum turns every pull into each body's acceleration.",
+          "start": 1.98,
+          "end": 5.967
         }
       ]
     },
@@ -80,11 +100,15 @@
       "sentences": [
         {
           "text": "Kick, drift, kick.",
-          "heard": "Kick, drift, kick."
+          "heard": "Kick, drift, kick.",
+          "start": 0.4,
+          "end": 2.284
         },
         {
           "text": "Repeat that step, and the three bodies chase each other around a figure eight.",
-          "heard": "Repeat that step and the three bodies chase each other around a figure eight."
+          "heard": "Repeat that step and the three bodies chase each other around a figure eight.",
+          "start": 2.634,
+          "end": 7.245
         }
       ]
     },
@@ -95,7 +119,9 @@
       "sentences": [
         {
           "text": "The live page runs the same program in your browser, here with fifty bodies.",
-          "heard": "The live page runs the same program in your browser, here with 50 bodies."
+          "heard": "The live page runs the same program in your browser, here with 50 bodies.",
+          "start": 0.4,
+          "end": 5.071
         }
       ]
     },
@@ -106,7 +132,9 @@
       "sentences": [
         {
           "text": "Try it yourself, the link is below.",
-          "heard": "Try it yourself, the link is below."
+          "heard": "Try it yourself, the link is below.",
+          "start": 0.4,
+          "end": 2.526
         }
       ]
     }

@@ -39,6 +39,12 @@ heard. Narration is checked before any call (`just voice SLUG
 words, short sentences, which is what VoxCPM speaks cleanly. Needs
 `sox`, `whisper-cpp` and `uv` (the client runs in `.venv`).
 
+`just youtube SLUG` gathers a narrated lesson's upload in
+`out/SLUG-youtube/`: both videos, `title.txt` and `description.txt`
+(written for the lesson, tracked in `lessons/SLUG/`), closed captions
+(`SLUG.srt`: the exact sentences, each at its time in the video) and
+`narration.txt`.
+
 ## How it fits
 
 | Layer | Where | Responsibility |

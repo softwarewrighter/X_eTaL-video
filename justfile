@@ -84,6 +84,10 @@ still slug n format="landscape":
 voice slug *args:
     scripts/voice.sh "$@"
 
+# A narrated lesson's YouTube upload in out/SLUG-youtube/: both videos, title, description, captions (.srt): just youtube nbody
+youtube slug:
+    scripts/youtube.mjs "$1"
+
 # Record a lesson's live demo page in headless Chromium, both formats (needs the network): just capture life-capture
 capture slug *formats:
     scripts/capture.mjs "$@"

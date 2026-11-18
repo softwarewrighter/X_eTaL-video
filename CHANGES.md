@@ -13,6 +13,8 @@ Categories: `feat` new capability, `fix` a bug or wrong behavior,
 
 ## 2026-11-18
 
+- 14:50 `feat` YouTube upload files (saga voice, step youtube-files; the user: where are the captions, the title and description): `just youtube SLUG` (scripts/youtube.mjs) gathers out/SLUG-youtube/: both videos, title.txt and description.txt (tracked in lessons/SLUG/, as the shorts projects have them), SLUG.srt closed captions from the exact sentences at their times (just voice now records each sentence's offset in voice.json), narration.txt. The N-body title and description written.
+- 14:35 `chore` Saga step narrate-nbody completed.
 - 14:30 `feat` Narration in the author's cloned voice (saga voice, step narrate-nbody; the user: curiosity is down, queenbee runs VoxCPM with Gradio, use the voice sample of this year's videos, verify with a local whisper, reword to avoid VoxCPM artifacts): `just voice SLUG` (scripts/voice.sh, voice.py) speaks each scene's narration a sentence a call with mike-medium-ref-1.wav and its exact transcript, checks every clip with whisper-cli (ggml-medium.en) and remakes mismatches, sets each scene's seconds to its audio, recomputes timing.json, records lessons/SLUG/voice.json; props.mjs refuses stale or missing audio; Lesson.tsx plays each scene's audio at its start (@remotion/media 4.0.543). The N-body narration reworded and spoken: 50.2 s, its page re-recorded, poster at frame 1300, both formats rendered.
 - 13:41 `chore` Saga nbody archived; saga voice started.
 

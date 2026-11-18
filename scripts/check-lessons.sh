@@ -38,6 +38,7 @@ done
 node --check scripts/frames.mjs
 node --check scripts/capture.mjs
 node --check scripts/props.mjs
+node --check scripts/youtube.mjs
 node --check scripts/serve-pages.mjs
 # The landing page builds from the lessons (into a scratch file).
 mkdir -p work && scripts/build-catalog.mjs work/catalog-check.html >/dev/null

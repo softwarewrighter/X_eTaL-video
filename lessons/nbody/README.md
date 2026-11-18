@@ -13,6 +13,7 @@ published page itself, recorded with its fifty-body cluster.
 | `lesson.json` | seven scenes: the figure-eight; every pair's displacement as tables; the pull; the reduce; the step repeated; the live page; the link |
 | `data.xtl` | the demo's own program (its cube, its pull, its reduce, its leapfrog step) on its figure-eight, printing the cube's x and y planes, each pair's pull along x, the accelerations, and 420 steps of positions |
 | `timing.json` | the schedule X_eTaL computes from the lesson; checked by the gate |
+| `title.txt`, `description.txt` | the YouTube title and description (`just youtube nbody` gathers them with the videos and captions) |
 | `voice.json` | the narration as spoken (`just voice nbody`): each sentence, what whisper heard, each scene's seconds, the voice sample |
 
 ```bash
@@ -20,6 +21,7 @@ just voice nbody               # narrate (VoxCPM on queenbee), scene lengths fro
 just capture nbody             # record the page (network), both formats
 just render nbody portrait     # out/nbody-portrait-remotion.mp4
 just render nbody              # out/nbody-landscape-remotion.mp4
+just youtube nbody             # out/nbody-youtube/: videos, title, description, captions
 ```
 
 A board with `"points"` takes positions (each board 2 by N, the x row

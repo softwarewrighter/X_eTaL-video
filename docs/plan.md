@@ -244,6 +244,12 @@ shown in a local preview.
    from where X_eTaL's schedule starts it (`@remotion/media`).
    The N-body narration reworded (no question mark, no digits, no
    sentence VoxCPM starts with an extra "And"): 50.2 s.
+2. youtube-files -- `just youtube SLUG` (`scripts/youtube.mjs`):
+   `out/SLUG-youtube/` with both videos, the lesson's `title.txt`
+   and `description.txt` (as the shorts projects have them), closed
+   captions (`SLUG.srt`, the exact sentences at their times: each
+   scene's start from `timing.json` plus the sentence's offset, now
+   recorded in `voice.json`) and `narration.txt`.
 
 ## Later -- remotion  [PLANNED; steps 1 and 4 done in saga 1]
 
