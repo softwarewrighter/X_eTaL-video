@@ -1,0 +1,148 @@
+{
+  "sample": "mike-medium-ref-1.wav",
+  "sampleSha256": "a57fe277f7ce93d5cac4e0e2ed21d770b7d05cab5b20b338dd55aece009d7211",
+  "server": "VoxCPM (Gradio /generate)",
+  "steps": 15,
+  "cfg": 2.0,
+  "scenes": [
+    {
+      "id": "hook",
+      "narration": "This is attention, the heart of a transformer. Every word looks at every other word, with no loop.",
+      "seconds": 8.5,
+      "sentences": [
+        {
+          "text": "This is attention, the heart of a transformer.",
+          "heard": "This is attention. The heart of a transformer.",
+          "start": 0.4,
+          "end": 3.65
+        },
+        {
+          "text": "Every word looks at every other word, with no loop.",
+          "heard": "Every word looks at every other word with no loop.",
+          "start": 4.0,
+          "end": 7.772
+        }
+      ]
+    },
+    {
+      "id": "qk",
+      "narration": "Each word gets a query, what it looks for, and a key, what it offers. Each is one matrix product. Here, it and tired look for something alive.",
+      "seconds": 13.1,
+      "sentences": [
+        {
+          "text": "Each word gets a query, what it looks for, and a key, what it offers.",
+          "heard": "Each word gets a query, what it looks for, and a key, what it offers.",
+          "start": 0.4,
+          "end": 5.795
+        },
+        {
+          "text": "Each is one matrix product.",
+          "heard": "Each is one matrix product.",
+          "start": 6.145,
+          "end": 8.917
+        },
+        {
+          "text": "Here, it and tired look for something alive.",
+          "heard": "Here, it and tired look for something alive.",
+          "start": 9.267,
+          "end": 12.352
+        }
+      ]
+    },
+    {
+      "id": "scores",
+      "narration": "Now rows meet columns. Every query times every key, in one product with a transpose. That is the whole table of scores.",
+      "seconds": 10.5,
+      "sentences": [
+        {
+          "text": "Now rows meet columns.",
+          "heard": "Now rows meet columns.",
+          "start": 0.4,
+          "end": 2.337
+        },
+        {
+          "text": "Every query times every key, in one product with a transpose.",
+          "heard": "every query times every key in one product with a transpose.",
+          "start": 2.687,
+          "end": 7.749
+        },
+        {
+          "text": "That is the whole table of scores.",
+          "heard": "That is the whole table of scores.",
+          "start": 8.099,
+          "end": 9.774
+        }
+      ]
+    },
+    {
+      "id": "softmax",
+      "narration": "A softmax turns each row into weights that add up to one. Tired puts almost all of its weight on the animal.",
+      "seconds": 6.9,
+      "sentences": [
+        {
+          "text": "A softmax turns each row into weights that add up to one.",
+          "heard": "A Softmax turns each row into weights that add up to one.",
+          "start": 0.4,
+          "end": 3.592
+        },
+        {
+          "text": "Tired puts almost all of its weight on the animal.",
+          "heard": "Tired puts almost all of its weight on the animal.",
+          "start": 3.942,
+          "end": 6.153
+        }
+      ]
+    },
+    {
+      "id": "mix",
+      "narration": "Then the values are mixed by those weights. So tired, and it, now carry the animal's meaning.",
+      "seconds": 7.7,
+      "sentences": [
+        {
+          "text": "Then the values are mixed by those weights.",
+          "heard": "then the values are mixed by those weights.",
+          "start": 0.4,
+          "end": 2.657
+        },
+        {
+          "text": "So tired, and it, now carry the animal's meaning.",
+          "heard": "So tired, and it now carry the animal's meaning.",
+          "start": 3.007,
+          "end": 6.974
+        }
+      ]
+    },
+    {
+      "id": "live",
+      "narration": "The live page runs the same program in your browser. Pick the other sentence, and wide finds the street.",
+      "seconds": 8.2,
+      "sentences": [
+        {
+          "text": "The live page runs the same program in your browser.",
+          "heard": "The Live page runs the same program in your browser.",
+          "start": 0.4,
+          "end": 3.61
+        },
+        {
+          "text": "Pick the other sentence, and wide finds the street.",
+          "heard": "Pick the other sentence, \"And wide finds the street.\"",
+          "start": 3.96,
+          "end": 7.433
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "narration": "Try it yourself, the link is below.",
+      "seconds": 4.4,
+      "sentences": [
+        {
+          "text": "Try it yourself, the link is below.",
+          "heard": "Try it yourself, the link is below.",
+          "start": 0.4,
+          "end": 2.526
+        }
+      ]
+    }
+  ]
+}

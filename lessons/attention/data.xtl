@@ -1,0 +1,72 @@
+#!/usr/bin/env xetal
+## The attention lesson's arrays, computed by X_eTaL with the program
+## of X_eTaL-ML's attention demo (its hand-set head, its scores, its
+## masked softmax, its weighted mix) on its sentence "the animal did
+## not cross the street because it was tired". Each array is printed
+## after a "== name" line (scripts/props.sh reads them).
+##
+## The demo reads its vocabulary and head from data/ and uses two
+## libraries of X_eTaL-ML (Attention, NN), which are not on this
+## repository's path: their lines are copied here as they are, the
+## features and weights written out.
+
+### The head, from the demo's data/ (set by hand, no training)
+
+## F: a row of 8 features for each of the demo's 21 words (animate,
+## place, pronoun, verb, describes the animate, describes a place,
+## function word, not). The rows used: 1 the, 3 animal, 7 street,
+## 11 it, 12 did, 13 cross, 14 was, 15 not, 16 tired, 20 because.
+F := f_loat 21 8 r_eshape 0 0 0 0 0 0 1 0  0 0 0 0 0 0 1 0  1 0 0 0 0 0 0 0  1 0 0 0 0 0 0 0  1 0 0 0 0 0 0 0  1 0 0 0 0 0 0 0  0 1 0 0 0 0 0 0  0 1 0 0 0 0 0 0  0 1 0 0 0 0 0 0  0 1 0 0 0 0 0 0  0 0 1 0 0 0 0 0  0 0 0 1 0 0 0 0  0 0 0 1 0 0 0 0  0 0 0 1 0 0 0 0  0 0 0 0 0 0 0 1  0 0 0 0 1 0 0 0  0 0 0 0 1 0 0 0  0 0 0 0 0 1 0 0  0 0 0 0 0 1 0 0  0 0 0 0 0 0 1 0  0 0 0 0 0 0 0 0
+## Wq, Wk: the query and key weights, 8 x 2 (looks for / offers: the
+## animate, a place).
+Wq := f_loat 8 2 r_eshape 0 0 0 0 3 0 0 0 3 0 0 3 0 0 0 0
+Wk := f_loat 8 2 r_eshape 3 0 0 3 0 0 0 0 0 0 0 0 0 0 0 0
+
+### The core, as the demo and its libraries have it
+
+## NN's softmax by row: the row's largest taken off, the row's sum divides.
+u:s_pread := { r m -> o_\ ((-1 t_ake s_hape m) c_at t_ally r) r_eshape r }
+u:s_oftmax := { m ->
+  e := e_xp m - ('m_ax r_/_2 m) u:s_pread m
+  e / ('+ r_/_2 e) u:s_pread e
+}
+## Every query against every key (the demo's u:s_cores, its Attention
+## library's l:s_cores with d = 2).
+u:s_cores := { X -> ((X '+ '* i_nner Wq) '+ '* i_nner o_\ X '+ '* i_nner Wk) / 2.0 ^ 0.5 }
+## Each row into weights where the mask allows (Attention's l:w_eights).
+u:w_eights := { M S -> u:s_oftmax S - 1e9 * 1.0 - M }
+u:a_ttend := { X M -> M u:w_eights u:s_cores X }
+
+### The sentence
+
+ids := 1 3 12 15 13 1 7 20 11 14 16
+X := ids s_elect F
+n := t_ally ids
+everyone := (n c_at n) r_eshape 1.0
+A := X u:a_ttend everyone
+
+### What the video shows
+
+## Two places are plenty on screen.
+u:r_ound := { a -> (f_loat f_loor 0.5 + a * 100.0) / 100.0 }
+
+## The queries and the keys: a row a word, (the animate, a place).
+"== q"
+X '+ '* i_nner Wq
+"== k"
+X '+ '* i_nner Wk
+
+## The scores, n x n: a row a query, a column a key.
+S := u:s_cores X
+"== scores"
+u:r_ound S
+
+## The weights: each row's softmax, adding up to 1.
+"== weights"
+u:r_ound A
+
+## The output, Y = A V (the values are the features themselves): a row
+## a word, a column a feature. "tired" (the last row) and "it" have
+## taken on the animal's feature, the first.
+"== output"
+u:r_ound A '+ '* i_nner X

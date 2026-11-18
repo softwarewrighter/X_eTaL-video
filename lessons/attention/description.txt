@@ -1,0 +1,17 @@
+One head of attention, the heart of a transformer, and the program has no loop over words.
+
+In X_eTaL, an experimental typed array language:
+1. Every word's query and key are one matrix product each
+2. Rows meet columns: every query against every key in one product with a transpose, the whole table of scores
+3. A softmax by row turns the scores into weights that add up to 1
+4. Each word's output is the weighted mix of the values: "tired" and "it" take on the animal's meaning
+
+Then the live page runs the same program in your browser, and "wide" finds the street.
+
+Try it: https://softwarewrighter.github.io/X_eTaL-ML/attention/
+More X_eTaL videos: https://softwarewrighter.github.io/X_eTaL-video/
+
+Blog: https://software-wrighter-lab.github.io/
+Discord: https://discord.gg/Ctzk5uHggZ
+
+#Shorts #XeTaL #ArrayProgramming #MachineLearning #Attention #Transformers #Programming

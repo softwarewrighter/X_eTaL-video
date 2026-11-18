@@ -1,0 +1,92 @@
+{
+  "slug": "attention",
+  "title": "Attention: rows meet columns",
+  "summary": "One head of attention, the heart of a transformer, with no loop over words: every query against every key in one matrix product, a softmax by row, and each word's output a weighted mix of the words it looks at. Ends on the live page.",
+  "order": 12,
+  "poster": 1560,
+  "fps": 30,
+  "demo": { "repo": "X_eTaL-ML", "slug": "attention" },
+  "scenes": [
+    {
+      "id": "hook",
+      "seconds": 8.5,
+      "heading": "Attention, as arrays",
+      "narration": "This is attention, the heart of a transformer. Every word looks at every other word, with no loop.",
+      "lines": [
+        "the animal did not cross the street because it was tired",
+        "A row a word: how much it looks at each word."
+      ],
+      "boards": [{ "data": "weights", "heat": "ramp" }]
+    },
+    {
+      "id": "qk",
+      "seconds": 13.1,
+      "heading": "1. Queries and keys",
+      "narration": "Each word gets a query, what it looks for, and a key, what it offers. Each is one matrix product. Here, it and tired look for something alive.",
+      "lines": [
+        { "xtl": "X '+ '* i_nner Wq" },
+        { "xtl": "X '+ '* i_nner Wk" },
+        "A row a word, a column a feature: alive, a place.",
+        "it and tired ask for alive. The animal offers it."
+      ],
+      "boards": [
+        { "data": "q", "label": "queries", "numbers": true },
+        { "data": "k", "label": "keys", "numbers": true }
+      ]
+    },
+    {
+      "id": "scores",
+      "seconds": 10.5,
+      "heading": "2. Rows meet columns",
+      "narration": "Now rows meet columns. Every query times every key, in one product with a transpose. That is the whole table of scores.",
+      "lines": [
+        { "xtl": "u:s_cores := { X -> ((X '+ '* i_nner Wq) '+ '* i_nner o_\\ X '+ '* i_nner Wk) / 2.0 ^ 0.5 }" },
+        "Queries times keys transposed: every pair at once.",
+        "Rows 9 and 11, it and tired, meet column 2, animal."
+      ],
+      "boards": [{ "data": "scores", "label": "scores", "numbers": true }]
+    },
+    {
+      "id": "softmax",
+      "seconds": 6.9,
+      "heading": "3. Softmax, by row",
+      "narration": "A softmax turns each row into weights that add up to one. Tired puts almost all of its weight on the animal.",
+      "lines": [
+        { "xtl": "u:a_ttend := { X M -> M at:w_eights u:s_cores X }" },
+        { "xtl": "l:w_eights := { M S -> nn:s_oftmax S - 1e9 * 1.0 - M }" },
+        "Each row adds up to 1. A mask M can hide words."
+      ],
+      "boards": [{ "data": "weights", "label": "weights", "numbers": true }]
+    },
+    {
+      "id": "mix",
+      "seconds": 7.7,
+      "heading": "4. The weighted mix",
+      "narration": "Then the values are mixed by those weights. So tired, and it, now carry the animal's meaning.",
+      "lines": [
+        { "xtl": "A '+ '* i_nner X" },
+        "Each word's output: the weighted mix of its values.",
+        "it and tired now carry the first feature: alive."
+      ],
+      "boards": [{ "data": "output", "label": "outputs: a row a word", "numbers": true }]
+    },
+    {
+      "id": "live",
+      "seconds": 8.2,
+      "heading": "The live page",
+      "narration": "The live page runs the same program in your browser. Pick the other sentence, and wide finds the street.",
+      "lines": [],
+      "capture": { "actions": [{ "wait": 4 }, { "click": "button:has-text('wide')" }] }
+    },
+    {
+      "id": "cta",
+      "seconds": 4.4,
+      "heading": "Try it",
+      "narration": "Try it yourself, the link is below.",
+      "lines": [
+        "Type a sentence, switch on the causal mask, click a word:",
+        { "code": "softwarewrighter.github.io/X_eTaL-ML/attention" }
+      ]
+    }
+  ]
+}
