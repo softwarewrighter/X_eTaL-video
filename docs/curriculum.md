@@ -6,6 +6,14 @@ separate videos on macros with many examples; libraries, demos,
 games, ML, GPU, FPGA; comparisons with other languages, showing its
 strengths and its simplicity and elegance.
 
+Where they go (the user, 2026-11-18): the **softwarewrighter**
+channel takes the shorts and the long-form videos about software, so
+everything in this repository; **hardwarewrighter** (its own shorts
+and long-form, about hardware) takes the FPGA work and becomes the
+priority in a couple of weeks (from about 2026-12-02). Until then,
+softwarewrighter first. No trailers: a tutorial is not cut into a
+short.
+
 This is the plan for that: what the series are, what each video
 teaches, the order to make them, and what the renderer needs first.
 `docs/plan.md` keeps the sagas that build it.
@@ -82,14 +90,16 @@ each video example-heavy, every expansion shown with `xetal expand`.
 
 Fair, side by side, the same problem in each language, from the pinned
 `docs/rosetta.md` and the idioms. Other languages' code is shown as
-`code` lines, X_eTaL rendered.
+`code` lines, X_eTaL rendered. The two that matter (the user,
+2026-11-18): **APL**, its ancestor, and **Rust**, the systems language
+it is written in and the one its audience knows.
 
 | Slug | Kind | Compares |
 | ---- | ---- | -------- |
-| `vs-apl` | tutorial | APL and X_eTaL: the README's table, glyphs versus decorations, dynamic versus static |
-| `vs-numpy` | short | the same array program in NumPy and X_eTaL |
-| `vs-loops` | short | a loop in Python or Rust next to its whole-array form |
-| `vs-idioms` | shorts, a series | one Rosetta idiom each: reverse, mean, histogram, transpose, Life |
+| `vs-apl` | tutorial | APL and X_eTaL: the README's table, glyphs versus decorations, dynamic versus static types, ambiguity rejected |
+| `vs-rust` | tutorial | Rust and X_eTaL: the same programs (Life, a histogram, n-body) as loops and as whole arrays; static types in both, inferred in one |
+| `vs-loops` | short | a Rust loop next to its whole-array form |
+| `vs-idioms` | shorts, a series | one Rosetta idiom each, X_eTaL beside APL and Rust: reverse, mean, histogram, transpose, Life |
 | `why-xetal` | tutorial | "why another language": the language checklist, answered |
 
 ## Series 4: what people build (shorts, portrait)
@@ -107,8 +117,11 @@ Fair, side by side, the same problem in each language, from the pinned
 | Slug | Source | Shows |
 | ---- | ------ | ----- |
 | `gpu` | X_eTaL-gpu | the same whole-array program on GPUs, old ones included, with its measured results |
-| `fpga` | X_eTaL-fpga (hardwarewrighter) | an X_eTaL program as a circuit |
 | `extensions` | X_eTaL-extensions | native extensions: what one is, one built and called |
+
+FPGA (X_eTaL-fpga, X_eTaL programs as circuits) belongs to the
+hardwarewrighter channel: postponed, the priority from about
+2026-12-02.
 
 ## The order to make them
 
@@ -116,12 +129,14 @@ Fair, side by side, the same problem in each language, from the pinned
    then the core four the user named: `t-immutability`, `t-flow`,
    `t-recursion`, with `t-reading` first so they have a base.
 2. **Then:** `m-what` and `m-gallery` (macros, the most distinctive
-   thing), and `vs-apl` (the comparison people will ask for first).
+   thing), and `vs-apl` and `vs-rust` (the two comparisons that
+   matter).
 3. **Alongside, always:** shorts from Series 4, two or three at a
    time, by parallel agents through the shared VoxCPM lock, so the
    GPU on queenbee always has narration to speak.
 4. **Later:** the rest of Series 1 and 2, Series 5, the `vs-idioms`
-   shorts.
+   shorts. Hardwarewrighter (FPGA) from about 2026-12-02, planned
+   then.
 
 ## What the renderer needs first
 
@@ -140,11 +155,14 @@ step before the videos that use it:
    scenes are "type this, see that").
 5. **Chapters**: a tutorial's scenes grouped into chapters, the
    YouTube description's timestamps written by `just youtube`.
+6. **Channel**: `just youtube` notes the channel (softwarewrighter
+   for everything here).
 
-## Open questions for the user
+## Answered (the user, 2026-11-18)
 
-1. One channel or two (tutorials and shorts apart)?
-2. Should each tutorial get a short cut from it, as a trailer?
-3. Comparisons: which languages matter most to your audience (APL, J,
-   K, BQN, NumPy, Julia, Rust, Python)?
-4. X_eTaL-fpga lives under hardwarewrighter: is it ready to be shown?
+1. Channels: softwarewrighter (shorts and long-form about software:
+   all of this repository) and hardwarewrighter (hardware, FPGA).
+2. No trailers.
+3. Comparisons: APL and Rust, mainly.
+4. Hardwarewrighter has content ready, but postpone it: softwarewrighter
+   first; hardwarewrighter the priority from about 2026-12-02.
