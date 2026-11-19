@@ -282,6 +282,32 @@ a script can and should.
    refuses an unmarked heteronym; every lesson reviewed and the changed
    sentences alone spoken again; rule 4c.
 
+## Saga 9 -- tbt-2741  [ACTIVE; tutorials archived for it, t-names finished uncommitted]
+
+The user (2026-11-19, urgent, for YouTube that morning): a 5-minute
+Throwback Thursday video, like the earlier APL video, telling the
+story of the 3D models (console-3D) toward a virtual computer history
+museum, focused on the 3D animation just added to A'70 (sw-apl).
+Sources in order: the TBT #15 draft, the recently changed repos, then
+earlier posts. The narration says only what those sources or the user
+say (the user: "try to avoid inventing motivations or preferences").
+The pattern of the earlier videos (video-publishing): a title of about
+5 s with music only (break-it-down.wav, its first 5 s, a 0.5 s fade),
+narrated scenes, the reused 99b-epilog (narrated call to action) and a
+99c closing slide, the track's last 7 s fading in over 1 s under the
+end of 99b.
+
+1. story-renderer -- `kind: "story"` and `remotion/src/Story.tsx`
+   (full-frame pictures, one a sentence; full-frame recordings; a
+   lower-third heading; title card; reused clips, muted or not); music
+   cut by sox; captures of any URL with typing (a character at a time,
+   pasted), keys, drags, several recordings, and the page's Web Audio
+   logged and mixed under its recording; the whisper check reads years
+   and model numbers in pairs and ignores word breaks (A P L, APL);
+   `just review`, a per-scene review page.
+2. tbt-2741-video -- the lesson, narrated, captured, rendered,
+   `out/tbt-2741-youtube/`.
+
 ## Later -- remotion  [PLANNED; steps 1 and 4 done in saga 1]
 
 Goal: one lesson rendered to MP4 in both formats, silent.

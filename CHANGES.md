@@ -11,6 +11,10 @@ Categories: `feat` new capability, `fix` a bug or wrong behavior,
 `chore` agentrail bookkeeping (step complete, saga archive),
 `vendor` a move of the pinned X_eTaL.
 
+## 2026-11-19
+
+- `feat` Stories (`kind: "story"`, `remotion/src/Story.tsx`): videos that are not lessons on X_eTaL, in the pattern of video-publishing (title with music, narrated pictures and page recordings, the reused 99b and 99c closing clips); captures of any page with typing, keys, drags and the page's own sound; `just review`, a per-scene review page; the whisper check reads years and model numbers and ignores word breaks. `lesson` tbt-2741: APL\\360 on a 3D IBM 2741 (Throwback Thursday #15), 5:13.
+
 ## 2026-11-18
 
 - 21:00 `fix` Pronunciation (saga pronunciation, step heteronyms; the user: the intro's "Code is read more often than it is written" was spoken with read as reed, "whisper cannot but you/your-subagent can and should"): narration marks a word said two ways {written|spoken}: captions and voice.json show the written word, VoxCPM gets the spoken one, whisper may hear either; just voice --check refuses an unmarked heteronym (a list in voice.py), so the author decides each one. Every lesson reviewed: the intro's "is read" respelled red; "the live page" (7 lessons) became "the demo page"; "axes", "lives", "export", "import" reworded away; "Read it", "to read it", "progress" marked as read the usual way. Only the changed sentences were spoken again (13; a lock per sentence now stops lessons narrated at once from making a shared sentence twice). Pages re-recorded, life-capture's Step click moved to 9.6 s, lights-out's poster to 1400, ten videos re-rendered. CLAUDE.md rule 4c.

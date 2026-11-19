@@ -92,6 +92,14 @@ youtube slug:
 link slug url:
     scripts/link.mjs "$1" "$2"
 
+# A lesson's review page (a card a scene: still, its stretch of the video, narration, audio, what whisper heard), served by just serve-pages
+review slug:
+    scripts/review.mjs "$1"
+
+# Stills for the review page from Remotion, one a scene (or the scenes named)
+review-stills slug *ids:
+    scripts/review-stills.sh "$@"
+
 # Record a lesson's live demo page in headless Chromium, both formats (needs the network): just capture life-capture
 capture slug *formats:
     scripts/capture.mjs "$@"

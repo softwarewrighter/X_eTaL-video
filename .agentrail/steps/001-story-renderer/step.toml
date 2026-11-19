@@ -1,0 +1,8 @@
+number = 1
+slug = "story-renderer"
+status = "in-progress"
+description = "A story composition (StoryLandscape): full-frame media, lower-third headings,..."
+role = "production"
+context_files = []
+created_at = "2026-11-19T10:47:52"
+commits = []

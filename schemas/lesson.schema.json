@@ -18,15 +18,33 @@
     "poster": { "description": "The frame used as the lesson's thumbnail (its middle if not given).", "type": "integer", "minimum": 0 },
     "youtube": { "description": "The video's YouTube id, once the user has uploaded it (just link SLUG URL); the site embeds it. Videos are hosted on YouTube, never in git.", "type": "string", "pattern": "^[A-Za-z0-9_-]{11}$" },
     "stepFrames": { "description": "The frames a stepping board holds each step (15 if not given).", "type": "integer", "minimum": 1 },
-    "demo": {
-      "description": "The live demo the lesson is about, if any.",
+    "kind": { "description": "'lesson' (the default: the Lesson composition, headings and lines over the schedule) or 'story' (the Story composition: full-frame pictures and recordings, a heading in the lower third, a title card and a closing segment), for a video that is not a lesson on X_eTaL.", "type": "string", "enum": ["lesson", "story"] },
+    "brand": { "description": "A story's series name, shown on its title card (e.g. Throwback Thursday #15).", "type": "string", "minLength": 1 },
+    "music": {
+      "description": "A story's music, as in video-publishing: the track's start under the opening title, its end under the close, never under narration. The file is not tracked (an absolute path or one relative to the repository).",
       "type": "object",
-      "required": ["repo", "slug"],
+      "required": ["file", "intro", "outro"],
       "additionalProperties": false,
       "properties": {
-        "repo": { "type": "string", "enum": ["X_eTaL", "X_eTaL-demos", "X_eTaL-ML", "X_eTaL-games", "X_eTaL-libraries"] },
-        "slug": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" }
+        "file": { "type": "string", "minLength": 1 },
+        "intro": { "description": "The track's first seconds, from the start of the video, fading out at the end.", "type": "object", "required": ["seconds", "fadeOut"], "additionalProperties": false, "properties": { "seconds": { "type": "number", "exclusiveMinimum": 0 }, "fadeOut": { "type": "number", "minimum": 0 } } },
+        "outro": { "description": "The track's last seconds, ending with the video, fading in at the start.", "type": "object", "required": ["seconds", "fadeIn"], "additionalProperties": false, "properties": { "seconds": { "type": "number", "exclusiveMinimum": 0 }, "fadeIn": { "type": "number", "minimum": 0 } } }
       }
+    },
+    "demo": {
+      "description": "The live demo the lesson is about, if any: one of this family's published pages, or any page by its URL.",
+      "oneOf": [
+        {
+          "type": "object",
+          "required": ["repo", "slug"],
+          "additionalProperties": false,
+          "properties": {
+            "repo": { "type": "string", "enum": ["X_eTaL", "X_eTaL-demos", "X_eTaL-ML", "X_eTaL-games", "X_eTaL-libraries"] },
+            "slug": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" }
+          }
+        },
+        { "type": "object", "required": ["url"], "additionalProperties": false, "properties": { "url": { "type": "string", "pattern": "^https://" }, "start": { "description": "A selector clicked once the page has loaded, before the recording starts (a card that starts the session with sound).", "type": "string", "minLength": 1 }, "ready": { "description": "A selector present when the page takes typed input: a 'type' action waits for it.", "type": "string", "minLength": 1 } } }
+      ]
     },
     "scenes": {
       "type": "array",
@@ -39,13 +57,18 @@
           "id": { "description": "Unique in the lesson.", "type": "string", "pattern": "^[a-z][a-z0-9-]*$" },
           "seconds": { "description": "The scene's length; with narration, the audio's length replaces it.", "type": "number", "exclusiveMinimum": 0 },
           "heading": { "type": "string", "minLength": 1 },
-          "narration": { "description": "What is spoken over the scene (at most 320 characters). A word said two ways is marked {written|spoken}: {read|red} shows read and says red; {live|live} keeps the usual reading (just voice --check requires a decision on every one).", "type": "string", "maxLength": 320 },
+          "narration": { "description": "What is spoken over the scene (at most 320 characters). A word said two ways is marked {written|spoken}: {read|red} shows read and says red; {live|live} keeps the usual reading (just voice --check requires a decision on every one).", "type": "string", "maxLength": 640 },
+          "images": { "description": "A story's pictures for this scene, full frame, one a sentence of its narration (the last stays): each a path relative to the repository (outside it is fine; nothing is copied into git).", "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } },
+          "clip": { "description": "A story's ready-made segment, its video and its audio as they are (the reused closing call to action): a path relative to the repository. The scene's seconds are the clip's.", "type": "string", "minLength": 1 },
+          "mute": { "description": "Play the clip without its own audio (a closing slide under this video's music).", "type": "boolean" },
+          "transcript": { "description": "A clip's own words, for the captions and the transcript: each sentence with its start and end, seconds into the clip.", "type": "array", "items": { "type": "object", "required": ["start", "end", "text"], "additionalProperties": false, "properties": { "start": { "type": "number", "minimum": 0 }, "end": { "type": "number", "minimum": 0 }, "text": { "type": "string", "minLength": 1 } } } },
           "curves": { "description": "Show the three easing curves as moving dots.", "type": "boolean" },
           "capture": {
             "description": "Show the recording of the lesson's demo page (scripts/capture.mjs) instead of lines. Scenes with a capture follow one another and are one recording; a scene's actions run when it starts.",
             "type": "object",
             "additionalProperties": false,
             "properties": {
+              "url": { "description": "Record this page instead of the lesson's demo (a story's other recordings).", "type": "string", "pattern": "^https://" },
               "actions": {
                 "type": "array",
                 "items": {
@@ -53,6 +76,9 @@
                     { "type": "object", "required": ["wait"], "additionalProperties": false, "properties": { "wait": { "description": "Seconds.", "type": "number", "minimum": 0 } } },
                     { "type": "object", "required": ["click"], "additionalProperties": false, "properties": { "click": { "description": "A Playwright selector.", "type": "string", "minLength": 1 } } },
                     { "type": "object", "required": ["scroll"], "additionalProperties": false, "properties": { "scroll": { "description": "A selector to bring to the top, or 'top'.", "type": "string", "minLength": 1 } } },
+                    { "type": "object", "required": ["type"], "additionalProperties": false, "properties": { "type": { "description": "A line typed into the page a character at a time, at a typist's pace, then Return.", "type": "string", "minLength": 1 } } },
+                    { "type": "object", "required": ["press"], "additionalProperties": false, "properties": { "press": { "description": "A key (Playwright's name for it).", "type": "string", "minLength": 1 } } },
+                    { "type": "object", "required": ["drag"], "additionalProperties": false, "properties": { "drag": { "description": "Drag from the middle of the page by x and y pixels over some seconds (turns a 3D model).", "type": "array", "minItems": 3, "items": { "type": "number" } } } },
                     { "type": "object", "required": ["select"], "additionalProperties": false, "properties": { "select": { "description": "A select's selector, then the option's label.", "type": "array", "minItems": 2, "items": { "type": "string" } } } }
                   ]
                 }

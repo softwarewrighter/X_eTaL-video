@@ -8,7 +8,8 @@
 //   scripts/props.mjs SLUG      # writes work/SLUG/props.json
 import { execFileSync } from "node:child_process";
 import { copyFileSync, existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
-import { dirname, join } from "node:path";
+import { basename, dirname, isAbsolute, join } from "node:path";
+import { captureName, runsOf } from "./capture-runs.mjs";
 import { fileURLToPath } from "node:url";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
@@ -85,6 +86,60 @@ if (existsSync(voiceFile)) {
     copyFileSync(wav, join(pub, `${s.id}.wav`));
     props.voice[s.id] = `voice/${slug}/${s.id}.wav`;
   }
+}
+
+// A story (remotion/src/Story.tsx): its pictures, recordings, reused
+// clip and music, copied or cut where Remotion serves them from (none
+// tracked), and where each starts, in X_eTaL's frames.
+if (lesson.kind === "story") {
+  const pub = join(root, "remotion", "public", "media", slug);
+  mkdirSync(pub, { recursive: true });
+  const abs = (p) => (isAbsolute(p) ? p : join(root, p));
+  const fps = lesson.fps;
+  const voice = existsSync(voiceFile) ? JSON.parse(readFileSync(voiceFile, "utf8")) : null;
+  const scenes = lesson.scenes.map((s) => {
+    const out = {};
+    if (s.images) {
+      out.images = s.images.map((p, k) => {
+        if (!existsSync(abs(p))) fail(`scene ${s.id}: no picture ${p}`);
+        const name = `${s.id}-${k}-${basename(p)}`;
+        copyFileSync(abs(p), join(pub, name));
+        return `media/${slug}/${name}`;
+      });
+      // One picture a sentence: each after the first starts with its
+      // sentence (voice.json, seconds into the scene's audio).
+      const v = voice?.scenes.find((x) => x.id === s.id);
+      out.cuts = v ? v.sentences.slice(1, out.images.length).map((x) => Math.round(x.start * fps)) : [];
+    }
+    if (s.clip) {
+      if (existsSync(abs(s.clip))) {
+        copyFileSync(abs(s.clip), join(pub, `${s.id}.mp4`));
+        out.clip = `media/${slug}/${s.id}.mp4`;
+      } else console.error(`props: scene ${s.id}: the clip ${s.clip} is not here yet; a placeholder stands in for it`);
+    }
+    return out;
+  });
+  const runs = runsOf(lesson).map((r, k) => {
+    const name = captureName(slug, "landscape", k);
+    return {
+      first: r.first, end: r.end, from: props.timing.starts[r.first],
+      frames: props.timing.ends[r.end] - props.timing.starts[r.first],
+      video: `${name}.mp4`,
+      sound: existsSync(join(root, "remotion", "public", `${name}.wav`)) ? `${name}.wav` : null,
+    };
+  });
+  let music = null;
+  if (lesson.music) {
+    const m = lesson.music;
+    if (!existsSync(abs(m.file))) fail(`no music ${m.file}`);
+    execFileSync("sox", [abs(m.file), join(pub, "intro.wav"), "trim", "0", String(m.intro.seconds), "fade", "t", "0", String(m.intro.seconds), String(m.intro.fadeOut)]);
+    execFileSync("sox", [abs(m.file), join(pub, "outro.wav"), "trim", `-${m.outro.seconds}`, "fade", "t", String(m.outro.fadeIn)]);
+    music = {
+      intro: { src: `media/${slug}/intro.wav`, from: 0, frames: Math.round(m.intro.seconds * fps) },
+      outro: { src: `media/${slug}/outro.wav`, from: total - Math.round(m.outro.seconds * fps), frames: Math.round(m.outro.seconds * fps) },
+    };
+  }
+  props.story = { scenes, runs, music };
 }
 
 writeFileSync(join(work, "props.json"), JSON.stringify(props));

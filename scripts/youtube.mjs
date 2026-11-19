@@ -34,6 +34,8 @@ const stamp = (s) => {
 };
 const cues = [];
 lesson.scenes.forEach((s, i) => {
+  // A reused clip's own words (its "transcript", seconds into the clip).
+  for (const t of s.transcript || []) cues.push({ from: timing.starts[i] / timing.fps + t.start, to: timing.starts[i] / timing.fps + t.end, text: t.text });
   if (!s.narration) return;
   const v = voice.scenes.find((x) => x.id === s.id);
   if (!v || v.narration !== s.narration) fail(`scene ${s.id}: its narration changed since it was spoken (just voice ${slug})`);
@@ -48,7 +50,7 @@ const srt = cues.map((c, k) => `${k + 1}\n${stamp(c.from)} --> ${stamp(c.to)}\n$
 const out = join(root, "out", `${slug}-youtube`);
 mkdirSync(out, { recursive: true });
 writeFileSync(join(out, `${slug}.srt`), srt);
-writeFileSync(join(out, "narration.txt"), lesson.scenes.filter((s) => s.narration).map((s) => s.narration.replace(/\{([^{}|]+)\|[^{}|]*\}/g, "$1")).join("\n") + "\n");
+writeFileSync(join(out, "narration.txt"), lesson.scenes.filter((s) => s.narration || s.transcript).map((s) => s.narration ? s.narration.replace(/\{([^{}|]+)\|[^{}|]*\}/g, "$1") : s.transcript.map((t) => t.text).join(" ")).join("\n") + "\n");
 writeFileSync(join(out, "title.txt"), title + "\n");
 writeFileSync(join(out, "description.txt"), description);
 const format = timing.total / timing.fps > 150 ? "landscape" : "portrait";

@@ -67,7 +67,7 @@ function selfTest() {
   expect("a line that is a number", (v) => { v.scenes[0].lines.push(3); }, true);
   expect("a code line with more in it", (v) => { v.scenes[0].lines.push({ code: "x", size: 2 }); }, true);
   expect("an unknown repository", (v) => { v.demo = { repo: "elsewhere", slug: "x" }; }, true);
-  expect("narration too long", (v) => { v.scenes[0].narration = "x".repeat(321); }, true);
+  expect("narration too long", (v) => { v.scenes[0].narration = "x".repeat(641); }, true);
   let threw = false;
   try { check({ type: "string", format: "date" }, "x"); } catch { threw = true; }
   if (!threw) throw new Error("self-test: an unknown keyword was ignored");

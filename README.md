@@ -121,6 +121,7 @@ and a half minutes or less) in portrait, a tutorial in landscape.
 | [fourier-epicycles](lessons/fourier-epicycles/) | Circles that draw a heart | 1:01 | portrait |
 | [lights-out](lessons/lights-out/) | Lights out without a loop | 0:52 | portrait |
 | [k-means](lessons/k-means/) | k-means without a loop | 1:02 | portrait |
+| [tbt-2741](lessons/tbt-2741/) | APL\\360 on a 3D IBM 2741 (Throwback Thursday, a story) | 5:13 | landscape |
 
 Making one, after the lesson is written:
 
@@ -131,8 +132,16 @@ just render SLUG       # out/SLUG-FORMAT-remotion.mp4, the format from its lengt
 just youtube SLUG      # out/SLUG-youtube/: the video, title, description, captions (.srt)
 just link SLUG URL     # after uploading it to YouTube by hand: the site embeds it
 just studio SLUG       # Remotion Studio at http://localhost:8427
+just review SLUG       # a review page, a card a scene: http://127.0.0.1:8427/X_eTaL-video/review/SLUG/
 just draft SLUG        # a silent draft without Remotion (ImageMagick, ffmpeg)
 ```
+
+A lesson of kind "story" is a video that is not a lesson on X_eTaL,
+made as the earlier videos of video-publishing were: a title with
+music, narrated scenes over pictures and recordings of a live page
+(typed into, turned, with the page's own sound mixed in), the reused
+closing call to action and the closing slide under music. Its
+pictures, clips and music are never copied into git.
 
 X_eTaL (Timeline and Ease) computes each lesson's schedule and every
 frame's animation numbers, all frames at once; the renderer only

@@ -116,12 +116,34 @@ CONTRACTIONS = {"here's": "here is", "it's": "it is", "that's": "that is", "ther
                 "can't": "cannot", "won't": "will not", "i'll": "i will", "you'll": "you will"}
 
 
-def words(text: str) -> list[str]:
-    """The words, as compared: whisper writes 50 for fifty and here's for here is."""
+def paired(digits: str) -> str:
+    """A number as a year or a model number is said: 1972 nineteen
+    seventy-two, 2741 twenty-seven forty-one, 1802 eighteen oh two, 5100
+    fifty-one hundred, 360 three sixty, 029 oh twenty-nine."""
+    if digits.startswith("0") and len(digits) > 1:
+        return "oh " + paired(digits[1:])
+    n = int(digits)
+    if len(digits) not in (3, 4) or n % 100 < 10 and n % 100:
+        return spelled(n) if n % 100 >= 10 or len(digits) not in (3, 4) else spelled(n // 100) + " oh " + spelled(n % 100)
+    return spelled(n // 100) + (" hundred" if n % 100 == 0 else " " + spelled(n % 100))
+
+
+def words(text: str, pairs: bool = False) -> list[str]:
+    """The words, as compared: whisper writes 50 for fifty and here's for
+    here is; with pairs, 1972 as nineteen seventy-two (paired)."""
     text = re.sub(r"(?<![a-z0-9])-(?=\d)", "minus ", text.lower())
-    text = re.sub(r"\d+", lambda m: spelled(int(m.group())), text.replace(",", "").replace("\u2019", "'"))
+    # Decades: whisper writes 1960s and 70s for nineteen sixties and seventies.
+    text = re.sub(r"\b(\d\d)?([1-9])0'?s\b", lambda m: (spelled(int(m.group(1))) + " " if m.group(1) else "") + TENS[int(m.group(2))][:-1] + "ies", text)
+    text = re.sub(r"\d+", lambda m: paired(m.group()) if pairs else spelled(int(m.group())), text.replace(",", "").replace("\u2019", "'"))
     text = re.sub(r"[a-z]+'[a-z]+", lambda m: CONTRACTIONS.get(m.group(), m.group()), text)
     return re.sub(r"[^a-z' ]", " ", text.replace("-", " ")).split()
+
+
+def same(got: str, *meant: str) -> bool:
+    """Whether whisper heard what was meant: the same letters in the same
+    order, word breaks aside (A P L is heard as APL, T R S eighty as
+    TRS-80), its numbers read either way (words)."""
+    return any("".join(words(got, p)) in ["".join(words(m, p)) for m in meant] for p in (False, True))
 
 
 def sox(*args: str) -> None:
@@ -244,7 +266,7 @@ def main() -> None:
                     sox(raw, "-r", "44100", "-c", "1", str(clip),
                         "silence", "1", "0.05", "0.3%", "reverse", "silence", "1", "0.05", "0.3%", "reverse")
                     got = heard(clip, a.whisper_model)
-                    if words(got) in (words(sentence), words(shown)):
+                    if same(got, sentence, shown):
                         break
                     print(f"voice:   whisper heard {got!r}", flush=True)
                 else:
@@ -277,7 +299,8 @@ def main() -> None:
 
     # Each narrated scene's seconds, written in place (the file keeps its layout).
     src = lesson_file.read_text()
-    found = list(re.finditer(r'"seconds":\s*[0-9.]+', src))
+    # (only within "scenes": a story's music has seconds of its own)
+    found = [m for m in re.finditer(r'"seconds":\s*[0-9.]+', src) if m.start() > src.index('"scenes"')]
     if len(found) != len(scenes):
         fail("lesson.json: expected one \"seconds\" a scene")
     for m, scene in reversed(list(zip(found, scenes))):

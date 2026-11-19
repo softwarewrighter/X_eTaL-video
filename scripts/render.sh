@@ -9,10 +9,13 @@ root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd -P)"
 slug="${1:?usage: render.sh SLUG [landscape|portrait] [--still N]}"; format="${2:-}"
 [ -n "$format" ] || format="$("$root/scripts/format.sh" "$slug")"
 case "$format" in
-  landscape) comp=LessonLandscape ;;
-  portrait) comp=LessonPortrait ;;
+  landscape) comp=Landscape ;;
+  portrait) comp=Portrait ;;
   *) echo "render: the format is landscape or portrait" >&2; exit 2 ;;
 esac
+# A story (kind "story") has its own composition; a lesson the Lesson one.
+kind="$(node -e 'console.log(JSON.parse(require("fs").readFileSync(process.argv[1], "utf8")).kind === "story" ? "Story" : "Lesson")' "$root/lessons/$slug/lesson.json")"
+comp="$kind$comp"
 "$root/scripts/fetch-fonts.sh" >/dev/null
 [ -d "$root/remotion/node_modules" ] || { echo "render: Remotion is not installed (cd remotion && npm install)" >&2; exit 127; }
 props="$root/$("$root/scripts/props.sh" "$slug")"

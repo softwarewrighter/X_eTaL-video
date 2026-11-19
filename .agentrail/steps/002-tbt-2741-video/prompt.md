@@ -1,0 +1,1 @@
+lessons/tbt-2741: about 5 minutes, landscape, the TBT #15 story (A'70 on the 3D IBM 2741, console-3D toward a computer history museum). Narration only from sourced facts (the posts, sw-apl, console-3D, the user's messages); the user's voice; captures; render; out/tbt-2741-youtube/.

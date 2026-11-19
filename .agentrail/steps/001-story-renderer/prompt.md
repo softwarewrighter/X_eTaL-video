@@ -1,0 +1,1 @@
+A story composition (StoryLandscape): full-frame media, lower-third headings, title and end cards; image scenes (one image a sentence, from the voice.json starts); captures of any URL (capture.url), with type, press, click, drag actions, several recordings a lesson; the page's 2741 strike sounds logged during the capture and mixed under the voice. Schema, props, render.sh, docs.

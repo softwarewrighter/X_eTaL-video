@@ -1,7 +1,8 @@
 import { CalculateMetadataFunction, Composition } from "remotion";
 import { Lesson } from "./Lesson";
-import { sample } from "./sample";
+import { Story } from "./Story";
 import { LessonProps } from "./types";
+import { sample } from "./sample";
 
 // The video's length and frame rate are the lesson's, as X_eTaL
 // scheduled it; nothing here knows a lesson.
@@ -10,20 +11,22 @@ const calculateMetadata: CalculateMetadataFunction<LessonProps> = ({ props }) =>
   durationInFrames: props.timing.total,
 });
 
-// The only place sizes are named: every lesson renders in both.
+// The only place sizes are named: every lesson renders in both. A
+// lesson draws with Lesson, a story (kind "story") with Story.
 const sizes = {
-  LessonLandscape: [1920, 1080],
-  LessonPortrait: [1080, 1920],
+  Landscape: [1920, 1080],
+  Portrait: [1080, 1920],
 } as const;
+const kinds = { Lesson, Story } as const;
 
 export const RemotionRoot: React.FC = () => {
   return (
     <>
-      {Object.entries(sizes).map(([id, [width, height]]) => (
+      {Object.entries(kinds).flatMap(([kind, component]) => Object.entries(sizes).map(([size, [width, height]]) => (
         <Composition
-          key={id}
-          id={id}
-          component={Lesson}
+          key={kind + size}
+          id={kind + size}
+          component={component as unknown as React.FC<LessonProps>}
           width={width}
           height={height}
           fps={30}
@@ -31,7 +34,7 @@ export const RemotionRoot: React.FC = () => {
           defaultProps={sample}
           calculateMetadata={calculateMetadata}
         />
-      ))}
+      )))}
     </>
   );
 };

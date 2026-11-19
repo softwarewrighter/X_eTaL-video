@@ -21,7 +21,11 @@ export type Scene = {
   lines: Line[];
   curves?: boolean;
   boards?: Board[];
-  capture?: { actions?: unknown[] }; // show the recording of the demo's page
+  capture?: { url?: string; actions?: unknown[] }; // show the recording of the demo's page
+  images?: string[];
+  clip?: string;
+  mute?: boolean;
+  transcript?: { start: number; end: number; text: string }[];
   narration?: string;
 };
 
@@ -33,7 +37,9 @@ export type Lesson = {
   order?: number;
   poster?: number;
   stepFrames?: number;
-  demo?: { repo: string; slug: string };
+  demo?: { repo: string; slug: string } | { url: string; start?: string; ready?: string };
+  kind?: "lesson" | "story";
+  brand?: string;
   scenes: Scene[];
 };
 
@@ -67,4 +73,24 @@ export type LessonProps = {
   captures: { landscape: string; portrait: string } | null; // recordings, under public/
   rendered: Record<string, string>; // each X_eTaL line as `xetal render --html` gives it
   voice?: Record<string, string>; // a narrated scene's audio, under public/, by scene id
+};
+
+// A story (lesson.kind "story", remotion/src/Story.tsx): what
+// scripts/props.mjs adds, every frame number from X_eTaL's schedule.
+export type StoryScene = {
+  images?: string[]; // under public/
+  cuts?: number[]; // the scene's frames where pictures 2, 3, ... start (their sentences)
+  clip?: string; // a reused segment, video and audio, under public/
+};
+export type StoryRun = {
+  first: number; // the run's scenes, by index
+  end: number;
+  from: number; // the frame its recording starts
+  frames: number;
+  video: string;
+  sound: string | null; // the page's own sound, mixed (scripts/capture.mjs)
+};
+export type StoryMusic = { src: string; from: number; frames: number };
+export type StoryProps = LessonProps & {
+  story: { scenes: StoryScene[]; runs: StoryRun[]; music: { intro: StoryMusic; outro: StoryMusic } | null };
 };
