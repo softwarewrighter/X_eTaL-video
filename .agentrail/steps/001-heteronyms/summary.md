@@ -1,0 +1,1 @@
+Heteronym guard: {written|spoken} marks, --check refuses unmarked heteronyms; all lessons reviewed (intro read->red, live page->demo page, axes/lives/export/import reworded); 13 sentences re-spoken; per-sentence lock; captures redone; ten videos re-rendered; rule 4c.
