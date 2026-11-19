@@ -1,0 +1,1 @@
+Story composition, general captures with typing/drag/sound mixing, music/clip props, whisper number normalization, per-scene review page; gate ok

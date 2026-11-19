@@ -1,8 +1,9 @@
 number = 1
 slug = "story-renderer"
-status = "in-progress"
+status = "completed"
 description = "A story composition (StoryLandscape): full-frame media, lower-third headings,..."
 role = "production"
 context_files = []
 created_at = "2026-11-19T10:47:52"
-commits = []
+completed_at = "2026-11-19T13:36:35"
+commits = ["12cbbecfcec313b9b242f7639201cd1ee2b93bda"]
