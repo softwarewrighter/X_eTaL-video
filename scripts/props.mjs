@@ -138,14 +138,15 @@ if (lesson.kind === "story") {
     const slides = [];
     if (m.slides) {
       const length = Number(execFileSync("soxi", ["-D", abs(m.file)], { encoding: "utf8" }));
-      // Each starts half a second later in the track than the one
-      // before, around the middle, so no two sound the same (the user).
+      // Each starts at its own offset from the middle (music.slides.offsets,
+      // repeating; else half a second apart), so no two sound the same (the user).
       const silent = lesson.scenes.map((s, i) => i).filter((i) => lesson.scenes[i].slide && !lesson.scenes[i].narration);
       silent.forEach((i, k) => {
         const s = lesson.scenes[i];
         const secs = props.timing.durations[i] / fps;
         const file = join(pub, `slide-${s.id}.wav`);
-        const at = Math.min(Math.max(0, (length - secs) / 2 + 0.5 * (k - (silent.length - 1) / 2)), Math.max(0, length - secs));
+        const shift = m.slides.offsets ? m.slides.offsets[k % m.slides.offsets.length] : 0.5 * (k - (silent.length - 1) / 2);
+        const at = Math.min(Math.max(0, (length - secs) / 2 + shift), Math.max(0, length - secs));
         execFileSync("sox", [abs(m.file), file, "trim", at.toFixed(2), String(secs), "vol", String(m.slides.volume), "fade", "t", String(m.slides.fade), String(secs), String(m.slides.fade)]);
         slides.push({ src: `media/${slug}/slide-${s.id}.wav`, from: props.timing.starts[i], frames: props.timing.durations[i] });
       });

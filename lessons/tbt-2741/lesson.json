@@ -8,7 +8,7 @@
   "fps": 30,
   "brand": "Throwback Thursday #15",
   "demo": { "url": "https://sw-apl.softwarewrighter.com/demo.html?mode=A", "start": "button:has-text('Start with sound')", "ready": "#line:not(.waiting)" },
-  "music": { "file": "/Users/mike/Downloads/break-it-down.wav", "intro": { "seconds": 5, "fadeOut": 0.5 }, "outro": { "seconds": 7, "fadeIn": 1 }, "slides": { "volume": 0.3, "fade": 0.5 } },
+  "music": { "file": "/Users/mike/Downloads/break-it-down.wav", "intro": { "seconds": 5, "fadeOut": 0.5 }, "outro": { "seconds": 7, "fadeIn": 1 }, "slides": { "volume": 0.3, "fade": 0.5, "offsets": [1, -2, 0.5] } },
   "scenes": [
     {
       "id": "title",
