@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>X_eTaL Video</title>
+<meta name="description" content="Short videos about X_eTaL, the eXperimental Extensible Typed Array Language, built from its live demos: scheduled by X_eTaL, rendered with Remotion.">
+<link rel="icon" href="favicon.ico">
+<style>
+:root { --bg: #0d1117; --panel: #161b22; --rule: #30363d; --ink: #e6edf3; --dim: #8b949e; --accent: #e9ecef; --link: #58a6ff; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.55 system-ui, -apple-system, "Segoe UI", sans-serif; }
+main { max-width: 1120px; margin: 0 auto; padding: 28px 20px 56px; }
+a { color: var(--link); }
+.brand { display: flex; align-items: center; gap: 16px; }
+.logo { height: 56px; width: auto; border-radius: 8px; }
+h1 { margin: 0; font-size: 1.9rem; color: var(--accent); }
+.lede { color: var(--ink); max-width: 46rem; margin: 14px 0 6px; }
+.how { color: var(--dim); max-width: 46rem; margin: 0 0 26px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 22px; }
+.card { background: var(--panel); border: 1px solid var(--rule); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; }
+.thumb { all: unset; display: block; position: relative; cursor: pointer; aspect-ratio: 16 / 9; background: #000; }
+.thumb:focus-visible { outline: 3px solid var(--link); outline-offset: -3px; }
+.thumb img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.card iframe { display: block; width: 100%; aspect-ratio: 16 / 9; border: 0; background: #000; }
+.soon { cursor: default; }
+.badge { position: absolute; left: 10px; top: 10px; background: rgba(13, 17, 23, .85); color: var(--ink); padding: 2px 10px; border-radius: 6px; font-size: .85rem; border: 1px solid var(--rule); }
+.play { position: absolute; left: 50%; top: 50%; width: 64px; height: 64px; margin: -32px 0 0 -32px; border-radius: 50%; background: rgba(13, 17, 23, .78); border: 2px solid var(--accent); }
+.play::after { content: ""; position: absolute; left: 25px; top: 18px; border-left: 20px solid var(--accent); border-top: 13px solid transparent; border-bottom: 13px solid transparent; }
+.thumb:hover .play { background: rgba(13, 17, 23, .95); }
+.length { position: absolute; right: 10px; bottom: 10px; background: rgba(13, 17, 23, .85); color: var(--ink); padding: 1px 8px; border-radius: 6px; font-size: .85rem; }
+.about { padding: 14px 16px 16px; }
+.about h2 { margin: 0 0 6px; font-size: 1.15rem; }
+.about p { margin: 0 0 10px; color: var(--dim); }
+.links { display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: .92rem; margin: 0 !important; }
+h3 { margin: 40px 0 10px; font-size: 1.1rem; }
+table { border-collapse: collapse; width: 100%; font-size: .95rem; }
+td, th { text-align: left; padding: 6px 10px 6px 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
+th { color: var(--dim); font-weight: 600; }
+footer { margin-top: 40px; color: var(--dim); font-size: .88rem; }
+</style>
+</head>
+<body>
+<main>
+<div class="brand"><img class="logo" src="xetal-logo-gray.png" alt="X_eTaL"><h1>X_eTaL Video</h1></div>
+<p class="lede">Short videos about <a href="https://github.com/softwarewrighter/X_eTaL">X_eTaL</a>, the eXperimental Extensible Typed Array Language, built from its live demos: short demos, and longer tutorials on the language. They play from the softwarewrighter channel on YouTube.</p>
+<p class="how">Every video here is data: a lesson file, a schedule and animation computed by X_eTaL itself for every frame at once, drawn by one Remotion composition, and narrated in the author's cloned voice. Shorts (two and a half minutes or less) are portrait; longer videos are landscape.</p>
+<div class="grid">
+<article class="card" id="intro-xetal">
+  <div class="thumb soon">
+    <img src="intro-xetal/poster.jpg" alt="Syntax you can see: a frame of the video" width="960" height="540" loading="lazy">
+    <span class="badge">Coming to YouTube</span><span class="length">3:18</span>
+  </div>
+  <div class="about">
+    <h2>Syntax you can see</h2>
+    <p>An introduction to reading X_eTaL, panel by panel after its syntax poster: an underline marks a function, a small letter above says where a name came from, a quote passes a function, small numbers pick an axis or a power, a box marks the system, a question mark guards, and square brackets make a train. Ends on the poster itself.</p>
+    <p class="links">
+      
+      <a href="https://softwarewrighter.github.io/X_eTaL/poster/">The live demo</a>
+      <a href="https://github.com/softwarewrighter/X_eTaL-video/tree/main/lessons/intro-xetal">The lesson, as data</a>
+    </p>
+  </div>
+</article>
+<article class="card" id="nbody">
+  <div class="thumb soon">
+    <img src="nbody/poster.jpg" alt="Gravity without a loop: a frame of the video" width="960" height="540" loading="lazy">
+    <span class="badge">Coming to YouTube</span><span class="length">51 s</span>
+  </div>
+  <div class="about">
+    <h2>Gravity without a loop</h2>
+    <p>Three bodies chasing each other round a figure-eight, with no loop over pairs: every pair's displacement is one table, every pull one expression, every acceleration one reduce. Ends on the live page.</p>
+    <p class="links">
+      
+      <a href="https://softwarewrighter.github.io/X_eTaL-demos/nbody/">The live demo</a>
+      <a href="https://github.com/softwarewrighter/X_eTaL-video/tree/main/lessons/nbody">The lesson, as data</a>
+    </p>
+  </div>
+</article>
+<article class="card" id="mandelbrot">
+  <div class="thumb soon">
+    <img src="mandelbrot/poster.jpg" alt="Mandelbrot without a loop: a frame of the video" width="960" height="540" loading="lazy">
+    <span class="badge">Coming to YouTube</span><span class="length">47 s</span>
+  </div>
+  <div class="about">
+    <h2>Mandelbrot without a loop</h2>
+    <p>The Mandelbrot set with no loop over pixels: a number for every pixel by broadcasting, one step for all of them at once, and the set appearing as the step repeats. Ends on the live page.</p>
+    <p class="links">
+      
+      <a href="https://softwarewrighter.github.io/X_eTaL-demos/mandelbrot/">The live demo</a>
+      <a href="https://github.com/softwarewrighter/X_eTaL-video/tree/main/lessons/mandelbrot">The lesson, as data</a>
+    </p>
+  </div>
+</article>
+<article class="card" id="life">
+  <div class="thumb soon">
+    <img src="life/poster.jpg" alt="Life in one line: a frame of the video" width="960" height="540" loading="lazy">
+    <span class="badge">Coming to YouTube</span><span class="length">51 s</span>
+  </div>
+  <div class="about">
+    <h2>Life in one line</h2>
+    <p>Conway's Game of Life as one line of X_eTaL, taken apart: nine shifted copies of the board, their sum, one comparison. Every board is an array X_eTaL printed.</p>
+    <p class="links">
+      
+      <a href="https://softwarewrighter.github.io/X_eTaL-demos/life-microscope/">The live demo</a>
+      <a href="https://github.com/softwarewrighter/X_eTaL-video/tree/main/lessons/life">The lesson, as data</a>
+    </p>
+  </div>
+</article>
+<article class="card" id="life-capture">
+  <div class="thumb soon">
+    <img src="life-capture/poster.jpg" alt="Life in one line, on the live page: a frame of the video" width="960" height="540" loading="lazy">
+    <span class="badge">Coming to YouTube</span><span class="length">1:01</span>
+  </div>
+  <div class="about">
+    <h2>Life in one line, on the live page</h2>
+    <p>The same Life lesson told with the live page itself: the published demo recorded while a script steps through it.</p>
+    <p class="links">
+      
+      <a href="https://softwarewrighter.github.io/X_eTaL-demos/life-microscope/">The live demo</a>
+      <a href="https://github.com/softwarewrighter/X_eTaL-video/tree/main/lessons/life-capture">The lesson, as data</a>
+    </p>
+  </div>
+</article>
+<article class="card" id="making-of">
+  <div class="thumb soon">
+    <img src="making-of/poster.jpg" alt="How this video was made: a frame of the video" width="960" height="540" loading="lazy">
+    <span class="badge">Coming to YouTube</span><span class="length">1:09</span>
+  </div>
+  <div class="about">
+    <h2>How this video was made</h2>
+    <p>How these videos are made: a lesson is data, X_eTaL computes the schedule and every frame's animation at once, and the numbers on screen are the video's own.</p>
+    <p class="links">
+      
+      
+      <a href="https://github.com/softwarewrighter/X_eTaL-video/tree/main/lessons/making-of">The lesson, as data</a>
+    </p>
+  </div>
+</article>
+<article class="card" id="attention">
+  <div class="thumb soon">
+    <img src="attention/poster.jpg" alt="Attention: rows meet columns: a frame of the video" width="960" height="540" loading="lazy">
+    <span class="badge">Coming to YouTube</span><span class="length">1:00</span>
+  </div>
+  <div class="about">
+    <h2>Attention: rows meet columns</h2>
+    <p>One head of attention, the heart of a transformer, with no loop over words: every query against every key in one matrix product, a softmax by row, and each word's output a weighted mix of the words it looks at. Ends on the live page.</p>
+    <p class="links">
+      
+      <a href="https://softwarewrighter.github.io/X_eTaL-ML/attention/">The live demo</a>
+      <a href="https://github.com/softwarewrighter/X_eTaL-video/tree/main/lessons/attention">The lesson, as data</a>
+    </p>
+  </div>
+</article>
+<article class="card" id="sudoku">
+  <div class="thumb soon">
+    <img src="sudoku/poster.jpg" alt="Sudoku without a loop: a frame of the video" width="960" height="540" loading="lazy">
+    <span class="badge">Coming to YouTube</span><span class="length">1:06</span>
+  </div>
+  <div class="about">
+    <h2>Sudoku without a loop</h2>
+    <p>A sudoku solved with no loop over cells: the rules as a table of units, every cell's candidates as one mask, every single found at once, and a move as a mask added to the grid, repeated until nothing changes. Ends on the live page.</p>
+    <p class="links">
+      
+      <a href="https://softwarewrighter.github.io/X_eTaL-games/sudoku/">The live demo</a>
+      <a href="https://github.com/softwarewrighter/X_eTaL-video/tree/main/lessons/sudoku">The lesson, as data</a>
+    </p>
+  </div>
+</article>
+<article class="card" id="fourier-epicycles">
+  <div class="thumb soon">
+    <img src="fourier-epicycles/poster.jpg" alt="Circles that draw a heart: a frame of the video" width="960" height="540" loading="lazy">
+    <span class="badge">Coming to YouTube</span><span class="length">1:00</span>
+  </div>
+  <div class="about">
+    <h2>Circles that draw a heart</h2>
+    <p>A heart drawn by circles turning on circles, with no loop over circles: the angles are one outer product, the transform two matrix products, and one running sum along the chain gives the curve rebuilt from every number of circles at once. Ends on the live page.</p>
+    <p class="links">
+      
+      <a href="https://softwarewrighter.github.io/X_eTaL-demos/fourier-epicycles/">The live demo</a>
+      <a href="https://github.com/softwarewrighter/X_eTaL-video/tree/main/lessons/fourier-epicycles">The lesson, as data</a>
+    </p>
+  </div>
+</article>
+<article class="card" id="lights-out">
+  <div class="thumb soon">
+    <img src="lights-out/poster.jpg" alt="Lights out without a loop: a frame of the video" width="960" height="540" loading="lazy">
+    <span class="badge">Coming to YouTube</span><span class="length">52 s</span>
+  </div>
+  <div class="about">
+    <h2>Lights out without a loop</h2>
+    <p>Lights out with no loop over the board: a press is a plus-shaped mask, one row of a table of all twenty-five presses; a move is the board plus that mask, mod 2, every light at once; and the solver is that table reduced mod 2. Ends on the live page.</p>
+    <p class="links">
+      
+      <a href="https://softwarewrighter.github.io/X_eTaL-games/lights-out/">The live demo</a>
+      <a href="https://github.com/softwarewrighter/X_eTaL-video/tree/main/lessons/lights-out">The lesson, as data</a>
+    </p>
+  </div>
+</article>
+<article class="card" id="k-means">
+  <div class="thumb soon">
+    <img src="k-means/poster.jpg" alt="k-means without a loop: a frame of the video" width="960" height="540" loading="lazy">
+    <span class="badge">Coming to YouTube</span><span class="length">1:01</span>
+  </div>
+  <div class="about">
+    <h2>k-means without a loop</h2>
+    <p>Three hundred points find their five clusters with no loop over points: every point's distance to every center is one table, the nearest center one reduce, the new centers means by group. A poor start gets stuck, a far-apart one does not. Ends on the live page.</p>
+    <p class="links">
+      
+      <a href="https://softwarewrighter.github.io/X_eTaL-ML/k-means/">The live demo</a>
+      <a href="https://github.com/softwarewrighter/X_eTaL-video/tree/main/lessons/k-means">The lesson, as data</a>
+    </p>
+  </div>
+</article>
+</div>
+
+<h3>The X_eTaL ecosystem</h3>
+<table>
+<tr><th>Repository</th><th>What it holds</th><th>Live</th></tr>
+<tr><td><a href="https://github.com/softwarewrighter/X_eTaL">X_eTaL</a></td><td>the language: interpreter, REPL, editor, notebook, browser playground</td><td><a href="https://softwarewrighter.github.io/X_eTaL/">playground</a></td></tr>
+<tr><td><a href="https://github.com/softwarewrighter/X_eTaL-demos">X_eTaL-demos</a></td><td>visual array and scientific programs</td><td><a href="https://softwarewrighter.github.io/X_eTaL-demos/">catalog</a></td></tr>
+<tr><td><a href="https://github.com/softwarewrighter/X_eTaL-ML">X_eTaL-ML</a></td><td>machine learning demos</td><td><a href="https://softwarewrighter.github.io/X_eTaL-ML/">catalog</a></td></tr>
+<tr><td><a href="https://github.com/softwarewrighter/X_eTaL-games">X_eTaL-games</a></td><td>games and puzzles</td><td><a href="https://softwarewrighter.github.io/X_eTaL-games/">games</a></td></tr>
+<tr><td><a href="https://github.com/softwarewrighter/X_eTaL-libraries">X_eTaL-libraries</a></td><td>reusable libraries and macro libraries</td><td><a href="https://softwarewrighter.github.io/X_eTaL-libraries/">libraries</a></td></tr>
+<tr><td><a href="https://github.com/softwarewrighter/X_eTaL-video">X_eTaL-video</a> (here)</td><td>these videos, and how they are made</td><td>this page</td></tr>
+</table>
+
+<footer>
+Copyright (c) 2026 Michael A Wright &middot; MIT License &middot; <a href="https://github.com/softwarewrighter/X_eTaL-video">Repository</a> &middot; built from 827260c &middot; X_eTaL abdd371
+</footer>
+</main>
+<script>
+// A thumbnail becomes YouTube's player when chosen (the video is
+// hosted by YouTube, not here).
+for (const b of document.querySelectorAll(".thumb[data-youtube]")) b.addEventListener("click", () => {
+  const f = document.createElement("iframe");
+  f.src = "https://www.youtube-nocookie.com/embed/" + b.dataset.youtube + "?autoplay=1&rel=0";
+  f.title = b.getAttribute("aria-label");
+  f.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
+  f.allowFullscreen = true;
+  b.replaceWith(f);
+});
+</script>
+</body>
+</html>
