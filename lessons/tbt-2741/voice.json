@@ -1,0 +1,454 @@
+{
+  "sample": "mike-medium-ref-1.wav",
+  "sampleSha256": "a57fe277f7ce93d5cac4e0e2ed21d770b7d05cab5b20b338dd55aece009d7211",
+  "server": "VoxCPM (Gradio /generate)",
+  "steps": 15,
+  "cfg": 2.0,
+  "scenes": [
+    {
+      "id": "welcome",
+      "narration": "This is my first narrated video in a while. I've been sharpening my saw, to make videos with higher production value, more quickly, using Remotion. I have a lot of topics waiting, in machine learning, computer history, and new programming languages. This one is computer history.",
+      "seconds": 18.9,
+      "sentences": [
+        {
+          "text": "This is my first narrated video in a while.",
+          "heard": "This is my first narrated video in a while.",
+          "start": 0.4,
+          "end": 2.503
+        },
+        {
+          "text": "I've been sharpening my saw, to make videos with higher production value, more quickly, using Remotion.",
+          "heard": "I've been sharpening my saw to make videos with higher production value more quickly using Remotion.",
+          "start": 2.853,
+          "end": 9.134
+        },
+        {
+          "text": "I have a lot of topics waiting, in machine learning, computer history, and new programming languages.",
+          "heard": "I have a lot of topics waiting in machine learning, computer history, and new programming languages.",
+          "start": 9.484,
+          "end": 16.232
+        },
+        {
+          "text": "This one is computer history.",
+          "heard": "This one is Computer History.",
+          "start": 16.582,
+          "end": 18.195
+        }
+      ]
+    },
+    {
+      "id": "first",
+      "narration": "My first program was a horse race, written in {APL|A P L}, and typed on an {IBM|I B M} {2741|twenty-seven forty-one}, in nineteen seventy-two. Now that terminal is back, as a {3D|three D} model, running my clean-room {APL|A P L} three sixty in the browser.",
+      "seconds": 17.8,
+      "sentences": [
+        {
+          "text": "My first program was a horse race, written in APL, and typed on an IBM 2741, in nineteen seventy-two.",
+          "heard": "My first program was a horse race, written in APL, and typed on an IBM 2741 in 1972.",
+          "spoken": "My first program was a horse race, written in A P L, and typed on an I B M twenty-seven forty-one, in nineteen seventy-two.",
+          "start": 0.4,
+          "end": 9.297
+        },
+        {
+          "text": "Now that terminal is back, as a 3D model, running my clean-room APL three sixty in the browser.",
+          "heard": "Now that terminal is back as a 3D model running my Cleanroom APL360 in the browser.",
+          "spoken": "Now that terminal is back, as a three D model, running my clean-room A P L three sixty in the browser.",
+          "start": 9.647,
+          "end": 17.016
+        }
+      ]
+    },
+    {
+      "id": "terminal",
+      "narration": "The {2741|twenty-seven forty-one} was a Selectric typewriter, turned into a terminal. With an {APL|A P L} type element in it, it was how most people met {APL|A P L} three sixty, in the late nineteen sixties and early seventies. You typed a line, the keyboard locked, and the answer came back on the same paper, at about fifteen characters a second.",
+      "seconds": 22.4,
+      "sentences": [
+        {
+          "text": "The 2741 was a Selectric typewriter, turned into a terminal.",
+          "heard": "The 2741 was a Selectric typewriter turned into a terminal.",
+          "spoken": "The twenty-seven forty-one was a Selectric typewriter, turned into a terminal.",
+          "start": 0.4,
+          "end": 4.994
+        },
+        {
+          "text": "With an APL type element in it, it was how most people met APL three sixty, in the late nineteen sixties and early seventies.",
+          "heard": "with an APL-type element in it. It was how most people met APL 360 in the late 1960s and early 70s.",
+          "spoken": "With an A P L type element in it, it was how most people met A P L three sixty, in the late nineteen sixties and early seventies.",
+          "start": 5.344,
+          "end": 13.766
+        },
+        {
+          "text": "You typed a line, the keyboard locked, and the answer came back on the same paper, at about fifteen characters a second.",
+          "heard": "You typed a line, the keyboard locked, and the answer came back on the same paper at about 15 characters a second.",
+          "start": 14.116,
+          "end": 21.647
+        }
+      ]
+    },
+    {
+      "id": "element",
+      "narration": "The type element spun and tilted to each character. {APL|A P L}'s special symbols were on that element. The ones that weren't were made by overstriking, one character, a backspace, and another on top of it.",
+      "seconds": 14.0,
+      "sentences": [
+        {
+          "text": "The type element spun and tilted to each character.",
+          "heard": "The type element spun and tilted to each character.",
+          "start": 0.4,
+          "end": 3.846
+        },
+        {
+          "text": "APL's special symbols were on that element.",
+          "heard": "APL's special symbols were on that element.",
+          "spoken": "A P L's special symbols were on that element.",
+          "start": 4.196,
+          "end": 6.573
+        },
+        {
+          "text": "The ones that weren't were made by overstriking, one character, a backspace, and another on top of it.",
+          "heard": "The ones that weren't were made by overstriking one character, a backspace, and another on top of it.",
+          "start": 6.923,
+          "end": 13.227
+        }
+      ]
+    },
+    {
+      "id": "pace",
+      "narration": "My demo, called A seventy, now prints the same way. What the session prints goes to the paper one character at a time, at about fifteen characters a second, with a little jitter. A carriage return takes longer, the farther the carriage has to travel. And the keyboard stays locked until printing finishes, as it did then.",
+      "seconds": 22.1,
+      "sentences": [
+        {
+          "text": "My demo, called A seventy, now prints the same way.",
+          "heard": "My demo, called a 70, now prints the same way.",
+          "start": 0.4,
+          "end": 3.46
+        },
+        {
+          "text": "What the session prints goes to the paper one character at a time, at about fifteen characters a second, with a little jitter.",
+          "heard": "What the session prints goes to the paper, one character at a time, at about 15 characters a second, with a little jitter.",
+          "start": 3.81,
+          "end": 12.733
+        },
+        {
+          "text": "A carriage return takes longer, the farther the carriage has to travel.",
+          "heard": "A carriage return takes longer. The farther the carriage has to travel,",
+          "start": 13.083,
+          "end": 17.409
+        },
+        {
+          "text": "And the keyboard stays locked until printing finishes, as it did then.",
+          "heard": "and the keyboard stays locked until printing finishes, as it did then.",
+          "start": 17.759,
+          "end": 21.301
+        }
+      ]
+    },
+    {
+      "id": "paper",
+      "narration": "The paper is continuous green-bar, fan-fold, with stripes three lines deep, and a sprocket hole every half inch down both edges. It runs from the platen, up past the top, then over and down behind, with a perforation every sixty-six lines.",
+      "seconds": 18.4,
+      "sentences": [
+        {
+          "text": "The paper is continuous green-bar, fan-fold, with stripes three lines deep, and a sprocket hole every half inch down both edges.",
+          "heard": "The paper is continuous green bar, fan fold, with stripes three lines deep, and a sprocket hole every half inch down both edges.",
+          "start": 0.4,
+          "end": 9.424
+        },
+        {
+          "text": "It runs from the platen, up past the top, then over and down behind, with a perforation every sixty-six lines.",
+          "heard": "It runs from the platen, up past the top, then over and down behind, with a perforation every 66 lines.",
+          "start": 9.774,
+          "end": 17.676
+        }
+      ]
+    },
+    {
+      "id": "model",
+      "narration": "The terminal is my model of the {2741|twenty-seven forty-one}, from {console|console} three D, my set of {3D|three D} models of historical consoles and terminals. It's built in Blender, and drawn in the browser with three J S. As the session prints, the carrier moves to each column, and back at the return, and the type element tilts and turns to each character.",
+      "seconds": 24.8,
+      "sentences": [
+        {
+          "text": "The terminal is my model of the 2741, from console three D, my set of 3D models of historical consoles and terminals.",
+          "heard": "The terminal is my model of the 2741 from Console 3D, my set of 3D models of historical consoles and terminals.",
+          "spoken": "The terminal is my model of the twenty-seven forty-one, from console three D, my set of three D models of historical consoles and terminals.",
+          "start": 0.4,
+          "end": 10.579
+        },
+        {
+          "text": "It's built in Blender, and drawn in the browser with three J S.",
+          "heard": "It's built in Blender and drawn in the browser with 3JS.",
+          "start": 10.929,
+          "end": 15.05
+        },
+        {
+          "text": "As the session prints, the carrier moves to each column, and back at the return, and the type element tilts and turns to each character.",
+          "heard": "As the session prints, the carrier moves to each column and back at the return, and the type element tilts and turns to each character.",
+          "start": 15.4,
+          "end": 24.096
+        }
+      ]
+    },
+    {
+      "id": "views",
+      "narration": "There are three views. The nearest is for reading as you type, and it's the default. The half view shows the keyboard, with its {APL|A P L} symbols. The third shows the entire machine. And a two D button switches back to the flat paper.",
+      "seconds": 16.1,
+      "sentences": [
+        {
+          "text": "There are three views.",
+          "heard": "There are three views.",
+          "start": 0.4,
+          "end": 1.456
+        },
+        {
+          "text": "The nearest is for reading as you type, and it's the default.",
+          "heard": "The nearest is for reading as you type, and it's the default.",
+          "start": 1.806,
+          "end": 4.952
+        },
+        {
+          "text": "The half view shows the keyboard, with its APL symbols.",
+          "heard": "The half view shows the keyboard with its APL symbols.",
+          "spoken": "The half view shows the keyboard, with its A P L symbols.",
+          "start": 5.302,
+          "end": 9.112
+        },
+        {
+          "text": "The third shows the entire machine.",
+          "heard": "The third shows the entire machine.",
+          "start": 9.462,
+          "end": 11.931
+        },
+        {
+          "text": "And a two D button switches back to the flat paper.",
+          "heard": "and a 2D button switches back to the flat paper.",
+          "start": 12.281,
+          "end": 15.332
+        }
+      ]
+    },
+    {
+      "id": "life",
+      "narration": "Here is a longer session. Load the Life workspace from library one, and describe it. List the function that makes each generation, Conway's Game of Life, in two lines. Then run it, for two generations of a glider.",
+      "seconds": 15.0,
+      "sentences": [
+        {
+          "text": "Here is a longer session.",
+          "heard": "Here is a longer session.",
+          "start": 0.4,
+          "end": 1.804
+        },
+        {
+          "text": "Load the Life workspace from library one, and describe it.",
+          "heard": "Load the Life workspace from library 1 and describe it.",
+          "start": 2.154,
+          "end": 5.753
+        },
+        {
+          "text": "List the function that makes each generation, Conway's Game of Life, in two lines.",
+          "heard": "List the function that makes each generation Conway's Game of Life in two lines.",
+          "start": 6.103,
+          "end": 11.015
+        },
+        {
+          "text": "Then run it, for two generations of a glider.",
+          "heard": "then run it for two generations of a glider.",
+          "start": 11.365,
+          "end": 14.214
+        }
+      ]
+    },
+    {
+      "id": "sound",
+      "narration": "The sound is recorded, not synthesized. A key strike, pitched a little by its character, the space bar, and a thud at the return. Each visit opens on a card that starts the session with sound, or silently.",
+      "seconds": 14.7,
+      "sentences": [
+        {
+          "text": "The sound is recorded, not synthesized.",
+          "heard": "The sound is recorded, not synthesized.",
+          "start": 0.4,
+          "end": 3.211
+        },
+        {
+          "text": "A key strike, pitched a little by its character, the space bar, and a thud at the return.",
+          "heard": "A key strike, pitched a little by its character, the space bar, and a thud at the return.",
+          "start": 3.561,
+          "end": 8.865
+        },
+        {
+          "text": "Each visit opens on a card that starts the session with sound, or silently.",
+          "heard": "Each visit opens on a card that starts the session with sound or silently.",
+          "start": 9.215,
+          "end": 13.978
+        }
+      ]
+    },
+    {
+      "id": "models",
+      "narration": "The {2741|twenty-seven forty-one} is one of nine models in {console|console} three D. The {IBM|I B M} {1053|ten fifty-three} {console|console} printer, from the {1130|eleven thirty} and {1800|eighteen hundred}. The {5471|fifty-four seventy-one} printer keyboard, from System three. The Radio Shack {TRS-80|T R S eighty}. An {IBM|I B M} {PC|P C}, with two monitors. The {IBM|I B M} {3279|thirty-two seventy-nine} graphics terminal. The {029|oh twenty-nine} keypunch. My {COR24|core twenty-four} development board. And a MacBook Pro.",
+      "seconds": 34.9,
+      "sentences": [
+        {
+          "text": "The 2741 is one of nine models in console three D.",
+          "heard": "The 2741 is one of nine models in Console 3D.",
+          "spoken": "The twenty-seven forty-one is one of nine models in console three D.",
+          "start": 0.4,
+          "end": 4.213
+        },
+        {
+          "text": "The IBM 1053 console printer, from the 1130 and 1800.",
+          "heard": "The IBM 1053 console printer from the 1130 and 1800.",
+          "spoken": "The I B M ten fifty-three console printer, from the eleven thirty and eighteen hundred.",
+          "start": 4.563,
+          "end": 11.748
+        },
+        {
+          "text": "The 5471 printer keyboard, from System three.",
+          "heard": "the 5471 printer keyboard from System 3.",
+          "spoken": "The fifty-four seventy-one printer keyboard, from System three.",
+          "start": 12.098,
+          "end": 15.978
+        },
+        {
+          "text": "The Radio Shack TRS-80.",
+          "heard": "The Radio Shack TRS-80.",
+          "spoken": "The Radio Shack T R S eighty.",
+          "start": 16.328,
+          "end": 19.331
+        },
+        {
+          "text": "An IBM PC, with two monitors.",
+          "heard": "an IBM PC with two monitors,",
+          "spoken": "An I B M P C, with two monitors.",
+          "start": 19.681,
+          "end": 23.76
+        },
+        {
+          "text": "The IBM 3279 graphics terminal.",
+          "heard": "The IBM 3279 graphics terminal.",
+          "spoken": "The I B M thirty-two seventy-nine graphics terminal.",
+          "start": 24.11,
+          "end": 27.031
+        },
+        {
+          "text": "The 029 keypunch.",
+          "heard": "the 029 key punch.",
+          "spoken": "The oh twenty-nine keypunch.",
+          "start": 27.381,
+          "end": 29.881
+        },
+        {
+          "text": "My COR24 development board.",
+          "heard": "My Core 24 development board.",
+          "spoken": "My core twenty-four development board.",
+          "start": 30.231,
+          "end": 32.071
+        },
+        {
+          "text": "And a MacBook Pro.",
+          "heard": "and a MacBook Pro.",
+          "start": 32.421,
+          "end": 34.167
+        }
+      ]
+    },
+    {
+      "id": "timeline",
+      "narration": "A seventy is the first stop on my {APL|A P L} timeline, which opens on nineteen seventy. The other working demos are B seventy-five, {APL|A P L} on the {IBM|I B M} fifty-one hundred, and C eighty, on the {TRS-80|T R S eighty}. And D eighty-three is {IBM|I B M} {PC|P C} {APL|A P L}.",
+      "seconds": 20.3,
+      "sentences": [
+        {
+          "text": "A seventy is the first stop on my APL timeline, which opens on nineteen seventy.",
+          "heard": "A 70 is the first stop on my APL timeline, which opens on 1970.",
+          "spoken": "A seventy is the first stop on my A P L timeline, which opens on nineteen seventy.",
+          "start": 0.4,
+          "end": 5.439
+        },
+        {
+          "text": "The other working demos are B seventy-five, APL on the IBM fifty-one hundred, and C eighty, on the TRS-80.",
+          "heard": "The other working demos are B75 APL on the IBM 5100 and C80 on the TRS-80.",
+          "spoken": "The other working demos are B seventy-five, A P L on the I B M fifty-one hundred, and C eighty, on the T R S eighty.",
+          "start": 5.789,
+          "end": 16.097
+        },
+        {
+          "text": "And D eighty-three is IBM PC APL.",
+          "heard": "and D-83 is IBM PCAPL.",
+          "spoken": "And D eighty-three is I B M P C A P L.",
+          "start": 16.447,
+          "end": 19.525
+        }
+      ]
+    },
+    {
+      "id": "museum",
+      "narration": "This is part of my ongoing work, to build a virtual computer history museum. It covers the languages {APL|A P L}, Lisp, and Forth, and also assemblers. And it covers machines like the {IBM|I B M} {1130|eleven thirty} and {1800|eighteen hundred}. Also the {UNIVAC|Univac} eleven ten, the {RCA|R C A} eighteen oh two, and the {IBM|I B M} three sixty. Still to do for {APL|A P L} is keypunching University of Maryland {APL|A P L}. Then {APL|A P L} eleven thirty on the ten fifty-three {console|console} printer, and {APL|A P L} two on a thirty-two seventy-nine G color terminal.",
+      "seconds": 36.3,
+      "sentences": [
+        {
+          "text": "This is part of my ongoing work, to build a virtual computer history museum.",
+          "heard": "This is part of my ongoing work to build a virtual computer history museum.",
+          "start": 0.4,
+          "end": 4.207
+        },
+        {
+          "text": "It covers the languages APL, Lisp, and Forth, and also assemblers.",
+          "heard": "It covers the languages A, P, L, Lisp, and forth, and also assemblers.",
+          "spoken": "It covers the languages A P L, Lisp, and Forth, and also assemblers.",
+          "start": 4.557,
+          "end": 9.323
+        },
+        {
+          "text": "And it covers machines like the IBM 1130 and 1800.",
+          "heard": "and it covers machines like the IBM 1130 and 1800.",
+          "spoken": "And it covers machines like the I B M eleven thirty and eighteen hundred.",
+          "start": 9.673,
+          "end": 13.933
+        },
+        {
+          "text": "Also the UNIVAC eleven ten, the RCA eighteen oh two, and the IBM three sixty.",
+          "heard": "Also, the UNIVAC 1110, the RCA 1802, and the IBM 360.",
+          "spoken": "Also the Univac eleven ten, the R C A eighteen oh two, and the I B M three sixty.",
+          "start": 14.283,
+          "end": 20.206
+        },
+        {
+          "text": "Still to do for APL is keypunching University of Maryland APL.",
+          "heard": "Still to do for APL is key punching University of Maryland APL.",
+          "spoken": "Still to do for A P L is keypunching University of Maryland A P L.",
+          "start": 20.556,
+          "end": 26.416
+        },
+        {
+          "text": "Then APL eleven thirty on the ten fifty-three console printer, and APL two on a thirty-two seventy-nine G color terminal.",
+          "heard": "Then APL 1130 on the 1053 console printer and APL 2 on a 3279G color terminal.",
+          "spoken": "Then A P L eleven thirty on the ten fifty-three console printer, and A P L two on a thirty-two seventy-nine G color terminal.",
+          "start": 26.766,
+          "end": 35.584
+        }
+      ]
+    },
+    {
+      "id": "try",
+      "narration": "Try it yourself. Open A seventy, choose start with sound, and type a line, say, two three reshape iota six, or plus reduce iota one hundred. The links are in the description.",
+      "seconds": 14.1,
+      "sentences": [
+        {
+          "text": "Try it yourself.",
+          "heard": "Try it yourself.",
+          "start": 0.4,
+          "end": 1.172
+        },
+        {
+          "text": "Open A seventy, choose start with sound, and type a line, say, two three reshape iota six, or plus reduce iota one hundred.",
+          "heard": "Open a 70, choose start with sound, and type a line, say 2, 3, reshape iota 6, or plus reduce iota 100.",
+          "start": 1.522,
+          "end": 11.404
+        },
+        {
+          "text": "The links are in the description.",
+          "heard": "The links are in the description.",
+          "start": 11.754,
+          "end": 13.347
+        }
+      ]
+    }
+  ]
+}

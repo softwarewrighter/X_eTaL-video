@@ -1,0 +1,29 @@
+Throwback Thursday #15. A'70, my APL\360 demo, now prints at an IBM 2741's own pace, a character at a time, on green-bar fan-fold paper, with the terminal's sounds, and in 3D on my model of the 2741 from console-3D: the carrier moves to each column and the type element tilts and turns to each character.
+
+My first program, a horse race in APL, was typed on an IBM 2741 in 1972. The 2741 is one of nine models in console-3D so far, part of my ongoing work toward a virtual computer history museum.
+
+Chapters:
+0:00 Title
+0:05 Sharpening the saw
+0:23 My first program
+0:41 The IBM 2741
+1:04 The type element
+1:18 At the 2741's own pace
+1:40 Green-bar paper
+1:58 My model of the 2741
+2:23 Three views, and 2D
+2:39 A longer session: Life
+3:09 console-3D: nine models
+3:44 The APL timeline
+4:04 A virtual computer history museum
+4:40 Try it
+
+Try A'70 (choose Start with sound): https://sw-apl.softwarewrighter.com/demo.html?mode=A
+The APL timeline: https://sw-apl.softwarewrighter.com/
+sw-apl, a clean-room APL\360 in Rust: https://github.com/sw-vibe-coding/sw-apl
+console-3D, the models: https://github.com/softwarewrighter/console-3D
+
+Blog: https://software-wrighter-lab.github.io/
+Discord: https://discord.gg/Ctzk5uHggZ
+
+#TBT #APL #RetroComputing #ComputerHistory #IBM #3D #Programming
