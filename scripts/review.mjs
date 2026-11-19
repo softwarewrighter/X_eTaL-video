@@ -34,7 +34,10 @@ const written = (t) => t.replace(/\{([^{}|]+)\|[^{}|]*\}/g, "$1");
 const fmt = (s) => `${Math.floor(s / 60)}:${(s % 60).toFixed(1).padStart(4, "0")}`;
 
 const videoFile = ["landscape", "portrait"].map((f) => join(root, "out", `${slug}-${f}-remotion.mp4`)).find(existsSync);
-const video = videoFile ? link(videoFile, "video.mp4") : false;
+// A video older than the schedule plays the wrong stretches: left out
+// until it is rendered again.
+const current = videoFile && statSync(videoFile).mtime >= statSync(join(root, "lessons", slug, "timing.json")).mtime;
+const video = current ? link(videoFile, "video.mp4") : false;
 const videoAge = video ? statSync(videoFile).mtime : null;
 mkdirSync(join(out, "stills"), { recursive: true });
 
@@ -84,7 +87,7 @@ table { border-collapse: collapse; font-size: .85rem; margin: 8px 0; } td { bord
 .heard { color: #a5d6ff; } .warn { color: #ffa657; }
 </style></head><body>
 <h1>${esc(lesson.title)}</h1>
-<p class="dim">${esc(slug)} | ${lesson.scenes.length} scenes | ${timing ? fmt(timing.total / timing.fps) + " long" : "not yet scheduled"} | page built ${new Date().toLocaleString("en-US")}${video ? ` | video rendered ${videoAge.toLocaleString("en-US")}` : " | no video yet"}</p>
+<p class="dim">${esc(slug)} | ${lesson.scenes.length} scenes | ${timing ? fmt(timing.total / timing.fps) + " long" : "not yet scheduled"} | page built ${new Date().toLocaleString("en-US")}${video ? ` | video rendered ${videoAge.toLocaleString("en-US")}` : videoFile ? " | the video is being rendered again for the new schedule: players return when it is done" : " | no video yet"}</p>
 ${video ? `<p><a href="video.mp4">The whole video</a></p>` : ""}
 <p class="dim">Each sentence: where it starts in the scene (s), the text as spoken, and (blue) what whisper heard.</p>
 ${cards.join("\n")}

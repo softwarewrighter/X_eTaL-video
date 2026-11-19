@@ -1,6 +1,7 @@
 import { Audio } from "@remotion/media";
 import { AbsoluteFill, Img, OffthreadVideo, Sequence, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import { theme } from "./theme";
+import { Slide } from "./Slide";
 import { StoryProps } from "./types";
 
 // A story (lesson.kind "story"): a video that is not a lesson on
@@ -17,7 +18,7 @@ import { StoryProps } from "./types";
 // near half of full scale): quieter than the voice, never clipping.
 const PAGE_SOUND = 0.6;
 
-export const Story: React.FC<StoryProps> = ({ lesson, timing, frames, voice, story }) => {
+export const Story: React.FC<StoryProps> = ({ lesson, timing, frames, voice, story, rendered }) => {
   const frame = Math.min(useCurrentFrame(), timing.total - 1);
   const { width, height } = useVideoConfig();
   const tall = height > width;
@@ -28,7 +29,7 @@ export const Story: React.FC<StoryProps> = ({ lesson, timing, frames, voice, sto
   const local = frames.local[frame];
   const run = story.runs.find((r) => s >= r.first && s <= r.end);
   const title = s === 0;
-  const blank = !media.images && !scene.capture && !scene.clip && !scene.narration && scene.lines.length === 0;
+  const blank = !media.images && !scene.capture && !scene.clip && !scene.slide && !scene.narration && scene.lines.length === 0;
 
   // The picture showing: one a sentence (cuts), the last staying.
   const picture = media.images ? media.images[(media.cuts ?? []).filter((c) => local >= c).length] ?? media.images[media.images.length - 1] : null;
@@ -52,7 +53,7 @@ export const Story: React.FC<StoryProps> = ({ lesson, timing, frames, voice, sto
         ) : null,
       )}
       {story.music
-        ? [story.music.intro, story.music.outro].map((m) => (
+        ? [story.music.intro, ...story.music.slides, story.music.outro].map((m) => (
             <Sequence key={m.src} from={m.from} durationInFrames={m.frames} layout="none">
               <Audio src={staticFile(m.src)} />
             </Sequence>
@@ -119,8 +120,22 @@ export const Story: React.FC<StoryProps> = ({ lesson, timing, frames, voice, sto
         </AbsoluteFill>
       ) : null}
 
+      {/* An explainer slide: its items revealed by X_eTaL's stagger, the line
+          (timeline) drawn by its out-cubic progress over the scene. */}
+      {scene.slide ? (
+        <Slide
+          slide={scene.slide}
+          heading={scene.heading}
+          brand={lesson.brand}
+          show={show}
+          reveal={frames.stagger[frame]}
+          progress={frames.out[frame]}
+          rendered={rendered}
+        />
+      ) : null}
+
       {/* The heading, in the lower third, with the scene's lines (links) under it. */}
-      {!title && !blank && !scene.clip ? (
+      {!title && !blank && !scene.clip && !scene.slide ? (
         <div
           style={{
             position: "absolute",

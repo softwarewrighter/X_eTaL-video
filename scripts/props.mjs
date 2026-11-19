@@ -51,7 +51,7 @@ for (const s of lesson.scenes) for (const b of s.boards || []) {
 // classes each token. A {{name}} is not X_eTaL, so each goes through
 // as a number no lesson would write and comes back as itself, to be
 // filled in frame by frame.
-const sources = [...new Set(lesson.scenes.flatMap((s) => s.lines).filter((l) => typeof l === "object" && l.xtl !== undefined).map((l) => l.xtl))];
+const sources = [...new Set(lesson.scenes.flatMap((s) => [...s.lines, ...(s.slide ? s.slide.items : [])]).filter((l) => typeof l === "object" && l.xtl !== undefined).map((l) => l.xtl))];
 if (sources.length) {
   const names = [...new Set(sources.flatMap((s) => [...s.matchAll(/\{\{(\w+)\}\}/g)].map((m) => m[1])))];
   const stand = (k) => String(900000001 + k);
@@ -134,7 +134,24 @@ if (lesson.kind === "story") {
     if (!existsSync(abs(m.file))) fail(`no music ${m.file}`);
     execFileSync("sox", [abs(m.file), join(pub, "intro.wav"), "trim", "0", String(m.intro.seconds), "fade", "t", "0", String(m.intro.seconds), String(m.intro.fadeOut)]);
     execFileSync("sox", [abs(m.file), join(pub, "outro.wav"), "trim", `-${m.outro.seconds}`, "fade", "t", String(m.outro.fadeIn)]);
+    // Under each silent explainer: the track's middle, as long as the scene.
+    const slides = [];
+    if (m.slides) {
+      const length = Number(execFileSync("soxi", ["-D", abs(m.file)], { encoding: "utf8" }));
+      // Each starts half a second later in the track than the one
+      // before, around the middle, so no two sound the same (the user).
+      const silent = lesson.scenes.map((s, i) => i).filter((i) => lesson.scenes[i].slide && !lesson.scenes[i].narration);
+      silent.forEach((i, k) => {
+        const s = lesson.scenes[i];
+        const secs = props.timing.durations[i] / fps;
+        const file = join(pub, `slide-${s.id}.wav`);
+        const at = Math.min(Math.max(0, (length - secs) / 2 + 0.5 * (k - (silent.length - 1) / 2)), Math.max(0, length - secs));
+        execFileSync("sox", [abs(m.file), file, "trim", at.toFixed(2), String(secs), "vol", String(m.slides.volume), "fade", "t", String(m.slides.fade), String(secs), String(m.slides.fade)]);
+        slides.push({ src: `media/${slug}/slide-${s.id}.wav`, from: props.timing.starts[i], frames: props.timing.durations[i] });
+      });
+    }
     music = {
+      slides,
       intro: { src: `media/${slug}/intro.wav`, from: 0, frames: Math.round(m.intro.seconds * fps) },
       outro: { src: `media/${slug}/outro.wav`, from: total - Math.round(m.outro.seconds * fps), frames: Math.round(m.outro.seconds * fps) },
     };

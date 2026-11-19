@@ -25,6 +25,7 @@ export type Scene = {
   images?: string[];
   clip?: string;
   mute?: boolean;
+  slide?: { type: "points" | "timeline" | "flow"; items: { text: string; sub?: string; year?: string; mark?: boolean; xtl?: string; code?: string }[] };
   transcript?: { start: number; end: number; text: string }[];
   narration?: string;
 };
@@ -92,5 +93,5 @@ export type StoryRun = {
 };
 export type StoryMusic = { src: string; from: number; frames: number };
 export type StoryProps = LessonProps & {
-  story: { scenes: StoryScene[]; runs: StoryRun[]; music: { intro: StoryMusic; outro: StoryMusic } | null };
+  story: { scenes: StoryScene[]; runs: StoryRun[]; music: { intro: StoryMusic; outro: StoryMusic; slides: StoryMusic[] } | null };
 };

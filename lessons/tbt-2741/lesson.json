@@ -8,7 +8,7 @@
   "fps": 30,
   "brand": "Throwback Thursday #15",
   "demo": { "url": "https://sw-apl.softwarewrighter.com/demo.html?mode=A", "start": "button:has-text('Start with sound')", "ready": "#line:not(.waiting)" },
-  "music": { "file": "/Users/mike/Downloads/break-it-down.wav", "intro": { "seconds": 5, "fadeOut": 0.5 }, "outro": { "seconds": 7, "fadeIn": 1 } },
+  "music": { "file": "/Users/mike/Downloads/break-it-down.wav", "intro": { "seconds": 5, "fadeOut": 0.5 }, "outro": { "seconds": 7, "fadeIn": 1 }, "slides": { "volume": 0.3, "fade": 0.5 } },
   "scenes": [
     {
       "id": "title",
@@ -32,6 +32,19 @@
       "narration": "My first program was a horse race, written in {APL|A P L}, and typed on an {IBM|I B M} {2741|twenty-seven forty-one}, in nineteen seventy-two. Now that terminal is back, as a {3D|three D} model, running my clean-room {APL|A P L} three sixty in the browser.",
       "lines": [],
       "images": ["../../software-wrighter-lab/blog/assets/images/posts/tbt15-2741-whole.webp", "../../software-wrighter-lab/blog/assets/images/posts/tbt15-2741-half.webp"]
+    },
+    {
+      "id": "apl-brief",
+      "seconds": 7,
+      "heading": "APL in brief",
+      "lines": [],
+      "slide": { "type": "points", "items": [
+        { "text": "1962: A Programming Language", "sub": "Kenneth Iverson's notation for describing algorithms" },
+        { "text": "1968: APL\\360", "sub": "Iverson, Adin Falkoff and a small group at IBM Research" },
+        { "text": "Time-shared on a System/360", "sub": "typed on an IBM 2741, with the APL type element" },
+        { "text": "Right to left, no precedence", "code": "2+3×4  is  14" },
+        { "text": "Whole arrays, no loops", "code": "+/⍳70  is  2485" }
+      ] }
     },
     {
       "id": "terminal",
@@ -98,12 +111,39 @@
       "capture": { "actions": [] }
     },
     {
+      "id": "how-made",
+      "seconds": 7,
+      "heading": "How the 3D models are made",
+      "lines": [],
+      "slide": { "type": "flow", "items": [
+        { "text": "X_eTaL", "sub": "make-ibm2741.xtl, with its Blender extension", "xtl": "\"model:\" u_se< \"Ibm2741\"" },
+        { "text": "A Blender script", "sub": "Python, written by the X_eTaL program, with construction helpers" },
+        { "text": "Blender", "sub": "the model, its renders, glTF" },
+        { "text": "three.js", "sub": "A'70 in the browser: the carrier and type element move" }
+      ] }
+    },
+    {
       "id": "models",
       "seconds": 34.9,
       "heading": "console-3D",
       "narration": "The {2741|twenty-seven forty-one} is one of nine models in {console|console} three D. The {IBM|I B M} {1053|ten fifty-three} {console|console} printer, from the {1130|eleven thirty} and {1800|eighteen hundred}. The {5471|fifty-four seventy-one} printer keyboard, from System three. The Radio Shack {TRS-80|T R S eighty}. An {IBM|I B M} {PC|P C}, with two monitors. The {IBM|I B M} {3279|thirty-two seventy-nine} graphics terminal. The {029|oh twenty-nine} keypunch. My {COR24|core twenty-four} development board. And a MacBook Pro.",
       "lines": [],
       "images": ["../console-3D/images/ibm2741-render.png", "../console-3D/images/ibm1053-render.png", "../console-3D/images/ibm5471-render.png", "../console-3D/images/trs80-render.png", "../console-3D/images/pcdual-render.png", "../console-3D/images/ibm3279-render.png", "../console-3D/images/ibm029-render.png", "../console-3D/images/cor24-render.png", "../console-3D/images/macbook-render.png"]
+    },
+    {
+      "id": "years",
+      "seconds": 7,
+      "heading": "APL, and my demos of it",
+      "lines": [],
+      "slide": { "type": "timeline", "items": [
+        { "year": "1962", "text": "The notation", "sub": "Iverson's book" },
+        { "year": "1968", "text": "APL\\360", "sub": "IBM" },
+        { "year": "1970", "text": "A'70", "sub": "APL\\360 on a 2741", "mark": true },
+        { "year": "1972", "text": "My first program", "sub": "a horse race" },
+        { "year": "1975", "text": "B'75", "sub": "APL on the IBM 5100" },
+        { "year": "1980", "text": "C'80", "sub": "APL-80 on the TRS-80" },
+        { "year": "1983", "text": "D'83", "sub": "IBM PC APL" }
+      ] }
     },
     {
       "id": "timeline",
