@@ -1,0 +1,8 @@
+number = 1
+slug = "heteronyms"
+status = "in-progress"
+description = "Narration markup {written|spoken}; just voice --check refuses unmarked hetero..."
+role = "production"
+context_files = []
+created_at = "2026-11-18T15:35:42"
+commits = []

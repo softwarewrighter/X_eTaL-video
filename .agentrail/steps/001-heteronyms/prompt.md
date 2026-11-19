@@ -1,0 +1,1 @@
+Narration markup {written|spoken}; just voice --check refuses unmarked heteronyms; review every lesson's narration (read as red in intro-xetal's hook, live, lives, axes, export, progress...), reword or respell, re-voice, re-render, rebuild the upload folders; document the rule for agents.
