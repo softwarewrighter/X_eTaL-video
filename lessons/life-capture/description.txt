@@ -9,7 +9,7 @@ No loops over cells, no neighbor bookkeeping. Then it runs: the R-pentomino on a
 Step through every array yourself: https://softwarewrighter.github.io/X_eTaL-demos/life-microscope/
 More X_eTaL videos: https://softwarewrighter.github.io/X_eTaL-video/
 
-Blog: https://software-wrighter-lab.github.io/
+Blog: https://blog.softwarewrighter.com/
 Discord: https://discord.gg/Ctzk5uHggZ
 
 #Shorts #XeTaL #GameOfLife #ArrayProgramming #Conway #Programming #APL

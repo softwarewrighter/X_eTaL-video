@@ -36,7 +36,7 @@ The poster: https://softwarewrighter.github.io/X_eTaL/poster/
 Try it: https://softwarewrighter.github.io/X_eTaL/
 More X_eTaL videos: https://softwarewrighter.github.io/X_eTaL-video/
 
-Blog: https://software-wrighter-lab.github.io/
+Blog: https://blog.softwarewrighter.com/
 Discord: https://discord.gg/Ctzk5uHggZ
 
 #XeTaL #ArrayProgramming #APL #Typography #ProgrammingLanguages #Programming

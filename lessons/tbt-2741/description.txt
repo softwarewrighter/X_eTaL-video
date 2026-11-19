@@ -23,7 +23,7 @@ The APL timeline: https://sw-apl.softwarewrighter.com/
 sw-apl, a clean-room APL\360 in Rust: https://github.com/sw-vibe-coding/sw-apl
 console-3D, the models: https://github.com/softwarewrighter/console-3D
 
-Blog: https://software-wrighter-lab.github.io/
+Blog: https://blog.softwarewrighter.com/
 Discord: https://discord.gg/Ctzk5uHggZ
 
 #TBT #APL #RetroComputing #ComputerHistory #IBM #3D #Programming

@@ -11,7 +11,7 @@ Then the live page plays the game at a terminal and runs the solver as a noteboo
 Try it: https://softwarewrighter.github.io/X_eTaL-games/sudoku/
 More X_eTaL videos: https://softwarewrighter.github.io/X_eTaL-video/
 
-Blog: https://software-wrighter-lab.github.io/
+Blog: https://blog.softwarewrighter.com/
 Discord: https://discord.gg/Ctzk5uHggZ
 
 #Shorts #XeTaL #ArrayProgramming #Sudoku #Puzzles #Programming

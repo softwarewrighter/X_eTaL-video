@@ -11,7 +11,7 @@ Then the live page runs the same program in your browser, and "wide" finds the s
 Try it: https://softwarewrighter.github.io/X_eTaL-ML/attention/
 More X_eTaL videos: https://softwarewrighter.github.io/X_eTaL-video/
 
-Blog: https://software-wrighter-lab.github.io/
+Blog: https://blog.softwarewrighter.com/
 Discord: https://discord.gg/Ctzk5uHggZ
 
 #Shorts #XeTaL #ArrayProgramming #MachineLearning #Attention #Transformers #Programming
