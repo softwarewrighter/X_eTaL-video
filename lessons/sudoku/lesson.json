@@ -80,9 +80,9 @@
     },
     {
       "id": "live",
-      "seconds": 8.1,
+      "seconds": 8,
       "heading": "The live page",
-      "narration": "This is the live page. Play it at the terminal, or watch the solver run as a notebook, right in your browser.",
+      "narration": "This is the demo page. Play it at the terminal, or watch the solver run as a notebook, right in your browser.",
       "lines": [],
       "capture": { "actions": [{ "wait": 3.5 }, { "scroll": "h2:has-text('The scripted game')" }, { "wait": 2 }, { "scroll": "text=The 27 units as a table of cells" }] }
     },

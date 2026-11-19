@@ -114,14 +114,14 @@
     },
     {
       "id": "live",
-      "narration": "The live page runs the same program in your browser, here with fifty bodies.",
-      "seconds": 5.8,
+      "narration": "The demo page runs the same program in your browser, here with fifty bodies.",
+      "seconds": 6.1,
       "sentences": [
         {
-          "text": "The live page runs the same program in your browser, here with fifty bodies.",
-          "heard": "The live page runs the same program in your browser, here with 50 bodies.",
+          "text": "The demo page runs the same program in your browser, here with fifty bodies.",
+          "heard": "The demo page runs the same program in your browser, here with 50 bodies.",
           "start": 0.4,
-          "end": 5.071
+          "end": 5.324
         }
       ]
     },

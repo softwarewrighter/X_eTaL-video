@@ -76,9 +76,9 @@
     },
     {
       "id": "live",
-      "seconds": 7.4,
+      "seconds": 6.8,
       "heading": "The live page",
-      "narration": "The live page runs the same program in your browser. Press run, and watch the centers travel.",
+      "narration": "The demo page runs the same program in your browser. Press run, and watch the centers travel.",
       "lines": [],
       "capture": { "actions": [{ "wait": 3.8 }, { "click": "button:has-text('Run')" }] }
     },

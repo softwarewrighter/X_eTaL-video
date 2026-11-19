@@ -9,9 +9,9 @@
   "scenes": [
     {
       "id": "hook",
-      "seconds": 15.6,
+      "seconds": 14.6,
       "heading": "Syntax you can see",
-      "narration": "Code is read far more often than it is written. So this array language puts the meaning where your eye already is, in how each name looks. Here is how to read it, one idea at a time, from its syntax poster.",
+      "narration": "Code is {read|red} far more often than it is written. So this array language puts the meaning where your eye already is, in how each name looks. Here is how to {read|read} it, one idea at a time, from its syntax poster.",
       "lines": [
         "Code is read more often than it is written.",
         { "xtl": "u:s_quare := { _r * _r }" },
@@ -34,9 +34,9 @@
     },
     {
       "id": "where",
-      "seconds": 12.7,
+      "seconds": 13.1,
       "heading": "1. Where a name came from",
-      "narration": "A small letter above the name says where it came from. One mark for your own program, another for a library's export, another for a helper that only this file can see. So you never hunt for a definition.",
+      "narration": "A small letter above the name says where it came from. One mark for your own program, another for a name from a library, another for a helper that only this file can see. So you never hunt for a definition.",
       "lines": [
         { "xtl": "u:s_quare" },
         { "xtl": "l:m_ean" },
@@ -48,9 +48,9 @@
     },
     {
       "id": "import",
-      "seconds": 10.7,
+      "seconds": 9.3,
       "heading": "2. Import a library",
-      "narration": "Importing a library gives it a short name of your choosing. That name then shows above every word you use from it, so a reader knows which import to open.",
+      "narration": "Importing a library gives it a short name of your choosing. That name then shows above every word you use from it, so a reader knows which library to open.",
       "lines": [
         { "xtl": "\"c:\" u_se< \"Combinators\"" },
         { "xtl": "c:K_ 42 17" },

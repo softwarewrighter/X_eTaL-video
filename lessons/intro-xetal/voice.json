@@ -7,26 +7,27 @@
   "scenes": [
     {
       "id": "hook",
-      "narration": "Code is read far more often than it is written. So this array language puts the meaning where your eye already is, in how each name looks. Here is how to read it, one idea at a time, from its syntax poster.",
-      "seconds": 15.6,
+      "narration": "Code is {read|red} far more often than it is written. So this array language puts the meaning where your eye already is, in how each name looks. Here is how to {read|read} it, one idea at a time, from its syntax poster.",
+      "seconds": 14.6,
       "sentences": [
         {
           "text": "Code is read far more often than it is written.",
           "heard": "Code is read far more often than it is written.",
+          "spoken": "Code is red far more often than it is written.",
           "start": 0.4,
-          "end": 3.706
+          "end": 2.656
         },
         {
           "text": "So this array language puts the meaning where your eye already is, in how each name looks.",
           "heard": "So this array language puts the meaning where your eye already is in how each name looks.",
-          "start": 4.056,
-          "end": 9.749
+          "start": 3.006,
+          "end": 8.699
         },
         {
           "text": "Here is how to read it, one idea at a time, from its syntax poster.",
           "heard": "Here is how to read it, one idea at a time, from its syntax poster.",
-          "start": 10.099,
-          "end": 14.89
+          "start": 9.049,
+          "end": 13.84
         }
       ]
     },
@@ -57,8 +58,8 @@
     },
     {
       "id": "where",
-      "narration": "A small letter above the name says where it came from. One mark for your own program, another for a library's export, another for a helper that only this file can see. So you never hunt for a definition.",
-      "seconds": 12.7,
+      "narration": "A small letter above the name says where it came from. One mark for your own program, another for a name from a library, another for a helper that only this file can see. So you never hunt for a definition.",
+      "seconds": 13.1,
       "sentences": [
         {
           "text": "A small letter above the name says where it came from.",
@@ -67,23 +68,23 @@
           "end": 2.929
         },
         {
-          "text": "One mark for your own program, another for a library's export, another for a helper that only this file can see.",
-          "heard": "One mark for your own program, another for a library's export, another for a helper that only this file can see.",
+          "text": "One mark for your own program, another for a name from a library, another for a helper that only this file can see.",
+          "heard": "One mark for your own program, another for a name from a library, another for a helper that only this file can see.",
           "start": 3.279,
-          "end": 10.02
+          "end": 10.425
         },
         {
           "text": "So you never hunt for a definition.",
           "heard": "so you never hunt for a definition.",
-          "start": 10.37,
-          "end": 11.934
+          "start": 10.775,
+          "end": 12.34
         }
       ]
     },
     {
       "id": "import",
-      "narration": "Importing a library gives it a short name of your choosing. That name then shows above every word you use from it, so a reader knows which import to open.",
-      "seconds": 10.7,
+      "narration": "Importing a library gives it a short name of your choosing. That name then shows above every word you use from it, so a reader knows which library to open.",
+      "seconds": 9.3,
       "sentences": [
         {
           "text": "Importing a library gives it a short name of your choosing.",
@@ -92,10 +93,10 @@
           "end": 3.171
         },
         {
-          "text": "That name then shows above every word you use from it, so a reader knows which import to open.",
-          "heard": "That name then shows above every word you use from it, so a reader knows which import to open.",
+          "text": "That name then shows above every word you use from it, so a reader knows which library to open.",
+          "heard": "That name then shows above every word you use from it, so a reader knows which library to open.",
           "start": 3.521,
-          "end": 9.953
+          "end": 8.535
         }
       ]
     },

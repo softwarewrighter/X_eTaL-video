@@ -6,7 +6,8 @@
 // for the lesson), the closed captions (SLUG.srt: the exact sentences
 // of voice.json, each at its time in the video: its scene's start from
 // the schedule X_eTaL computed, timing.json, plus its offset in the
-// scene's audio), and the narration as plain text (narration.txt).
+// scene's audio), and the narration as plain text (narration.txt; a
+// {read|red} pronunciation mark shows as the written word).
 //   scripts/youtube.mjs SLUG
 import { copyFileSync, existsSync, mkdirSync, readFileSync, rmSync, statSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
@@ -47,7 +48,7 @@ const srt = cues.map((c, k) => `${k + 1}\n${stamp(c.from)} --> ${stamp(c.to)}\n$
 const out = join(root, "out", `${slug}-youtube`);
 mkdirSync(out, { recursive: true });
 writeFileSync(join(out, `${slug}.srt`), srt);
-writeFileSync(join(out, "narration.txt"), lesson.scenes.filter((s) => s.narration).map((s) => s.narration).join("\n") + "\n");
+writeFileSync(join(out, "narration.txt"), lesson.scenes.filter((s) => s.narration).map((s) => s.narration.replace(/\{([^{}|]+)\|[^{}|]*\}/g, "$1")).join("\n") + "\n");
 writeFileSync(join(out, "title.txt"), title + "\n");
 writeFileSync(join(out, "description.txt"), description);
 const format = timing.total / timing.fps > 150 ? "landscape" : "portrait";

@@ -114,20 +114,20 @@
     },
     {
       "id": "live",
-      "narration": "The live page runs the same program in your browser. Pick the other sentence, and wide finds the street.",
-      "seconds": 8.2,
+      "narration": "The demo page runs the same program in your browser. Pick the other sentence, and wide finds the street.",
+      "seconds": 8.5,
       "sentences": [
         {
-          "text": "The live page runs the same program in your browser.",
-          "heard": "The Live page runs the same program in your browser.",
+          "text": "The demo page runs the same program in your browser.",
+          "heard": "The demo page runs the same program in your browser.",
           "start": 0.4,
-          "end": 3.61
+          "end": 3.919
         },
         {
           "text": "Pick the other sentence, and wide finds the street.",
           "heard": "Pick the other sentence, \"And wide finds the street.\"",
-          "start": 3.96,
-          "end": 7.433
+          "start": 4.269,
+          "end": 7.742
         }
       ]
     },

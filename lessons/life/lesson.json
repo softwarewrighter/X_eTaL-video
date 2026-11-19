@@ -22,7 +22,7 @@
       "id": "rule",
       "seconds": 8,
       "heading": "The rule",
-      "narration": "Here is the whole rule. Read it from right to left. Rotate the board, add up the copies, and compare.",
+      "narration": "Here is the whole rule. {Read|Read} it from right to left. Rotate the board, add up the copies, and compare.",
       "lines": [
         { "xtl": "u:l_ife := { ('+ r_/_12 -1 0 1 o_-_12 _r) { (_l = 3) + _r * _l = 4 } _r }" },
         "Read it right to left: rotate, add, compare.",
@@ -32,9 +32,9 @@
     },
     {
       "id": "rotate",
-      "seconds": 10.6,
+      "seconds": 11.3,
       "heading": "1. Nine shifted copies",
-      "narration": "Rotate the board by minus one, zero, and one, along both axes. That gives nine shifted copies, one for each neighbor, and one for the cell itself.",
+      "narration": "Rotate the board by minus one, zero, and one, in both directions. That gives nine shifted copies, one for each neighbor, and one for the cell itself.",
       "lines": [
         { "xtl": "r := -1 0 1 o_-_12 b        # s_hape r is 3 3 6 6" },
         "One copy for each neighbor, and the cell itself."
@@ -57,9 +57,9 @@
     },
     {
       "id": "compare",
-      "seconds": 5.9,
+      "seconds": 7.4,
       "heading": "3. Compare",
-      "narration": "A cell lives on when the sum is three, or when it is alive and the sum is four.",
+      "narration": "A cell is alive next time when the sum is three, or when it is alive now and the sum is four.",
       "lines": [
         { "xtl": "(s = 3) + b * s = 4" },
         "Alive next: the sum is 3, or the cell is alive and the sum is 4."

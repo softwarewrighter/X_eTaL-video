@@ -120,20 +120,20 @@
     },
     {
       "id": "live",
-      "narration": "The live page runs the same program in your browser. Press run, and watch the centers travel.",
-      "seconds": 7.4,
+      "narration": "The demo page runs the same program in your browser. Press run, and watch the centers travel.",
+      "seconds": 6.8,
       "sentences": [
         {
-          "text": "The live page runs the same program in your browser.",
-          "heard": "The Live page runs the same program in your browser.",
+          "text": "The demo page runs the same program in your browser.",
+          "heard": "The demo page runs the same program in your browser.",
           "start": 0.4,
-          "end": 3.61
+          "end": 2.968
         },
         {
           "text": "Press run, and watch the centers travel.",
           "heard": "Press Run and watch the centers travel.",
-          "start": 3.96,
-          "end": 6.698
+          "start": 3.318,
+          "end": 6.056
         }
       ]
     },

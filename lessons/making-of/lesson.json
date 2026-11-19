@@ -47,7 +47,7 @@
       "id": "frame",
       "seconds": 11.9,
       "heading": "3. Every frame knows its place",
-      "narration": "So every frame knows its place. For each frame, we get its scene, how far into the scene it is, and its progress. Every frame is computed at once, as arrays.",
+      "narration": "So every frame knows its place. For each frame, we get its scene, how far into the scene it is, and its {progress|progress}. Every frame is computed at once, as arrays.",
       "lines": [
         { "xtl": "durs tl:s_cene {{f}}        # {{scene}}" },
         { "xtl": "durs tl:l_ocal {{f}}        # {{local}}" },

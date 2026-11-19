@@ -120,20 +120,20 @@
     },
     {
       "id": "live",
-      "narration": "The live page runs the same program in your browser. Pick a star or a flower, or draw your own curve.",
-      "seconds": 8.3,
+      "narration": "The demo page runs the same program in your browser. Pick a star or a flower, or draw your own curve.",
+      "seconds": 7.9,
       "sentences": [
         {
-          "text": "The live page runs the same program in your browser.",
-          "heard": "The Live page runs the same program in your browser.",
+          "text": "The demo page runs the same program in your browser.",
+          "heard": "The demo page runs the same program in your browser.",
           "start": 0.4,
-          "end": 3.61
+          "end": 3.152
         },
         {
           "text": "Pick a star or a flower, or draw your own curve.",
           "heard": "pick a star or a flower or draw your own curve.",
-          "start": 3.96,
-          "end": 7.589
+          "start": 3.502,
+          "end": 7.131
         }
       ]
     },

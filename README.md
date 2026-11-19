@@ -45,7 +45,16 @@ differ. Each scene's length becomes its audio's, `timing.json` is
 recomputed, and `lessons/SLUG/voice.json` records what was said and
 heard. Narration is checked before any call (`just voice SLUG
 --check`): words, commas and periods only, no digits or all-caps
-words, short sentences, which is what VoxCPM speaks cleanly. Needs
+words, short sentences, which is what VoxCPM speaks cleanly.
+
+Whisper checks the words, not how they were said, so it cannot catch a
+heteronym: a word spelled one way and said two ("code is read" said as
+reed instead of red). Whoever writes or reviews a script decides each
+one, and the check refuses to speak until they have: mark the word
+`{read|red}` to have VoxCPM say a respelling while the captions show
+the word, `{read|read}` when its usual reading is right, or reword it
+away (preferred when a plain synonym exists: "the demo page", not "the
+live page"). Needs
 `sox`, `whisper-cpp` and `uv` (the client runs in `.venv`).
 
 `just youtube SLUG` gathers a narrated lesson's upload in

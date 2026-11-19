@@ -39,7 +39,7 @@
           "id": { "description": "Unique in the lesson.", "type": "string", "pattern": "^[a-z][a-z0-9-]*$" },
           "seconds": { "description": "The scene's length; with narration, the audio's length replaces it.", "type": "number", "exclusiveMinimum": 0 },
           "heading": { "type": "string", "minLength": 1 },
-          "narration": { "description": "What is spoken over the scene (at most 320 characters, vid-tts's limit).", "type": "string", "maxLength": 320 },
+          "narration": { "description": "What is spoken over the scene (at most 320 characters). A word said two ways is marked {written|spoken}: {read|red} shows read and says red; {live|live} keeps the usual reading (just voice --check requires a decision on every one).", "type": "string", "maxLength": 320 },
           "curves": { "description": "Show the three easing curves as moving dots.", "type": "boolean" },
           "capture": {
             "description": "Show the recording of the lesson's demo page (scripts/capture.mjs) instead of lines. Scenes with a capture follow one another and are one recording; a scene's actions run when it starts.",

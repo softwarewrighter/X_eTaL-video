@@ -364,6 +364,13 @@ Read before working:
    doesn't have to fit in portrait mode"): a line keeps a readable
    size, and one too long for its panel pans from its start to its
    end over the scene.
+4c. Narration is reviewed for pronunciation, word by word (the user,
+   2026-11-18: "code is read" was spoken as reed; whisper cannot
+   catch it, "but you/your-subagent can and should"). `just voice
+   SLUG --check` refuses an unmarked heteronym: decide each one by
+   rewording it away (preferred), respelling it `{read|red}`, or
+   marking the usual reading right `{read|read}`. Never say X_eTaL
+   aloud; spell numbers; avoid rare words and lone letters.
 5. Never run a bare `ffmpeg` concat, and prefer the Rust `vid-*`
    tools of `../video-publishing/tools` for every operation they
    cover (`docs/plan.md` V7). `ffmpeg` and `ffprobe` directly only for

@@ -72,9 +72,9 @@
     },
     {
       "id": "live",
-      "seconds": 8.2,
+      "seconds": 8.5,
       "heading": "The live page",
-      "narration": "The live page runs the same program in your browser. Pick the other sentence, and wide finds the street.",
+      "narration": "The demo page runs the same program in your browser. Pick the other sentence, and wide finds the street.",
       "lines": [],
       "capture": { "actions": [{ "wait": 4 }, { "click": "button:has-text('wide')" }] }
     },

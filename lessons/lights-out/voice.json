@@ -101,20 +101,20 @@
     },
     {
       "id": "live",
-      "narration": "This is the live page. Click a light, watch its plus flip, and ask for a hint, right in your browser.",
+      "narration": "This is the demo page. Click a light, watch its plus flip, and ask for a hint, right in your browser.",
       "seconds": 7.2,
       "sentences": [
         {
-          "text": "This is the live page.",
-          "heard": "This is the live page.",
+          "text": "This is the demo page.",
+          "heard": "This is the demo page.",
           "start": 0.4,
-          "end": 1.671
+          "end": 1.739
         },
         {
           "text": "Click a light, watch its plus flip, and ask for a hint, right in your browser.",
           "heard": "Click a light, watch its plus flip, and ask for a hint right in your browser.",
-          "start": 2.021,
-          "end": 6.411
+          "start": 2.089,
+          "end": 6.479
         }
       ]
     },

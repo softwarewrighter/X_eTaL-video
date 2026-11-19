@@ -20,7 +20,7 @@
     },
     {
       "id": "rule",
-      "narration": "Here is the whole rule. Read it from right to left. Rotate the board, add up the copies, and compare.",
+      "narration": "Here is the whole rule. {Read|Read} it from right to left. Rotate the board, add up the copies, and compare.",
       "seconds": 8.0,
       "sentences": [
         {
@@ -45,20 +45,20 @@
     },
     {
       "id": "rotate",
-      "narration": "Rotate the board by minus one, zero, and one, along both axes. That gives nine shifted copies, one for each neighbor, and one for the cell itself.",
-      "seconds": 10.6,
+      "narration": "Rotate the board by minus one, zero, and one, in both directions. That gives nine shifted copies, one for each neighbor, and one for the cell itself.",
+      "seconds": 11.3,
       "sentences": [
         {
-          "text": "Rotate the board by minus one, zero, and one, along both axes.",
-          "heard": "Rotate the board by -1, 0, and 1 along both axes.",
+          "text": "Rotate the board by minus one, zero, and one, in both directions.",
+          "heard": "Rotate the board by -1, 0, and 1 in both directions.",
           "start": 0.4,
-          "end": 5.124
+          "end": 5.868
         },
         {
           "text": "That gives nine shifted copies, one for each neighbor, and one for the cell itself.",
           "heard": "That gives nine shifted copies, one for each neighbor and one for the cell itself.",
-          "start": 5.474,
-          "end": 9.813
+          "start": 6.218,
+          "end": 10.557
         }
       ]
     },
@@ -83,14 +83,14 @@
     },
     {
       "id": "compare",
-      "narration": "A cell lives on when the sum is three, or when it is alive and the sum is four.",
-      "seconds": 5.9,
+      "narration": "A cell is alive next time when the sum is three, or when it is alive now and the sum is four.",
+      "seconds": 7.4,
       "sentences": [
         {
-          "text": "A cell lives on when the sum is three, or when it is alive and the sum is four.",
-          "heard": "A cell lives on when the sum is 3 or when it is alive and the sum is 4.",
+          "text": "A cell is alive next time when the sum is three, or when it is alive now and the sum is four.",
+          "heard": "A cell is alive next time when the sum is 3, or when it is alive now and the sum is 4.",
           "start": 0.4,
-          "end": 5.14
+          "end": 6.66
         }
       ]
     },

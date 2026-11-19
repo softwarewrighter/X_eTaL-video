@@ -3,7 +3,7 @@
   "title": "Lights out without a loop",
   "summary": "Lights out with no loop over the board: a press is a plus-shaped mask, one row of a table of all twenty-five presses; a move is the board plus that mask, mod 2, every light at once; and the solver is that table reduced mod 2. Ends on the live page.",
   "order": 16,
-  "poster": 1420,
+  "poster": 1400,
   "fps": 30,
   "stepFrames": 30,
   "demo": { "repo": "X_eTaL-games", "slug": "lights-out" },
@@ -69,7 +69,7 @@
       "id": "live",
       "seconds": 7.2,
       "heading": "The live page",
-      "narration": "This is the live page. Click a light, watch its plus flip, and ask for a hint, right in your browser.",
+      "narration": "This is the demo page. Click a light, watch its plus flip, and ask for a hint, right in your browser.",
       "lines": [],
       "capture": { "actions": [{ "wait": 1.5 }, { "click": "button.board-open" }, { "wait": 1.5 }, { "click": "rect.light >> nth=12" }, { "wait": 1.2 }, { "click": "rect.light >> nth=6" }, { "wait": 1.2 }, { "click": "rect.region >> nth=1" }] }
     },

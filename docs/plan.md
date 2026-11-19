@@ -272,6 +272,16 @@ and `youtube.mjs` follow it.
 shorts: tutorials and series to teach and showcase the language; the
 sagas that follow build it.
 
+## Saga 8 -- pronunciation  [ACTIVE]
+
+The user (2026-11-18): "code is read" was spoken as reed; whisper
+cannot hear which reading was said, but the agent writing or reviewing
+a script can and should.
+
+1. heteronyms -- `{written|spoken}` marks; `just voice --check`
+   refuses an unmarked heteronym; every lesson reviewed and the changed
+   sentences alone spoken again; rule 4c.
+
 ## Later -- remotion  [PLANNED; steps 1 and 4 done in saga 1]
 
 Goal: one lesson rendered to MP4 in both formats, silent.

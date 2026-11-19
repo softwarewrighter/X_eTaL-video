@@ -40,9 +40,47 @@ def fail(msg: str) -> None:
     sys.exit(1)
 
 
-def lint(scene_id: str, text: str) -> list[str]:
-    """What VoxCPM says badly: anything but words, commas and periods."""
+# Words spelled one way and said two (read: reed or red; live: liv or
+# lyve). Whisper cannot tell which was said, so whoever writes or
+# reviews a script decides each one (the user, 2026-11-18, after "code
+# is read" came out as reed): mark it {read|red} to have VoxCPM say a
+# respelling while captions show the word, {live|live} when the usual
+# reading is right, or reword it away. Words whose two readings are
+# rare in a lesson (row, use, does) are not listed.
+HETERONYMS = set("""
+read reads lead leads live lives close closes closed wind winds tear tears wound
+record records present presents object objects minute content desert produce
+project projects bass bow bows refuse subject permit invalid polish separate
+estimate estimates attribute attributes conduct contract convert converts increase
+increases decrease decreases export exports import imports progress address
+alternate console digest entrance excuse intimate moderate perfect rebel recall
+resume sow dove graduate insert inserts compound conflict contest contrast convict
+discount extract incline insult invite protest research survey suspect torment
+transfer update updates upset axes tears wind content
+""".split())
+MARK = re.compile(r"\{([^{}|]+)\|([^{}|]*)\}")
+
+
+def written(text: str) -> str:
+    """The narration as shown: {read|red} is read (captions, voice.json)."""
+    return MARK.sub(lambda m: m.group(1), text)
+
+
+def spoken(text: str) -> str:
+    """The narration as sent to VoxCPM: {read|red} is red; {live|} is live."""
+    return MARK.sub(lambda m: m.group(2) or m.group(1), text)
+
+
+def lint(scene_id: str, raw: str) -> list[str]:
+    """What VoxCPM says badly: anything but words, commas and periods; an
+    unmarked heteronym."""
     problems = []
+    unmarked = MARK.sub(" ", raw)
+    for w in sorted({w for w in re.findall(r"[A-Za-z]+", unmarked) if w.lower() in HETERONYMS}):
+        problems.append(f"{w!r} is said two ways: mark it {{{w}|respelling}} or {{{w}|{w}}} once you have decided, or reword")
+    if re.search(r"[{}|]", unmarked):
+        problems.append("a broken {written|spoken} mark")
+    text = spoken(raw)
     if re.search(r"[?!:;()\"%&/*+=<>\[\]{}_#@0-9]", text):
         problems.append("only words, commas, periods and apostrophes (no ? ! : ; symbols or digits)")
     if re.search(r"\b[A-Z]{2,}\b", text):
@@ -174,10 +212,17 @@ def main() -> None:
         if not text:
             continue
         clips, said = [], []
-        for k, sentence in enumerate(sentences(text)):
+        # Split the marked text, then read each sentence two ways: as said
+        # (to VoxCPM, and the cache key) and as written (captions).
+        for k, raw in enumerate(sentences(text)):
+            sentence, shown = spoken(raw), written(raw)
             key = hashlib.sha256(json.dumps([sentence, sample, prompt, a.steps, a.cfg]).encode()).hexdigest()[:16]
             clip = cache / f"{key}.wav"
             note = cache / f"{key}.txt"
+            # One maker a sentence: lessons narrated at once that share a
+            # sentence wait for the first to make it, then reuse it.
+            guard = open(cache / f"{key}.lock", "a")
+            fcntl.flock(guard, fcntl.LOCK_EX)
             if clip.exists() and note.exists():
                 got = note.read_text().strip()
             else:
@@ -199,7 +244,7 @@ def main() -> None:
                     sox(raw, "-r", "44100", "-c", "1", str(clip),
                         "silence", "1", "0.05", "0.3%", "reverse", "silence", "1", "0.05", "0.3%", "reverse")
                     got = heard(clip, a.whisper_model)
-                    if words(got) == words(sentence):
+                    if words(got) in (words(sentence), words(shown)):
                         break
                     print(f"voice:   whisper heard {got!r}", flush=True)
                 else:
@@ -207,8 +252,9 @@ def main() -> None:
                     fail(f"scene {scene['id']}: {sentence!r} never came out right "
                          f"(last heard {got!r}); reword it")
                 note.write_text(got + "\n")
+            guard.close()  # releases the sentence's lock
             clips.append(clip)
-            said.append({"text": sentence, "heard": got})
+            said.append({"text": shown, "heard": got} | ({"spoken": sentence} if sentence != shown else {}))
 
         # The scene's audio: lead, sentences with pauses, tail; peaks at -1 dB.
         wav = out / f"{scene['id']}.wav"

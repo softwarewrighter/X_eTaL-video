@@ -126,20 +126,20 @@
     },
     {
       "id": "live",
-      "narration": "This is the live page. Play it at the terminal, or watch the solver run as a notebook, right in your browser.",
-      "seconds": 8.1,
+      "narration": "This is the demo page. Play it at the terminal, or watch the solver run as a notebook, right in your browser.",
+      "seconds": 8.0,
       "sentences": [
         {
-          "text": "This is the live page.",
-          "heard": "This is the live page.",
+          "text": "This is the demo page.",
+          "heard": "This is the demo page.",
           "start": 0.4,
-          "end": 1.671
+          "end": 1.564
         },
         {
           "text": "Play it at the terminal, or watch the solver run as a notebook, right in your browser.",
           "heard": "play it at the terminal, or watch the solver run as a notebook right in your browser.",
-          "start": 2.021,
-          "end": 7.397
+          "start": 1.914,
+          "end": 7.29
         }
       ]
     },

@@ -19,17 +19,17 @@
     },
     {
       "id": "rule",
-      "seconds": 13,
+      "seconds": 13.3,
       "heading": "The rule: read it right to left",
-      "narration": "Here is the whole rule, on the live page. Read it from right to left. Rotate the board, add up the copies, and compare. Each click on step moves the board one generation.",
+      "narration": "Here is the whole rule, on the demo page. {Read|Read} it from right to left. Rotate the board, add up the copies, and compare. Each click on step moves the board one generation.",
       "lines": [],
-      "capture": { "actions": [{ "wait": 9.3 }, { "click": "button:has-text('Step')" }, { "wait": 1.8 }, { "click": "button:has-text('Step')" }] }
+      "capture": { "actions": [{ "wait": 9.6 }, { "click": "button:has-text('Step')" }, { "wait": 1.8 }, { "click": "button:has-text('Step')" }] }
     },
     {
       "id": "rotate",
-      "seconds": 10.6,
+      "seconds": 10.1,
       "heading": "1. Nine shifted copies",
-      "narration": "Rotate the board by minus one, zero, and one, along both axes. That gives nine shifted copies, one for each neighbor, and one for the cell itself.",
+      "narration": "Rotate the board by minus one, zero, and one, in both directions. That gives nine shifted copies, one for each neighbor, and one for the cell itself.",
       "lines": [],
       "capture": { "actions": [{ "click": "button.stage:has-text('rotate')" }, { "wait": 2 }, { "scroll": "button:has-text('Step')" }, { "wait": 2.5 }, { "click": "button:has-text('Step')" }, { "wait": 2.5 }, { "click": "button:has-text('Step')" }] }
     },
@@ -43,9 +43,9 @@
     },
     {
       "id": "compare",
-      "seconds": 5.9,
+      "seconds": 7.5,
       "heading": "3. Compare",
-      "narration": "A cell lives on when the sum is three, or when it is alive and the sum is four.",
+      "narration": "A cell is alive next time when the sum is three, or when it is alive now and the sum is four.",
       "lines": [],
       "capture": { "actions": [{ "click": "button.stage:has-text('compare')" }, { "wait": 1 }, { "scroll": "h2:has-text('3. Compare')" }] }
     },

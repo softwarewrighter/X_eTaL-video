@@ -76,7 +76,7 @@
     },
     {
       "id": "frame",
-      "narration": "So every frame knows its place. For each frame, we get its scene, how far into the scene it is, and its progress. Every frame is computed at once, as arrays.",
+      "narration": "So every frame knows its place. For each frame, we get its scene, how far into the scene it is, and its {progress|progress}. Every frame is computed at once, as arrays.",
       "seconds": 11.9,
       "sentences": [
         {

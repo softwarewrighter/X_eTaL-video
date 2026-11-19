@@ -68,9 +68,9 @@
     },
     {
       "id": "live",
-      "seconds": 5.8,
+      "seconds": 6.1,
       "heading": "The live page: fifty bodies",
-      "narration": "The live page runs the same program in your browser, here with fifty bodies.",
+      "narration": "The demo page runs the same program in your browser, here with fifty bodies.",
       "lines": [],
       "capture": { "actions": [{ "wait": 2 }, { "select": ["select", "Cluster (50 bodies)"] }] }
     },

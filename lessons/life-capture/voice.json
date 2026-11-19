@@ -20,51 +20,51 @@
     },
     {
       "id": "rule",
-      "narration": "Here is the whole rule, on the live page. Read it from right to left. Rotate the board, add up the copies, and compare. Each click on step moves the board one generation.",
-      "seconds": 13.0,
+      "narration": "Here is the whole rule, on the demo page. {Read|Read} it from right to left. Rotate the board, add up the copies, and compare. Each click on step moves the board one generation.",
+      "seconds": 13.3,
       "sentences": [
         {
-          "text": "Here is the whole rule, on the live page.",
-          "heard": "Here's the whole rule on the live page.",
+          "text": "Here is the whole rule, on the demo page.",
+          "heard": "Here's the whole rule on the demo page.",
           "start": 0.4,
-          "end": 3.085
+          "end": 3.355
         },
         {
           "text": "Read it from right to left.",
           "heard": "read it from right to left.",
-          "start": 3.435,
-          "end": 4.889
+          "start": 3.705,
+          "end": 5.159
         },
         {
           "text": "Rotate the board, add up the copies, and compare.",
           "heard": "Rotate the board, add up the copies, and compare.",
-          "start": 5.239,
-          "end": 8.695
+          "start": 5.509,
+          "end": 8.965
         },
         {
           "text": "Each click on step moves the board one generation.",
           "heard": "Each click-on step moves the board one generation.",
-          "start": 9.045,
-          "end": 12.295
+          "start": 9.315,
+          "end": 12.564
         }
       ]
     },
     {
       "id": "rotate",
-      "narration": "Rotate the board by minus one, zero, and one, along both axes. That gives nine shifted copies, one for each neighbor, and one for the cell itself.",
-      "seconds": 10.6,
+      "narration": "Rotate the board by minus one, zero, and one, in both directions. That gives nine shifted copies, one for each neighbor, and one for the cell itself.",
+      "seconds": 10.1,
       "sentences": [
         {
-          "text": "Rotate the board by minus one, zero, and one, along both axes.",
-          "heard": "Rotate the board by -1, 0, and 1 along both axes.",
+          "text": "Rotate the board by minus one, zero, and one, in both directions.",
+          "heard": "Rotate the board by -1, 0, and 1 in both directions.",
           "start": 0.4,
-          "end": 5.124
+          "end": 4.693
         },
         {
           "text": "That gives nine shifted copies, one for each neighbor, and one for the cell itself.",
           "heard": "That gives nine shifted copies, one for each neighbor and one for the cell itself.",
-          "start": 5.474,
-          "end": 9.813
+          "start": 5.043,
+          "end": 9.381
         }
       ]
     },
@@ -89,14 +89,14 @@
     },
     {
       "id": "compare",
-      "narration": "A cell lives on when the sum is three, or when it is alive and the sum is four.",
-      "seconds": 5.9,
+      "narration": "A cell is alive next time when the sum is three, or when it is alive now and the sum is four.",
+      "seconds": 7.5,
       "sentences": [
         {
-          "text": "A cell lives on when the sum is three, or when it is alive and the sum is four.",
-          "heard": "A cell lives on when the sum is 3 or when it is alive and the sum is 4.",
+          "text": "A cell is alive next time when the sum is three, or when it is alive now and the sum is four.",
+          "heard": "A cell is alive next time, when the sum is 3. Or when it is alive now, and the sum is 4.",
           "start": 0.4,
-          "end": 5.14
+          "end": 6.791
         }
       ]
     },

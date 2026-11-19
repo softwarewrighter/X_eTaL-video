@@ -75,9 +75,9 @@
     },
     {
       "id": "live",
-      "seconds": 8.3,
+      "seconds": 7.9,
       "heading": "The live page",
-      "narration": "The live page runs the same program in your browser. Pick a star or a flower, or draw your own curve.",
+      "narration": "The demo page runs the same program in your browser. Pick a star or a flower, or draw your own curve.",
       "lines": [],
       "capture": { "actions": [{ "wait": 3.8 }, { "select": ["select", "Five-pointed star"] }, { "wait": 1.6 }, { "select": ["select", "Flower"] }] }
     },
