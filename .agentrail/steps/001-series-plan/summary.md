@@ -1,0 +1,1 @@
+docs/array-languages-video-series-plan.md written; research2 tracked; saga al-01-why with steps script, story-panels, voice, publish; open questions listed for the user

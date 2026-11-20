@@ -1,8 +1,9 @@
 number = 1
 slug = "series-plan"
-status = "in-progress"
+status = "completed"
 description = "Write docs/array-languages-video-series-plan.md (the series, the episode shap..."
 role = "production"
 context_files = []
 created_at = "2026-11-19T16:29:22"
-commits = []
+completed_at = "2026-11-19T16:30:08"
+commits = ["3cc36b01b5a01ec49a7f14835b2879b18ecd4bfc"]
