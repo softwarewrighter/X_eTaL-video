@@ -1,0 +1,1 @@
+al-01-why narrated (VoxCPM, 3 workers via just produce, fair queue), editor recorded, rendered 8:04 (out/al-01-why-landscape-remotion.mp4), review page complete with per-scene clips; 13 sentences kept unverified for the user's listen. Robustness: no halt on a mismatch, retries on server errors, stall restarts, in-order claiming, near-match acceptance, review clips verified.

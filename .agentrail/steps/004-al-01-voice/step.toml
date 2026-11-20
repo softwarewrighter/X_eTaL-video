@@ -1,8 +1,9 @@
 number = 4
 slug = "al-01-voice"
-status = "pending"
+status = "completed"
 description = "al-01-why narrated (just voice, one VoxCPM request at a time, whisper-checked..."
 role = "production"
 context_files = []
 created_at = "2026-11-19T16:29:22"
-commits = []
+completed_at = "2026-11-20T07:57:03"
+commits = ["4cc467dab4e5c1a3cc72334f44b61811267b4675"]
