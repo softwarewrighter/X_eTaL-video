@@ -1,0 +1,1 @@
+Story panels: code (focus per sentence) and cells (loop sweep from X_eTaL's schedule, whole); typed-and-drawn shown with the blog's own typed/drawn picture rather than a new component (rule 4a). al-01-why uses panels; coming-up teasers added at the user's request.
