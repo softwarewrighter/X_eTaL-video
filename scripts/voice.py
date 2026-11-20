@@ -170,17 +170,44 @@ def voxcpm_turn(lock: Path, what: str):
     request itself. Any number of narrations (terminals, agents) can run
     at once; their requests to the server queue here, and everything
     else (whisper, sox, rendering) runs in parallel."""
+    # First come, first served: a lock alone hands the next turn to any
+    # waiter, and one can starve (al-01-why, 2026-11-19). Each waiter
+    # takes a ticket (its time and pid); the oldest live ticket goes next.
     lock.parent.mkdir(parents=True, exist_ok=True)
+    queue = lock.parent / "voxcpm-queue"
+    queue.mkdir(exist_ok=True)
+    ticket = queue / f"{time.time_ns():020d}-{os.getpid()}"
+    ticket.touch()
+
+    def alive(t: Path) -> bool:
+        try:
+            os.kill(int(t.name.split("-")[1]), 0)
+            return True
+        except (ProcessLookupError, ValueError):
+            t.unlink(missing_ok=True)
+            return False
+        except PermissionError:
+            return True
+
     with open(lock, "a") as f:
         try:
-            fcntl.flock(f, fcntl.LOCK_EX | fcntl.LOCK_NB)
-        except BlockingIOError:
-            print(f"voice: {what}: waiting for VoxCPM (another narration is using it)", flush=True)
-            fcntl.flock(f, fcntl.LOCK_EX)
-        try:
+            told = False
+            while True:
+                first = next((t for t in sorted(queue.iterdir()) if alive(t)), None)
+                if first == ticket:
+                    try:
+                        fcntl.flock(f, fcntl.LOCK_EX | fcntl.LOCK_NB)
+                        break
+                    except BlockingIOError:
+                        pass  # a narration without tickets has it
+                if not told:
+                    print(f"voice: {what}: waiting for VoxCPM (another narration is using it)", flush=True)
+                    told = True
+                time.sleep(0.3)
             yield
         finally:
             fcntl.flock(f, fcntl.LOCK_UN)
+            ticket.unlink(missing_ok=True)
 
 
 def heard(wav: Path, model: Path) -> str:
@@ -202,7 +229,7 @@ def main() -> None:
     ap.add_argument("--cfg", type=float, default=2.0)
     ap.add_argument("--tries", type=int, default=3)
     ap.add_argument("--ready", action="store_true", help="make nothing: assemble only the scenes whose sentences are all "
-                    "in the cache, and write voice.json for them (a preview while shards work); lesson.json is left alone")
+                    "in the cache, and write their seconds and voice.json (a preview while shards work)")
     ap.add_argument("--shard", default=None, help="K/N: make only every Nth sentence (from K) into the cache, and nothing else; "
                     "several shards at once keep VoxCPM busy (its lock still sends one request at a time) while others "
                     "check or retry; a run without --shard then assembles from the cache")
@@ -256,8 +283,6 @@ def main() -> None:
         # (to VoxCPM, and the cache key) and as written (captions).
         for k, raw in enumerate(sentences(text)):
             nth += 1
-            if shard and (nth - 1) % shard[1] != shard[0]:
-                continue
             sentence, shown = spoken(raw), written(raw)
             key = hashlib.sha256(json.dumps([sentence, sample, prompt, a.steps, a.cfg]).encode()).hexdigest()[:16]
             clip = cache / f"{key}.wav"
@@ -268,7 +293,19 @@ def main() -> None:
             # One maker a sentence: lessons narrated at once that share a
             # sentence wait for the first to make it, then reuse it.
             guard = open(cache / f"{key}.lock", "a")
-            fcntl.flock(guard, fcntl.LOCK_EX)
+            if shard:
+                # A worker takes the next sentence nobody is making, in the
+                # lesson's order, so scenes are finished in turn.
+                if clip.exists() and note.exists():
+                    guard.close()
+                    continue
+                try:
+                    fcntl.flock(guard, fcntl.LOCK_EX | fcntl.LOCK_NB)
+                except BlockingIOError:
+                    guard.close()
+                    continue
+            else:
+                fcntl.flock(guard, fcntl.LOCK_EX)
             if clip.exists() and note.exists():
                 got = note.read_text().strip()
             else:
@@ -341,9 +378,9 @@ def main() -> None:
         print(f"voice: {scene['id']}: {length} s", flush=True)
 
     if a.ready:
-        (ROOT / "lessons" / a.slug / "voice.json").write_text(json.dumps(record, indent=2) + "\n")
         print(f"voice: {a.slug}: {len(record['scenes'])} scene(s) ready", flush=True)
-        return
+        # Then as a full run: the ready scenes' seconds and voice.json
+        # written (the others keep theirs until they are made).
     if shard:
         print(f"voice: {a.slug}: shard {a.shard} done", flush=True)
         if unverified:

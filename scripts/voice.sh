@@ -25,4 +25,9 @@ done
 .venv/bin/python -c 'import gradio_client' 2>/dev/null || uv pip install -q gradio_client
 .venv/bin/python scripts/voice.py "$slug" --server "$server" --reference "$sample" \
   --prompt-text "$(dirname "$sample")/prompt-text.txt" --whisper-model "$model" "$@"
-[ "${1:-}" = --check ] || scripts/schedule.sh "$slug" --timing > "lessons/$slug/timing.json"
+# The schedule again, written only when it changed (the review page's
+# clips and stills are current while timing.json is unchanged).
+if [ "${1:-}" != --check ]; then
+  t="$(mktemp)"; scripts/schedule.sh "$slug" --timing > "$t"
+  cmp -s "$t" "lessons/$slug/timing.json" && rm -f "$t" || mv "$t" "lessons/$slug/timing.json"
+fi

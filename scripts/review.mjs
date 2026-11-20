@@ -54,12 +54,19 @@ const cards = lesson.scenes.map((s, i) => {
     execFileSync("ffmpeg", ["-v", "error", "-y", "-ss", (start + 0.6 * secs).toFixed(2), "-i", videoFile, "-frames:v", "1", "-vf", "scale=960:-1", stillFile]);
   }
   const still = existsSync(stillFile);
+  // A scene rendered on its own (scripts/review-clips.sh: the title, a
+  // silent slide with its music, a narrated scene once spoken) plays
+  // that clip; other scenes moving does not change it, a newer still of
+  // its own (the lesson changed) does.
+  const clipFile = join(out, "clips", `${s.id}.mp4`);
+  const clip = existsSync(clipFile);
+  const clipAge = clip ? statSync(clipFile).mtime.getTime() : 0;
   const stale = v && s.narration && v.narration !== s.narration;
   const media = s.images ? `<p class="dim">pictures: ${s.images.map((p) => esc(p.split("/").pop())).join(", ")}</p>` : s.capture ? `<p class="dim">recording of the page: ${esc((s.capture.actions || []).map((a) => Object.entries(a)[0].join(" ")).join(" / ") || "(continues)")}</p>` : s.clip ? `<p class="dim">clip: ${esc(s.clip)}</p>` : "";
   return `<section id="${esc(s.id)}">
   <h2>${i + 1}. ${esc(s.heading)} <span class="dim">${esc(s.id)} | starts ${fmt(start)} | ${secs.toFixed(1)} s</span></h2>
   <div class="row">
-    <div class="pic">${video ? `<video controls preload="none"${still ? ` poster="stills/${esc(s.id)}.png?${Date.now()}"` : ""} src="video.mp4#t=${start.toFixed(2)},${(start + secs).toFixed(2)}"></video><div class="dim">plays this scene: ${fmt(start)} to ${fmt(start + secs)}</div>` : still ? `<img src="stills/${esc(s.id)}.png?${Date.now()}" alt="">` : `<div class="none">no still yet</div>`}</div>
+    <div class="pic">${clip ? `<video controls preload="none"${still ? ` poster="stills/${esc(s.id)}.png?${Date.now()}"` : ""} src="clips/${esc(s.id)}.mp4?${clipAge}"></video><div class="dim">this scene alone, with its sound (scripts/review-clips.sh)</div>` : video ? `<video controls preload="none"${still ? ` poster="stills/${esc(s.id)}.png?${Date.now()}"` : ""} src="video.mp4#t=${start.toFixed(2)},${(start + secs).toFixed(2)}"></video><div class="dim">plays this scene: ${fmt(start)} to ${fmt(start + secs)}</div>` : still ? `<img src="stills/${esc(s.id)}.png?${Date.now()}" alt="">` : `<div class="none">no still yet</div>`}</div>
     <div class="txt">
       ${media}
       ${s.narration ? `<p class="narr">${esc(written(s.narration))}</p>` : `<p class="dim">(no narration${s.id === "title" ? ": the title, with music" : s.clip ? ": the reused clip, its own audio" : s.id === "close" ? ": the close, with music" : ""})</p>`}

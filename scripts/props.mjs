@@ -79,6 +79,9 @@ if (existsSync(voiceFile)) {
   for (const s of lesson.scenes) {
     const v = voice.scenes.find((x) => x.id === s.id);
     if (!s.narration) continue;
+    // XETAL_PARTIAL=1 (the review page's clips while narration is still
+    // being made): a scene not spoken yet is silent, at its estimate.
+    if (process.env.XETAL_PARTIAL === "1" && (!v || v.narration !== s.narration)) continue;
     if (!v || v.narration !== s.narration) fail(`scene ${s.id}: its narration changed since it was spoken (just voice ${slug})`);
     if (v.seconds !== s.seconds) fail(`scene ${s.id}: its seconds are not its audio's (just voice ${slug})`);
     const wav = join(work, "voice", `${s.id}.wav`);
