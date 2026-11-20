@@ -214,9 +214,9 @@
     },
     {
       "id": "double",
-      "seconds": 17.8,
+      "seconds": 20.4,
       "heading": "Two times values",
-      "narration": "Here is the same program in {X_eTaL,|ecks, tee, elle,} the array language this series is about. Values is one, two, three, four. Two times values is two, four, six, eight. There is no index, no storage to create, and nothing to append.",
+      "narration": "Here is a similar program in {X_eTaL,|ex, tee, el,} the array language this series is about. Values is one, two, three, four. Result is two times values, which is two, four, six, eight. There is no index, no empty vector to fill, and nothing to append.",
       "lines": [],
       "panel": {
         "type": "code",
@@ -225,7 +225,10 @@
             "xtl": "values := 1 2 3 4"
           },
           {
-            "xtl": "2 * values"
+            "xtl": "result := 2 * values"
+          },
+          {
+            "xtl": "result"
           },
           {
             "code": "2 4 6 8"
@@ -238,7 +241,8 @@
           ],
           [
             1,
-            2
+            2,
+            3
           ],
           []
         ]
@@ -308,8 +312,8 @@
           },
           {
             "year": "1968",
-            "text": "APL\\360",
-            "sub": "IBM"
+            "text": "APL\\1130",
+            "sub": "IBM, the first you could type at"
           },
           {
             "year": "1984",
@@ -342,9 +346,9 @@
     },
     {
       "id": "history",
-      "seconds": 34.3,
+      "seconds": 38,
       "heading": "Where array languages came from",
-      "narration": "Array programming has a long history. Kenneth Iverson published A Programming Language in nineteen sixty-two, as a notation for writing algorithms. {APL|A P L} three sixty, from {IBM|I B M} in nineteen sixty-eight, was the first version you could type at. {APL|A P L} two added nesting. J, from Iverson and Roger Hui, kept the meaning and moved to plain {ASCII|ask-ee}. K, from Arthur Whitney, stripped the language down again. And in twenty twenty, {BQN|bee, queue, en}, redesigned the symbols from scratch.",
+      "narration": "Array programming has a long history. Kenneth Iverson published A Programming Language in nineteen sixty-two, as a notation for writing algorithms. {IBM|eye, bee, em,} then made it a language you could type at, first as {APL\\1130|eh, pee, elle, eleven thirty,} then as {APL\\360|eh, pee, elle, three sixty}. {APL|A P L} two added nesting. J, from Iverson and Roger Hui, kept the meaning and moved to plain {ASCII|ask-ee}. K, from Arthur Whitney, stripped the language down again. And in twenty twenty, {BQN|bee, queue, en}, redesigned the symbols from scratch.",
       "lines": [],
       "slide": {
         "type": "timeline",
@@ -365,7 +369,7 @@
           },
           {
             "year": "1968",
-            "text": "APL\\360",
+            "text": "APL\\1130",
             "sub": "IBM, the first you could type at"
           },
           {
@@ -454,9 +458,9 @@
     },
     {
       "id": "why",
-      "seconds": 26.1,
+      "seconds": 26.9,
       "heading": "Why this language",
-      "narration": "This may be the dawn of personal programming languages, and this is not the first one I've started creating. {X_eTaL|ecks, tee, elle,} asks what {APL|ay, pee, el} would look like, if it were designed today. Designed for composition, readability, tooling, and machine learning. Its goal isn't to replace the languages before it. It's to make the ideas of array programming easier to {read|read}, reason about, type-check, and experiment with.",
+      "narration": "This may be the dawn of personal programming languages, and this is not the first one I've started creating. {X_eTaL|ex, tee, el,} asks what {APL|ay, pee, el} would look like, if it were designed today. Designed for composition, readability, tooling, and machine learning. Its goal isn't to replace the languages before it. It's to make the ideas of array programming easier to {read|read}, reason about, type-check, and experiment with.",
       "lines": []
     },
     {
@@ -618,9 +622,9 @@
     },
     {
       "id": "learn",
-      "seconds": 11.2,
+      "seconds": 10.8,
       "heading": "What you will learn",
-      "narration": "We'll begin with the fundamentals. Arrays, shapes, functions, and composition. Then we'll learn to write programs in {X_eTaL,|ecks, tee, elle,} use its libraries, and extend it.",
+      "narration": "We'll begin with the fundamentals. Arrays, shapes, functions, and composition. Then we'll learn to write programs in {X_eTaL,|ex, tee, el,} use its libraries, and extend it.",
       "lines": []
     },
     {
@@ -668,9 +672,9 @@
     },
     {
       "id": "tease-fpga",
-      "seconds": 14.5,
+      "seconds": 13.9,
       "heading": "Circuits, written as Verilog",
-      "narration": "Programs become circuits, written out as Verilog. A four-bit calculator machine, specified in {X_eTaL,|ecks, tee, elle,} runs on a Tang Nano nine {K|kay} board, and calculates over its serial port.",
+      "narration": "Programs become circuits, written out as Verilog. A four-bit calculator machine, specified in {X_eTaL,|ex, tee, el,} runs on a Tang Nano nine {K|kay} board, and calculates over its serial port.",
       "lines": [],
       "images": [
         "../../software-wrighter-lab/blog/assets/images/posts/xetal-fpga-hex1000-9k-poster.webp",

@@ -69,11 +69,12 @@ const cards = lesson.scenes.map((s, i) => {
     <div class="pic">${clip ? `<video controls preload="none"${still ? ` poster="stills/${esc(s.id)}.png?${Date.now()}"` : ""} src="clips/${esc(s.id)}.mp4?${clipAge}"></video><div class="dim">this scene alone, with its sound (scripts/review-clips.sh)</div>` : video ? `<video controls preload="none"${still ? ` poster="stills/${esc(s.id)}.png?${Date.now()}"` : ""} src="video.mp4#t=${start.toFixed(2)},${(start + secs).toFixed(2)}"></video><div class="dim">plays this scene: ${fmt(start)} to ${fmt(start + secs)}</div>` : still ? `<img src="stills/${esc(s.id)}.png?${Date.now()}" alt="">` : `<div class="none">no still yet</div>`}</div>
     <div class="txt">
       ${media}
-      ${s.narration ? `<p class="narr">${esc(written(s.narration))}</p>` : `<p class="dim">(no narration${s.id === "title" ? ": the title, with music" : s.clip ? ": the reused clip, its own audio" : s.id === "close" ? ": the close, with music" : ""})</p>`}
+      ${s.narration ? `<div class="part"><b>1. Script</b> <span class="dim">as written, and the captions</span><p class="narr">${esc(written(s.narration))}</p></div>
+      <div class="part"><b>2. Sent to the voice</b> <span class="dim">phonetic, commas and periods only: all the voice is given</span><p class="sent">${v ? esc(v.sentences.map((x) => x.sent ?? x.spoken ?? x.text).join(" ")) : "(not spoken yet)"}</p></div>
+      <div class="part"><b>3. Audio</b> <span class="dim">what the voice returned</span><br>${audio ? `<audio controls preload="none" src="audio/${esc(s.id)}.wav"></audio>` : `<span class="dim">(not made yet)</span>`}</div>
+      <div class="part"><b>4. Whisper</b> <span class="dim">what it heard (orange: never matched, listen)</span><p class="heard">${v ? v.sentences.map((x) => x.unverified ? `<span class="warn">${esc(x.heard)}</span>` : esc(x.heard)).join(" ") : "(not spoken yet)"}</p>${clip && existsSync(clipFile.replace(/\.mp4$/, ".heard")) ? `<p class="clipheard"><span class="dim">the whole clip, as it plays:</span> ${esc(readFileSync(clipFile.replace(/\.mp4$/, ".heard"), "utf8").trim() || "(nothing heard)")}</p>` : ""}</div>
+      ${v ? `<details><summary class="dim">sentence by sentence</summary><table><tr class="dim"><td>s</td><td>1. script</td><td>2. sent to the voice</td><td>4. whisper</td></tr>${v.sentences.map((x) => `<tr${x.unverified ? ' class="warn"' : ""}><td>${x.start.toFixed(1)}</td><td>${esc(x.text)}</td><td class="sent">${esc(x.sent ?? x.spoken ?? x.text)}</td><td class="heard">${esc(x.heard)}</td></tr>`).join("")}</table></details>` : ""}` : `<p class="dim">(no narration${s.id === "title" ? ": the title, with music" : s.clip ? ": the reused clip, its own audio" : s.id === "close" ? ": the close, with music" : ""})</p>${clip && existsSync(clipFile.replace(/\.mp4$/, ".heard")) ? `<p class="clipheard"><span class="dim">whisper, the clip as it plays:</span> ${esc(readFileSync(clipFile.replace(/\.mp4$/, ".heard"), "utf8").trim() || "(nothing heard)")}</p>` : ""}`}
       ${stale ? `<p class="warn">the narration changed since it was spoken</p>` : ""}
-      ${audio ? `<audio controls preload="none" src="audio/${esc(s.id)}.wav"></audio>` : ""}
-      ${clip && existsSync(clipFile.replace(/\.mp4$/, ".heard")) ? `<p class="clipheard"><span class="dim">whisper, the whole clip:</span> ${esc(readFileSync(clipFile.replace(/\.mp4$/, ".heard"), "utf8").trim() || "(nothing heard)")}</p>` : ""}
-      ${v ? `<table>${v.sentences.map((x) => `<tr${x.unverified ? ' class="warn" title="whisper never matched this take: listen to it"' : ""}><td>${x.start.toFixed(1)}</td><td>${esc(x.text)}${x.sent ? `<div class="sent">sent to the voice: ${esc(x.sent)}</div>` : ""}</td><td class="heard">${x.unverified ? "UNVERIFIED: " : ""}${esc(x.heard)}</td></tr>`).join("")}</table>` : ""}
     </div>
   </div>
 </section>`;
@@ -92,12 +93,12 @@ section { border-top: 1px solid #30363d; padding: 18px 0; }
 .txt { flex: 1; min-width: 0; } .narr { font-size: 1.05rem; margin-top: 0; }
 audio { width: 100%; } video { width: 100%; max-width: 640px; margin-top: 10px; border-radius: 6px; }
 table { border-collapse: collapse; font-size: .85rem; margin: 8px 0; } td { border-top: 1px solid #30363d; padding: 3px 8px; vertical-align: top; }
-.heard, .clipheard { color: #a5d6ff; } .sent { color: #8b949e; font-size: .85em; margin-top: 2px; } .warn { color: #ffa657; }
+.heard, .clipheard { color: #a5d6ff; } .sent { color: #d2a8ff; } .part { margin: 0 0 10px; } .part p { margin: 4px 0 0; } td { vertical-align: top; padding: 2px 8px 2px 0; } .warn { color: #ffa657; }
 </style></head><body>
 <h1>${esc(lesson.title)}</h1>
 <p class="dim">${esc(slug)} | ${lesson.scenes.length} scenes | ${timing ? fmt(timing.total / timing.fps) + " long" : "not yet scheduled"} | page built ${new Date().toLocaleString("en-US")}${video ? ` | video rendered ${videoAge.toLocaleString("en-US")}` : videoFile ? " | the video is being rendered again for the new schedule: players return when it is done" : " | no video yet"}</p>
 ${video ? `<p><a href="video.mp4">The whole video</a></p>` : ""}
-<p class="dim">Each sentence: where it starts in the scene (s), the text as written (the captions), under it (gray) what is sent to the voice, and (blue) what whisper heard.</p>
+<p class="dim">Each narrated scene in four parts: 1, the script as written (the captions); 2, the text sent to the voice (phonetic, commas and periods only; the voice is given nothing else); 3, the audio it returned; 4, what whisper heard. Sentence by sentence below each.</p>
 ${cards.join("\n")}
 </body></html>
 `);

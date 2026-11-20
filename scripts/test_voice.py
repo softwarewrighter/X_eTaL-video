@@ -43,6 +43,10 @@ check("period inside", bool(voice.tts_problems("One. Two.")), True)
 # Whisper writes letters for spelled letter names.
 check("letter names", voice.same("XTL asks what APL would look like.", "ecks, tee, elle, asks what ay, pee, el would look like."), True)
 
+# One word off is kept, but never a misheard spelled acronym.
+check("near", voice.near("A program whose types do not fit is refused before it runs, with a line.", "A program whose types do not fit is refused before it runs, with the line."), True)
+check("near acronym", voice.near("Here is the same program in XDL, the array language this series is about.", "Here is the same program in ecks, tee, elle, the array language this series is about."), False)
+
 if failed:
     sys.exit(f"test_voice: {failed} failed")
 print("test_voice: ok")

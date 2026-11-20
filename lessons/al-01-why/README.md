@@ -26,7 +26,8 @@ Every fact the narration states, and where it comes from.
 | double, spellings, typed-drawn | `2 * values` is `2 4 6 8`; `'+ r_/ 1 2 3 4` is `10` | `data.xtl`, run at the pin |
 | spellings | APL `2 times 1 2 3 4` (the times sign), J `2*1 2 3 4`, K `2*1 2 3 4` give `2 4 6 8` | GNU APL, jconsole, and the Homebrew `k`, 2026-11-19 |
 | spellings | BQN `2 times 1 2 3 4` (the times sign, the strand ligature between numbers; in lesson.json) | not checked (no BQN installed) |
-| history, family | 1962 the notation (Iverson); APL\360 from IBM, 1968, the first you could type at; APL2 (IBM, 1984) added nesting; J (Iverson and Roger Hui, 1990) kept the semantics, moved to ASCII; K (Arthur Whitney) stripped it down; BQN redesigned the glyphs in 2020 | the blog, TBT "APL\360 revisited" (2026-09-17) |
+| history, family | APL\1130, 1968, the first you could type at; APL\360 used inside IBM before then and publicly after | the author, 2026-11-20 (correcting the blog post below) |
+| history, family | 1962 the notation (Iverson); APL2 (IBM, 1984) added nesting; J (Iverson and Roger Hui, 1990) kept the semantics, moved to ASCII; K (Arthur Whitney) stripped it down; BQN redesigned the glyphs in 2020 | the blog, TBT "APL\360 revisited" (2026-09-17) |
 | family | K in 1993 | not in the blog: to confirm |
 | family | X_eTaL in 2026 | its first commit, 2026-09-27 (`docs/history.md` at the pin) |
 | why | "This may be the dawn of Personal Programming Languages, and this is not the first one I've started creating" | the author, 2026-11-19 |
@@ -46,7 +47,7 @@ Every fact the narration states, and where it comes from.
 | tease-3d | X_eTaL drives Blender, a scene worked out as arrays; console-3D's models made that way; a ray tracer in ordinary array code on CPU and GPU | the blog, Array Languages #9 (Blender) and #20 (ray tracer); tbt-2741's how-made slide (make-ibm2741.xtl) |
 | tease-tune | browser lessons on LoRA, built number by number then trained; a tiny mixture of experts trained in X_eTaL and fine-tuned by six methods | X_eTaL-fine-tuning's README (LoRA lab, LoRA training), X_eTaL-ML's README (MoE fine-tuning), their screenshots |
 
-The name is said "ecks, tee, elle" (`{X_eTaL|ecks, tee, elle}`, the
+The name is said "ex, tee, el" (`{X_eTaL|ex, tee, el}`, the
 author, 2026-11-20) and shown as X_eTaL.
 
 Two choices the author made, 2026-11-20:

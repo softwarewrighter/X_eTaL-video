@@ -31,7 +31,14 @@ ready() { ls "work/$slug/voice/"*.wav 2>/dev/null | grep -vc '/pad-'; }
 narrated=$(node -e 'console.log(JSON.parse(require("fs").readFileSync(process.argv[1], "utf8")).scenes.filter((s) => s.narration).length)' "lessons/$slug/lesson.json")
 
 # Another narration of this lesson (one started by hand) finishes first.
-while pgrep -f "scripts/voice.py $slug " >/dev/null; do sleep 15; done
+# Says what it waits on, and waits at most 5 minutes (it once sat 34
+# minutes on a process it took for a narration).
+waited=0
+while others=$(pgrep -f "scripts/voice[.]py $slug " | tr '\n' ' ') && [ -n "$others" ]; do
+  [ "$waited" -eq 0 ] && say "waiting for another narration of $slug to finish: $(ps -o pid=,command= -p ${others// /,} 2>/dev/null | cut -c1-80 | tr '\n' ';')"
+  [ "$waited" -ge 300 ] && { say "FAILED: still waiting after 5 minutes on: $others"; exit 1; }
+  sleep 15; waited=$((waited + 15))
+done
 
 pids=()
 start() {

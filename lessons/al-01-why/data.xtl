@@ -1,9 +1,10 @@
 ## al-01-why: every X_eTaL line the video shows, run at the pinned commit.
 ## just eval prints what the video shows under each line.
 
-## double: two times values (scene "double")
+## double: two times values, kept as result, as the Rust loop keeps it (scene "double")
 values := 1 2 3 4
-2 * values
+result := 2 * values
+result
 ## 2 4 6 8
 
 ## spellings: the same doubling, the line the other languages are shown beside

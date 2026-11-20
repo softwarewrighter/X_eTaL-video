@@ -216,9 +216,16 @@ def near(got: str, *meant: str) -> bool:
     """Whether whisper heard a sentence of six words or more within one
     word of what was meant (one word missing, added or different)."""
     g = words(got)
+    names = "|".join(LETTER_NAMES)
     for m in meant:
         w = words(m)
         if len(w) < 6:
+            continue
+        # A spelled acronym (the name, "ecks, tee, elle") must be heard
+        # exactly: XDL for XTL is the voice's error, not whisper's.
+        spelled = ["".join(LETTER_NAMES[x] for x in re.findall(rf"\b(?:{names})\b", r))
+                   for r in re.findall(rf"\b(?:{names})(?:,? (?:{names}))+\b", m.lower())]
+        if any(a not in g for a in spelled):
             continue
         # Word-level edit distance, at most 1.
         prev = list(range(len(w) + 1))
