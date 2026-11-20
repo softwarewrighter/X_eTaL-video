@@ -370,7 +370,7 @@ Read before working:
    SLUG --check` refuses an unmarked heteronym: decide each one by
    rewording it away (preferred), respelling it `{read|red}`, or
    marking the usual reading right `{read|read}`. Say X_eTaL as
-   "ex, ee, tall" (the author, 2026-11-20: `{X_eTaL|ex, ee, tall}`),
+   "ecks, tee, elle" (the author, 2026-11-20: `{X_eTaL|ecks, tee, elle}`; the voice is never given "X_eTaL"),
    never around it; spell acronyms phonetically (`{BQN|bee, queue,
    en}`) and write no possessive apostrophes (VoxCPM says them
    unreliably); spell numbers; avoid rare words and lone letters.

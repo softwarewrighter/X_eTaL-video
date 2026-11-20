@@ -105,8 +105,8 @@ As `lessons/tbt-2741` (a story lesson, `kind: "story"`):
    shown as the pinned `xetal` prints it, and is drawn as rendered
    (rule 4a). Other languages' code is shown as `code` lines, and is
    checked where a tool is at hand.
-3. **The name is said** "ex, ee, tall" (the author, 2026-11-20:
-   `{X_eTaL|ex, ee, tall}`), and shown as X_eTaL; the narration does
+3. **The name is said** "ecks, tee, elle" (the author, 2026-11-20:
+   `{X_eTaL|ecks, tee, elle}`), and shown as X_eTaL; the narration does
    not talk around it ("this language").
 4. **Pronunciation is reviewed word by word** (rule 4c), with acronym
    marks (`{APL|A P L}`, `{BQN|B Q N}`).

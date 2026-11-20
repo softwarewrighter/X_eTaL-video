@@ -71,6 +71,49 @@ def written(text: str) -> str:
     return MARK.sub(lambda m: m.group(1), text)
 
 
+def bare(sentence: str) -> str:
+    """What VoxCPM is given: the sentence with no unusual punctuation (the
+    author, 2026-11-20: only commas and periods, a rare ? or !; hyphens,
+    apostrophes, parentheses and the like are said unreliably).
+    Contractions are written out first, so dropping an apostrophe cannot
+    make "we'll" into "well"; hyphens and the rest become spaces. The
+    cache key stays the spoken sentence, so takes already made and
+    listened to are kept."""
+    t = sentence.replace("\u2019", "'")
+    for k, v in CONTRACTIONS.items():
+        t = re.sub(rf"\b{re.escape(k)}\b", v, t, flags=re.I)
+    t = re.sub(r"\b(\w+)n't\b", lambda m: {"won": "will", "can": "can", "shan": "shall"}.get(m.group(1).lower(), m.group(1)) + " not", t)
+    t = re.sub(r"'ll\b", " will", t)
+    t = re.sub(r"'ve\b", " have", t)
+    t = re.sub(r"'re\b", " are", t)
+    t = re.sub(r"'m\b", " am", t)
+    t = re.sub(r"'d\b", " would", t)
+    t = re.sub(r"[^A-Za-z0-9 ,.?!]+", " ", t)
+    t = re.sub(r"\s+([,.?!])", r"\1", t)
+    return " ".join(t.split())
+
+
+def tts_problems(t: str) -> list[str]:
+    """What is wrong with text about to be sent to VoxCPM (the author,
+    2026-11-20): only letters, spaces, commas and periods (a rare ? or !);
+    no digits; acronyms spelled out phonetically, never as capitals
+    ("APL") or single letters ("A P L", "A, pee")."""
+    out = []
+    bad = sorted(set(re.findall(r"[^A-Za-z ,.?!]", t)))
+    if bad:
+        out.append(f"unusual characters {''.join(bad)!r}")
+    if re.search(r"[.?!].", t.rstrip()):
+        out.append("a period, ? or ! before the end")
+    if re.search(r"\b[A-Z]{2,}\b", t):
+        out.append(f"an acronym in capitals ({', '.join(re.findall(r'\\b[A-Z]{2,}\\b', t))}): spell it phonetically")
+    words_ = re.findall(r"[A-Za-z]+", t)
+    for i, w in enumerate(words_):
+        if len(w) == 1 and w not in ("I", "a") and not (w == "A" and i == 0 and i + 1 < len(words_) and len(words_[i + 1]) > 1 and not re.search(r"\bA,", t)):
+            out.append(f"a single letter {w!r}: spell it phonetically (ay, bee, see)")
+            break
+    return out
+
+
 def spoken(text: str) -> str:
     """The narration as sent to VoxCPM: {read|red} is red; {live|} is live."""
     return MARK.sub(lambda m: m.group(2) or m.group(1), text)
@@ -123,6 +166,10 @@ def spelled(n: int) -> str:
     return str(n)
 
 
+# Letters spelled for the voice, by name.
+LETTER_NAMES = {"ay": "a", "bee": "b", "see": "c", "dee": "d", "ee": "e", "ecks": "x", "ex": "x", "gee": "g", "jay": "j",
+                "kay": "k", "el": "l", "elle": "l", "elles": "ls", "em": "m", "en": "n", "pee": "p", "queue": "q", "tee": "t", "you": "u"}
+
 CONTRACTIONS = {"here's": "here is", "it's": "it is", "that's": "that is", "there's": "there is",
                 "what's": "what is", "let's": "let us", "you're": "you are", "we're": "we are",
                 "they're": "they are", "isn't": "is not", "doesn't": "does not", "don't": "do not",
@@ -149,6 +196,10 @@ def words(text: str, pairs: bool = False) -> list[str]:
     text = re.sub(r"\b(\d\d)?([1-9])0'?s\b", lambda m: (spelled(int(m.group(1))) + " " if m.group(1) else "") + TENS[int(m.group(2))][:-1] + "ies", text)
     text = re.sub(r"\d+", lambda m: paired(m.group()) if pairs else spelled(int(m.group())), text.replace(",", "").replace("\u2019", "'"))
     text = re.sub(r"[a-z]+'[a-z]+", lambda m: CONTRACTIONS.get(m.group(), m.group()), text)
+    # A run of letter names spelled for the voice ("ecks, tee, elle";
+    # "bee, queue, en") is heard as the letters ("XTL", "BQN").
+    names = "|".join(LETTER_NAMES)
+    text = re.sub(rf"\b(?:{names})(?:,? (?:{names}))+\b,?", lambda m: "".join(LETTER_NAMES[w] for w in re.findall(rf"\b(?:{names})\b", m.group())), text)
     # "a hundred" and "a thousand" are heard as 100 and 1000.
     text = re.sub(r"\ba (hundred|thousand)\b", r"one \1", text)
     return re.sub(r"[^a-z' ]", " ", text.replace("-", " ")).split()
@@ -273,14 +324,9 @@ def main() -> None:
     problems = [p for s in scenes if s.get("narration") for p in lint(s["id"], s["narration"])]
     if problems:
         fail("the narration needs rewording:\n  " + "\n  ".join(problems))
-    if a.check:
-        print(f"voice: {a.slug}: the narration is fit to speak")
-        return
-    for f in (a.reference, a.prompt_text, a.whisper_model):
+    for f in (a.reference, a.prompt_text) if a.check else (a.reference, a.prompt_text, a.whisper_model):
         if not f.is_file():
             fail(f"missing {f}")
-
-    from gradio_client import Client, handle_file  # the venv's (scripts/voice.sh)
 
     prompt = " ".join(a.prompt_text.read_text().split())
     sample = hashlib.sha256(a.reference.read_bytes()).hexdigest()
@@ -297,6 +343,22 @@ def main() -> None:
         "cfg": a.cfg,
         "scenes": [],
     }
+
+    # The test before any VoxCPM call: every sentence still to be made,
+    # as it would be sent. One that fails stops the run before any call.
+    unmade = []
+    for scene in scenes:
+        for raw in sentences(scene.get("narration") or ""):
+            sentence = spoken(raw)
+            key = hashlib.sha256(json.dumps([sentence, sample, prompt, a.steps, a.cfg]).encode()).hexdigest()[:16]
+            if not (cache / f"{key}.wav").exists():
+                unmade += [f"{scene['id']}: {bare(sentence)!r}: {p}" for p in tts_problems(bare(sentence))]
+    if unmade:
+        fail("not fit to send to VoxCPM:\n  " + "\n  ".join(unmade))
+    if a.check:
+        print(f"voice: {a.slug}: the narration is fit to speak, and every sentence still to be made fit to send")
+        return
+    from gradio_client import Client, handle_file  # the venv's (scripts/voice.sh)
 
     unverified = []
     for scene in scenes:
@@ -340,12 +402,13 @@ def main() -> None:
                     print(f"voice: {scene['id']} {k + 1}: {sentence!r} (try {attempt})", flush=True)
                     # The server can fail or drop a request: wait and ask
                     # again (a new client), up to six times, before giving up.
+                    assert not tts_problems(bare(sentence)), (sentence, tts_problems(bare(sentence)))
                     for call in range(6):
                         try:
                             client = client or Client(a.server, verbose=False)
                             with voxcpm_turn(a.lock, f"{a.slug} {scene['id']} {k + 1}"):
                                 raw = client.predict(
-                                    text_input=sentence,
+                                    text_input=bare(sentence),
                                     prompt_wav_path_input=handle_file(str(a.reference.resolve())),
                                     prompt_text_input=prompt,
                                     cfg_value_input=a.cfg,
@@ -387,7 +450,7 @@ def main() -> None:
             if flagged:
                 got = got[len(UNVERIFIED):]
                 unverified.append(f"{scene['id']} {k + 1}: {shown!r} (heard {got!r})")
-            said.append({"text": shown, "heard": got} | ({"spoken": sentence} if sentence != shown else {}) | ({"unverified": True} if flagged else {}))
+            said.append({"text": shown, "heard": got, "sent": bare(sentence)} | ({"spoken": sentence} if sentence != shown else {}) | ({"unverified": True} if flagged else {}))
 
         if shard or missing:
             continue  # a shard only fills the cache; --ready skips a scene not all made

@@ -68,15 +68,15 @@
     },
     {
       "id": "meet",
-      "seconds": 12.7,
+      "seconds": 12.8,
       "heading": "Meet X_eTaL",
-      "narration": "My new {APL-inspired|A, pee, elle, inspired} experimental, extensible, statically typed array language is {X_eTaL|ex, ee, tall}. Other influences on my language are Haskell and Rust.",
+      "narration": "My new {APL|ay, pee, elle,} inspired experimental, extensible, statically typed array language is {X_eTaL|ecks, tee, elle}. Other influences on my language are Haskell and Rust.",
       "lines": [],
       "slide": {
         "type": "points",
         "items": [
           {
-            "text": "APL-inspired",
+            "text": "APL inspired",
             "sub": "whole arrays, right to left"
           },
           {
@@ -214,9 +214,9 @@
     },
     {
       "id": "double",
-      "seconds": 18.9,
+      "seconds": 17.8,
       "heading": "Two times values",
-      "narration": "Here is the same program in {X_eTaL|ex, ee, tall}, the array language this series is about. Values is one, two, three, four. Two times values is two, four, six, eight. There is no index, no storage to create, and nothing to append.",
+      "narration": "Here is the same program in {X_eTaL,|ecks, tee, elle,} the array language this series is about. Values is one, two, three, four. Two times values is two, four, six, eight. There is no index, no storage to create, and nothing to append.",
       "lines": [],
       "panel": {
         "type": "code",
@@ -345,13 +345,57 @@
       "seconds": 34.3,
       "heading": "Where array languages came from",
       "narration": "Array programming has a long history. Kenneth Iverson published A Programming Language in nineteen sixty-two, as a notation for writing algorithms. {APL|A P L} three sixty, from {IBM|I B M} in nineteen sixty-eight, was the first version you could type at. {APL|A P L} two added nesting. J, from Iverson and Roger Hui, kept the meaning and moved to plain {ASCII|ask-ee}. K, from Arthur Whitney, stripped the language down again. And in twenty twenty, {BQN|bee, queue, en}, redesigned the symbols from scratch.",
-      "lines": []
+      "lines": [],
+      "slide": {
+        "type": "timeline",
+        "steps": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "items": [
+          {
+            "year": "1962",
+            "text": "The notation",
+            "sub": "Iverson's book"
+          },
+          {
+            "year": "1968",
+            "text": "APL\\360",
+            "sub": "IBM, the first you could type at"
+          },
+          {
+            "year": "1984",
+            "text": "APL2",
+            "sub": "nesting"
+          },
+          {
+            "year": "1990",
+            "text": "J",
+            "sub": "Iverson and Roger Hui, plain ASCII"
+          },
+          {
+            "year": "1993",
+            "text": "K",
+            "sub": "Arthur Whitney, stripped down"
+          },
+          {
+            "year": "2020",
+            "text": "BQN",
+            "sub": "new symbols"
+          }
+        ]
+      }
     },
     {
       "id": "spellings",
-      "seconds": 26.4,
+      "seconds": 26.1,
       "heading": "One idea, many spellings",
-      "narration": "In each of them, doubling four numbers is one short line. The symbols change from language to language. The idea doesn't. It's one operation, applied to the whole array. In {X_eTaL|ex, ee, tall}, you type an asterisk, as in {J|jay} or {K|kay}. The editor then renders it as a times sign, as in {APL|ay, pee, el}. The rendered form is the one that's {read|red}.",
+      "narration": "In each of them, doubling four numbers is one short line. The symbols change from language to language. The idea doesn't. It's one operation, applied to the whole array. In {X_eTaL,|ecks, tee, elle,} you type an asterisk, as in {J|jay} or {K|kay}. The editor then renders it as a times sign, as in {APL|ay, pee, el}. The rendered form is the one that's {read|red}.",
       "lines": [],
       "panel": {
         "type": "code",
@@ -410,9 +454,9 @@
     },
     {
       "id": "why",
-      "seconds": 26.5,
+      "seconds": 26.1,
       "heading": "Why this language",
-      "narration": "This may be the dawn of personal programming languages, and this is not the first one I've started creating. {X_eTaL|ex, ee, tall} asks what {APL|ay, pee, el} would look like, if it were designed today. Designed for composition, readability, tooling, and machine learning. Its goal isn't to replace the languages before it. It's to make the ideas of array programming easier to {read|read}, reason about, type-check, and experiment with.",
+      "narration": "This may be the dawn of personal programming languages, and this is not the first one I've started creating. {X_eTaL|ecks, tee, elle,} asks what {APL|ay, pee, el} would look like, if it were designed today. Designed for composition, readability, tooling, and machine learning. Its goal isn't to replace the languages before it. It's to make the ideas of array programming easier to {read|read}, reason about, type-check, and experiment with.",
       "lines": []
     },
     {
@@ -448,9 +492,9 @@
     },
     {
       "id": "name",
-      "seconds": 15.1,
+      "seconds": 15.2,
       "heading": "LaTeX reversed",
-      "narration": "The name {X_eTaL|ex, ee, tall} spells out experimental, extensible, typed array language, and reverses {LaTeX|lay tech}. {LaTeX|lay tech} uses text to {produce|produce} typography. This language uses typography to express computation.",
+      "narration": "The name {X_eTaL|ecks, tee, elle,} spells out experimental, extensible, typed array language, and reverses {LaTeX|lay tech}. {LaTeX|lay tech} uses text to {produce|produce} typography. This language uses typography to express computation.",
       "lines": []
     },
     {
@@ -574,9 +618,9 @@
     },
     {
       "id": "learn",
-      "seconds": 12.4,
+      "seconds": 11.2,
       "heading": "What you will learn",
-      "narration": "We'll begin with the fundamentals. Arrays, shapes, functions, and composition. Then we'll learn to write programs in {X_eTaL|ex, ee, tall}, use its libraries, and extend it.",
+      "narration": "We'll begin with the fundamentals. Arrays, shapes, functions, and composition. Then we'll learn to write programs in {X_eTaL,|ecks, tee, elle,} use its libraries, and extend it.",
       "lines": []
     },
     {
@@ -624,9 +668,9 @@
     },
     {
       "id": "tease-fpga",
-      "seconds": 13.8,
+      "seconds": 14.5,
       "heading": "Circuits, written as Verilog",
-      "narration": "Programs become circuits, written out as Verilog. A four-bit calculator machine, specified in {X_eTaL|ex, ee, tall}, runs on a Tang Nano nine {K|kay} board, and calculates over its serial port.",
+      "narration": "Programs become circuits, written out as Verilog. A four-bit calculator machine, specified in {X_eTaL,|ecks, tee, elle,} runs on a Tang Nano nine {K|kay} board, and calculates over its serial port.",
       "lines": [],
       "images": [
         "../../software-wrighter-lab/blog/assets/images/posts/xetal-fpga-hex1000-9k-poster.webp",
@@ -660,9 +704,9 @@
     },
     {
       "id": "tease-tune",
-      "seconds": 15.7,
+      "seconds": 16.7,
       "heading": "Fine-tuning",
-      "narration": "And fine-tuning. Browser lessons build a low-rank adapter number by number, and then train it. And a tiny mixture of experts, trained in {X_eTaL|ex, ee, tall}, is fine-tuned to a changed task by six methods in turn.",
+      "narration": "And fine-tuning. Browser lessons build a low-rank adapter number by number, and then train it. And a tiny mixture of experts, trained in {X_eTaL,|ecks, tee, elle,} is fine-tuned to a changed task by six methods in turn.",
       "lines": [],
       "images": [
         "../X_eTaL-fine-tuning/demos/lora-lab/screenshot.png",

@@ -128,6 +128,12 @@ if (lesson.kind === "story") {
         out.focusCuts = v ? v.sentences.slice(1, s.panel.focus.length).map((x) => Math.round(x.start * fps)) : [];
       }
     }
+    // A slide shown a sentence at a time (slide.steps): where each
+    // sentence starts, as for a panel's focus.
+    if (s.slide && s.slide.steps) {
+      const v = voice?.scenes.find((x) => x.id === s.id);
+      out.focusCuts = v ? v.sentences.slice(1, s.slide.steps.length).map((x) => Math.round(x.start * fps)) : [];
+    }
     if (s.clip) {
       if (existsSync(abs(s.clip))) {
         copyFileSync(abs(s.clip), join(pub, `${s.id}.mp4`));

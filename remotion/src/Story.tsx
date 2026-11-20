@@ -129,7 +129,12 @@ export const Story: React.FC<StoryProps> = ({ lesson, timing, frames, voice, sto
           heading={scene.heading}
           brand={lesson.brand}
           show={show}
-          reveal={frames.stagger[frame]}
+          reveal={
+            scene.slide.steps
+              ? // A slide shown a sentence at a time: the items its sentence has reached.
+                scene.slide.items.map((_, j) => (j < scene.slide!.steps![Math.min((media.focusCuts ?? []).filter((c) => local >= c).length, scene.slide!.steps!.length - 1)] ? 1 : 0))
+              : frames.stagger[frame]
+          }
           progress={frames.out[frame]}
           rendered={rendered}
         />

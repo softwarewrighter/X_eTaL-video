@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 # The pre-commit gate: the pinned X_eTaL (scripts/check-xetal.sh),
 # every library's lint and baselines (scripts/test-libs.sh, reg-rs),
-# every lesson and its timing (scripts/check-lessons.sh),
+# every lesson and its timing (scripts/check-lessons.sh), what narration
+# sends to VoxCPM (scripts/test_voice.py),
 # American spellings, then ASCII-only markdown for the docs we own.
 #   scripts/gate.sh
 set -euo pipefail
@@ -10,6 +11,10 @@ cd "$root"
 scripts/check-xetal.sh
 scripts/test-libs.sh
 scripts/check-lessons.sh
+# What narration sends to VoxCPM: only commas and periods, acronyms spelled
+# out (scripts/test_voice.py, in the uv venv).
+[ -x .venv/bin/python ] || uv venv -q
+.venv/bin/python scripts/test_voice.py
 # The Remotion project type-checks and lints (when its packages are installed).
 if [ -d remotion/node_modules ]; then
   (cd remotion && npm run --silent lint) >/dev/null 2>&1 || { (cd remotion && npm run lint); echo "FAIL: remotion"; exit 1; }

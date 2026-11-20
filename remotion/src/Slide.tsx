@@ -23,6 +23,9 @@ const syntaxCss = Object.entries(theme.syntax).map(([c, color]) => `.xtl .${c} {
 
 export const Slide: React.FC<Props> = ({ slide, heading, brand, show, reveal, progress, rendered }) => {
   const r = (j: number) => reveal[j] ?? 1;
+  // Shown a sentence at a time (slide.steps): the newest item shown is the marked one.
+  const newest = slide.steps ? reveal.filter((x) => x >= 1).length - 1 : -1;
+  const marked = (j: number) => (slide.steps ? j === newest : !!slide.items[j].mark);
   const enter = (j: number) => ({ opacity: r(j) * show, transform: `translateY(${36 * (1 - r(j))}px)` });
   const code = (it: SlideData["items"][number]) =>
     it.xtl !== undefined ? (
@@ -61,7 +64,7 @@ export const Slide: React.FC<Props> = ({ slide, heading, brand, show, reveal, pr
               style={{
                 ...enter(j),
                 background: theme.panel,
-                borderLeft: `6px solid ${it.mark ? theme.hot : theme.accent}`,
+                borderLeft: `6px solid ${marked(j) ? theme.hot : theme.accent}`,
                 borderRadius: 10,
                 padding: "22px 28px",
                 boxShadow: `0 0 40px ${glow}`,
@@ -84,8 +87,8 @@ export const Slide: React.FC<Props> = ({ slide, heading, brand, show, reveal, pr
             const x = (j + 0.5) / slide.items.length;
             return (
               <div key={j} style={{ ...enter(j), position: "absolute", left: `${100 * x}%`, top: 0, width: 230, marginLeft: -115, textAlign: "center" }}>
-                <div style={{ color: it.mark ? theme.hot : theme.accent, fontSize: it.mark ? 52 : 44, fontWeight: 700, height: 100, display: "flex", alignItems: "flex-end", justifyContent: "center" }}>{it.year}</div>
-                <div style={{ margin: "30px auto 0", width: it.mark ? 36 : 26, height: it.mark ? 36 : 26, borderRadius: 18, background: it.mark ? theme.hot : theme.accent, boxShadow: `0 0 24px ${it.mark ? "rgba(255,255,255,0.6)" : glow}`, transform: `translateY(${it.mark ? -5 : 0}px)` }} />
+                <div style={{ color: marked(j) ? theme.hot : theme.accent, fontSize: marked(j) ? 52 : 44, fontWeight: 700, height: 100, display: "flex", alignItems: "flex-end", justifyContent: "center" }}>{it.year}</div>
+                <div style={{ margin: "30px auto 0", width: marked(j) ? 36 : 26, height: marked(j) ? 36 : 26, borderRadius: 18, background: marked(j) ? theme.hot : theme.accent, boxShadow: `0 0 24px ${marked(j) ? "rgba(255,255,255,0.6)" : glow}`, transform: `translateY(${marked(j) ? -5 : 0}px)` }} />
                 <div style={{ color: theme.ink, fontSize: 30, fontWeight: 700, marginTop: 34, lineHeight: 1.2 }}>{it.text}</div>
                 {it.sub ? <div style={{ color: theme.dim, fontSize: 24, marginTop: 10, lineHeight: 1.3 }}>{it.sub}</div> : null}
               </div>
@@ -99,7 +102,7 @@ export const Slide: React.FC<Props> = ({ slide, heading, brand, show, reveal, pr
           {slide.items.map((it, j) => (
             <div key={j} style={{ display: "flex", alignItems: "center", flex: `${it.xtl ? 1.5 : 1} 1 0` }}>
               {j > 0 ? <div style={{ ...enter(j), color: theme.accent, fontSize: 64, fontWeight: 700, padding: "0 18px" }}>{"→"}</div> : null}
-              <div style={{ ...enter(j), flex: 1, alignSelf: "stretch", background: theme.panel, border: `2px solid ${it.mark ? theme.hot : theme.rule}`, borderTop: `6px solid ${theme.accent}`, borderRadius: 12, padding: "24px 26px", boxShadow: `0 0 40px ${glow}` }}>
+              <div style={{ ...enter(j), flex: 1, alignSelf: "stretch", background: theme.panel, border: `2px solid ${marked(j) ? theme.hot : theme.rule}`, borderTop: `6px solid ${theme.accent}`, borderRadius: 12, padding: "24px 26px", boxShadow: `0 0 40px ${glow}` }}>
                 <div style={{ color: theme.ink, fontSize: 38, fontWeight: 700 }}>{it.text}</div>
                 {it.sub ? <div style={{ color: theme.dim, fontSize: 26, marginTop: 10, lineHeight: 1.35 }}>{it.sub}</div> : null}
                 {code(it)}
