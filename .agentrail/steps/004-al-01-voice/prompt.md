@@ -1,0 +1,1 @@
+al-01-why narrated (just voice, one VoxCPM request at a time, whisper-checked), the live editor recorded (just capture), the music from the user's track (intro, breaks, outro), rendered landscape; the review page complete per scene (still, video, narration, audio, whisper).

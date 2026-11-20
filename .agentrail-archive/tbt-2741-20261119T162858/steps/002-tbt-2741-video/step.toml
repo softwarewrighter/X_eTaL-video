@@ -1,8 +1,9 @@
 number = 2
 slug = "tbt-2741-video"
-status = "in-progress"
+status = "completed"
 description = "lessons/tbt-2741: about 5 minutes, landscape, the TBT #15 story (A'70 on the ..."
 role = "production"
 context_files = []
 created_at = "2026-11-19T10:47:52"
-commits = []
+completed_at = "2026-11-19T16:28:58"
+commits = ["10f3b8d82f3f7edbfe9fbbd36b4cf0b4f7aec6df"]

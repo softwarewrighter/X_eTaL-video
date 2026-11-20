@@ -1,0 +1,8 @@
+number = 1
+slug = "series-plan"
+status = "in-progress"
+description = "Write docs/array-languages-video-series-plan.md (the series, the episode shap..."
+role = "production"
+context_files = []
+created_at = "2026-11-19T16:29:22"
+commits = []

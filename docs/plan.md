@@ -282,7 +282,7 @@ a script can and should.
    refuses an unmarked heteronym; every lesson reviewed and the changed
    sentences alone spoken again; rule 4c.
 
-## Saga 9 -- tbt-2741  [ACTIVE; tutorials archived for it, t-names finished uncommitted]
+## Saga 9 -- tbt-2741  [DONE 2026-11-19; the video delivered in out/tbt-2741-youtube/, the user's review to come as its own step; tutorials archived for it, t-names finished uncommitted]
 
 The user (2026-11-19, urgent, for YouTube that morning): a 5-minute
 Throwback Thursday video, like the earlier APL video, telling the
@@ -307,6 +307,24 @@ end of 99b.
    `just review`, a per-scene review page.
 2. tbt-2741-video -- the lesson, narrated, captured, rendered,
    `out/tbt-2741-youtube/`.
+
+## Saga 10 -- al-01-why  [ACTIVE]
+
+The user (2026-11-19): the first video `docs/research2.txt` suggests
+(episode 01, "Why another programming language?"), made with the
+tbt-2741 pattern (title with music, silent explainer slides with
+music between sections, the reused call to action and close). The
+series and the episode are planned in
+`docs/array-languages-video-series-plan.md`.
+
+1. series-plan -- the series plan, research2 tracked, the saga.
+2. al-01-script -- the lesson, its examples run at the pin, sources,
+   a review page of the script; the user reviews it.
+3. story-panels -- code panels, array cells, typed and drawn, in story
+   scenes.
+4. al-01-voice -- narration, recordings, music, render, the review page
+   per scene.
+5. al-01-publish -- after the user's review, `out/al-01-why-youtube/`.
 
 ## Later -- remotion  [PLANNED; steps 1 and 4 done in saga 1]
 

@@ -1,0 +1,1 @@
+tbt-2741 delivered: out/tbt-2741-youtube/ (the video 5:34, title, description with chapters and the blog link, transcript, captions); the review page at /X_eTaL-video/review/tbt-2741/. The user moved on to a new series; any feedback on the video becomes a step of its own.

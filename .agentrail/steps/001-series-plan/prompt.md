@@ -1,0 +1,1 @@
+Write docs/array-languages-video-series-plan.md (the series, the episode shape, the rules, episode 01 storyboarded with sources and research2's corrections, the renderer needs, the open questions); track docs/research2.txt as archival; plan.md saga 10; CHANGES.md.

@@ -1,17 +1,1 @@
-# Saga tbt-2741: a narrated TBT video of APL\360 on the 3D IBM 2741
-
-The user (2026-11-19, urgent, to publish on YouTube this morning): a
-5-minute video, like the prior APL video, telling the story of the 3D
-models (console-3D) toward an interactive computer history museum,
-focused on the 3D animation just added to the APL\360 demo (A'70).
-Sources in order: the TBT #15 draft post, the recently updated repos
-(sw-apl, console-3D), then earlier posts. Narration states only sourced
-facts. Landscape (over 2.5 minutes), softwarewrighter channel.
-
-1. story-renderer: a "story" composition (full-frame media, lower-third
-   headings, title and end cards), image scenes, captures of any URL
-   with typing, dragging and several recordings, and the page's own
-   2741 sounds mixed under the voice.
-2. tbt-2741-video: the script, narration in the user's voice, the
-   captures, the render, out/tbt-2741-youtube/ (title, description,
-   captions).
+Episode 01 of the array languages series (docs/array-languages-video-series-plan.md): Why another programming language? About 8 minutes, landscape, a story lesson in the tbt-2741 pattern: a 5 s title with music, narrated sections, silent Remotion explainer slides with music between them, an exercise, the reused 99b call to action and the 99c close with 7 s of outro music. Nothing invented: every fact from X_eTaL at the pin, the Array Languages posts, or the user; every X_eTaL example run at the pin; a review page as we go.

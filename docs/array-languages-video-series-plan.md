@@ -1,0 +1,171 @@
+# Array languages: a video series plan
+
+The user (2026-11-19): read `docs/research2.txt` and plan the first
+video it suggests, made with the pattern of the Throwback Thursday
+video (`lessons/tbt-2741`): a 5 second title with music, Remotion
+explainer slides with music between sections in place of narration,
+and the standard closing (the reused call to action, then a close
+with 7 seconds of outro music faded in). The user provides the
+longer music clips.
+
+`docs/research2.txt` is an archival proposal (a 76 episode course,
+scripts for the first episodes, a production design), not normative:
+its claims about X_eTaL are checked against the pinned X_eTaL before
+any of them is said or shown, and its narration is rewritten where it
+speaks for the user (see "Rules for every episode").
+
+## How this relates to the existing plan
+
+`docs/curriculum.md` already plans five series (the language
+tutorials, macros, comparisons, what people build, beyond the CPU).
+This series comes before them: research2's point is that people
+should learn to think in arrays before they learn X_eTaL's syntax, so
+its first seven episodes are mostly language-neutral. Where they meet:
+
+| This series | `docs/curriculum.md` |
+| ----------- | -------------------- |
+| 01 Why another programming language? | `why-xetal` (Series 3) |
+| 03 Shape, rank, axes | `t-arrays` (Series 1, #3) |
+| 07 APL, J, K, BQN and X_eTaL | `vs-apl` (Series 3) |
+| 08 Reading and writing X_eTaL | `intro-xetal`, `t-reading`, `t-names` (made or being made) |
+| 10, 11 Functions, pipelines | `t-functions`, `t-operators`, `t-trains` |
+
+Which plan governs the order after episode 01 is the user's call
+(open question 1).
+
+## The episodes (from research2, the first module first)
+
+| # | Title | Target | Status |
+| - | ----- | ------ | ------ |
+| 01 | Why another programming language? | 8 min | planned: saga 10 |
+| 02 | From scalar loops to array operations | 10 min | later |
+| 03 | Shape, rank, axes and dimensions | 10 min | later |
+| 04 | Mapping, filtering and reducing | 11 min | later |
+| 05 | Broadcasting and array semantics | 10 min | later |
+| 06 | Array idioms: thinking without loops | 12 min | later |
+| 07 | APL, J, K, BQN and X_eTaL | 10 min | later |
+| 08 | Reading and writing X_eTaL | 12 min | later |
+| 09 | Bindings, values and immutability | 9 min | later |
+| 10 | Functions as values | 11 min | later |
+| 11 | Pipelines and function composition | 11 min | later |
+| 12 | Your first complete X_eTaL program | 14 min | later |
+
+research2's later modules (types and functional programming; idioms,
+macros and language design; libraries and extensions; demos and
+games; GPU and FPGA; machine learning; fine-tuning and research) are
+planned when the first twelve are, as research2 itself recommends
+(a pilot first, then the rest only once its pacing, look, voice and
+accuracy are accepted). FPGA goes to the hardwarewrighter channel.
+
+## The shape of every episode
+
+As `lessons/tbt-2741` (a story lesson, `kind: "story"`):
+
+| Part | Length | Sound | Picture |
+| ---- | ------ | ----- | ------- |
+| Title | 5 s | the intro music: its first 5 s, a 0.5 s fade at the end | a Remotion title card: series, episode number, title |
+| Sections | most of the video | the narration (VoxCPM, the user's voice) | Remotion panels (code, arrays, the typed and drawn source), recordings of the live pages, pictures |
+| Section breaks | about 7 s each | music only: a 7 s piece from the middle of the track, faded in and out, each break at a different offset, at 30% | a silent Remotion explainer slide (points, a timeline, a flow) |
+| Exercise | about 20 s | narrated | the question, on screen |
+| Call to action | 12 s | its own narration | the reused `99b-epilog.mp4`, as it is |
+| Close | 5 s | the outro music: the track's last 7 s, a 1 s fade in, starting 2 s before the close | the reused `99c` clip, muted, essentially blank (YouTube overlays the end cards) |
+
+## Rules for every episode
+
+1. **Nothing invented.** The narration says only what a source says:
+   X_eTaL's README and docs at the pin, the Array Languages blog
+   posts, the user's messages. The user's reasons and preferences
+   are quoted from those sources or asked about, never written for
+   them. A research2 sentence that speaks for the user ("X_eTaL
+   builds on that tradition while exploring ...") is replaced by
+   what the sources say.
+2. **Every X_eTaL example runs** at the pinned commit, its output
+   shown as the pinned `xetal` prints it, and is drawn as rendered
+   (rule 4a). Other languages' code is shown as `code` lines, and is
+   checked where a tool is at hand.
+3. **The name is shown, never said** (as in every lesson so far: the
+   voice cannot say it). The narration says "this language", "this
+   array language".
+4. **Pronunciation is reviewed word by word** (rule 4c), with acronym
+   marks (`{APL|A P L}`, `{BQN|B Q N}`).
+5. **Dates and facts carry their source** in the lesson's README.
+6. **A review page as we go** (`just review SLUG`): the scenes and
+   their narration from the first draft, then stills, audio, whisper,
+   and video per scene as each exists, at
+   `http://127.0.0.1:8427/X_eTaL-video/review/SLUG/`.
+
+## Episode 01: Why another programming language?
+
+Slug `al-01-why`, landscape, about 8 minutes. research2's six scenes,
+checked and adapted to the pattern above.
+
+Learning objective: what an array language is, how it differs from
+scalar, loop-at-a-time programming, and what X_eTaL is trying to do.
+
+| # | Scene | Picture | Sources and checks |
+| - | ----- | ------- | ------------------ |
+| 0 | Title | title card, intro music | |
+| 1 | A different way of thinking | a loop's steps, one at a time, then one array expression | research2 scene 1 |
+| - | (break) What an array language is | silent slide: points | research2, the README's first lines |
+| 2 | The scalar model | the Rust loop (`values`, `result.push(x * 2)`), its parts highlighted: storage, iteration, the one real operation | research2 scene 2 |
+| 3 | Whole-array operations | four cells doubled together, then a hundred; the X_eTaL line `2 * values`, drawn, and its output `2 4 6 8` | checked: `2 * 1 2 3 4` gives `2 4 6 8` at the pin |
+| - | (break) The family | silent slide: a timeline | dates from the blog: APL notation 1962, APL\360 1968, APL2 1984, J 1990, K (year to source), BQN 2020, X_eTaL 2026 (first commit 2026-09-27, `docs/history.md`) |
+| 4 | Where array languages came from | the same sum in each: APL `+/`, J `+/`, K `+/`, BQN `+´`, X_eTaL `'+ r_/` | checked: `'+ r_/ r_ange 10` gives `55`; the others to check |
+| 5 | Why X_eTaL | typed ASCII becoming the drawn form; the live editor (recorded) | README: "what would APL look like if it were designed today for composition, readability, tooling, and machine learning?"; "The goal isn't to replace existing languages"; the philosophy post (#17) |
+| - | (break) What it is made of | silent slide: a flow, typed ASCII to drawn to run | README |
+| 6 | What you will learn | a montage: arrays, types, macros, the demos (Life, Mandelbrot, n-body), GPU, ML | the published lessons' recordings; only what exists is shown as existing |
+| 7 | Exercise | which parts of the loop compute, which only iterate | research2 |
+| 8 | Call to action | `99b-epilog.mp4` | reused |
+| 9 | Close | `99c`, muted, outro music | reused |
+
+Corrections to research2 for this episode:
+
+- "X_eTaL is short for eXperimental Extensible Typed Array Language"
+  is said as the words only; the name is shown.
+- research2's color claims (blue built-ins, green user functions,
+  cyan library, violet macros, amber effects) are not used: the
+  video shows X_eTaL's own rendering, whatever its colors are.
+- "Why Not COBOL? | Andrew C. Young", "GitHub +1" and similar are
+  citation debris from the chat research2 came from, not content.
+
+What the renderer needs first (one shared step, before the voice):
+
+1. **A code panel in a story scene**: lines of `code` (Rust, APL, J,
+   K, BQN) and `xtl` (drawn by the pinned `xetal`), one panel or two
+   side by side, a line's parts highlighted in turn.
+2. **Array cells**: a row of values transformed one at a time (the
+   loop) or all at once (the array), then the same for many values;
+   every reveal from X_eTaL's schedule (rule 4).
+3. **Typed and drawn**: the ASCII and the drawn line, one becoming
+   the other.
+
+## Saga 10: al-01-why
+
+1. series-plan -- this document, `docs/research2.txt` tracked as
+   archival, the saga.
+2. al-01-script -- `lessons/al-01-why/`: the lesson (scenes,
+   narration, slides), `data.xtl` with every example run at the pin,
+   the other languages' lines checked, the README with each fact's
+   source; `just review al-01-why` shows the script before any voice.
+   The user reviews the script.
+3. story-panels -- the renderer: code panels, array cells, typed and
+   drawn, in story scenes (`remotion/src`, the schema).
+4. al-01-voice -- the narration (VoxCPM, whisper-checked), the
+   recordings of the live editor, the music from the user's track,
+   rendered; the review page complete, per scene.
+5. al-01-publish -- after the user's review: `out/al-01-why-youtube/`
+   (title, description with chapters, captions, the video).
+
+## Open questions for the user
+
+1. Does this series come before the Series 1 tutorials of
+   `docs/curriculum.md`, replace them, or run alongside?
+2. Its name on screen and in titles: research2 says "X_eTaL
+   Academy"; the blog's series is "Array Languages". Which, and is an
+   episode number shown ("#1")?
+3. The music: which track for the title, the breaks and the close
+   (the longer clips the user will provide).
+4. Episode 01's "why": the README and the philosophy post are the
+   sources. Anything the user wants said in their own words?
+5. The pin: X_eTaL is 60 commits past `XETAL_COMMIT`. Move it at
+   this saga's start (allowed by rule 1), or keep it?

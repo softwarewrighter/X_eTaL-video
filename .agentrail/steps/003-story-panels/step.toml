@@ -1,0 +1,8 @@
+number = 3
+slug = "story-panels"
+status = "pending"
+description = "Renderer for story scenes (remotion/src, schemas/lesson.schema.json, scripts/..."
+role = "production"
+context_files = []
+created_at = "2026-11-19T16:29:22"
+commits = []

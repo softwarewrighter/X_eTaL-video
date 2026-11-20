@@ -1,0 +1,1 @@
+After the user's review of the full preview: fixes, then just youtube al-01-why (title, description with chapters of at least 10 s and the links, captions, narration.txt, the video) in out/al-01-why-youtube/; the user uploads it by hand, then just link.
