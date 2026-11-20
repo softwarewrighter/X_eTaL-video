@@ -40,7 +40,7 @@
     },
     {
       "id": "steps",
-      "seconds": 14,
+      "seconds": 12.9,
       "heading": "One step at a time",
       "narration": "Most programming languages teach us to think in individual steps. Create a variable. Enter a loop. Take an element. Perform an operation. Store the result. Repeat.",
       "lines": [],
@@ -54,7 +54,7 @@
     },
     {
       "id": "whole",
-      "seconds": 16,
+      "seconds": 14,
       "heading": "The whole computation",
       "narration": "But we could describe the entire computation, instead of every step needed to perform it. That is the central idea behind array programming. This series teaches that way of thinking first, and the notation after.",
       "lines": [],
@@ -95,7 +95,7 @@
     },
     {
       "id": "loop",
-      "seconds": 17,
+      "seconds": 15.3,
       "heading": "The scalar model",
       "narration": "This Rust program doubles four numbers. It creates an empty vector for the result. It visits each value in turn. And for each one, it pushes the value times two. It is straightforward, and it is correct.",
       "lines": [],
@@ -135,7 +135,7 @@
     },
     {
       "id": "mechanism",
-      "seconds": 18,
+      "seconds": 16.1,
       "heading": "Mostly mechanism",
       "narration": "But notice how much of the program is about the mechanism. We create storage, iterate over the values, and append the results. The actual operation, multiplication by two, is one small part of one line. An array language makes that operation the focus.",
       "lines": [],
@@ -168,7 +168,7 @@
     },
     {
       "id": "transform",
-      "seconds": 20,
+      "seconds": 19,
       "heading": "Whole-array operations",
       "narration": "An array language lets us operate on collections as values. Instead of describing a loop, we describe the transformation. The same idea applies to four values, four thousand values, or a table with many dimensions. The language takes care of the mechanics, within its rules for shapes.",
       "lines": [],
@@ -182,7 +182,7 @@
     },
     {
       "id": "double",
-      "seconds": 16,
+      "seconds": 16.3,
       "heading": "Two times values",
       "narration": "Here is the same program in the array language this series is about. Values is one, two, three, four. Two times values is two, four, six, eight. There is no index, no storage to create, and nothing to append.",
       "lines": [],
@@ -214,7 +214,7 @@
     },
     {
       "id": "hundred",
-      "seconds": 15,
+      "seconds": 11.1,
       "heading": "Four values, or a hundred",
       "narration": "Four values, or a hundred, and the line stays the same. Two times range one hundred doubles every number from one to a hundred, at once.",
       "lines": [],
@@ -228,7 +228,7 @@
     },
     {
       "id": "reduce",
-      "seconds": 22,
+      "seconds": 17.9,
       "heading": "Reduce, given plus",
       "narration": "Adding them up is one line too. Reduce, given plus, adds across the whole array, so one, two, three, four gives ten. The operation is passed in, quoted, so the same reduce given times multiplies them, and gives twenty-four.",
       "lines": [],
@@ -310,14 +310,14 @@
     },
     {
       "id": "history",
-      "seconds": 34,
+      "seconds": 34.2,
       "heading": "Where array languages came from",
-      "narration": "Array programming has a long history. Kenneth Iverson published A Programming Language in nineteen sixty-two, as a notation for writing algorithms. {APL|A P L} three sixty, from {IBM|I B M} in nineteen sixty-eight, was the first version you could type at. {APL|A P L} two added nesting. J, from Iverson and Roger Hui, kept the meaning and moved to plain {ASCII|ask-ee}. K, from Arthur Whitney, stripped the language down again. And {BQN|B Q N} redesigned the symbols from scratch, in twenty twenty.",
+      "narration": "Array programming has a long history. Kenneth Iverson published A Programming Language in nineteen sixty-two, as a notation for writing algorithms. {APL|A P L} three sixty, from {IBM|I B M} in nineteen sixty-eight, was the first version you could type at. {APL|A P L} two added nesting. J, from Iverson and Roger Hui, kept the meaning and moved to plain {ASCII|ask-ee}. K, from Arthur Whitney, stripped the language down again. And {BQN|bee queue en} redesigned the symbols from scratch, in twenty twenty.",
       "lines": []
     },
     {
       "id": "spellings",
-      "seconds": 18,
+      "seconds": 11.7,
       "heading": "One idea, many spellings",
       "narration": "In each of them, doubling four numbers is one short line. The symbols change from language to language. The idea doesn't. It's one operation, applied to the whole array.",
       "lines": [],
@@ -349,9 +349,9 @@
     },
     {
       "id": "keyboard",
-      "seconds": 20,
+      "seconds": 12.4,
       "heading": "A special keyboard",
-      "narration": "{APL|A P L}'s symbols needed a special type element and a keyboard marked with them. The computers of the day had no codes for most of them. J moved to plain {ASCII|ask-ee} so that any keyboard could type it.",
+      "narration": "{APL|ay pee el}'s symbols needed a special type element and a keyboard marked with them. The computers of the day had no codes for most of them. {J|Jay} moved to plain {ASCII|ask-ee} so that any keyboard could type it.",
       "lines": [],
       "images": [
         "../../software-wrighter-lab/blog/assets/images/posts/tbt15-2741-half.webp"
@@ -359,9 +359,9 @@
     },
     {
       "id": "why",
-      "seconds": 32,
+      "seconds": 26.1,
       "heading": "Why this language",
-      "narration": "This may be the dawn of personal programming languages, and this is not the first one I've started creating. The language in this series asks what {APL|A P L} would look like, if it were designed today. Designed for composition, readability, tooling, and machine learning. Its goal isn't to replace the languages before it. It's to make the ideas of array programming easier to {read|read}, reason about, type-check, and experiment with.",
+      "narration": "This may be the dawn of personal programming languages, and this is not the first one I've started creating. The language in this series asks what {APL|ay pee el} would look like, if it were designed today. Designed for composition, readability, tooling, and machine learning. Its goal isn't to replace the languages before it. It's to make the ideas of array programming easier to {read|read}, reason about, type-check, and experiment with.",
       "lines": []
     },
     {
@@ -397,14 +397,14 @@
     },
     {
       "id": "name",
-      "seconds": 18,
+      "seconds": 15.2,
       "heading": "LaTeX reversed",
       "narration": "Its name spells out experimental, extensible, typed array language, and reverses {LaTeX|lay tech}. {LaTeX|lay tech} uses text to {produce|produce} typography. This language uses typography to express computation.",
       "lines": []
     },
     {
       "id": "typed-drawn",
-      "seconds": 30,
+      "seconds": 21.9,
       "heading": "Typed in ASCII, drawn as notation",
       "narration": "Its source is plain {ASCII|ask-ee}, typed on an ordinary keyboard, with no special symbols to learn. The tools draw it with typography that carries meaning. An underlined letter makes a name a function. A small mark above a name says where it comes from. A subscript gives the axis it works along, and a raised number on a value is an exponent.",
       "lines": [
@@ -421,7 +421,7 @@
     },
     {
       "id": "types",
-      "seconds": 22,
+      "seconds": 18.2,
       "heading": "Static types, inferred",
       "narration": "It is statically typed, and it infers every type, so you don't write type annotations. A program whose types don't fit is refused before it runs, with the line, and with a suggested fix. The language is implemented in Rust, and it runs in the browser.",
       "lines": [],
@@ -431,9 +431,9 @@
     },
     {
       "id": "borrowed",
-      "seconds": 26,
+      "seconds": 20.7,
       "heading": "Borrowed on purpose",
-      "narration": "It takes arrays and right to left reading from {APL|A P L}. The {leading|leeding} axis and the atop, from {BQN|B Q N} and J. Its types from Haskell. And its macros, lints, and diagnostics from Rust. Each borrowing came with a refusal beside it, like Haskell's types, but not its laziness.",
+      "narration": "It takes arrays and right to left reading from {APL|ay pee el}. The {leading|leeding} axis and the atop, from {BQN|bee queue en} and {J|jay}. Its types from Haskell. And its macros, lints, and diagnostics from Rust. Each borrowing came with a refusal beside it, like Haskell's types, but not its laziness.",
       "lines": [],
       "images": [
         "../../software-wrighter-lab/blog/assets/images/posts/xetal-phil-borrowed.webp"
@@ -441,7 +441,7 @@
     },
     {
       "id": "core",
-      "seconds": 22,
+      "seconds": 17.5,
       "heading": "A small core, grown on evidence",
       "narration": "The language changes when a real program needs it to, and not before. Growth goes outward, into libraries, macro libraries, and extensions. Equations, pipelines, and integrals are libraries of macros, with no change to the compiler.",
       "lines": [],
@@ -451,7 +451,7 @@
     },
     {
       "id": "editor",
-      "seconds": 22,
+      "seconds": 12.7,
       "heading": "The browser editor",
       "narration": "In the browser editor, you type {ASCII|ask-ee} on the left, and watch it drawn on the right. Run shows the output. Notebook shows each statement above its output. And Step runs one statement at a time.",
       "lines": [
@@ -489,7 +489,7 @@
     },
     {
       "id": "learn",
-      "seconds": 14,
+      "seconds": 10.8,
       "heading": "What you will learn",
       "narration": "We'll begin with the fundamentals. Arrays, shapes, functions, and composition. Then we'll learn to write programs in this language, use its libraries, and extend it.",
       "lines": []
@@ -527,7 +527,7 @@
     },
     {
       "id": "tease-ml",
-      "seconds": 26,
+      "seconds": 20.9,
       "heading": "Pipelines and equations",
       "narration": "Later episodes go much further. A pipeline macro writes a model's data flow left to right, data first, then each layer in turn, with shapes that are checked. And equation macros take a formula as a paper prints it, and give back the array computation, its {LaTeX|lay tech}, or both.",
       "lines": [],
@@ -539,9 +539,9 @@
     },
     {
       "id": "tease-fpga",
-      "seconds": 18,
+      "seconds": 13,
       "heading": "Circuits, written as Verilog",
-      "narration": "Programs become circuits, written out as Verilog. A four-bit calculator machine, specified in this language, runs on a Tang Nano nine K board, and calculates over its serial port.",
+      "narration": "Programs become circuits, written out as Verilog. A four-bit calculator machine, specified in this language, runs on a Tang Nano nine {K|kay} board, and calculates over its serial port.",
       "lines": [],
       "images": [
         "../../software-wrighter-lab/blog/assets/images/posts/xetal-fpga-hex1000-9k-poster.webp",
@@ -550,9 +550,9 @@
     },
     {
       "id": "tease-gpu",
-      "seconds": 22,
+      "seconds": 20.3,
       "heading": "On GPUs",
-      "narration": "A function marked with a macro runs on a {GPU|G P U}, lowered from its own source. On Apple Silicon, through Metal. On an {NVIDIA|en vidia} {RTX|R T X} fifty sixty Ti. And even on the Adreno seven oh two, the {GPU|G P U} in an Arduino Uno Q.",
+      "narration": "A function marked with a macro runs on a {GPU|gee pee you}, lowered from its own source. On Apple Silicon, through Metal. On an {NVIDIA|en vidia} {RTX|ar tee ex} fifty sixty {Ti|tee eye}. And even on the Adreno seven oh two, the {GPU|gee pee you} in an Arduino Uno {Q|queue}.",
       "lines": [],
       "images": [
         "../../software-wrighter-lab/blog/assets/images/posts/xetal-mojo-cards.webp",
@@ -563,9 +563,9 @@
     },
     {
       "id": "tease-3d",
-      "seconds": 24,
+      "seconds": 18.2,
       "heading": "3D models and ray tracing",
-      "narration": "It drives Blender, working out a scene as arrays, every {object|object}'s place, size, and color. My {3D|three D} models of historical terminals are made that way. And a ray tracer, written as ordinary array code, renders the same scene on the {CPU|C P U} and the {GPU|G P U}.",
+      "narration": "It drives Blender, working out a scene as arrays, every {object|object}'s place, size, and color. My {3D|three dee} models of historical terminals are made that way. And a ray tracer, written as ordinary array code, renders the same scene on the {CPU|see pee you} and the {GPU|gee pee you}.",
       "lines": [],
       "images": [
         "../../software-wrighter-lab/blog/assets/images/posts/xetal-blender-hello-poster.webp",
@@ -575,7 +575,7 @@
     },
     {
       "id": "tease-tune",
-      "seconds": 18,
+      "seconds": 16.1,
       "heading": "Fine-tuning",
       "narration": "And fine-tuning. Browser lessons build a low-rank adapter number by number, and then train it. And a tiny mixture of experts, trained in this language, is fine-tuned to a changed task by six methods in turn.",
       "lines": [],
@@ -587,7 +587,7 @@
     },
     {
       "id": "exercise",
-      "seconds": 20,
+      "seconds": 13.3,
       "heading": "Before the next episode",
       "narration": "But first, we need to learn to stop thinking one element at a time. So before the next episode, take a loop you wrote recently. Find the parts that describe the computation. Then find the parts that only control the iteration.",
       "lines": [

@@ -33,5 +33,7 @@ pass() {
   node scripts/review.mjs "$slug" >/dev/null 2>&1
   echo "$(date +%H:%M:%S) $slug: review clips: $ids"
 }
+# Started with the narration: give it a minute to begin.
+for _ in $(seq 30); do pgrep -f "scripts/voice[.]py $slug " >/dev/null && break; sleep 2; done
 while pgrep -f "scripts/voice[.]py $slug " >/dev/null; do pass; sleep 30; done
 pass

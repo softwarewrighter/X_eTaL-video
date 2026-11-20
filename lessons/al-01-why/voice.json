@@ -1,0 +1,793 @@
+{
+  "sample": "mike-medium-ref-1.wav",
+  "sampleSha256": "a57fe277f7ce93d5cac4e0e2ed21d770b7d05cab5b20b338dd55aece009d7211",
+  "server": "VoxCPM (Gradio /generate)",
+  "steps": 15,
+  "cfg": 2.0,
+  "scenes": [
+    {
+      "id": "steps",
+      "narration": "Most programming languages teach us to think in individual steps. Create a variable. Enter a loop. Take an element. Perform an operation. Store the result. Repeat.",
+      "seconds": 12.9,
+      "sentences": [
+        {
+          "text": "Most programming languages teach us to think in individual steps.",
+          "heard": "Most programming languages teach us to think in individual steps.",
+          "start": 0.4,
+          "end": 3.692
+        },
+        {
+          "text": "Create a variable.",
+          "heard": "create a variable.",
+          "start": 4.042,
+          "end": 5.001
+        },
+        {
+          "text": "Enter a loop.",
+          "heard": "Enter a loop.",
+          "start": 5.351,
+          "end": 6.361
+        },
+        {
+          "text": "Take an element.",
+          "heard": "Take an element.",
+          "start": 6.711,
+          "end": 7.843
+        },
+        {
+          "text": "Perform an operation.",
+          "heard": "perform an operation.",
+          "start": 8.193,
+          "end": 9.402
+        },
+        {
+          "text": "Store the result.",
+          "heard": "store the result.",
+          "start": 9.752,
+          "end": 10.976
+        },
+        {
+          "text": "Repeat.",
+          "heard": "Repeat.",
+          "start": 11.326,
+          "end": 12.12
+        }
+      ]
+    },
+    {
+      "id": "whole",
+      "narration": "But we could describe the entire computation, instead of every step needed to perform it. That is the central idea behind array programming. This series teaches that way of thinking first, and the notation after.",
+      "seconds": 14.0,
+      "sentences": [
+        {
+          "text": "But we could describe the entire computation, instead of every step needed to perform it.",
+          "heard": "But we could describe the entire computation instead of every step needed to perform it.",
+          "start": 0.4,
+          "end": 5.224
+        },
+        {
+          "text": "That is the central idea behind array programming.",
+          "heard": "That is the central idea behind array programming.",
+          "start": 5.574,
+          "end": 8.555
+        },
+        {
+          "text": "This series teaches that way of thinking first, and the notation after.",
+          "heard": "This series teaches that way of thinking first, and the notation after.",
+          "start": 8.905,
+          "end": 13.27
+        }
+      ]
+    },
+    {
+      "id": "loop",
+      "narration": "This Rust program doubles four numbers. It creates an empty vector for the result. It visits each value in turn. And for each one, it pushes the value times two. It is straightforward, and it is correct.",
+      "seconds": 15.3,
+      "sentences": [
+        {
+          "text": "This Rust program doubles four numbers.",
+          "heard": "This Rust program doubles four numbers.",
+          "start": 0.4,
+          "end": 3.353
+        },
+        {
+          "text": "It creates an empty vector for the result.",
+          "heard": "It creates an empty vector for the result.",
+          "start": 3.703,
+          "end": 5.879
+        },
+        {
+          "text": "It visits each value in turn.",
+          "heard": "It visits each value in turn.",
+          "start": 6.229,
+          "end": 7.991
+        },
+        {
+          "text": "And for each one, it pushes the value times two.",
+          "heard": "and for each one, it pushes the value times two.",
+          "start": 8.341,
+          "end": 11.739
+        },
+        {
+          "text": "It is straightforward, and it is correct.",
+          "heard": "It is straightforward, and it is correct.",
+          "start": 12.089,
+          "end": 14.552
+        }
+      ]
+    },
+    {
+      "id": "mechanism",
+      "narration": "But notice how much of the program is about the mechanism. We create storage, iterate over the values, and append the results. The actual operation, multiplication by two, is one small part of one line. An array language makes that operation the focus.",
+      "seconds": 16.1,
+      "sentences": [
+        {
+          "text": "But notice how much of the program is about the mechanism.",
+          "heard": "but notice how much of the program is about the mechanism.",
+          "start": 0.4,
+          "end": 3.11
+        },
+        {
+          "text": "We create storage, iterate over the values, and append the results.",
+          "heard": "We create storage, iterate over the values, and append the results.",
+          "start": 3.46,
+          "end": 7.347
+        },
+        {
+          "text": "The actual operation, multiplication by two, is one small part of one line.",
+          "heard": "The actual operation multiplication by 2 is one small part of one line.",
+          "start": 7.697,
+          "end": 12.441
+        },
+        {
+          "text": "An array language makes that operation the focus.",
+          "heard": "An array language makes that operation the focus.",
+          "start": 12.791,
+          "end": 15.39
+        }
+      ]
+    },
+    {
+      "id": "transform",
+      "narration": "An array language lets us operate on collections as values. Instead of describing a loop, we describe the transformation. The same idea applies to four values, four thousand values, or a table with many dimensions. The language takes care of the mechanics, within its rules for shapes.",
+      "seconds": 19.0,
+      "sentences": [
+        {
+          "text": "An array language lets us operate on collections as values.",
+          "heard": "An array language lets us operate on collections as values.",
+          "start": 0.4,
+          "end": 3.751
+        },
+        {
+          "text": "Instead of describing a loop, we describe the transformation.",
+          "heard": "Instead of describing a loop, we describe the transformation.",
+          "start": 4.101,
+          "end": 7.779
+        },
+        {
+          "text": "The same idea applies to four values, four thousand values, or a table with many dimensions.",
+          "heard": "The same idea applies to 4 values, 4000 values, or a table with many dimensions.",
+          "start": 8.129,
+          "end": 13.535
+        },
+        {
+          "text": "The language takes care of the mechanics, within its rules for shapes.",
+          "heard": "The language takes care of the mechanics within its rules for shapes.",
+          "start": 13.885,
+          "end": 18.235
+        }
+      ]
+    },
+    {
+      "id": "double",
+      "narration": "Here is the same program in the array language this series is about. Values is one, two, three, four. Two times values is two, four, six, eight. There is no index, no storage to create, and nothing to append.",
+      "seconds": 16.3,
+      "sentences": [
+        {
+          "text": "Here is the same program in the array language this series is about.",
+          "heard": "Here's the same program in the array language this series is about.",
+          "start": 0.4,
+          "end": 4.316
+        },
+        {
+          "text": "Values is one, two, three, four.",
+          "heard": "Values is 1, 2, 3, 4.",
+          "start": 4.666,
+          "end": 8.449
+        },
+        {
+          "text": "Two times values is two, four, six, eight.",
+          "heard": "2 times values is 2, 4, 6, 8.",
+          "start": 8.799,
+          "end": 11.39
+        },
+        {
+          "text": "There is no index, no storage to create, and nothing to append.",
+          "heard": "There is no index, no storage to create, and nothing to append.",
+          "start": 11.74,
+          "end": 15.517
+        }
+      ]
+    },
+    {
+      "id": "hundred",
+      "narration": "Four values, or a hundred, and the line stays the same. Two times range one hundred doubles every number from one to a hundred, at once.",
+      "seconds": 11.1,
+      "sentences": [
+        {
+          "text": "Four values, or a hundred, and the line stays the same.",
+          "heard": "four values, or a hundred, and the line stays the same.",
+          "start": 0.4,
+          "end": 4.413
+        },
+        {
+          "text": "Two times range one hundred doubles every number from one to a hundred, at once.",
+          "heard": "Two times range, 100 doubles every number from 1 to 100 at once.",
+          "start": 4.763,
+          "end": 10.369
+        }
+      ]
+    },
+    {
+      "id": "reduce",
+      "narration": "Adding them up is one line too. Reduce, given plus, adds across the whole array, so one, two, three, four gives ten. The operation is passed in, quoted, so the same reduce given times multiplies them, and gives twenty-four.",
+      "seconds": 17.9,
+      "sentences": [
+        {
+          "text": "Adding them up is one line too.",
+          "heard": "Adding them up is one line too.",
+          "start": 0.4,
+          "end": 2.657
+        },
+        {
+          "text": "Reduce, given plus, adds across the whole array, so one, two, three, four gives ten.",
+          "heard": "Reduce. Given plus adds across the whole array. So 1, 2, 3, 4 gives 10.",
+          "start": 3.007,
+          "end": 10.073
+        },
+        {
+          "text": "The operation is passed in, quoted, so the same reduce given times multiplies them, and gives twenty-four.",
+          "heard": "The operation is passed in, quoted, so the same reduce given times multiplies them and gives 24",
+          "start": 10.423,
+          "end": 17.107
+        }
+      ]
+    },
+    {
+      "id": "history",
+      "narration": "Array programming has a long history. Kenneth Iverson published A Programming Language in nineteen sixty-two, as a notation for writing algorithms. {APL|A P L} three sixty, from {IBM|I B M} in nineteen sixty-eight, was the first version you could type at. {APL|A P L} two added nesting. J, from Iverson and Roger Hui, kept the meaning and moved to plain {ASCII|ask-ee}. K, from Arthur Whitney, stripped the language down again. And {BQN|bee queue en} redesigned the symbols from scratch, in twenty twenty.",
+      "seconds": 34.2,
+      "sentences": [
+        {
+          "text": "Array programming has a long history.",
+          "heard": "Array programming has a long history.",
+          "start": 0.4,
+          "end": 2.171
+        },
+        {
+          "text": "Kenneth Iverson published A Programming Language in nineteen sixty-two, as a notation for writing algorithms.",
+          "heard": "Kenneth Iverson published A Programming Language in 1962 as a notation for writing algorithms.",
+          "start": 2.521,
+          "end": 9.068
+        },
+        {
+          "text": "APL three sixty, from IBM in nineteen sixty-eight, was the first version you could type at.",
+          "heard": "APL 360 from IBM in 1968 was the first version you could type at.",
+          "spoken": "A P L three sixty, from I B M in nineteen sixty-eight, was the first version you could type at.",
+          "start": 9.418,
+          "end": 16.07
+        },
+        {
+          "text": "APL two added nesting.",
+          "heard": "APL2 added nesting.",
+          "spoken": "A P L two added nesting.",
+          "start": 16.42,
+          "end": 19.124
+        },
+        {
+          "text": "J, from Iverson and Roger Hui, kept the meaning and moved to plain ASCII.",
+          "heard": "Jay from Iverson and Roger Hui kept the meaning and moved to plain ASCII.",
+          "spoken": "J, from Iverson and Roger Hui, kept the meaning and moved to plain ask-ee.",
+          "unverified": true,
+          "start": 19.474,
+          "end": 24.866
+        },
+        {
+          "text": "K, from Arthur Whitney, stripped the language down again.",
+          "heard": "K, from Arthur Whitney, stripped the language down again.",
+          "start": 25.216,
+          "end": 28.354
+        },
+        {
+          "text": "And BQN redesigned the symbols from scratch, in twenty twenty.",
+          "heard": "and BQ and redesigned the cymbals from scratch in 2020.",
+          "spoken": "And bee queue en redesigned the symbols from scratch, in twenty twenty.",
+          "unverified": true,
+          "start": 28.704,
+          "end": 33.46
+        }
+      ]
+    },
+    {
+      "id": "spellings",
+      "narration": "In each of them, doubling four numbers is one short line. The symbols change from language to language. The idea doesn't. It's one operation, applied to the whole array.",
+      "seconds": 11.7,
+      "sentences": [
+        {
+          "text": "In each of them, doubling four numbers is one short line.",
+          "heard": "In each of them, doubling four numbers is one short line.",
+          "start": 0.4,
+          "end": 4.198
+        },
+        {
+          "text": "The symbols change from language to language.",
+          "heard": "The symbols change from language to language.",
+          "start": 4.548,
+          "end": 6.976
+        },
+        {
+          "text": "The idea doesn't.",
+          "heard": "the idea doesn't.",
+          "start": 7.326,
+          "end": 8.383
+        },
+        {
+          "text": "It's one operation, applied to the whole array.",
+          "heard": "It's one operation applied to the whole array.",
+          "start": 8.733,
+          "end": 10.997
+        }
+      ]
+    },
+    {
+      "id": "keyboard",
+      "narration": "{APL|ay pee el}'s symbols needed a special type element and a keyboard marked with them. The computers of the day had no codes for most of them. {J|Jay} moved to plain {ASCII|ask-ee} so that any keyboard could type it.",
+      "seconds": 12.4,
+      "sentences": [
+        {
+          "text": "APL's symbols needed a special type element and a keyboard marked with them.",
+          "heard": "Not APL symbols needed a special type element and a keyboard marked with them.",
+          "spoken": "ay pee el's symbols needed a special type element and a keyboard marked with them.",
+          "unverified": true,
+          "start": 0.4,
+          "end": 4.44
+        },
+        {
+          "text": "The computers of the day had no codes for most of them.",
+          "heard": "The computers of the day had no codes for most of them.",
+          "start": 4.79,
+          "end": 7.324
+        },
+        {
+          "text": "J moved to plain ASCII so that any keyboard could type it.",
+          "heard": "J moved to plain ASCII so that any keyboard could type it.",
+          "spoken": "Jay moved to plain ask-ee so that any keyboard could type it.",
+          "start": 7.674,
+          "end": 11.601
+        }
+      ]
+    },
+    {
+      "id": "why",
+      "narration": "This may be the dawn of personal programming languages, and this is not the first one I've started creating. The language in this series asks what {APL|ay pee el} would look like, if it were designed today. Designed for composition, readability, tooling, and machine learning. Its goal isn't to replace the languages before it. It's to make the ideas of array programming easier to {read|read}, reason about, type-check, and experiment with.",
+      "seconds": 26.1,
+      "sentences": [
+        {
+          "text": "This may be the dawn of personal programming languages, and this is not the first one I've started creating.",
+          "heard": "This may be the dawn of personal programming languages, and this is not the first one I've started creating.",
+          "start": 0.4,
+          "end": 4.96
+        },
+        {
+          "text": "The language in this series asks what APL would look like, if it were designed today.",
+          "heard": "The language in this series asks what APL would look like if it were designed today.",
+          "spoken": "The language in this series asks what ay pee el would look like, if it were designed today.",
+          "start": 5.31,
+          "end": 10.315
+        },
+        {
+          "text": "Designed for composition, readability, tooling, and machine learning.",
+          "heard": "designed for composition, readability, tooling, and machine learning.",
+          "start": 10.665,
+          "end": 15.828
+        },
+        {
+          "text": "Its goal isn't to replace the languages before it.",
+          "heard": "its goal isn't to replace the languages before it.",
+          "start": 16.178,
+          "end": 18.683
+        },
+        {
+          "text": "It's to make the ideas of array programming easier to read, reason about, type-check, and experiment with.",
+          "heard": "It's to make the ideas of array programming easier to read, reason about, type check, and experiment with.",
+          "start": 19.033,
+          "end": 25.326
+        }
+      ]
+    },
+    {
+      "id": "name",
+      "narration": "Its name spells out experimental, extensible, typed array language, and reverses {LaTeX|lay tech}. {LaTeX|lay tech} uses text to {produce|produce} typography. This language uses typography to express computation.",
+      "seconds": 15.2,
+      "sentences": [
+        {
+          "text": "Its name spells out experimental, extensible, typed array language, and reverses LaTeX.",
+          "heard": "Its name spells out experimental, extensible, typed array language, and reverses LaTeX.",
+          "spoken": "Its name spells out experimental, extensible, typed array language, and reverses lay tech.",
+          "start": 0.4,
+          "end": 7.563
+        },
+        {
+          "text": "LaTeX uses text to produce typography.",
+          "heard": "LaTeX uses text to produce typography.",
+          "spoken": "lay tech uses text to produce typography.",
+          "start": 7.913,
+          "end": 10.799
+        },
+        {
+          "text": "This language uses typography to express computation.",
+          "heard": "This language uses typography to express computation.",
+          "start": 11.149,
+          "end": 14.432
+        }
+      ]
+    },
+    {
+      "id": "typed-drawn",
+      "narration": "Its source is plain {ASCII|ask-ee}, typed on an ordinary keyboard, with no special symbols to learn. The tools draw it with typography that carries meaning. An underlined letter makes a name a function. A small mark above a name says where it comes from. A subscript gives the axis it works along, and a raised number on a value is an exponent.",
+      "seconds": 21.9,
+      "sentences": [
+        {
+          "text": "Its source is plain ASCII, typed on an ordinary keyboard, with no special symbols to learn.",
+          "heard": "Its source is plain ASCII typed on an ordinary keyboard with no special symbols to learn.",
+          "spoken": "Its source is plain ask-ee, typed on an ordinary keyboard, with no special symbols to learn.",
+          "start": 0.4,
+          "end": 6.871
+        },
+        {
+          "text": "The tools draw it with typography that carries meaning.",
+          "heard": "The tools draw it with typography that carries meaning.",
+          "start": 7.221,
+          "end": 9.891
+        },
+        {
+          "text": "An underlined letter makes a name a function.",
+          "heard": "An underlined letter makes a name a function.",
+          "start": 10.241,
+          "end": 12.885
+        },
+        {
+          "text": "A small mark above a name says where it comes from.",
+          "heard": "A small mark above a name says where it comes from.",
+          "start": 13.235,
+          "end": 15.756
+        },
+        {
+          "text": "A subscript gives the axis it works along, and a raised number on a value is an exponent.",
+          "heard": "A subscript gives the axis it works along, and a raised number on a value is an exponent.",
+          "start": 16.106,
+          "end": 21.121
+        }
+      ]
+    },
+    {
+      "id": "types",
+      "narration": "It is statically typed, and it infers every type, so you don't write type annotations. A program whose types don't fit is refused before it runs, with the line, and with a suggested fix. The language is implemented in Rust, and it runs in the browser.",
+      "seconds": 18.2,
+      "sentences": [
+        {
+          "text": "It is statically typed, and it infers every type, so you don't write type annotations.",
+          "heard": "It is statically typed and it infers every type so you don't write type annotations.",
+          "start": 0.4,
+          "end": 5.731
+        },
+        {
+          "text": "A program whose types don't fit is refused before it runs, with the line, and with a suggested fix.",
+          "heard": "A program whose types don't fit is refused before it runs with the line and with a suggested fix.",
+          "start": 6.081,
+          "end": 12.998
+        },
+        {
+          "text": "The language is implemented in Rust, and it runs in the browser.",
+          "heard": "The language is implemented in Rust, and it runs in the browser.",
+          "start": 13.348,
+          "end": 17.46
+        }
+      ]
+    },
+    {
+      "id": "borrowed",
+      "narration": "It takes arrays and right to left reading from {APL|ay pee el}. The {leading|leeding} axis and the atop, from {BQN|bee queue en} and {J|jay}. Its types from Haskell. And its macros, lints, and diagnostics from Rust. Each borrowing came with a refusal beside it, like Haskell's types, but not its laziness.",
+      "seconds": 20.7,
+      "sentences": [
+        {
+          "text": "It takes arrays and right to left reading from APL.",
+          "heard": "It takes arrays and right-to-left reading from APL.",
+          "spoken": "It takes arrays and right to left reading from ay pee el.",
+          "start": 0.4,
+          "end": 3.43
+        },
+        {
+          "text": "The leading axis and the atop, from BQN and J.",
+          "heard": "The leading axis and the atop from BQ and J.",
+          "spoken": "The leeding axis and the atop, from bee queue en and jay.",
+          "unverified": true,
+          "start": 3.78,
+          "end": 8.584
+        },
+        {
+          "text": "Its types from Haskell.",
+          "heard": "its types from Haskell.",
+          "start": 8.934,
+          "end": 10.464
+        },
+        {
+          "text": "And its macros, lints, and diagnostics from Rust.",
+          "heard": "and its macros, lengths, and diagnostics from Rust.",
+          "unverified": true,
+          "start": 10.814,
+          "end": 14.01
+        },
+        {
+          "text": "Each borrowing came with a refusal beside it, like Haskell's types, but not its laziness.",
+          "heard": "Each borrowing came with a refusal beside it, like Haskell's types, but not its laziness.",
+          "start": 14.36,
+          "end": 19.984
+        }
+      ]
+    },
+    {
+      "id": "core",
+      "narration": "The language changes when a real program needs it to, and not before. Growth goes outward, into libraries, macro libraries, and extensions. Equations, pipelines, and integrals are libraries of macros, with no change to the compiler.",
+      "seconds": 17.5,
+      "sentences": [
+        {
+          "text": "The language changes when a real program needs it to, and not before.",
+          "heard": "The language changes when a real program needs it to, and not before.",
+          "start": 0.4,
+          "end": 4.743
+        },
+        {
+          "text": "Growth goes outward, into libraries, macro libraries, and extensions.",
+          "heard": "Growth goes outward into libraries, macro libraries, and extensions.",
+          "start": 5.093,
+          "end": 9.913
+        },
+        {
+          "text": "Equations, pipelines, and integrals are libraries of macros, with no change to the compiler.",
+          "heard": "Equations, pipelines, and integrals are libraries of macros with no change to the compiler.",
+          "start": 10.263,
+          "end": 16.734
+        }
+      ]
+    },
+    {
+      "id": "editor",
+      "narration": "In the browser editor, you type {ASCII|ask-ee} on the left, and watch it drawn on the right. Run shows the output. Notebook shows each statement above its output. And Step runs one statement at a time.",
+      "seconds": 12.7,
+      "sentences": [
+        {
+          "text": "In the browser editor, you type ASCII on the left, and watch it drawn on the right.",
+          "heard": "In the browser editor, you type ASCII on the left and watch it drawn on the right.",
+          "spoken": "In the browser editor, you type ask-ee on the left, and watch it drawn on the right.",
+          "start": 0.4,
+          "end": 5.323
+        },
+        {
+          "text": "Run shows the output.",
+          "heard": "Run shows the output.",
+          "start": 5.673,
+          "end": 7.084
+        },
+        {
+          "text": "Notebook shows each statement above its output.",
+          "heard": "Notebook shows each statement above its output.",
+          "start": 7.434,
+          "end": 9.562
+        },
+        {
+          "text": "And Step runs one statement at a time.",
+          "heard": "and STEP runs one statement at a time.",
+          "start": 9.912,
+          "end": 11.969
+        }
+      ]
+    },
+    {
+      "id": "learn",
+      "narration": "We'll begin with the fundamentals. Arrays, shapes, functions, and composition. Then we'll learn to write programs in this language, use its libraries, and extend it.",
+      "seconds": 10.8,
+      "sentences": [
+        {
+          "text": "We'll begin with the fundamentals.",
+          "heard": "We'll begin with the fundamentals.",
+          "start": 0.4,
+          "end": 2.258
+        },
+        {
+          "text": "Arrays, shapes, functions, and composition.",
+          "heard": "Iris shapes functions in composition.",
+          "unverified": true,
+          "start": 2.608,
+          "end": 5.053
+        },
+        {
+          "text": "Then we'll learn to write programs in this language, use its libraries, and extend it.",
+          "heard": "Then we'll learn to write programs in this language, use its libraries, and extend it.",
+          "start": 5.403,
+          "end": 10.017
+        }
+      ]
+    },
+    {
+      "id": "tease-ml",
+      "narration": "Later episodes go much further. A pipeline macro writes a model's data flow left to right, data first, then each layer in turn, with shapes that are checked. And equation macros take a formula as a paper prints it, and give back the array computation, its {LaTeX|lay tech}, or both.",
+      "seconds": 20.9,
+      "sentences": [
+        {
+          "text": "Later episodes go much further.",
+          "heard": "later episodes go much further.",
+          "start": 0.4,
+          "end": 2.375
+        },
+        {
+          "text": "A pipeline macro writes a model's data flow left to right, data first, then each layer in turn, with shapes that are checked.",
+          "heard": "A pipeline macro writes a model's data flow left to right, data first, then each layer in turn with shapes that are checked.",
+          "start": 2.725,
+          "end": 11.747
+        },
+        {
+          "text": "And equation macros take a formula as a paper prints it, and give back the array computation, its LaTeX, or both.",
+          "heard": "Then equation macros take a formula as a paper prints it and give back the array computation, its LaTeX, or both.",
+          "spoken": "And equation macros take a formula as a paper prints it, and give back the array computation, its lay tech, or both.",
+          "unverified": true,
+          "start": 12.097,
+          "end": 20.195
+        }
+      ]
+    },
+    {
+      "id": "tease-fpga",
+      "narration": "Programs become circuits, written out as Verilog. A four-bit calculator machine, specified in this language, runs on a Tang Nano nine {K|kay} board, and calculates over its serial port.",
+      "seconds": 13.0,
+      "sentences": [
+        {
+          "text": "Programs become circuits, written out as Verilog.",
+          "heard": "programs become circuits, written out as Verilog.",
+          "start": 0.4,
+          "end": 3.755
+        },
+        {
+          "text": "A four-bit calculator machine, specified in this language, runs on a Tang Nano nine K board, and calculates over its serial port.",
+          "heard": "A 4-bit calculator machine, specified in this language, runs on a Tang Nano 9K board and calculates over its serial port.",
+          "spoken": "A four-bit calculator machine, specified in this language, runs on a Tang Nano nine kay board, and calculates over its serial port.",
+          "start": 4.105,
+          "end": 12.299
+        }
+      ]
+    },
+    {
+      "id": "tease-gpu",
+      "narration": "A function marked with a macro runs on a {GPU|gee pee you}, lowered from its own source. On Apple Silicon, through Metal. On an {NVIDIA|en vidia} {RTX|ar tee ex} fifty sixty {Ti|tee eye}. And even on the Adreno seven oh two, the {GPU|gee pee you} in an Arduino Uno {Q|queue}.",
+      "seconds": 20.3,
+      "sentences": [
+        {
+          "text": "A function marked with a macro runs on a GPU, lowered from its own source.",
+          "heard": "A function marked with a macro runs on a GIPI you lowered from its own source.",
+          "spoken": "A function marked with a macro runs on a gee pee you, lowered from its own source.",
+          "unverified": true,
+          "start": 0.4,
+          "end": 5.561
+        },
+        {
+          "text": "On Apple Silicon, through Metal.",
+          "heard": "on apple silicon through metal.",
+          "start": 5.911,
+          "end": 8.892
+        },
+        {
+          "text": "On an NVIDIA RTX fifty sixty Ti.",
+          "heard": "on an NVIDIA RT-X5060TI.",
+          "spoken": "On an en vidia ar tee ex fifty sixty tee eye.",
+          "start": 9.242,
+          "end": 12.804
+        },
+        {
+          "text": "And even on the Adreno seven oh two, the GPU in an Arduino Uno Q.",
+          "heard": "And even on the Arduino 702, the GPU in an Arduino UnoQ.",
+          "spoken": "And even on the Adreno seven oh two, the gee pee you in an Arduino Uno queue.",
+          "unverified": true,
+          "start": 13.154,
+          "end": 19.527
+        }
+      ]
+    },
+    {
+      "id": "tease-3d",
+      "narration": "It drives Blender, working out a scene as arrays, every {object|object}'s place, size, and color. My {3D|three dee} models of historical terminals are made that way. And a ray tracer, written as ordinary array code, renders the same scene on the {CPU|see pee you} and the {GPU|gee pee you}.",
+      "seconds": 18.2,
+      "sentences": [
+        {
+          "text": "It drives Blender, working out a scene as arrays, every object's place, size, and color.",
+          "heard": "It drives Blender, working out a scene as a raise, every object's place, size, and color.",
+          "unverified": true,
+          "start": 0.4,
+          "end": 6.17
+        },
+        {
+          "text": "My 3D models of historical terminals are made that way.",
+          "heard": "My 3D models of historical terminals are made that way.",
+          "spoken": "My three dee models of historical terminals are made that way.",
+          "start": 6.52,
+          "end": 9.794
+        },
+        {
+          "text": "And a ray tracer, written as ordinary array code, renders the same scene on the CPU and the GPU.",
+          "heard": "An array tracer, written as ordinary array code, renders the same scene on the CPU and the GPU.",
+          "spoken": "And a ray tracer, written as ordinary array code, renders the same scene on the see pee you and the gee pee you.",
+          "unverified": true,
+          "start": 10.144,
+          "end": 17.481
+        }
+      ]
+    },
+    {
+      "id": "tease-tune",
+      "narration": "And fine-tuning. Browser lessons build a low-rank adapter number by number, and then train it. And a tiny mixture of experts, trained in this language, is fine-tuned to a changed task by six methods in turn.",
+      "seconds": 16.1,
+      "sentences": [
+        {
+          "text": "And fine-tuning.",
+          "heard": "and fine tuning.",
+          "start": 0.4,
+          "end": 1.785
+        },
+        {
+          "text": "Browser lessons build a low-rank adapter number by number, and then train it.",
+          "heard": "In browser lessons, build a low rank adapter number by number, and then train it.",
+          "unverified": true,
+          "start": 2.135,
+          "end": 6.78
+        },
+        {
+          "text": "And a tiny mixture of experts, trained in this language, is fine-tuned to a changed task by six methods in turn.",
+          "heard": "And a tiny mixture of experts trained in this language is fine-tuned to a change task by six methods in turn.",
+          "unverified": true,
+          "start": 7.13,
+          "end": 15.314
+        }
+      ]
+    },
+    {
+      "id": "exercise",
+      "narration": "But first, we need to learn to stop thinking one element at a time. So before the next episode, take a loop you wrote recently. Find the parts that describe the computation. Then find the parts that only control the iteration.",
+      "seconds": 13.3,
+      "sentences": [
+        {
+          "text": "But first, we need to learn to stop thinking one element at a time.",
+          "heard": "But first, we need to learn to stop thinking one element at a time.",
+          "start": 0.4,
+          "end": 3.608
+        },
+        {
+          "text": "So before the next episode, take a loop you wrote recently.",
+          "heard": "So before the next episode, take a loop you wrote recently.",
+          "start": 3.958,
+          "end": 7.6
+        },
+        {
+          "text": "Find the parts that describe the computation.",
+          "heard": "Find the parts that describe the computation.",
+          "start": 7.95,
+          "end": 9.889
+        },
+        {
+          "text": "Then find the parts that only control the iteration.",
+          "heard": "Then find the parts that only control the iteration.",
+          "start": 10.239,
+          "end": 12.539
+        }
+      ]
+    }
+  ]
+}

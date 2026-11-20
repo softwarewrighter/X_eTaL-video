@@ -23,11 +23,16 @@ done
 # The uv venv (never the system python), with the Gradio client.
 [ -x .venv/bin/python ] || uv venv -q
 .venv/bin/python -c 'import gradio_client' 2>/dev/null || uv pip install -q gradio_client
+# Exit 3 (sentences kept unverified) still updated the lesson: the
+# schedule is written for it too, then the 3 is passed on.
+rc=0
 .venv/bin/python scripts/voice.py "$slug" --server "$server" --reference "$sample" \
-  --prompt-text "$(dirname "$sample")/prompt-text.txt" --whisper-model "$model" "$@"
+  --prompt-text "$(dirname "$sample")/prompt-text.txt" --whisper-model "$model" "$@" || rc=$?
+[ "$rc" -eq 0 ] || [ "$rc" -eq 3 ] || exit "$rc"
 # The schedule again, written only when it changed (the review page's
 # clips and stills are current while timing.json is unchanged).
 if [ "${1:-}" != --check ]; then
   t="$(mktemp)"; scripts/schedule.sh "$slug" --timing > "$t"
   cmp -s "$t" "lessons/$slug/timing.json" && rm -f "$t" || mv "$t" "lessons/$slug/timing.json"
 fi
+exit "$rc"

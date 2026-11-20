@@ -41,19 +41,27 @@ start() {
     pids+=($!)
   done
 }
-stop() { for p in "${pids[@]}"; do pkill -P "$p" 2>/dev/null; kill "$p" 2>/dev/null; done; sleep 2; pkill -f "scripts/voice.py $slug .*--shard" 2>/dev/null; }
-trap 'stop; exit 130' INT TERM
+# Its own workers only (their pids and their children), never another
+# supervisor's.
+stop() { for p in "${pids[@]}"; do pkill -P "$p" 2>/dev/null; kill "$p" 2>/dev/null; done; }
+trap 'stop; [ -n "${follow:-}" ] && kill "$follow" 2>/dev/null; exit 130' INT TERM
+# Sleep so a stop signal is taken at once (bash runs a trap only after
+# a foreground command ends).
+nap() { sleep "$1" & wait $!; }
 
 say "narration: $workers shards, $narrated scenes"
 start
+# The review page follows: each scene's clip once it is ready.
+scripts/review-follow.sh "$slug" >> "$logs/follow.log" 2>&1 &
+follow=$!
 tries=0
 shown=$(ready)
 last=$(newest); last=${last:-$(date +%s)}
 while :; do
-  sleep 30
+  nap 30
   alive=0; for p in "${pids[@]}"; do kill -0 "$p" 2>/dev/null && alive=$((alive + 1)); done
   n=$(newest); [ -n "$n" ] && [ "$n" -gt "$last" ] && last=$n
-  scripts/voice.sh "$slug" --ready >> "$logs/ready.log" 2>&1 && node scripts/review.mjs "$slug" >/dev/null 2>&1
+  scripts/voice.sh "$slug" --ready >> "$logs/ready.log" 2>&1; node scripts/review.mjs "$slug" >/dev/null 2>&1
   r=$(ready); [ "$r" != "$shown" ] && { say "narration: $r of $narrated scenes ready"; shown=$r; }
   # Every shard done: a shard that failed (not the clean end) is run again.
   if [ "$alive" -eq 0 ]; then
