@@ -1,0 +1,201 @@
+{
+  "slug": "al-01-why",
+  "kind": "story",
+  "title": "Why another programming language?",
+  "summary": "Array languages, episode 1: thinking in whole arrays instead of one element at a time, where the idea came from (APL, J, K, BQN), and what this typed array language is trying to do.",
+  "order": 100,
+  "poster": 1500,
+  "fps": 30,
+  "brand": "Array Languages: episode 1",
+  "music": { "file": "/Users/mike/Downloads/break-it-down.wav", "intro": { "seconds": 5, "fadeOut": 0.5 }, "outro": { "seconds": 7, "fadeIn": 1 }, "slides": { "volume": 0.3, "fade": 0.5, "offsets": [1, -2, 0.5] } },
+  "scenes": [
+    {
+      "id": "title",
+      "seconds": 5,
+      "heading": "Why another programming language?",
+      "lines": ["Thinking in whole arrays"]
+    },
+    {
+      "id": "steps",
+      "seconds": 14,
+      "heading": "One step at a time",
+      "narration": "Most programming languages teach us to think in individual steps. Create a variable. Enter a loop. Take an element. Perform an operation. Store the result. Repeat.",
+      "lines": ["create, loop, take, operate, store, repeat"]
+    },
+    {
+      "id": "whole",
+      "seconds": 16,
+      "heading": "The whole computation",
+      "narration": "But we could describe the entire computation, instead of every step needed to perform it. That is the central idea behind array programming. This series teaches that way of thinking first, and the notation after.",
+      "lines": []
+    },
+    {
+      "id": "array-idea",
+      "seconds": 7,
+      "heading": "Array programming",
+      "lines": [],
+      "slide": { "type": "points", "items": [
+        { "text": "An array is a value", "sub": "a list, a table, or more axes, used whole" },
+        { "text": "One operation, the whole array", "sub": "the transformation, not the visits" },
+        { "text": "The loop is the language's job", "sub": "within its shape rules" },
+        { "text": "Since 1962", "sub": "Kenneth Iverson's notation, A Programming Language" }
+      ] }
+    },
+    {
+      "id": "loop",
+      "seconds": 17,
+      "heading": "The scalar model",
+      "narration": "This Rust program doubles four numbers. It creates an empty vector for the result. It visits each value in turn. And for each one, it pushes the value times two. It is straightforward, and it is correct.",
+      "lines": [
+        { "code": "let values = [1, 2, 3, 4];" },
+        { "code": "let mut result = Vec::new();" },
+        { "code": "for x in values {" },
+        { "code": "    result.push(x * 2);" },
+        { "code": "}" }
+      ]
+    },
+    {
+      "id": "mechanism",
+      "seconds": 18,
+      "heading": "Mostly mechanism",
+      "narration": "But notice how much of the program is about the mechanism. We create storage, iterate over the values, and append the results. The actual operation, multiplication by two, is one small part of one line. An array language makes that operation the focus.",
+      "lines": [
+        { "code": "let mut result = Vec::new();   // storage" },
+        { "code": "for x in values {              // iteration" },
+        { "code": "    result.push(x * 2);         // the operation, and an append" }
+      ]
+    },
+    {
+      "id": "transform",
+      "seconds": 20,
+      "heading": "Whole-array operations",
+      "narration": "An array language lets us operate on collections as values. Instead of describing a loop, we describe the transformation. The same idea applies to four values, four thousand values, or a table with many dimensions. The language takes care of the mechanics, within its rules for shapes.",
+      "lines": []
+    },
+    {
+      "id": "double",
+      "seconds": 16,
+      "heading": "Two times values",
+      "narration": "Here is the same program in the array language this series is about. Values is one, two, three, four. Two times values is two, four, six, eight. There is no index, no storage to create, and nothing to append.",
+      "lines": [
+        { "xtl": "values := 1 2 3 4" },
+        { "xtl": "2 * values" },
+        { "code": "2 4 6 8" }
+      ]
+    },
+    {
+      "id": "family",
+      "seconds": 7,
+      "heading": "The array family",
+      "lines": [],
+      "slide": { "type": "timeline", "items": [
+        { "year": "1962", "text": "The notation", "sub": "Iverson's book" },
+        { "year": "1968", "text": "APL\\360", "sub": "IBM" },
+        { "year": "1984", "text": "APL2", "sub": "nested arrays" },
+        { "year": "1990", "text": "J", "sub": "Iverson and Roger Hui" },
+        { "year": "1993", "text": "K", "sub": "Arthur Whitney" },
+        { "year": "2020", "text": "BQN", "sub": "new glyphs" },
+        { "year": "2026", "text": "X_eTaL", "sub": "typed, drawn", "mark": true }
+      ] }
+    },
+    {
+      "id": "history",
+      "seconds": 34,
+      "heading": "Where array languages came from",
+      "narration": "Array programming has a long history. Kenneth Iverson published A Programming Language in nineteen sixty-two, as a notation for writing algorithms. {APL|A P L} three sixty, from {IBM|I B M} in nineteen sixty-eight, was the first version you could type at. {APL|A P L} two added nesting. J, from Iverson and Roger Hui, kept the meaning and moved to plain {ASCII|ask-ee}. K, from Arthur Whitney, stripped the language down again. And {BQN|B Q N} redesigned the symbols from scratch, in twenty twenty.",
+      "lines": []
+    },
+    {
+      "id": "spellings",
+      "seconds": 18,
+      "heading": "One idea, many spellings",
+      "narration": "In each of them, doubling four numbers is one short line. The symbols change from language to language. The idea doesn't. It's one operation, applied to the whole array.",
+      "lines": [
+        { "code": "APL   2×1 2 3 4" },
+        { "code": "J     2*1 2 3 4" },
+        { "code": "K     2*1 2 3 4" },
+        { "code": "BQN   2×1‿2‿3‿4" },
+        { "xtl": "2 * 1 2 3 4" }
+      ]
+    },
+    {
+      "id": "why",
+      "seconds": 24,
+      "heading": "Why this language",
+      "narration": "The language in this series asks a question. It asks what {APL|A P L} would look like, if it were designed today. Designed for composition, readability, tooling, and machine learning. Its goal isn't to replace the languages before it. It's to make the ideas of array programming easier to {read|read}, reason about, type-check, and experiment with.",
+      "lines": []
+    },
+    {
+      "id": "typed-drawn",
+      "seconds": 30,
+      "heading": "Typed in ASCII, drawn as notation",
+      "narration": "Its source is plain {ASCII|ask-ee}, typed on an ordinary keyboard, with no special symbols to learn. The tools draw it with typography that carries meaning. An underlined letter makes a name a function. A small mark above a name says where it comes from. A subscript gives the axis it works along, and a raised number on a value is an exponent.",
+      "lines": [
+        { "xtl": "'+ r_/ 1 2 3 4" },
+        { "code": "10" }
+      ]
+    },
+    {
+      "id": "types",
+      "seconds": 22,
+      "heading": "Static types, inferred",
+      "narration": "It is statically typed, and it infers every type, so you don't write type annotations. A program whose types don't fit is refused before it runs, with the line, and with a suggested fix. The language is implemented in Rust, and it runs in the browser.",
+      "lines": [],
+      "images": ["../../software-wrighter-lab/blog/assets/images/posts/xetal-phil-type-error.webp"]
+    },
+    {
+      "id": "editor",
+      "seconds": 22,
+      "heading": "The browser editor",
+      "narration": "In the browser editor, you type {ASCII|ask-ee} on the left, and watch it drawn on the right. Run shows the output. Notebook shows each statement above its output. And Step runs one statement at a time.",
+      "lines": ["softwarewrighter.github.io/X_eTaL"],
+      "images": ["../../software-wrighter-lab/blog/assets/images/posts/xetal-live-demo.webp"]
+    },
+    {
+      "id": "pipeline",
+      "seconds": 7,
+      "heading": "From keyboard to result",
+      "lines": [],
+      "slide": { "type": "flow", "items": [
+        { "text": "Typed", "sub": "plain ASCII, any keyboard", "xtl": "'+ r_/ 1 2 3 4" },
+        { "text": "Drawn", "sub": "decoration carries meaning" },
+        { "text": "Checked", "sub": "every type inferred, before it runs" },
+        { "text": "Run", "sub": "the result: 10" }
+      ] }
+    },
+    {
+      "id": "learn",
+      "seconds": 30,
+      "heading": "What you will learn",
+      "narration": "We'll begin with the fundamentals. Arrays, shapes, functions, and composition. Then we'll learn to write programs in this language, use its libraries, and extend it. Later, the same ideas reach graphics, games, parallel hardware, and machine learning. But first, we need to learn to stop thinking one element at a time.",
+      "lines": []
+    },
+    {
+      "id": "exercise",
+      "seconds": 16,
+      "heading": "Before the next episode",
+      "narration": "Before the next episode, take a loop you wrote recently. Find the parts that describe the computation. Then find the parts that only control the iteration.",
+      "lines": ["Which parts of your loop compute?", "Which parts only iterate?"]
+    },
+    {
+      "id": "cta",
+      "seconds": 12.8,
+      "heading": "Call to action",
+      "lines": [],
+      "clip": "../video-publishing/reference/epilog/99b-epilog.mp4",
+      "transcript": [
+        { "start": 0, "end": 4.6, "text": "If you found this helpful, please like and subscribe." },
+        { "start": 4.6, "end": 9.5, "text": "Hit the bell for notifications, and leave a comment if you have questions." },
+        { "start": 9.5, "end": 12.0, "text": "See you in the next one, bye." }
+      ]
+    },
+    {
+      "id": "close",
+      "seconds": 5,
+      "heading": "End screen",
+      "lines": [],
+      "clip": "../video-publishing/reference/epilog/99c-epilog-ext-swing9.mp4",
+      "mute": true
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 number = 2
 slug = "al-01-script"
-status = "pending"
+status = "in-progress"
 description = "lessons/al-01-why: lesson.json (kind story; scenes, narration, silent slides;..."
 role = "production"
 context_files = []

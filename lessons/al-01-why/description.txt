@@ -1,0 +1,10 @@
+Array languages, episode 1. Most programming languages teach us to think one step at a time: create a variable, loop, take an element, operate, store, repeat. Array programming describes the whole computation instead. This episode compares a Rust loop with whole-array operations, traces the array family from Iverson's 1962 notation through APL\360, APL2, J, K and BQN, and introduces X_eTaL: a statically typed array language, typed in plain ASCII and drawn as notation.
+
+Try X_eTaL in your browser: https://softwarewrighter.github.io/X_eTaL/
+X_eTaL: https://github.com/softwarewrighter/X_eTaL
+The Array Languages blog series: https://blog.softwarewrighter.com/series/#array-languages
+
+Blog: https://blog.softwarewrighter.com/
+Discord: https://discord.gg/Ctzk5uHggZ
+
+#ArrayProgramming #APL #XeTaL #Programming #FunctionalProgramming #Rust
