@@ -35,6 +35,10 @@ END = 1.8  # the last scene's tail: time to read it before the video ends
 MAX_SENTENCE = 140  # characters: longer sentences come out garbled
 
 
+# A cached take whisper never matched: its note starts with this.
+UNVERIFIED = "UNVERIFIED: "
+
+
 def fail(msg: str) -> None:
     print(f"voice: {msg}", file=sys.stderr)
     sys.exit(1)
@@ -107,6 +111,8 @@ def spelled(n: int) -> str:
         return TENS[n // 10] + ("" if n % 10 == 0 else " " + ONES[n % 10])
     if n < 1000:
         return ONES[n // 100] + " hundred" + ("" if n % 100 == 0 else " " + spelled(n % 100))
+    if n < 1000000:
+        return spelled(n // 1000) + " thousand" + ("" if n % 1000 == 0 else " " + spelled(n % 1000))
     return str(n)
 
 
@@ -229,6 +235,7 @@ def main() -> None:
         "scenes": [],
     }
 
+    unverified = []
     for scene in scenes:
         text = scene.get("narration")
         if not text:
@@ -270,13 +277,19 @@ def main() -> None:
                         break
                     print(f"voice:   whisper heard {got!r}", flush=True)
                 else:
-                    clip.rename(cache / f"{key}.rejected.wav")
-                    fail(f"scene {scene['id']}: {sentence!r} never came out right "
-                         f"(last heard {got!r}); reword it")
+                    # Never stop the run on one sentence: keep the last take,
+                    # flag it (here, in voice.json, on the review page) for a
+                    # listen, and go on. Rewording it makes it again.
+                    got = UNVERIFIED + got
+                    print(f"voice:   kept unverified, for a listen: {scene['id']} {k + 1}", flush=True)
                 note.write_text(got + "\n")
             guard.close()  # releases the sentence's lock
             clips.append(clip)
-            said.append({"text": shown, "heard": got} | ({"spoken": sentence} if sentence != shown else {}))
+            flagged = got.startswith(UNVERIFIED)
+            if flagged:
+                got = got[len(UNVERIFIED):]
+                unverified.append(f"{scene['id']} {k + 1}: {shown!r} (heard {got!r})")
+            said.append({"text": shown, "heard": got} | ({"spoken": sentence} if sentence != shown else {}) | ({"unverified": True} if flagged else {}))
 
         # The scene's audio: lead, sentences with pauses, tail; peaks at -1 dB.
         wav = out / f"{scene['id']}.wav"
@@ -309,6 +322,9 @@ def main() -> None:
     (ROOT / "lessons" / a.slug / "voice.json").write_text(json.dumps(record, indent=2) + "\n")
     total = sum(s["seconds"] for s in scenes)
     print(f"voice: {a.slug}: narrated, {total:.1f} s in all; lesson.json and voice.json updated")
+    if unverified:
+        print(f"voice: {len(unverified)} sentence(s) whisper never matched, kept for a listen (review page, orange):\n  " + "\n  ".join(unverified))
+        sys.exit(3)
 
 
 if __name__ == "__main__":

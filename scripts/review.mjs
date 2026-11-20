@@ -65,7 +65,7 @@ const cards = lesson.scenes.map((s, i) => {
       ${s.narration ? `<p class="narr">${esc(written(s.narration))}</p>` : `<p class="dim">(no narration${s.id === "title" ? ": the title, with music" : s.clip ? ": the reused clip, its own audio" : s.id === "close" ? ": the close, with music" : ""})</p>`}
       ${stale ? `<p class="warn">the narration changed since it was spoken</p>` : ""}
       ${audio ? `<audio controls preload="none" src="audio/${esc(s.id)}.wav"></audio>` : ""}
-      ${v ? `<table>${v.sentences.map((x) => `<tr><td>${x.start.toFixed(1)}</td><td>${esc(x.text)}</td><td class="heard">${esc(x.heard)}</td></tr>`).join("")}</table>` : ""}
+      ${v ? `<table>${v.sentences.map((x) => `<tr${x.unverified ? ' class="warn" title="whisper never matched this take: listen to it"' : ""}><td>${x.start.toFixed(1)}</td><td>${esc(x.text)}</td><td class="heard">${x.unverified ? "UNVERIFIED: " : ""}${esc(x.heard)}</td></tr>`).join("")}</table>` : ""}
     </div>
   </div>
 </section>`;
