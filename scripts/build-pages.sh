@@ -3,7 +3,7 @@
 # publishes it): the landing page (scripts/build-catalog.mjs), the logo
 # and favicon, and for every lesson a thumbnail (the lesson's "poster"
 # frame, or its middle, in its format: scripts/format.sh). No video:
-# videos are hosted on YouTube, never in git (the user, 2026-11-18);
+# videos are hosted on YouTube, never in git (the author, 2026-11-18);
 # the page embeds a lesson's YouTube player once it is linked (just
 # link SLUG URL). A lesson that shows a recorded page is recorded first
 # when it has no recording yet (that needs the network).

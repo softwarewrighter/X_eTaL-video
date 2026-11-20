@@ -1,9 +1,9 @@
-"""Narrate a lesson in the user's cloned voice (scripts/voice.sh runs it).
+"""Narrate a lesson in the author's cloned voice (scripts/voice.sh runs it).
 
 Each scene's `narration` is split into sentences; each sentence goes
 on its own call (one at a time, never in parallel: every narration on
 this machine queues on one lock, --lock) to VoxCPM's Gradio
-API with the user's voice sample and its exact transcript, the sample
+API with the author's voice sample and its exact transcript, the sample
 and transcript this year's narrated shorts used. Every clip is checked
 by a local whisper (whisper-cli, ggml-medium.en): one whose words are
 not the sentence's is made again, up to --tries times. Clips are kept
@@ -47,7 +47,7 @@ def fail(msg: str) -> None:
 
 # Words spelled one way and said two (read: reed or red; live: liv or
 # lyve). Whisper cannot tell which was said, so whoever writes or
-# reviews a script decides each one (the user, 2026-11-18, after "code
+# reviews a script decides each one (the author, 2026-11-18, after "code
 # is read" came out as reed): mark it {read|red} to have VoxCPM say a
 # respelling while captions show the word, {live|live} when the usual
 # reading is right, or reword it away. Words whose two readings are

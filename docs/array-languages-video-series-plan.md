@@ -1,18 +1,18 @@
 # Array languages: a video series plan
 
-The user (2026-11-19): read `docs/research2.txt` and plan the first
+The author (2026-11-19): read `docs/research2.txt` and plan the first
 video it suggests, made with the pattern of the Throwback Thursday
 video (`lessons/tbt-2741`): a 5 second title with music, Remotion
 explainer slides with music between sections in place of narration,
 and the standard closing (the reused call to action, then a close
-with 7 seconds of outro music faded in). The user provides the
+with 7 seconds of outro music faded in). The author provides the
 longer music clips.
 
 `docs/research2.txt` is an archival proposal (a 76 episode course,
 scripts for the first episodes, a production design), not normative:
 its claims about X_eTaL are checked against the pinned X_eTaL before
 any of them is said or shown, and its narration is rewritten where it
-speaks for the user (see "Rules for every episode").
+speaks for the author (see "Rules for every episode").
 
 ## How this relates to the existing plan
 
@@ -30,7 +30,7 @@ its first seven episodes are mostly language-neutral. Where they meet:
 | 08 Reading and writing X_eTaL | `intro-xetal`, `t-reading`, `t-names` (made or being made) |
 | 10, 11 Functions, pipelines | `t-functions`, `t-operators`, `t-trains` |
 
-This series replaces the older plan (the user, 2026-11-19): its
+This series replaces the older plan (the author, 2026-11-19): its
 order governs; the videos already made (`intro-xetal`, `t-names`,
 the shorts) stay as they are.
 
@@ -58,10 +58,10 @@ planned when the first twelve are, as research2 itself recommends
 (a pilot first, then the rest only once its pacing, look, voice and
 accuracy are accepted). FPGA goes to the hardwarewrighter channel.
 
-Each episode runs 5 to 15 minutes (the user, 2026-11-19; 8 is good
+Each episode runs 5 to 15 minutes (the author, 2026-11-19; 8 is good
 for episode 01).
 
-## X_eTaL changes coming (the user, 2026-11-19)
+## X_eTaL changes coming (the author, 2026-11-19)
 
 X_eTaL is pinned at 1df48523 (moved to the latest at this saga's
 start). Coming soon, and worth planning around:
@@ -84,10 +84,10 @@ As `lessons/tbt-2741` (a story lesson, `kind: "story"`):
 
 | Part | Length | Sound | Picture |
 | ---- | ------ | ----- | ------- |
-| Title | 5 s | the intro music (episode 01: `hammond-glide.wav`, the user): its first 5 s, a 0.5 s fade at the end | a Remotion title card: series, episode number, title |
-| Sections | most of the video | the narration (VoxCPM, the user's voice) | Remotion panels (code, arrays, the typed and drawn source), recordings of the live pages, pictures |
+| Title | 5 s | the intro music (episode 01: `hammond-glide.wav`, the author): its first 5 s, a 0.5 s fade at the end | a Remotion title card: series, episode number, title |
+| Sections | most of the video | the narration (VoxCPM, the author's voice) | Remotion panels (code, arrays, the typed and drawn source), recordings of the live pages, pictures |
 | Section breaks | about 7 s each | music only: a 7 s piece from the middle of the track, faded in and out, each break at a different offset, at 30% | a silent Remotion explainer slide (points, a timeline, a flow) |
-| Coming up | about 2 min | a silent slide, then narrated | what later episodes cover, each from its post or repository and its pictures (the user, 2026-11-19: teasers before the end) |
+| Coming up | about 2 min | a silent slide, then narrated | what later episodes cover, each from its post or repository and its pictures (the author, 2026-11-19: teasers before the end) |
 | Exercise | about 20 s | narrated | the question, on screen |
 | Call to action | 12 s | its own narration | the reused `99b-epilog.mp4`, as it is |
 | Close | 5 s | the outro music: the track's last 7 s, a 1 s fade in, starting 2 s before the close | the reused `99c` clip, muted, essentially blank (YouTube overlays the end cards) |
@@ -96,9 +96,9 @@ As `lessons/tbt-2741` (a story lesson, `kind: "story"`):
 
 1. **Nothing invented.** The narration says only what a source says:
    X_eTaL's README and docs at the pin, the Array Languages blog
-   posts, the user's messages. The user's reasons and preferences
+   posts, the author's messages. The author's reasons and preferences
    are quoted from those sources or asked about, never written for
-   them. A research2 sentence that speaks for the user ("X_eTaL
+   them. A research2 sentence that speaks for the author ("X_eTaL
    builds on that tradition while exploring ...") is replaced by
    what the sources say.
 2. **Every X_eTaL example runs** at the pinned commit, its output
@@ -120,7 +120,7 @@ As `lessons/tbt-2741` (a story lesson, `kind: "story"`):
 
 Slug `al-01-why`, landscape, about 8 minutes. research2's six scenes,
 checked and adapted to the pattern above. The table is the first draft;
-the scenes as made (27, with the user's why, the name, what it
+the scenes as made (27, with the author's why, the name, what it
 borrows, a small core) are in `lessons/al-01-why/README.md`.
 
 Learning objective: what an array language is, how it differs from
@@ -171,23 +171,23 @@ What the renderer needs first (one shared step, before the voice):
    narration, slides), `data.xtl` with every example run at the pin,
    the other languages' lines checked, the README with each fact's
    source; `just review al-01-why` shows the script before any voice.
-   The user reviews the script.
+   The author reviews the script.
 3. story-panels -- the renderer: code panels, array cells, typed and
    drawn, in story scenes (`remotion/src`, the schema).
 4. al-01-voice -- the narration (VoxCPM, whisper-checked), the
-   recordings of the live editor, the music from the user's track,
+   recordings of the live editor, the music from the author's track,
    rendered; the review page complete, per scene.
-5. al-01-publish -- after the user's review: `out/al-01-why-youtube/`
+5. al-01-publish -- after the author's review: `out/al-01-why-youtube/`
    (title, description with chapters, captions, the video).
 
-## Answered (the user, 2026-11-19)
+## Answered (the author, 2026-11-19)
 
 1. This series replaces the older plan (`docs/curriculum.md`).
 2. On screen: "Array Languages: episode 1".
 3. Music for episode 01: `/Users/mike/Downloads/hammond-glide.wav`
    (14.8 s): its first 5 s for the title, its middle for the breaks,
    its last 7 s for the close.
-4. The why, in the user's words: "This may be the dawn of Personal
+4. The why, in the author's words: "This may be the dawn of Personal
    Programming Languages, and this is not the first one I've started
    creating."
 5. Length: 5 to 15 minutes an episode; 8 is good.

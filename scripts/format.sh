@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# A lesson's video format, from its length (the user, 2026-11-18): 150
+# A lesson's video format, from its length (the author, 2026-11-18): 150
 # seconds or less is a short, portrait only (1080x1920); longer is
 # long-form, landscape only (1920x1080). Reads lessons/SLUG/timing.json
 # (the schedule X_eTaL computed).

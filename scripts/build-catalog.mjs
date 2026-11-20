@@ -3,7 +3,7 @@
 // every lesson (lessons/*/lesson.json, in the order of "order"), its
 // thumbnail and what it is. A lesson linked to YouTube ("youtube", set
 // by just link) plays in YouTube's player on its card: the videos are
-// hosted by YouTube only, never here or in git (the user, 2026-11-18).
+// hosted by YouTube only, never here or in git (the author, 2026-11-18).
 // One not yet uploaded shows its thumbnail, marked as coming. The videos
 // and thumbnails are put beside it by scripts/build-pages.sh.
 //   scripts/build-catalog.mjs OUT.html COMMIT XETAL

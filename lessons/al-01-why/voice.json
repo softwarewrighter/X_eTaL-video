@@ -255,8 +255,8 @@
     },
     {
       "id": "history",
-      "narration": "Array programming has a long history. Kenneth Iverson published A Programming Language in nineteen sixty-two, as a notation for writing algorithms. {APL|A P L} three sixty, from {IBM|I B M} in nineteen sixty-eight, was the first version you could type at. {APL|A P L} two added nesting. J, from Iverson and Roger Hui, kept the meaning and moved to plain {ASCII|ask-ee}. K, from Arthur Whitney, stripped the language down again. And {BQN|bee queue en} redesigned the symbols from scratch, in twenty twenty.",
-      "seconds": 34.2,
+      "narration": "Array programming has a long history. Kenneth Iverson published A Programming Language in nineteen sixty-two, as a notation for writing algorithms. {APL|A P L} three sixty, from {IBM|I B M} in nineteen sixty-eight, was the first version you could type at. {APL|A P L} two added nesting. J, from Iverson and Roger Hui, kept the meaning and moved to plain {ASCII|ask-ee}. K, from Arthur Whitney, stripped the language down again. And in twenty twenty, {BQN|bee, queue, en}, redesigned the symbols from scratch.",
+      "seconds": 34.3,
       "sentences": [
         {
           "text": "Array programming has a long history.",
@@ -299,19 +299,19 @@
           "end": 28.354
         },
         {
-          "text": "And BQN redesigned the symbols from scratch, in twenty twenty.",
-          "heard": "and BQ and redesigned the cymbals from scratch in 2020.",
-          "spoken": "And bee queue en redesigned the symbols from scratch, in twenty twenty.",
+          "text": "And in twenty twenty, BQN, redesigned the symbols from scratch.",
+          "heard": "And in 2020, BQN redesigned the cymbals from scratch.",
+          "spoken": "And in twenty twenty, bee, queue, en, redesigned the symbols from scratch.",
           "unverified": true,
           "start": 28.704,
-          "end": 33.46
+          "end": 33.562
         }
       ]
     },
     {
       "id": "spellings",
-      "narration": "In each of them, doubling four numbers is one short line. The symbols change from language to language. The idea doesn't. It's one operation, applied to the whole array.",
-      "seconds": 11.7,
+      "narration": "In each of them, doubling four numbers is one short line. The symbols change from language to language. The idea doesn't. It's one operation, applied to the whole array. In the language of this series, you type an asterisk, as in {J|jay} or {K|kay}, and it {reads|reeds} as a times sign, as in {APL|A P L}.",
+      "seconds": 22.5,
       "sentences": [
         {
           "text": "In each of them, doubling four numbers is one short line.",
@@ -336,6 +336,14 @@
           "heard": "It's one operation applied to the whole array.",
           "start": 8.733,
           "end": 10.997
+        },
+        {
+          "text": "In the language of this series, you type an asterisk, as in J or K, and it reads as a times sign, as in APL.",
+          "heard": "In the language of this series, you type in asterisk, as in J or K, and it reads as a time sign, as in a P-L.",
+          "spoken": "In the language of this series, you type an asterisk, as in jay or kay, and it reeds as a times sign, as in A P L.",
+          "unverified": true,
+          "start": 11.347,
+          "end": 21.72
         }
       ]
     },
@@ -497,8 +505,8 @@
     },
     {
       "id": "borrowed",
-      "narration": "It takes arrays and right to left reading from {APL|ay pee el}. The {leading|leeding} axis and the atop, from {BQN|bee queue en} and {J|jay}. Its types from Haskell. And its macros, lints, and diagnostics from Rust. Each borrowing came with a refusal beside it, like Haskell's types, but not its laziness.",
-      "seconds": 20.7,
+      "narration": "It takes arrays and right to left reading from {APL|ay pee el}. The {leading|leeding} axis and the atop, from {BQN|bee, queue, en}, and {J|jay}. Its types from Haskell. And its macros, lints, and diagnostics from Rust. Each borrowing came with a refusal beside it, like Haskell's types, but not its laziness.",
+      "seconds": 20.6,
       "sentences": [
         {
           "text": "It takes arrays and right to left reading from APL.",
@@ -508,31 +516,30 @@
           "end": 3.43
         },
         {
-          "text": "The leading axis and the atop, from BQN and J.",
-          "heard": "The leading axis and the atop from BQ and J.",
-          "spoken": "The leeding axis and the atop, from bee queue en and jay.",
-          "unverified": true,
+          "text": "The leading axis and the atop, from BQN, and J.",
+          "heard": "the leading axis and the atop from B, Q, N, and J.",
+          "spoken": "The leeding axis and the atop, from bee, queue, en, and jay.",
           "start": 3.78,
-          "end": 8.584
+          "end": 8.404
         },
         {
           "text": "Its types from Haskell.",
           "heard": "its types from Haskell.",
-          "start": 8.934,
-          "end": 10.464
+          "start": 8.754,
+          "end": 10.284
         },
         {
           "text": "And its macros, lints, and diagnostics from Rust.",
           "heard": "and its macros, lengths, and diagnostics from Rust.",
           "unverified": true,
-          "start": 10.814,
-          "end": 14.01
+          "start": 10.634,
+          "end": 13.83
         },
         {
           "text": "Each borrowing came with a refusal beside it, like Haskell's types, but not its laziness.",
           "heard": "Each borrowing came with a refusal beside it, like Haskell's types, but not its laziness.",
-          "start": 14.36,
-          "end": 19.984
+          "start": 14.18,
+          "end": 19.804
         }
       ]
     },
@@ -668,44 +675,43 @@
     },
     {
       "id": "tease-gpu",
-      "narration": "A function marked with a macro runs on a {GPU|gee pee you}, lowered from its own source. On Apple Silicon, through Metal. On an {NVIDIA|en vidia} {RTX|ar tee ex} fifty sixty {Ti|tee eye}. And even on the Adreno seven oh two, the {GPU|gee pee you} in an Arduino Uno {Q|queue}.",
-      "seconds": 20.3,
+      "narration": "A function marked with a macro runs on a {GPU|gee, pee, you}, lowered from its own source. On Apple Silicon, through Metal. On an {NVIDIA|en vidia} {RTX|ar tee ex} fifty sixty {Ti|tee eye}. And even on the Adreno seven oh two, the {GPU|gee, pee, you} in an Arduino Uno {Q|queue}.",
+      "seconds": 20.9,
       "sentences": [
         {
           "text": "A function marked with a macro runs on a GPU, lowered from its own source.",
-          "heard": "A function marked with a macro runs on a GIPI you lowered from its own source.",
-          "spoken": "A function marked with a macro runs on a gee pee you, lowered from its own source.",
-          "unverified": true,
+          "heard": "A function marked with a macro runs on a GP, u, lowered from its own source.",
+          "spoken": "A function marked with a macro runs on a gee, pee, you, lowered from its own source.",
           "start": 0.4,
-          "end": 5.561
+          "end": 5.791
         },
         {
           "text": "On Apple Silicon, through Metal.",
           "heard": "on apple silicon through metal.",
-          "start": 5.911,
-          "end": 8.892
+          "start": 6.141,
+          "end": 9.123
         },
         {
           "text": "On an NVIDIA RTX fifty sixty Ti.",
           "heard": "on an NVIDIA RT-X5060TI.",
           "spoken": "On an en vidia ar tee ex fifty sixty tee eye.",
-          "start": 9.242,
-          "end": 12.804
+          "start": 9.473,
+          "end": 13.034
         },
         {
           "text": "And even on the Adreno seven oh two, the GPU in an Arduino Uno Q.",
-          "heard": "And even on the Arduino 702, the GPU in an Arduino UnoQ.",
-          "spoken": "And even on the Adreno seven oh two, the gee pee you in an Arduino Uno queue.",
+          "heard": "And even on the Arduino 702, the GPU in an Arduino UnoQ,",
+          "spoken": "And even on the Adreno seven oh two, the gee, pee, you in an Arduino Uno queue.",
           "unverified": true,
-          "start": 13.154,
-          "end": 19.527
+          "start": 13.384,
+          "end": 20.13
         }
       ]
     },
     {
       "id": "tease-3d",
-      "narration": "It drives Blender, working out a scene as arrays, every {object|object}'s place, size, and color. My {3D|three dee} models of historical terminals are made that way. And a ray tracer, written as ordinary array code, renders the same scene on the {CPU|see pee you} and the {GPU|gee pee you}.",
-      "seconds": 18.2,
+      "narration": "It drives Blender, working out a scene as arrays, every {object|object}'s place, size, and color. My {3D|three dee} models of historical terminals are made that way. And a ray tracer, written as ordinary array code, renders the same scene on the {CPU|see pee you} and the {GPU|gee, pee, you}.",
+      "seconds": 17.3,
       "sentences": [
         {
           "text": "It drives Blender, working out a scene as arrays, every object's place, size, and color.",
@@ -723,11 +729,11 @@
         },
         {
           "text": "And a ray tracer, written as ordinary array code, renders the same scene on the CPU and the GPU.",
-          "heard": "An array tracer, written as ordinary array code, renders the same scene on the CPU and the GPU.",
-          "spoken": "And a ray tracer, written as ordinary array code, renders the same scene on the see pee you and the gee pee you.",
+          "heard": "An array tracer, written as ordinary array code, renders the same scene on the TPU in the GPU.",
+          "spoken": "And a ray tracer, written as ordinary array code, renders the same scene on the see pee you and the gee, pee, you.",
           "unverified": true,
           "start": 10.144,
-          "end": 17.481
+          "end": 16.551
         }
       ]
     },

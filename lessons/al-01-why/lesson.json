@@ -310,16 +310,16 @@
     },
     {
       "id": "history",
-      "seconds": 34.2,
+      "seconds": 34.3,
       "heading": "Where array languages came from",
-      "narration": "Array programming has a long history. Kenneth Iverson published A Programming Language in nineteen sixty-two, as a notation for writing algorithms. {APL|A P L} three sixty, from {IBM|I B M} in nineteen sixty-eight, was the first version you could type at. {APL|A P L} two added nesting. J, from Iverson and Roger Hui, kept the meaning and moved to plain {ASCII|ask-ee}. K, from Arthur Whitney, stripped the language down again. And {BQN|bee queue en} redesigned the symbols from scratch, in twenty twenty.",
+      "narration": "Array programming has a long history. Kenneth Iverson published A Programming Language in nineteen sixty-two, as a notation for writing algorithms. {APL|A P L} three sixty, from {IBM|I B M} in nineteen sixty-eight, was the first version you could type at. {APL|A P L} two added nesting. J, from Iverson and Roger Hui, kept the meaning and moved to plain {ASCII|ask-ee}. K, from Arthur Whitney, stripped the language down again. And in twenty twenty, {BQN|bee, queue, en}, redesigned the symbols from scratch.",
       "lines": []
     },
     {
       "id": "spellings",
-      "seconds": 11.7,
+      "seconds": 22.5,
       "heading": "One idea, many spellings",
-      "narration": "In each of them, doubling four numbers is one short line. The symbols change from language to language. The idea doesn't. It's one operation, applied to the whole array.",
+      "narration": "In each of them, doubling four numbers is one short line. The symbols change from language to language. The idea doesn't. It's one operation, applied to the whole array. In the language of this series, you type an asterisk, as in {J|jay} or {K|kay}, and it {reads|reeds} as a times sign, as in {APL|A P L}.",
       "lines": [],
       "panel": {
         "type": "code",
@@ -341,9 +341,23 @@
             "code": "2×1‿2‿3‿4"
           },
           {
-            "label": "X_eTaL",
+            "label": "X_eTaL, as typed",
+            "code": "2 * 1 2 3 4"
+          },
+          {
+            "label": "X_eTaL, as read",
             "xtl": "2 * 1 2 3 4"
           }
+        ],
+        "focus": [
+          [],
+          [],
+          [],
+          [],
+          [
+            4,
+            5
+          ]
         ]
       }
     },
@@ -431,9 +445,9 @@
     },
     {
       "id": "borrowed",
-      "seconds": 20.7,
+      "seconds": 20.6,
       "heading": "Borrowed on purpose",
-      "narration": "It takes arrays and right to left reading from {APL|ay pee el}. The {leading|leeding} axis and the atop, from {BQN|bee queue en} and {J|jay}. Its types from Haskell. And its macros, lints, and diagnostics from Rust. Each borrowing came with a refusal beside it, like Haskell's types, but not its laziness.",
+      "narration": "It takes arrays and right to left reading from {APL|ay pee el}. The {leading|leeding} axis and the atop, from {BQN|bee, queue, en}, and {J|jay}. Its types from Haskell. And its macros, lints, and diagnostics from Rust. Each borrowing came with a refusal beside it, like Haskell's types, but not its laziness.",
       "lines": [],
       "images": [
         "../../software-wrighter-lab/blog/assets/images/posts/xetal-phil-borrowed.webp"
@@ -457,7 +471,41 @@
       "lines": [
         "softwarewrighter.github.io/X_eTaL"
       ],
-      "capture": { "url": "https://softwarewrighter.github.io/X_eTaL/", "actions": [{ "wait": 4 }, { "click": "button:has-text('Run')" }, { "wait": 4.5 }, { "click": "button:has-text('Notebook')" }, { "wait": 5 }, { "click": "button:has-text('Step')" }, { "wait": 1.5 }, { "click": "button:has-text('Step')" }, { "wait": 1.5 }, { "click": "button:has-text('Step')" }] }
+      "capture": {
+        "url": "https://softwarewrighter.github.io/X_eTaL/",
+        "actions": [
+          {
+            "wait": 4
+          },
+          {
+            "click": "button:has-text('Run')"
+          },
+          {
+            "wait": 4.5
+          },
+          {
+            "click": "button:has-text('Notebook')"
+          },
+          {
+            "wait": 5
+          },
+          {
+            "click": "button:has-text('Step')"
+          },
+          {
+            "wait": 1.5
+          },
+          {
+            "click": "button:has-text('Step')"
+          },
+          {
+            "wait": 1.5
+          },
+          {
+            "click": "button:has-text('Step')"
+          }
+        ]
+      }
     },
     {
       "id": "pipeline",
@@ -550,9 +598,9 @@
     },
     {
       "id": "tease-gpu",
-      "seconds": 20.3,
+      "seconds": 20.9,
       "heading": "On GPUs",
-      "narration": "A function marked with a macro runs on a {GPU|gee pee you}, lowered from its own source. On Apple Silicon, through Metal. On an {NVIDIA|en vidia} {RTX|ar tee ex} fifty sixty {Ti|tee eye}. And even on the Adreno seven oh two, the {GPU|gee pee you} in an Arduino Uno {Q|queue}.",
+      "narration": "A function marked with a macro runs on a {GPU|gee, pee, you}, lowered from its own source. On Apple Silicon, through Metal. On an {NVIDIA|en vidia} {RTX|ar tee ex} fifty sixty {Ti|tee eye}. And even on the Adreno seven oh two, the {GPU|gee, pee, you} in an Arduino Uno {Q|queue}.",
       "lines": [],
       "images": [
         "../../software-wrighter-lab/blog/assets/images/posts/xetal-mojo-cards.webp",
@@ -563,9 +611,9 @@
     },
     {
       "id": "tease-3d",
-      "seconds": 18.2,
+      "seconds": 17.3,
       "heading": "3D models and ray tracing",
-      "narration": "It drives Blender, working out a scene as arrays, every {object|object}'s place, size, and color. My {3D|three dee} models of historical terminals are made that way. And a ray tracer, written as ordinary array code, renders the same scene on the {CPU|see pee you} and the {GPU|gee pee you}.",
+      "narration": "It drives Blender, working out a scene as arrays, every {object|object}'s place, size, and color. My {3D|three dee} models of historical terminals are made that way. And a ray tracer, written as ordinary array code, renders the same scene on the {CPU|see pee you} and the {GPU|gee, pee, you}.",
       "lines": [],
       "images": [
         "../../software-wrighter-lab/blog/assets/images/posts/xetal-blender-hello-poster.webp",

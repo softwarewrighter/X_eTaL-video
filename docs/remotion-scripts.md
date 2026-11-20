@@ -25,7 +25,7 @@ The Life lesson (`lessons/life`) settled one more thing the
 proposals left open: a demo's stages are drawn from arrays the
 lesson's own `data.xtl` prints, with no trace library yet.
 
-## 0. Install (saga 2, step 1; the user's go-ahead)
+## 0. Install (saga 2, step 1; the author's go-ahead)
 
 `scripts/remotion-install.sh`:
 
@@ -104,7 +104,7 @@ done
 Open: `vid-tts` defaults to port 7861 (VibeVoice) and the shorts'
 rule is VoxCPM on 7860 through `tts/client.py` (a Gradio client,
 which needs a uv venv with `gradio_client`). Which of the two this
-script calls is the user's choice (`docs/plan.md`, question 2).
+script calls is the author's choice (`docs/plan.md`, question 2).
 
 ## 3. Timing: the audio's lengths, scheduled in X_eTaL (saga 2 and 3)
 

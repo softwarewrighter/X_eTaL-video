@@ -42,6 +42,8 @@ export const Panel: React.FC<Props> = ({ panel, media, heading, brand, show, loc
 
   const lines = panel.lines ?? [];
   const labeled = lines.some((l) => l.label);
+  // The label column as wide as the longest label (38 px text, about 0.56 em a character).
+  const labelWidth = Math.max(0, ...lines.map((l) => (l.label ?? "").length)) * 0.56 * 38 + 40;
 
   // Cells: as many to a row as fit, at most 20.
   const from = media.from ?? [];
@@ -123,7 +125,7 @@ export const Panel: React.FC<Props> = ({ panel, media, heading, brand, show, loc
                   transform: `translateX(${30 * (1 - r(j))}px)`,
                 }}
               >
-                {labeled ? <div style={{ width: 200, flexShrink: 0, color: theme.accent, fontSize: 38, fontWeight: 700 }}>{l.label ?? ""}</div> : null}
+                {labeled ? <div style={{ width: labelWidth, flexShrink: 0, color: theme.accent, fontSize: 38, fontWeight: 700 }}>{l.label ?? ""}</div> : null}
                 <div
                   className={xtl ? "xtl" : undefined}
                   style={{ fontFamily: theme.mono, fontSize: 50, whiteSpace: "pre", color: xtl ? theme.xtl : theme.code }}

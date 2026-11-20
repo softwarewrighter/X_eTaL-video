@@ -1,17 +1,17 @@
 # Curriculum: showcasing and teaching X_eTaL
 
-Superseded (the user, 2026-11-19): the array languages series,
+Superseded (the author, 2026-11-19): the array languages series,
 `docs/array-languages-video-series-plan.md`, replaces this plan. It
 is kept as the record of the videos already made and of the ideas
 the new series may draw on.
 
-The user (2026-11-18): demos can be short, but X_eTaL needs
+The author (2026-11-18): demos can be short, but X_eTaL needs
 tutorials: an overview, flow control, immutability, recursion;
 separate videos on macros with many examples; libraries, demos,
 games, ML, GPU, FPGA; comparisons with other languages, showing its
 strengths and its simplicity and elegance.
 
-Where they go (the user, 2026-11-18): the **softwarewrighter**
+Where they go (the author, 2026-11-18): the **softwarewrighter**
 channel takes the shorts and the long-form videos about software, so
 everything in this repository; **hardwarewrighter** (its own shorts
 and long-form, about hardware) takes the FPGA work and becomes the
@@ -95,7 +95,7 @@ each video example-heavy, every expansion shown with `xetal expand`.
 
 Fair, side by side, the same problem in each language, from the pinned
 `docs/rosetta.md` and the idioms. Other languages' code is shown as
-`code` lines, X_eTaL rendered. The two that matter (the user,
+`code` lines, X_eTaL rendered. The two that matter (the author,
 2026-11-18): **APL**, its ancestor, and **Rust**, the systems language
 it is written in and the one its audience knows.
 
@@ -131,7 +131,7 @@ hardwarewrighter channel: postponed, the priority from about
 ## The order to make them
 
 1. **Now:** the intro (`intro-xetal`), finishing in the current batch,
-   then the core four the user named: `t-immutability`, `t-flow`,
+   then the core four the author named: `t-immutability`, `t-flow`,
    `t-recursion`, with `t-reading` first so they have a base.
 2. **Then:** `m-what` and `m-gallery` (macros, the most distinctive
    thing), and `vs-apl` and `vs-rust` (the two comparisons that
@@ -163,7 +163,7 @@ step before the videos that use it:
 6. **Channel**: `just youtube` notes the channel (softwarewrighter
    for everything here).
 
-## Answered (the user, 2026-11-18)
+## Answered (the author, 2026-11-18)
 
 1. Channels: softwarewrighter (shorts and long-form about software:
    all of this repository) and hardwarewrighter (hardware, FPGA).

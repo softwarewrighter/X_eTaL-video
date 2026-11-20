@@ -6,7 +6,7 @@ import { Panel } from "./Panel";
 import { StoryProps } from "./types";
 
 // A story (lesson.kind "story"): a video that is not a lesson on
-// X_eTaL, made the way the user's earlier videos were (video-publishing:
+// X_eTaL, made the way the author's earlier videos were (video-publishing:
 // a title with music, narrated segments over pictures and screen
 // recordings, the reused closing call to action, a close with music),
 // with Remotion in place of hand-made slides. As in Lesson.tsx, nothing

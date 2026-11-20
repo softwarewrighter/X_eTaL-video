@@ -43,10 +43,10 @@ the language's argument by existing.
 | V8 | Pictures of the live demos come from the demos themselves: the published pages recorded in headless Chrome (Playwright, as the shorts capture slides), or the demo's own X_eTaL output drawn by a Remotion component. Never a redrawn imitation of what a page shows. | The demos' rule (a page shows only what X_eTaL computes) carries over: a video shows the real program and its real output. |
 | V9 | A feature X_eTaL lacks, or a bug this work uncovers, is not worked around silently and not fixed here: it is recorded in `docs/xetal-asks.md`, and the library or lesson uses a documented workaround or waits. | X_eTaL owns its language decisions; this repository is a consumer. |
 | V10 | `just` is the entry point; recipes call `scripts/*.sh`. Python, where a script needs it, runs in a uv-managed venv, never the system python. Tools with no dependencies to install are preferred in the gate. | One way to do things, as in the siblings. |
-| V11 | Generated media is never tracked: audio, frames, clips and rendered video go to `work/` and `out/` (gitignored). Tracked: lessons, schemas, libraries, scripts, docs. Videos are hosted on YouTube only, uploaded by hand by the user; the site embeds them (`just link`) and carries no video (the user, 2026-11-18). | A video is megabytes per version; the lesson and the pinned tools reproduce it. |
-| V13 | X_eTaL source in a video is shown **as rendered, never as typed** (the user, 2026-11-13): a lesson's `{"xtl": ...}` line is rendered by the pinned `xetal render --html` (decorated: underlined function letters, raised namespaces, subscript axes, the APL glyphs; each token classed) and drawn in JuliaMono with X_eTaL's own dark-theme colors (`remotion/src/theme.ts`; the font fetched by `scripts/fetch-fonts.sh`, not tracked). | The live pages show X_eTaL this way; a video that shows it as typed teaches a different-looking language than the one a viewer meets at the link. |
+| V11 | Generated media is never tracked: audio, frames, clips and rendered video go to `work/` and `out/` (gitignored). Tracked: lessons, schemas, libraries, scripts, docs. Videos are hosted on YouTube only, uploaded by hand by the author; the site embeds them (`just link`) and carries no video (the author, 2026-11-18). | A video is megabytes per version; the lesson and the pinned tools reproduce it. |
+| V13 | X_eTaL source in a video is shown **as rendered, never as typed** (the author, 2026-11-13): a lesson's `{"xtl": ...}` line is rendered by the pinned `xetal render --html` (decorated: underlined function letters, raised namespaces, subscript axes, the APL glyphs; each token classed) and drawn in JuliaMono with X_eTaL's own dark-theme colors (`remotion/src/theme.ts`; the font fetched by `scripts/fetch-fonts.sh`, not tracked). | The live pages show X_eTaL this way; a video that shows it as typed teaches a different-looking language than the one a viewer meets at the link. |
 | V14 | The live site is a landing page of the videos, built locally into `pages/` and published as the `gh-pages` branch's only commit (`just publish`), as the siblings do; the videos themselves are in that branch (about 30 MB for four lessons). This repository's color is a very light gray. | One place to watch everything; nothing built is tracked on `main`. If the videos outgrow a Pages site (1 GB), they move to YouTube and the cards link there. |
-| V12 | Third-party services need the user's say: a hosted text-to-speech or image model is used only when the user names it; the default is the user's own servers. Remotion's license (free for individuals and companies of three or fewer; a company license beyond that) is stated in the README. | No surprise costs or data leaving the machine. |
+| V12 | Third-party services need the author's say: a hosted text-to-speech or image model is used only when the author names it; the default is the author's own servers. Remotion's license (free for individuals and companies of three or fewer; a company license beyond that) is stated in the README. | No surprise costs or data leaving the machine. |
 
 This repository's local port is 8427 (Remotion Studio and any preview
 server), so it can run beside a demo from each sibling.
@@ -126,14 +126,14 @@ libraries, tested.
 2. timeline-lib [DONE] -- `libs/Timeline` with tests and baselines;
    `scripts/test-libs.sh` in the gate.
 3. ease-lib [DONE] -- `libs/Ease`.
-4. making-of [DONE] -- the user asked for a demo video that describes
+4. making-of [DONE] -- the author asked for a demo video that describes
    how it was created: `lessons/making-of/` (lesson.json, timing.json),
    `scripts/schedule.sh` (X_eTaL computes the schedule and every
    frame's numbers), `scripts/frames.mjs` (a PNG per frame,
    ImageMagick), `scripts/draft-video.sh` (ffmpeg), both formats;
    `scripts/check-lessons.sh` in the gate. A draft renderer with
    nothing to install; Remotion replaces `frames.mjs`, not the rest.
-5. remotion-making-of [DONE] -- the user installed Remotion
+5. remotion-making-of [DONE] -- the author installed Remotion
    (`npx create-video@latest --yes --blank remotion`, 4.0.543):
    `remotion/src` (Root: LessonLandscape and LessonPortrait, length
    from the timing; Lesson: layout only, every number looked up),
@@ -149,10 +149,10 @@ libraries, tested.
    `scripts/check-lessons.sh` uses it. The first lesson is
    `lessons/making-of` (step 4).
 
-## Saga 2 -- life  [DONE 2026-11-13; the user to choose]
+## Saga 2 -- life  [DONE 2026-11-13; the author to choose]
 
 Goal: the first lesson about a live demo, Life, made both ways V8
-names so the user can pick (the user, 2026-11-13: "both? so I can
+names so the author can pick (the author, 2026-11-13: "both? so I can
 pick the better one"; Life first).
 
 1. housekeeping -- `docs/research.txt` trimmed to the conversation
@@ -170,7 +170,7 @@ pick the better one"; Life first).
    area while the scenes' actions run (`scripts/capture.mjs`); a
    scene's `capture` plays the recording; the schedule gains the
    recording's frame for every frame.
-4. compare [DONE] -- both rendered, both formats; the user chooses.
+4. compare [DONE] -- both rendered, both formats; the author chooses.
 
 | | Drawn (`lessons/life`) | Recorded (`lessons/life-capture`) |
 | - | - | - |
@@ -194,7 +194,7 @@ show the page is real.
 
 ## Saga 4 -- mandelbrot  [DONE 2026-11-14]
 
-The user (2026-11-13): mixed scenes, Mandelbrot next, a 60 second
+The author (2026-11-13): mixed scenes, Mandelbrot next, a 60 second
 short; and a fix to Life first.
 
 1. code-pan [DONE] -- a code line too long for its panel keeps its
@@ -226,8 +226,8 @@ short; and a fix to Life first.
 
 ## Saga 7 -- voice  [ACTIVE]
 
-The user (2026-11-18): curiosity is still down; queenbee runs VoxCPM
-with Gradio; narrate an existing short in the user's own voice (the
+The author (2026-11-18): curiosity is still down; queenbee runs VoxCPM
+with Gradio; narrate an existing short in the author's own voice (the
 sample and transcript of this year's shorts), verified by a local
 whisper, the narration reworded to avoid VoxCPM's artifacts, and
 shown in a local preview.
@@ -250,7 +250,7 @@ shown in a local preview.
    captions (`SLUG.srt`, the exact sentences at their times: each
    scene's start from `timing.json` plus the sentence's offset, now
    recorded in `voice.json`) and `narration.txt`.
-3. narrate-life-mandelbrot -- both narrated (the user, 2026-11-18),
+3. narrate-life-mandelbrot -- both narrated (the author, 2026-11-18),
    run at once to try the shared lock (`~/.cache/voxcpm-tts.lock`,
    held only for the request: the server saw one request at a time,
    each run's whisper checks ran during the other's turn). The
@@ -262,19 +262,19 @@ shown in a local preview.
    orbit click at the narration's "Click a point"). Titles and
    descriptions; published.
 
-One format a video (the user, 2026-11-18, to save time): a lesson of
+One format a video (the author, 2026-11-18, to save time): a lesson of
 150 s or less is a short, portrait only; a longer one is long-form,
 landscape only. `scripts/format.sh` decides from `timing.json`;
 `render.sh`, `capture.mjs`, `build-pages.sh`, `build-catalog.mjs`
 and `youtube.mjs` follow it.
 
-`docs/curriculum.md` (the user, 2026-11-18) is the plan beyond the
+`docs/curriculum.md` (the author, 2026-11-18) is the plan beyond the
 shorts: tutorials and series to teach and showcase the language; the
 sagas that follow build it.
 
 ## Saga 8 -- pronunciation  [ACTIVE]
 
-The user (2026-11-18): "code is read" was spoken as reed; whisper
+The author (2026-11-18): "code is read" was spoken as reed; whisper
 cannot hear which reading was said, but the agent writing or reviewing
 a script can and should.
 
@@ -282,15 +282,15 @@ a script can and should.
    refuses an unmarked heteronym; every lesson reviewed and the changed
    sentences alone spoken again; rule 4c.
 
-## Saga 9 -- tbt-2741  [DONE 2026-11-19; the video delivered in out/tbt-2741-youtube/, the user's review to come as its own step; tutorials archived for it, t-names finished uncommitted]
+## Saga 9 -- tbt-2741  [DONE 2026-11-19; the video delivered in out/tbt-2741-youtube/, the author's review to come as its own step; tutorials archived for it, t-names finished uncommitted]
 
-The user (2026-11-19, urgent, for YouTube that morning): a 5-minute
+The author (2026-11-19, urgent, for YouTube that morning): a 5-minute
 Throwback Thursday video, like the earlier APL video, telling the
 story of the 3D models (console-3D) toward a virtual computer history
 museum, focused on the 3D animation just added to A'70 (sw-apl).
 Sources in order: the TBT #15 draft, the recently changed repos, then
-earlier posts. The narration says only what those sources or the user
-say (the user: "try to avoid inventing motivations or preferences").
+earlier posts. The narration says only what those sources or the author
+say (the author: "try to avoid inventing motivations or preferences").
 The pattern of the earlier videos (video-publishing): a title of about
 5 s with music only (break-it-down.wav, its first 5 s, a 0.5 s fade),
 narrated scenes, the reused 99b-epilog (narrated call to action) and a
@@ -310,7 +310,7 @@ end of 99b.
 
 ## Saga 10 -- al-01-why  [ACTIVE]
 
-The user (2026-11-19): the first video `docs/research2.txt` suggests
+The author (2026-11-19): the first video `docs/research2.txt` suggests
 (episode 01, "Why another programming language?"), made with the
 tbt-2741 pattern (title with music, silent explainer slides with
 music between sections, the reused call to action and close). The
@@ -319,12 +319,12 @@ series and the episode are planned in
 
 1. series-plan -- the series plan, research2 tracked, the saga.
 2. al-01-script -- the lesson, its examples run at the pin, sources,
-   a review page of the script; the user reviews it.
+   a review page of the script; the author reviews it.
 3. story-panels -- code panels, array cells, typed and drawn, in story
    scenes.
 4. al-01-voice -- narration, recordings, music, render, the review page
    per scene.
-5. al-01-publish -- after the user's review, `out/al-01-why-youtube/`.
+5. al-01-publish -- after the author's review, `out/al-01-why-youtube/`.
 
 ## Later -- remotion  [PLANNED; steps 1 and 4 done in saga 1]
 
@@ -374,16 +374,16 @@ Goal: finished files for both channels.
    recordings.
 3. batch -- every lesson, both formats, one command.
 
-## Open questions for the user
+## Open questions for the author
 
 1. Remotion: answered, installed (2026-11-13), its agent skills too.
-2. Voice: answered (the user, 2026-11-18): VoxCPM with Gradio on
+2. Voice: answered (the author, 2026-11-18): VoxCPM with Gradio on
    `queenbee.local:7860` while `curiosity` is repaired; the voice
    sample and transcript of this year's shorts.
 3. Demo pictures: both are built for Life (saga 2, step 4 has the
    comparison). Which for the lessons to come: drawn, recorded, or
    mixed?
-4. Answered (the user, 2026-11-13): Life first, then Mandelbrot;
+4. Answered (the author, 2026-11-13): Life first, then Mandelbrot;
    60 second shorts; scenes mixed, drawn and recorded.
 5. Should the libraries here that prove general (Ease, Spring) move
    to X_eTaL-libraries later?

@@ -16,7 +16,7 @@
     "summary": { "description": "One or two sentences for the landing page.", "type": "string", "minLength": 1 },
     "order": { "description": "Where the lesson comes on the landing page (lower first).", "type": "integer", "minimum": 0 },
     "poster": { "description": "The frame used as the lesson's thumbnail (its middle if not given).", "type": "integer", "minimum": 0 },
-    "youtube": { "description": "The video's YouTube id, once the user has uploaded it (just link SLUG URL); the site embeds it. Videos are hosted on YouTube, never in git.", "type": "string", "pattern": "^[A-Za-z0-9_-]{11}$" },
+    "youtube": { "description": "The video's YouTube id, once the author has uploaded it (just link SLUG URL); the site embeds it. Videos are hosted on YouTube, never in git.", "type": "string", "pattern": "^[A-Za-z0-9_-]{11}$" },
     "stepFrames": { "description": "The frames a stepping board holds each step (15 if not given).", "type": "integer", "minimum": 1 },
     "kind": { "description": "'lesson' (the default: the Lesson composition, headings and lines over the schedule) or 'story' (the Story composition: full-frame pictures and recordings, a heading in the lower third, a title card and a closing segment), for a video that is not a lesson on X_eTaL.", "type": "string", "enum": ["lesson", "story"] },
     "brand": { "description": "A story's series name, shown on its title card (e.g. Throwback Thursday #15).", "type": "string", "minLength": 1 },

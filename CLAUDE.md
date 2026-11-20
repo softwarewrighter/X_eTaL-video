@@ -353,18 +353,18 @@ Read before working:
    (`scripts/schedule.xtl.in`), `scripts/props.sh` hands it in. Scene lengths follow
    the narration's audio.
 4a. X_eTaL source in a video is shown as rendered, never as typed
-   (the user, 2026-11-13): decorated and syntax-colored as the live
+   (the author, 2026-11-13): decorated and syntax-colored as the live
    pages show it. In a lesson a line of X_eTaL is `{"xtl": ...}`
    (typed as ASCII; `scripts/props.mjs` has the pinned `xetal render
    --html` render it, and Remotion draws it in JuliaMono with
    X_eTaL's colors); `{"code": ...}` is only for what is not X_eTaL
    (JSON, shell, a link). Never put X_eTaL in a `code` line or in
    running text.
-4b. Code in a video is never shrunk to fit (the user, 2026-11-13: "it
+4b. Code in a video is never shrunk to fit (the author, 2026-11-13: "it
    doesn't have to fit in portrait mode"): a line keeps a readable
    size, and one too long for its panel pans from its start to its
    end over the scene.
-4c. Narration is reviewed for pronunciation, word by word (the user,
+4c. Narration is reviewed for pronunciation, word by word (the author,
    2026-11-18: "code is read" was spoken as reed; whisper cannot
    catch it, "but you/your-subagent can and should"). `just voice
    SLUG --check` refuses an unmarked heteronym: decide each one by
@@ -379,8 +379,8 @@ Read before working:
 6. Generated media is never tracked: audio, frames, clips and video
    go to `work/` and `out/` (gitignored).
 7. No third-party paid or hosted service (text to speech, image,
-   video or 3D models) without the user naming it. No `ssh` to the
-   user's servers; ask the user to run remote commands.
+   video or 3D models) without the author naming it. No `ssh` to the
+   user's servers; ask the author to run remote commands.
 8. Python: never the system `python3`. A script that needs Python
    runs in a uv-managed venv (`uv venv`, `uv pip install`,
    `.venv/bin/python` or `uv run`). Prefer tools the gate can run
@@ -405,14 +405,14 @@ Read before working:
     This repository's color is a very light gray (`images/`), as the
     demos are blue and the libraries violet.
 11b. Videos are hosted on YouTube, never in git, not even on `gh-pages`
-    (the user, 2026-11-18: "videos are not text and git is text
-    oriented"). The user uploads `out/SLUG-youtube/` by hand to the
+    (the author, 2026-11-18: "videos are not text and git is text
+    oriented"). The author uploads `out/SLUG-youtube/` by hand to the
     softwarewrighter channel; `just link SLUG URL` records the id and
     the site embeds YouTube's player. Never commit or publish an MP4.
-12. NEVER run `sw-install` unless the user explicitly asks.
+12. NEVER run `sw-install` unless the author explicitly asks.
 13. This repository's local port is 8427 (Remotion Studio, any
     preview server); each X_eTaL repository has its own.
-14. Work is committed directly to `main` and pushed (the user's
+14. Work is committed directly to `main` and pushed (the author's
     choice); the feat/ -> pr/ branch handoff in the briefing above
     applies only to a parallel lane on its own branch.
 

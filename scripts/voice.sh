@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Narrate a lesson in the user's cloned voice: VoxCPM (Gradio) on
+# Narrate a lesson in the author's cloned voice: VoxCPM (Gradio) on
 # queenbee, the voice sample and transcript of this year's narrated
 # shorts, every clip checked by a local whisper (scripts/voice.py).
 # Writes work/SLUG/voice/*.wav, the scenes' seconds in lesson.json,
