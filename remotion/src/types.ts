@@ -26,8 +26,21 @@ export type Scene = {
   clip?: string;
   mute?: boolean;
   slide?: { type: "points" | "timeline" | "flow"; items: { text: string; sub?: string; year?: string; mark?: boolean; xtl?: string; code?: string }[] };
+  panel?: Panel;
   transcript?: { start: number; end: number; text: string }[];
   narration?: string;
+};
+
+// A story's panel (remotion/src/Panel.tsx): code lines, or an array's cells.
+export type PanelLine = ({ xtl: string } | { code: string }) & { label?: string };
+export type Panel = {
+  type: "code" | "cells";
+  lines?: PanelLine[];
+  focus?: number[][];
+  from?: string;
+  to?: string;
+  op?: string;
+  mode?: "loop" | "whole";
 };
 
 export type Lesson = {
@@ -64,6 +77,7 @@ export type Frames = {
   stepT: number[]; // and how far the change into it has gone
   capture: number[]; // the frame of the page's recording this frame shows
   stagger: number[][]; // a row a frame, a column a line
+  sweep: number[][]; // a row a frame, a column a cell of a loop panel
 };
 
 export type LessonProps = {
@@ -82,6 +96,9 @@ export type StoryScene = {
   images?: string[]; // under public/
   cuts?: number[]; // the scene's frames where pictures 2, 3, ... start (their sentences)
   clip?: string; // a reused segment, video and audio, under public/
+  from?: string[]; // a cells panel's values, as the pinned xetal printed them
+  to?: string[];
+  focusCuts?: number[]; // the scene's frames where focus 2, 3, ... start (their sentences)
 };
 export type StoryRun = {
   first: number; // the run's scenes, by index

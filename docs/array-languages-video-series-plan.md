@@ -87,6 +87,7 @@ As `lessons/tbt-2741` (a story lesson, `kind: "story"`):
 | Title | 5 s | the intro music (episode 01: `hammond-glide.wav`, the user): its first 5 s, a 0.5 s fade at the end | a Remotion title card: series, episode number, title |
 | Sections | most of the video | the narration (VoxCPM, the user's voice) | Remotion panels (code, arrays, the typed and drawn source), recordings of the live pages, pictures |
 | Section breaks | about 7 s each | music only: a 7 s piece from the middle of the track, faded in and out, each break at a different offset, at 30% | a silent Remotion explainer slide (points, a timeline, a flow) |
+| Coming up | about 2 min | a silent slide, then narrated | what later episodes cover, each from its post or repository and its pictures (the user, 2026-11-19: teasers before the end) |
 | Exercise | about 20 s | narrated | the question, on screen |
 | Call to action | 12 s | its own narration | the reused `99b-epilog.mp4`, as it is |
 | Close | 5 s | the outro music: the track's last 7 s, a 1 s fade in, starting 2 s before the close | the reused `99c` clip, muted, essentially blank (YouTube overlays the end cards) |

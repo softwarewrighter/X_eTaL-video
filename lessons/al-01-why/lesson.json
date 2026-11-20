@@ -24,7 +24,8 @@
         1,
         -2,
         0.5,
-        -1
+        -1,
+        1.5
       ]
     }
   },
@@ -42,16 +43,28 @@
       "seconds": 14,
       "heading": "One step at a time",
       "narration": "Most programming languages teach us to think in individual steps. Create a variable. Enter a loop. Take an element. Perform an operation. Store the result. Repeat.",
-      "lines": [
-        "create, loop, take, operate, store, repeat"
-      ]
+      "lines": [],
+      "panel": {
+        "type": "cells",
+        "mode": "loop",
+        "from": "1 2 3 4",
+        "to": "2 * 1 2 3 4",
+        "op": "× 2, one element at a time"
+      }
     },
     {
       "id": "whole",
       "seconds": 16,
       "heading": "The whole computation",
       "narration": "But we could describe the entire computation, instead of every step needed to perform it. That is the central idea behind array programming. This series teaches that way of thinking first, and the notation after.",
-      "lines": []
+      "lines": [],
+      "panel": {
+        "type": "cells",
+        "mode": "whole",
+        "from": "1 2 3 4",
+        "to": "2 * 1 2 3 4",
+        "op": "× 2, the whole array at once"
+      }
     },
     {
       "id": "array-idea",
@@ -85,98 +98,168 @@
       "seconds": 17,
       "heading": "The scalar model",
       "narration": "This Rust program doubles four numbers. It creates an empty vector for the result. It visits each value in turn. And for each one, it pushes the value times two. It is straightforward, and it is correct.",
-      "lines": [
-        {
-          "code": "let values = [1, 2, 3, 4];"
-        },
-        {
-          "code": "let mut result = Vec::new();"
-        },
-        {
-          "code": "for x in values {"
-        },
-        {
-          "code": "    result.push(x * 2);"
-        },
-        {
-          "code": "}"
-        }
-      ]
+      "lines": [],
+      "panel": {
+        "type": "code",
+        "lines": [
+          {
+            "code": "let values = [1, 2, 3, 4];"
+          },
+          {
+            "code": "let mut result = Vec::new();"
+          },
+          {
+            "code": "for x in values {"
+          },
+          {
+            "code": "    result.push(x * 2);"
+          },
+          {
+            "code": "}"
+          }
+        ],
+        "focus": [
+          [],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          []
+        ]
+      }
     },
     {
       "id": "mechanism",
       "seconds": 18,
       "heading": "Mostly mechanism",
       "narration": "But notice how much of the program is about the mechanism. We create storage, iterate over the values, and append the results. The actual operation, multiplication by two, is one small part of one line. An array language makes that operation the focus.",
-      "lines": [
-        {
-          "code": "let mut result = Vec::new();   // storage"
-        },
-        {
-          "code": "for x in values {              // iteration"
-        },
-        {
-          "code": "    result.push(x * 2);         // the operation, and an append"
-        }
-      ]
+      "lines": [],
+      "panel": {
+        "type": "code",
+        "lines": [
+          {
+            "code": "let mut result = Vec::new();   // storage"
+          },
+          {
+            "code": "for x in values {              // iteration"
+          },
+          {
+            "code": "    result.push(x * 2);         // the operation, and an append"
+          }
+        ],
+        "focus": [
+          [],
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            2
+          ],
+          []
+        ]
+      }
     },
     {
       "id": "transform",
       "seconds": 20,
       "heading": "Whole-array operations",
       "narration": "An array language lets us operate on collections as values. Instead of describing a loop, we describe the transformation. The same idea applies to four values, four thousand values, or a table with many dimensions. The language takes care of the mechanics, within its rules for shapes.",
-      "lines": []
+      "lines": [],
+      "panel": {
+        "type": "cells",
+        "mode": "whole",
+        "from": "r_ange 10",
+        "to": "2 * r_ange 10",
+        "op": "× 2"
+      }
     },
     {
       "id": "double",
       "seconds": 16,
       "heading": "Two times values",
       "narration": "Here is the same program in the array language this series is about. Values is one, two, three, four. Two times values is two, four, six, eight. There is no index, no storage to create, and nothing to append.",
-      "lines": [
-        {
-          "xtl": "values := 1 2 3 4"
-        },
-        {
-          "xtl": "2 * values"
-        },
-        {
-          "code": "2 4 6 8"
-        }
-      ]
+      "lines": [],
+      "panel": {
+        "type": "code",
+        "lines": [
+          {
+            "xtl": "values := 1 2 3 4"
+          },
+          {
+            "xtl": "2 * values"
+          },
+          {
+            "code": "2 4 6 8"
+          }
+        ],
+        "focus": [
+          [],
+          [
+            0
+          ],
+          [
+            1,
+            2
+          ],
+          []
+        ]
+      }
     },
     {
       "id": "hundred",
       "seconds": 15,
       "heading": "Four values, or a hundred",
       "narration": "Four values, or a hundred, and the line stays the same. Two times range one hundred doubles every number from one to a hundred, at once.",
-      "lines": [
-        {
-          "xtl": "2 * r_ange 100"
-        },
-        {
-          "code": "2 4 6 8 10 ... 196 198 200"
-        }
-      ]
+      "lines": [],
+      "panel": {
+        "type": "cells",
+        "mode": "whole",
+        "from": "r_ange 100",
+        "to": "2 * r_ange 100",
+        "op": "× 2"
+      }
     },
     {
       "id": "reduce",
       "seconds": 22,
       "heading": "Reduce, given plus",
       "narration": "Adding them up is one line too. Reduce, given plus, adds across the whole array, so one, two, three, four gives ten. The operation is passed in, quoted, so the same reduce given times multiplies them, and gives twenty-four.",
-      "lines": [
-        {
-          "xtl": "'+ r_/ 1 2 3 4"
-        },
-        {
-          "code": "10"
-        },
-        {
-          "xtl": "'* r_/ 1 2 3 4"
-        },
-        {
-          "code": "24"
-        }
-      ]
+      "lines": [],
+      "panel": {
+        "type": "code",
+        "lines": [
+          {
+            "xtl": "'+ r_/ 1 2 3 4"
+          },
+          {
+            "code": "10"
+          },
+          {
+            "xtl": "'* r_/ 1 2 3 4"
+          },
+          {
+            "code": "24"
+          }
+        ],
+        "focus": [
+          [],
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ]
+        ]
+      }
     },
     {
       "id": "family",
@@ -237,23 +320,32 @@
       "seconds": 18,
       "heading": "One idea, many spellings",
       "narration": "In each of them, doubling four numbers is one short line. The symbols change from language to language. The idea doesn't. It's one operation, applied to the whole array.",
-      "lines": [
-        {
-          "code": "APL   2×1 2 3 4"
-        },
-        {
-          "code": "J     2*1 2 3 4"
-        },
-        {
-          "code": "K     2*1 2 3 4"
-        },
-        {
-          "code": "BQN   2×1‿2‿3‿4"
-        },
-        {
-          "xtl": "2 * 1 2 3 4"
-        }
-      ]
+      "lines": [],
+      "panel": {
+        "type": "code",
+        "lines": [
+          {
+            "label": "APL",
+            "code": "2×1 2 3 4"
+          },
+          {
+            "label": "J",
+            "code": "2*1 2 3 4"
+          },
+          {
+            "label": "K",
+            "code": "2*1 2 3 4"
+          },
+          {
+            "label": "BQN",
+            "code": "2×1‿2‿3‿4"
+          },
+          {
+            "label": "X_eTaL",
+            "xtl": "2 * 1 2 3 4"
+          }
+        ]
+      }
     },
     {
       "id": "keyboard",
@@ -322,6 +414,9 @@
         {
           "code": "10"
         }
+      ],
+      "images": [
+        "../../software-wrighter-lab/blog/assets/images/posts/xetal-phil-typed-drawn.webp"
       ]
     },
     {
@@ -396,16 +491,107 @@
     },
     {
       "id": "learn",
-      "seconds": 30,
+      "seconds": 14,
       "heading": "What you will learn",
-      "narration": "We'll begin with the fundamentals. Arrays, shapes, functions, and composition. Then we'll learn to write programs in this language, use its libraries, and extend it. Later, the same ideas reach graphics, games, parallel hardware, and machine learning. But first, we need to learn to stop thinking one element at a time.",
+      "narration": "We'll begin with the fundamentals. Arrays, shapes, functions, and composition. Then we'll learn to write programs in this language, use its libraries, and extend it.",
       "lines": []
     },
     {
+      "id": "coming-up",
+      "seconds": 7,
+      "heading": "Coming up in the series",
+      "lines": [],
+      "slide": {
+        "type": "points",
+        "items": [
+          {
+            "text": "Pipelines and equations",
+            "sub": "macros that write a model's data flow, and math as papers print it"
+          },
+          {
+            "text": "Circuits",
+            "sub": "Verilog for a 4-bit calculator, on an FPGA"
+          },
+          {
+            "text": "GPUs",
+            "sub": "Apple Silicon, NVIDIA, and an Adreno on an Arduino UNO Q"
+          },
+          {
+            "text": "3D",
+            "sub": "Blender models, and a ray tracer"
+          },
+          {
+            "text": "Fine-tuning",
+            "sub": "LoRA lessons, and a mixture of experts fine-tuned six ways"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tease-ml",
+      "seconds": 26,
+      "heading": "Pipelines and equations",
+      "narration": "Later episodes go much further. A pipeline macro writes a model's data flow left to right, data first, then each layer in turn, with shapes that are checked. And equation macros take a formula as a paper prints it, and give back the array computation, its {LaTeX|lay tech}, or both.",
+      "lines": [],
+      "images": [
+        "../../software-wrighter-lab/blog/assets/images/posts/xetal-pipe-mlp.webp",
+        "../../software-wrighter-lab/blog/assets/images/posts/xetal-pipe-mlp.webp",
+        "../../software-wrighter-lab/blog/assets/images/posts/xetal-eq-drawn.webp"
+      ]
+    },
+    {
+      "id": "tease-fpga",
+      "seconds": 18,
+      "heading": "Circuits, written as Verilog",
+      "narration": "Programs become circuits, written out as Verilog. A four-bit calculator machine, specified in this language, runs on a Tang Nano nine K board, and calculates over its serial port.",
+      "lines": [],
+      "images": [
+        "../../software-wrighter-lab/blog/assets/images/posts/xetal-fpga-hex1000-9k-poster.webp",
+        "../../software-wrighter-lab/blog/assets/images/posts/xetal-fpga-hex1000-browser.webp"
+      ]
+    },
+    {
+      "id": "tease-gpu",
+      "seconds": 22,
+      "heading": "On GPUs",
+      "narration": "A function marked with a macro runs on a {GPU|G P U}, lowered from its own source. On Apple Silicon, through Metal. On an {NVIDIA|en vidia} {RTX|R T X} fifty sixty Ti. And even on the Adreno seven oh two, the {GPU|G P U} in an Arduino Uno Q.",
+      "lines": [],
+      "images": [
+        "../../software-wrighter-lab/blog/assets/images/posts/xetal-mojo-cards.webp",
+        "../../software-wrighter-lab/blog/assets/images/posts/xetal-mojo-terminals.webp",
+        "../../software-wrighter-lab/blog/assets/images/posts/adreno-702-three-gpus.webp",
+        "../../software-wrighter-lab/blog/assets/images/posts/adreno-702-board.webp"
+      ]
+    },
+    {
+      "id": "tease-3d",
+      "seconds": 24,
+      "heading": "3D models and ray tracing",
+      "narration": "It drives Blender, working out a scene as arrays, every {object|object}'s place, size, and color. My {3D|three D} models of historical terminals are made that way. And a ray tracer, written as ordinary array code, renders the same scene on the {CPU|C P U} and the {GPU|G P U}.",
+      "lines": [],
+      "images": [
+        "../../software-wrighter-lab/blog/assets/images/posts/xetal-blender-hello-poster.webp",
+        "../console-3D/images/ibm2741-render.png",
+        "../../software-wrighter-lab/blog/assets/images/posts/ray-glass-lens-area.webp"
+      ]
+    },
+    {
+      "id": "tease-tune",
+      "seconds": 18,
+      "heading": "Fine-tuning",
+      "narration": "And fine-tuning. Browser lessons build a low-rank adapter number by number, and then train it. And a tiny mixture of experts, trained in this language, is fine-tuned to a changed task by six methods in turn.",
+      "lines": [],
+      "images": [
+        "../X_eTaL-fine-tuning/demos/lora-lab/screenshot.png",
+        "../X_eTaL-fine-tuning/demos/lora-lab/screenshot.png",
+        "../X_eTaL-ML/demos/moe-finetune/screenshot.png"
+      ]
+    },
+    {
       "id": "exercise",
-      "seconds": 16,
+      "seconds": 20,
       "heading": "Before the next episode",
-      "narration": "Before the next episode, take a loop you wrote recently. Find the parts that describe the computation. Then find the parts that only control the iteration.",
+      "narration": "But first, we need to learn to stop thinking one element at a time. So before the next episode, take a loop you wrote recently. Find the parts that describe the computation. Then find the parts that only control the iteration.",
       "lines": [
         "Which parts of your loop compute?",
         "Which parts only iterate?"

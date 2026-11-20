@@ -87,6 +87,24 @@
               }
             }
           },
+          "panel": {
+            "description": "A story's panel, under the scene's heading. code: lines of X_eTaL (drawn) and other code (as they are), each labeled or not, the lines named in focus brought forward for each sentence of the narration in turn (the last entry stays). cells: an array as a row of cells, from (an X_eTaL expression, evaluated by the pinned xetal) to (another), the op between; loop takes the cells one at a time over the scene (from must be a literal vector), whole takes them all at once.",
+            "type": "object",
+            "required": ["type"],
+            "additionalProperties": false,
+            "properties": {
+              "type": { "type": "string", "enum": ["code", "cells"] },
+              "lines": { "type": "array", "minItems": 1, "items": { "oneOf": [
+                { "type": "object", "required": ["xtl"], "additionalProperties": false, "properties": { "xtl": { "type": "string" }, "label": { "type": "string" } } },
+                { "type": "object", "required": ["code"], "additionalProperties": false, "properties": { "code": { "type": "string" }, "label": { "type": "string" } } }
+              ] } },
+              "focus": { "description": "For each sentence, the lines (from 0) in focus; an empty list for all.", "type": "array", "items": { "type": "array", "items": { "type": "integer", "minimum": 0 } } },
+              "from": { "type": "string", "minLength": 1 },
+              "to": { "type": "string", "minLength": 1 },
+              "op": { "type": "string" },
+              "mode": { "type": "string", "enum": ["loop", "whole"] }
+            }
+          },
           "mute": { "description": "Play the clip without its own audio (a closing slide under this video's music).", "type": "boolean" },
           "transcript": { "description": "A clip's own words, for the captions and the transcript: each sentence with its start and end, seconds into the clip.", "type": "array", "items": { "type": "object", "required": ["start", "end", "text"], "additionalProperties": false, "properties": { "start": { "type": "number", "minimum": 0 }, "end": { "type": "number", "minimum": 0 }, "text": { "type": "string", "minLength": 1 } } } },
           "curves": { "description": "Show the three easing curves as moving dots.", "type": "boolean" },

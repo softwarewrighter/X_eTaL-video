@@ -10,11 +10,12 @@ root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd -P)"
 slug="${1:?usage: schedule.sh SLUG [--timing]}"
 lesson="$root/lessons/$slug/lesson.json"
 [ -f "$lesson" ] || { echo "schedule: no lesson $lesson" >&2; exit 1; }
-read -r fps lines step cap secs < <(node -e '
+read -r fps lines cells step cap secs < <(node -e '
   const l = JSON.parse(require("fs").readFileSync(process.argv[1], "utf8"));
-  console.log(l.fps, Math.max(1, ...l.scenes.map(s => Math.max(s.lines.length, s.slide ? s.slide.items.length : 0))), l.stepFrames || 15, Math.max(1, 1 + l.scenes.findIndex(s => s.capture)), l.scenes.map(s => s.seconds).join(" "));
+  const cells = (s) => (s.panel && s.panel.type === "cells" && s.panel.mode === "loop" ? s.panel.from.trim().split(/\s+/).length : 0);
+  console.log(l.fps, Math.max(1, ...l.scenes.map(s => Math.max(s.lines.length, s.slide ? s.slide.items.length : 0, s.panel && s.panel.lines ? s.panel.lines.length : 0))), Math.max(1, ...l.scenes.map(cells)), l.stepFrames || 15, Math.max(1, 1 + l.scenes.findIndex(s => s.capture)), l.scenes.map(s => s.seconds).join(" "));
 ' "$lesson")
-prog="$(sed -e "s/__FPS__/$fps/" -e "s/__SECS__/$secs/" -e "s/__LINES__/$lines/" -e "s/__STEP__/$step/g" -e "s/__CAPTURE__/$cap/g" "$root/scripts/schedule.xtl.in")"
+prog="$(sed -e "s/__FPS__/$fps/" -e "s/__SECS__/$secs/" -e "s/__LINES__/$lines/" -e "s/__CELLS__/$cells/g" -e "s/__STEP__/$step/g" -e "s/__CAPTURE__/$cap/g" "$root/scripts/schedule.xtl.in")"
 cd "$root"
 if [ "${2:-}" = --timing ]; then
   scripts/xt eval -e "$prog" | node -e '

@@ -10,7 +10,7 @@ author's cloned voice (`just voice al-01-why`).
 
 | File | What |
 | ---- | ---- |
-| `lesson.json` | twenty-seven scenes: the title; one step at a time; the whole computation; a points slide (array programming); the Rust loop; mostly mechanism; whole-array operations; two times values; four values or a hundred; reduce, given plus; a timeline slide (the array family); where array languages came from; one idea, many spellings; a special keyboard; why this language; a points slide (the name); LaTeX reversed; typed and drawn; static types, inferred; borrowed on purpose; a small core; the browser editor; a flow slide (keyboard to result); what you will learn; the exercise; the call to action; the close. Music: hammond-glide.wav (the user) |
+| `lesson.json` | 33 scenes: Why another programming language?; One step at a time; The whole computation; Array programming; The scalar model; Mostly mechanism; Whole-array operations; Two times values; Four values, or a hundred; Reduce, given plus; The array family; Where array languages came from; One idea, many spellings; A special keyboard; Why this language; The name; LaTeX reversed; Typed in ASCII, drawn as notation; Static types, inferred; Borrowed on purpose; A small core, grown on evidence; The browser editor; From keyboard to result; What you will learn; Coming up in the series; Pipelines and equations; Circuits, written as Verilog; On GPUs; 3D models and ray tracing; Fine-tuning; Before the next episode; Call to action; End screen. Code scenes and arrays are panels (code lines with the spoken sentence's in focus; cells taken one at a time or all at once, their values from the pinned xetal). Music: hammond-glide.wav (the user) |
 | `data.xtl` | every X_eTaL line the video shows, with what the pinned `xetal` prints for it |
 | `timing.json` | the schedule X_eTaL computes from the lesson; checked by the gate |
 | `title.txt`, `description.txt` | the YouTube title and description |
@@ -39,6 +39,12 @@ Every fact the narration states, and where it comes from.
 | typed-drawn | plain ASCII on a US keyboard; an underlined letter makes a function, a leading superscript names the namespace, a subscript gives the axes, a superscript on a value is an exponent | X_eTaL's README at the pin |
 | types | infers every type, no annotation required, refuses a program whose types do not fit before it starts; errors at the line with a fix | the blog, Array Languages #17 (2026-10-23), and its type-error picture |
 | types, editor | implemented in Rust; the browser editor (WebAssembly): ASCII on the left, drawn on the right, Run, Notebook, Step | X_eTaL's README at the pin |
+
+| coming-up, tease-ml | a pipeline macro writes a model's data flow left to right, stages with checked shapes; equation macros take a formula as a paper prints it, giving the array computation, its LaTeX, or both | the blog, Array Languages #12 (pipelines) and #11 (equations), and their pictures |
+| tease-fpga | programs as circuits written as Verilog; HEX1000, a 4-bit calculator machine specified in X_eTaL, on a Tang Nano 9K, calculating over its USB serial port | the blog, Array Languages #8 (FPGA), and its pictures |
+| tease-gpu | a function marked for the GPU with a macro, lowered from its own source; Metal on an M1 Max, an RTX 5060 Ti; the Adreno 702 in an Arduino UNO Q | the blog, Array Languages #7 (GPU), #10 (Mojo and Metal), Rabbit-hole #9 (Adreno 702), and their pictures |
+| tease-3d | X_eTaL drives Blender, a scene worked out as arrays; console-3D's models made that way; a ray tracer in ordinary array code on CPU and GPU | the blog, Array Languages #9 (Blender) and #20 (ray tracer); tbt-2741's how-made slide (make-ibm2741.xtl) |
+| tease-tune | browser lessons on LoRA, built number by number then trained; a tiny mixture of experts trained in X_eTaL and fine-tuned by six methods | X_eTaL-fine-tuning's README (LoRA lab, LoRA training), X_eTaL-ML's README (MoE fine-tuning), their screenshots |
 
 The name is shown, never said: the narration says "the language in
 this series" or "this language".

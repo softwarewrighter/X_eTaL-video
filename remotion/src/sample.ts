@@ -31,6 +31,7 @@ export const sample: LessonProps = {
     stepT: ramp.map(() => 1),
     capture: ramp.map((_, i) => i),
     stagger: ramp.map(() => [1, 1]),
+    sweep: ramp.map(() => [1]),
   },
   data: {},
   captures: null,

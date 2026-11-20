@@ -24,12 +24,12 @@ const total = r[3][0];
 const props = {
   lesson,
   timing: { fps: lesson.fps, durations: r[0], starts: r[1], ends: r[2], total },
-  frames: { scene: r[4], local: r[5], progress: r[6], fade: r[7], linear: r[8], inOut: r[9], out: r[10], step: r[11], stepT: r[12], capture: r[13], stagger: r.slice(14) },
+  frames: { scene: r[4], local: r[5], progress: r[6], fade: r[7], linear: r[8], inOut: r[9], out: r[10], step: r[11], stepT: r[12], capture: r[13], stagger: r.slice(14, 14 + total), sweep: r.slice(14 + total) },
   data: {},
   rendered: {},
   captures: lesson.scenes.some((s) => s.capture) ? { landscape: `captures/${slug}-landscape.mp4`, portrait: `captures/${slug}-portrait.mp4` } : null,
 };
-if (props.frames.stagger.length !== total || props.frames.scene.length !== total) fail("the schedule does not fit the lesson");
+if (props.frames.stagger.length !== total || props.frames.sweep.length !== total || props.frames.scene.length !== total) fail("the schedule does not fit the lesson");
 
 // The lesson's own arrays: each printed after a "== name" line, a
 // rank-3 array as boards with a blank line between.
@@ -51,7 +51,7 @@ for (const s of lesson.scenes) for (const b of s.boards || []) {
 // classes each token. A {{name}} is not X_eTaL, so each goes through
 // as a number no lesson would write and comes back as itself, to be
 // filled in frame by frame.
-const sources = [...new Set(lesson.scenes.flatMap((s) => [...s.lines, ...(s.slide ? s.slide.items : [])]).filter((l) => typeof l === "object" && l.xtl !== undefined).map((l) => l.xtl))];
+const sources = [...new Set(lesson.scenes.flatMap((s) => [...s.lines, ...(s.slide ? s.slide.items : []), ...(s.panel && s.panel.lines ? s.panel.lines : [])]).filter((l) => typeof l === "object" && l.xtl !== undefined).map((l) => l.xtl))];
 if (sources.length) {
   const names = [...new Set(sources.flatMap((s) => [...s.matchAll(/\{\{(\w+)\}\}/g)].map((m) => m[1])))];
   const stand = (k) => String(900000001 + k);
@@ -110,6 +110,20 @@ if (lesson.kind === "story") {
       // sentence (voice.json, seconds into the scene's audio).
       const v = voice?.scenes.find((x) => x.id === s.id);
       out.cuts = v ? v.sentences.slice(1, out.images.length).map((x) => Math.round(x.start * fps)) : [];
+    }
+    if (s.panel) {
+      // A cells panel's arrays are what the pinned xetal gives for its
+      // expressions; the lines in focus change with each sentence.
+      if (s.panel.type === "cells") {
+        const ev = (e) => execFileSync(join(root, "bin", "xetal"), ["eval", "-e", e], { encoding: "utf8" }).trim().split(/\s+/);
+        out.from = ev(s.panel.from);
+        out.to = ev(s.panel.to);
+        if (out.from.length !== out.to.length) fail(`scene ${s.id}: from has ${out.from.length} values, to ${out.to.length}`);
+      }
+      if (s.panel.focus) {
+        const v = voice?.scenes.find((x) => x.id === s.id);
+        out.focusCuts = v ? v.sentences.slice(1, s.panel.focus.length).map((x) => Math.round(x.start * fps)) : [];
+      }
     }
     if (s.clip) {
       if (existsSync(abs(s.clip))) {

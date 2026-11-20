@@ -1,7 +1,7 @@
 # A lesson's schedule and every frame's animation numbers, computed by
 # X_eTaL (libs/Timeline, libs/Ease). scripts/schedule.sh fills in
 # __FPS__, __SECS__ (each scene's seconds), __LINES__ (the most
-# lines a scene has), __STEP__ (the frames a board holds each step)
+# lines a scene has), __CELLS__ (the most cells a loop panel has), __STEP__ (the frames a board holds each step)
 # and __CAPTURE__ (the number of the first scene that shows the
 # recording of the demo's page; 1 when none does) from the lesson and runs it; scripts/frames.mjs
 # reads what it prints, in this order.
@@ -42,3 +42,6 @@ f - __CAPTURE__ s_elect tl:s_tarts durs
 # first starting 8 frames into the scene, the rest 10 frames apart,
 # each over 14 frames.
 ez:o_utCubic (10, 14) ez:s_tagger (local - 8, __LINES__)
+# Then a row a frame, a column a cell: a loop panel's cells taken one
+# at a time over the scene's middle (15% to 85%), each cell's progress.
+ez:s_mooth ez:c_lamp ((mid * f_loat __CELLS__) '- t_able f_loat o_ffsets __CELLS__)

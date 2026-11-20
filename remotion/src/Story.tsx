@@ -2,6 +2,7 @@ import { Audio } from "@remotion/media";
 import { AbsoluteFill, Img, OffthreadVideo, Sequence, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import { theme } from "./theme";
 import { Slide } from "./Slide";
+import { Panel } from "./Panel";
 import { StoryProps } from "./types";
 
 // A story (lesson.kind "story"): a video that is not a lesson on
@@ -29,7 +30,7 @@ export const Story: React.FC<StoryProps> = ({ lesson, timing, frames, voice, sto
   const local = frames.local[frame];
   const run = story.runs.find((r) => s >= r.first && s <= r.end);
   const title = s === 0;
-  const blank = !media.images && !scene.capture && !scene.clip && !scene.slide && !scene.narration && scene.lines.length === 0;
+  const blank = !media.images && !scene.capture && !scene.clip && !scene.slide && !scene.panel && !scene.narration && scene.lines.length === 0;
 
   // The picture showing: one a sentence (cuts), the last staying.
   const picture = media.images ? media.images[(media.cuts ?? []).filter((c) => local >= c).length] ?? media.images[media.images.length - 1] : null;
@@ -134,8 +135,25 @@ export const Story: React.FC<StoryProps> = ({ lesson, timing, frames, voice, sto
         />
       ) : null}
 
+      {/* A panel: code lines with the spoken sentence's in focus, or an array's
+          cells transformed one at a time or all at once (remotion/src/Panel.tsx). */}
+      {scene.panel ? (
+        <Panel
+          panel={scene.panel}
+          media={media}
+          heading={scene.heading}
+          brand={lesson.brand}
+          show={show}
+          local={local}
+          reveal={frames.stagger[frame]}
+          sweep={frames.sweep[frame]}
+          progress={frames.out[frame]}
+          rendered={rendered}
+        />
+      ) : null}
+
       {/* The heading, in the lower third, with the scene's lines (links) under it. */}
-      {!title && !blank && !scene.clip && !scene.slide ? (
+      {!title && !blank && !scene.clip && !scene.slide && !scene.panel ? (
         <div
           style={{
             position: "absolute",
