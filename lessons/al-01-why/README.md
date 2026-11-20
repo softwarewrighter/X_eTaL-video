@@ -24,8 +24,8 @@ Every fact the narration states, and where it comes from.
 | steps, whole, loop, mechanism, transform, learn, exercise | the scalar and array models, the Rust example, the course order, the exercise | `docs/research2.txt` (the user's research), episode 01 |
 | loop | the Rust program prints `[2, 4, 6, 8]` | compiled with `rustc --edition 2021`, 2026-11-19 |
 | double, spellings, typed-drawn | `2 * values` is `2 4 6 8`; `'+ r_/ 1 2 3 4` is `10` | `data.xtl`, run at the pin |
-| spellings | APL `2×1 2 3 4`, J `2*1 2 3 4`, K `2*1 2 3 4` give `2 4 6 8` | GNU APL, jconsole, and the Homebrew `k`, 2026-11-19 |
-| spellings | BQN `2×1‿2‿3‿4` | not checked (no BQN installed) |
+| spellings | APL `2 times 1 2 3 4` (the times sign), J `2*1 2 3 4`, K `2*1 2 3 4` give `2 4 6 8` | GNU APL, jconsole, and the Homebrew `k`, 2026-11-19 |
+| spellings | BQN `2 times 1 2 3 4` (the times sign, the strand ligature between numbers; in lesson.json) | not checked (no BQN installed) |
 | history, family | 1962 the notation (Iverson); APL\360 from IBM, 1968, the first you could type at; APL2 (IBM, 1984) added nesting; J (Iverson and Roger Hui, 1990) kept the semantics, moved to ASCII; K (Arthur Whitney) stripped it down; BQN redesigned the glyphs in 2020 | the blog, TBT "APL\360 revisited" (2026-09-17) |
 | family | K in 1993 | not in the blog: to confirm |
 | family | X_eTaL in 2026 | its first commit, 2026-09-27 (`docs/history.md` at the pin) |
