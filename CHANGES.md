@@ -13,6 +13,7 @@ Categories: `feat` new capability, `fix` a bug or wrong behavior,
 
 ## 2026-11-19
 
+- 18:25 `fix` The whisper check reads "a hundred" and "a thousand" as 100 and 1000 (al-01-why halted on "one to a hundred", heard "1 to 100"; that run had started before the no-halt fix).
 - 18:15 `fix` Narration never halts on one sentence (al-01-why stopped 15 minutes on a good take): a take whisper never matches is kept, flagged UNVERIFIED in the cache note, voice.json and the review page (orange), the run goes on, and just voice exits 3 at the end listing them; the whisper check spells thousands (4000 as four thousand).
 - 18:20 `feat` Story panels (scene "panel"; remotion/src/Panel.tsx): code lines (X_eTaL drawn, other code as it is, labeled or not) with the spoken sentence's lines in focus, and an array's cells transformed one at a time (a loop) or all at once, their values evaluated by the pinned xetal; the schedule gives a loop panel's cells their progress (a sweep over the scene's middle, computed by X_eTaL after the stagger). `lesson` al-01-why: nine scenes as panels; a coming-up slide and five teasers before the exercise (the user: pipelines and equation macros, Verilog for a calculator, GPUs from Apple Silicon to an Adreno on an Arduino UNO Q, 3D models and ray tracing, fine-tuning), about 9:40.
 - 17:40 `fix` just review-stills makes the props again when they are older than the lesson or its timing (stills of a changed lesson showed the old schedule).

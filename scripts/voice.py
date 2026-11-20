@@ -142,6 +142,8 @@ def words(text: str, pairs: bool = False) -> list[str]:
     text = re.sub(r"\b(\d\d)?([1-9])0'?s\b", lambda m: (spelled(int(m.group(1))) + " " if m.group(1) else "") + TENS[int(m.group(2))][:-1] + "ies", text)
     text = re.sub(r"\d+", lambda m: paired(m.group()) if pairs else spelled(int(m.group())), text.replace(",", "").replace("\u2019", "'"))
     text = re.sub(r"[a-z]+'[a-z]+", lambda m: CONTRACTIONS.get(m.group(), m.group()), text)
+    # "a hundred" and "a thousand" are heard as 100 and 1000.
+    text = re.sub(r"\ba (hundred|thousand)\b", r"one \1", text)
     return re.sub(r"[^a-z' ]", " ", text.replace("-", " ")).split()
 
 
