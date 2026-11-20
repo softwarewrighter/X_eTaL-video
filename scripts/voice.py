@@ -155,6 +155,26 @@ def same(got: str, *meant: str) -> bool:
     return any("".join(words(got, p)) in ["".join(words(m, p)) for m in meant] for p in (False, True))
 
 
+def near(got: str, *meant: str) -> bool:
+    """Whether whisper heard a sentence of six words or more within one
+    word of what was meant (one word missing, added or different)."""
+    g = words(got)
+    for m in meant:
+        w = words(m)
+        if len(w) < 6:
+            continue
+        # Word-level edit distance, at most 1.
+        prev = list(range(len(w) + 1))
+        for i, a in enumerate(g, 1):
+            cur = [i] + [0] * len(w)
+            for j, b in enumerate(w, 1):
+                cur[j] = min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + (a != b))
+            prev = cur
+        if prev[-1] <= 1:
+            return True
+    return False
+
+
 def sox(*args: str) -> None:
     subprocess.run(["sox", *args], check=True)
 
@@ -227,7 +247,7 @@ def main() -> None:
     ap.add_argument("--whisper-model", required=True, type=Path)
     ap.add_argument("--steps", type=int, default=15)
     ap.add_argument("--cfg", type=float, default=2.0)
-    ap.add_argument("--tries", type=int, default=3)
+    ap.add_argument("--tries", type=int, default=2)
     ap.add_argument("--ready", action="store_true", help="make nothing: assemble only the scenes whose sentences are all "
                     "in the cache, and write their seconds and voice.json (a preview while shards work)")
     ap.add_argument("--shard", default=None, help="K/N: make only every Nth sentence (from K) into the cache, and nothing else; "
@@ -339,6 +359,13 @@ def main() -> None:
                         "silence", "1", "0.05", "0.3%", "reverse", "silence", "1", "0.05", "0.3%", "reverse")
                     got = heard(clip, a.whisper_model)
                     if same(got, sentence, shown):
+                        break
+                    if near(got, sentence, shown):
+                        # One word off in a long sentence: usually whisper,
+                        # not the voice. Kept without another turn, flagged
+                        # for a listen.
+                        got = UNVERIFIED + got
+                        print(f"voice:   one word off, kept unverified, for a listen: {scene['id']} {k + 1}", flush=True)
                         break
                     print(f"voice:   whisper heard {got!r}", flush=True)
                 else:
