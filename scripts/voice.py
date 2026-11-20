@@ -90,6 +90,12 @@ def lint(scene_id: str, raw: str) -> list[str]:
         problems.append("only words, commas, periods and apostrophes (no ? ! : ; symbols or digits)")
     if re.search(r"\b[A-Z]{2,}\b", text):
         problems.append("no all-caps words")
+    # VoxCPM says a possessive unreliably ("APL's symbols" came out as
+    # "Not APL symbols"; the author, 2026-11-20): reword it ("the types of
+    # Haskell"). Contractions (it's, that's) are fine.
+    for m in re.finditer(r"\b([A-Za-z]+)'s\b", text):
+        if m.group(0).lower() not in CONTRACTIONS:
+            problems.append(f"a possessive, {m.group(0)!r}: reword it without the apostrophe")
     for s in sentences(text):
         if len(s) > MAX_SENTENCE:
             problems.append(f"a sentence over {MAX_SENTENCE} characters: {s!r}")

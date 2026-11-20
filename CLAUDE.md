@@ -369,8 +369,11 @@ Read before working:
    catch it, "but you/your-subagent can and should"). `just voice
    SLUG --check` refuses an unmarked heteronym: decide each one by
    rewording it away (preferred), respelling it `{read|red}`, or
-   marking the usual reading right `{read|read}`. Never say X_eTaL
-   aloud; spell numbers; avoid rare words and lone letters.
+   marking the usual reading right `{read|read}`. Say X_eTaL as
+   "ex, ee, tall" (the author, 2026-11-20: `{X_eTaL|ex, ee, tall}`),
+   never around it; spell acronyms phonetically (`{BQN|bee, queue,
+   en}`) and write no possessive apostrophes (VoxCPM says them
+   unreliably); spell numbers; avoid rare words and lone letters.
 5. Never run a bare `ffmpeg` concat, and prefer the Rust `vid-*`
    tools of `../video-publishing/tools` for every operation they
    cover (`docs/plan.md` V7). `ffmpeg` and `ffprobe` directly only for

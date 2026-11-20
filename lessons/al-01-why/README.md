@@ -46,8 +46,8 @@ Every fact the narration states, and where it comes from.
 | tease-3d | X_eTaL drives Blender, a scene worked out as arrays; console-3D's models made that way; a ray tracer in ordinary array code on CPU and GPU | the blog, Array Languages #9 (Blender) and #20 (ray tracer); tbt-2741's how-made slide (make-ibm2741.xtl) |
 | tease-tune | browser lessons on LoRA, built number by number then trained; a tiny mixture of experts trained in X_eTaL and fine-tuned by six methods | X_eTaL-fine-tuning's README (LoRA lab, LoRA training), X_eTaL-ML's README (MoE fine-tuning), their screenshots |
 
-The name is shown, never said: the narration says "the language in
-this series" or "this language".
+The name is said "ex, ee, tall" (`{X_eTaL|ex, ee, tall}`, the author,
+2026-11-20) and shown as X_eTaL.
 
 Two choices the author made, 2026-11-20:
 

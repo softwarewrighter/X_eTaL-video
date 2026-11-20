@@ -72,6 +72,7 @@ const cards = lesson.scenes.map((s, i) => {
       ${s.narration ? `<p class="narr">${esc(written(s.narration))}</p>` : `<p class="dim">(no narration${s.id === "title" ? ": the title, with music" : s.clip ? ": the reused clip, its own audio" : s.id === "close" ? ": the close, with music" : ""})</p>`}
       ${stale ? `<p class="warn">the narration changed since it was spoken</p>` : ""}
       ${audio ? `<audio controls preload="none" src="audio/${esc(s.id)}.wav"></audio>` : ""}
+      ${clip && existsSync(clipFile.replace(/\.mp4$/, ".heard")) ? `<p class="clipheard"><span class="dim">whisper, the whole clip:</span> ${esc(readFileSync(clipFile.replace(/\.mp4$/, ".heard"), "utf8").trim() || "(nothing heard)")}</p>` : ""}
       ${v ? `<table>${v.sentences.map((x) => `<tr${x.unverified ? ' class="warn" title="whisper never matched this take: listen to it"' : ""}><td>${x.start.toFixed(1)}</td><td>${esc(x.text)}</td><td class="heard">${x.unverified ? "UNVERIFIED: " : ""}${esc(x.heard)}</td></tr>`).join("")}</table>` : ""}
     </div>
   </div>
@@ -91,7 +92,7 @@ section { border-top: 1px solid #30363d; padding: 18px 0; }
 .txt { flex: 1; min-width: 0; } .narr { font-size: 1.05rem; margin-top: 0; }
 audio { width: 100%; } video { width: 100%; max-width: 640px; margin-top: 10px; border-radius: 6px; }
 table { border-collapse: collapse; font-size: .85rem; margin: 8px 0; } td { border-top: 1px solid #30363d; padding: 3px 8px; vertical-align: top; }
-.heard { color: #a5d6ff; } .warn { color: #ffa657; }
+.heard, .clipheard { color: #a5d6ff; } .warn { color: #ffa657; }
 </style></head><body>
 <h1>${esc(lesson.title)}</h1>
 <p class="dim">${esc(slug)} | ${lesson.scenes.length} scenes | ${timing ? fmt(timing.total / timing.fps) + " long" : "not yet scheduled"} | page built ${new Date().toLocaleString("en-US")}${video ? ` | video rendered ${videoAge.toLocaleString("en-US")}` : videoFile ? " | the video is being rendered again for the new schedule: players return when it is done" : " | no video yet"}</p>

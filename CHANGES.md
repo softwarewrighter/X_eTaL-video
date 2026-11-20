@@ -13,6 +13,7 @@ Categories: `feat` new capability, `fix` a bug or wrong behavior,
 
 ## 2026-11-20
 
+- 10:30 `lesson` al-01-why says its name, "ex, ee, tall" (the author), in seven sentences, and opens with a narrated slide, Meet X_eTaL, in the author's words (APL-inspired, experimental, extensible, statically typed; influences Haskell and Rust); the spellings scene makes the rendering explicit (the editor renders the asterisk as a times sign; the rendered form is what is read); APL's spelled for the voice; possessives reworded; 8:38. `fix` just voice --check refuses a possessive; the review page shows what whisper hears in each scene's clip; produce.sh starts its stall clock when it starts. `docs` CLAUDE.md rule 4c: say X_eTaL as "ex, ee, tall", spell acronyms phonetically, no possessive apostrophes.
 - 08:30 `lesson` al-01-why after the author's listen: BQN and GPU spelled for the voice ("bee, queue, en", "gee, pee, you"; APL, CPU and IBM fine as letters), the BQN sentence reworded so the N does not run into the next word, and the spellings scene shows X_eTaL as typed (an asterisk, as in J or K) and as read (a times sign, as in APL), with a sentence saying so; re-narrated (6 sentences), recorded and rendered by just produce. `docs` Public text says "the author", never "the user" or "the owner" (98 lines). `fix` A panel's label column is as wide as its longest label.
 
 ## 2026-11-19

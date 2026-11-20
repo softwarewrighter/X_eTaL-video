@@ -56,7 +56,9 @@ scripts/review-follow.sh "$slug" >> "$logs/follow.log" 2>&1 &
 follow=$!
 tries=0
 shown=$(ready)
-last=$(newest); last=${last:-$(date +%s)}
+# The stall clock starts now, not at the newest audio already on disk
+# (from an earlier run, it set off a restart at once).
+last=$(date +%s)
 while :; do
   nap 30
   alive=0; for p in "${pids[@]}"; do kill -0 "$p" 2>/dev/null && alive=$((alive + 1)); done

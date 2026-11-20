@@ -67,6 +67,38 @@
       }
     },
     {
+      "id": "meet",
+      "seconds": 12.7,
+      "heading": "Meet X_eTaL",
+      "narration": "My new {APL-inspired|A, pee, elle, inspired} experimental, extensible, statically typed array language is {X_eTaL|ex, ee, tall}. Other influences on my language are Haskell and Rust.",
+      "lines": [],
+      "slide": {
+        "type": "points",
+        "items": [
+          {
+            "text": "APL-inspired",
+            "sub": "whole arrays, right to left"
+          },
+          {
+            "text": "Experimental, extensible",
+            "sub": "libraries, macros, extensions"
+          },
+          {
+            "text": "Statically typed",
+            "sub": "every type inferred"
+          },
+          {
+            "text": "An array language",
+            "xtl": "'+ r_/ 1 2 3 4"
+          },
+          {
+            "text": "Other influences",
+            "sub": "Haskell and Rust"
+          }
+        ]
+      }
+    },
+    {
       "id": "array-idea",
       "seconds": 7,
       "heading": "Array programming",
@@ -182,9 +214,9 @@
     },
     {
       "id": "double",
-      "seconds": 16.3,
+      "seconds": 18.9,
       "heading": "Two times values",
-      "narration": "Here is the same program in the array language this series is about. Values is one, two, three, four. Two times values is two, four, six, eight. There is no index, no storage to create, and nothing to append.",
+      "narration": "Here is the same program in {X_eTaL|ex, ee, tall}, the array language this series is about. Values is one, two, three, four. Two times values is two, four, six, eight. There is no index, no storage to create, and nothing to append.",
       "lines": [],
       "panel": {
         "type": "code",
@@ -317,9 +349,9 @@
     },
     {
       "id": "spellings",
-      "seconds": 22.5,
+      "seconds": 26.4,
       "heading": "One idea, many spellings",
-      "narration": "In each of them, doubling four numbers is one short line. The symbols change from language to language. The idea doesn't. It's one operation, applied to the whole array. In the language of this series, you type an asterisk, as in {J|jay} or {K|kay}, and it {reads|reeds} as a times sign, as in {APL|A P L}.",
+      "narration": "In each of them, doubling four numbers is one short line. The symbols change from language to language. The idea doesn't. It's one operation, applied to the whole array. In {X_eTaL|ex, ee, tall}, you type an asterisk, as in {J|jay} or {K|kay}. The editor then renders it as a times sign, as in {APL|ay, pee, el}. The rendered form is the one that's {read|red}.",
       "lines": [],
       "panel": {
         "type": "code",
@@ -345,7 +377,7 @@
             "code": "2 * 1 2 3 4"
           },
           {
-            "label": "X_eTaL, as read",
+            "label": "X_eTaL, as rendered",
             "xtl": "2 * 1 2 3 4"
           }
         ],
@@ -355,7 +387,12 @@
           [],
           [],
           [
-            4,
+            4
+          ],
+          [
+            5
+          ],
+          [
             5
           ]
         ]
@@ -363,9 +400,9 @@
     },
     {
       "id": "keyboard",
-      "seconds": 12.4,
+      "seconds": 12.8,
       "heading": "A special keyboard",
-      "narration": "{APL|ay pee el}'s symbols needed a special type element and a keyboard marked with them. The computers of the day had no codes for most of them. {J|Jay} moved to plain {ASCII|ask-ee} so that any keyboard could type it.",
+      "narration": "{APL's|A, pee, elles,} symbols needed a special type element and a keyboard marked with them. The computers of the day had no codes for most of them. {J|Jay} moved to plain {ASCII|ask-ee} so that any keyboard could type it.",
       "lines": [],
       "images": [
         "../../software-wrighter-lab/blog/assets/images/posts/tbt15-2741-half.webp"
@@ -373,9 +410,9 @@
     },
     {
       "id": "why",
-      "seconds": 26.1,
+      "seconds": 26.5,
       "heading": "Why this language",
-      "narration": "This may be the dawn of personal programming languages, and this is not the first one I've started creating. The language in this series asks what {APL|ay pee el} would look like, if it were designed today. Designed for composition, readability, tooling, and machine learning. Its goal isn't to replace the languages before it. It's to make the ideas of array programming easier to {read|read}, reason about, type-check, and experiment with.",
+      "narration": "This may be the dawn of personal programming languages, and this is not the first one I've started creating. {X_eTaL|ex, ee, tall} asks what {APL|ay, pee, el} would look like, if it were designed today. Designed for composition, readability, tooling, and machine learning. Its goal isn't to replace the languages before it. It's to make the ideas of array programming easier to {read|read}, reason about, type-check, and experiment with.",
       "lines": []
     },
     {
@@ -411,9 +448,9 @@
     },
     {
       "id": "name",
-      "seconds": 15.2,
+      "seconds": 15.1,
       "heading": "LaTeX reversed",
-      "narration": "Its name spells out experimental, extensible, typed array language, and reverses {LaTeX|lay tech}. {LaTeX|lay tech} uses text to {produce|produce} typography. This language uses typography to express computation.",
+      "narration": "The name {X_eTaL|ex, ee, tall} spells out experimental, extensible, typed array language, and reverses {LaTeX|lay tech}. {LaTeX|lay tech} uses text to {produce|produce} typography. This language uses typography to express computation.",
       "lines": []
     },
     {
@@ -445,9 +482,9 @@
     },
     {
       "id": "borrowed",
-      "seconds": 20.6,
+      "seconds": 20.7,
       "heading": "Borrowed on purpose",
-      "narration": "It takes arrays and right to left reading from {APL|ay pee el}. The {leading|leeding} axis and the atop, from {BQN|bee, queue, en}, and {J|jay}. Its types from Haskell. And its macros, lints, and diagnostics from Rust. Each borrowing came with a refusal beside it, like Haskell's types, but not its laziness.",
+      "narration": "It takes arrays and right to left reading from {APL|ay pee el}. The {leading|leeding} axis and the atop, from {BQN|bee, queue, en}, and {J|jay}. Its types from Haskell. And its macros, lints, and diagnostics from Rust. Each borrowing came with a refusal beside it, like the types of Haskell, but not its laziness.",
       "lines": [],
       "images": [
         "../../software-wrighter-lab/blog/assets/images/posts/xetal-phil-borrowed.webp"
@@ -537,9 +574,9 @@
     },
     {
       "id": "learn",
-      "seconds": 10.8,
+      "seconds": 12.4,
       "heading": "What you will learn",
-      "narration": "We'll begin with the fundamentals. Arrays, shapes, functions, and composition. Then we'll learn to write programs in this language, use its libraries, and extend it.",
+      "narration": "We'll begin with the fundamentals. Arrays, shapes, functions, and composition. Then we'll learn to write programs in {X_eTaL|ex, ee, tall}, use its libraries, and extend it.",
       "lines": []
     },
     {
@@ -575,9 +612,9 @@
     },
     {
       "id": "tease-ml",
-      "seconds": 20.9,
+      "seconds": 21,
       "heading": "Pipelines and equations",
-      "narration": "Later episodes go much further. A pipeline macro writes a model's data flow left to right, data first, then each layer in turn, with shapes that are checked. And equation macros take a formula as a paper prints it, and give back the array computation, its {LaTeX|lay tech}, or both.",
+      "narration": "Later episodes go much further. A pipeline macro writes the data flow of a model left to right, data first, then each layer in turn, with shapes that are checked. And equation macros take a formula as a paper prints it, and give back the array computation, its {LaTeX|lay tech}, or both.",
       "lines": [],
       "images": [
         "../../software-wrighter-lab/blog/assets/images/posts/xetal-pipe-mlp.webp",
@@ -587,9 +624,9 @@
     },
     {
       "id": "tease-fpga",
-      "seconds": 13,
+      "seconds": 13.8,
       "heading": "Circuits, written as Verilog",
-      "narration": "Programs become circuits, written out as Verilog. A four-bit calculator machine, specified in this language, runs on a Tang Nano nine {K|kay} board, and calculates over its serial port.",
+      "narration": "Programs become circuits, written out as Verilog. A four-bit calculator machine, specified in {X_eTaL|ex, ee, tall}, runs on a Tang Nano nine {K|kay} board, and calculates over its serial port.",
       "lines": [],
       "images": [
         "../../software-wrighter-lab/blog/assets/images/posts/xetal-fpga-hex1000-9k-poster.webp",
@@ -611,9 +648,9 @@
     },
     {
       "id": "tease-3d",
-      "seconds": 17.3,
+      "seconds": 19.5,
       "heading": "3D models and ray tracing",
-      "narration": "It drives Blender, working out a scene as arrays, every {object|object}'s place, size, and color. My {3D|three dee} models of historical terminals are made that way. And a ray tracer, written as ordinary array code, renders the same scene on the {CPU|see pee you} and the {GPU|gee, pee, you}.",
+      "narration": "It drives Blender, working out a scene as arrays, with the place, size, and color of every {object|object}. My {3D|three dee} models of historical terminals are made that way. And a ray tracer, written as ordinary array code, renders the same scene on the {CPU|see pee you} and the {GPU|gee, pee, you}.",
       "lines": [],
       "images": [
         "../../software-wrighter-lab/blog/assets/images/posts/xetal-blender-hello-poster.webp",
@@ -623,9 +660,9 @@
     },
     {
       "id": "tease-tune",
-      "seconds": 16.1,
+      "seconds": 15.7,
       "heading": "Fine-tuning",
-      "narration": "And fine-tuning. Browser lessons build a low-rank adapter number by number, and then train it. And a tiny mixture of experts, trained in this language, is fine-tuned to a changed task by six methods in turn.",
+      "narration": "And fine-tuning. Browser lessons build a low-rank adapter number by number, and then train it. And a tiny mixture of experts, trained in {X_eTaL|ex, ee, tall}, is fine-tuned to a changed task by six methods in turn.",
       "lines": [],
       "images": [
         "../X_eTaL-fine-tuning/demos/lora-lab/screenshot.png",
