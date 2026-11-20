@@ -27,6 +27,7 @@ import math
 import re
 import subprocess
 import sys
+import time
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -200,11 +201,18 @@ def main() -> None:
     ap.add_argument("--steps", type=int, default=15)
     ap.add_argument("--cfg", type=float, default=2.0)
     ap.add_argument("--tries", type=int, default=3)
+    ap.add_argument("--ready", action="store_true", help="make nothing: assemble only the scenes whose sentences are all "
+                    "in the cache, and write voice.json for them (a preview while shards work); lesson.json is left alone")
+    ap.add_argument("--shard", default=None, help="K/N: make only every Nth sentence (from K) into the cache, and nothing else; "
+                    "several shards at once keep VoxCPM busy (its lock still sends one request at a time) while others "
+                    "check or retry; a run without --shard then assembles from the cache")
     ap.add_argument("--lock", type=Path, default=Path(os.environ.get(
         "XETAL_TTS_LOCK", Path.home() / ".cache" / "voxcpm-tts.lock")),
         help="the lock every narration shares: one request to VoxCPM at a time")
     ap.add_argument("--check", action="store_true", help="only lint the narration")
     a = ap.parse_args()
+    shard = tuple(int(x) for x in a.shard.split("/")) if a.shard else None
+    nth = 0  # the sentence's number in the lesson, for --shard
 
     lesson_file = ROOT / "lessons" / a.slug / "lesson.json"
     lesson = json.loads(lesson_file.read_text())
@@ -243,13 +251,20 @@ def main() -> None:
         if not text:
             continue
         clips, said = [], []
+        missing = False
         # Split the marked text, then read each sentence two ways: as said
         # (to VoxCPM, and the cache key) and as written (captions).
         for k, raw in enumerate(sentences(text)):
+            nth += 1
+            if shard and (nth - 1) % shard[1] != shard[0]:
+                continue
             sentence, shown = spoken(raw), written(raw)
             key = hashlib.sha256(json.dumps([sentence, sample, prompt, a.steps, a.cfg]).encode()).hexdigest()[:16]
             clip = cache / f"{key}.wav"
             note = cache / f"{key}.txt"
+            if a.ready and not (clip.exists() and note.exists()):
+                missing = True
+                break
             # One maker a sentence: lessons narrated at once that share a
             # sentence wait for the first to make it, then reuse it.
             guard = open(cache / f"{key}.lock", "a")
@@ -260,17 +275,28 @@ def main() -> None:
                 got = None
                 for attempt in range(1, a.tries + 1):
                     print(f"voice: {scene['id']} {k + 1}: {sentence!r} (try {attempt})", flush=True)
-                    client = client or Client(a.server, verbose=False)
-                    with voxcpm_turn(a.lock, f"{a.slug} {scene['id']} {k + 1}"):
-                        raw = client.predict(
-                            text_input=sentence,
-                            prompt_wav_path_input=handle_file(str(a.reference.resolve())),
-                            prompt_text_input=prompt,
-                            cfg_value_input=a.cfg,
-                            inference_timesteps_input=a.steps,
-                            do_normalize=False,
-                            api_name="/generate",
-                        )
+                    # The server can fail or drop a request: wait and ask
+                    # again (a new client), up to six times, before giving up.
+                    for call in range(6):
+                        try:
+                            client = client or Client(a.server, verbose=False)
+                            with voxcpm_turn(a.lock, f"{a.slug} {scene['id']} {k + 1}"):
+                                raw = client.predict(
+                                    text_input=sentence,
+                                    prompt_wav_path_input=handle_file(str(a.reference.resolve())),
+                                    prompt_text_input=prompt,
+                                    cfg_value_input=a.cfg,
+                                    inference_timesteps_input=a.steps,
+                                    do_normalize=False,
+                                    api_name="/generate",
+                                )
+                            break
+                        except Exception as e:  # the server's or the network's
+                            if call == 5:
+                                raise
+                            print(f"voice:   the server failed ({type(e).__name__}: {e}); asking again in {30 * (call + 1)} s", flush=True)
+                            client = None
+                            time.sleep(30 * (call + 1))
                     # Trim the silence the model leaves at either end.
                     sox(raw, "-r", "44100", "-c", "1", str(clip),
                         "silence", "1", "0.05", "0.3%", "reverse", "silence", "1", "0.05", "0.3%", "reverse")
@@ -293,6 +319,8 @@ def main() -> None:
                 unverified.append(f"{scene['id']} {k + 1}: {shown!r} (heard {got!r})")
             said.append({"text": shown, "heard": got} | ({"spoken": sentence} if sentence != shown else {}) | ({"unverified": True} if flagged else {}))
 
+        if shard or missing:
+            continue  # a shard only fills the cache; --ready skips a scene not all made
         # The scene's audio: lead, sentences with pauses, tail; peaks at -1 dB.
         wav = out / f"{scene['id']}.wav"
         # Each sentence's start and end within the scene (for captions).
@@ -312,6 +340,15 @@ def main() -> None:
         record["scenes"].append({"id": scene["id"], "narration": text, "seconds": length, "sentences": said})
         print(f"voice: {scene['id']}: {length} s", flush=True)
 
+    if a.ready:
+        (ROOT / "lessons" / a.slug / "voice.json").write_text(json.dumps(record, indent=2) + "\n")
+        print(f"voice: {a.slug}: {len(record['scenes'])} scene(s) ready", flush=True)
+        return
+    if shard:
+        print(f"voice: {a.slug}: shard {a.shard} done", flush=True)
+        if unverified:
+            print("voice: kept unverified:\n  " + "\n  ".join(unverified))
+        return
     # Each narrated scene's seconds, written in place (the file keeps its layout).
     src = lesson_file.read_text()
     # (only within "scenes": a story's music has seconds of its own)

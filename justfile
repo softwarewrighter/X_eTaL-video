@@ -139,3 +139,7 @@ status:
 # Open the plan
 plan:
     @cat docs/plan.md
+
+# Make a lesson's video unattended: narration in shards (one VoxCPM request at a time), recordings, render, review page; restarts itself on a stall
+produce slug workers="3":
+    scripts/produce.sh "$1" "$2"

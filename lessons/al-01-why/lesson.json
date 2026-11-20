@@ -457,9 +457,7 @@
       "lines": [
         "softwarewrighter.github.io/X_eTaL"
       ],
-      "images": [
-        "../../software-wrighter-lab/blog/assets/images/posts/xetal-live-demo.webp"
-      ]
+      "capture": { "url": "https://softwarewrighter.github.io/X_eTaL/", "actions": [{ "wait": 4 }, { "click": "button:has-text('Run')" }, { "wait": 4.5 }, { "click": "button:has-text('Notebook')" }, { "wait": 5 }, { "click": "button:has-text('Step')" }, { "wait": 1.5 }, { "click": "button:has-text('Step')" }, { "wait": 1.5 }, { "click": "button:has-text('Step')" }] }
     },
     {
       "id": "pipeline",
