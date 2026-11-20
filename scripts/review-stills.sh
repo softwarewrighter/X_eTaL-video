@@ -11,7 +11,10 @@ format="$(scripts/format.sh "$slug")"
 kind="$(node -e 'console.log(JSON.parse(require("fs").readFileSync(process.argv[1], "utf8")).kind === "story" ? "Story" : "Lesson")' "lessons/$slug/lesson.json")"
 comp="$kind$( [ "$format" = portrait ] && echo Portrait || echo Landscape)"
 props="$root/work/$slug/props.json"
-[ -f "$props" ] || scripts/props.sh "$slug" >/dev/null
+# Props made again when missing or older than the lesson or its timing.
+if [ ! -f "$props" ] || [ "lessons/$slug/lesson.json" -nt "$props" ] || [ "lessons/$slug/timing.json" -nt "$props" ]; then
+  scripts/props.sh "$slug" >/dev/null
+fi
 mkdir -p "out/review/$slug/stills"
 node -e '
   const l = JSON.parse(require("fs").readFileSync(process.argv[1], "utf8"));

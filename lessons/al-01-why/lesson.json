@@ -7,20 +7,44 @@
   "poster": 1500,
   "fps": 30,
   "brand": "Array Languages: episode 1",
-  "music": { "file": "/Users/mike/Downloads/break-it-down.wav", "intro": { "seconds": 5, "fadeOut": 0.5 }, "outro": { "seconds": 7, "fadeIn": 1 }, "slides": { "volume": 0.3, "fade": 0.5, "offsets": [1, -2, 0.5] } },
+  "music": {
+    "file": "/Users/mike/Downloads/hammond-glide.wav",
+    "intro": {
+      "seconds": 5,
+      "fadeOut": 0.5
+    },
+    "outro": {
+      "seconds": 7,
+      "fadeIn": 1
+    },
+    "slides": {
+      "volume": 0.3,
+      "fade": 0.5,
+      "offsets": [
+        1,
+        -2,
+        0.5,
+        -1
+      ]
+    }
+  },
   "scenes": [
     {
       "id": "title",
       "seconds": 5,
       "heading": "Why another programming language?",
-      "lines": ["Thinking in whole arrays"]
+      "lines": [
+        "Thinking in whole arrays"
+      ]
     },
     {
       "id": "steps",
       "seconds": 14,
       "heading": "One step at a time",
       "narration": "Most programming languages teach us to think in individual steps. Create a variable. Enter a loop. Take an element. Perform an operation. Store the result. Repeat.",
-      "lines": ["create, loop, take, operate, store, repeat"]
+      "lines": [
+        "create, loop, take, operate, store, repeat"
+      ]
     },
     {
       "id": "whole",
@@ -34,12 +58,27 @@
       "seconds": 7,
       "heading": "Array programming",
       "lines": [],
-      "slide": { "type": "points", "items": [
-        { "text": "An array is a value", "sub": "a list, a table, or more axes, used whole" },
-        { "text": "One operation, the whole array", "sub": "the transformation, not the visits" },
-        { "text": "The loop is the language's job", "sub": "within its shape rules" },
-        { "text": "Since 1962", "sub": "Kenneth Iverson's notation, A Programming Language" }
-      ] }
+      "slide": {
+        "type": "points",
+        "items": [
+          {
+            "text": "An array is a value",
+            "sub": "a list, a table, or more axes, used whole"
+          },
+          {
+            "text": "One operation, the whole array",
+            "sub": "the transformation, not the visits"
+          },
+          {
+            "text": "The loop is the language's job",
+            "sub": "within its shape rules"
+          },
+          {
+            "text": "Since 1962",
+            "sub": "Kenneth Iverson's notation, A Programming Language"
+          }
+        ]
+      }
     },
     {
       "id": "loop",
@@ -47,11 +86,21 @@
       "heading": "The scalar model",
       "narration": "This Rust program doubles four numbers. It creates an empty vector for the result. It visits each value in turn. And for each one, it pushes the value times two. It is straightforward, and it is correct.",
       "lines": [
-        { "code": "let values = [1, 2, 3, 4];" },
-        { "code": "let mut result = Vec::new();" },
-        { "code": "for x in values {" },
-        { "code": "    result.push(x * 2);" },
-        { "code": "}" }
+        {
+          "code": "let values = [1, 2, 3, 4];"
+        },
+        {
+          "code": "let mut result = Vec::new();"
+        },
+        {
+          "code": "for x in values {"
+        },
+        {
+          "code": "    result.push(x * 2);"
+        },
+        {
+          "code": "}"
+        }
       ]
     },
     {
@@ -60,9 +109,15 @@
       "heading": "Mostly mechanism",
       "narration": "But notice how much of the program is about the mechanism. We create storage, iterate over the values, and append the results. The actual operation, multiplication by two, is one small part of one line. An array language makes that operation the focus.",
       "lines": [
-        { "code": "let mut result = Vec::new();   // storage" },
-        { "code": "for x in values {              // iteration" },
-        { "code": "    result.push(x * 2);         // the operation, and an append" }
+        {
+          "code": "let mut result = Vec::new();   // storage"
+        },
+        {
+          "code": "for x in values {              // iteration"
+        },
+        {
+          "code": "    result.push(x * 2);         // the operation, and an append"
+        }
       ]
     },
     {
@@ -78,9 +133,49 @@
       "heading": "Two times values",
       "narration": "Here is the same program in the array language this series is about. Values is one, two, three, four. Two times values is two, four, six, eight. There is no index, no storage to create, and nothing to append.",
       "lines": [
-        { "xtl": "values := 1 2 3 4" },
-        { "xtl": "2 * values" },
-        { "code": "2 4 6 8" }
+        {
+          "xtl": "values := 1 2 3 4"
+        },
+        {
+          "xtl": "2 * values"
+        },
+        {
+          "code": "2 4 6 8"
+        }
+      ]
+    },
+    {
+      "id": "hundred",
+      "seconds": 15,
+      "heading": "Four values, or a hundred",
+      "narration": "Four values, or a hundred, and the line stays the same. Two times range one hundred doubles every number from one to a hundred, at once.",
+      "lines": [
+        {
+          "xtl": "2 * r_ange 100"
+        },
+        {
+          "code": "2 4 6 8 10 ... 196 198 200"
+        }
+      ]
+    },
+    {
+      "id": "reduce",
+      "seconds": 22,
+      "heading": "Reduce, given plus",
+      "narration": "Adding them up is one line too. Reduce, given plus, adds across the whole array, so one, two, three, four gives ten. The operation is passed in, quoted, so the same reduce given times multiplies them, and gives twenty-four.",
+      "lines": [
+        {
+          "xtl": "'+ r_/ 1 2 3 4"
+        },
+        {
+          "code": "10"
+        },
+        {
+          "xtl": "'* r_/ 1 2 3 4"
+        },
+        {
+          "code": "24"
+        }
       ]
     },
     {
@@ -88,15 +183,47 @@
       "seconds": 7,
       "heading": "The array family",
       "lines": [],
-      "slide": { "type": "timeline", "items": [
-        { "year": "1962", "text": "The notation", "sub": "Iverson's book" },
-        { "year": "1968", "text": "APL\\360", "sub": "IBM" },
-        { "year": "1984", "text": "APL2", "sub": "nested arrays" },
-        { "year": "1990", "text": "J", "sub": "Iverson and Roger Hui" },
-        { "year": "1993", "text": "K", "sub": "Arthur Whitney" },
-        { "year": "2020", "text": "BQN", "sub": "new glyphs" },
-        { "year": "2026", "text": "X_eTaL", "sub": "typed, drawn", "mark": true }
-      ] }
+      "slide": {
+        "type": "timeline",
+        "items": [
+          {
+            "year": "1962",
+            "text": "The notation",
+            "sub": "Iverson's book"
+          },
+          {
+            "year": "1968",
+            "text": "APL\\360",
+            "sub": "IBM"
+          },
+          {
+            "year": "1984",
+            "text": "APL2",
+            "sub": "nested arrays"
+          },
+          {
+            "year": "1990",
+            "text": "J",
+            "sub": "Iverson and Roger Hui"
+          },
+          {
+            "year": "1993",
+            "text": "K",
+            "sub": "Arthur Whitney"
+          },
+          {
+            "year": "2020",
+            "text": "BQN",
+            "sub": "new glyphs"
+          },
+          {
+            "year": "2026",
+            "text": "X_eTaL",
+            "sub": "typed, drawn",
+            "mark": true
+          }
+        ]
+      }
     },
     {
       "id": "history",
@@ -111,18 +238,76 @@
       "heading": "One idea, many spellings",
       "narration": "In each of them, doubling four numbers is one short line. The symbols change from language to language. The idea doesn't. It's one operation, applied to the whole array.",
       "lines": [
-        { "code": "APL   2×1 2 3 4" },
-        { "code": "J     2*1 2 3 4" },
-        { "code": "K     2*1 2 3 4" },
-        { "code": "BQN   2×1‿2‿3‿4" },
-        { "xtl": "2 * 1 2 3 4" }
+        {
+          "code": "APL   2×1 2 3 4"
+        },
+        {
+          "code": "J     2*1 2 3 4"
+        },
+        {
+          "code": "K     2*1 2 3 4"
+        },
+        {
+          "code": "BQN   2×1‿2‿3‿4"
+        },
+        {
+          "xtl": "2 * 1 2 3 4"
+        }
+      ]
+    },
+    {
+      "id": "keyboard",
+      "seconds": 20,
+      "heading": "A special keyboard",
+      "narration": "{APL|A P L}'s symbols needed a special type element and a keyboard marked with them. The computers of the day had no codes for most of them. J moved to plain {ASCII|ask-ee} so that any keyboard could type it.",
+      "lines": [],
+      "images": [
+        "../../software-wrighter-lab/blog/assets/images/posts/tbt15-2741-half.webp"
       ]
     },
     {
       "id": "why",
-      "seconds": 24,
+      "seconds": 32,
       "heading": "Why this language",
-      "narration": "The language in this series asks a question. It asks what {APL|A P L} would look like, if it were designed today. Designed for composition, readability, tooling, and machine learning. Its goal isn't to replace the languages before it. It's to make the ideas of array programming easier to {read|read}, reason about, type-check, and experiment with.",
+      "narration": "This may be the dawn of personal programming languages, and this is not the first one I've started creating. The language in this series asks what {APL|A P L} would look like, if it were designed today. Designed for composition, readability, tooling, and machine learning. Its goal isn't to replace the languages before it. It's to make the ideas of array programming easier to {read|read}, reason about, type-check, and experiment with.",
+      "lines": []
+    },
+    {
+      "id": "the-name",
+      "seconds": 7,
+      "heading": "The name",
+      "lines": [],
+      "slide": {
+        "type": "points",
+        "items": [
+          {
+            "text": "eXperimental",
+            "sub": "early, specified by its tests as it is built"
+          },
+          {
+            "text": "Extensible",
+            "sub": "libraries, macros, extensions"
+          },
+          {
+            "text": "Typed",
+            "sub": "static types, inferred"
+          },
+          {
+            "text": "Array Language",
+            "sub": "in the APL, J and BQN tradition"
+          },
+          {
+            "text": "LaTeX reversed",
+            "sub": "typography that expresses computation"
+          }
+        ]
+      }
+    },
+    {
+      "id": "name",
+      "seconds": 18,
+      "heading": "LaTeX reversed",
+      "narration": "Its name spells out experimental, extensible, typed array language, and reverses {LaTeX|lay tech}. {LaTeX|lay tech} uses text to {produce|produce} typography. This language uses typography to express computation.",
       "lines": []
     },
     {
@@ -131,8 +316,12 @@
       "heading": "Typed in ASCII, drawn as notation",
       "narration": "Its source is plain {ASCII|ask-ee}, typed on an ordinary keyboard, with no special symbols to learn. The tools draw it with typography that carries meaning. An underlined letter makes a name a function. A small mark above a name says where it comes from. A subscript gives the axis it works along, and a raised number on a value is an exponent.",
       "lines": [
-        { "xtl": "'+ r_/ 1 2 3 4" },
-        { "code": "10" }
+        {
+          "xtl": "'+ r_/ 1 2 3 4"
+        },
+        {
+          "code": "10"
+        }
       ]
     },
     {
@@ -141,27 +330,69 @@
       "heading": "Static types, inferred",
       "narration": "It is statically typed, and it infers every type, so you don't write type annotations. A program whose types don't fit is refused before it runs, with the line, and with a suggested fix. The language is implemented in Rust, and it runs in the browser.",
       "lines": [],
-      "images": ["../../software-wrighter-lab/blog/assets/images/posts/xetal-phil-type-error.webp"]
+      "images": [
+        "../../software-wrighter-lab/blog/assets/images/posts/xetal-phil-type-error.webp"
+      ]
+    },
+    {
+      "id": "borrowed",
+      "seconds": 26,
+      "heading": "Borrowed on purpose",
+      "narration": "It takes arrays and right to left reading from {APL|A P L}. The {leading|leeding} axis and the atop, from {BQN|B Q N} and J. Its types from Haskell. And its macros, lints, and diagnostics from Rust. Each borrowing came with a refusal beside it, like Haskell's types, but not its laziness.",
+      "lines": [],
+      "images": [
+        "../../software-wrighter-lab/blog/assets/images/posts/xetal-phil-borrowed.webp"
+      ]
+    },
+    {
+      "id": "core",
+      "seconds": 22,
+      "heading": "A small core, grown on evidence",
+      "narration": "The language changes when a real program needs it to, and not before. Growth goes outward, into libraries, macro libraries, and extensions. Equations, pipelines, and integrals are libraries of macros, with no change to the compiler.",
+      "lines": [],
+      "images": [
+        "../../software-wrighter-lab/blog/assets/images/posts/xetal-phil-layers.webp"
+      ]
     },
     {
       "id": "editor",
       "seconds": 22,
       "heading": "The browser editor",
       "narration": "In the browser editor, you type {ASCII|ask-ee} on the left, and watch it drawn on the right. Run shows the output. Notebook shows each statement above its output. And Step runs one statement at a time.",
-      "lines": ["softwarewrighter.github.io/X_eTaL"],
-      "images": ["../../software-wrighter-lab/blog/assets/images/posts/xetal-live-demo.webp"]
+      "lines": [
+        "softwarewrighter.github.io/X_eTaL"
+      ],
+      "images": [
+        "../../software-wrighter-lab/blog/assets/images/posts/xetal-live-demo.webp"
+      ]
     },
     {
       "id": "pipeline",
       "seconds": 7,
       "heading": "From keyboard to result",
       "lines": [],
-      "slide": { "type": "flow", "items": [
-        { "text": "Typed", "sub": "plain ASCII, any keyboard", "xtl": "'+ r_/ 1 2 3 4" },
-        { "text": "Drawn", "sub": "decoration carries meaning" },
-        { "text": "Checked", "sub": "every type inferred, before it runs" },
-        { "text": "Run", "sub": "the result: 10" }
-      ] }
+      "slide": {
+        "type": "flow",
+        "items": [
+          {
+            "text": "Typed",
+            "sub": "plain ASCII, any keyboard",
+            "xtl": "'+ r_/ 1 2 3 4"
+          },
+          {
+            "text": "Drawn",
+            "sub": "decoration carries meaning"
+          },
+          {
+            "text": "Checked",
+            "sub": "every type inferred, before it runs"
+          },
+          {
+            "text": "Run",
+            "sub": "the result: 10"
+          }
+        ]
+      }
     },
     {
       "id": "learn",
@@ -175,7 +406,10 @@
       "seconds": 16,
       "heading": "Before the next episode",
       "narration": "Before the next episode, take a loop you wrote recently. Find the parts that describe the computation. Then find the parts that only control the iteration.",
-      "lines": ["Which parts of your loop compute?", "Which parts only iterate?"]
+      "lines": [
+        "Which parts of your loop compute?",
+        "Which parts only iterate?"
+      ]
     },
     {
       "id": "cta",
@@ -184,9 +418,21 @@
       "lines": [],
       "clip": "../video-publishing/reference/epilog/99b-epilog.mp4",
       "transcript": [
-        { "start": 0, "end": 4.6, "text": "If you found this helpful, please like and subscribe." },
-        { "start": 4.6, "end": 9.5, "text": "Hit the bell for notifications, and leave a comment if you have questions." },
-        { "start": 9.5, "end": 12.0, "text": "See you in the next one, bye." }
+        {
+          "start": 0,
+          "end": 4.6,
+          "text": "If you found this helpful, please like and subscribe."
+        },
+        {
+          "start": 4.6,
+          "end": 9.5,
+          "text": "Hit the bell for notifications, and leave a comment if you have questions."
+        },
+        {
+          "start": 9.5,
+          "end": 12.0,
+          "text": "See you in the next one, bye."
+        }
       ]
     },
     {

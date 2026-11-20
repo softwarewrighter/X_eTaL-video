@@ -10,7 +10,7 @@ author's cloned voice (`just voice al-01-why`).
 
 | File | What |
 | ---- | ---- |
-| `lesson.json` | twenty scenes: the title; one step at a time; the whole computation; a points slide; the Rust loop; mostly mechanism; whole-array operations; two times values; a timeline slide; where array languages came from; one idea, many spellings; why this language; typed and drawn; static types, inferred; the browser editor; a flow slide; what you will learn; the exercise; the call to action; the close |
+| `lesson.json` | twenty-seven scenes: the title; one step at a time; the whole computation; a points slide (array programming); the Rust loop; mostly mechanism; whole-array operations; two times values; four values or a hundred; reduce, given plus; a timeline slide (the array family); where array languages came from; one idea, many spellings; a special keyboard; why this language; a points slide (the name); LaTeX reversed; typed and drawn; static types, inferred; borrowed on purpose; a small core; the browser editor; a flow slide (keyboard to result); what you will learn; the exercise; the call to action; the close. Music: hammond-glide.wav (the user) |
 | `data.xtl` | every X_eTaL line the video shows, with what the pinned `xetal` prints for it |
 | `timing.json` | the schedule X_eTaL computes from the lesson; checked by the gate |
 | `title.txt`, `description.txt` | the YouTube title and description |
@@ -29,6 +29,12 @@ Every fact the narration states, and where it comes from.
 | history, family | 1962 the notation (Iverson); APL\360 from IBM, 1968, the first you could type at; APL2 (IBM, 1984) added nesting; J (Iverson and Roger Hui, 1990) kept the semantics, moved to ASCII; K (Arthur Whitney) stripped it down; BQN redesigned the glyphs in 2020 | the blog, TBT "APL\360 revisited" (2026-09-17) |
 | family | K in 1993 | not in the blog: to confirm |
 | family | X_eTaL in 2026 | its first commit, 2026-09-27 (`docs/history.md` at the pin) |
+| why | "This may be the dawn of Personal Programming Languages, and this is not the first one I've started creating" | the user, 2026-11-19 |
+| hundred, reduce | `2 * r_ange 100` is `2 4 ... 200`; `'* r_/ 1 2 3 4` is `24` | `data.xtl`, run at the pin |
+| keyboard | APL's symbols on a type element and a marked keyboard; EBCDIC and ASCII had no codes for most of them; J moved to ASCII | the blog, TBT "APL\360 revisited" (2026-09-17); the 2741 picture from TBT #15 |
+| the-name, name | eXperimental Extensible Typed Array Language, LaTeX reversed; "LaTeX uses text to produce typography. X_eTaL uses typography to express computation." | X_eTaL's README at the pin |
+| borrowed | arrays and right-to-left from APL, the leading axis and the atop from BQN and J, types from Haskell, macros, lints and diagnostics from Rust; each with a refusal (Haskell's types, not its laziness) | the blog, Array Languages #17, and its picture |
+| core | changes only when a real program needs it; growth into libraries, macro libraries, extensions; equations, pipelines and integrals are macro libraries | the blog, Array Languages #17, and its picture |
 | why | "what would APL look like if it were designed today for composition, readability, tooling, and machine learning?"; "The goal isn't to replace existing languages" | X_eTaL's README at the pin |
 | typed-drawn | plain ASCII on a US keyboard; an underlined letter makes a function, a leading superscript names the namespace, a subscript gives the axes, a superscript on a value is an exponent | X_eTaL's README at the pin |
 | types | infers every type, no annotation required, refuses a program whose types do not fit before it starts; errors at the line with a fix | the blog, Array Languages #17 (2026-10-23), and its type-error picture |

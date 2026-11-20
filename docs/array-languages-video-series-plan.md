@@ -30,14 +30,15 @@ its first seven episodes are mostly language-neutral. Where they meet:
 | 08 Reading and writing X_eTaL | `intro-xetal`, `t-reading`, `t-names` (made or being made) |
 | 10, 11 Functions, pipelines | `t-functions`, `t-operators`, `t-trains` |
 
-Which plan governs the order after episode 01 is the user's call
-(open question 1).
+This series replaces the older plan (the user, 2026-11-19): its
+order governs; the videos already made (`intro-xetal`, `t-names`,
+the shorts) stay as they are.
 
 ## The episodes (from research2, the first module first)
 
 | # | Title | Target | Status |
 | - | ----- | ------ | ------ |
-| 01 | Why another programming language? | 8 min | planned: saga 10 |
+| 01 | Why another programming language? | 8 min | being made: saga 10 |
 | 02 | From scalar loops to array operations | 10 min | later |
 | 03 | Shape, rank, axes and dimensions | 10 min | later |
 | 04 | Mapping, filtering and reducing | 11 min | later |
@@ -57,13 +58,33 @@ planned when the first twelve are, as research2 itself recommends
 (a pilot first, then the rest only once its pacing, look, voice and
 accuracy are accepted). FPGA goes to the hardwarewrighter channel.
 
+Each episode runs 5 to 15 minutes (the user, 2026-11-19; 8 is good
+for episode 01).
+
+## X_eTaL changes coming (the user, 2026-11-19)
+
+X_eTaL is pinned at 1df48523 (moved to the latest at this saga's
+start). Coming soon, and worth planning around:
+
+| Step | Change | Matters to |
+| ---- | ------ | ---------- |
+| 150 | numbers on a grid (`[]N_GRID`); almost done | arrays drawn with their values: episodes 03 to 06 |
+| 171 | a macro naming its own library by the importer's alias | the macro episodes |
+| 196 | data paths relative to the program file (breaking) | episode 12 and any example that reads a file |
+| 197 | a comparison's result defaulting to Int (breaking) | filtering, masks, counting: episodes 02, 04, 06 |
+| 198 | `c_heck<` and the stopping `a_ssert<` (breaking) | episode 15, errors and assertions |
+| 199 | the Never type | episode 15 |
+
+An episode that shows one of these waits for it, or is pinned and
+noted; the breaking ones are checked again when the pin moves.
+
 ## The shape of every episode
 
 As `lessons/tbt-2741` (a story lesson, `kind: "story"`):
 
 | Part | Length | Sound | Picture |
 | ---- | ------ | ----- | ------- |
-| Title | 5 s | the intro music: its first 5 s, a 0.5 s fade at the end | a Remotion title card: series, episode number, title |
+| Title | 5 s | the intro music (episode 01: `hammond-glide.wav`, the user): its first 5 s, a 0.5 s fade at the end | a Remotion title card: series, episode number, title |
 | Sections | most of the video | the narration (VoxCPM, the user's voice) | Remotion panels (code, arrays, the typed and drawn source), recordings of the live pages, pictures |
 | Section breaks | about 7 s each | music only: a 7 s piece from the middle of the track, faded in and out, each break at a different offset, at 30% | a silent Remotion explainer slide (points, a timeline, a flow) |
 | Exercise | about 20 s | narrated | the question, on screen |
@@ -97,7 +118,9 @@ As `lessons/tbt-2741` (a story lesson, `kind: "story"`):
 ## Episode 01: Why another programming language?
 
 Slug `al-01-why`, landscape, about 8 minutes. research2's six scenes,
-checked and adapted to the pattern above.
+checked and adapted to the pattern above. The table is the first draft;
+the scenes as made (27, with the user's why, the name, what it
+borrows, a small core) are in `lessons/al-01-why/README.md`.
 
 Learning objective: what an array language is, how it differs from
 scalar, loop-at-a-time programming, and what X_eTaL is trying to do.
@@ -156,16 +179,17 @@ What the renderer needs first (one shared step, before the voice):
 5. al-01-publish -- after the user's review: `out/al-01-why-youtube/`
    (title, description with chapters, captions, the video).
 
-## Open questions for the user
+## Answered (the user, 2026-11-19)
 
-1. Does this series come before the Series 1 tutorials of
-   `docs/curriculum.md`, replace them, or run alongside?
-2. Its name on screen and in titles: research2 says "X_eTaL
-   Academy"; the blog's series is "Array Languages". Which, and is an
-   episode number shown ("#1")?
-3. The music: which track for the title, the breaks and the close
-   (the longer clips the user will provide).
-4. Episode 01's "why": the README and the philosophy post are the
-   sources. Anything the user wants said in their own words?
-5. The pin: X_eTaL is 60 commits past `XETAL_COMMIT`. Move it at
-   this saga's start (allowed by rule 1), or keep it?
+1. This series replaces the older plan (`docs/curriculum.md`).
+2. On screen: "Array Languages: episode 1".
+3. Music for episode 01: `/Users/mike/Downloads/hammond-glide.wav`
+   (14.8 s): its first 5 s for the title, its middle for the breaks,
+   its last 7 s for the close.
+4. The why, in the user's words: "This may be the dawn of Personal
+   Programming Languages, and this is not the first one I've started
+   creating."
+5. Length: 5 to 15 minutes an episode; 8 is good.
+6. The pin: moved to the latest (1df48523); the coming changes are
+   listed above.
+7. Episode 01's script: "looks okay for now".

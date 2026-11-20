@@ -1,5 +1,10 @@
 # Curriculum: showcasing and teaching X_eTaL
 
+Superseded (the user, 2026-11-19): the array languages series,
+`docs/array-languages-video-series-plan.md`, replaces this plan. It
+is kept as the record of the videos already made and of the ideas
+the new series may draw on.
+
 The user (2026-11-18): demos can be short, but X_eTaL needs
 tutorials: an overview, flow control, immutability, recursion;
 separate videos on macros with many examples; libraries, demos,
