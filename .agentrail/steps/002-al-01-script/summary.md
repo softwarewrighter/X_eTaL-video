@@ -1,0 +1,1 @@
+al-01-why script: 27 scenes, about 8 min, four silent slides, every fact sourced (README), X_eTaL lines run at the new pin, APL/J/K checked; the user: 'preview script looks okay for now'; music hammond-glide.wav; plan answered
