@@ -94,6 +94,9 @@ As `lessons/tbt-2741` (a story lesson, `kind: "story"`):
 
 ## Rules for every episode
 
+Read `docs/production-lessons.md` first: what episode 01 taught about
+the voice, the word library, the narration run and review.
+
 1. **Nothing invented.** The narration says only what a source says:
    X_eTaL's README and docs at the pin, the Array Languages blog
    posts, the author's messages. The author's reasons and preferences
@@ -134,7 +137,7 @@ scalar, loop-at-a-time programming, and what X_eTaL is trying to do.
 | 2 | The scalar model | the Rust loop (`values`, `result.push(x * 2)`), its parts highlighted: storage, iteration, the one real operation | research2 scene 2 |
 | 3 | Whole-array operations | four cells doubled together, then a hundred; the X_eTaL line `2 * values`, drawn, and its output `2 4 6 8` | checked: `2 * 1 2 3 4` gives `2 4 6 8` at the pin |
 | - | (break) The family | silent slide: a timeline | dates from the blog: APL notation 1962, APL\360 1968, APL2 1984, J 1990, K (year to source), BQN 2020, X_eTaL 2026 (first commit 2026-09-27, `docs/history.md`) |
-| 4 | Where array languages came from | the same sum in each: APL `+/`, J `+/`, K `+/`, BQN `+´`, X_eTaL `'+ r_/` | checked: `'+ r_/ r_ange 10` gives `55`; the others to check |
+| 4 | Where array languages came from | the same sum in each: APL `+/`, J `+/`, K `+/`, BQN `+` with an acute accent, X_eTaL `'+ r_/` | checked: `'+ r_/ r_ange 10` gives `55`; the others to check |
 | 5 | Why X_eTaL | typed ASCII becoming the drawn form; the live editor (recorded) | README: "what would APL look like if it were designed today for composition, readability, tooling, and machine learning?"; "The goal isn't to replace existing languages"; the philosophy post (#17) |
 | - | (break) What it is made of | silent slide: a flow, typed ASCII to drawn to run | README |
 | 6 | What you will learn | a montage: arrays, types, macros, the demos (Life, Mandelbrot, n-body), GPU, ML | the published lessons' recordings; only what exists is shown as existing |

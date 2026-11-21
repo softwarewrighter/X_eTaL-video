@@ -114,6 +114,30 @@ def tts_problems(t: str) -> list[str]:
     return out
 
 
+WORDS = ROOT / "work" / "voice-words"
+
+
+def pieces(sentence: str) -> list[str]:
+    """A sentence split for splicing: its text pieces (each sent to
+    VoxCPM on its own) and its @words (clips from the word library,
+    work/voice-words/NAME.wav, made by --word: a word the voice gets
+    wrong in a sentence, made once until whisper hears it right)."""
+    out = []
+    for part in re.split(r"(@[a-z][a-z0-9-]*)", sentence):
+        part = part.strip()
+        if part.startswith("@"):
+            out.append(part)
+        else:
+            part = part.strip(" ,")
+            if re.sub(r"[ ,.?!]", "", part):
+                out.append(part)
+    return out
+
+
+def word_file(piece: str) -> Path:
+    return WORDS / f"{piece[1:]}.wav"
+
+
 def spoken(text: str) -> str:
     """The narration as sent to VoxCPM: {read|red} is red; {live|} is live."""
     return MARK.sub(lambda m: m.group(2) or m.group(1), text)
@@ -129,7 +153,7 @@ def lint(scene_id: str, raw: str) -> list[str]:
     if re.search(r"[{}|]", unmarked):
         problems.append("a broken {written|spoken} mark")
     text = spoken(raw)
-    if re.search(r"[?!:;()\"%&/*+=<>\[\]{}_#@0-9]", text):
+    if re.search(r"[?!:;()\"%&/*+=<>\[\]{}_#0-9]", re.sub(r"@[a-z][a-z0-9-]*", "", text)) or re.search(r"@(?![a-z])", text):
         problems.append("only words, commas, periods and apostrophes (no ? ! : ; symbols or digits)")
     if re.search(r"\b[A-Z]{2,}\b", text):
         problems.append("no all-caps words")
@@ -196,6 +220,11 @@ def words(text: str, pairs: bool = False) -> list[str]:
     text = re.sub(r"\b(\d\d)?([1-9])0'?s\b", lambda m: (spelled(int(m.group(1))) + " " if m.group(1) else "") + TENS[int(m.group(2))][:-1] + "ies", text)
     text = re.sub(r"\d+", lambda m: paired(m.group()) if pairs else spelled(int(m.group())), text.replace(",", "").replace("\u2019", "'"))
     text = re.sub(r"[a-z]+'[a-z]+", lambda m: CONTRACTIONS.get(m.group(), m.group()), text)
+    # Every other contraction as bare() writes it out (whisper writes
+    # "we will" for the voice's "we will").
+    text = re.sub(r"\b(\w+)n't\b", lambda m: {"won": "will", "can": "can", "shan": "shall"}.get(m.group(1), m.group(1)) + " not", text)
+    for end, full in (("'ll", " will"), ("'ve", " have"), ("'re", " are"), ("'m", " am"), ("'d", " would")):
+        text = re.sub(rf"(\w){end}\b", rf"\1{full}", text)
     # A run of letter names spelled for the voice ("ecks, tee, elle";
     # "bee, queue, en") is heard as the letters ("XTL", "BQN").
     names = "|".join(LETTER_NAMES)
@@ -203,6 +232,31 @@ def words(text: str, pairs: bool = False) -> list[str]:
     # "a hundred" and "a thousand" are heard as 100 and 1000.
     text = re.sub(r"\ba (hundred|thousand)\b", r"one \1", text)
     return re.sub(r"[^a-z' ]", " ", text.replace("-", " ")).split()
+
+
+def letters(spoken_part: str) -> str:
+    """A mark's spoken part that is only letter names ("ex, tee, el,"),
+    as the letters whisper writes (XTL), its trailing comma kept; else as
+    it is."""
+    names = re.findall(r"[a-z]+", spoken_part.lower())
+    if len(names) >= 2 and all(n in LETTER_NAMES for n in names):
+        return "".join(LETTER_NAMES[n] for n in names).upper() + ("," if spoken_part.rstrip().endswith(",") else "")
+    return spoken_part
+
+
+def heard_right(got: str, raw: str) -> bool:
+    """Whether whisper heard a marked sentence right: each {written|spoken}
+    mark may be heard either way, independently ("In XTL, you type an
+    asterisk, as in J or K" is the spoken name with the written letters)."""
+    marks = re.findall(r"\{([^|{}]*)\|([^{}]*)\}", raw)
+    if len(marks) > 6:
+        return same(got, spoken(raw), written(raw))
+    for pick in range(2 ** len(marks)):
+        it = iter(range(len(marks)))
+        text = re.sub(r"\{([^|{}]*)\|([^{}]*)\}", lambda m: letters(m.group(2)) if pick >> next(it) & 1 else m.group(1), raw)
+        if same(got, text):
+            return True
+    return False
 
 
 def same(got: str, *meant: str) -> bool:
@@ -294,6 +348,154 @@ def voxcpm_turn(lock: Path, what: str):
             ticket.unlink(missing_ok=True)
 
 
+def tts(client, a, prompt, handle_file, Client, text: str, out: Path, what: str):
+    """One VoxCPM request (its turn in the queue), retried on a server
+    failure, the silence at either end trimmed, into out. Returns the
+    client, to reuse."""
+    for call in range(6):
+        try:
+            client = client or Client(a.server, verbose=False)
+            with voxcpm_turn(a.lock, what):
+                raw = client.predict(
+                    text_input=text,
+                    prompt_wav_path_input=handle_file(str(a.reference.resolve())),
+                    prompt_text_input=prompt,
+                    cfg_value_input=a.cfg,
+                    inference_timesteps_input=a.steps,
+                    do_normalize=False,
+                    api_name="/generate",
+                )
+            break
+        except Exception as e:  # the server's or the network's
+            if call == 5:
+                raise
+            print(f"voice:   the server failed ({type(e).__name__}: {e}); asking again in {30 * (call + 1)} s", flush=True)
+            client = None
+            time.sleep(30 * (call + 1))
+    sox(raw, "-r", "44100", "-c", "1", str(out),
+        "silence", "1", "0.05", "0.3%", "reverse", "silence", "1", "0.05", "0.3%", "reverse")
+    return client
+
+
+def find_spelling(a) -> None:
+    """--spell WORD EXPECT CANDIDATE...: one word at a time, each candidate
+    spelling said in a carrier sentence ("The next word is CANDIDATE.")
+    until whisper hears EXPECT as its last words (letters and case
+    ignored). A word said alone comes out garbled ("ex, tee, Elle." was
+    heard as "A little pencil, huh?"), so the carrier gives it a
+    sentence. Every try and the winner go to work/voice-spell.json."""
+    from gradio_client import Client, handle_file  # the venv's (scripts/voice.sh)
+    word, expect, candidates = a.spell[0], a.spell[1], a.spell[2:]
+    prompt = " ".join(a.prompt_text.read_text().split())
+    want = re.sub(r"[^a-z]", "", expect.lower())
+    log = ROOT / "work" / "voice-spell.json"
+    record = json.loads(log.read_text()) if log.exists() else {}
+    entry = record.setdefault(word, {"expect": expect, "tries": [], "winner": None})
+    client = None
+    takes = ROOT / "work" / "voice-spell"
+    takes.mkdir(parents=True, exist_ok=True)
+    for c in candidates:
+        # Sent exactly as written: the search is to find what the voice
+        # says best, capitals and hyphens included (the author's own
+        # candidates: XTL, X-T-L, eks-tee-elle).
+        text = f"The next word is {c}."
+        take = takes / f"{re.sub(r'[^a-z0-9]+', '-', word.lower())}-{len(entry['tries'])}.wav"
+        client = tts(client, a, prompt, handle_file, Client, text, take, f"spell {word}")
+        got = heard(take, a.whisper_model)
+        tail = re.sub(r"[^a-z]", "", re.sub(r"(?i)^.*?\bis\b", "", got).lower())
+        ok = tail == want
+        entry["tries"].append({"say": c, "heard": got, "ok": ok, "take": str(take)})
+        log.write_text(json.dumps(record, indent=2) + "\n")
+        print(f"voice: spell {word}: {c!r} heard {got!r} {'OK' if ok else 'no'}", flush=True)
+        if ok:
+            entry["winner"] = c
+            log.write_text(json.dumps(record, indent=2) + "\n")
+            print(f"voice: spell {word}: use {c!r}", flush=True)
+            return
+    print(f"voice: spell {word}: no candidate heard as {expect!r}; try others", flush=True)
+
+
+def make_word(a) -> None:
+    """--word NAME --expect TEXT --say CANDIDATE [--say ...]: a word clip
+    for splicing (work/voice-words/NAME.wav), for a word the voice says
+    wrong inside a sentence however it is spelled. Verifiable at each
+    step: each candidate is said in a carrier sentence with a pause before
+    it ("The next word is, CANDIDATE."), the word is cut at that pause
+    (found from the audio level, not whisper's rough timings), and the cut
+    is checked by playing it after the carrier's own "The next word is":
+    whisper must hear EXPECT as the last word (letters only, case
+    ignored). Up to 3 takes a candidate; the first that passes is kept,
+    with WORD.txt saying what was sent and heard."""
+    from gradio_client import Client, handle_file  # the venv's (scripts/voice.sh)
+    prompt = " ".join(a.prompt_text.read_text().split())
+    WORDS.mkdir(parents=True, exist_ok=True)
+    want = re.sub(r"[^a-z]", "", a.expect.lower())
+    work_ = WORDS / f"{a.word}.work"
+    work_.mkdir(exist_ok=True)
+    client = None
+    n = 0
+    for say in a.say:
+        for attempt in range(1, 4):
+            n += 1
+            carrier = work_ / f"carrier-{n}.wav"
+            text = f"The next word is, {say}."
+            client = tts(client, a, prompt, handle_file, Client, text, carrier, f"word {a.word}")
+            gaps = pauses(carrier)
+            inner = [g for g in gaps if g[0] > 0.3 and g[1] < seconds(carrier) - 0.15]
+            if not inner:
+                print(f"voice: word {a.word}: {say!r} take {attempt}: no pause before the word", flush=True)
+                continue
+            # The pause after "The next word is", the comma: the first one
+            # past 0.6 s (the longest can fall between spelled letters).
+            later = [g for g in inner if g[0] > 0.6]
+            g0, g1 = (later or inner)[0]
+            word = work_ / f"word-{n}.wav"
+            sox(str(carrier), str(word), "trim", f"{max(0.0, g1 - 0.03):.3f}")
+            if a.tighten:
+                # Spelled letters ("I, B, M") come out with pauses between
+                # them: every pause inside the word shortened to 50 ms, so
+                # the letters run evenly (the author: IBM sounded "I... B... M").
+                tight = work_ / f"tight-{n}.wav"
+                subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(word), "-af",
+                                "silenceremove=stop_periods=-1:stop_duration=0.05:stop_threshold=-35dB", str(tight)], check=True)
+                tight.replace(word)
+            length = seconds(word)
+            if a.max_seconds and a.fit and length > a.max_seconds and length / a.max_seconds <= 1.5:
+                # Too slow: faster to fit, pitch kept (sox tempo), as IBM was.
+                fast = work_ / f"fast-{n}.wav"
+                sox(str(word), str(fast), "tempo", "-s", f"{length / (a.max_seconds - 0.1):.3f}")
+                fast.replace(word)
+                length = seconds(word)
+            check = work_ / f"check-{n}.wav"
+            prefix = work_ / f"prefix-{n}.wav"
+            # Checked after one fixed, verified "The next word is" (never
+            # this take's own, which could hide a letter the cut lost).
+            ref = WORDS / "_prefix.wav"
+            if not ref.exists():
+                sox(str(carrier), str(ref), "trim", "0", f"{g0:.3f}")
+            sox(str(ref), str(prefix), "pad", "0", "0.25")
+            sox(str(prefix), str(word), str(check))
+            got = heard(check, a.whisper_model)
+            tail = re.sub(r"[^a-z]", "", re.sub(r"(?i)^.*?\bis\b", "", got).lower())
+            ok = tail == want and 0.2 < length < (a.max_seconds or 2.5)
+            print(f"voice: word {a.word}: {say!r} take {attempt}: cut {length:.2f} s, heard {got!r} {'OK' if ok else 'no'}", flush=True)
+            if ok:
+                sox(str(word), str(WORDS / f"{a.word}.wav"))
+                (WORDS / f"{a.word}.txt").write_text(f"sent: {text}\nheard (the cut after the carrier): {got}\n")
+                print(f"voice: word {a.word}: kept {WORDS / (a.word + '.wav')} ({say!r})", flush=True)
+                return
+    fail(f"word {a.word}: no take of {a.say} was heard as {a.expect!r}; try other --say spellings")
+
+
+def pauses(wav: Path) -> list[tuple[float, float]]:
+    """The pauses in a take (below -35 dB for 60 ms or more): (start, end)."""
+    out = subprocess.run(["ffmpeg", "-v", "info", "-i", str(wav), "-af", "silencedetect=n=-35dB:d=0.06", "-f", "null", "-"],
+                         capture_output=True, text=True).stderr
+    starts = [float(x) for x in re.findall(r"silence_start: ([0-9.]+)", out)]
+    ends = [float(x) for x in re.findall(r"silence_end: ([0-9.]+)", out)]
+    return list(zip(starts, ends))
+
+
 def heard(wav: Path, model: Path) -> str:
     out = subprocess.run(
         ["whisper-cli", "-m", str(model), "-f", str(wav), "--no-timestamps", "-np"],
@@ -321,7 +523,24 @@ def main() -> None:
         "XETAL_TTS_LOCK", Path.home() / ".cache" / "voxcpm-tts.lock")),
         help="the lock every narration shares: one request to VoxCPM at a time")
     ap.add_argument("--check", action="store_true", help="only lint the narration")
+    ap.add_argument("--spell", nargs="+", metavar="ARG", help="find a spelling the voice says right, one word at a time: "
+                    "WORD EXPECT CANDIDATE... (each candidate sent in a carrier sentence until whisper hears EXPECT; "
+                    "the result added to work/voice-spell.json)")
+    ap.add_argument("--word", help="make a word clip for splicing (work/voice-words/WORD.wav), with --say and --expect")
+    ap.add_argument("--say", action="append", help="a candidate spelling for --word, tried in order (repeat it)")
+    ap.add_argument("--tighten", action="store_true", help="for --word: shorten every pause inside the cut word to 50 ms "
+                    "(spelled letters said with gaps between them)")
+    ap.add_argument("--fit", action="store_true", help="for --word with --max-seconds: a cut up to half again too long is sped up to fit (sox tempo, pitch kept)")
+    ap.add_argument("--max-seconds", type=float, default=None, help="for --word: the longest the cut word may be "
+                    "(whisper cannot hear pace: IBM said I... B... M passes it; a limit does not)")
+    ap.add_argument("--expect", help="what whisper must hear for --word, letters only (XTL)")
     a = ap.parse_args()
+    if a.word:
+        make_word(a)
+        return
+    if a.spell:
+        find_spelling(a)
+        return
     shard = tuple(int(x) for x in a.shard.split("/")) if a.shard else None
     nth = 0  # the sentence's number in the lesson, for --shard
 
@@ -329,6 +548,12 @@ def main() -> None:
     lesson = json.loads(lesson_file.read_text())
     scenes = lesson["scenes"]
     problems = [p for s in scenes if s.get("narration") for p in lint(s["id"], s["narration"])]
+    # A narrated scene of a story has something to look at (episode 01's
+    # history scene was only a heading): pictures, a panel, a slide, a
+    # recording or a clip.
+    if lesson.get("kind") == "story" and a.check:
+        problems += [f"scene {s['id']}: narrated, with nothing to show (images, panel, slide, capture, clip or lines)"
+                     for s in scenes if s.get("narration") and not any(s.get(k) for k in ("images", "panel", "slide", "capture", "clip", "lines"))]
     if problems:
         fail("the narration needs rewording:\n  " + "\n  ".join(problems))
     for f in (a.reference, a.prompt_text) if a.check else (a.reference, a.prompt_text, a.whisper_model):
@@ -357,9 +582,14 @@ def main() -> None:
     for scene in scenes:
         for raw in sentences(scene.get("narration") or ""):
             sentence = spoken(raw)
-            key = hashlib.sha256(json.dumps([sentence, sample, prompt, a.steps, a.cfg]).encode()).hexdigest()[:16]
+            missing_words = [w for w in pieces(sentence) if w.startswith("@") and not word_file(w).exists()]
+            if missing_words:
+                unmade.append(f"{scene['id']}: no word clip for {', '.join(missing_words)} (voice.py --word)")
+                continue
+            used = [w for w in pieces(sentence) if w.startswith("@")]
+            key = hashlib.sha256(json.dumps([sentence, sample, prompt, a.steps, a.cfg] + [hashlib.sha256(word_file(w).read_bytes()).hexdigest() for w in used]).encode()).hexdigest()[:16]
             if not (cache / f"{key}.wav").exists():
-                unmade += [f"{scene['id']}: {bare(sentence)!r}: {p}" for p in tts_problems(bare(sentence))]
+                unmade += [f"{scene['id']}: {bare(t)!r}: {p}" for t in pieces(sentence) if not t.startswith("@") for p in tts_problems(bare(t))]
     if unmade:
         fail("not fit to send to VoxCPM:\n  " + "\n  ".join(unmade))
     if a.check:
@@ -377,9 +607,11 @@ def main() -> None:
         # Split the marked text, then read each sentence two ways: as said
         # (to VoxCPM, and the cache key) and as written (captions).
         for k, raw in enumerate(sentences(text)):
+            raw_sentence = raw
             nth += 1
             sentence, shown = spoken(raw), written(raw)
-            key = hashlib.sha256(json.dumps([sentence, sample, prompt, a.steps, a.cfg]).encode()).hexdigest()[:16]
+            used = [w for w in pieces(sentence) if w.startswith("@")]
+            key = hashlib.sha256(json.dumps([sentence, sample, prompt, a.steps, a.cfg] + [hashlib.sha256(word_file(w).read_bytes()).hexdigest() for w in used]).encode()).hexdigest()[:16]
             clip = cache / f"{key}.wav"
             note = cache / f"{key}.txt"
             if a.ready and not (clip.exists() and note.exists()):
@@ -409,32 +641,33 @@ def main() -> None:
                     print(f"voice: {scene['id']} {k + 1}: {sentence!r} (try {attempt})", flush=True)
                     # The server can fail or drop a request: wait and ask
                     # again (a new client), up to six times, before giving up.
-                    assert not tts_problems(bare(sentence)), (sentence, tts_problems(bare(sentence)))
-                    for call in range(6):
-                        try:
-                            client = client or Client(a.server, verbose=False)
-                            with voxcpm_turn(a.lock, f"{a.slug} {scene['id']} {k + 1}"):
-                                raw = client.predict(
-                                    text_input=bare(sentence),
-                                    prompt_wav_path_input=handle_file(str(a.reference.resolve())),
-                                    prompt_text_input=prompt,
-                                    cfg_value_input=a.cfg,
-                                    inference_timesteps_input=a.steps,
-                                    do_normalize=False,
-                                    api_name="/generate",
-                                )
-                            break
-                        except Exception as e:  # the server's or the network's
-                            if call == 5:
-                                raise
-                            print(f"voice:   the server failed ({type(e).__name__}: {e}); asking again in {30 * (call + 1)} s", flush=True)
-                            client = None
-                            time.sleep(30 * (call + 1))
-                    # Trim the silence the model leaves at either end.
-                    sox(raw, "-r", "44100", "-c", "1", str(clip),
-                        "silence", "1", "0.05", "0.3%", "reverse", "silence", "1", "0.05", "0.3%", "reverse")
+                    parts = pieces(sentence) if used else [sentence]
+                    made = []
+                    for j, part in enumerate(parts):
+                        if part.startswith("@"):
+                            made.append(str(word_file(part)))
+                            continue
+                        assert not tts_problems(bare(part)), (part, tts_problems(bare(part)))
+                        piece = clip.with_suffix(f".{j}.wav") if used else clip
+                        if used:
+                            # A piece scripts/voice-batch.py made and whisper
+                            # checked (its KEY.J.txt) is used on the first try;
+                            # a new take of it drops that note.
+                            checked = clip.with_suffix(f".{j}.txt")
+                            if attempt == 1 and piece.exists() and checked.exists():
+                                made.append(str(piece))
+                                continue
+                            checked.unlink(missing_ok=True)
+                        client = tts(client, a, prompt, handle_file, Client, bare(part), piece, f"{a.slug} {scene['id']} {k + 1}")
+                        made.append(str(piece))
+                    if used:
+                        # The pieces and the words, a short pause between.
+                        gap = str(clip.with_suffix(".gap.wav"))
+                        sox("-n", "-r", "44100", "-c", "1", gap, "trim", "0", "0.12")
+                        joined = [x for m in made for x in (m, gap)][:-1]
+                        sox(*joined, str(clip))
                     got = heard(clip, a.whisper_model)
-                    if same(got, sentence, shown):
+                    if same(got, sentence, shown) or heard_right(got, raw_sentence):
                         break
                     if near(got, sentence, shown):
                         # One word off in a long sentence: usually whisper,

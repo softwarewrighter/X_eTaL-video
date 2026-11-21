@@ -91,24 +91,23 @@
     },
     {
       "id": "meet",
-      "narration": "My new {APL|ay, pee, elle,} inspired experimental, extensible, statically typed array language is {X_eTaL|ecks, tee, elle}. Other influences on my language are Haskell and Rust.",
-      "seconds": 12.8,
+      "narration": "My new {APL|@apl} inspired experimental, extensible, statically typed array language is {X_eTaL|ecks, tee, elle}. Other influences on my language are Haskell and Rust.",
+      "seconds": 12.9,
       "sentences": [
         {
           "text": "My new APL inspired experimental, extensible, statically typed array language is X_eTaL.",
-          "heard": "My new IPL inspired experimental extensible statically typed array language is XTL.",
-          "sent": "My new ay, pee, elle, inspired experimental, extensible, statically typed array language is ecks, tee, elle.",
-          "spoken": "My new ay, pee, elle, inspired experimental, extensible, statically typed array language is ecks, tee, elle.",
-          "unverified": true,
+          "heard": "My new APL inspired experimental extensible statically typed array language is XTL.",
+          "sent": "My new apl inspired experimental, extensible, statically typed array language is ecks, tee, elle.",
+          "spoken": "My new @apl inspired experimental, extensible, statically typed array language is ecks, tee, elle.",
           "start": 0.4,
-          "end": 8.965
+          "end": 9.046
         },
         {
           "text": "Other influences on my language are Haskell and Rust.",
           "heard": "Other influences on my language are Haskell and Rust.",
           "sent": "Other influences on my language are Haskell and Rust.",
-          "start": 9.315,
-          "end": 12.023
+          "start": 9.396,
+          "end": 12.104
         }
       ]
     },
@@ -226,39 +225,38 @@
     },
     {
       "id": "double",
-      "narration": "Here is a similar program in {X_eTaL,|ex, tee, el,} the array language this series is about. Values is one, two, three, four. Result is two times values, which is two, four, six, eight. There is no index, no empty vector to fill, and nothing to append.",
-      "seconds": 20.4,
+      "narration": "Here is a similar program in {X_eTaL,|ex, tee, Elle,} the array language this series is about. Values is one, two, three, four. Result is two times values, which is two, four, six, eight. There is no index, no empty vector to fill, and nothing to append.",
+      "seconds": 20.3,
       "sentences": [
         {
           "text": "Here is a similar program in X_eTaL, the array language this series is about.",
-          "heard": "Here is a similar program in Extil, the array language this series is about.",
-          "sent": "Here is a similar program in ex, tee, el, the array language this series is about.",
-          "spoken": "Here is a similar program in ex, tee, el, the array language this series is about.",
-          "unverified": true,
+          "heard": "Here is a similar program in XTL, the array language this series is about.",
+          "sent": "Here is a similar program in ex, tee, Elle, the array language this series is about.",
+          "spoken": "Here is a similar program in ex, tee, Elle, the array language this series is about.",
           "start": 0.4,
-          "end": 5.242
+          "end": 5.123
         },
         {
           "text": "Values is one, two, three, four.",
           "heard": "Values is 1, 2, 3, 4.",
           "sent": "Values is one, two, three, four.",
-          "start": 5.592,
-          "end": 9.375
+          "start": 5.473,
+          "end": 9.256
         },
         {
           "text": "Result is two times values, which is two, four, six, eight.",
           "heard": "The result is 2 times values, which is 2, 4, 6, 8.",
           "sent": "Result is two times values, which is two, four, six, eight.",
           "unverified": true,
-          "start": 9.725,
-          "end": 14.392
+          "start": 9.606,
+          "end": 14.272
         },
         {
           "text": "There is no index, no empty vector to fill, and nothing to append.",
           "heard": "There is no index, no empty vector to fill, and nothing to append.",
           "sent": "There is no index, no empty vector to fill, and nothing to append.",
-          "start": 14.742,
-          "end": 19.657
+          "start": 14.622,
+          "end": 19.538
         }
       ]
     },
@@ -313,8 +311,8 @@
     },
     {
       "id": "history",
-      "narration": "Array programming has a long history. Kenneth Iverson published A Programming Language in nineteen sixty-two, as a notation for writing algorithms. {IBM|eye, bee, em,} then made it a language you could type at, first as {APL\\1130|eh, pee, elle, eleven thirty,} then as {APL\\360|eh, pee, elle, three sixty}. {APL|A P L} two added nesting. J, from Iverson and Roger Hui, kept the meaning and moved to plain {ASCII|ask-ee}. K, from Arthur Whitney, stripped the language down again. And in twenty twenty, {BQN|bee, queue, en}, redesigned the symbols from scratch.",
-      "seconds": 38.0,
+      "narration": "Array programming has a long history. Kenneth Iverson published A Programming Language in nineteen sixty-two, as a notation for writing algorithms. {IBM|@ibm} then made it a language you could type at, first as {APL\\1130,|@apl eleven thirty,} then as {APL\\360|@apl three sixty}. {APL|A P L} two added nesting. J, from Iverson and Roger Hui, kept the meaning and moved to plain {ASCII|ask-ee}. K, from Arthur Whitney, stripped the language down again. And in twenty twenty, {BQN|bee, queue, en}, redesigned the symbols from scratch.",
+      "seconds": 38.4,
       "sentences": [
         {
           "text": "Array programming has a long history.",
@@ -331,20 +329,21 @@
           "end": 9.068
         },
         {
-          "text": "IBM then made it a language you could type at, first as APL\\1130 then as APL\\360.",
-          "heard": "IBM then made it a language you could type at first as APL 1130 then as APL 360",
-          "sent": "eye, bee, em, then made it a language you could type at, first as eh, pee, elle, eleven thirty, then as eh, pee, elle, three sixty.",
-          "spoken": "eye, bee, em, then made it a language you could type at, first as eh, pee, elle, eleven thirty, then as eh, pee, elle, three sixty.",
+          "text": "IBM then made it a language you could type at, first as APL\\1130, then as APL\\360.",
+          "heard": "IBM then made it a language you could type at first as APL 1130 then as APL 365",
+          "sent": "ibm then made it a language you could type at, first as apl eleven thirty, then as apl three sixty.",
+          "spoken": "@ibm then made it a language you could type at, first as @apl eleven thirty, then as @apl three sixty.",
+          "unverified": true,
           "start": 9.418,
-          "end": 19.784
+          "end": 20.181
         },
         {
           "text": "APL two added nesting.",
           "heard": "APL2 added nesting.",
           "sent": "A P L two added nesting.",
           "spoken": "A P L two added nesting.",
-          "start": 20.134,
-          "end": 22.838
+          "start": 20.531,
+          "end": 23.234
         },
         {
           "text": "J, from Iverson and Roger Hui, kept the meaning and moved to plain ASCII.",
@@ -352,15 +351,15 @@
           "sent": "J, from Iverson and Roger Hui, kept the meaning and moved to plain ask ee.",
           "spoken": "J, from Iverson and Roger Hui, kept the meaning and moved to plain ask-ee.",
           "unverified": true,
-          "start": 23.188,
-          "end": 28.58
+          "start": 23.584,
+          "end": 28.976
         },
         {
           "text": "K, from Arthur Whitney, stripped the language down again.",
           "heard": "K, from Arthur Whitney, stripped the language down again.",
           "sent": "K, from Arthur Whitney, stripped the language down again.",
-          "start": 28.93,
-          "end": 32.068
+          "start": 29.326,
+          "end": 32.465
         },
         {
           "text": "And in twenty twenty, BQN, redesigned the symbols from scratch.",
@@ -368,15 +367,15 @@
           "sent": "And in twenty twenty, bee, queue, en, redesigned the symbols from scratch.",
           "spoken": "And in twenty twenty, bee, queue, en, redesigned the symbols from scratch.",
           "unverified": true,
-          "start": 32.418,
-          "end": 37.276
+          "start": 32.815,
+          "end": 37.672
         }
       ]
     },
     {
       "id": "spellings",
-      "narration": "In each of them, doubling four numbers is one short line. The symbols change from language to language. The idea doesn't. It's one operation, applied to the whole array. In {X_eTaL,|ecks, tee, elle,} you type an asterisk, as in {J|jay} or {K|kay}. The editor then renders it as a times sign, as in {APL|ay, pee, el}. The rendered form is the one that's {read|red}.",
-      "seconds": 26.1,
+      "narration": "In each of them, doubling four numbers is one short line. The symbols change from language to language. The idea doesn't. It's one operation, applied to the whole array. In {X_eTaL,|ecks, tee, elle,} you type an asterisk, as in {J|jay} or {K|kay}. The editor then renders it as a times sign, as {APL|eh, pee, elle} does. The rendered form is the one that's {read|red}.",
+      "seconds": 26.6,
       "sentences": [
         {
           "text": "In each of them, doubling four numbers is one short line.",
@@ -411,57 +410,62 @@
           "heard": "In XTL, you type an asterisk, as in J or K.",
           "sent": "In ecks, tee, elle, you type an asterisk, as in jay or kay.",
           "spoken": "In ecks, tee, elle, you type an asterisk, as in jay or kay.",
-          "unverified": true,
           "start": 11.347,
           "end": 16.935
         },
         {
-          "text": "The editor then renders it as a times sign, as in APL.",
-          "heard": "The editor then renders it as a time sign, as in A-P-L-L.",
-          "sent": "The editor then renders it as a times sign, as in ay, pee, el.",
-          "spoken": "The editor then renders it as a times sign, as in ay, pee, el.",
-          "unverified": true,
+          "text": "The editor then renders it as a times sign, as APL does.",
+          "heard": "The editor then renders it as a time sign as APL does.",
+          "sent": "The editor then renders it as a times sign, as eh, pee, elle does.",
+          "spoken": "The editor then renders it as a times sign, as eh, pee, elle does.",
           "start": 17.285,
-          "end": 22.701
+          "end": 23.185
         },
         {
           "text": "The rendered form is the one that's read.",
           "heard": "The rendered form is the one that's red.",
           "sent": "The rendered form is the one that is red.",
           "spoken": "The rendered form is the one that's red.",
-          "start": 23.051,
-          "end": 25.332
+          "start": 23.535,
+          "end": 25.816
         }
       ]
     },
     {
       "id": "keyboard",
-      "narration": "{APL's|A, pee, elles,} symbols needed a special type element and a keyboard marked with them. The computers of the day had no codes for most of them. {J|Jay} moved to plain {ASCII|ask-ee} so that any keyboard could type it.",
-      "seconds": 12.8,
+      "narration": "The symbols of {APL|@apl} needed a special type element and a keyboard marked with them. The computers of the day had no codes for most of them. {J|Jay} moved to plain {ASCII|ask-ee} so that any keyboard could type it. {X_eTaL|@xtl} also works with standard keyboards.",
+      "seconds": 17.8,
       "sentences": [
         {
-          "text": "APL's symbols needed a special type element and a keyboard marked with them.",
-          "heard": "PLS symbols needed a special type element and a keyboard marked with them.",
-          "sent": "A, pee, elles, symbols needed a special type element and a keyboard marked with them.",
-          "spoken": "A, pee, elles, symbols needed a special type element and a keyboard marked with them.",
-          "unverified": true,
+          "text": "The symbols of APL needed a special type element and a keyboard marked with them.",
+          "heard": "The symbols of APL needed a special type element and a keyboard marked with them.",
+          "sent": "The symbols of apl needed a special type element and a keyboard marked with them.",
+          "spoken": "The symbols of @apl needed a special type element and a keyboard marked with them.",
           "start": 0.4,
-          "end": 4.883
+          "end": 6.515
         },
         {
           "text": "The computers of the day had no codes for most of them.",
           "heard": "The computers of the day had no codes for most of them.",
           "sent": "The computers of the day had no codes for most of them.",
-          "start": 5.233,
-          "end": 7.767
+          "start": 6.865,
+          "end": 9.399
         },
         {
           "text": "J moved to plain ASCII so that any keyboard could type it.",
           "heard": "J moved to plain ASCII so that any keyboard could type it.",
           "sent": "Jay moved to plain ask ee so that any keyboard could type it.",
           "spoken": "Jay moved to plain ask-ee so that any keyboard could type it.",
-          "start": 8.117,
-          "end": 12.043
+          "start": 9.749,
+          "end": 13.676
+        },
+        {
+          "text": "X_eTaL also works with standard keyboards.",
+          "heard": "XTL. Also works with standard keyboards.",
+          "sent": "xtl also works with standard keyboards.",
+          "spoken": "@xtl also works with standard keyboards.",
+          "start": 14.026,
+          "end": 17.008
         }
       ]
     },
@@ -518,7 +522,6 @@
           "heard": "The name XTL spells out experimental, extensible, typed array language, and reverses LaTeX.",
           "sent": "The name ecks, tee, elle, spells out experimental, extensible, typed array language, and reverses lay tech.",
           "spoken": "The name ecks, tee, elle, spells out experimental, extensible, typed array language, and reverses lay tech.",
-          "unverified": true,
           "start": 0.4,
           "end": 7.619
         },
@@ -584,8 +587,8 @@
     },
     {
       "id": "types",
-      "narration": "It is statically typed, and it infers every type, so you don't write type annotations. A program whose types don't fit is refused before it runs, with the line, and with a suggested fix. The language is implemented in Rust, and it runs in the browser.",
-      "seconds": 18.2,
+      "narration": "It is statically typed, and it infers every type, so you don't write type annotations. A program whose types don't fit is refused before it runs, with the line, and with a suggested fix. The language is implemented in Rust, and it runs in the browser. It also runs in a terminal editor, at the command line, and in Emacs, with editor plugins planned.",
+      "seconds": 24.8,
       "sentences": [
         {
           "text": "It is statically typed, and it infers every type, so you don't write type annotations.",
@@ -607,13 +610,20 @@
           "sent": "The language is implemented in Rust, and it runs in the browser.",
           "start": 13.348,
           "end": 17.46
+        },
+        {
+          "text": "It also runs in a terminal editor, at the command line, and in Emacs, with editor plugins planned.",
+          "heard": "It also runs in a terminal editor at the command line and in Emacs with editor plugins planned.",
+          "sent": "It also runs in a terminal editor, at the command line, and in Emacs, with editor plugins planned.",
+          "start": 17.81,
+          "end": 24.064
         }
       ]
     },
     {
       "id": "borrowed",
-      "narration": "It takes arrays and right to left reading from {APL|ay pee el}. The {leading|leeding} axis and the atop, from {BQN|bee, queue, en}, and {J|jay}. Its types from Haskell. And its macros, lints, and diagnostics from Rust. Each borrowing came with a refusal beside it, like the types of Haskell, but not its laziness.",
-      "seconds": 20.7,
+      "narration": "It takes arrays and right to left reading from {APL|ay pee el}. The {leading|leeding} axis and the atop, from {BQN|bee, queue, en}, and {J|jay}. Its types from Haskell. And its macros, {lints,|@lints,} and diagnostics from Rust. Each borrowing came with a refusal beside it, like the types of Haskell, but not its laziness. {X_eTaL|@xtl} is eager by default, but lazy evaluation can be specified where needed.",
+      "seconds": 27.2,
       "sentences": [
         {
           "text": "It takes arrays and right to left reading from APL.",
@@ -642,23 +652,32 @@
           "text": "And its macros, lints, and diagnostics from Rust.",
           "heard": "and its macros, lengths, and diagnostics from Rust.",
           "sent": "And its macros, lints, and diagnostics from Rust.",
+          "spoken": "And its macros, @lints, and diagnostics from Rust.",
           "unverified": true,
           "start": 10.634,
-          "end": 13.83
+          "end": 14.384
         },
         {
           "text": "Each borrowing came with a refusal beside it, like the types of Haskell, but not its laziness.",
           "heard": "Each borrowing came with a refusal beside it, like the types of Haskell, but not its laziness.",
           "sent": "Each borrowing came with a refusal beside it, like the types of Haskell, but not its laziness.",
-          "start": 14.18,
-          "end": 19.959
+          "start": 14.734,
+          "end": 20.514
+        },
+        {
+          "text": "X_eTaL is eager by default, but lazy evaluation can be specified where needed.",
+          "heard": "XTL is eager by default, but lazy evaluation can be specified where needed.",
+          "sent": "xtl is eager by default, but lazy evaluation can be specified where needed.",
+          "spoken": "@xtl is eager by default, but lazy evaluation can be specified where needed.",
+          "start": 20.864,
+          "end": 26.485
         }
       ]
     },
     {
       "id": "core",
-      "narration": "The language changes when a real program needs it to, and not before. Growth goes outward, into libraries, macro libraries, and extensions. Equations, pipelines, and integrals are libraries of macros, with no change to the compiler.",
-      "seconds": 17.5,
+      "narration": "The language changes when a real program needs it to, and not before. Growth goes outward, into libraries, macro libraries, and extensions. Equations, pipelines, and integrals are libraries of macros, with no change to the compiler. My goal is to keep the language small, arrays and tuples, but not {records|records} or generics. I am still adding small features when they cannot be easily done in a library or macro.",
+      "seconds": 28.8,
       "sentences": [
         {
           "text": "The language changes when a real program needs it to, and not before.",
@@ -680,6 +699,20 @@
           "sent": "Equations, pipelines, and integrals are libraries of macros, with no change to the compiler.",
           "start": 10.263,
           "end": 16.734
+        },
+        {
+          "text": "My goal is to keep the language small, arrays and tuples, but not records or generics.",
+          "heard": "My goal is to keep the language small, arrays and tuples, but not records or generics.",
+          "sent": "My goal is to keep the language small, arrays and tuples, but not records or generics.",
+          "start": 17.084,
+          "end": 23.391
+        },
+        {
+          "text": "I am still adding small features when they cannot be easily done in a library or macro.",
+          "heard": "I am still adding small features when they cannot be easily done in a library or macro.",
+          "sent": "I am still adding small features when they cannot be easily done in a library or macro.",
+          "start": 23.741,
+          "end": 28.0
         }
       ]
     },
@@ -721,39 +754,30 @@
     },
     {
       "id": "learn",
-      "narration": "We'll begin with the fundamentals. Arrays, shapes, functions, and composition. Then we'll learn to write programs in {X_eTaL,|ex, tee, el,} use its libraries, and extend it.",
-      "seconds": 10.8,
+      "narration": "We'll begin with the fundamentals, arrays, shapes, functions, and composition. Then we'll learn to write programs in {X_eTaL,|@xtl,} use its libraries, and extend it.",
+      "seconds": 12.2,
       "sentences": [
         {
-          "text": "We'll begin with the fundamentals.",
-          "heard": "We'll begin with the fundamentals.",
-          "sent": "We will begin with the fundamentals.",
+          "text": "We'll begin with the fundamentals, arrays, shapes, functions, and composition.",
+          "heard": "We will begin with the fundamentals, arrays, shapes, functions, and composition.",
+          "sent": "We will begin with the fundamentals, arrays, shapes, functions, and composition.",
           "start": 0.4,
-          "end": 2.258
-        },
-        {
-          "text": "Arrays, shapes, functions, and composition.",
-          "heard": "Iris shapes functions in composition.",
-          "sent": "Arrays, shapes, functions, and composition.",
-          "unverified": true,
-          "start": 2.608,
-          "end": 5.053
+          "end": 5.22
         },
         {
           "text": "Then we'll learn to write programs in X_eTaL, use its libraries, and extend it.",
-          "heard": "Then we will learn to write programs in Extil, use its libraries, and extend it.",
-          "sent": "Then we will learn to write programs in ex, tee, el, use its libraries, and extend it.",
-          "spoken": "Then we'll learn to write programs in ex, tee, el, use its libraries, and extend it.",
-          "unverified": true,
-          "start": 5.403,
-          "end": 10.052
+          "heard": "Then we will learn to write programs in XTL, use its libraries, and extend it.",
+          "sent": "Then we will learn to write programs in xtl, use its libraries, and extend it.",
+          "spoken": "Then we'll learn to write programs in @xtl, use its libraries, and extend it.",
+          "start": 5.57,
+          "end": 11.404
         }
       ]
     },
     {
       "id": "tease-ml",
-      "narration": "Later episodes go much further. A pipeline macro writes the data flow of a model left to right, data first, then each layer in turn, with shapes that are checked. And equation macros take a formula as a paper prints it, and give back the array computation, its {LaTeX|lay tech}, or both.",
-      "seconds": 21.0,
+      "narration": "Later episodes go much further. A pipeline macro writes the data flow of a model left to right, data first, then each layer in turn, with shapes that are checked. Equation macros take a formula as a paper prints it, and give back the array computation, its {LaTeX|lay tech}, or both.",
+      "seconds": 19.7,
       "sentences": [
         {
           "text": "Later episodes go much further.",
@@ -770,13 +794,12 @@
           "end": 11.845
         },
         {
-          "text": "And equation macros take a formula as a paper prints it, and give back the array computation, its LaTeX, or both.",
-          "heard": "Then equation macros take a formula as a paper prints it and give back the array computation, its LaTeX, or both.",
-          "sent": "And equation macros take a formula as a paper prints it, and give back the array computation, its lay tech, or both.",
-          "spoken": "And equation macros take a formula as a paper prints it, and give back the array computation, its lay tech, or both.",
-          "unverified": true,
+          "text": "Equation macros take a formula as a paper prints it, and give back the array computation, its LaTeX, or both.",
+          "heard": "Equation macros take a formula as a paper prints it and give back the array computation, its LaTeX or both.",
+          "sent": "Equation macros take a formula as a paper prints it, and give back the array computation, its lay tech, or both.",
+          "spoken": "Equation macros take a formula as a paper prints it, and give back the array computation, its lay tech, or both.",
           "start": 12.195,
-          "end": 20.294
+          "end": 18.968
         }
       ]
     },
@@ -797,7 +820,6 @@
           "heard": "A 4-bit calculator machine specified in XTL runs on a Tangnano 9K board and calculates over its serial port.",
           "sent": "A four bit calculator machine, specified in ex, tee, el, runs on a Tang Nano nine kay board, and calculates over its serial port.",
           "spoken": "A four-bit calculator machine, specified in ex, tee, el, runs on a Tang Nano nine kay board, and calculates over its serial port.",
-          "unverified": true,
           "start": 4.105,
           "end": 13.126
         }
@@ -805,8 +827,8 @@
     },
     {
       "id": "tease-gpu",
-      "narration": "A function marked with a macro runs on a {GPU|gee, pee, you}, lowered from its own source. On Apple Silicon, through Metal. On an {NVIDIA|en vidia} {RTX|ar tee ex} fifty sixty {Ti|tee eye}. And even on the Adreno seven oh two, the {GPU|gee, pee, you} in an Arduino Uno {Q|queue}.",
-      "seconds": 20.9,
+      "narration": "A function marked with a macro runs on a {GPU|gee, pee, you}, lowered from its own source. On Apple Silicon, through Metal. On an {NVIDIA|en vidia} {RTX|ar tee ex} fifty sixty {Ti|tee eye}. And even on the {Adreno|ah, dre, no,} seven oh two, the {GPU|gee, pee, you} in an Arduino Uno {Q|queue}.",
+      "seconds": 20.2,
       "sentences": [
         {
           "text": "A function marked with a macro runs on a GPU, lowered from its own source.",
@@ -833,51 +855,68 @@
         },
         {
           "text": "And even on the Adreno seven oh two, the GPU in an Arduino Uno Q.",
-          "heard": "And even on the Arduino 702, the GPU in an Arduino UnoQ,",
-          "sent": "And even on the Adreno seven oh two, the gee, pee, you in an Arduino Uno queue.",
-          "spoken": "And even on the Adreno seven oh two, the gee, pee, you in an Arduino Uno queue.",
+          "heard": "and even on the Adreno 702 at a GPU in an Arduino UnoQ.",
+          "sent": "And even on the ah, dre, no, seven oh two, the gee, pee, you in an Arduino Uno queue.",
+          "spoken": "And even on the ah, dre, no, seven oh two, the gee, pee, you in an Arduino Uno queue.",
           "unverified": true,
           "start": 13.384,
-          "end": 20.13
+          "end": 19.466
         }
       ]
     },
     {
       "id": "tease-3d",
-      "narration": "It drives Blender, working out a scene as arrays, with the place, size, and color of every {object|object}. My {3D|three dee} models of historical terminals are made that way. And a ray tracer, written as ordinary array code, renders the same scene on the {CPU|see pee you} and the {GPU|gee, pee, you}.",
-      "seconds": 19.5,
+      "narration": "It drives Blender, working out a scene as {arrays,|@arrays,} with the place, size, and color of every {object|object}. My {3D|three dee} models of historical terminals are made that way. There is also a {ray tracer,|@ray-tracer,} written as ordinary array code, that renders the same scene on the {CPU|see pee you} and the {GPU|gee, pee, you}. {X_eTaL|@xtl} code, run on a {GPU|gee, pee, you} for a large enough calculation, is much faster than on the {CPU|see pee you}. {X_eTaL|@xtl} ray tracing code produces images without using Blender.",
+      "seconds": 33.5,
       "sentences": [
         {
           "text": "It drives Blender, working out a scene as arrays, with the place, size, and color of every object.",
-          "heard": "It drives Blender working out a scene as a raise with the place, size, and color of every object.",
+          "heard": "It dries Blender, working on a scene as a rays with the place, size, and color of every object.",
           "sent": "It drives Blender, working out a scene as arrays, with the place, size, and color of every object.",
+          "spoken": "It drives Blender, working out a scene as @arrays, with the place, size, and color of every object.",
           "unverified": true,
           "start": 0.4,
-          "end": 8.376
+          "end": 7.854
         },
         {
           "text": "My 3D models of historical terminals are made that way.",
           "heard": "My 3D models of historical terminals are made that way.",
           "sent": "My three dee models of historical terminals are made that way.",
           "spoken": "My three dee models of historical terminals are made that way.",
-          "start": 8.726,
-          "end": 12.0
+          "start": 8.204,
+          "end": 11.477
         },
         {
-          "text": "And a ray tracer, written as ordinary array code, renders the same scene on the CPU and the GPU.",
-          "heard": "An array tracer, written as ordinary array code, renders the same scene on the TPU in the GPU.",
-          "sent": "And a ray tracer, written as ordinary array code, renders the same scene on the see pee you and the gee, pee, you.",
-          "spoken": "And a ray tracer, written as ordinary array code, renders the same scene on the see pee you and the gee, pee, you.",
+          "text": "There is also a ray tracer, written as ordinary array code, that renders the same scene on the CPU and the GPU.",
+          "heard": "There's also Ray Tracer written as ordinary array code that renders the same scene on the CPU and the GPU.",
+          "sent": "There is also a ray tracer, written as ordinary array code, that renders the same scene on the see pee you and the gee, pee, you.",
+          "spoken": "There is also a @ray-tracer, written as ordinary array code, that renders the same scene on the see pee you and the gee, pee, you.",
           "unverified": true,
-          "start": 12.35,
-          "end": 18.757
+          "start": 11.827,
+          "end": 20.372
+        },
+        {
+          "text": "X_eTaL code, run on a GPU for a large enough calculation, is much faster than on the CPU.",
+          "heard": "XTL. Code run on a GPU for a large enough calculation is much faster than on the CPU",
+          "sent": "xtl code, run on a gee, pee, you for a large enough calculation, is much faster than on the see pee you.",
+          "spoken": "@xtl code, run on a gee, pee, you for a large enough calculation, is much faster than on the see pee you.",
+          "start": 20.722,
+          "end": 28.592
+        },
+        {
+          "text": "X_eTaL ray tracing code produces images without using Blender.",
+          "heard": "XTL. Ray tracing code produces images without using Blender.",
+          "sent": "xtl ray tracing code produces images without using Blender.",
+          "spoken": "@xtl ray tracing code produces images without using Blender.",
+          "start": 28.942,
+          "end": 32.703
         }
       ]
     },
     {
       "id": "tease-tune",
-      "narration": "And fine-tuning. Browser lessons build a low-rank adapter number by number, and then train it. And a tiny mixture of experts, trained in {X_eTaL,|ecks, tee, elle,} is fine-tuned to a changed task by six methods in turn.",
-      "seconds": 16.7,
+      "narration": "And fine-tuning. Lessons in the browser build a low-rank adapter number by number, and then train it. And a tiny mixture of experts, trained in {X_eTaL,|ecks, tee, elle,} is fine-tuned to a changed task by six methods in turn.",
+      "seconds": 18.1,
       "sentences": [
         {
           "text": "And fine-tuning.",
@@ -887,12 +926,11 @@
           "end": 1.785
         },
         {
-          "text": "Browser lessons build a low-rank adapter number by number, and then train it.",
-          "heard": "In browser lessons, build a low rank adapter number by number, and then train it.",
-          "sent": "Browser lessons build a low rank adapter number by number, and then train it.",
-          "unverified": true,
+          "text": "Lessons in the browser build a low-rank adapter number by number, and then train it.",
+          "heard": "Lessons in the browser build a low rank adapter number by number and then train it.",
+          "sent": "Lessons in the browser build a low rank adapter number by number, and then train it.",
           "start": 2.135,
-          "end": 6.78
+          "end": 8.108
         },
         {
           "text": "And a tiny mixture of experts, trained in X_eTaL, is fine-tuned to a changed task by six methods in turn.",
@@ -900,8 +938,8 @@
           "sent": "And a tiny mixture of experts, trained in ecks, tee, elle, is fine tuned to a changed task by six methods in turn.",
           "spoken": "And a tiny mixture of experts, trained in ecks, tee, elle, is fine-tuned to a changed task by six methods in turn.",
           "unverified": true,
-          "start": 7.13,
-          "end": 15.99
+          "start": 8.458,
+          "end": 17.318
         }
       ]
     },

@@ -419,6 +419,36 @@ Read before working:
     choice); the feat/ -> pr/ branch handoff in the briefing above
     applies only to a parallel lane on its own branch.
 
+## Producing a narrated video
+
+What episode 01 taught (`docs/postmortem-al-01-why.md`); the working
+checklist is `docs/production-lessons.md`. A voice request costs about
+90 s whatever its length, so:
+
+1. Facts, dates and claims are checked with the author before they are
+   narrated; every narrated scene has a picture.
+2. `just voice-preflight SLUG` before any narration: every name,
+   acronym and unusual word is handled by a word clip (`@name`) or a
+   tested spelling in `docs/voice-words.json`, made before the
+   sentences. Never discover problem words sentence by sentence.
+3. Narration only through `just produce SLUG` (batches of up to 12
+   sentences a request, the shared first-come-first-served queue, stall
+   restarts, recording, render, review page). Never one request a
+   sentence by hand.
+4. Text sent to the voice: letters, commas and periods only (a rare ?
+   or !), no possessives, acronyms as clips or tested spellings, no
+   one-word text piece around a splice (the clip first, or a phrase).
+5. Several agents work separate problems at once (a sentence, a word,
+   a scene's picture); every voice request still goes through the
+   queue. One request at a time to the server, never more.
+6. Watch every event of a run (start, waits, stalls, each scene, end);
+   never pipe away an exit code; never edit a running script.
+7. Estimates come from the logs: requests left times 90 s, plus a
+   quarter for retries, plus the recording and render.
+8. Whisper is a first check, not the last: it cannot hear pace or a
+   run-together join. The author's listen decides; orange sentences
+   first.
+
 ## Every step ends with
 
 1. `just gate` passes (the pinned X_eTaL, the libraries' baselines,

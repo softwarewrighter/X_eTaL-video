@@ -84,6 +84,16 @@ still slug n format="":
 voice slug *args:
     scripts/voice.sh "$@"
 
+# A lesson's unmade sentences, many to a VoxCPM request (about 90 s whatever its length), cut at the pauses and checked by whisper into the cache: just voice-batch al-01-why [--size 12] [--list]
+voice-batch slug *args:
+    @[ -x .venv/bin/python ] || uv venv -q
+    .venv/bin/python scripts/voice-batch.py "$@"
+
+# A lesson's problem words before any narration (no voice server): risky words, whether each is handled (a clip, a known spelling in docs/voice-words.json, heard right before), commands for the rest; fails if any is unhandled: just voice-preflight al-01-why
+voice-preflight slug:
+    @[ -x .venv/bin/python ] || uv venv -q
+    .venv/bin/python scripts/voice-preflight.py "$1"
+
 # A narrated lesson's YouTube upload in out/SLUG-youtube/: both videos, title, description, captions (.srt): just youtube nbody
 youtube slug:
     scripts/youtube.mjs "$1"

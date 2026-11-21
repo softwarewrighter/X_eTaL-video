@@ -6,8 +6,10 @@
 # everything else goes to work/SLUG/produce/*.log.
 #   scripts/produce.sh SLUG [WORKERS]       # WORKERS shards (default 3)
 #
-# Narration: WORKERS shards of the sentences at once (voice.py
-# --shard); VoxCPM still gets one request at a time (the shared lock),
+# Narration: first the unmade sentences in batches, many to a VoxCPM
+# request, cut apart at their pauses (scripts/voice-batch.py: a request
+# costs about 90 s whatever its length); then WORKERS shards of what is
+# left (voice.py --shard); VoxCPM still gets one request at a time (the shared lock),
 # but while one shard waits on whisper or retries a sentence the others
 # keep it busy. Every 30 s the scenes whose sentences are all made are
 # assembled for the review page (voice.py --ready). When no new audio
@@ -34,7 +36,9 @@ narrated=$(node -e 'console.log(JSON.parse(require("fs").readFileSync(process.ar
 # Says what it waits on, and waits at most 5 minutes (it once sat 34
 # minutes on a process it took for a narration).
 waited=0
-while others=$(pgrep -f "scripts/voice[.]py $slug " | tr '\n' ' ') && [ -n "$others" ]; do
+# Narrations only: a word clip or spelling search (--word, --spell) is not one.
+narrations() { for p in $(pgrep -f "scripts/voice[.]py $slug "); do ps -o command= -p "$p" | grep -qE -- "--(word|spell)" || echo "$p"; done; }
+while others=$(narrations | tr '\n' ' ') && [ -n "${others// /}" ]; do
   [ "$waited" -eq 0 ] && say "waiting for another narration of $slug to finish: $(ps -o pid=,command= -p ${others// /,} 2>/dev/null | cut -c1-80 | tr '\n' ';')"
   [ "$waited" -ge 300 ] && { say "FAILED: still waiting after 5 minutes on: $others"; exit 1; }
   sleep 15; waited=$((waited + 15))
@@ -55,6 +59,17 @@ trap 'stop; [ -n "${follow:-}" ] && kill "$follow" 2>/dev/null; exit 130' INT TE
 # Sleep so a stop signal is taken at once (bash runs a trap only after
 # a foreground command ends).
 nap() { sleep "$1" & wait $!; }
+
+# The batches first (their output in $logs/batch.log); a batch run that
+# fails is reported, not fatal: the shards make whatever it did not.
+[ -x .venv/bin/python ] || uv venv -q
+.venv/bin/python -c 'import gradio_client' 2>/dev/null || uv pip install -q gradio_client
+say "narration: batches of sentences, many to a request"
+.venv/bin/python scripts/voice-batch.py "$slug" > "$logs/batch.log" 2>&1 &
+pids=($!)
+if wait $!; then say "narration: $(grep '^batch: .* request(s)' "$logs/batch.log" | tail -1 | sed 's/^batch: //')"
+else say "narration: the batch run failed (see $logs/batch.log); the shards make the rest"; fi
+pids=()
 
 say "narration: $workers shards, $narrated scenes"
 start
@@ -91,6 +106,10 @@ if [ "$rc" -eq 3 ]; then say "narration: done; some sentences kept unverified, f
 elif [ "$rc" -ne 0 ]; then say "FAILED: assembling the narration (see $logs/assemble.log)"; exit 1
 else say "narration: done, $(grep -o '[0-9.]* s in all' "$logs/assemble.log")"; fi
 node scripts/review.mjs "$slug" >/dev/null 2>&1
+# One more pass of the review follower now the narration is assembled (its
+# own last pass can come before the final assembly; a scene was left with
+# its old clip that way).
+scripts/review-follow.sh "$slug" >> "$logs/follow.log" 2>&1
 
 # The pages, recorded again for the narration's lengths (twice if need be).
 if node -e 'process.exit(JSON.parse(require("fs").readFileSync(process.argv[1], "utf8")).scenes.some((s) => s.capture) ? 0 : 1)' "lessons/$slug/lesson.json"; then

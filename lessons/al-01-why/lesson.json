@@ -68,9 +68,9 @@
     },
     {
       "id": "meet",
-      "seconds": 12.8,
+      "seconds": 12.9,
       "heading": "Meet X_eTaL",
-      "narration": "My new {APL|ay, pee, elle,} inspired experimental, extensible, statically typed array language is {X_eTaL|ecks, tee, elle}. Other influences on my language are Haskell and Rust.",
+      "narration": "My new {APL|@apl} inspired experimental, extensible, statically typed array language is {X_eTaL|ecks, tee, elle}. Other influences on my language are Haskell and Rust.",
       "lines": [],
       "slide": {
         "type": "points",
@@ -214,9 +214,9 @@
     },
     {
       "id": "double",
-      "seconds": 20.4,
+      "seconds": 20.3,
       "heading": "Two times values",
-      "narration": "Here is a similar program in {X_eTaL,|ex, tee, el,} the array language this series is about. Values is one, two, three, four. Result is two times values, which is two, four, six, eight. There is no index, no empty vector to fill, and nothing to append.",
+      "narration": "Here is a similar program in {X_eTaL,|ex, tee, Elle,} the array language this series is about. Values is one, two, three, four. Result is two times values, which is two, four, six, eight. There is no index, no empty vector to fill, and nothing to append.",
       "lines": [],
       "panel": {
         "type": "code",
@@ -346,20 +346,20 @@
     },
     {
       "id": "history",
-      "seconds": 38,
+      "seconds": 38.4,
       "heading": "Where array languages came from",
-      "narration": "Array programming has a long history. Kenneth Iverson published A Programming Language in nineteen sixty-two, as a notation for writing algorithms. {IBM|eye, bee, em,} then made it a language you could type at, first as {APL\\1130|eh, pee, elle, eleven thirty,} then as {APL\\360|eh, pee, elle, three sixty}. {APL|A P L} two added nesting. J, from Iverson and Roger Hui, kept the meaning and moved to plain {ASCII|ask-ee}. K, from Arthur Whitney, stripped the language down again. And in twenty twenty, {BQN|bee, queue, en}, redesigned the symbols from scratch.",
+      "narration": "Array programming has a long history. Kenneth Iverson published A Programming Language in nineteen sixty-two, as a notation for writing algorithms. {IBM|@ibm} then made it a language you could type at, first as {APL\\1130,|@apl eleven thirty,} then as {APL\\360|@apl three sixty}. {APL|A P L} two added nesting. J, from Iverson and Roger Hui, kept the meaning and moved to plain {ASCII|ask-ee}. K, from Arthur Whitney, stripped the language down again. And in twenty twenty, {BQN|bee, queue, en}, redesigned the symbols from scratch.",
       "lines": [],
       "slide": {
         "type": "timeline",
         "steps": [
           0,
           1,
-          2,
           3,
           4,
           5,
-          6
+          6,
+          7
         ],
         "items": [
           {
@@ -371,6 +371,11 @@
             "year": "1968",
             "text": "APL\\1130",
             "sub": "IBM, the first you could type at"
+          },
+          {
+            "year": "1968",
+            "text": "APL\\360",
+            "sub": "IBM, used inside it first"
           },
           {
             "year": "1984",
@@ -397,9 +402,9 @@
     },
     {
       "id": "spellings",
-      "seconds": 26.1,
+      "seconds": 26.6,
       "heading": "One idea, many spellings",
-      "narration": "In each of them, doubling four numbers is one short line. The symbols change from language to language. The idea doesn't. It's one operation, applied to the whole array. In {X_eTaL,|ecks, tee, elle,} you type an asterisk, as in {J|jay} or {K|kay}. The editor then renders it as a times sign, as in {APL|ay, pee, el}. The rendered form is the one that's {read|red}.",
+      "narration": "In each of them, doubling four numbers is one short line. The symbols change from language to language. The idea doesn't. It's one operation, applied to the whole array. In {X_eTaL,|ecks, tee, elle,} you type an asterisk, as in {J|jay} or {K|kay}. The editor then renders it as a times sign, as {APL|eh, pee, elle} does. The rendered form is the one that's {read|red}.",
       "lines": [],
       "panel": {
         "type": "code",
@@ -448,12 +453,15 @@
     },
     {
       "id": "keyboard",
-      "seconds": 12.8,
+      "seconds": 17.8,
       "heading": "A special keyboard",
-      "narration": "{APL's|A, pee, elles,} symbols needed a special type element and a keyboard marked with them. The computers of the day had no codes for most of them. {J|Jay} moved to plain {ASCII|ask-ee} so that any keyboard could type it.",
+      "narration": "The symbols of {APL|@apl} needed a special type element and a keyboard marked with them. The computers of the day had no codes for most of them. {J|Jay} moved to plain {ASCII|ask-ee} so that any keyboard could type it. {X_eTaL|@xtl} also works with standard keyboards.",
       "lines": [],
       "images": [
-        "../../software-wrighter-lab/blog/assets/images/posts/tbt15-2741-half.webp"
+        "../../software-wrighter-lab/blog/assets/images/posts/tbt15-2741-half.webp",
+        "../../software-wrighter-lab/blog/assets/images/posts/tbt15-2741-half.webp",
+        "../../software-wrighter-lab/blog/assets/images/posts/tbt15-2741-half.webp",
+        "../../software-wrighter-lab/blog/assets/images/posts/xetal-phil-typed-drawn.webp"
       ]
     },
     {
@@ -461,7 +469,38 @@
       "seconds": 26.9,
       "heading": "Why this language",
       "narration": "This may be the dawn of personal programming languages, and this is not the first one I've started creating. {X_eTaL|ex, tee, el,} asks what {APL|ay, pee, el} would look like, if it were designed today. Designed for composition, readability, tooling, and machine learning. Its goal isn't to replace the languages before it. It's to make the ideas of array programming easier to {read|read}, reason about, type-check, and experiment with.",
-      "lines": []
+      "lines": [],
+      "slide": {
+        "type": "points",
+        "steps": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "items": [
+          {
+            "text": "This may be the dawn of personal programming languages",
+            "sub": "and this is not the first one I've started creating"
+          },
+          {
+            "text": "What would APL look like if it were designed today?",
+            "sub": "the question X_eTaL asks"
+          },
+          {
+            "text": "Designed for",
+            "sub": "composition, readability, tooling, and machine learning"
+          },
+          {
+            "text": "The goal isn't to replace existing languages"
+          },
+          {
+            "text": "Array programming's ideas, made easier",
+            "sub": "to read, reason about, type-check, and experiment with"
+          }
+        ]
+      }
     },
     {
       "id": "the-name",
@@ -499,7 +538,26 @@
       "seconds": 15.2,
       "heading": "LaTeX reversed",
       "narration": "The name {X_eTaL|ecks, tee, elle,} spells out experimental, extensible, typed array language, and reverses {LaTeX|lay tech}. {LaTeX|lay tech} uses text to {produce|produce} typography. This language uses typography to express computation.",
-      "lines": []
+      "lines": [],
+      "slide": {
+        "type": "flow",
+        "steps": [
+          1,
+          1,
+          2
+        ],
+        "items": [
+          {
+            "text": "LaTeX",
+            "sub": "uses text to produce typography"
+          },
+          {
+            "text": "X_eTaL",
+            "sub": "uses typography to express computation",
+            "xtl": "'+ r_/ 1 2 3 4"
+          }
+        ]
+      }
     },
     {
       "id": "typed-drawn",
@@ -520,31 +578,43 @@
     },
     {
       "id": "types",
-      "seconds": 18.2,
+      "seconds": 24.8,
       "heading": "Static types, inferred",
-      "narration": "It is statically typed, and it infers every type, so you don't write type annotations. A program whose types don't fit is refused before it runs, with the line, and with a suggested fix. The language is implemented in Rust, and it runs in the browser.",
+      "narration": "It is statically typed, and it infers every type, so you don't write type annotations. A program whose types don't fit is refused before it runs, with the line, and with a suggested fix. The language is implemented in Rust, and it runs in the browser. It also runs in a terminal editor, at the command line, and in Emacs, with editor plugins planned.",
       "lines": [],
       "images": [
-        "../../software-wrighter-lab/blog/assets/images/posts/xetal-phil-type-error.webp"
+        "../../software-wrighter-lab/blog/assets/images/posts/xetal-phil-type-error.webp",
+        "../../software-wrighter-lab/blog/assets/images/posts/xetal-phil-type-error.webp",
+        "../../software-wrighter-lab/blog/assets/images/posts/xetal-phil-type-error.webp",
+        "../X_eTaL/images/editor.png"
       ]
     },
     {
       "id": "borrowed",
-      "seconds": 20.7,
+      "seconds": 27.2,
       "heading": "Borrowed on purpose",
-      "narration": "It takes arrays and right to left reading from {APL|ay pee el}. The {leading|leeding} axis and the atop, from {BQN|bee, queue, en}, and {J|jay}. Its types from Haskell. And its macros, lints, and diagnostics from Rust. Each borrowing came with a refusal beside it, like the types of Haskell, but not its laziness.",
+      "narration": "It takes arrays and right to left reading from {APL|ay pee el}. The {leading|leeding} axis and the atop, from {BQN|bee, queue, en}, and {J|jay}. Its types from Haskell. And its macros, {lints,|@lints,} and diagnostics from Rust. Each borrowing came with a refusal beside it, like the types of Haskell, but not its laziness. {X_eTaL|@xtl} is eager by default, but lazy evaluation can be specified where needed.",
       "lines": [],
       "images": [
-        "../../software-wrighter-lab/blog/assets/images/posts/xetal-phil-borrowed.webp"
+        "../../software-wrighter-lab/blog/assets/images/posts/xetal-phil-borrowed.webp",
+        "../../software-wrighter-lab/blog/assets/images/posts/xetal-phil-borrowed.webp",
+        "../../software-wrighter-lab/blog/assets/images/posts/xetal-phil-borrowed.webp",
+        "../../software-wrighter-lab/blog/assets/images/posts/xetal-phil-borrowed.webp",
+        "../../software-wrighter-lab/blog/assets/images/posts/xetal-phil-borrowed.webp",
+        "../../software-wrighter-lab/blog/assets/images/posts/xetal-phil-lazy-curried.webp"
       ]
     },
     {
       "id": "core",
-      "seconds": 17.5,
+      "seconds": 28.8,
       "heading": "A small core, grown on evidence",
-      "narration": "The language changes when a real program needs it to, and not before. Growth goes outward, into libraries, macro libraries, and extensions. Equations, pipelines, and integrals are libraries of macros, with no change to the compiler.",
+      "narration": "The language changes when a real program needs it to, and not before. Growth goes outward, into libraries, macro libraries, and extensions. Equations, pipelines, and integrals are libraries of macros, with no change to the compiler. My goal is to keep the language small, arrays and tuples, but not {records|records} or generics. I am still adding small features when they cannot be easily done in a library or macro.",
       "lines": [],
       "images": [
+        "../../software-wrighter-lab/blog/assets/images/posts/xetal-phil-layers.webp",
+        "../../software-wrighter-lab/blog/assets/images/posts/xetal-phil-layers.webp",
+        "../../software-wrighter-lab/blog/assets/images/posts/xetal-phil-layers.webp",
+        "../../software-wrighter-lab/blog/assets/images/posts/xetal-phil-layers.webp",
         "../../software-wrighter-lab/blog/assets/images/posts/xetal-phil-layers.webp"
       ]
     },
@@ -622,10 +692,35 @@
     },
     {
       "id": "learn",
-      "seconds": 10.8,
+      "seconds": 12.2,
       "heading": "What you will learn",
-      "narration": "We'll begin with the fundamentals. Arrays, shapes, functions, and composition. Then we'll learn to write programs in {X_eTaL,|ex, tee, el,} use its libraries, and extend it.",
-      "lines": []
+      "narration": "We'll begin with the fundamentals, arrays, shapes, functions, and composition. Then we'll learn to write programs in {X_eTaL,|@xtl,} use its libraries, and extend it.",
+      "lines": [],
+      "slide": {
+        "type": "flow",
+        "steps": [
+          1,
+          4
+        ],
+        "items": [
+          {
+            "text": "Fundamentals",
+            "sub": "arrays, shapes, functions, composition"
+          },
+          {
+            "text": "Programs",
+            "sub": "written in X_eTaL"
+          },
+          {
+            "text": "Libraries",
+            "sub": "using its libraries"
+          },
+          {
+            "text": "Extending",
+            "sub": "extending the language"
+          }
+        ]
+      }
     },
     {
       "id": "coming-up",
@@ -660,9 +755,9 @@
     },
     {
       "id": "tease-ml",
-      "seconds": 21,
+      "seconds": 19.7,
       "heading": "Pipelines and equations",
-      "narration": "Later episodes go much further. A pipeline macro writes the data flow of a model left to right, data first, then each layer in turn, with shapes that are checked. And equation macros take a formula as a paper prints it, and give back the array computation, its {LaTeX|lay tech}, or both.",
+      "narration": "Later episodes go much further. A pipeline macro writes the data flow of a model left to right, data first, then each layer in turn, with shapes that are checked. Equation macros take a formula as a paper prints it, and give back the array computation, its {LaTeX|lay tech}, or both.",
       "lines": [],
       "images": [
         "../../software-wrighter-lab/blog/assets/images/posts/xetal-pipe-mlp.webp",
@@ -683,9 +778,9 @@
     },
     {
       "id": "tease-gpu",
-      "seconds": 20.9,
+      "seconds": 20.2,
       "heading": "On GPUs",
-      "narration": "A function marked with a macro runs on a {GPU|gee, pee, you}, lowered from its own source. On Apple Silicon, through Metal. On an {NVIDIA|en vidia} {RTX|ar tee ex} fifty sixty {Ti|tee eye}. And even on the Adreno seven oh two, the {GPU|gee, pee, you} in an Arduino Uno {Q|queue}.",
+      "narration": "A function marked with a macro runs on a {GPU|gee, pee, you}, lowered from its own source. On Apple Silicon, through Metal. On an {NVIDIA|en vidia} {RTX|ar tee ex} fifty sixty {Ti|tee eye}. And even on the {Adreno|ah, dre, no,} seven oh two, the {GPU|gee, pee, you} in an Arduino Uno {Q|queue}.",
       "lines": [],
       "images": [
         "../../software-wrighter-lab/blog/assets/images/posts/xetal-mojo-cards.webp",
@@ -696,21 +791,23 @@
     },
     {
       "id": "tease-3d",
-      "seconds": 19.5,
+      "seconds": 33.5,
       "heading": "3D models and ray tracing",
-      "narration": "It drives Blender, working out a scene as arrays, with the place, size, and color of every {object|object}. My {3D|three dee} models of historical terminals are made that way. And a ray tracer, written as ordinary array code, renders the same scene on the {CPU|see pee you} and the {GPU|gee, pee, you}.",
+      "narration": "It drives Blender, working out a scene as {arrays,|@arrays,} with the place, size, and color of every {object|object}. My {3D|three dee} models of historical terminals are made that way. There is also a {ray tracer,|@ray-tracer,} written as ordinary array code, that renders the same scene on the {CPU|see pee you} and the {GPU|gee, pee, you}. {X_eTaL|@xtl} code, run on a {GPU|gee, pee, you} for a large enough calculation, is much faster than on the {CPU|see pee you}. {X_eTaL|@xtl} ray tracing code produces images without using Blender.",
       "lines": [],
       "images": [
         "../../software-wrighter-lab/blog/assets/images/posts/xetal-blender-hello-poster.webp",
         "../console-3D/images/ibm2741-render.png",
+        "../../software-wrighter-lab/blog/assets/images/posts/ray-glass-lens-area.webp",
+        "../../software-wrighter-lab/blog/assets/images/posts/ray-logo-gpu.webp",
         "../../software-wrighter-lab/blog/assets/images/posts/ray-glass-lens-area.webp"
       ]
     },
     {
       "id": "tease-tune",
-      "seconds": 16.7,
+      "seconds": 18.1,
       "heading": "Fine-tuning",
-      "narration": "And fine-tuning. Browser lessons build a low-rank adapter number by number, and then train it. And a tiny mixture of experts, trained in {X_eTaL,|ecks, tee, elle,} is fine-tuned to a changed task by six methods in turn.",
+      "narration": "And fine-tuning. Lessons in the browser build a low-rank adapter number by number, and then train it. And a tiny mixture of experts, trained in {X_eTaL,|ecks, tee, elle,} is fine-tuned to a changed task by six methods in turn.",
       "lines": [],
       "images": [
         "../X_eTaL-fine-tuning/demos/lora-lab/screenshot.png",

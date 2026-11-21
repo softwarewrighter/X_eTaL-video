@@ -42,6 +42,27 @@ const videoAge = video ? statSync(videoFile).mtime : null;
 mkdirSync(join(out, "stills"), { recursive: true });
 
 let at = 0;
+// The problem words (docs/voice-words.json): for each, its current best
+// version (a clip, played here, or the spelling sent to the voice), what
+// whisper heard, the spellings that failed, and a variant page if any.
+const wordDir = join(root, "work", "voice-words");
+mkdirSync(join(out, "words"), { recursive: true });
+const table = existsSync(join(root, "docs", "voice-words.json")) ? JSON.parse(readFileSync(join(root, "docs", "voice-words.json"), "utf8")).words : [];
+const byWord = new Map();
+for (const e of table) { if (!byWord.has(e.word)) byWord.set(e.word, []); byWord.get(e.word).push(e); }
+const words = [...byWord.entries()].map(([word, es]) => {
+  const good = es.filter((e) => e.ok);
+  const best = good.find((e) => e.use.startsWith("@")) || good[0];
+  const failed = es.filter((e) => !e.ok).map((e) => `${esc(e.use)}${e.heard ? ` (heard ${esc(e.heard)})` : ""}`).join("; ");
+  let now = "<span class=\"dim\">(none yet)</span>";
+  if (best && best.use.startsWith("@")) {
+    const name = best.use.slice(1);
+    now = link(join(wordDir, `${name}.wav`), `words/${name}.wav`) ? `<audio controls preload="none" src="words/${esc(name)}.wav"></audio> <span class="dim">clip @${esc(name)}, sent "${esc(best.said || "")}"</span>` : `clip @${esc(name)} <span class="warn">(not made)</span>`;
+  } else if (best) now = `<span class="sent">spelled: ${esc(best.use)}</span>`;
+  const variants = existsSync(join(out, `${word.toLowerCase().replace(/[^a-z0-9]+/g, "-")}-variants`, "index.html")) ? ` <a href="${word.toLowerCase().replace(/[^a-z0-9]+/g, "-")}-variants/">variants</a>` : "";
+  return `<tr><td><b>${esc(word)}</b>${variants}</td><td>${now}</td><td class="heard">${best ? esc(best.heard || "") : ""}</td><td class="dim">${failed || ""}${best && best.note ? `<br>${esc(best.note)}` : ""}</td></tr>`;
+}).join("");
+
 const cards = lesson.scenes.map((s, i) => {
   const start = timing ? timing.starts[i] / timing.fps : at;
   const secs = timing ? timing.durations[i] / timing.fps : s.seconds;
@@ -99,6 +120,7 @@ table { border-collapse: collapse; font-size: .85rem; margin: 8px 0; } td { bord
 <p class="dim">${esc(slug)} | ${lesson.scenes.length} scenes | ${timing ? fmt(timing.total / timing.fps) + " long" : "not yet scheduled"} | page built ${new Date().toLocaleString("en-US")}${video ? ` | video rendered ${videoAge.toLocaleString("en-US")}` : videoFile ? " | the video is being rendered again for the new schedule: players return when it is done" : " | no video yet"}</p>
 ${video ? `<p><a href="video.mp4">The whole video</a></p>` : ""}
 <p class="dim">Each narrated scene in four parts: 1, the script as written (the captions); 2, the text sent to the voice (phonetic, commas and periods only; the voice is given nothing else); 3, the audio it returned; 4, what whisper heard. Sentence by sentence below each.</p>
+${words ? `<section><h2>Problem words <span class="dim">each word the voice gets wrong, its current best version (a clip made alone and checked, or a spelling), and what failed (docs/voice-words.json)</span></h2><table><tr class="dim"><td>word</td><td>current best</td><td>whisper heard</td><td>failed, notes</td></tr>${words}</table></section>` : ""}
 ${cards.join("\n")}
 </body></html>
 `);
