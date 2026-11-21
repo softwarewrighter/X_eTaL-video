@@ -673,11 +673,12 @@
           {
             "text": "Typed",
             "sub": "plain ASCII, any keyboard",
-            "xtl": "'+ r_/ 1 2 3 4"
+            "code": "'+ r_/ 1 2 3 4"
           },
           {
             "text": "Drawn",
-            "sub": "decoration carries meaning"
+            "sub": "decoration carries meaning",
+            "xtl": "'+ r_/ 1 2 3 4"
           },
           {
             "text": "Checked",
