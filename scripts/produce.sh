@@ -133,7 +133,7 @@ fi
 # The video, then the review page's stills and players.
 format="$(scripts/format.sh "$slug")"
 for t in 1 2; do
-  if scripts/render.sh "$slug" "$format" > "$logs/render.log" 2>&1; then say "render: done, out/$slug-$format-remotion.mp4"; break; fi
+  if scripts/render.sh "$slug" "$format" > "$logs/render.log" 2>&1; then say "render: done, out/$slug-$format-remotion.mp4"; node scripts/review.mjs "$slug" >/dev/null 2>&1; break; fi
   [ "$t" -eq 2 ] && { say "FAILED: render (see $logs/render.log)"; exit 1; }
   say "render: failed, again"
 done
