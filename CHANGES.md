@@ -13,6 +13,7 @@ Categories: `feat` new capability, `fix` a bug or wrong behavior,
 
 ## 2026-11-20
 
+- 17:10 `lesson` al-01-why: the keyboard-to-result slide uses the author's example, typed '* r_/ r_ange 4, drawn, checked Int, run 24 (data.xtl runs it).
 - 17:05 `lesson` al-01-why: the keyboard-to-result slide shows the line as typed (ASCII) in its Typed box and as drawn in its Drawn box (the author: both must be seen).
 - 17:00 `feat` The review page plays the whole video at the top (the current full render, with its time), above the problem words and the scenes.
 - 16:55 `docs` Postmortem of episode 01 (docs/postmortem-al-01-why.md): where about 24 working hours went for 9 minutes of narration, what worked, what did not, what changed and what is still to do; docs/production-lessons.md opens with the workflow in order; CLAUDE.md (AGENTS.md links to it) gets "Producing a narrated video", eight rules (facts first, preflight, word clips, batched narration through just produce, the text sent to the voice, parallel agents through one queue, watch every event, estimates from the logs, the author's ear decides). `lesson` al-01-why: the history timeline shows APL\1130 and APL\360 under 1968; IBM, APL, arrays, lints and the ray tracer spliced from verified word clips; Meet X_eTaL, why, name and learn slides; new sentences on standard keyboards, editors, eager and lazy evaluation, a small core, GPUs and the ray tracer (the author); agent rewordings of two openings.

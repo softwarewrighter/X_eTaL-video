@@ -673,20 +673,22 @@
           {
             "text": "Typed",
             "sub": "plain ASCII, any keyboard",
-            "code": "'+ r_/ 1 2 3 4"
+            "code": "'* r_/ r_ange 4"
           },
           {
             "text": "Drawn",
             "sub": "decoration carries meaning",
-            "xtl": "'+ r_/ 1 2 3 4"
+            "xtl": "'* r_/ r_ange 4"
           },
           {
             "text": "Checked",
-            "sub": "every type inferred, before it runs"
+            "sub": "every type inferred, before it runs",
+            "code": "Int"
           },
           {
             "text": "Run",
-            "sub": "the result: 10"
+            "sub": "the result",
+            "code": "24"
           }
         ]
       }

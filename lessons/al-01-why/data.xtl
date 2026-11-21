@@ -21,3 +21,7 @@ result
 ## reduce: reduce given times
 '* r_/ 1 2 3 4
 ## 24
+
+## pipeline: the keyboard-to-result slide (xetal type: Int)
+'* r_/ r_ange 4
+## 24
