@@ -75,9 +75,10 @@ video a day. This is blameless: it is about the process and the tools.
 
 ## What changes (to do)
 
-1. Find where the voice server's 90 s per request goes (the author's
-   agent on queenbee): with the GPU mostly idle, a fixed cost is the
-   largest remaining factor in a day's output.
+1. Found (2026-11-21): the 90 s per request was the Python gradio_client;
+   plain HTTP takes about 6 s. tools/voxq, a Rust broker, is now the one
+   client of the server (one request at a time, a queue directory, a
+   heartbeat).
 2. Batch only full sentences of similar length: short ones run together
    like a list when batched; a listen decides.
 3. Splice joins: a pause long enough before a clip (scene 13's APL

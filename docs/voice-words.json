@@ -1,29 +1,156 @@
 {
   "about": "Words the voice (VoxCPM) says right or wrong, each tested in a carrier sentence or a narrated sentence and checked by whisper. use is a clip (@NAME: work/voice-words/NAME.wav, made by scripts/voice.sh SLUG --word NAME) or the spoken side of a {written|spoken} mark. ok false records a spelling that failed, so it is not tried again. notLast: the spelling failed at the end of a sentence. scripts/voice-preflight.py reads this file; docs/production-lessons.md points here.",
   "words": [
-    {"word": "X_eTaL", "use": "@xtl", "said": "xtl", "heard": "XTL", "ok": true, "date": "2026-11-20"},
-    {"word": "APL", "use": "@apl", "said": "apl", "heard": "APL", "ok": true, "date": "2026-11-20"},
-    {"word": "APL", "use": "eh, pee, elle", "heard": "APL", "ok": true, "notLast": true, "date": "2026-11-20",
-     "note": "worked mid-sentence and after as, not at the end of a sentence"},
-    {"word": "IBM", "use": "@ibm", "said": "I, B, M (pauses shortened to 50 ms, then tempo 1.4)", "heard": "IBM", "ok": true, "date": "2026-11-20",
-     "note": "said as letters in a sentence it came out too slowly (I... B... M), which whisper cannot hear"},
-    {"word": "arrays", "use": "@arrays", "said": "arrays", "heard": "arrays", "ok": true, "date": "2026-11-20"},
-    {"word": "lints", "use": "@lints", "said": "lints", "heard": "lintz", "ok": true, "date": "2026-11-20",
-     "note": "whisper spells it with a z"},
-    {"word": "ray tracer", "use": "@ray-tracer", "said": "ray tracer", "heard": "Ray Tracer", "ok": true, "date": "2026-11-20"},
-    {"word": "BQN", "use": "bee, queue, en", "heard": "BQN", "ok": true, "date": "2026-11-20",
-     "note": "with a comma after it"},
-    {"word": "GPU", "use": "gee, pee, you", "heard": "GPU", "ok": true, "date": "2026-11-20"},
-    {"word": "Adreno", "use": "ah, dre, no", "heard": "Adreno", "ok": true, "date": "2026-11-20"},
-    {"word": "J", "use": "jay", "heard": "J", "ok": true, "date": "2026-11-20"},
-    {"word": "K", "use": "kay", "heard": "K", "ok": true, "date": "2026-11-20"},
-    {"word": "Q", "use": "queue", "heard": "Q", "ok": true, "date": "2026-11-20"},
-    {"word": "X_eTaL", "use": "ecks, tee, elle", "heard": "XDL", "ok": false, "date": "2026-11-20"},
-    {"word": "X_eTaL", "use": "ex, tee, el", "heard": "Extil, XDL", "ok": false, "date": "2026-11-20",
-     "note": "right in some sentences, wrong in others"},
-    {"word": "APL", "use": "ay, pee, el", "heard": "S-A-Y-P-L", "ok": false, "date": "2026-11-20",
-     "note": "after as"},
-    {"word": "APL", "use": "A, pee, elle", "heard": "uh (the article)", "ok": false, "date": "2026-11-20",
-     "note": "at the start of a sentence"}
+    {
+      "word": "Adreno",
+      "use": "@adreno",
+      "said": "Adreno",
+      "heard": "adreno",
+      "ok": true,
+      "date": "2026-11-21",
+      "note": "said lowercase (adreno) whisper heard adrenal three times; ah, dre, no in a sentence came out Dream"
+    },
+    {
+      "word": "GPU",
+      "use": "@gpu",
+      "said": "gpu (tightened, fit to 1.0 s)",
+      "heard": "GPU",
+      "ok": true,
+      "date": "2026-11-21",
+      "note": "spelled gee, pee, you it came out GP, u and GIPI U in sentences"
+    },
+    {
+      "word": "X_eTaL",
+      "use": "@xtl",
+      "said": "xtl",
+      "heard": "XTL",
+      "ok": true,
+      "date": "2026-11-20"
+    },
+    {
+      "word": "APL",
+      "use": "@apl",
+      "said": "apl",
+      "heard": "APL",
+      "ok": true,
+      "date": "2026-11-20"
+    },
+    {
+      "word": "APL",
+      "use": "eh, pee, elle",
+      "heard": "APL",
+      "ok": true,
+      "notLast": true,
+      "date": "2026-11-20",
+      "note": "worked mid-sentence and after as, not at the end of a sentence"
+    },
+    {
+      "word": "IBM",
+      "use": "@ibm",
+      "said": "I, B, M (pauses shortened to 50 ms, then tempo 1.4)",
+      "heard": "IBM",
+      "ok": true,
+      "date": "2026-11-20",
+      "note": "said as letters in a sentence it came out too slowly (I... B... M), which whisper cannot hear"
+    },
+    {
+      "word": "arrays",
+      "use": "@arrays",
+      "said": "arrays",
+      "heard": "arrays",
+      "ok": true,
+      "date": "2026-11-20"
+    },
+    {
+      "word": "lints",
+      "use": "@lints",
+      "said": "lints",
+      "heard": "lintz",
+      "ok": true,
+      "date": "2026-11-20",
+      "note": "whisper spells it with a z"
+    },
+    {
+      "word": "ray tracer",
+      "use": "@ray-tracer",
+      "said": "ray tracer",
+      "heard": "Ray Tracer",
+      "ok": true,
+      "date": "2026-11-20"
+    },
+    {
+      "word": "BQN",
+      "use": "bee, queue, en",
+      "heard": "BQN",
+      "ok": true,
+      "date": "2026-11-20",
+      "note": "with a comma after it"
+    },
+    {
+      "word": "GPU",
+      "use": "gee, pee, you",
+      "heard": "GP, u; GIPI U (in tease-gpu)",
+      "ok": false,
+      "date": "2026-11-20"
+    },
+    {
+      "word": "Adreno",
+      "use": "ah, dre, no",
+      "heard": "Adreno",
+      "ok": true,
+      "date": "2026-11-20"
+    },
+    {
+      "word": "J",
+      "use": "jay",
+      "heard": "J",
+      "ok": true,
+      "date": "2026-11-20"
+    },
+    {
+      "word": "K",
+      "use": "kay",
+      "heard": "K",
+      "ok": true,
+      "date": "2026-11-20"
+    },
+    {
+      "word": "Q",
+      "use": "queue",
+      "heard": "Q",
+      "ok": true,
+      "date": "2026-11-20"
+    },
+    {
+      "word": "X_eTaL",
+      "use": "ecks, tee, elle",
+      "heard": "XDL",
+      "ok": false,
+      "date": "2026-11-20"
+    },
+    {
+      "word": "X_eTaL",
+      "use": "ex, tee, el",
+      "heard": "Extil, XDL",
+      "ok": false,
+      "date": "2026-11-20",
+      "note": "right in some sentences, wrong in others"
+    },
+    {
+      "word": "APL",
+      "use": "ay, pee, el",
+      "heard": "S-A-Y-P-L",
+      "ok": false,
+      "date": "2026-11-20",
+      "note": "after as"
+    },
+    {
+      "word": "APL",
+      "use": "A, pee, elle",
+      "heard": "uh (the article)",
+      "ok": false,
+      "date": "2026-11-20",
+      "note": "at the start of a sentence"
+    }
   ]
 }

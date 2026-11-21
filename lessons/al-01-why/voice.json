@@ -827,47 +827,47 @@
     },
     {
       "id": "tease-gpu",
-      "narration": "A function marked with a macro runs on a {GPU|gee, pee, you}, lowered from its own source. On Apple Silicon, through Metal. On an {NVIDIA|en vidia} {RTX|ar tee ex} fifty sixty {Ti|tee eye}. And even on the {Adreno|ah, dre, no,} seven oh two, the {GPU|gee, pee, you} in an Arduino Uno {Q|queue}.",
-      "seconds": 20.2,
+      "narration": "A function marked with a macro runs on a {GPU,|@gpu,} lowered from its own source. On Apple Silicon, through Metal. On an {NVIDIA|en vidia} {RTX|ar tee ex} fifty sixty {Ti|tee eye}. Even the Arduino Uno {Q|queue} runs it, on its {Adreno|@adreno} seven oh two {GPU|@gpu}.",
+      "seconds": 21.1,
       "sentences": [
         {
           "text": "A function marked with a macro runs on a GPU, lowered from its own source.",
-          "heard": "A function marked with a macro runs on a GP, u, lowered from its own source.",
-          "sent": "A function marked with a macro runs on a gee, pee, you, lowered from its own source.",
-          "spoken": "A function marked with a macro runs on a gee, pee, you, lowered from its own source.",
+          "heard": "A function marked with a macro runs on a GPU lowered from its own source.",
+          "sent": "A function marked with a macro runs on a gpu, lowered from its own source.",
+          "spoken": "A function marked with a macro runs on a @gpu, lowered from its own source.",
           "start": 0.4,
-          "end": 5.791
+          "end": 6.131
         },
         {
           "text": "On Apple Silicon, through Metal.",
           "heard": "on apple silicon through metal.",
           "sent": "On Apple Silicon, through Metal.",
-          "start": 6.141,
-          "end": 9.123
+          "start": 6.481,
+          "end": 9.462
         },
         {
           "text": "On an NVIDIA RTX fifty sixty Ti.",
           "heard": "on an NVIDIA RT-X5060TI.",
           "sent": "On an en vidia ar tee ex fifty sixty tee eye.",
           "spoken": "On an en vidia ar tee ex fifty sixty tee eye.",
-          "start": 9.473,
-          "end": 13.034
+          "start": 9.812,
+          "end": 13.374
         },
         {
-          "text": "And even on the Adreno seven oh two, the GPU in an Arduino Uno Q.",
-          "heard": "and even on the Adreno 702 at a GPU in an Arduino UnoQ.",
-          "sent": "And even on the ah, dre, no, seven oh two, the gee, pee, you in an Arduino Uno queue.",
-          "spoken": "And even on the ah, dre, no, seven oh two, the gee, pee, you in an Arduino Uno queue.",
+          "text": "Even the Arduino Uno Q runs it, on its Adreno seven oh two GPU.",
+          "heard": "Even the Arduino UnoQ runs it on its Adreno, the 702 GPU.",
+          "sent": "Even the Arduino Uno queue runs it, on its adreno seven oh two gpu.",
+          "spoken": "Even the Arduino Uno queue runs it, on its @adreno seven oh two @gpu.",
           "unverified": true,
-          "start": 13.384,
-          "end": 19.466
+          "start": 13.724,
+          "end": 20.365
         }
       ]
     },
     {
       "id": "tease-3d",
-      "narration": "It drives Blender, working out a scene as {arrays,|@arrays,} with the place, size, and color of every {object|object}. My {3D|three dee} models of historical terminals are made that way. There is also a {ray tracer,|@ray-tracer,} written as ordinary array code, that renders the same scene on the {CPU|see pee you} and the {GPU|gee, pee, you}. {X_eTaL|@xtl} code, run on a {GPU|gee, pee, you} for a large enough calculation, is much faster than on the {CPU|see pee you}. {X_eTaL|@xtl} ray tracing code produces images without using Blender.",
-      "seconds": 33.5,
+      "narration": "It drives Blender, working out a scene as {arrays,|@arrays,} with the place, size, and color of every {object|object}. My {3D|three dee} models of historical terminals are made that way. There is also a {ray tracer,|@ray-tracer,} written as ordinary array code, that renders the same scene on the {CPU|see pee you} and the {GPU|@gpu}. {X_eTaL|@xtl} code, run on a {GPU|@gpu} for a large enough calculation, is much faster than on the {CPU|see pee you}. {X_eTaL|@xtl} ray tracing code produces images without using Blender.",
+      "seconds": 33.2,
       "sentences": [
         {
           "text": "It drives Blender, working out a scene as arrays, with the place, size, and color of every object.",
@@ -888,28 +888,29 @@
         },
         {
           "text": "There is also a ray tracer, written as ordinary array code, that renders the same scene on the CPU and the GPU.",
-          "heard": "There's also Ray Tracer written as ordinary array code that renders the same scene on the CPU and the GPU.",
-          "sent": "There is also a ray tracer, written as ordinary array code, that renders the same scene on the see pee you and the gee, pee, you.",
-          "spoken": "There is also a @ray-tracer, written as ordinary array code, that renders the same scene on the see pee you and the gee, pee, you.",
+          "heard": "There is also a ray tracer, written as ordinary ray code, that renders the same scene on the CPU and the GPU.",
+          "sent": "There is also a ray tracer, written as ordinary array code, that renders the same scene on the see pee you and the gpu.",
+          "spoken": "There is also a @ray-tracer, written as ordinary array code, that renders the same scene on the see pee you and the @gpu.",
           "unverified": true,
           "start": 11.827,
-          "end": 20.372
+          "end": 20.285
         },
         {
           "text": "X_eTaL code, run on a GPU for a large enough calculation, is much faster than on the CPU.",
-          "heard": "XTL. Code run on a GPU for a large enough calculation is much faster than on the CPU",
-          "sent": "xtl code, run on a gee, pee, you for a large enough calculation, is much faster than on the see pee you.",
-          "spoken": "@xtl code, run on a gee, pee, you for a large enough calculation, is much faster than on the see pee you.",
-          "start": 20.722,
-          "end": 28.592
+          "heard": "XTL top code run on GPU for a large enough calculation is much faster than on the CPU.",
+          "sent": "xtl code, run on a gpu for a large enough calculation, is much faster than on the see pee you.",
+          "spoken": "@xtl code, run on a @gpu for a large enough calculation, is much faster than on the see pee you.",
+          "unverified": true,
+          "start": 20.635,
+          "end": 28.354
         },
         {
           "text": "X_eTaL ray tracing code produces images without using Blender.",
           "heard": "XTL. Ray tracing code produces images without using Blender.",
           "sent": "xtl ray tracing code produces images without using Blender.",
           "spoken": "@xtl ray tracing code produces images without using Blender.",
-          "start": 28.942,
-          "end": 32.703
+          "start": 28.704,
+          "end": 32.465
         }
       ]
     },

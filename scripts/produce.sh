@@ -64,12 +64,22 @@ nap() { sleep "$1" & wait $!; }
 # fails is reported, not fatal: the shards make whatever it did not.
 [ -x .venv/bin/python ] || uv venv -q
 .venv/bin/python -c 'import gradio_client' 2>/dev/null || uv pip install -q gradio_client
-say "narration: batches of sentences, many to a request"
-.venv/bin/python scripts/voice-batch.py "$slug" > "$logs/batch.log" 2>&1 &
-pids=($!)
-if wait $!; then say "narration: $(grep '^batch: .* request(s)' "$logs/batch.log" | tail -1 | sed 's/^batch: //')"
-else say "narration: the batch run failed (see $logs/batch.log); the shards make the rest"; fi
-pids=()
+# voxq (tools/voxq) is the one client of the voice server: every request
+# goes through its queue, one at a time, about 6 s each. Started here if
+# it is not serving.
+.venv/bin/python -c 'import sys; sys.path.insert(0, "scripts"); import voice; voice.ensure_voxq()' || { say "FAILED: voxq did not start (work/voxq/serve.out)"; exit 1; }
+say "narration: voxq serving ($(.venv/bin/python -c 'import json; s = json.load(open("work/voxq/status.json")); print(s["state"], "pid", s["pid"])'))"
+# Batches (many sentences a request) only when asked (BATCH=1): at about
+# 6 s a request through voxq they save little, and a batch cannot place
+# the short pieces around a splice.
+if [ "${BATCH:-0}" = 1 ]; then
+  say "narration: batches of sentences, many to a request"
+  .venv/bin/python scripts/voice-batch.py "$slug" > "$logs/batch.log" 2>&1 &
+  pids=($!)
+  if wait $!; then say "narration: $(grep '^batch: .* request(s)' "$logs/batch.log" | tail -1 | sed 's/^batch: //')"
+  else say "narration: the batch run failed (see $logs/batch.log); the shards make the rest"; fi
+  pids=()
+fi
 
 say "narration: $workers shards, $narrated scenes"
 start

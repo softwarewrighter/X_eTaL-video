@@ -142,3 +142,15 @@ it is tested; the preflight reads it.
   voice once said twelve sentences for eleven alike).
 - **Listen for pace**: short sentences made together are said quickly,
   as a list, not each as a sentence of its own.
+
+## 7. voxq: the one client of the voice server (2026-11-21)
+
+The ~90 s a request was the Python gradio_client, not the server: plain
+HTTP takes about 6 s. tools/voxq (Rust) is now the only thing that calls
+the server: requesters write a request file into work/voxq/incoming/
+(voice.voxq_call does it), voxq serves them oldest first, one at a time,
+and writes ID.wav then ID.json into each request's output directory. One
+voxq per root (an OS lock), a heartbeat (work/voxq/status.json), a
+timeout and retries a request. `target/release/voxq status --root
+work/voxq` shows what it is doing. A 9 minute episode is about 100
+requests, about 10 minutes of the server's time.

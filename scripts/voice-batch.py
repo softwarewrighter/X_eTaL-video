@@ -281,35 +281,14 @@ def sent_text(items: list[dict]) -> str:
 
 
 def request(a, client, prompt: str, text: str, out: Path, what: str):
-    """One VoxCPM request in its turn of the shared queue (voice.voxcpm_turn),
-    retried on a server failure as voice.tts() is. Returns the client and
-    the seconds the request itself took (the wait for the queue aside)."""
-    from gradio_client import Client, handle_file  # the venv's (scripts/voice.sh installs it)
-    for call in range(6):
-        try:
-            client = client or Client(a.server, verbose=False)
-            with voice.voxcpm_turn(a.lock, what):
-                t0 = time.time()
-                raw = client.predict(
-                    text_input=text,
-                    prompt_wav_path_input=handle_file(str(a.reference.resolve())),
-                    prompt_text_input=prompt,
-                    cfg_value_input=a.cfg,
-                    inference_timesteps_input=a.steps,
-                    do_normalize=False,
-                    api_name="/generate",
-                )
-                took = time.time() - t0
-            break
-        except Exception as e:  # the server's or the network's
-            if call == 5:
-                raise
-            print(f"batch:   the server failed ({type(e).__name__}: {e}); asking again in {30 * (call + 1)} s", flush=True)
-            client = None
-            time.sleep(30 * (call + 1))
-    voice.sox(raw, "-r", "44100", "-c", "1", str(out))
-    return client, took
-
+    """One voice request through voxq (voice.voxq_call: queued, one at a
+    time). Returns the client (unused, kept for the callers) and the
+    seconds the request took, the queue included."""
+    t0 = time.time()
+    raw = voice.voxq_call(text, a.reference, prompt, a.cfg, a.steps, what)
+    voice.sox(str(raw), "-r", "44100", "-c", "1", str(out))
+    raw.unlink(missing_ok=True)
+    return client, time.time() - t0
 
 def unmade(a, sample: str, prompt: str) -> list[dict]:
     """Every sentence of the lesson not in the cache, as voice.py keys it;

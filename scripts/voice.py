@@ -27,6 +27,7 @@ import math
 import re
 import subprocess
 import sys
+import threading
 import time
 from pathlib import Path
 
@@ -229,6 +230,8 @@ def words(text: str, pairs: bool = False) -> list[str]:
     # "bee, queue, en") is heard as the letters ("XTL", "BQN").
     names = "|".join(LETTER_NAMES)
     text = re.sub(rf"\b(?:{names})(?:,? (?:{names}))+\b,?", lambda m: "".join(LETTER_NAMES[w] for w in re.findall(rf"\b(?:{names})\b", m.group())), text)
+    # A lone spelled letter ("Uno queue", "jay") is heard as the letter.
+    text = re.sub(r"\b(queue|jay|kay|ecks|elle)\b", lambda m: LETTER_NAMES[m.group(1)], text)
     # "a hundred" and "a thousand" are heard as 100 and 1000.
     text = re.sub(r"\ba (hundred|thousand)\b", r"one \1", text)
     return re.sub(r"[^a-z' ]", " ", text.replace("-", " ")).split()
@@ -348,32 +351,82 @@ def voxcpm_turn(lock: Path, what: str):
             ticket.unlink(missing_ok=True)
 
 
+VOXQ_ROOT = ROOT / "work" / "voxq"
+VOXQ_BIN = ROOT / "target" / "release" / "voxq"
+
+
+def voxq_running() -> bool:
+    """Whether voxq is serving: its heartbeat (status.json) rewritten in
+    the last 10 seconds."""
+    st = VOXQ_ROOT / "status.json"
+    if not st.exists() or time.time() - st.stat().st_mtime >= 10:
+        return False
+    # A fresh heartbeat from a process that has since stopped is not
+    # serving: its pid must be alive.
+    try:
+        os.kill(json.loads(st.read_text())["pid"], 0)
+        return True
+    except (ProcessLookupError, KeyError, ValueError, json.JSONDecodeError):
+        return False
+    except PermissionError:
+        return True
+
+
+def ensure_voxq() -> None:
+    """Start voxq (tools/voxq: the one client of the voice server) if it
+    is not serving; a second voxq exits at once (its lock), so callers
+    may race."""
+    if voxq_running():
+        return
+    if not VOXQ_BIN.exists():
+        subprocess.run(["cargo", "build", "--release", "-p", "voxq"], cwd=ROOT, check=True)
+    VOXQ_ROOT.mkdir(parents=True, exist_ok=True)
+    log = open(VOXQ_ROOT / "serve.out", "a")
+    subprocess.Popen([str(VOXQ_BIN), "serve", "--root", str(VOXQ_ROOT)], cwd=ROOT, stdout=log, stderr=log, start_new_session=True)
+    for _ in range(50):
+        if voxq_running():
+            return
+        time.sleep(0.2)
+    fail("voxq did not start (work/voxq/serve.out)")
+
+
+def voxq_call(text: str, reference: Path, prompt: str, cfg: float, steps: int, label: str, timeout: float = 600) -> Path:
+    """One voice request through voxq: a request file into its queue, then
+    wait for the result it writes (ID.wav, then ID.json). Raises when the
+    request failed, when voxq stops beating (a stall), or after timeout."""
+    ensure_voxq()
+    out = VOXQ_ROOT / "out" / str(os.getpid())
+    out.mkdir(parents=True, exist_ok=True)
+    rid = f"{time.time_ns():020d}-{os.getpid()}-{threading.get_ident() % 100000}"
+    req = {"id": rid, "text": text, "reference": str(Path(reference).resolve()), "prompt_text": prompt,
+           "cfg": cfg, "steps": steps, "out_dir": str(out.resolve()), "label": label}
+    tmp = VOXQ_ROOT / "incoming" / f".{rid}.json"
+    tmp.write_text(json.dumps(req))
+    tmp.rename(VOXQ_ROOT / "incoming" / f"{rid}.json")
+    done, t0 = out / f"{rid}.json", time.time()
+    while not done.exists():
+        if not voxq_running():
+            ensure_voxq()
+            if not voxq_running():
+                raise RuntimeError(f"voxq stopped while {label!r} was queued")
+        if time.time() - t0 > timeout:
+            raise RuntimeError(f"{label!r}: no result from voxq in {timeout:.0f} s")
+        time.sleep(0.2)
+    result = json.loads(done.read_text())
+    if result.get("status") != "ok":
+        raise RuntimeError(f"{label!r}: {result.get('error')}")
+    return out / f"{rid}.wav"
+
+
 def tts(client, a, prompt, handle_file, Client, text: str, out: Path, what: str):
-    """One VoxCPM request (its turn in the queue), retried on a server
-    failure, the silence at either end trimmed, into out. Returns the
-    client, to reuse."""
-    for call in range(6):
-        try:
-            client = client or Client(a.server, verbose=False)
-            with voxcpm_turn(a.lock, what):
-                raw = client.predict(
-                    text_input=text,
-                    prompt_wav_path_input=handle_file(str(a.reference.resolve())),
-                    prompt_text_input=prompt,
-                    cfg_value_input=a.cfg,
-                    inference_timesteps_input=a.steps,
-                    do_normalize=False,
-                    api_name="/generate",
-                )
-            break
-        except Exception as e:  # the server's or the network's
-            if call == 5:
-                raise
-            print(f"voice:   the server failed ({type(e).__name__}: {e}); asking again in {30 * (call + 1)} s", flush=True)
-            client = None
-            time.sleep(30 * (call + 1))
-    sox(raw, "-r", "44100", "-c", "1", str(out),
+    """One voice request, through voxq (the one client of the voice
+    server: queued, one at a time, ~6 s a request where the Python Gradio
+    client took ~90 s), the silence at either end trimmed, into out.
+    client, handle_file and Client are unused, kept for the callers."""
+    raw = voxq_call(text, a.reference, prompt, a.cfg, a.steps, what)
+    sox(str(raw), "-r", "44100", "-c", "1", str(out),
         "silence", "1", "0.05", "0.3%", "reverse", "silence", "1", "0.05", "0.3%", "reverse")
+    raw.unlink(missing_ok=True)
     return client
 
 

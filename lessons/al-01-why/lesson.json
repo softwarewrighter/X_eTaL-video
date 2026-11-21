@@ -781,9 +781,9 @@
     },
     {
       "id": "tease-gpu",
-      "seconds": 20.2,
+      "seconds": 21.1,
       "heading": "On GPUs",
-      "narration": "A function marked with a macro runs on a {GPU|gee, pee, you}, lowered from its own source. On Apple Silicon, through Metal. On an {NVIDIA|en vidia} {RTX|ar tee ex} fifty sixty {Ti|tee eye}. And even on the {Adreno|ah, dre, no,} seven oh two, the {GPU|gee, pee, you} in an Arduino Uno {Q|queue}.",
+      "narration": "A function marked with a macro runs on a {GPU,|@gpu,} lowered from its own source. On Apple Silicon, through Metal. On an {NVIDIA|en vidia} {RTX|ar tee ex} fifty sixty {Ti|tee eye}. Even the Arduino Uno {Q|queue} runs it, on its {Adreno|@adreno} seven oh two {GPU|@gpu}.",
       "lines": [],
       "images": [
         "../../software-wrighter-lab/blog/assets/images/posts/xetal-mojo-cards.webp",
@@ -794,9 +794,9 @@
     },
     {
       "id": "tease-3d",
-      "seconds": 33.5,
+      "seconds": 33.2,
       "heading": "3D models and ray tracing",
-      "narration": "It drives Blender, working out a scene as {arrays,|@arrays,} with the place, size, and color of every {object|object}. My {3D|three dee} models of historical terminals are made that way. There is also a {ray tracer,|@ray-tracer,} written as ordinary array code, that renders the same scene on the {CPU|see pee you} and the {GPU|gee, pee, you}. {X_eTaL|@xtl} code, run on a {GPU|gee, pee, you} for a large enough calculation, is much faster than on the {CPU|see pee you}. {X_eTaL|@xtl} ray tracing code produces images without using Blender.",
+      "narration": "It drives Blender, working out a scene as {arrays,|@arrays,} with the place, size, and color of every {object|object}. My {3D|three dee} models of historical terminals are made that way. There is also a {ray tracer,|@ray-tracer,} written as ordinary array code, that renders the same scene on the {CPU|see pee you} and the {GPU|@gpu}. {X_eTaL|@xtl} code, run on a {GPU|@gpu} for a large enough calculation, is much faster than on the {CPU|see pee you}. {X_eTaL|@xtl} ray tracing code produces images without using Blender.",
       "lines": [],
       "images": [
         "../../software-wrighter-lab/blog/assets/images/posts/xetal-blender-hello-poster.webp",

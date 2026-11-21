@@ -1,0 +1,5 @@
+# A Cargo workspace for the Rust tools here (rust-analyzer finds them from
+# the repository root; builds share target/).
+[workspace]
+members = ["tools/voxq"]
+resolver = "2"
