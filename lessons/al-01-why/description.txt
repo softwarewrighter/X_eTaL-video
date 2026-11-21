@@ -1,4 +1,23 @@
-Array Languages, episode 1. This may be the dawn of personal programming languages, and this is not the first one I've started creating. Most programming languages teach us to think one step at a time: create a variable, loop, take an element, operate, store, repeat. Array programming describes the whole computation instead. This episode compares a Rust loop with whole-array operations, traces the array family from Iverson's 1962 notation through APL\360, APL2, J, K and BQN, and introduces X_eTaL: a statically typed array language, typed in plain ASCII and drawn as notation.
+Array Languages, episode 1. This may be the dawn of personal programming languages, and this is not the first one I've started creating. Most languages teach us to think one step at a time: create a variable, loop, take an element, operate, store, repeat. Array programming describes the whole computation instead. This episode compares a Rust loop with whole-array operations, traces the array family from Iverson's 1962 notation through APL\1130, APL\360, APL2, J, K and BQN, and introduces X_eTaL: an APL-inspired, statically typed array language, typed in plain ASCII and drawn as notation, with a look at what the series covers next.
+
+Chapters:
+0:00 One step at a time
+0:31 Meet X_eTaL
+0:51 The scalar model: a Rust loop
+1:23 Whole-array operations
+2:13 Reduce, given plus
+2:31 Where array languages came from
+3:16 One idea, many spellings
+3:43 A special keyboard
+4:01 Why X_eTaL
+4:28 The name, typed and drawn
+5:12 Static types, inferred
+5:37 Borrowed on purpose
+6:04 A small core
+6:33 The browser editor
+6:52 What you will learn
+7:05 Coming up: pipelines, circuits, GPUs, 3D, fine-tuning
+8:58 Before the next episode
 
 Try X_eTaL in your browser: https://softwarewrighter.github.io/X_eTaL/
 X_eTaL: https://github.com/softwarewrighter/X_eTaL

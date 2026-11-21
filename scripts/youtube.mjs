@@ -59,4 +59,14 @@ if (!existsSync(video)) fail(`no ${format} video yet (just render ${slug})`);
 if (statSync(video).mtimeMs < statSync(join(dir, "voice.json")).mtimeMs) fail(`the ${format} video is older than the narration (just render ${slug})`);
 for (const f of ["portrait", "landscape"]) rmSync(join(out, `${slug}-${f}.mp4`), { force: true });
 copyFileSync(video, join(out, `${slug}-${format}.mp4`));
+// The thumbnail: a frame of the video through Remotion at 1280 by 720
+// (YouTube's size), the lesson's "thumbnail" frame, else its title card.
+{
+  const { execFileSync } = await import("node:child_process");
+  const frame = lesson.thumbnail ?? Math.min(90, timing.total - 1);
+  const props = join(root, "work", slug, "props.json");
+  const comp = `${lesson.kind === "story" ? "Story" : "Lesson"}${format === "portrait" ? "Portrait" : "Landscape"}`;
+  execFileSync("npx", ["remotion", "still", "src/index.ts", comp, join(out, "thumbnail.jpg"), `--frame=${frame}`, `--props=${props}`,
+    "--image-format=jpeg", `--scale=${format === "portrait" ? 1280 / 1920 : 1280 / 1920}`, "--log=error"], { cwd: join(root, "remotion"), stdio: "inherit" });
+}
 console.log(`youtube: out/${slug}-youtube/ (${format}, ${cues.length} captions, ${(timing.total / timing.fps).toFixed(1)} s)`);

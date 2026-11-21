@@ -13,6 +13,7 @@ Categories: `feat` new capability, `fix` a bug or wrong behavior,
 
 ## 2026-11-21
 
+- 08:42 `feat` just youtube writes thumbnail.jpg (1280 by 720, the lesson's thumbnail frame, else its title card, through Remotion). `lesson` al-01-why: the description with 17 chapters from the timing (each at least 10 s, from 0:00), APL\1130, the coming-up section; out/al-01-why-youtube/ built (9:29, 110 captions).
 - 08:35 `feat` tools/voxq, a Rust broker, the one client of the voice server (the author): requests are files in work/voxq/incoming/, served oldest first, one at a time, with plain HTTP (upload, /call/generate, its event stream, download), each result written to the output directory its request names (ID.wav, then ID.json); one voxq per root (an exclusive lock: fs4 try_lock_exclusive is Ok(false) when held, which a first version missed and ran two), the older shared lock held during each call, a timeout and retries, a heartbeat (status.json), crashed requests requeued. Measured: about 6 s a request where the Python gradio_client took about 90 s (the cause of episode 01's slowness, not the server or the voice sample). voice.py and voice-batch.py send every request through it (voice.voxq_call; ensure_voxq starts it, checking the heartbeat's pid is alive); just produce starts it; batching is opt-in (BATCH=1). A root Cargo.toml workspace so rust-analyzer finds the crate. `lesson` al-01-why: GPU and Adreno word clips spliced in scenes 29 and 30; a lone spelled letter (Uno queue) compared as the letter.
 
 ## 2026-11-20
