@@ -867,51 +867,62 @@
     },
     {
       "id": "tease-3d",
-      "narration": "It drives Blender, working out a scene as {arrays,|@arrays,} with the place, size, and color of every {object|object}. My {3D|three dee} models of historical terminals are made that way. There is also a {ray tracer,|@ray-tracer,} written as ordinary array code, that renders the same scene on the {CPU|see pee you} and the {GPU|@gpu}. {X_eTaL|@xtl} code, run on a {GPU|@gpu} for a large enough calculation, is much faster than on the {CPU|see pee you}. {X_eTaL|@xtl} ray tracing code produces images without using Blender.",
-      "seconds": 33.2,
+      "narration": "It drives Blender. {Arrays|@arrays} describe the scene. They hold the place, size, and color of every {object|object}. My {3D|three dee} models of historical terminals are made that way. There is also a {ray tracer,|@ray-tracer,} written as ordinary array code, that renders the same scene on the {GPU|@gpu} as well as on the {CPU|@cpu}. For a large enough calculation, {X_eTaL|@xtl} runs much faster on the {GPU|@gpu} than on the {CPU|@cpu}. {X_eTaL|@xtl} ray tracing code produces images without using Blender.",
+      "seconds": 32.9,
       "sentences": [
         {
-          "text": "It drives Blender, working out a scene as arrays, with the place, size, and color of every object.",
-          "heard": "It dries Blender, working on a scene as a rays with the place, size, and color of every object.",
-          "sent": "It drives Blender, working out a scene as arrays, with the place, size, and color of every object.",
-          "spoken": "It drives Blender, working out a scene as @arrays, with the place, size, and color of every object.",
-          "unverified": true,
+          "text": "It drives Blender.",
+          "heard": "it drives blender.",
+          "sent": "It drives Blender.",
           "start": 0.4,
-          "end": 7.854
+          "end": 1.563
+        },
+        {
+          "text": "Arrays describe the scene.",
+          "heard": "Arrays. Describe the scene.",
+          "sent": "arrays describe the scene.",
+          "spoken": "@arrays describe the scene.",
+          "start": 1.913,
+          "end": 3.778
+        },
+        {
+          "text": "They hold the place, size, and color of every object.",
+          "heard": "They hold the place, size, and color of every object.",
+          "sent": "They hold the place, size, and color of every object.",
+          "start": 4.128,
+          "end": 7.454
         },
         {
           "text": "My 3D models of historical terminals are made that way.",
           "heard": "My 3D models of historical terminals are made that way.",
           "sent": "My three dee models of historical terminals are made that way.",
           "spoken": "My three dee models of historical terminals are made that way.",
-          "start": 8.204,
-          "end": 11.477
+          "start": 7.804,
+          "end": 11.078
         },
         {
-          "text": "There is also a ray tracer, written as ordinary array code, that renders the same scene on the CPU and the GPU.",
-          "heard": "There is also a ray tracer, written as ordinary ray code, that renders the same scene on the CPU and the GPU.",
-          "sent": "There is also a ray tracer, written as ordinary array code, that renders the same scene on the see pee you and the gpu.",
-          "spoken": "There is also a @ray-tracer, written as ordinary array code, that renders the same scene on the see pee you and the @gpu.",
-          "unverified": true,
-          "start": 11.827,
-          "end": 20.285
+          "text": "There is also a ray tracer, written as ordinary array code, that renders the same scene on the GPU as well as on the CPU.",
+          "heard": "There's also a ray tracer written as ordinary array code that renders the same scene on the GPU as well as on the CPU.",
+          "sent": "There is also a ray tracer, written as ordinary array code, that renders the same scene on the gpu as well as on the cpu.",
+          "spoken": "There is also a @ray-tracer, written as ordinary array code, that renders the same scene on the @gpu as well as on the @cpu.",
+          "start": 11.428,
+          "end": 21.168
         },
         {
-          "text": "X_eTaL code, run on a GPU for a large enough calculation, is much faster than on the CPU.",
-          "heard": "XTL top code run on GPU for a large enough calculation is much faster than on the CPU.",
-          "sent": "xtl code, run on a gpu for a large enough calculation, is much faster than on the see pee you.",
-          "spoken": "@xtl code, run on a @gpu for a large enough calculation, is much faster than on the see pee you.",
-          "unverified": true,
-          "start": 20.635,
-          "end": 28.354
+          "text": "For a large enough calculation, X_eTaL runs much faster on the GPU than on the CPU.",
+          "heard": "For a large enough calculation, xtl runs much faster on the GPU than on the CPU.",
+          "sent": "For a large enough calculation, xtl runs much faster on the gpu than on the cpu.",
+          "spoken": "For a large enough calculation, @xtl runs much faster on the @gpu than on the @cpu.",
+          "start": 21.518,
+          "end": 28.066
         },
         {
           "text": "X_eTaL ray tracing code produces images without using Blender.",
           "heard": "XTL. Ray tracing code produces images without using Blender.",
           "sent": "xtl ray tracing code produces images without using Blender.",
           "spoken": "@xtl ray tracing code produces images without using Blender.",
-          "start": 28.704,
-          "end": 32.465
+          "start": 28.416,
+          "end": 32.177
         }
       ]
     },

@@ -819,9 +819,9 @@
     },
     {
       "id": "tease-3d",
-      "seconds": 33.2,
+      "seconds": 32.9,
       "heading": "3D models and ray tracing",
-      "narration": "It drives Blender, working out a scene as {arrays,|@arrays,} with the place, size, and color of every {object|object}. My {3D|three dee} models of historical terminals are made that way. There is also a {ray tracer,|@ray-tracer,} written as ordinary array code, that renders the same scene on the {CPU|see pee you} and the {GPU|@gpu}. {X_eTaL|@xtl} code, run on a {GPU|@gpu} for a large enough calculation, is much faster than on the {CPU|see pee you}. {X_eTaL|@xtl} ray tracing code produces images without using Blender.",
+      "narration": "It drives Blender. {Arrays|@arrays} describe the scene. They hold the place, size, and color of every {object|object}. My {3D|three dee} models of historical terminals are made that way. There is also a {ray tracer,|@ray-tracer,} written as ordinary array code, that renders the same scene on the {GPU|@gpu} as well as on the {CPU|@cpu}. For a large enough calculation, {X_eTaL|@xtl} runs much faster on the {GPU|@gpu} than on the {CPU|@cpu}. {X_eTaL|@xtl} ray tracing code produces images without using Blender.",
       "lines": [],
       "images": [
         "../../software-wrighter-lab/blog/assets/images/posts/xetal-blender-hello-poster.webp",

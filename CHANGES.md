@@ -13,6 +13,7 @@ Categories: `feat` new capability, `fix` a bug or wrong behavior,
 
 ## 2026-11-21
 
+- 18:32 `lesson` al-01-why: scene 30 in short sentences (the author: VoxCPM does better with shorter phrases), clean CPU and GPU clips (a new CPU word clip), arrays first in its sentence (as arrays ran together), X_eTaL runs faster with no word after the clip (a dot was heard before code).
 - 18:10 `fix` just produce: a scene whose picture changed but not its audio gets a new review clip (scripts/changed-scenes.mjs, a hash of each scene's definition); the narration summary lists only this run's unverified takes, earlier ones counted.
 - 18:00 `feat` a table slide (FROM, TAKEN, NOT TAKEN; a row an item, its sub and not), revealed a sentence at a time. `lesson` al-01-why: scene 21 is that table in place of the blog picture, Rust not taken is now the mut keyword and the borrow checker (a_ssert< will stop the program, the old one becomes c_heck<); scene 20 says IDE plugins, an IDE word clip (I, D, E tightened, fit to 1 s).
 - 08:45 `fix` just produce refreshes the review page right after the render, so the whole video shows at once (it waited for the stills).
