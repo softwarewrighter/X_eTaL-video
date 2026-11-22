@@ -138,5 +138,12 @@ for t in 1 2; do
   say "render: failed, again"
 done
 scripts/review-stills.sh "$slug" > "$logs/stills.log" 2>&1
+# A scene whose picture changed but not its audio gets a new clip too.
+changed="$(node scripts/changed-scenes.mjs "$slug")"
+if [ -n "$changed" ]; then
+  say "review: new clips for changed scenes: $changed"
+  scripts/review-clips.sh "$slug" $changed > "$logs/clips.log" 2>&1 || say "review: clips failed (see $logs/clips.log)"
+fi
+node scripts/changed-scenes.mjs "$slug" --mark
 node scripts/review.mjs "$slug" >/dev/null 2>&1
 say "DONE: review page http://127.0.0.1:8427/X_eTaL-video/review/$slug/"

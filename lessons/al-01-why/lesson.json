@@ -578,9 +578,9 @@
     },
     {
       "id": "types",
-      "seconds": 24.8,
+      "seconds": 26.4,
       "heading": "Static types, inferred",
-      "narration": "It is statically typed, and it infers every type, so you don't write type annotations. A program whose types don't fit is refused before it runs, with the line, and with a suggested fix. The language is implemented in Rust, and it runs in the browser. It also runs in a terminal editor, at the command line, and in Emacs, with editor plugins planned.",
+      "narration": "It is statically typed, and it infers every type, so you don't write type annotations. A program whose types don't fit is refused before it runs, with the line, and with a suggested fix. The language is implemented in Rust, and it runs in the browser. It also runs in a terminal editor, at the command line, and in Emacs, with {IDE|@ide} plugins planned.",
       "lines": [],
       "images": [
         "../../software-wrighter-lab/blog/assets/images/posts/xetal-phil-type-error.webp",
@@ -595,14 +595,39 @@
       "heading": "Borrowed on purpose",
       "narration": "It takes arrays and right to left reading from {APL|ay pee el}. The {leading|leeding} axis and the atop, from {BQN|bee, queue, en}, and {J|jay}. Its types from Haskell. And its macros, {lints,|@lints,} and diagnostics from Rust. Each borrowing came with a refusal beside it, like the types of Haskell, but not its laziness. {X_eTaL|@xtl} is eager by default, but lazy evaluation can be specified where needed.",
       "lines": [],
-      "images": [
-        "../../software-wrighter-lab/blog/assets/images/posts/xetal-phil-borrowed.webp",
-        "../../software-wrighter-lab/blog/assets/images/posts/xetal-phil-borrowed.webp",
-        "../../software-wrighter-lab/blog/assets/images/posts/xetal-phil-borrowed.webp",
-        "../../software-wrighter-lab/blog/assets/images/posts/xetal-phil-borrowed.webp",
-        "../../software-wrighter-lab/blog/assets/images/posts/xetal-phil-borrowed.webp",
-        "../../software-wrighter-lab/blog/assets/images/posts/xetal-phil-lazy-curried.webp"
-      ]
+      "slide": {
+        "type": "table",
+        "steps": [
+          1,
+          2,
+          3,
+          4,
+          4,
+          4
+        ],
+        "items": [
+          {
+            "text": "APL",
+            "sub": "arrays; right to left reading; density",
+            "not": "a special keyboard; glyphs to memorize"
+          },
+          {
+            "text": "BQN, J",
+            "sub": "the leading axis; the atop",
+            "not": "0-origin in BQN"
+          },
+          {
+            "text": "Haskell",
+            "sub": "inferred static types",
+            "not": "laziness everywhere"
+          },
+          {
+            "text": "Rust",
+            "sub": "macros; lints; diagnostics",
+            "not": "the mut keyword; the borrow checker"
+          }
+        ]
+      }
     },
     {
       "id": "core",

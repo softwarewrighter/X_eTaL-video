@@ -62,12 +62,12 @@
           "images": { "description": "A story's pictures for this scene, full frame, one a sentence of its narration (the last stays): each a path relative to the repository (outside it is fine; nothing is copied into git).", "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } },
           "clip": { "description": "A story's ready-made segment, its video and its audio as they are (the reused closing call to action): a path relative to the repository. The scene's seconds are the clip's.", "type": "string", "minLength": 1 },
           "slide": {
-            "description": "An explainer slide (a story): the scene's heading, then its items, revealed one after another by X_eTaL's stagger. points: cards; timeline: years on a line (mark one); flow: boxes joined by arrows.",
+            "description": "An explainer slide (a story): the scene's heading, then its items, revealed one after another by X_eTaL's stagger. points: cards; timeline: years on a line (mark one); flow: boxes joined by arrows; table: a row an item (text, then sub as taken, not as not taken).",
             "type": "object",
             "required": ["type", "items"],
             "additionalProperties": false,
             "properties": {
-              "type": { "type": "string", "enum": ["points", "timeline", "flow"] },
+              "type": { "type": "string", "enum": ["points", "timeline", "flow", "table"] },
               "steps": { "description": "A narrated slide shown a sentence at a time: for each sentence, how many items are shown (the newest marked); the last entry stays.", "type": "array", "items": { "type": "integer", "minimum": 0 } },
               "items": {
                 "type": "array",
@@ -82,7 +82,8 @@
                     "year": { "type": "string" },
                     "mark": { "type": "boolean" },
                     "xtl": { "description": "A line of X_eTaL, shown as the pinned xetal renders it.", "type": "string" },
-                    "code": { "description": "Other code (APL), shown as it is.", "type": "string" }
+                    "code": { "description": "Other code (APL), shown as it is.", "type": "string" },
+                    "not": { "description": "For a table: the third column (what was not taken).", "type": "string" }
                   }
                 }
               }

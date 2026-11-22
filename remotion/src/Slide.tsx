@@ -111,6 +111,37 @@ export const Slide: React.FC<Props> = ({ slide, heading, brand, show, reveal, pr
           ))}
         </div>
       ) : null}
+
+      {slide.type === "table" ? (
+        <div style={{ position: "absolute", left: 120, right: 120, top: 330, background: theme.panel, borderRadius: 12, padding: "18px 36px", boxShadow: `0 0 40px ${glow}`, opacity: show }}>
+          <div style={{ display: "grid", gridTemplateColumns: "220px 1fr 1fr", columnGap: 36, color: theme.dim, fontSize: 24, fontWeight: 700, letterSpacing: 2, padding: "12px 0", borderBottom: `2px solid ${theme.rule}` }}>
+            <div>FROM</div>
+            <div>TAKEN</div>
+            <div>NOT TAKEN</div>
+          </div>
+          {slide.items.map((it, j) => (
+            <div
+              key={j}
+              style={{
+                ...enter(j),
+                display: "grid",
+                gridTemplateColumns: "220px 1fr 1fr",
+                columnGap: 36,
+                alignItems: "baseline",
+                padding: "22px 0",
+                borderBottom: j < slide.items.length - 1 ? `1px solid ${theme.rule}` : undefined,
+                borderLeft: `6px solid ${marked(j) ? theme.hot : "transparent"}`,
+                paddingLeft: 14,
+                marginLeft: -20,
+              }}
+            >
+              <div style={{ color: theme.accent, fontSize: 38, fontWeight: 700 }}>{it.text}</div>
+              <div style={{ color: "#7ee787", fontSize: 32 }}>{it.sub}</div>
+              <div style={{ color: "#ff7b72", fontSize: 32 }}>{it.not}</div>
+            </div>
+          ))}
+        </div>
+      ) : null}
     </AbsoluteFill>
   );
 };

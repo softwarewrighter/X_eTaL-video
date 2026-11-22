@@ -650,7 +650,8 @@ def main() -> None:
         return
     from gradio_client import Client, handle_file  # the venv's (scripts/voice.sh)
 
-    unverified = []
+    unverified = []  # flagged takes made in this run
+    older = 0  # flagged takes from earlier runs (cached): counted, not listed again
     for scene in scenes:
         text = scene.get("narration")
         if not text:
@@ -686,7 +687,8 @@ def main() -> None:
                     continue
             else:
                 fcntl.flock(guard, fcntl.LOCK_EX)
-            if clip.exists() and note.exists():
+            fresh = not (clip.exists() and note.exists())
+            if not fresh:
                 got = note.read_text().strip()
             else:
                 got = None
@@ -742,7 +744,10 @@ def main() -> None:
             flagged = got.startswith(UNVERIFIED)
             if flagged:
                 got = got[len(UNVERIFIED):]
-                unverified.append(f"{scene['id']} {k + 1}: {shown!r} (heard {got!r})")
+                if fresh:
+                    unverified.append(f"{scene['id']} {k + 1}: {shown!r} (heard {got!r})")
+                else:
+                    older += 1
             said.append({"text": shown, "heard": got, "sent": bare(sentence)} | ({"spoken": sentence} if sentence != shown else {}) | ({"unverified": True} if flagged else {}))
 
         if shard or missing:
@@ -787,6 +792,8 @@ def main() -> None:
     (ROOT / "lessons" / a.slug / "voice.json").write_text(json.dumps(record, indent=2) + "\n")
     total = sum(s["seconds"] for s in scenes)
     print(f"voice: {a.slug}: narrated, {total:.1f} s in all; lesson.json and voice.json updated")
+    if older:
+        print(f"voice: {older} sentence(s) flagged in earlier runs, unchanged (review page, orange)")
     if unverified:
         print(f"voice: {len(unverified)} sentence(s) whisper never matched, kept for a listen (review page, orange):\n  " + "\n  ".join(unverified))
         sys.exit(3)
