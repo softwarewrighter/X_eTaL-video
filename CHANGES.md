@@ -11,6 +11,10 @@ Categories: `feat` new capability, `fix` a bug or wrong behavior,
 `chore` agentrail bookkeeping (step complete, saga archive),
 `vendor` a move of the pinned X_eTaL.
 
+## 2026-11-23
+
+- 11:50 `lesson` al-02-loops: description with chapters; out/al-02-loops-youtube/ built (5:01, 82 captions, the title card as thumbnail).
+
 ## 2026-11-22
 
 - 23:10 `lesson` al-02-loops: three preview slides (shape, rank, axes), scalar and min word clips, flagged sentences said phrase by phrase or reworded (the author), the title, breaks and close padded; 5:01, every sentence heard right. `feat` voice.py: a phrase break, {word|word /}, sends the phrases of a sentence on their own and joins them.

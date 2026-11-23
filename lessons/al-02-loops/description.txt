@@ -1,0 +1,25 @@
+Array Languages, episode 2. A loop often does three jobs at once: it transforms each element, keeps some of them, and combines what it keeps. This episode separates those jobs into whole-array operations: map (three times values), filter (a mask from a comparison, then replicate), and reduce (plus, max, min, and counting with a mask). It compares Rust iterator chains, composes the three steps in X_eTaL, and previews shape, rank, and axes, the topic of the next episode.
+
+Chapters:
+0:00 Three kinds of loop
+0:23 One loop, three jobs (Rust)
+0:41 How, or what
+1:00 Map
+1:22 Filter: a mask
+1:39 Replicate
+2:04 Reduce: plus, max, min
+2:24 Counting with a mask
+2:44 Rust iterator chains
+3:01 Three steps, composed
+3:15 Coming up: shape, rank, axes
+4:25 Before the next episode
+
+Episode 1, Why another programming language: https://youtu.be/NfdzVWjje2Y
+Try X_eTaL in your browser: https://softwarewrighter.github.io/X_eTaL/
+X_eTaL: https://github.com/softwarewrighter/X_eTaL
+The Array Languages blog series: https://blog.softwarewrighter.com/series/#array-languages
+
+Blog: https://blog.softwarewrighter.com/
+Discord: https://discord.gg/Ctzk5uHggZ
+
+#ArrayProgramming #APL #XeTaL #Programming #FunctionalProgramming #Rust
