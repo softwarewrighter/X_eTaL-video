@@ -7,8 +7,8 @@
   "scenes": [
     {
       "id": "recap",
-      "narration": "In the last episode, we compared a loop with a whole array operation. This time, we turn common loops into array operations. Three kinds come up again and again. Map, filter, and reduce.",
-      "seconds": 14.3,
+      "narration": "In the last episode, we compared a loop with a whole array operation. In this episode{,|/} we turn common {loops|loops /} into array operations. Three kinds come up again and again. Map, filter, and reduce.",
+      "seconds": 15.8,
       "sentences": [
         {
           "text": "In the last episode, we compared a loop with a whole array operation.",
@@ -18,26 +18,26 @@
           "end": 4.487
         },
         {
-          "text": "This time, we turn common loops into array operations.",
-          "heard": "This time we turn common loops to array operations.",
-          "sent": "This time, we turn common loops into array operations.",
-          "unverified": true,
+          "text": "In this episode, we turn common loops into array operations.",
+          "heard": "In this episode, we turn common loops into array operations.",
+          "sent": "In this episode we turn common loops into array operations.",
+          "spoken": "In this episode/ we turn common loops / into array operations.",
           "start": 4.837,
-          "end": 8.365
+          "end": 9.904
         },
         {
           "text": "Three kinds come up again and again.",
           "heard": "three kinds come up again and again.",
           "sent": "Three kinds come up again and again.",
-          "start": 8.715,
-          "end": 11.01
+          "start": 10.254,
+          "end": 12.549
         },
         {
           "text": "Map, filter, and reduce.",
           "heard": "Map, filter, and reduce.",
           "sent": "Map, filter, and reduce.",
-          "start": 11.36,
-          "end": 13.531
+          "start": 12.899,
+          "end": 15.07
         }
       ]
     },
@@ -92,23 +92,23 @@
     },
     {
       "id": "how-what",
-      "narration": "A scalar solution describes how to visit every element. An array solution describes what happens to the whole collection.",
-      "seconds": 7.3,
+      "narration": "{Scalar|@scalar} style code {describes|describes /} how to visit every element. Array style code describes what happens to the whole collection.",
+      "seconds": 8.9,
       "sentences": [
         {
-          "text": "A scalar solution describes how to visit every element.",
-          "heard": "A singular solution describes how to visit every element.",
-          "sent": "A scalar solution describes how to visit every element.",
-          "unverified": true,
+          "text": "Scalar style code describes how to visit every element.",
+          "heard": "Scalar. Style code describes how to visit every element.",
+          "sent": "scalar style code describes how to visit every element.",
+          "spoken": "@scalar style code describes / how to visit every element.",
           "start": 0.4,
-          "end": 3.337
+          "end": 4.166
         },
         {
-          "text": "An array solution describes what happens to the whole collection.",
-          "heard": "An array solution describes what happens to the whole collection.",
-          "sent": "An array solution describes what happens to the whole collection.",
-          "start": 3.687,
-          "end": 6.565
+          "text": "Array style code describes what happens to the whole collection.",
+          "heard": "Array style code describes what happens to the whole collection.",
+          "sent": "Array style code describes what happens to the whole collection.",
+          "start": 4.516,
+          "end": 8.2
         }
       ]
     },
@@ -269,45 +269,45 @@
     },
     {
       "id": "reduce",
-      "narration": "The third job is a reduce. A reduce combines many elements into one. Reduce, given plus, adds them up, and gives twenty. Given max, it gives the largest value, eight. Given min, it gives the smallest, two.",
-      "seconds": 18.4,
+      "narration": "The third {job|job /} is a reduce. A reduce combines many elements into one. Reduce, given plus, adds them up, and gives twenty. Given max, it gives the largest value, eight. {Min|@min}{,|/} in place of max{,|/} gives the smallest value{,|/} which is two.",
+      "seconds": 20.3,
       "sentences": [
         {
           "text": "The third job is a reduce.",
-          "heard": "The third job is a reduced",
+          "heard": "The third job is a reduce.",
           "sent": "The third job is a reduce.",
-          "unverified": true,
+          "spoken": "The third job / is a reduce.",
           "start": 0.4,
-          "end": 2.041
+          "end": 3.227
         },
         {
           "text": "A reduce combines many elements into one.",
           "heard": "A reduce combines many elements into one.",
           "sent": "A reduce combines many elements into one.",
-          "start": 2.391,
-          "end": 4.422
+          "start": 3.577,
+          "end": 5.608
         },
         {
           "text": "Reduce, given plus, adds them up, and gives twenty.",
           "heard": "reduce, given, plus adds them up and gives 20.",
           "sent": "Reduce, given plus, adds them up, and gives twenty.",
-          "start": 4.772,
-          "end": 9.786
+          "start": 5.958,
+          "end": 10.971
         },
         {
           "text": "Given max, it gives the largest value, eight.",
           "heard": "Given max, it gives the largest value, eight.",
           "sent": "Given max, it gives the largest value, eight.",
-          "start": 10.136,
-          "end": 13.692
+          "start": 11.321,
+          "end": 14.877
         },
         {
-          "text": "Given min, it gives the smallest, two.",
-          "heard": "Given men, it gives the smallest two.",
-          "sent": "Given min, it gives the smallest, two.",
-          "unverified": true,
-          "start": 14.042,
-          "end": 17.669
+          "text": "Min, in place of max, gives the smallest value, which is two.",
+          "heard": "min in place of max gives the smallest value which is 2.",
+          "sent": "min in place of max gives the smallest value which is two.",
+          "spoken": "@min/ in place of max/ gives the smallest value/ which is two.",
+          "start": 15.227,
+          "end": 19.535
         }
       ]
     },
@@ -453,17 +453,185 @@
     },
     {
       "id": "next",
-      "narration": "The next episode is about shape, rank, and {axes|@axes}.",
-      "seconds": 5.0,
+      "narration": "The next episode is about the shape of an array{,|/} its rank{,|/} and its {axes|@axes}. Here is a short preview.",
+      "seconds": 8.0,
       "sentences": [
         {
-          "text": "The next episode is about shape, rank, and axes.",
-          "heard": "The next episode is about shape, rank, axes.",
-          "sent": "The next episode is about shape, rank, and axes.",
-          "spoken": "The next episode is about shape, rank, and @axes.",
-          "unverified": true,
+          "text": "The next episode is about the shape of an array, its rank, and its axes.",
+          "heard": "The next episode is about the shape of an array, its rank, and its axes.",
+          "sent": "The next episode is about the shape of an array its rank and its axes.",
+          "spoken": "The next episode is about the shape of an array/ its rank/ and its @axes.",
           "start": 0.4,
-          "end": 4.28
+          "end": 5.697
+        },
+        {
+          "text": "Here is a short preview.",
+          "heard": "Here is a short preview.",
+          "sent": "Here is a short preview.",
+          "start": 6.047,
+          "end": 7.262
+        }
+      ]
+    },
+    {
+      "id": "preview-shape",
+      "narration": "Shape says how long each axis is. The shape of a list of five values is five. A table with three rows and four columns has shape three by four. It holds twelve values. Multiply the lengths in a shape{,|/} and you get the number of values. A shape is a short list of numbers{,|/} one for each axis.",
+      "seconds": 19.7,
+      "sentences": [
+        {
+          "text": "Shape says how long each axis is.",
+          "heard": "Shape says how long each axis is.",
+          "sent": "Shape says how long each axis is.",
+          "start": 0.4,
+          "end": 2.884
+        },
+        {
+          "text": "The shape of a list of five values is five.",
+          "heard": "The shape of a list of five values is five.",
+          "sent": "The shape of a list of five values is five.",
+          "start": 3.234,
+          "end": 6.488
+        },
+        {
+          "text": "A table with three rows and four columns has shape three by four.",
+          "heard": "A table with three rows and four columns has shape three by four.",
+          "sent": "A table with three rows and four columns has shape three by four.",
+          "start": 6.838,
+          "end": 10.311
+        },
+        {
+          "text": "It holds twelve values.",
+          "heard": "It holds 12 values.",
+          "sent": "It holds twelve values.",
+          "start": 10.661,
+          "end": 11.842
+        },
+        {
+          "text": "Multiply the lengths in a shape, and you get the number of values.",
+          "heard": "Multiply the lengths in a shape and you get the number of values.",
+          "sent": "Multiply the lengths in a shape and you get the number of values.",
+          "spoken": "Multiply the lengths in a shape/ and you get the number of values.",
+          "start": 12.192,
+          "end": 15.746
+        },
+        {
+          "text": "A shape is a short list of numbers, one for each axis.",
+          "heard": "A shape is a short list of numbers, one for each axis.",
+          "sent": "A shape is a short list of numbers one for each axis.",
+          "spoken": "A shape is a short list of numbers/ one for each axis.",
+          "start": 16.096,
+          "end": 18.988
+        }
+      ]
+    },
+    {
+      "id": "preview-rank",
+      "narration": "Rank is the number of {axes|@axes}. A single value{,|/} called a {scalar|@scalar}{,|/} has rank zero. A list has rank one. A table has rank two{,|/} not twelve. Add another axis{,|/} and the rank is three. The rank tells us how many {axes|@axes} there are. The shape tells us how long each one is.",
+      "seconds": 22.5,
+      "sentences": [
+        {
+          "text": "Rank is the number of axes.",
+          "heard": "Rank is the number of axes.",
+          "sent": "Rank is the number of axes.",
+          "spoken": "Rank is the number of @axes.",
+          "start": 0.4,
+          "end": 3.146
+        },
+        {
+          "text": "A single value, called a scalar, has rank zero.",
+          "heard": "A single value, called a scalar, has rank zero.",
+          "sent": "A single value called a scalar has rank zero.",
+          "spoken": "A single value/ called a @scalar/ has rank zero.",
+          "start": 3.496,
+          "end": 7.758
+        },
+        {
+          "text": "A list has rank one.",
+          "heard": "A list has rank one.",
+          "sent": "A list has rank one.",
+          "start": 8.108,
+          "end": 9.282
+        },
+        {
+          "text": "A table has rank two, not twelve.",
+          "heard": "A table has rank 2, not 12.",
+          "sent": "A table has rank two not twelve.",
+          "spoken": "A table has rank two/ not twelve.",
+          "start": 9.632,
+          "end": 11.713
+        },
+        {
+          "text": "Add another axis, and the rank is three.",
+          "heard": "Add another axis. And the rank is 3.",
+          "sent": "Add another axis and the rank is three.",
+          "spoken": "Add another axis/ and the rank is three.",
+          "start": 12.063,
+          "end": 14.985
+        },
+        {
+          "text": "The rank tells us how many axes there are.",
+          "heard": "The rank tells us how many axes there are.",
+          "sent": "The rank tells us how many axes there are.",
+          "spoken": "The rank tells us how many @axes there are.",
+          "start": 15.335,
+          "end": 18.7
+        },
+        {
+          "text": "The shape tells us how long each one is.",
+          "heard": "The shape tells us how long each one is.",
+          "sent": "The shape tells us how long each one is.",
+          "start": 19.05,
+          "end": 21.791
+        }
+      ]
+    },
+    {
+      "id": "preview-axes",
+      "narration": "An axis is one direction through an array. A table has two{,|/} down the rows{,|/} and across the columns. Reduce can add along either one. Down the rows gives a total for each column. Across the columns gives a total for each row. The shape of an array decides which operations make sense.",
+      "seconds": 20.5,
+      "sentences": [
+        {
+          "text": "An axis is one direction through an array.",
+          "heard": "An axis is one direction through an array.",
+          "sent": "An axis is one direction through an array.",
+          "start": 0.4,
+          "end": 3.101
+        },
+        {
+          "text": "A table has two, down the rows, and across the columns.",
+          "heard": "A table has two down the rows and across the columns.",
+          "sent": "A table has two down the rows and across the columns.",
+          "spoken": "A table has two/ down the rows/ and across the columns.",
+          "start": 3.451,
+          "end": 7.589
+        },
+        {
+          "text": "Reduce can add along either one.",
+          "heard": "Reduce can add along either one.",
+          "sent": "Reduce can add along either one.",
+          "start": 7.939,
+          "end": 9.926
+        },
+        {
+          "text": "Down the rows gives a total for each column.",
+          "heard": "Down the rows gives a total for each column.",
+          "sent": "Down the rows gives a total for each column.",
+          "start": 10.276,
+          "end": 12.775
+        },
+        {
+          "text": "Across the columns gives a total for each row.",
+          "heard": "Across the columns gives a total for each row.",
+          "sent": "Across the columns gives a total for each row.",
+          "start": 13.125,
+          "end": 16.198
+        },
+        {
+          "text": "The shape of an array decides which operations make sense.",
+          "heard": "The shape of an array decides which operations make sense.",
+          "sent": "The shape of an array decides which operations make sense.",
+          "start": 16.548,
+          "end": 19.713
         }
       ]
     },

@@ -13,6 +13,7 @@ Categories: `feat` new capability, `fix` a bug or wrong behavior,
 
 ## 2026-11-22
 
+- 23:10 `lesson` al-02-loops: three preview slides (shape, rank, axes), scalar and min word clips, flagged sentences said phrase by phrase or reworded (the author), the title, breaks and close padded; 5:01, every sentence heard right. `feat` voice.py: a phrase break, {word|word /}, sends the phrases of a sentence on their own and joins them.
 - 21:50 `lesson` al-02-loops narrated (an axes word clip, the author approved) and rendered, 3:38; five sentences flagged for a listen. `feat` the review page lists only the lesson's own problem words.
 - 21:55 `fix` review stills: 90% into a scene (a reused clip 60%), and before narration each sentence's start is estimated from its words (props.mjs), so a slide's steps and a panel's focus show in the script preview.
 - 21:35 `lesson` al-02-loops: the script draft (19 scenes: map, filter, reduce, a mask to count, Rust iterator chains, three steps composed, the exercise), data.xtl run at the pin, the README with sources, music Sunburst; the review page. `fix` review-clips: no fingerprint error before a lesson has narration.

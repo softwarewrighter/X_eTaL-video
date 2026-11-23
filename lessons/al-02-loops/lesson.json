@@ -31,7 +31,7 @@
   "scenes": [
     {
       "id": "title",
-      "seconds": 5,
+      "seconds": 8,
       "heading": "From scalar loops to array operations",
       "lines": [
         "Map, filter, reduce"
@@ -39,9 +39,9 @@
     },
     {
       "id": "recap",
-      "seconds": 14.3,
+      "seconds": 15.8,
       "heading": "Three kinds of loop",
-      "narration": "In the last episode, we compared a loop with a whole array operation. This time, we turn common loops into array operations. Three kinds come up again and again. Map, filter, and reduce.",
+      "narration": "In the last episode, we compared a loop with a whole array operation. In this episode{,|/} we turn common {loops|loops /} into array operations. Three kinds come up again and again. Map, filter, and reduce.",
       "lines": [],
       "slide": {
         "type": "points",
@@ -121,9 +121,9 @@
     },
     {
       "id": "how-what",
-      "seconds": 7.3,
+      "seconds": 8.9,
       "heading": "How, or what",
-      "narration": "A scalar solution describes how to visit every element. An array solution describes what happens to the whole collection.",
+      "narration": "{Scalar|@scalar} style code {describes|describes /} how to visit every element. Array style code describes what happens to the whole collection.",
       "lines": [],
       "slide": {
         "type": "points",
@@ -145,7 +145,7 @@
     },
     {
       "id": "break-1",
-      "seconds": 7,
+      "seconds": 10,
       "heading": "Three operations",
       "lines": [],
       "slide": {
@@ -273,7 +273,7 @@
     },
     {
       "id": "break-2",
-      "seconds": 7,
+      "seconds": 10,
       "heading": "What comes out",
       "lines": [],
       "slide": {
@@ -296,9 +296,9 @@
     },
     {
       "id": "reduce",
-      "seconds": 18.4,
+      "seconds": 20.3,
       "heading": "Reduce",
-      "narration": "The third job is a reduce. A reduce combines many elements into one. Reduce, given plus, adds them up, and gives twenty. Given max, it gives the largest value, eight. Given min, it gives the smallest, two.",
+      "narration": "The third {job|job /} is a reduce. A reduce combines many elements into one. Reduce, given plus, adds them up, and gives twenty. Given max, it gives the largest value, eight. {Min|@min}{,|/} in place of max{,|/} gives the smallest value{,|/} which is two.",
       "lines": [],
       "panel": {
         "type": "code",
@@ -483,9 +483,9 @@
     },
     {
       "id": "next",
-      "seconds": 5,
+      "seconds": 8,
       "heading": "Next: shape, rank, axes",
-      "narration": "The next episode is about shape, rank, and {axes|@axes}.",
+      "narration": "The next episode is about the shape of an array{,|/} its rank{,|/} and its {axes|@axes}. Here is a short preview.",
       "lines": [],
       "slide": {
         "type": "points",
@@ -493,6 +493,111 @@
           {
             "text": "Episode 3",
             "sub": "Shape, rank, axes, and dimensions"
+          }
+        ]
+      }
+    },
+    {
+      "id": "preview-shape",
+      "seconds": 19.7,
+      "heading": "Shape",
+      "narration": "Shape says how long each axis is. The shape of a list of five values is five. A table with three rows and four columns has shape three by four. It holds twelve values. Multiply the lengths in a shape{,|/} and you get the number of values. A shape is a short list of numbers{,|/} one for each axis.",
+      "lines": [],
+      "slide": {
+        "type": "points",
+        "steps": [
+          0,
+          1,
+          2,
+          3,
+          3,
+          3
+        ],
+        "items": [
+          {
+            "text": "A list",
+            "sub": "shape 5"
+          },
+          {
+            "text": "A table",
+            "sub": "shape 3 by 4"
+          },
+          {
+            "text": "Twelve values",
+            "sub": "3 times 4"
+          }
+        ]
+      }
+    },
+    {
+      "id": "preview-rank",
+      "seconds": 22.5,
+      "heading": "Rank",
+      "narration": "Rank is the number of {axes|@axes}. A single value{,|/} called a {scalar|@scalar}{,|/} has rank zero. A list has rank one. A table has rank two{,|/} not twelve. Add another axis{,|/} and the rank is three. The rank tells us how many {axes|@axes} there are. The shape tells us how long each one is.",
+      "lines": [],
+      "slide": {
+        "type": "timeline",
+        "steps": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          4,
+          4
+        ],
+        "items": [
+          {
+            "year": "0",
+            "text": "A scalar",
+            "sub": "one value"
+          },
+          {
+            "year": "1",
+            "text": "A list",
+            "sub": "one axis"
+          },
+          {
+            "year": "2",
+            "text": "A table",
+            "sub": "rows and columns"
+          },
+          {
+            "year": "3",
+            "text": "A stack of tables",
+            "sub": "one more axis"
+          }
+        ]
+      }
+    },
+    {
+      "id": "preview-axes",
+      "seconds": 20.5,
+      "heading": "Axes",
+      "narration": "An axis is one direction through an array. A table has two{,|/} down the rows{,|/} and across the columns. Reduce can add along either one. Down the rows gives a total for each column. Across the columns gives a total for each row. The shape of an array decides which operations make sense.",
+      "lines": [],
+      "slide": {
+        "type": "points",
+        "steps": [
+          0,
+          2,
+          2,
+          3,
+          3,
+          3
+        ],
+        "items": [
+          {
+            "text": "Down the rows",
+            "sub": "the first axis"
+          },
+          {
+            "text": "Across the columns",
+            "sub": "the second axis"
+          },
+          {
+            "text": "Reduce along either",
+            "sub": "sum each column, or each row"
           }
         ]
       }
@@ -534,7 +639,7 @@
     },
     {
       "id": "close",
-      "seconds": 5,
+      "seconds": 8,
       "heading": "End screen",
       "lines": [],
       "clip": "../video-publishing/reference/epilog/99c-epilog-ext-swing9.mp4",

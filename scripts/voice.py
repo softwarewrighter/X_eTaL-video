@@ -122,9 +122,14 @@ def pieces(sentence: str) -> list[str]:
     """A sentence split for splicing: its text pieces (each sent to
     VoxCPM on its own) and its @words (clips from the word library,
     work/voice-words/NAME.wav, made by --word: a word the voice gets
-    wrong in a sentence, made once until whisper hears it right)."""
+    wrong in a sentence, made once until whisper hears it right).
+    A / (written {,|/}) is a phrase break: the phrases either side are
+    sent on their own, then joined (the author, 2026-11-22: a flagged
+    sentence is said phrase by phrase)."""
     out = []
-    for part in re.split(r"(@[a-z][a-z0-9-]*)", sentence):
+    for part in re.split(r"(@[a-z][a-z0-9-]*|/)", sentence):
+        if part == "/":
+            continue
         part = part.strip()
         if part.startswith("@"):
             out.append(part)
@@ -154,7 +159,7 @@ def lint(scene_id: str, raw: str) -> list[str]:
     if re.search(r"[{}|]", unmarked):
         problems.append("a broken {written|spoken} mark")
     text = spoken(raw)
-    if re.search(r"[?!:;()\"%&/*+=<>\[\]{}_#0-9]", re.sub(r"@[a-z][a-z0-9-]*", "", text)) or re.search(r"@(?![a-z])", text):
+    if re.search(r"[?!:;()\"%&/*+=<>\[\]{}_#0-9]", re.sub(r"@[a-z][a-z0-9-]*|/", "", text)) or re.search(r"@(?![a-z])", text):
         problems.append("only words, commas, periods and apostrophes (no ? ! : ; symbols or digits)")
     if re.search(r"\b[A-Z]{2,}\b", text):
         problems.append("no all-caps words")
@@ -696,15 +701,16 @@ def main() -> None:
                     print(f"voice: {scene['id']} {k + 1}: {sentence!r} (try {attempt})", flush=True)
                     # The server can fail or drop a request: wait and ask
                     # again (a new client), up to six times, before giving up.
-                    parts = pieces(sentence) if used else [sentence]
+                    split = bool(used) or "/" in sentence
+                    parts = pieces(sentence) if split else [sentence]
                     made = []
                     for j, part in enumerate(parts):
                         if part.startswith("@"):
                             made.append(str(word_file(part)))
                             continue
                         assert not tts_problems(bare(part)), (part, tts_problems(bare(part)))
-                        piece = clip.with_suffix(f".{j}.wav") if used else clip
-                        if used:
+                        piece = clip.with_suffix(f".{j}.wav") if split else clip
+                        if split:
                             # A piece scripts/voice-batch.py made and whisper
                             # checked (its KEY.J.txt) is used on the first try;
                             # a new take of it drops that note.
@@ -715,7 +721,7 @@ def main() -> None:
                             checked.unlink(missing_ok=True)
                         client = tts(client, a, prompt, handle_file, Client, bare(part), piece, f"{a.slug} {scene['id']} {k + 1}")
                         made.append(str(piece))
-                    if used:
+                    if split:
                         # The pieces and the words, a short pause between.
                         gap = str(clip.with_suffix(".gap.wav"))
                         sox("-n", "-r", "44100", "-c", "1", gap, "trim", "0", "0.12")
