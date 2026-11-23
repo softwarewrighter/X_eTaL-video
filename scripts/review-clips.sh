@@ -68,7 +68,7 @@ for id in "${ids[@]}"; do
     read -r from to <<< "$range"
     tmp="${out%.mp4}.tmp.mp4"
     (cd remotion && npx remotion render src/index.ts "$comp" "$tmp" --frames="$from-$to" --props="$props" --log=error --scale=0.5 < /dev/null) >/dev/null 2>&1
-    if why=$(good "$tmp"); then mv "$tmp" "$out"; node -e 'const v = (JSON.parse(require("fs").readFileSync(process.argv[1], "utf8")).voice_scenes || []); const s = JSON.parse(require("fs").readFileSync(process.argv[1], "utf8")).scenes.find((x) => x.id === process.argv[2]); if (s) console.log(require("crypto").createHash("md5").update(JSON.stringify([s.narration, s.seconds, s.sentences.map((x) => [x.text, x.start, x.end])])).digest("hex"))' "lessons/$slug/voice.json" "$id" > "${out%.mp4}.sum"; whisper_clip "$out"; echo "review-clips: $id (frames $from to $to)"; break; fi
+    if why=$(good "$tmp"); then mv "$tmp" "$out"; [ -f "lessons/$slug/voice.json" ] && node -e 'const v = (JSON.parse(require("fs").readFileSync(process.argv[1], "utf8")).voice_scenes || []); const s = JSON.parse(require("fs").readFileSync(process.argv[1], "utf8")).scenes.find((x) => x.id === process.argv[2]); if (s) console.log(require("crypto").createHash("md5").update(JSON.stringify([s.narration, s.seconds, s.sentences.map((x) => [x.text, x.start, x.end])])).digest("hex"))' "lessons/$slug/voice.json" "$id" > "${out%.mp4}.sum"; whisper_clip "$out"; echo "review-clips: $id (frames $from to $to)"; break; fi
     rm -f "$tmp"
     if [ "$try" -eq 2 ]; then rm -f "$out"; echo "review-clips: $id: FAILED twice ($why), removed"; else echo "review-clips: $id: bad ($why), again"; fi
   done

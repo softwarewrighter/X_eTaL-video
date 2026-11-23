@@ -1,0 +1,544 @@
+{
+  "slug": "al-02-loops",
+  "kind": "story",
+  "title": "From scalar loops to array operations",
+  "summary": "Array languages, episode 2: map, filter and reduce as whole-array operations in place of a loop, a mask to filter and to count, Rust iterator chains compared, and three steps composed.",
+  "order": 101,
+  "fps": 30,
+  "brand": "Array Languages: episode 2",
+  "music": {
+    "file": "/Users/mike/github/softwarewrighter/music-pipe-rs/work/preview/sunburst.wav",
+    "intro": {
+      "seconds": 5,
+      "fadeOut": 0.5
+    },
+    "outro": {
+      "seconds": 7,
+      "fadeIn": 1
+    },
+    "slides": {
+      "volume": 0.3,
+      "fade": 0.5,
+      "offsets": [
+        1,
+        -2,
+        0.5,
+        -1,
+        1.5
+      ]
+    }
+  },
+  "scenes": [
+    {
+      "id": "title",
+      "seconds": 5,
+      "heading": "From scalar loops to array operations",
+      "lines": [
+        "Map, filter, reduce"
+      ]
+    },
+    {
+      "id": "recap",
+      "seconds": 10,
+      "heading": "Three kinds of loop",
+      "narration": "In the last episode, we compared a loop with a whole array operation. This time, we turn common loops into array operations. Three kinds come up again and again. Map, filter, and reduce.",
+      "lines": [],
+      "slide": {
+        "type": "points",
+        "steps": [
+          0,
+          0,
+          0,
+          3
+        ],
+        "items": [
+          {
+            "text": "Map",
+            "sub": "every element, transformed"
+          },
+          {
+            "text": "Filter",
+            "sub": "some elements, kept"
+          },
+          {
+            "text": "Reduce",
+            "sub": "many elements, combined into one"
+          }
+        ]
+      }
+    },
+    {
+      "id": "loop",
+      "seconds": 15,
+      "heading": "One loop, three jobs",
+      "narration": "Here is a small Rust loop. It takes the values two, four, six, eight. It triples each value. It keeps the ones greater than five. And it adds up what it keeps. Three jobs are tangled together in one loop body.",
+      "lines": [],
+      "panel": {
+        "type": "code",
+        "lines": [
+          {
+            "code": "let values = [2, 4, 6, 8];"
+          },
+          {
+            "code": "let mut sum = 0;"
+          },
+          {
+            "code": "for x in values {"
+          },
+          {
+            "code": "    let y = x * 3;"
+          },
+          {
+            "code": "    if y > 5 { sum += y; }"
+          },
+          {
+            "code": "}"
+          }
+        ],
+        "focus": [
+          [],
+          [
+            0
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            3,
+            4,
+            5
+          ]
+        ]
+      }
+    },
+    {
+      "id": "how-what",
+      "seconds": 10,
+      "heading": "How, or what",
+      "narration": "A scalar solution describes how to visit every element. An array solution describes what happens to the whole collection.",
+      "lines": [],
+      "slide": {
+        "type": "points",
+        "steps": [
+          1,
+          2
+        ],
+        "items": [
+          {
+            "text": "Scalar: how",
+            "sub": "visit every element, one at a time"
+          },
+          {
+            "text": "Array: what",
+            "sub": "what happens to the whole collection"
+          }
+        ]
+      }
+    },
+    {
+      "id": "break-1",
+      "seconds": 7,
+      "heading": "Three operations",
+      "lines": [],
+      "slide": {
+        "type": "flow",
+        "items": [
+          {
+            "text": "Map",
+            "sub": "× 3"
+          },
+          {
+            "text": "Filter",
+            "sub": "> 5"
+          },
+          {
+            "text": "Reduce",
+            "sub": "+"
+          }
+        ]
+      }
+    },
+    {
+      "id": "map",
+      "seconds": 12,
+      "heading": "Map",
+      "narration": "The first job is a map. Three times values gives six, twelve, eighteen, twenty four. Every input element produces one output element. The shape stays the same.",
+      "lines": [],
+      "panel": {
+        "type": "cells",
+        "mode": "whole",
+        "from": "2 4 6 8",
+        "to": "3 * 2 4 6 8",
+        "op": "× 3, the whole array at once"
+      }
+    },
+    {
+      "id": "map-code",
+      "seconds": 10,
+      "heading": "Tripled",
+      "narration": "{X_eTaL|@xtl} says it in one line. Tripled is three times values. There is no loop, and no index.",
+      "lines": [],
+      "panel": {
+        "type": "code",
+        "lines": [
+          {
+            "xtl": "values := 2 4 6 8"
+          },
+          {
+            "xtl": "tripled := 3 * values"
+          },
+          {
+            "xtl": "tripled"
+          },
+          {
+            "code": "6 12 18 24"
+          }
+        ],
+        "focus": [
+          [
+            1
+          ],
+          [
+            1,
+            2,
+            3
+          ],
+          []
+        ]
+      }
+    },
+    {
+      "id": "filter-mask",
+      "seconds": 14,
+      "heading": "Filter: a question for every element",
+      "narration": "The second job is a filter. First, we ask every element the same question. We ask if it is greater than five. The answer is zero, zero, one, one. That is a mask. One means keep, and zero means drop.",
+      "lines": [],
+      "panel": {
+        "type": "cells",
+        "mode": "whole",
+        "from": "2 4 6 8",
+        "to": "2 4 6 8 > 5",
+        "op": "> 5, a mask"
+      }
+    },
+    {
+      "id": "filter-code",
+      "seconds": 15,
+      "heading": "Replicate",
+      "narration": "Replicate uses the mask to choose. Each value is kept as many times as its mask says. So the result is six, eight. The output is shorter than the input. That is what makes a filter different from a map.",
+      "lines": [],
+      "panel": {
+        "type": "code",
+        "lines": [
+          {
+            "xtl": "values > 5"
+          },
+          {
+            "code": "0 0 1 1"
+          },
+          {
+            "xtl": "(values > 5) r_eplicate values"
+          },
+          {
+            "code": "6 8"
+          }
+        ],
+        "focus": [
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3
+          ],
+          []
+        ]
+      }
+    },
+    {
+      "id": "break-2",
+      "seconds": 7,
+      "heading": "What comes out",
+      "lines": [],
+      "slide": {
+        "type": "points",
+        "items": [
+          {
+            "text": "Map",
+            "sub": "the same length"
+          },
+          {
+            "text": "Filter",
+            "sub": "the same length, or shorter"
+          },
+          {
+            "text": "Reduce",
+            "sub": "one value"
+          }
+        ]
+      }
+    },
+    {
+      "id": "reduce",
+      "seconds": 16,
+      "heading": "Reduce",
+      "narration": "The third job is a reduce. A reduce combines many elements into one. Reduce, given plus, adds them up, and gives twenty. Given max, it gives the largest value, eight. Given min, it gives the smallest, two.",
+      "lines": [],
+      "panel": {
+        "type": "code",
+        "lines": [
+          {
+            "xtl": "'+ r_/ values"
+          },
+          {
+            "code": "20"
+          },
+          {
+            "xtl": "'m_ax r_/ values"
+          },
+          {
+            "code": "8"
+          },
+          {
+            "xtl": "'m_in r_/ values"
+          },
+          {
+            "code": "2"
+          }
+        ],
+        "focus": [
+          [],
+          [],
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            5
+          ]
+        ]
+      }
+    },
+    {
+      "id": "count",
+      "seconds": 18,
+      "heading": "Counting with a mask",
+      "narration": "Masks and reduce work well together. A comparison gives ones and zeros. Adding them up counts the matches. So two values are greater than five. Reduce, given and, asks whether every value passes. Every value is greater than one, so it gives one.",
+      "lines": [],
+      "panel": {
+        "type": "code",
+        "lines": [
+          {
+            "xtl": "values > 5"
+          },
+          {
+            "code": "0 0 1 1"
+          },
+          {
+            "xtl": "'+ r_/ values > 5"
+          },
+          {
+            "code": "2"
+          },
+          {
+            "xtl": "'& r_/ values > 1"
+          },
+          {
+            "code": "1"
+          }
+        ],
+        "focus": [
+          [],
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            4,
+            5
+          ]
+        ]
+      }
+    },
+    {
+      "id": "rust-chain",
+      "seconds": 16,
+      "heading": "Iterator chains",
+      "narration": "Modern languages can describe this too. Rust has iterator chains. Map, then filter, then sum. The difference is not that Rust cannot map or reduce. In an array language, arrays and their operations are the center of the language.",
+      "lines": [],
+      "panel": {
+        "type": "code",
+        "lines": [
+          {
+            "code": "let total: i32 = values"
+          },
+          {
+            "code": "    .iter()"
+          },
+          {
+            "code": "    .map(|x| x * 3)"
+          },
+          {
+            "code": "    .filter(|x| *x > 5)"
+          },
+          {
+            "code": "    .sum();"
+          },
+          {
+            "code": "// 60"
+          }
+        ],
+        "focus": [
+          [],
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [],
+          []
+        ]
+      }
+    },
+    {
+      "id": "compose",
+      "seconds": 18,
+      "heading": "Three steps, composed",
+      "narration": "Now we put the three together. Triple the values. Keep the ones greater than five. Add them up. The answer is sixty, the same as the loop. Each step is one whole array operation, and each one has a name.",
+      "lines": [],
+      "panel": {
+        "type": "code",
+        "lines": [
+          {
+            "xtl": "values := 2 4 6 8"
+          },
+          {
+            "xtl": "tripled := 3 * values"
+          },
+          {
+            "xtl": "big := (tripled > 5) r_eplicate tripled"
+          },
+          {
+            "xtl": "'+ r_/ big"
+          },
+          {
+            "code": "60"
+          }
+        ],
+        "focus": [
+          [],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          []
+        ]
+      }
+    },
+    {
+      "id": "next",
+      "seconds": 6,
+      "heading": "Next: shape, rank, axes",
+      "narration": "The next episode is about shape, rank, and {axes|axes}.",
+      "lines": [],
+      "slide": {
+        "type": "points",
+        "items": [
+          {
+            "text": "Episode 3",
+            "sub": "Shape, rank, axes, and dimensions"
+          }
+        ]
+      }
+    },
+    {
+      "id": "exercise",
+      "seconds": 15,
+      "heading": "Before the next episode",
+      "narration": "Before the next episode, try this. Take a list of temperatures in Fahrenheit. Change each one to Celsius. Keep the ones below freezing. Then count them. Try to describe all of that without a loop.",
+      "lines": [
+        "Temperatures in Fahrenheit",
+        "to Celsius, keep the ones below freezing, count them",
+        "without a loop"
+      ]
+    },
+    {
+      "id": "cta",
+      "seconds": 12.8,
+      "heading": "Call to action",
+      "lines": [],
+      "clip": "../video-publishing/reference/epilog/99b-epilog.mp4",
+      "transcript": [
+        {
+          "start": 0,
+          "end": 4.6,
+          "text": "If you found this helpful, please like and subscribe."
+        },
+        {
+          "start": 4.6,
+          "end": 9.5,
+          "text": "Hit the bell for notifications, and leave a comment if you have questions."
+        },
+        {
+          "start": 9.5,
+          "end": 12.0,
+          "text": "See you in the next one, bye."
+        }
+      ]
+    },
+    {
+      "id": "close",
+      "seconds": 5,
+      "heading": "End screen",
+      "lines": [],
+      "clip": "../video-publishing/reference/epilog/99c-epilog-ext-swing9.mp4",
+      "mute": true
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 number = 2
 slug = "al-02-script"
-status = "pending"
+status = "in-progress"
 description = "lessons/al-02-loops/: a story lesson for episode 02, From scalar loops to arr..."
 role = "production"
 context_files = []

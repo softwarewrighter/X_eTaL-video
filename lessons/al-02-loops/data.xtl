@@ -1,0 +1,35 @@
+## al-02-loops: every X_eTaL line the video shows, run at the pinned commit.
+## just eval prints what the video shows under each line.
+
+## map, map-code: three times values
+values := 2 4 6 8
+tripled := 3 * values
+tripled
+## 6 12 18 24
+
+## filter-mask: a comparison gives a mask
+values > 5
+## 0 0 1 1
+
+## filter-code: replicate keeps what the mask says
+(values > 5) r_eplicate values
+## 6 8
+
+## reduce: given plus, max, min
+'+ r_/ values
+## 20
+'m_ax r_/ values
+## 8
+'m_in r_/ values
+## 2
+
+## count: adding a mask counts; and asks if all pass
+'+ r_/ values > 5
+## 2
+'& r_/ values > 1
+## 1
+
+## compose: the loop's three jobs, one step each
+big := (tripled > 5) r_eplicate tripled
+'+ r_/ big
+## 60
