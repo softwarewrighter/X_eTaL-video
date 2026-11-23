@@ -1,0 +1,1 @@
+al-01-why published (https://youtu.be/NfdzVWjje2Y) after the author's review; voxq broker, word clips, review page fixes along the way
