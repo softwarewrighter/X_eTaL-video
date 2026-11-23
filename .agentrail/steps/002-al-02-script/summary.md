@@ -1,0 +1,1 @@
+al-02-loops script draft (18 scenes), data.xtl at the pin, README sources, music Sunburst, review page; the author approved the script
