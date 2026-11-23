@@ -1,6 +1,6 @@
 number = 5
 slug = "al-01-publish"
-status = "pending"
+status = "in-progress"
 description = "After the user's review of the full preview: fixes, then just youtube al-01-w..."
 role = "production"
 context_files = []

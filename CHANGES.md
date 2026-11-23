@@ -11,6 +11,10 @@ Categories: `feat` new capability, `fix` a bug or wrong behavior,
 `chore` agentrail bookkeeping (step complete, saga archive),
 `vendor` a move of the pinned X_eTaL.
 
+## 2026-11-22
+
+- 00:30 `lesson` al-01-why published (https://youtu.be/NfdzVWjje2Y, blogged as Array Languages #21); the series plan marks episode 01 published, episode 02 begun (saga 11).
+
 ## 2026-11-21
 
 - 18:32 `lesson` al-01-why: scene 30 in short sentences (the author: VoxCPM does better with shorter phrases), clean CPU and GPU clips (a new CPU word clip), arrays first in its sentence (as arrays ran together), X_eTaL runs faster with no word after the clip (a dot was heard before code).
