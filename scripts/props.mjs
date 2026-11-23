@@ -100,6 +100,19 @@ if (lesson.kind === "story") {
   const abs = (p) => (isAbsolute(p) ? p : join(root, p));
   const fps = lesson.fps;
   const voice = existsSync(voiceFile) ? JSON.parse(readFileSync(voiceFile, "utf8")) : null;
+  // Before a scene is narrated, its sentences' starts are estimated
+  // (in proportion to their words, over the scene's seconds), so a
+  // slide's steps, a panel's focus and its pictures can be reviewed
+  // with the script; the narration's own times replace them.
+  const estimate = (s, n) => {
+    const said = (s.narration || "").replace(/\{([^|}]*)\|[^}]*\}/g, "$1").split(/(?<=[.?!])\s+/).filter(Boolean);
+    const words = said.map((x) => x.split(/\s+/).length);
+    const all = words.reduce((a, b) => a + b, 0) || 1;
+    const cuts = [];
+    let at = 0;
+    for (let k = 0; k < Math.min(n, said.length) - 1; k++) { at += words[k]; cuts.push(Math.round((at / all) * s.seconds * fps)); }
+    return cuts;
+  };
   const scenes = lesson.scenes.map((s) => {
     const out = {};
     if (s.images) {
@@ -112,7 +125,7 @@ if (lesson.kind === "story") {
       // One picture a sentence: each after the first starts with its
       // sentence (voice.json, seconds into the scene's audio).
       const v = voice?.scenes.find((x) => x.id === s.id);
-      out.cuts = v ? v.sentences.slice(1, out.images.length).map((x) => Math.round(x.start * fps)) : [];
+      out.cuts = v ? v.sentences.slice(1, out.images.length).map((x) => Math.round(x.start * fps)) : estimate(s, out.images.length);
     }
     if (s.panel) {
       // A cells panel's arrays are what the pinned xetal gives for its
@@ -125,14 +138,14 @@ if (lesson.kind === "story") {
       }
       if (s.panel.focus) {
         const v = voice?.scenes.find((x) => x.id === s.id);
-        out.focusCuts = v ? v.sentences.slice(1, s.panel.focus.length).map((x) => Math.round(x.start * fps)) : [];
+        out.focusCuts = v ? v.sentences.slice(1, s.panel.focus.length).map((x) => Math.round(x.start * fps)) : estimate(s, s.panel.focus.length);
       }
     }
     // A slide shown a sentence at a time (slide.steps): where each
     // sentence starts, as for a panel's focus.
     if (s.slide && s.slide.steps) {
       const v = voice?.scenes.find((x) => x.id === s.id);
-      out.focusCuts = v ? v.sentences.slice(1, s.slide.steps.length).map((x) => Math.round(x.start * fps)) : [];
+      out.focusCuts = v ? v.sentences.slice(1, s.slide.steps.length).map((x) => Math.round(x.start * fps)) : estimate(s, s.slide.steps.length);
     }
     if (s.clip) {
       if (existsSync(abs(s.clip))) {

@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Stills for a lesson's review page (scripts/review.mjs): a frame of
-# each scene (60% of the way through it), from the rendered props,
+# each scene (90% of the way through it, so a slide or panel shows
+# every item it reveals; a reused clip at 60%), from the rendered props,
 # into out/review/SLUG/stills/ID.png. With scene ids, only those.
 #   scripts/review-stills.sh SLUG [ID...]
 set -euo pipefail
@@ -20,7 +21,7 @@ node -e '
   const l = JSON.parse(require("fs").readFileSync(process.argv[1], "utf8"));
   const t = JSON.parse(require("fs").readFileSync(process.argv[2], "utf8"));
   const only = process.argv.slice(3);
-  l.scenes.forEach((s, i) => { if (!only.length || only.includes(s.id)) console.log(s.id, Math.round(t.starts[i] + 0.6 * t.durations[i])); });
+  l.scenes.forEach((s, i) => { if (!only.length || only.includes(s.id)) console.log(s.id, Math.round(t.starts[i] + (s.clip ? 0.6 : 0.9) * t.durations[i])); });
 ' "lessons/$slug/lesson.json" "lessons/$slug/timing.json" "$@" | while read -r id frame; do
   (cd remotion && npx remotion still src/index.ts "$comp" "$root/out/review/$slug/stills/$id.png" --frame="$frame" --props="$props" --log=error --scale=0.5)
   echo "review-stills: $id (frame $frame)"
