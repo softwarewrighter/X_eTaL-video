@@ -1,0 +1,1 @@
+Before narration: just voice-preflight al-02-loops; every risky word a clip or tested spelling (docs/voice-words.json), made together through voxq.

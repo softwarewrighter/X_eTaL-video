@@ -13,6 +13,7 @@ Categories: `feat` new capability, `fix` a bug or wrong behavior,
 
 ## 2026-11-22
 
+- 19:00 `vendor` X_eTaL pin moved 1df48523 -> 49c00785 (steps 150 numbers on a grid, 197 a comparison's number is Int, 198 c_heck< and a stopping a_ssert<); the gate passes unchanged. `plan` saga 11 (al-02-loops), episode 02.
 - 00:30 `lesson` al-01-why published (https://youtu.be/NfdzVWjje2Y, blogged as Array Languages #21); the series plan marks episode 01 published, episode 02 begun (saga 11).
 
 ## 2026-11-21

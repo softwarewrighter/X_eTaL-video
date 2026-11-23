@@ -63,16 +63,17 @@ for episode 01).
 
 ## X_eTaL changes coming (the author, 2026-11-19)
 
-X_eTaL is pinned at 1df48523 (moved to the latest at this saga's
-start). Coming soon, and worth planning around:
+X_eTaL is pinned at 49c00785 (moved to the latest at saga 11's
+start, 2026-11-22; it was 1df48523 for episode 01). Steps 150, 197
+and 198 have landed; the others are still coming:
 
 | Step | Change | Matters to |
 | ---- | ------ | ---------- |
-| 150 | numbers on a grid (`[]N_GRID`); almost done | arrays drawn with their values: episodes 03 to 06 |
+| 150 | numbers on a grid (`[]N_GRID`); landed | arrays drawn with their values: episodes 03 to 06 |
 | 171 | a macro naming its own library by the importer's alias | the macro episodes |
 | 196 | data paths relative to the program file (breaking) | episode 12 and any example that reads a file |
-| 197 | a comparison's result defaulting to Int (breaking) | filtering, masks, counting: episodes 02, 04, 06 |
-| 198 | `c_heck<` and the stopping `a_ssert<` (breaking) | episode 15, errors and assertions |
+| 197 | a comparison's result defaulting to Int (breaking); landed | filtering, masks, counting: episodes 02, 04, 06 |
+| 198 | `c_heck<` and the stopping `a_ssert<` (breaking); landed | episode 15, errors and assertions |
 | 199 | the Never type | episode 15 |
 
 An episode that shows one of these waits for it, or is pinned and

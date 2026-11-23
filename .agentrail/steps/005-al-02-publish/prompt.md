@@ -1,0 +1,1 @@
+After the author's review: fixes, just youtube al-02-loops (title, description with chapters, captions, thumbnail); after upload just link, just publish.

@@ -1,0 +1,1 @@
+Move XETAL_COMMIT to the latest X_eTaL (49c00785: steps 150 numbers on a grid, 197 a comparison's number is Int, 198 c_heck< and a stopping a_ssert< landed); just xetal; re-run the libraries' baselines and lessons (just gate); fix or bless what the breaking changes moved; own commit; note in the series plan.
