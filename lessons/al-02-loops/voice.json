@@ -1,0 +1,520 @@
+{
+  "sample": "mike-medium-ref-1.wav",
+  "sampleSha256": "a57fe277f7ce93d5cac4e0e2ed21d770b7d05cab5b20b338dd55aece009d7211",
+  "server": "VoxCPM (Gradio /generate)",
+  "steps": 15,
+  "cfg": 2.0,
+  "scenes": [
+    {
+      "id": "recap",
+      "narration": "In the last episode, we compared a loop with a whole array operation. This time, we turn common loops into array operations. Three kinds come up again and again. Map, filter, and reduce.",
+      "seconds": 14.3,
+      "sentences": [
+        {
+          "text": "In the last episode, we compared a loop with a whole array operation.",
+          "heard": "In the last episode, we compared a loop with a whole array operation.",
+          "sent": "In the last episode, we compared a loop with a whole array operation.",
+          "start": 0.4,
+          "end": 4.487
+        },
+        {
+          "text": "This time, we turn common loops into array operations.",
+          "heard": "This time we turn common loops to array operations.",
+          "sent": "This time, we turn common loops into array operations.",
+          "unverified": true,
+          "start": 4.837,
+          "end": 8.365
+        },
+        {
+          "text": "Three kinds come up again and again.",
+          "heard": "three kinds come up again and again.",
+          "sent": "Three kinds come up again and again.",
+          "start": 8.715,
+          "end": 11.01
+        },
+        {
+          "text": "Map, filter, and reduce.",
+          "heard": "Map, filter, and reduce.",
+          "sent": "Map, filter, and reduce.",
+          "start": 11.36,
+          "end": 13.531
+        }
+      ]
+    },
+    {
+      "id": "loop",
+      "narration": "Here is a small Rust loop. It takes the values two, four, six, eight. It triples each value. It keeps the ones greater than five. And it adds up what it keeps. Three jobs are tangled together in one loop body.",
+      "seconds": 17.3,
+      "sentences": [
+        {
+          "text": "Here is a small Rust loop.",
+          "heard": "Here is a small rust loop.",
+          "sent": "Here is a small Rust loop.",
+          "start": 0.4,
+          "end": 2.528
+        },
+        {
+          "text": "It takes the values two, four, six, eight.",
+          "heard": "It takes the values 2, 4, 6, 8.",
+          "sent": "It takes the values two, four, six, eight.",
+          "start": 2.878,
+          "end": 6.404
+        },
+        {
+          "text": "It triples each value.",
+          "heard": "it triples each value.",
+          "sent": "It triples each value.",
+          "start": 6.754,
+          "end": 8.449
+        },
+        {
+          "text": "It keeps the ones greater than five.",
+          "heard": "It keeps the ones greater than 5.",
+          "sent": "It keeps the ones greater than five.",
+          "start": 8.799,
+          "end": 11.05
+        },
+        {
+          "text": "And it adds up what it keeps.",
+          "heard": "and it adds up what it keeps.",
+          "sent": "And it adds up what it keeps.",
+          "start": 11.4,
+          "end": 13.139
+        },
+        {
+          "text": "Three jobs are tangled together in one loop body.",
+          "heard": "Three jobs are tangled together in one loop body.",
+          "sent": "Three jobs are tangled together in one loop body.",
+          "start": 13.489,
+          "end": 16.545
+        }
+      ]
+    },
+    {
+      "id": "how-what",
+      "narration": "A scalar solution describes how to visit every element. An array solution describes what happens to the whole collection.",
+      "seconds": 7.3,
+      "sentences": [
+        {
+          "text": "A scalar solution describes how to visit every element.",
+          "heard": "A singular solution describes how to visit every element.",
+          "sent": "A scalar solution describes how to visit every element.",
+          "unverified": true,
+          "start": 0.4,
+          "end": 3.337
+        },
+        {
+          "text": "An array solution describes what happens to the whole collection.",
+          "heard": "An array solution describes what happens to the whole collection.",
+          "sent": "An array solution describes what happens to the whole collection.",
+          "start": 3.687,
+          "end": 6.565
+        }
+      ]
+    },
+    {
+      "id": "map",
+      "narration": "The first job is a map. Three times values gives six, twelve, eighteen, twenty four. Every input element produces one output element. The shape stays the same.",
+      "seconds": 13.3,
+      "sentences": [
+        {
+          "text": "The first job is a map.",
+          "heard": "The first job is a map.",
+          "sent": "The first job is a map.",
+          "start": 0.4,
+          "end": 2.341
+        },
+        {
+          "text": "Three times values gives six, twelve, eighteen, twenty four.",
+          "heard": "Three times values gives 6, 12, 18, 24.",
+          "sent": "Three times values gives six, twelve, eighteen, twenty four.",
+          "start": 2.691,
+          "end": 6.402
+        },
+        {
+          "text": "Every input element produces one output element.",
+          "heard": "Every input element produces one output element.",
+          "sent": "Every input element produces one output element.",
+          "start": 6.752,
+          "end": 10.494
+        },
+        {
+          "text": "The shape stays the same.",
+          "heard": "the shape stays the same.",
+          "sent": "The shape stays the same.",
+          "start": 10.844,
+          "end": 12.578
+        }
+      ]
+    },
+    {
+      "id": "map-code",
+      "narration": "{X_eTaL|@xtl} says it in one line. Tripled is three times values. There is no loop, and no index.",
+      "seconds": 8.9,
+      "sentences": [
+        {
+          "text": "X_eTaL says it in one line.",
+          "heard": "XTL says it in one line.",
+          "sent": "xtl says it in one line.",
+          "spoken": "@xtl says it in one line.",
+          "start": 0.4,
+          "end": 2.872
+        },
+        {
+          "text": "Tripled is three times values.",
+          "heard": "Tripled is three times values.",
+          "sent": "Tripled is three times values.",
+          "start": 3.222,
+          "end": 5.306
+        },
+        {
+          "text": "There is no loop, and no index.",
+          "heard": "There's no loop and no index.",
+          "sent": "There is no loop, and no index.",
+          "start": 5.656,
+          "end": 8.186
+        }
+      ]
+    },
+    {
+      "id": "filter-mask",
+      "narration": "The second job is a filter. First, we ask every element the same question. We ask if it is greater than five. The answer is zero, zero, one, one. That is a mask. One means keep, and zero means drop.",
+      "seconds": 17.3,
+      "sentences": [
+        {
+          "text": "The second job is a filter.",
+          "heard": "The second job is a filter.",
+          "sent": "The second job is a filter.",
+          "start": 0.4,
+          "end": 2.397
+        },
+        {
+          "text": "First, we ask every element the same question.",
+          "heard": "First, we ask every element the same question.",
+          "sent": "First, we ask every element the same question.",
+          "start": 2.747,
+          "end": 5.578
+        },
+        {
+          "text": "We ask if it is greater than five.",
+          "heard": "We ask if it is greater than five.",
+          "sent": "We ask if it is greater than five.",
+          "start": 5.928,
+          "end": 8.616
+        },
+        {
+          "text": "The answer is zero, zero, one, one.",
+          "heard": "The answer is zero, zero one one.",
+          "sent": "The answer is zero, zero, one, one.",
+          "start": 8.966,
+          "end": 11.851
+        },
+        {
+          "text": "That is a mask.",
+          "heard": "that is a mask.",
+          "sent": "That is a mask.",
+          "start": 12.201,
+          "end": 13.11
+        },
+        {
+          "text": "One means keep, and zero means drop.",
+          "heard": "One means keep and zero means drop.",
+          "sent": "One means keep, and zero means drop.",
+          "start": 13.46,
+          "end": 16.559
+        }
+      ]
+    },
+    {
+      "id": "filter-code",
+      "narration": "Replicate uses the mask to choose. Each value is kept as many times as its mask says. So the result is six, eight. The output is shorter than the input. That is what makes a filter different from a map.",
+      "seconds": 14.6,
+      "sentences": [
+        {
+          "text": "Replicate uses the mask to choose.",
+          "heard": "Replicate uses the mask to choose.",
+          "sent": "Replicate uses the mask to choose.",
+          "start": 0.4,
+          "end": 2.681
+        },
+        {
+          "text": "Each value is kept as many times as its mask says.",
+          "heard": "Each value is kept as many times as its mask says.",
+          "sent": "Each value is kept as many times as its mask says.",
+          "start": 3.031,
+          "end": 5.964
+        },
+        {
+          "text": "So the result is six, eight.",
+          "heard": "So the result is six, eight,",
+          "sent": "So the result is six, eight.",
+          "start": 6.314,
+          "end": 9.368
+        },
+        {
+          "text": "The output is shorter than the input.",
+          "heard": "The output is shorter than the input.",
+          "sent": "The output is shorter than the input.",
+          "start": 9.718,
+          "end": 11.417
+        },
+        {
+          "text": "That is what makes a filter different from a map.",
+          "heard": "That is what makes a filter different from a map.",
+          "sent": "That is what makes a filter different from a map.",
+          "start": 11.767,
+          "end": 13.891
+        }
+      ]
+    },
+    {
+      "id": "reduce",
+      "narration": "The third job is a reduce. A reduce combines many elements into one. Reduce, given plus, adds them up, and gives twenty. Given max, it gives the largest value, eight. Given min, it gives the smallest, two.",
+      "seconds": 18.4,
+      "sentences": [
+        {
+          "text": "The third job is a reduce.",
+          "heard": "The third job is a reduced",
+          "sent": "The third job is a reduce.",
+          "unverified": true,
+          "start": 0.4,
+          "end": 2.041
+        },
+        {
+          "text": "A reduce combines many elements into one.",
+          "heard": "A reduce combines many elements into one.",
+          "sent": "A reduce combines many elements into one.",
+          "start": 2.391,
+          "end": 4.422
+        },
+        {
+          "text": "Reduce, given plus, adds them up, and gives twenty.",
+          "heard": "reduce, given, plus adds them up and gives 20.",
+          "sent": "Reduce, given plus, adds them up, and gives twenty.",
+          "start": 4.772,
+          "end": 9.786
+        },
+        {
+          "text": "Given max, it gives the largest value, eight.",
+          "heard": "Given max, it gives the largest value, eight.",
+          "sent": "Given max, it gives the largest value, eight.",
+          "start": 10.136,
+          "end": 13.692
+        },
+        {
+          "text": "Given min, it gives the smallest, two.",
+          "heard": "Given men, it gives the smallest two.",
+          "sent": "Given min, it gives the smallest, two.",
+          "unverified": true,
+          "start": 14.042,
+          "end": 17.669
+        }
+      ]
+    },
+    {
+      "id": "count",
+      "narration": "Masks and reduce work well together. A comparison gives ones and zeros. Adding them up counts the matches. So two values are greater than five. Reduce, given and, asks whether every value passes. Every value is greater than one, so it gives one.",
+      "seconds": 20.1,
+      "sentences": [
+        {
+          "text": "Masks and reduce work well together.",
+          "heard": "masks, and reduce work well together.",
+          "sent": "Masks and reduce work well together.",
+          "start": 0.4,
+          "end": 3.142
+        },
+        {
+          "text": "A comparison gives ones and zeros.",
+          "heard": "A comparison gives ones and zeros.",
+          "sent": "A comparison gives ones and zeros.",
+          "start": 3.492,
+          "end": 6.029
+        },
+        {
+          "text": "Adding them up counts the matches.",
+          "heard": "Adding them up counts the matches.",
+          "sent": "Adding them up counts the matches.",
+          "start": 6.379,
+          "end": 7.924
+        },
+        {
+          "text": "So two values are greater than five.",
+          "heard": "So two values are greater than five.",
+          "sent": "So two values are greater than five.",
+          "start": 8.274,
+          "end": 10.901
+        },
+        {
+          "text": "Reduce, given and, asks whether every value passes.",
+          "heard": "reduce, given, and asks whether every value passes.",
+          "sent": "Reduce, given and, asks whether every value passes.",
+          "start": 11.251,
+          "end": 16.57
+        },
+        {
+          "text": "Every value is greater than one, so it gives one.",
+          "heard": "Every value is greater than one, so it gives one.",
+          "sent": "Every value is greater than one, so it gives one.",
+          "start": 16.92,
+          "end": 19.337
+        }
+      ]
+    },
+    {
+      "id": "rust-chain",
+      "narration": "Modern languages can describe this too. Rust has iterator chains. Map, then filter, then sum. The difference is not that Rust cannot map or reduce. In an array language, arrays and their operations are the center of the language.",
+      "seconds": 16.5,
+      "sentences": [
+        {
+          "text": "Modern languages can describe this too.",
+          "heard": "Modern languages can describe this too.",
+          "sent": "Modern languages can describe this too.",
+          "start": 0.4,
+          "end": 2.405
+        },
+        {
+          "text": "Rust has iterator chains.",
+          "heard": "Rust has iterator chains.",
+          "sent": "Rust has iterator chains.",
+          "start": 2.755,
+          "end": 5.014
+        },
+        {
+          "text": "Map, then filter, then sum.",
+          "heard": "Map, then filter, then sum.",
+          "sent": "Map, then filter, then sum.",
+          "start": 5.364,
+          "end": 7.766
+        },
+        {
+          "text": "The difference is not that Rust cannot map or reduce.",
+          "heard": "The difference is not that rust cannot map or reduce.",
+          "sent": "The difference is not that Rust cannot map or reduce.",
+          "start": 8.116,
+          "end": 10.733
+        },
+        {
+          "text": "In an array language, arrays and their operations are the center of the language.",
+          "heard": "In an array language, arrays and their operations are the center of the language.",
+          "sent": "In an array language, arrays and their operations are the center of the language.",
+          "start": 11.083,
+          "end": 15.783
+        }
+      ]
+    },
+    {
+      "id": "compose",
+      "narration": "Now we put the three together. Triple the values. Keep the ones greater than five. Add them up. The answer is sixty, the same as the loop. Each step is one whole array operation, and each one has a name.",
+      "seconds": 14.1,
+      "sentences": [
+        {
+          "text": "Now we put the three together.",
+          "heard": "Now we put the three together.",
+          "sent": "Now we put the three together.",
+          "start": 0.4,
+          "end": 1.74
+        },
+        {
+          "text": "Triple the values.",
+          "heard": "triple the values.",
+          "sent": "Triple the values.",
+          "start": 2.09,
+          "end": 3.006
+        },
+        {
+          "text": "Keep the ones greater than five.",
+          "heard": "keep the ones greater than 5.",
+          "sent": "Keep the ones greater than five.",
+          "start": 3.356,
+          "end": 5.06
+        },
+        {
+          "text": "Add them up.",
+          "heard": "Add them up.",
+          "sent": "Add them up.",
+          "start": 5.41,
+          "end": 5.918
+        },
+        {
+          "text": "The answer is sixty, the same as the loop.",
+          "heard": "The answer is 60, the same as the loop.",
+          "sent": "The answer is sixty, the same as the loop.",
+          "start": 6.268,
+          "end": 9.096
+        },
+        {
+          "text": "Each step is one whole array operation, and each one has a name.",
+          "heard": "Each step is one whole array operation, and each one has a name.",
+          "sent": "Each step is one whole array operation, and each one has a name.",
+          "start": 9.446,
+          "end": 13.396
+        }
+      ]
+    },
+    {
+      "id": "next",
+      "narration": "The next episode is about shape, rank, and {axes|@axes}.",
+      "seconds": 5.0,
+      "sentences": [
+        {
+          "text": "The next episode is about shape, rank, and axes.",
+          "heard": "The next episode is about shape, rank, axes.",
+          "sent": "The next episode is about shape, rank, and axes.",
+          "spoken": "The next episode is about shape, rank, and @axes.",
+          "unverified": true,
+          "start": 0.4,
+          "end": 4.28
+        }
+      ]
+    },
+    {
+      "id": "exercise",
+      "narration": "Before the next episode, try this. Take a list of temperatures in Fahrenheit. Change each one to Celsius. Keep the ones below freezing. Then count them. Try to describe all of that without a loop.",
+      "seconds": 14.2,
+      "sentences": [
+        {
+          "text": "Before the next episode, try this.",
+          "heard": "Before the next episode, try this.",
+          "sent": "Before the next episode, try this.",
+          "start": 0.4,
+          "end": 2.571
+        },
+        {
+          "text": "Take a list of temperatures in Fahrenheit.",
+          "heard": "Take a list of temperatures in Fahrenheit.",
+          "sent": "Take a list of temperatures in Fahrenheit.",
+          "start": 2.921,
+          "end": 5.033
+        },
+        {
+          "text": "Change each one to Celsius.",
+          "heard": "Change each one to Celsius.",
+          "sent": "Change each one to Celsius.",
+          "start": 5.383,
+          "end": 7.437
+        },
+        {
+          "text": "Keep the ones below freezing.",
+          "heard": "keep the ones below freezing.",
+          "sent": "Keep the ones below freezing.",
+          "start": 7.787,
+          "end": 9.419
+        },
+        {
+          "text": "Then count them.",
+          "heard": "then count them.",
+          "sent": "Then count them.",
+          "start": 9.769,
+          "end": 10.919
+        },
+        {
+          "text": "Try to describe all of that without a loop.",
+          "heard": "Try to describe all of that without a loop.",
+          "sent": "Try to describe all of that without a loop.",
+          "start": 11.269,
+          "end": 13.47
+        }
+      ]
+    }
+  ]
+}

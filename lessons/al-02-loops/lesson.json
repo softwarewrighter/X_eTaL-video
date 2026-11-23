@@ -39,7 +39,7 @@
     },
     {
       "id": "recap",
-      "seconds": 10,
+      "seconds": 14.3,
       "heading": "Three kinds of loop",
       "narration": "In the last episode, we compared a loop with a whole array operation. This time, we turn common loops into array operations. Three kinds come up again and again. Map, filter, and reduce.",
       "lines": [],
@@ -69,7 +69,7 @@
     },
     {
       "id": "loop",
-      "seconds": 15,
+      "seconds": 17.3,
       "heading": "One loop, three jobs",
       "narration": "Here is a small Rust loop. It takes the values two, four, six, eight. It triples each value. It keeps the ones greater than five. And it adds up what it keeps. Three jobs are tangled together in one loop body.",
       "lines": [],
@@ -121,7 +121,7 @@
     },
     {
       "id": "how-what",
-      "seconds": 10,
+      "seconds": 7.3,
       "heading": "How, or what",
       "narration": "A scalar solution describes how to visit every element. An array solution describes what happens to the whole collection.",
       "lines": [],
@@ -168,7 +168,7 @@
     },
     {
       "id": "map",
-      "seconds": 12,
+      "seconds": 13.3,
       "heading": "Map",
       "narration": "The first job is a map. Three times values gives six, twelve, eighteen, twenty four. Every input element produces one output element. The shape stays the same.",
       "lines": [],
@@ -182,7 +182,7 @@
     },
     {
       "id": "map-code",
-      "seconds": 10,
+      "seconds": 8.9,
       "heading": "Tripled",
       "narration": "{X_eTaL|@xtl} says it in one line. Tripled is three times values. There is no loop, and no index.",
       "lines": [],
@@ -217,7 +217,7 @@
     },
     {
       "id": "filter-mask",
-      "seconds": 14,
+      "seconds": 17.3,
       "heading": "Filter: a question for every element",
       "narration": "The second job is a filter. First, we ask every element the same question. We ask if it is greater than five. The answer is zero, zero, one, one. That is a mask. One means keep, and zero means drop.",
       "lines": [],
@@ -231,7 +231,7 @@
     },
     {
       "id": "filter-code",
-      "seconds": 15,
+      "seconds": 14.6,
       "heading": "Replicate",
       "narration": "Replicate uses the mask to choose. Each value is kept as many times as its mask says. So the result is six, eight. The output is shorter than the input. That is what makes a filter different from a map.",
       "lines": [],
@@ -296,7 +296,7 @@
     },
     {
       "id": "reduce",
-      "seconds": 16,
+      "seconds": 18.4,
       "heading": "Reduce",
       "narration": "The third job is a reduce. A reduce combines many elements into one. Reduce, given plus, adds them up, and gives twenty. Given max, it gives the largest value, eight. Given min, it gives the smallest, two.",
       "lines": [],
@@ -342,7 +342,7 @@
     },
     {
       "id": "count",
-      "seconds": 18,
+      "seconds": 20.1,
       "heading": "Counting with a mask",
       "narration": "Masks and reduce work well together. A comparison gives ones and zeros. Adding them up counts the matches. So two values are greater than five. Reduce, given and, asks whether every value passes. Every value is greater than one, so it gives one.",
       "lines": [],
@@ -395,7 +395,7 @@
     },
     {
       "id": "rust-chain",
-      "seconds": 16,
+      "seconds": 16.5,
       "heading": "Iterator chains",
       "narration": "Modern languages can describe this too. Rust has iterator chains. Map, then filter, then sum. The difference is not that Rust cannot map or reduce. In an array language, arrays and their operations are the center of the language.",
       "lines": [],
@@ -439,7 +439,7 @@
     },
     {
       "id": "compose",
-      "seconds": 18,
+      "seconds": 14.1,
       "heading": "Three steps, composed",
       "narration": "Now we put the three together. Triple the values. Keep the ones greater than five. Add them up. The answer is sixty, the same as the loop. Each step is one whole array operation, and each one has a name.",
       "lines": [],
@@ -483,9 +483,9 @@
     },
     {
       "id": "next",
-      "seconds": 6,
+      "seconds": 5,
       "heading": "Next: shape, rank, axes",
-      "narration": "The next episode is about shape, rank, and {axes|axes}.",
+      "narration": "The next episode is about shape, rank, and {axes|@axes}.",
       "lines": [],
       "slide": {
         "type": "points",
@@ -499,7 +499,7 @@
     },
     {
       "id": "exercise",
-      "seconds": 15,
+      "seconds": 14.2,
       "heading": "Before the next episode",
       "narration": "Before the next episode, try this. Take a list of temperatures in Fahrenheit. Change each one to Celsius. Keep the ones below freezing. Then count them. Try to describe all of that without a loop.",
       "lines": [

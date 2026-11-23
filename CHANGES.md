@@ -13,6 +13,7 @@ Categories: `feat` new capability, `fix` a bug or wrong behavior,
 
 ## 2026-11-22
 
+- 21:50 `lesson` al-02-loops narrated (an axes word clip, the author approved) and rendered, 3:38; five sentences flagged for a listen. `feat` the review page lists only the lesson's own problem words.
 - 21:55 `fix` review stills: 90% into a scene (a reused clip 60%), and before narration each sentence's start is estimated from its words (props.mjs), so a slide's steps and a panel's focus show in the script preview.
 - 21:35 `lesson` al-02-loops: the script draft (19 scenes: map, filter, reduce, a mask to count, Rust iterator chains, three steps composed, the exercise), data.xtl run at the pin, the README with sources, music Sunburst; the review page. `fix` review-clips: no fingerprint error before a lesson has narration.
 - 19:00 `vendor` X_eTaL pin moved 1df48523 -> 49c00785 (steps 150 numbers on a grid, 197 a comparison's number is Int, 198 c_heck< and a stopping a_ssert<); the gate passes unchanged. `plan` saga 11 (al-02-loops), episode 02.

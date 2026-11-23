@@ -50,7 +50,10 @@ mkdirSync(join(out, "words"), { recursive: true });
 const table = existsSync(join(root, "docs", "voice-words.json")) ? JSON.parse(readFileSync(join(root, "docs", "voice-words.json"), "utf8")).words : [];
 const byWord = new Map();
 for (const e of table) { if (!byWord.has(e.word)) byWord.set(e.word, []); byWord.get(e.word).push(e); }
-const words = [...byWord.entries()].map(([word, es]) => {
+// Only this lesson's words: those its narration says or splices.
+const said = lesson.scenes.map((s) => s.narration || "").join(" ").toLowerCase();
+const mine = ([word, es]) => said.includes(word.toLowerCase()) || es.some((e) => e.use.startsWith("@") && said.includes(e.use.toLowerCase()));
+const words = [...byWord.entries()].filter(mine).map(([word, es]) => {
   const good = es.filter((e) => e.ok);
   const best = good.find((e) => e.use.startsWith("@")) || good[0];
   const failed = es.filter((e) => !e.ok).map((e) => `${esc(e.use)}${e.heard ? ` (heard ${esc(e.heard)})` : ""}`).join("; ");
