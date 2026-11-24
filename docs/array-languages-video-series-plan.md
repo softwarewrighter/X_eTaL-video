@@ -39,7 +39,7 @@ the shorts) stay as they are.
 | # | Title | Target | Status |
 | - | ----- | ------ | ------ |
 | 01 | Why another programming language? | 9.5 min | published 2026-11-22: https://youtu.be/NfdzVWjje2Y |
-| 02 | From scalar loops to array operations | 10 min | being made: saga 11 |
+| 02 | From scalar loops to array operations | 5 min | published 2026-11-23: https://youtu.be/YiJYDiD7xqc |
 | 03 | Shape, rank, axes and dimensions | 10 min | later |
 | 04 | Mapping, filtering and reducing | 11 min | later |
 | 05 | Broadcasting and array semantics | 10 min | later |

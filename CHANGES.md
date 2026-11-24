@@ -13,6 +13,7 @@ Categories: `feat` new capability, `fix` a bug or wrong behavior,
 
 ## 2026-11-23
 
+- 16:01 `lesson` al-02-loops published: its YouTube link (https://youtu.be/YiJYDiD7xqc), a poster frame for its card (the map code); the series plan marks episode 02 published.
 - 11:50 `lesson` al-02-loops: description with chapters; out/al-02-loops-youtube/ built (5:01, 82 captions, the title card as thumbnail).
 
 ## 2026-11-22

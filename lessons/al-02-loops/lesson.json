@@ -4,6 +4,8 @@
   "title": "From scalar loops to array operations",
   "summary": "Array languages, episode 2: map, filter and reduce as whole-array operations in place of a loop, a mask to filter and to count, Rust iterator chains compared, and three steps composed.",
   "order": 101,
+  "poster": 2413,
+  "youtube": "YiJYDiD7xqc",
   "fps": 30,
   "brand": "Array Languages: episode 2",
   "music": {
