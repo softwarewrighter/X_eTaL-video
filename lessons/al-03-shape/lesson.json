@@ -7,24 +7,22 @@
   "fps": 30,
   "brand": "Array Languages: episode 3",
   "music": {
-    "file": "/Users/mike/github/softwarewrighter/music-pipe-rs/work/preview/sunburst.wav",
+    "file": "/Users/mike/github/softwarewrighter/music-pipe-rs/work/video-beds/sonata-sprint.wav",
     "intro": {
       "seconds": 5,
       "fadeOut": 0.5
     },
     "outro": {
-      "seconds": 7,
-      "fadeIn": 1
+      "seconds": 5,
+      "fadeIn": 0.5
     },
     "slides": {
       "volume": 0.3,
-      "fade": 0.5,
-      "offsets": [
-        1,
-        -2,
-        0.5,
-        -1,
-        1.5
+      "fade": 0.4,
+      "starts": [
+        5,
+        10,
+        15
       ]
     }
   },
@@ -87,12 +85,6 @@
           },
           {
             "box": "┌⊖┐\n│ │\n└~┘"
-          },
-          {
-            "xtl": "t_ally s_hape 7"
-          },
-          {
-            "box": "0"
           }
         ],
         "focus": [
@@ -106,9 +98,7 @@
           ],
           [
             2,
-            3,
-            4,
-            5
+            3
           ]
         ]
       }
@@ -130,12 +120,6 @@
           },
           {
             "box": "┌→┐\n│5│\n└~┘"
-          },
-          {
-            "xtl": "t_ally s_hape v"
-          },
-          {
-            "box": "1"
           }
         ],
         "focus": [
@@ -147,21 +131,21 @@
             2
           ],
           [
-            3,
-            4
+            1,
+            2
           ],
           [
-            3,
-            4
+            1,
+            2
           ]
         ]
       }
     },
     {
       "id": "rank-of",
-      "seconds": 14,
+      "seconds": 24,
       "heading": "Rank, as a function",
-      "narration": "Let us give that idea a name. Here it is called rank of. It is the tally of the shape. The number forty two has rank zero. {Ravel|@ravel} makes it a list of one item. Now its rank is one.",
+      "narration": "Rank comes up often, so let us give it a name. This line defines a function called rank of. It is the tally of the shape. A later episode shows how to define your own functions. Soon, {X_eTaL|@xtl} will have rank of built in. Then this line is not needed. A scalar has rank zero. A vector has rank one.",
       "lines": [],
       "panel": {
         "type": "code",
@@ -170,19 +154,13 @@
             "xtl": "u:r_ankOf := { t_ally s_hape _r }"
           },
           {
-            "xtl": "u:r_ankOf 42"
+            "xtl": "u:r_ankOf 7"
           },
           {
             "box": "0"
           },
           {
-            "xtl": "s_hape r_avel 42"
-          },
-          {
-            "box": "┌→┐\n│1│\n└~┘"
-          },
-          {
-            "xtl": "u:r_ankOf r_avel 42"
+            "xtl": "u:r_ankOf v"
           },
           {
             "box": "1"
@@ -199,16 +177,21 @@
             0
           ],
           [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
             1,
             2
           ],
           [
             3,
             4
-          ],
-          [
-            5,
-            6
           ]
         ]
       }
@@ -282,9 +265,9 @@
     },
     {
       "id": "rank-3",
-      "seconds": 14,
+      "seconds": 8,
       "heading": "Rank three",
-      "narration": "Add one more axis. Two tables, each three by four, make an array of shape two by three by four. Its rank is three. Higher ranks follow the same rule.",
+      "narration": "Add one more axis. Two tables, each three by four, make an array of shape two by three by four.",
       "lines": [],
       "panel": {
         "type": "code",
@@ -306,18 +289,49 @@
           [
             1,
             2
+          ]
+        ]
+      }
+    },
+    {
+      "id": "rank-3-rank",
+      "seconds": 6,
+      "heading": "Rank three",
+      "narration": "Its rank is three. Higher ranks follow the same rule.",
+      "lines": [],
+      "panel": {
+        "type": "code",
+        "lines": [
+          {
+            "xtl": "s_hape T"
+          },
+          {
+            "box": "┌→────┐\n│2 3 4│\n└~────┘"
+          },
+          {
+            "xtl": "u:r_ankOf T"
+          },
+          {
+            "box": "3"
+          }
+        ],
+        "focus": [
+          [
+            0,
+            1,
+            2,
+            3
           ],
           [
-            1,
-            2
-          ],
-          []
+            2,
+            3
+          ]
         ]
       }
     },
     {
       "id": "break-1",
-      "seconds": 10,
+      "seconds": 5,
       "heading": "Rank zero to three",
       "lines": [],
       "slide": {
@@ -558,7 +572,7 @@
     },
     {
       "id": "break-2",
-      "seconds": 10,
+      "seconds": 5,
       "heading": "Along an axis",
       "lines": [],
       "slide": {
@@ -754,6 +768,40 @@
       }
     },
     {
+      "id": "ravel-scalar",
+      "seconds": 6,
+      "heading": "Back to rank one",
+      "narration": "Even a single number becomes a list of one item. Its rank is one.",
+      "lines": [],
+      "panel": {
+        "type": "code",
+        "lines": [
+          {
+            "xtl": "s_hape r_avel 42"
+          },
+          {
+            "box": "┌→┐\n│1│\n└~┘"
+          },
+          {
+            "xtl": "u:r_ankOf r_avel 42"
+          },
+          {
+            "box": "1"
+          }
+        ],
+        "focus": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ]
+        ]
+      }
+    },
+    {
       "id": "ravel-columns",
       "seconds": 6,
       "heading": "Back to rank one",
@@ -883,7 +931,7 @@
     },
     {
       "id": "break-3",
-      "seconds": 10,
+      "seconds": 5,
       "heading": "Shape is structure",
       "lines": [],
       "slide": {

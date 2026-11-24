@@ -13,6 +13,7 @@ Categories: `feat` new capability, `fix` a bug or wrong behavior,
 
 ## 2026-11-24
 
+- 12:58 `feat` music.slides.starts: each silent break gets its own place in the track, a phrase starting on a downbeat (scripts/props.mjs, schema). `lesson` al-03-shape: new music, Sonata Sprint (music-pipe-rs video beds), its middle phrases under 5 s breaks and its ending only at the close; rank shown with u:r_ankOf throughout (a later episode covers user functions; a built-in is coming); ravel of a single number; 35 scenes.
 - 11:27 `feat` story code panels take a {"box": ...} line: a result as xetal --box draws it (APL2 DISPLAY frames), one block set tight so the frame joins (remotion/src/Panel.tsx, types, schema). `lesson` al-03-shape: every result from the pinned xetal --box (lessons/al-03-shape/lesson.mjs), busy panels split to fit (33 scenes), rank as a function (u:r_ankOf), five flagged sentences reworded or broken into phrases. `docs` the series plan: tacit programming placement (07 a taste, 11 the introduction, a trains episode after 12) and the X_eTaL tools to use.
 
 ## 2026-11-23

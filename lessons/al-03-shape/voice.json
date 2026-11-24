@@ -107,6 +107,57 @@
       ]
     },
     {
+      "id": "rank-of",
+      "narration": "Let us give that idea a name. Here it is called rank of. It is the tally of the shape. The number forty two has rank zero. {Ravel|@ravel} makes it a list of one item. Now its rank is one.",
+      "seconds": 13.5,
+      "sentences": [
+        {
+          "text": "Let us give that idea a name.",
+          "heard": "Let's give that idea a name.",
+          "sent": "Let us give that idea a name.",
+          "start": 0.4,
+          "end": 2.254
+        },
+        {
+          "text": "Here it is called rank of.",
+          "heard": "Here it is called Rank Of.",
+          "sent": "Here it is called rank of.",
+          "start": 2.604,
+          "end": 4.541
+        },
+        {
+          "text": "It is the tally of the shape.",
+          "heard": "It is the tally of the sheep.",
+          "sent": "It is the tally of the shape.",
+          "unverified": true,
+          "start": 4.891,
+          "end": 6.006
+        },
+        {
+          "text": "The number forty two has rank zero.",
+          "heard": "The number 42 has rank zero.",
+          "sent": "The number forty two has rank zero.",
+          "start": 6.356,
+          "end": 8.661
+        },
+        {
+          "text": "Ravel makes it a list of one item.",
+          "heard": "Ravel makes it a list of one item.",
+          "sent": "ravel makes it a list of one item.",
+          "spoken": "@ravel makes it a list of one item.",
+          "start": 9.011,
+          "end": 11.419
+        },
+        {
+          "text": "Now its rank is one.",
+          "heard": "Now its rank is one.",
+          "sent": "Now its rank is one.",
+          "start": 11.769,
+          "end": 12.8
+        }
+      ]
+    },
+    {
       "id": "matrix",
       "narration": "A matrix has two {axes|@axes}, rows and columns. This one has two rows and three columns.",
       "seconds": 7.5,
@@ -556,8 +607,8 @@
     },
     {
       "id": "challenge-negatives",
-      "narration": "One more. Count the negative numbers in a grid. Compare the grid with zero. That gives a mask of ones and zeros. Then reduce along both {axes|@axes}{,|/} with subscript one two. There are seven.",
-      "seconds": 15.2,
+      "narration": "One more. Count the negative numbers in a grid. Compare the grid with zero. That gives a mask of ones and zeros. Then reduce along both {axes|@axes}. The subscript is one two. There are seven.",
+      "seconds": 15.4,
       "sentences": [
         {
           "text": "One more.",
@@ -588,20 +639,26 @@
           "end": 8.113
         },
         {
-          "text": "Then reduce along both axes, with subscript one two.",
-          "heard": "Then reduce along both axes. Left subscript one two.",
-          "sent": "Then reduce along both axes with subscript one two.",
-          "spoken": "Then reduce along both @axes/ with subscript one two.",
-          "unverified": true,
+          "text": "Then reduce along both axes.",
+          "heard": "then reduce along both axes.",
+          "sent": "Then reduce along both axes.",
+          "spoken": "Then reduce along both @axes.",
           "start": 8.463,
-          "end": 12.911
+          "end": 10.874
+        },
+        {
+          "text": "The subscript is one two.",
+          "heard": "The subscript is 1, 2.",
+          "sent": "The subscript is one two.",
+          "start": 11.224,
+          "end": 13.084
         },
         {
           "text": "There are seven.",
           "heard": "There are seven.",
           "sent": "There are seven.",
-          "start": 13.261,
-          "end": 14.433
+          "start": 13.434,
+          "end": 14.606
         }
       ]
     },

@@ -6,11 +6,11 @@ dimensions. A story lesson in the pattern of
 [al-02-loops](../al-02-loops/): a title with music, narrated scenes,
 silent slides with music between sections, a preview of the next
 episode, an exercise, the reused call to action and close. Music:
-Sunburst (music-pipe-rs, the author).
+Sonata Sprint (music-pipe-rs video beds: Mozart, K. 545, as chamber pop): the opening cell under the title, one middle phrase (cells at 5, 10, 15 s) under each break, the ending cell under the close.
 
 | File | What |
 | ---- | ---- |
-| `lesson.json` | 33 scenes: the title; the recap; scalar, vector, rank as a function (`u:r_ankOf`), matrix, rank 3; axes; reduce, rotate, reverse and transpose along an axis, the subscript written out; the same on rank 3; ravel back to rank 1; two LeetCode challenges (1672, the richest customer; 1351, count the negatives); tensors in machine learning and on the GPU; the next episode (broadcasting) and its preview; the exercise; call to action; end screen |
+| `lesson.json` | 35 scenes: the title; the recap; scalar, vector, rank as a function (`u:r_ankOf`), matrix, rank 3; axes; reduce, rotate, reverse and transpose along an axis, the subscript written out; the same on rank 3; ravel back to rank 1; two LeetCode challenges (1672, the richest customer; 1351, count the negatives); tensors in machine learning and on the GPU; the next episode (broadcasting) and its preview; the exercise; call to action; end screen |
 | `data.xtl` | every X_eTaL line the video shows, run at the pin; the panels show what `xetal --box` prints for each (APL2 DISPLAY frames), made by `lesson.mjs` from the pinned binary, never typed |
 | `lesson.mjs` | writes `lesson.json`: the scenes, and each result from `bin/xetal --box` |
 | `timing.json` | the schedule X_eTaL computes from the lesson; checked by the gate |

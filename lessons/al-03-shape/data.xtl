@@ -48,3 +48,7 @@ u:r_ankOf := { t_ally s_hape _r }
 u:r_ankOf 42
 s_hape r_avel 42
 u:r_ankOf r_avel 42
+## Rank of the scalar, the vector and the rank 3 array: 0, 1, 3.
+u:r_ankOf 7
+u:r_ankOf v
+u:r_ankOf T

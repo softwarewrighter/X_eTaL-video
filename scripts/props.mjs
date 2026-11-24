@@ -181,8 +181,11 @@ if (lesson.kind === "story") {
         const s = lesson.scenes[i];
         const secs = props.timing.durations[i] / fps;
         const file = join(pub, `slide-${s.id}.wav`);
+        // music.slides.starts: each its own place in the track (a phrase
+        // that starts on a downbeat, never the piece's ending, the author,
+        // 2026-11-24); else an offset from the middle.
         const shift = m.slides.offsets ? m.slides.offsets[k % m.slides.offsets.length] : 0.5 * (k - (silent.length - 1) / 2);
-        const at = Math.min(Math.max(0, (length - secs) / 2 + shift), Math.max(0, length - secs));
+        const at = m.slides.starts ? m.slides.starts[k % m.slides.starts.length] : Math.min(Math.max(0, (length - secs) / 2 + shift), Math.max(0, length - secs));
         execFileSync("sox", [abs(m.file), file, "trim", at.toFixed(2), String(secs), "vol", String(m.slides.volume), "fade", "t", String(m.slides.fade), String(secs), String(m.slides.fade)]);
         slides.push({ src: `media/${slug}/slide-${s.id}.wav`, from: props.timing.starts[i], frames: props.timing.durations[i] });
       });
