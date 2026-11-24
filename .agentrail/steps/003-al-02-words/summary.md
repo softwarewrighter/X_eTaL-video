@@ -1,0 +1,1 @@
+Preflight and word clips for al-02-loops: axes, scalar, min clips; every risky word a clip or tested spelling before narration
