@@ -43,31 +43,31 @@
     },
     {
       "id": "scalar",
-      "narration": "A scalar is a single value. It has no {axes|@axes}. Its shape is an empty list, so its rank is zero.",
-      "seconds": 9.6,
+      "narration": "{A scalar|A scalar /} is a single value. It has no {axes|@axes}. Its shape is an empty list, so its rank is zero.",
+      "seconds": 9.7,
       "sentences": [
         {
           "text": "A scalar is a single value.",
-          "heard": "The scalar is a single value.",
+          "heard": "A scalar is a single value.",
           "sent": "A scalar is a single value.",
-          "unverified": true,
+          "spoken": "A scalar / is a single value.",
           "start": 0.4,
-          "end": 2.307
+          "end": 2.426
         },
         {
           "text": "It has no axes.",
           "heard": "It has no axes.",
           "sent": "It has no axes.",
           "spoken": "It has no @axes.",
-          "start": 2.657,
-          "end": 4.746
+          "start": 2.776,
+          "end": 4.865
         },
         {
           "text": "Its shape is an empty list, so its rank is zero.",
           "heard": "Its shape is an empty list, so its rank is zero.",
           "sent": "Its shape is an empty list, so its rank is zero.",
-          "start": 5.096,
-          "end": 8.879
+          "start": 5.215,
+          "end": 8.998
         }
       ]
     },
@@ -108,8 +108,8 @@
     },
     {
       "id": "rank-of",
-      "narration": "Rank comes up often, so let us give it a name. This line defines a function called rank of. It is the tally of the shape. A later episode shows how to define your own functions. Soon, {X_eTaL|@xtl} will have rank of built in. Then this line is not needed. A scalar has rank zero. A vector has rank one.",
-      "seconds": 22.4,
+      "narration": "Rank comes up often, so let us give it a name. This line defines a function called rank of. It applies tally to the shape of its argument. A later episode shows how to define your own functions. Soon, {X_eTaL|@xtl} will have rank of built in. Then this line is not needed. A scalar has rank zero. A vector has rank one.",
+      "seconds": 23.7,
       "sentences": [
         {
           "text": "Rank comes up often, so let us give it a name.",
@@ -126,48 +126,47 @@
           "end": 6.812
         },
         {
-          "text": "It is the tally of the shape.",
-          "heard": "It is the tally of the sheep.",
-          "sent": "It is the tally of the shape.",
-          "unverified": true,
+          "text": "It applies tally to the shape of its argument.",
+          "heard": "It applies tally to the shape of its argument.",
+          "sent": "It applies tally to the shape of its argument.",
           "start": 7.162,
-          "end": 8.278
+          "end": 9.542
         },
         {
           "text": "A later episode shows how to define your own functions.",
           "heard": "A later episode shows how to define your own functions.",
           "sent": "A later episode shows how to define your own functions.",
-          "start": 8.628,
-          "end": 11.711
+          "start": 9.892,
+          "end": 12.975
         },
         {
           "text": "Soon, X_eTaL will have rank of built in.",
           "heard": "Soon, XTL will have rank of built-in.",
           "sent": "Soon, xtl will have rank of built in.",
           "spoken": "Soon, @xtl will have rank of built in.",
-          "start": 12.061,
-          "end": 15.634
+          "start": 13.325,
+          "end": 16.898
         },
         {
           "text": "Then this line is not needed.",
           "heard": "then this line is not needed.",
           "sent": "Then this line is not needed.",
-          "start": 15.984,
-          "end": 17.436
+          "start": 17.248,
+          "end": 18.7
         },
         {
           "text": "A scalar has rank zero.",
           "heard": "A scalar has rank zero.",
           "sent": "A scalar has rank zero.",
-          "start": 17.786,
-          "end": 19.683
+          "start": 19.05,
+          "end": 20.947
         },
         {
           "text": "A vector has rank one.",
           "heard": "A vector has rank one.",
           "sent": "A vector has rank one.",
-          "start": 20.033,
-          "end": 21.68
+          "start": 21.297,
+          "end": 22.944
         }
       ]
     },
@@ -503,8 +502,8 @@
     },
     {
       "id": "rank-3-swap",
-      "narration": "With two subscripts, it swaps just those two {axes|@axes}. A list on the left can put the {axes|@axes} in any order.",
-      "seconds": 10.4,
+      "narration": "With two subscripts, it swaps just those two {axes|@axes}. {A list on the left|A list on the left /} can put the {axes|@axes} in any order.",
+      "seconds": 10.6,
       "sentences": [
         {
           "text": "With two subscripts, it swaps just those two axes.",
@@ -516,12 +515,11 @@
         },
         {
           "text": "A list on the left can put the axes in any order.",
-          "heard": "The list on the left can put axes in any order.",
+          "heard": "A list on the left can put the axes in any order.",
           "sent": "A list on the left can put the axes in any order.",
-          "spoken": "A list on the left can put the @axes in any order.",
-          "unverified": true,
+          "spoken": "A list on the left / can put the @axes in any order.",
           "start": 5.168,
-          "end": 9.649
+          "end": 9.832
         }
       ]
     },

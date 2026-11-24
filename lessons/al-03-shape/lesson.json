@@ -37,7 +37,7 @@
     },
     {
       "id": "recap",
-      "seconds": 10,
+      "seconds": 14.3,
       "heading": "Last time",
       "narration": "Last time, map, filter and reduce worked on whole lists. A list is one kind of array. Today we meet the others. Every array has a shape, a rank, and {axes|@axes}.",
       "lines": [],
@@ -67,7 +67,7 @@
     },
     {
       "id": "scalar",
-      "seconds": 10,
+      "seconds": 9.7,
       "heading": "A scalar",
       "narration": "{A scalar|A scalar /} is a single value. It has no {axes|@axes}. Its shape is an empty list, so its rank is zero.",
       "lines": [],
@@ -105,7 +105,7 @@
     },
     {
       "id": "vector",
-      "seconds": 10,
+      "seconds": 9.2,
       "heading": "A vector",
       "narration": "A vector has one axis. This one holds five values, so its shape is five. Its rank is one. Rank is the length of the shape.",
       "lines": [],
@@ -143,7 +143,7 @@
     },
     {
       "id": "rank-of",
-      "seconds": 24,
+      "seconds": 23.7,
       "heading": "Rank, as a function",
       "narration": "Rank comes up often, so let us give it a name. This line defines a function called rank of. It applies tally to the shape of its argument. A later episode shows how to define your own functions. Soon, {X_eTaL|@xtl} will have rank of built in. Then this line is not needed. A scalar has rank zero. A vector has rank one.",
       "lines": [],
@@ -198,7 +198,7 @@
     },
     {
       "id": "matrix",
-      "seconds": 7,
+      "seconds": 7.5,
       "heading": "A matrix",
       "narration": "A matrix has two {axes|@axes}, rows and columns. This one has two rows and three columns.",
       "lines": [],
@@ -231,7 +231,7 @@
     },
     {
       "id": "matrix-shape",
-      "seconds": 6,
+      "seconds": 6.5,
       "heading": "A matrix",
       "narration": "Its shape is two by three. It holds six values, but its rank is two.",
       "lines": [],
@@ -265,7 +265,7 @@
     },
     {
       "id": "rank-3",
-      "seconds": 8,
+      "seconds": 7.5,
       "heading": "Rank three",
       "narration": "Add one more axis. Two tables, each three by four, make an array of shape two by three by four.",
       "lines": [],
@@ -295,7 +295,7 @@
     },
     {
       "id": "rank-3-rank",
-      "seconds": 6,
+      "seconds": 4.3,
       "heading": "Rank three",
       "narration": "Its rank is three. Higher ranks follow the same rule.",
       "lines": [],
@@ -358,7 +358,7 @@
     },
     {
       "id": "axes",
-      "seconds": 14,
+      "seconds": 15.7,
       "heading": "Axes",
       "narration": "Each axis has a number. In a matrix, axis one runs down the rows. Axis two runs along each row. Many operations work along an axis. In {X_eTaL|@xtl} a subscript after the name picks the axis.",
       "lines": [],
@@ -389,7 +389,7 @@
     },
     {
       "id": "reduce-axis",
-      "seconds": 10,
+      "seconds": 12.1,
       "heading": "Reduce along an axis",
       "narration": "Reduce works along axis one unless told otherwise. Writing the subscript one says so plainly. Both give five, seven, nine, the sums down the columns.",
       "lines": [],
@@ -429,7 +429,7 @@
     },
     {
       "id": "reduce-axis-2",
-      "seconds": 6,
+      "seconds": 6.6,
       "heading": "Reduce along an axis",
       "narration": "With subscript two, it sums along each row instead. That gives six and fifteen.",
       "lines": [],
@@ -465,7 +465,7 @@
     },
     {
       "id": "rotate",
-      "seconds": 10,
+      "seconds": 10.7,
       "heading": "Rotate",
       "narration": "Rotate shifts items around. Along axis one, the rows trade places. Along axis two, each row shifts left by one.",
       "lines": [],
@@ -500,7 +500,7 @@
     },
     {
       "id": "reverse",
-      "seconds": 6,
+      "seconds": 6.1,
       "heading": "Reverse",
       "narration": "Reverse takes a subscript too. Along axis two, each row is reversed.",
       "lines": [],
@@ -535,7 +535,7 @@
     },
     {
       "id": "transpose",
-      "seconds": 12,
+      "seconds": 9.5,
       "heading": "Transpose",
       "narration": "Transpose reverses the order of the {axes|@axes}. Rows become columns. A two by three matrix becomes three by two.",
       "lines": [],
@@ -599,7 +599,7 @@
     },
     {
       "id": "rank-3-axes",
-      "seconds": 10,
+      "seconds": 9.5,
       "heading": "Rank three, along an axis",
       "narration": "The same subscripts work in three dimensions. Reduce along axis one adds the two tables together. The result is three by four.",
       "lines": [],
@@ -661,7 +661,7 @@
     },
     {
       "id": "rank-3-transpose",
-      "seconds": 8,
+      "seconds": 10.2,
       "heading": "Rank three, transposed",
       "narration": "Transpose reverses all three {axes|@axes}. Two by three by four becomes four by three by two.",
       "lines": [],
@@ -697,7 +697,7 @@
     },
     {
       "id": "rank-3-swap",
-      "seconds": 9,
+      "seconds": 10.6,
       "heading": "Rank three, transposed",
       "narration": "With two subscripts, it swaps just those two {axes|@axes}. {A list on the left|A list on the left /} can put the {axes|@axes} in any order.",
       "lines": [],
@@ -731,7 +731,7 @@
     },
     {
       "id": "ravel",
-      "seconds": 10,
+      "seconds": 9.1,
       "heading": "Back to rank one",
       "narration": "{Ravel|@ravel} turns any array into a vector. The rank three array becomes a list of twenty four values. Its rank is now one.",
       "lines": [],
@@ -769,7 +769,7 @@
     },
     {
       "id": "ravel-scalar",
-      "seconds": 6,
+      "seconds": 5.4,
       "heading": "Back to rank one",
       "narration": "Even a single number becomes a list of one item. Its rank is one.",
       "lines": [],
@@ -803,7 +803,7 @@
     },
     {
       "id": "ravel-columns",
-      "seconds": 6,
+      "seconds": 5.8,
       "heading": "Back to rank one",
       "narration": "With subscript two, a matrix unrolls column by column instead.",
       "lines": [],
@@ -835,7 +835,7 @@
     },
     {
       "id": "challenge-wealth",
-      "seconds": 22,
+      "seconds": 17.4,
       "heading": "A challenge: the richest customer",
       "narration": "Here is a short coding challenge, from {LeetCode|@leetcode}. Each row is a customer. Each column is a bank account. Find the richest customer. Sum along axis two, for a total for each customer. Then take the largest. The answer is ten.",
       "lines": [],
@@ -884,7 +884,7 @@
     },
     {
       "id": "challenge-negatives",
-      "seconds": 22,
+      "seconds": 15.4,
       "heading": "A challenge: count the negatives",
       "narration": "One more. Count the negative numbers in a grid. Compare the grid with zero. That gives a mask of ones and zeros. Then reduce along both {axes|@axes}. The subscript is one two. There are seven.",
       "lines": [],
@@ -954,7 +954,7 @@
     },
     {
       "id": "tensors",
-      "seconds": 20,
+      "seconds": 19.9,
       "heading": "Tensors",
       "narration": "In machine learning, arrays like these are called {tensors|@tensors}. A color image might have shape four eighty by six forty by three. That is height, width, and three color channels. Stack thirty two images and you add an axis. The batch has rank four.",
       "lines": [],
@@ -1003,7 +1003,7 @@
     },
     {
       "id": "gpus",
-      "seconds": 16,
+      "seconds": 16.9,
       "heading": "Tensors on a GPU",
       "narration": "The {GPU|@gpu} works on many values at once. The shape and the {axes|@axes} tell it how a {tensor|@tensor} is laid out. The ideas in this episode are the same ones. We will come back to {tensors|@tensors} in later episodes.",
       "lines": [],
@@ -1033,7 +1033,7 @@
     },
     {
       "id": "next",
-      "seconds": 8,
+      "seconds": 8.8,
       "heading": "Next time",
       "narration": "The next episode is about broadcasting. That is how an operation combines arrays of different shapes. Here is a short preview.",
       "lines": [],
@@ -1049,7 +1049,7 @@
     },
     {
       "id": "preview-extension",
-      "seconds": 22,
+      "seconds": 17.2,
       "heading": "One value, or the same shape",
       "narration": "The simplest case is a single value. Ten times a matrix multiplies every item by ten. The single value extends to every item. Two arrays of the same shape combine item by item. That is the whole rule in {X_eTaL|@xtl}. Other shapes are an error.",
       "lines": [],
@@ -1081,7 +1081,7 @@
     },
     {
       "id": "preview-dialects",
-      "seconds": 30,
+      "seconds": 33.1,
       "heading": "Where languages differ",
       "narration": "Array languages draw this line in different places. {APL|@apl} extends a single value too. An axis can say how a vector meets a matrix. {J|jay} and {BQN|bee, queue, en}{,|/} match {axes|@axes} from the front. Each item of a vector goes with one row. The language {K|kay} works much the same way. There, a matrix is a list of rows. {NumPy|@numpy}, for Python, matches {axes|@axes} from the back. The next episode puts them side by side.",
       "lines": [],
