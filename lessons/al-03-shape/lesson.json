@@ -624,7 +624,7 @@
       "id": "ravel",
       "seconds": 16,
       "heading": "Back to rank one",
-      "narration": "Ravel turns any array into a vector. The rank three array becomes a list of twenty four values. Its rank is now one. With subscript two, a matrix unrolls column by column instead.",
+      "narration": "{Ravel|@ravel} turns any array into a vector. The rank three array becomes a list of twenty four values. Its rank is now one. With subscript two, a matrix unrolls column by column instead.",
       "lines": [],
       "panel": {
         "type": "code",
@@ -671,7 +671,7 @@
       "id": "challenge-wealth",
       "seconds": 22,
       "heading": "A challenge: the richest customer",
-      "narration": "Here is a short coding challenge, from {LeetCode|leet code}. Each row is a customer. Each column is a bank account. Find the richest customer. Sum along axis two, for a total for each customer. Then take the largest. The answer is ten.",
+      "narration": "Here is a short coding challenge, from {LeetCode|@leetcode}. Each row is a customer. Each column is a bank account. Find the richest customer. Sum along axis two, for a total for each customer. Then take the largest. The answer is ten.",
       "lines": [],
       "panel": {
         "type": "code",
@@ -799,7 +799,7 @@
       "id": "tensors",
       "seconds": 20,
       "heading": "Tensors",
-      "narration": "In machine learning, arrays like these are called tensors. A color image might have shape four eighty by six forty by three. That is height, width, and three color channels. Stack thirty two images and you add an axis. The batch has rank four.",
+      "narration": "In machine learning, arrays like these are called {tensors|@tensors}. A color image might have shape four eighty by six forty by three. That is height, width, and three color channels. Stack thirty two images and you add an axis. The batch has rank four.",
       "lines": [],
       "panel": {
         "type": "code",
@@ -854,7 +854,7 @@
       "id": "gpus",
       "seconds": 16,
       "heading": "Tensors on a GPU",
-      "narration": "The {GPU|@gpu} works on many values at once. Shape and {axes|@axes} tell it how a tensor is laid out. The ideas in this episode are the same ones. We will come back to tensors in later episodes.",
+      "narration": "The {GPU|@gpu} works on many values at once. Shape and {axes|@axes} tell it how a {tensor|@tensor} is laid out. The ideas in this episode are the same ones. We will come back to {tensors|@tensors} in later episodes.",
       "lines": [],
       "slide": {
         "type": "points",
@@ -932,7 +932,7 @@
       "id": "preview-dialects",
       "seconds": 30,
       "heading": "Where languages differ",
-      "narration": "Array languages draw this line in different places. {APL|@apl} extends a single value too. An axis can say how a vector meets a matrix. {J|jay} and {BQN|bee, queue, en}, match {axes|@axes} from the front. Each item of a vector goes with one row. {K|kay} works much the same way. There, a matrix is a list of rows. NumPy, for Python, matches {axes|@axes} from the back. The next episode puts them side by side.",
+      "narration": "Array languages draw this line in different places. {APL|@apl} extends a single value too. An axis can say how a vector meets a matrix. {J|jay} and {BQN|bee, queue, en}, match {axes|@axes} from the front. Each item of a vector goes with one row. {K|kay} works much the same way. There, a matrix is a list of rows. {NumPy|@numpy}, for Python, matches {axes|@axes} from the back. The next episode puts them side by side.",
       "lines": [],
       "slide": {
         "type": "points",
