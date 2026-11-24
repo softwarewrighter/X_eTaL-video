@@ -1,0 +1,1 @@
+Episode 03 script approved by the author: 26 scenes, ~6:20, explicit axis subscripts, rotate/reverse/transpose, rank 3, ravel, LeetCode 1672 and 1351, tensors, broadcasting preview vs APL/J/BQN/K/NumPy

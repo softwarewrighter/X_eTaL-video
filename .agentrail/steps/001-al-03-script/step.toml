@@ -1,8 +1,9 @@
 number = 1
 slug = "al-03-script"
-status = "in-progress"
+status = "completed"
 description = "lessons/al-03-shape/: a story lesson for episode 03, Shape, rank, axes and di..."
 role = "production"
 context_files = []
 created_at = "2026-11-23T17:31:47"
-commits = []
+completed_at = "2026-11-23T18:41:25"
+commits = ["ada155d27b90b5049a25f6e00cb0da58addaa666"]
