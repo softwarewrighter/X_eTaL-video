@@ -26,4 +26,4 @@ Sunburst (music-pipe-rs, the author).
 | preview-extension | a single number extends to every item; other shapes are an error (`shapes differ: 2 3 and 3`) | X_eTaL `docs/reference.md` (Arithmetic) and `data.xtl` |
 | preview-dialects | APL: scalar extension and an axis on a scalar function; J and BQN: leading-axis agreement; K: a matrix is a list of rows; NumPy: trailing-axis broadcasting | the languages' documentation; to be checked by the author |
 | challenge-wealth | LeetCode 1672, Richest Customer Wealth: the largest row sum, 10 for the example | https://leetcode.com/problems/richest-customer-wealth/ and `data.xtl` |
-| challenge-negatives | LeetCode 1351, Count Negative Numbers in a Sorted Matrix: 8 for the example; solved on code_report (https://youtu.be/pDbDtGn1PXk) | https://leetcode.com/problems/count-negative-numbers-in-a-sorted-matrix/ and `data.xtl` |
+| challenge-negatives | LeetCode 1351, Count Negative Numbers in a Sorted Matrix: 7 for a 3 by 4 example; solved on code_report (https://youtu.be/pDbDtGn1PXk) | https://leetcode.com/problems/count-negative-numbers-in-a-sorted-matrix/ and `data.xtl` |

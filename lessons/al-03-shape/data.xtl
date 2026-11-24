@@ -39,7 +39,7 @@ M + M
 accounts := 3 2 r_eshape 1 5 7 3 3 5
 '+ r_/_2 accounts
 'm_ax r_/ '+ r_/_2 accounts
-## LeetCode 1351, Count Negative Numbers in a Sorted Matrix (code_report: https://youtu.be/pDbDtGn1PXk): 8.
-grid := 4 4 r_eshape 4 3 2 -1 3 2 1 -1 1 1 -1 -2 -1 -1 -2 -3
+## LeetCode 1351, Count Negative Numbers in a Sorted Matrix (code_report: https://youtu.be/pDbDtGn1PXk), a 3 by 4 example: 7.
+grid := 3 4 r_eshape 3 2 1 -1 1 1 -1 -2 -1 -1 -2 -3
 grid < 0
 '+ r_/_12 grid < 0

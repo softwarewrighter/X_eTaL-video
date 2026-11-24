@@ -720,19 +720,16 @@
       "id": "challenge-negatives",
       "seconds": 22,
       "heading": "A challenge: count the negatives",
-      "narration": "One more. Count the negative numbers in a grid. Compare the grid with zero. That gives a mask of ones and zeros. Then reduce along both {axes|@axes}, with subscript one two. There are eight.",
+      "narration": "One more. Count the negative numbers in a grid. Compare the grid with zero. That gives a mask of ones and zeros. Then reduce along both {axes|@axes}, with subscript one two. There are seven.",
       "lines": [],
       "panel": {
         "type": "code",
         "lines": [
           {
-            "xtl": "grid := 4 4 r_eshape 4 3 2 -1 3 2 1 -1 1 1 -1 -2 -1 -1 -2 -3"
+            "xtl": "grid := 3 4 r_eshape 3 2 1 -1 1 1 -1 -2 -1 -1 -2 -3"
           },
           {
             "xtl": "grid < 0"
-          },
-          {
-            "code": "0 0 0 1"
           },
           {
             "code": "0 0 0 1"
@@ -747,7 +744,7 @@
             "xtl": "'+ r_/_12 grid < 0"
           },
           {
-            "code": "8"
+            "code": "7"
           }
         ],
         "focus": [
@@ -762,16 +759,15 @@
             1,
             2,
             3,
-            4,
-            5
+            4
           ],
           [
-            6,
-            7
+            5,
+            6
           ],
           [
-            6,
-            7
+            5,
+            6
           ]
         ]
       }
