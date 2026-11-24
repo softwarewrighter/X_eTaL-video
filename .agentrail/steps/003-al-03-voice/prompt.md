@@ -1,0 +1,1 @@
+Narrate and render through just produce al-03-shape (voxq); short sentences; flagged sentences broken into phrases, then reworded; the review page current; the author listens.

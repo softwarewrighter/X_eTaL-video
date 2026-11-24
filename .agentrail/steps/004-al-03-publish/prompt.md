@@ -1,0 +1,1 @@
+After the author's review: fixes, just youtube al-03-shape (title, description with chapters, captions, thumbnail); after the upload, just link, just pages, just publish.

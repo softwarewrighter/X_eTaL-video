@@ -1,0 +1,1 @@
+Before narration: just voice-preflight al-03-shape; every risky word (axes, tensor, transpose, ravel, ML, GPU) a clip or tested spelling in docs/voice-words.json.
