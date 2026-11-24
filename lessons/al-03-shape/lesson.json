@@ -1,0 +1,1018 @@
+{
+  "slug": "al-03-shape",
+  "kind": "story",
+  "title": "Shape, rank, axes and dimensions",
+  "summary": "Array languages, episode 3: scalars, vectors, matrices and a rank 3 array; shape, rank and axes; reduce, rotate, reverse and transpose along an axis, the axis written out; ravel back to rank one; tensors in machine learning and on GPUs.",
+  "order": 102,
+  "fps": 30,
+  "brand": "Array Languages: episode 3",
+  "music": {
+    "file": "/Users/mike/github/softwarewrighter/music-pipe-rs/work/preview/sunburst.wav",
+    "intro": {
+      "seconds": 5,
+      "fadeOut": 0.5
+    },
+    "outro": {
+      "seconds": 7,
+      "fadeIn": 1
+    },
+    "slides": {
+      "volume": 0.3,
+      "fade": 0.5,
+      "offsets": [
+        1,
+        -2,
+        0.5,
+        -1,
+        1.5
+      ]
+    }
+  },
+  "scenes": [
+    {
+      "id": "title",
+      "seconds": 8,
+      "heading": "Shape, rank, axes and dimensions",
+      "lines": [
+        "Scalars, vectors, matrices and beyond"
+      ]
+    },
+    {
+      "id": "recap",
+      "seconds": 10,
+      "heading": "Last time",
+      "narration": "Last time, map, filter and reduce worked on whole lists. A list is one kind of array. Today we meet the others. Every array has a shape, a rank, and {axes|@axes}.",
+      "lines": [],
+      "slide": {
+        "type": "flow",
+        "steps": [
+          0,
+          0,
+          0,
+          2
+        ],
+        "items": [
+          {
+            "text": "Shape",
+            "sub": "how long each axis is"
+          },
+          {
+            "text": "Rank",
+            "sub": "how many axes"
+          },
+          {
+            "text": "Axes",
+            "sub": "the directions"
+          }
+        ]
+      }
+    },
+    {
+      "id": "scalar",
+      "seconds": 10,
+      "heading": "A scalar",
+      "narration": "A scalar is a single value. It has no {axes|@axes}. Its shape is an empty list, so its rank is zero.",
+      "lines": [],
+      "panel": {
+        "type": "code",
+        "lines": [
+          {
+            "xtl": "s_hape 7"
+          },
+          {
+            "code": ""
+          },
+          {
+            "xtl": "t_ally s_hape 7"
+          },
+          {
+            "code": "0"
+          }
+        ],
+        "focus": [
+          [
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "id": "vector",
+      "seconds": 10,
+      "heading": "A vector",
+      "narration": "A vector has one axis. This one holds five values, so its shape is five. Its rank is one. Rank is the length of the shape.",
+      "lines": [],
+      "panel": {
+        "type": "code",
+        "lines": [
+          {
+            "xtl": "v := 3 1 4 1 5"
+          },
+          {
+            "xtl": "s_hape v"
+          },
+          {
+            "code": "5"
+          },
+          {
+            "xtl": "t_ally s_hape v"
+          },
+          {
+            "code": "1"
+          }
+        ],
+        "focus": [
+          [
+            0
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "id": "matrix",
+      "seconds": 12,
+      "heading": "A matrix",
+      "narration": "A matrix has two {axes|@axes}, rows and columns. This one has two rows and three columns. Its shape is two by three. It holds six values, but its rank is two.",
+      "lines": [],
+      "panel": {
+        "type": "code",
+        "lines": [
+          {
+            "xtl": "M := 2 3 r_eshape r_ange 6"
+          },
+          {
+            "xtl": "M"
+          },
+          {
+            "code": "1 2 3"
+          },
+          {
+            "code": "4 5 6"
+          },
+          {
+            "xtl": "s_hape M"
+          },
+          {
+            "code": "2 3"
+          },
+          {
+            "xtl": "t_ally s_hape M"
+          },
+          {
+            "code": "2"
+          }
+        ],
+        "focus": [
+          [
+            0
+          ],
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            6,
+            7
+          ]
+        ]
+      }
+    },
+    {
+      "id": "rank-3",
+      "seconds": 14,
+      "heading": "Rank three",
+      "narration": "Add one more axis. Two tables, each three by four, make an array of shape two by three by four. Its rank is three. Higher ranks follow the same rule.",
+      "lines": [],
+      "panel": {
+        "type": "code",
+        "lines": [
+          {
+            "xtl": "2 3 4 r_eshape r_ange 24"
+          },
+          {
+            "code": " 1  2  3  4"
+          },
+          {
+            "code": " 5  6  7  8"
+          },
+          {
+            "code": " 9 10 11 12"
+          },
+          {
+            "code": ""
+          },
+          {
+            "code": "13 14 15 16"
+          },
+          {
+            "code": "17 18 19 20"
+          },
+          {
+            "code": "21 22 23 24"
+          }
+        ],
+        "focus": [
+          [
+            0
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          []
+        ]
+      }
+    },
+    {
+      "id": "break-1",
+      "seconds": 10,
+      "heading": "Rank zero to three",
+      "lines": [],
+      "slide": {
+        "type": "flow",
+        "items": [
+          {
+            "text": "Scalar",
+            "sub": "rank 0"
+          },
+          {
+            "text": "Vector",
+            "sub": "rank 1, shape 5"
+          },
+          {
+            "text": "Matrix",
+            "sub": "rank 2, shape 2 3"
+          },
+          {
+            "text": "Rank 3",
+            "sub": "shape 2 3 4"
+          }
+        ]
+      }
+    },
+    {
+      "id": "axes",
+      "seconds": 14,
+      "heading": "Axes",
+      "narration": "Each axis has a number. In a matrix, axis one runs down the rows. Axis two runs along each row. Many operations work along an axis. In {X_eTaL|@xtl} a subscript after the name picks the axis.",
+      "lines": [],
+      "slide": {
+        "type": "points",
+        "steps": [
+          0,
+          0,
+          1,
+          2,
+          2
+        ],
+        "items": [
+          {
+            "text": "Axis 1",
+            "sub": "down the rows"
+          },
+          {
+            "text": "Axis 2",
+            "sub": "along each row"
+          },
+          {
+            "text": "A subscript picks the axis",
+            "sub": "_1   _2   _3"
+          }
+        ]
+      }
+    },
+    {
+      "id": "reduce-axis",
+      "seconds": 16,
+      "heading": "Reduce along an axis",
+      "narration": "Reduce works along axis one unless told otherwise. Writing the subscript one says so plainly. Both give five, seven, nine, the sums down the columns. With subscript two, it sums along each row instead. That gives six and fifteen.",
+      "lines": [],
+      "panel": {
+        "type": "code",
+        "lines": [
+          {
+            "xtl": "'+ r_/ M"
+          },
+          {
+            "code": "5 7 9"
+          },
+          {
+            "xtl": "'+ r_/_1 M"
+          },
+          {
+            "code": "5 7 9"
+          },
+          {
+            "xtl": "'+ r_/_2 M"
+          },
+          {
+            "code": "6 15"
+          }
+        ],
+        "focus": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            4,
+            5
+          ]
+        ]
+      }
+    },
+    {
+      "id": "rotate",
+      "seconds": 16,
+      "heading": "Rotate and reverse",
+      "narration": "Rotate shifts items around. Along axis one, the rows trade places. Along axis two, each row shifts left by one. Reverse takes a subscript too. Along axis two, each row is reversed.",
+      "lines": [],
+      "panel": {
+        "type": "code",
+        "lines": [
+          {
+            "xtl": "1 o_-_1 M"
+          },
+          {
+            "code": "4 5 6"
+          },
+          {
+            "code": "1 2 3"
+          },
+          {
+            "xtl": "1 o_-_2 M"
+          },
+          {
+            "code": "2 3 1"
+          },
+          {
+            "code": "5 6 4"
+          },
+          {
+            "xtl": "r_ev_2 M"
+          },
+          {
+            "code": "3 2 1"
+          },
+          {
+            "code": "6 5 4"
+          }
+        ],
+        "focus": [
+          [
+            0
+          ],
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            3,
+            4,
+            5
+          ],
+          [
+            6
+          ],
+          [
+            6,
+            7,
+            8
+          ]
+        ]
+      }
+    },
+    {
+      "id": "transpose",
+      "seconds": 12,
+      "heading": "Transpose",
+      "narration": "Transpose reverses the order of the {axes|@axes}. Rows become columns. A two by three matrix becomes three by two.",
+      "lines": [],
+      "panel": {
+        "type": "code",
+        "lines": [
+          {
+            "xtl": "o_\\ M"
+          },
+          {
+            "code": "1 4"
+          },
+          {
+            "code": "2 5"
+          },
+          {
+            "code": "3 6"
+          },
+          {
+            "xtl": "s_hape o_\\ M"
+          },
+          {
+            "code": "3 2"
+          }
+        ],
+        "focus": [
+          [
+            0
+          ],
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            4,
+            5
+          ]
+        ]
+      }
+    },
+    {
+      "id": "break-2",
+      "seconds": 10,
+      "heading": "Along an axis",
+      "lines": [],
+      "slide": {
+        "type": "flow",
+        "items": [
+          {
+            "text": "Reduce",
+            "xtl": "'+ r_/_2 M"
+          },
+          {
+            "text": "Rotate",
+            "xtl": "1 o_-_2 M"
+          },
+          {
+            "text": "Reverse",
+            "xtl": "r_ev_2 M"
+          },
+          {
+            "text": "Transpose",
+            "xtl": "o_\\ M"
+          }
+        ]
+      }
+    },
+    {
+      "id": "rank-3-axes",
+      "seconds": 18,
+      "heading": "Rank three, along an axis",
+      "narration": "The same subscripts work in three dimensions. Reduce along axis one adds the two tables together. The result is three by four. Reduce along axis three sums each row. The result is two by three.",
+      "lines": [],
+      "panel": {
+        "type": "code",
+        "lines": [
+          {
+            "xtl": "T := 2 3 4 r_eshape r_ange 24"
+          },
+          {
+            "xtl": "'+ r_/_1 T"
+          },
+          {
+            "code": "14 16 18 20"
+          },
+          {
+            "code": "22 24 26 28"
+          },
+          {
+            "code": "30 32 34 36"
+          },
+          {
+            "xtl": "'+ r_/_3 T"
+          },
+          {
+            "code": "10 26 42"
+          },
+          {
+            "code": "58 74 90"
+          }
+        ],
+        "focus": [
+          [
+            0
+          ],
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            4,
+            5,
+            6
+          ],
+          [
+            4,
+            5,
+            6
+          ]
+        ]
+      }
+    },
+    {
+      "id": "rank-3-transpose",
+      "seconds": 18,
+      "heading": "Rank three, transposed",
+      "narration": "Transpose reverses all three {axes|@axes}. Two by three by four becomes four by three by two. With two subscripts, it swaps just those two {axes|@axes}. A list on the left can put the {axes|@axes} in any order.",
+      "lines": [],
+      "panel": {
+        "type": "code",
+        "lines": [
+          {
+            "xtl": "s_hape o_\\ T"
+          },
+          {
+            "code": "4 3 2"
+          },
+          {
+            "xtl": "s_hape o_\\_23 T"
+          },
+          {
+            "code": "2 4 3"
+          },
+          {
+            "xtl": "s_hape 3 1 2 t_ranspose T"
+          },
+          {
+            "code": "3 4 2"
+          }
+        ],
+        "focus": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            5
+          ]
+        ]
+      }
+    },
+    {
+      "id": "ravel",
+      "seconds": 16,
+      "heading": "Back to rank one",
+      "narration": "Ravel turns any array into a vector. The rank three array becomes a list of twenty four values. Its rank is now one. With subscript two, a matrix unrolls column by column instead.",
+      "lines": [],
+      "panel": {
+        "type": "code",
+        "lines": [
+          {
+            "xtl": "r_avel T"
+          },
+          {
+            "code": "1 2 3 ... 22 23 24"
+          },
+          {
+            "xtl": "s_hape r_avel T"
+          },
+          {
+            "code": "24"
+          },
+          {
+            "xtl": "r_avel_2 M"
+          },
+          {
+            "code": "1 4 2 5 3 6"
+          }
+        ],
+        "focus": [
+          [
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            5
+          ]
+        ]
+      }
+    },
+    {
+      "id": "challenge-wealth",
+      "seconds": 22,
+      "heading": "A challenge: the richest customer",
+      "narration": "Here is a short coding challenge, from {LeetCode|leet code}. Each row is a customer. Each column is a bank account. Find the richest customer. Sum along axis two, for a total for each customer. Then take the largest. The answer is ten.",
+      "lines": [],
+      "panel": {
+        "type": "code",
+        "lines": [
+          {
+            "xtl": "accounts := 3 2 r_eshape 1 5 7 3 3 5"
+          },
+          {
+            "xtl": "'+ r_/_2 accounts"
+          },
+          {
+            "code": "6 10 8"
+          },
+          {
+            "xtl": "'m_ax r_/ '+ r_/_2 accounts"
+          },
+          {
+            "code": "10"
+          }
+        ],
+        "focus": [
+          [],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            4
+          ]
+        ]
+      }
+    },
+    {
+      "id": "challenge-negatives",
+      "seconds": 22,
+      "heading": "A challenge: count the negatives",
+      "narration": "One more. Count the negative numbers in a grid. Compare the grid with zero. That gives a mask of ones and zeros. Then reduce along both {axes|@axes}, with subscript one two. There are eight.",
+      "lines": [],
+      "panel": {
+        "type": "code",
+        "lines": [
+          {
+            "xtl": "grid := 4 4 r_eshape 4 3 2 -1 3 2 1 -1 1 1 -1 -2 -1 -1 -2 -3"
+          },
+          {
+            "xtl": "grid < 0"
+          },
+          {
+            "code": "0 0 0 1"
+          },
+          {
+            "code": "0 0 0 1"
+          },
+          {
+            "code": "0 0 1 1"
+          },
+          {
+            "code": "1 1 1 1"
+          },
+          {
+            "xtl": "'+ r_/_12 grid < 0"
+          },
+          {
+            "code": "8"
+          }
+        ],
+        "focus": [
+          [],
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            6,
+            7
+          ]
+        ]
+      }
+    },
+    {
+      "id": "break-3",
+      "seconds": 10,
+      "heading": "Shape is structure",
+      "lines": [],
+      "slide": {
+        "type": "points",
+        "items": [
+          {
+            "text": "Shape",
+            "sub": "the length of each axis"
+          },
+          {
+            "text": "Rank",
+            "sub": "the length of the shape"
+          },
+          {
+            "text": "Values",
+            "sub": "the product of the shape"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tensors",
+      "seconds": 20,
+      "heading": "Tensors",
+      "narration": "In machine learning, arrays like these are called tensors. A color image might have shape four eighty by six forty by three. That is height, width, and three color channels. Stack thirty two images and you add an axis. The batch has rank four.",
+      "lines": [],
+      "panel": {
+        "type": "code",
+        "lines": [
+          {
+            "xtl": "images := 32 480 640 3 r_eshape 0"
+          },
+          {
+            "xtl": "s_hape images"
+          },
+          {
+            "code": "32 480 640 3"
+          },
+          {
+            "xtl": "t_ally s_hape images"
+          },
+          {
+            "code": "4"
+          },
+          {
+            "xtl": "'* r_/ s_hape images"
+          },
+          {
+            "code": "29491200"
+          }
+        ],
+        "focus": [
+          [
+            0
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            3,
+            4
+          ]
+        ]
+      }
+    },
+    {
+      "id": "gpus",
+      "seconds": 16,
+      "heading": "Tensors on a GPU",
+      "narration": "The {GPU|@gpu} works on many values at once. Shape and {axes|@axes} tell it how a tensor is laid out. The ideas in this episode are the same ones. We will come back to tensors in later episodes.",
+      "lines": [],
+      "slide": {
+        "type": "points",
+        "steps": [
+          0,
+          1,
+          1,
+          2
+        ],
+        "items": [
+          {
+            "text": "Many values at once",
+            "sub": "the whole tensor"
+          },
+          {
+            "text": "Shape and axes",
+            "sub": "its layout"
+          },
+          {
+            "text": "Later episodes",
+            "sub": "machine learning, GPUs"
+          }
+        ]
+      }
+    },
+    {
+      "id": "next",
+      "seconds": 8,
+      "heading": "Next time",
+      "narration": "The next episode is about broadcasting. That is how an operation combines arrays of different shapes. Here is a short preview.",
+      "lines": [],
+      "slide": {
+        "type": "points",
+        "items": [
+          {
+            "text": "Episode 4",
+            "sub": "Broadcasting and array semantics"
+          }
+        ]
+      }
+    },
+    {
+      "id": "preview-extension",
+      "seconds": 22,
+      "heading": "One value, or the same shape",
+      "narration": "The simplest case is a single value. Ten times a matrix multiplies every item by ten. The single value extends to every item. Two arrays of the same shape combine item by item. In {X_eTaL|@xtl}, that is the whole rule. Other shapes are an error.",
+      "lines": [],
+      "slide": {
+        "type": "points",
+        "steps": [
+          0,
+          0,
+          0,
+          1,
+          2,
+          2
+        ],
+        "items": [
+          {
+            "text": "One value",
+            "xtl": "10 * M"
+          },
+          {
+            "text": "The same shape",
+            "xtl": "M + M"
+          },
+          {
+            "text": "Other shapes",
+            "sub": "an error in X_eTaL"
+          }
+        ]
+      }
+    },
+    {
+      "id": "preview-dialects",
+      "seconds": 30,
+      "heading": "Where languages differ",
+      "narration": "Array languages draw this line in different places. {APL|@apl} extends a single value too. An axis can say how a vector meets a matrix. {J|jay} and {BQN|bee, queue, en}, match {axes|@axes} from the front. Each item of a vector goes with one row. {K|kay} works much the same way. There, a matrix is a list of rows. NumPy, for Python, matches {axes|@axes} from the back. The next episode puts them side by side.",
+      "lines": [],
+      "slide": {
+        "type": "points",
+        "steps": [
+          0,
+          0,
+          0,
+          1,
+          1,
+          2,
+          2,
+          3,
+          3
+        ],
+        "items": [
+          {
+            "text": "X_eTaL",
+            "sub": "one value, or the same shape"
+          },
+          {
+            "text": "APL",
+            "sub": "one value; an axis says how"
+          },
+          {
+            "text": "J, BQN, K",
+            "sub": "match axes from the front"
+          },
+          {
+            "text": "NumPy",
+            "sub": "match axes from the back"
+          }
+        ]
+      }
+    },
+    {
+      "id": "exercise",
+      "seconds": 14,
+      "heading": "Before the next episode",
+      "narration": "Before the next episode, try this. A video clip has three hundred frames. Each frame is four eighty by six forty, with three colors. Work out its shape and its rank. Then count its values.",
+      "lines": [
+        "A video clip: 300 frames",
+        "each 480 by 640, three colors",
+        "its shape, its rank, how many values?"
+      ]
+    },
+    {
+      "id": "cta",
+      "seconds": 12.8,
+      "heading": "Call to action",
+      "lines": [],
+      "clip": "../video-publishing/reference/epilog/99b-epilog.mp4",
+      "transcript": [
+        {
+          "start": 0,
+          "end": 4.6,
+          "text": "If you found this helpful, please like and subscribe."
+        },
+        {
+          "start": 4.6,
+          "end": 9.5,
+          "text": "Hit the bell for notifications, and leave a comment if you have questions."
+        },
+        {
+          "start": 9.5,
+          "end": 12,
+          "text": "See you in the next one, bye."
+        }
+      ]
+    },
+    {
+      "id": "close",
+      "seconds": 8,
+      "heading": "End screen",
+      "lines": [],
+      "clip": "../video-publishing/reference/epilog/99c-epilog-ext-swing9.mp4",
+      "mute": true
+    }
+  ]
+}

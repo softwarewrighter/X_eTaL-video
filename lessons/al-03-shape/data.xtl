@@ -1,0 +1,45 @@
+## Episode 03, Shape, rank, axes and dimensions: every example the video shows, run at the pin.
+s_hape 7
+t_ally s_hape 7
+v := 3 1 4 1 5
+s_hape v
+t_ally s_hape v
+M := 2 3 r_eshape r_ange 6
+M
+s_hape M
+t_ally s_hape M
+'+ r_/ M
+'+ r_/_1 M
+'+ r_/_2 M
+1 o_-_1 M
+1 o_-_2 M
+r_ev_2 M
+o_\ M
+s_hape o_\ M
+T := 2 3 4 r_eshape r_ange 24
+T
+s_hape T
+t_ally s_hape T
+'+ r_/_1 T
+'+ r_/_3 T
+s_hape o_\ T
+s_hape o_\_23 T
+s_hape 3 1 2 t_ranspose T
+r_avel T
+s_hape r_avel T
+r_avel_2 M
+images := 32 480 640 3 r_eshape 0
+s_hape images
+t_ally s_hape images
+'* r_/ s_hape images
+## Broadcasting preview: a single value extends; same shape item by item (a different shape is an error: shapes differ: 2 3 and 3).
+10 * M
+M + M
+## LeetCode 1672, Richest Customer Wealth: the largest row sum (10).
+accounts := 3 2 r_eshape 1 5 7 3 3 5
+'+ r_/_2 accounts
+'m_ax r_/ '+ r_/_2 accounts
+## LeetCode 1351, Count Negative Numbers in a Sorted Matrix (code_report: https://youtu.be/pDbDtGn1PXk): 8.
+grid := 4 4 r_eshape 4 3 2 -1 3 2 1 -1 1 1 -1 -2 -1 -1 -2 -3
+grid < 0
+'+ r_/_12 grid < 0
