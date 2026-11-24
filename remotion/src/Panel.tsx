@@ -111,13 +111,17 @@ export const Panel: React.FC<Props> = ({ panel, media, heading, brand, show, loc
           {lines.map((l, j) => {
             const on = inFocus(j);
             const xtl = "xtl" in l;
+            // A result as xetal --box draws it: one block, its lines set
+            // tight (1.1) so the frame's characters join; the same font size.
+            const box = "box" in l;
             return (
               <div
                 key={j}
                 style={{
                   display: "flex",
                   alignItems: "center",
-                  height: 84,
+                  height: box ? undefined : 84,
+                  padding: box ? "10px 0" : undefined,
                   paddingLeft: 34,
                   borderLeft: `8px solid ${on && focus.length ? theme.hot : on ? theme.accent : "transparent"}`,
                   background: on && focus.length ? "rgba(88, 166, 255, 0.10)" : undefined,
@@ -128,8 +132,8 @@ export const Panel: React.FC<Props> = ({ panel, media, heading, brand, show, loc
                 {labeled ? <div style={{ width: labelWidth, flexShrink: 0, color: theme.accent, fontSize: 38, fontWeight: 700 }}>{l.label ?? ""}</div> : null}
                 <div
                   className={xtl ? "xtl" : undefined}
-                  style={{ fontFamily: theme.mono, fontSize: 50, whiteSpace: "pre", color: xtl ? theme.xtl : theme.code }}
-                  {...(xtl ? { dangerouslySetInnerHTML: { __html: rendered[l.xtl] ?? l.xtl } } : { children: l.code })}
+                  style={{ fontFamily: theme.mono, fontSize: 50, whiteSpace: "pre", lineHeight: box ? 1.1 : undefined, color: xtl ? theme.xtl : theme.code }}
+                  {...(xtl ? { dangerouslySetInnerHTML: { __html: rendered[l.xtl] ?? l.xtl } } : { children: "box" in l ? l.box : l.code })}
                 />
               </div>
             );

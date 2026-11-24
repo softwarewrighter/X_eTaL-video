@@ -198,3 +198,29 @@ What the renderer needs first (one shared step, before the voice):
 6. The pin: moved to the latest (1df48523); the coming changes are
    listed above.
 7. Episode 01's script: "looks okay for now".
+
+## Tacit programming and the X_eTaL tools (2026-11-24)
+
+Advice from the X_eTaL session, passed on by the author:
+
+- Not in episodes 03 to 06: trains combine functions, so they need
+  arrays, reduce and idioms first.
+- A taste in 07 (APL, J, K, BQN and X_eTaL), where tacit style was
+  born: one problem written both ways (primes, say), not yet
+  explained.
+- The real introduction in 11 (pipelines and function composition):
+  a pipeline against a composition (trains); atop, fork and hook;
+  when a named intermediate value reads better than a dense train.
+- A full trains episode (`t-trains`, `docs/curriculum.md`) after 12,
+  once TR5 and TR6 land (X_eTaL steps 211 and 212: constants and
+  selfie) and the expression explorer's tree view exists to animate
+  each train; code_report's LeetCode problems as a closing comparison.
+
+Tools to use as they land:
+
+- `xetal --box` draws every array result in APL2 DISPLAY frames (an
+  arrow per axis); from episode 03, panel results are `{"box": ...}`
+  lines made by the pinned `xetal --box`, never typed.
+- The expression explorer (X_eTaL Saga 45: partial results by span, a
+  tree view with trains by shape) in the live demo first; episodes can
+  record it once it is pinned.

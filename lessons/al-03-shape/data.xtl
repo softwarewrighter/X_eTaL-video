@@ -43,3 +43,8 @@ accounts := 3 2 r_eshape 1 5 7 3 3 5
 grid := 3 4 r_eshape 3 2 1 -1 1 1 -1 -2 -1 -1 -2 -3
 grid < 0
 '+ r_/_12 grid < 0
+## Rank as a function (a built-in is planned after this episode, the author): 0, a frame holding 1, 1.
+u:r_ankOf := { t_ally s_hape _r }
+u:r_ankOf 42
+s_hape r_avel 42
+u:r_ankOf r_avel 42

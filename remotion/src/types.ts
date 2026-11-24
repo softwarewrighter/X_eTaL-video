@@ -32,7 +32,7 @@ export type Scene = {
 };
 
 // A story's panel (remotion/src/Panel.tsx): code lines, or an array's cells.
-export type PanelLine = ({ xtl: string } | { code: string }) & { label?: string };
+export type PanelLine = ({ xtl: string } | { code: string } | { box: string }) & { label?: string };
 export type Panel = {
   type: "code" | "cells";
   lines?: PanelLine[];

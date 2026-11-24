@@ -98,7 +98,8 @@
               "type": { "type": "string", "enum": ["code", "cells"] },
               "lines": { "type": "array", "minItems": 1, "items": { "oneOf": [
                 { "type": "object", "required": ["xtl"], "additionalProperties": false, "properties": { "xtl": { "type": "string" }, "label": { "type": "string" } } },
-                { "type": "object", "required": ["code"], "additionalProperties": false, "properties": { "code": { "type": "string" }, "label": { "type": "string" } } }
+                { "type": "object", "required": ["code"], "additionalProperties": false, "properties": { "code": { "type": "string" }, "label": { "type": "string" } } },
+                { "type": "object", "required": ["box"], "additionalProperties": false, "properties": { "box": { "description": "A result as the pinned xetal --box draws it (APL2 DISPLAY frames), lines joined by newlines; drawn as one block, its lines set tight so the frame joins.", "type": "string" }, "label": { "type": "string" } } }
               ] } },
               "focus": { "description": "For each sentence, the lines (from 0) in focus; an empty list for all.", "type": "array", "items": { "type": "array", "items": { "type": "integer", "minimum": 0 } } },
               "from": { "type": "string", "minLength": 1 },

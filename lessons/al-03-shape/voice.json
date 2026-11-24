@@ -1,0 +1,884 @@
+{
+  "sample": "mike-medium-ref-1.wav",
+  "sampleSha256": "a57fe277f7ce93d5cac4e0e2ed21d770b7d05cab5b20b338dd55aece009d7211",
+  "server": "VoxCPM (Gradio /generate)",
+  "steps": 15,
+  "cfg": 2.0,
+  "scenes": [
+    {
+      "id": "recap",
+      "narration": "Last time, map, filter and reduce worked on whole lists. A list is one kind of array. Today we meet the others. Every array has a shape, a rank, and {axes|@axes}.",
+      "seconds": 14.3,
+      "sentences": [
+        {
+          "text": "Last time, map, filter and reduce worked on whole lists.",
+          "heard": "Last time, map, filter, and reduce worked on whole lists.",
+          "sent": "Last time, map, filter and reduce worked on whole lists.",
+          "start": 0.4,
+          "end": 4.382
+        },
+        {
+          "text": "A list is one kind of array.",
+          "heard": "A list is one kind of array.",
+          "sent": "A list is one kind of array.",
+          "start": 4.732,
+          "end": 6.667
+        },
+        {
+          "text": "Today we meet the others.",
+          "heard": "Today, we meet the others.",
+          "sent": "Today we meet the others.",
+          "start": 7.017,
+          "end": 8.681
+        },
+        {
+          "text": "Every array has a shape, a rank, and axes.",
+          "heard": "Every array has a shape, a rank, and axes.",
+          "sent": "Every array has a shape, a rank, and axes.",
+          "spoken": "Every array has a shape, a rank, and @axes.",
+          "start": 9.031,
+          "end": 13.58
+        }
+      ]
+    },
+    {
+      "id": "scalar",
+      "narration": "A scalar is a single value. It has no {axes|@axes}. Its shape is an empty list, so its rank is zero.",
+      "seconds": 9.6,
+      "sentences": [
+        {
+          "text": "A scalar is a single value.",
+          "heard": "The scalar is a single value.",
+          "sent": "A scalar is a single value.",
+          "unverified": true,
+          "start": 0.4,
+          "end": 2.307
+        },
+        {
+          "text": "It has no axes.",
+          "heard": "It has no axes.",
+          "sent": "It has no axes.",
+          "spoken": "It has no @axes.",
+          "start": 2.657,
+          "end": 4.746
+        },
+        {
+          "text": "Its shape is an empty list, so its rank is zero.",
+          "heard": "Its shape is an empty list, so its rank is zero.",
+          "sent": "Its shape is an empty list, so its rank is zero.",
+          "start": 5.096,
+          "end": 8.879
+        }
+      ]
+    },
+    {
+      "id": "vector",
+      "narration": "A vector has one axis. This one holds five values, so its shape is five. Its rank is one. Rank is the length of the shape.",
+      "seconds": 9.2,
+      "sentences": [
+        {
+          "text": "A vector has one axis.",
+          "heard": "A vector has one axis.",
+          "sent": "A vector has one axis.",
+          "start": 0.4,
+          "end": 1.721
+        },
+        {
+          "text": "This one holds five values, so its shape is five.",
+          "heard": "This one holds five values, so its shape is five.",
+          "sent": "This one holds five values, so its shape is five.",
+          "start": 2.071,
+          "end": 5.098
+        },
+        {
+          "text": "Its rank is one.",
+          "heard": "Its rank is one.",
+          "sent": "Its rank is one.",
+          "start": 5.448,
+          "end": 6.514
+        },
+        {
+          "text": "Rank is the length of the shape.",
+          "heard": "Rank is the length of the shape.",
+          "sent": "Rank is the length of the shape.",
+          "start": 6.864,
+          "end": 8.448
+        }
+      ]
+    },
+    {
+      "id": "matrix",
+      "narration": "A matrix has two {axes|@axes}, rows and columns. This one has two rows and three columns.",
+      "seconds": 7.5,
+      "sentences": [
+        {
+          "text": "A matrix has two axes, rows and columns.",
+          "heard": "A matrix has two axes, rows and columns.",
+          "sent": "A matrix has two axes, rows and columns.",
+          "spoken": "A matrix has two @axes, rows and columns.",
+          "start": 0.4,
+          "end": 3.934
+        },
+        {
+          "text": "This one has two rows and three columns.",
+          "heard": "This one has two rows and three columns.",
+          "sent": "This one has two rows and three columns.",
+          "start": 4.284,
+          "end": 6.776
+        }
+      ]
+    },
+    {
+      "id": "matrix-shape",
+      "narration": "Its shape is two by three. It holds six values, but its rank is two.",
+      "seconds": 6.5,
+      "sentences": [
+        {
+          "text": "Its shape is two by three.",
+          "heard": "its shape is 2 by 3.",
+          "sent": "Its shape is two by three.",
+          "start": 0.4,
+          "end": 2.056
+        },
+        {
+          "text": "It holds six values, but its rank is two.",
+          "heard": "It holds six values, but its rank is two.",
+          "sent": "It holds six values, but its rank is two.",
+          "start": 2.406,
+          "end": 5.701
+        }
+      ]
+    },
+    {
+      "id": "rank-3",
+      "narration": "Add one more axis. Two tables, each three by four, make an array of shape two by three by four. Its rank is three. Higher ranks follow the same rule.",
+      "seconds": 11.0,
+      "sentences": [
+        {
+          "text": "Add one more axis.",
+          "heard": "Add one more axis.",
+          "sent": "Add one more axis.",
+          "start": 0.4,
+          "end": 1.476
+        },
+        {
+          "text": "Two tables, each three by four, make an array of shape two by three by four.",
+          "heard": "Two tables, each 3x4, make an array of shape 2x3x4.",
+          "sent": "Two tables, each three by four, make an array of shape two by three by four.",
+          "unverified": true,
+          "start": 1.826,
+          "end": 6.769
+        },
+        {
+          "text": "Its rank is three.",
+          "heard": "its rank is three.",
+          "sent": "Its rank is three.",
+          "start": 7.119,
+          "end": 8.096
+        },
+        {
+          "text": "Higher ranks follow the same rule.",
+          "heard": "Higher ranks follow the same rule.",
+          "sent": "Higher ranks follow the same rule.",
+          "start": 8.446,
+          "end": 10.25
+        }
+      ]
+    },
+    {
+      "id": "axes",
+      "narration": "Each axis has a number. In a matrix, axis one runs down the rows. Axis two runs along each row. Many operations work along an axis. In {X_eTaL|@xtl} a subscript after the name picks the axis.",
+      "seconds": 15.7,
+      "sentences": [
+        {
+          "text": "Each axis has a number.",
+          "heard": "Each axis has a number.",
+          "sent": "Each axis has a number.",
+          "start": 0.4,
+          "end": 1.954
+        },
+        {
+          "text": "In a matrix, axis one runs down the rows.",
+          "heard": "In a matrix, axis 1 runs down the rows.",
+          "sent": "In a matrix, axis one runs down the rows.",
+          "start": 2.304,
+          "end": 5.51
+        },
+        {
+          "text": "Axis two runs along each row.",
+          "heard": "Axis 2 runs along each row.",
+          "sent": "Axis two runs along each row.",
+          "start": 5.86,
+          "end": 7.576
+        },
+        {
+          "text": "Many operations work along an axis.",
+          "heard": "Many operations work along an axis.",
+          "sent": "Many operations work along an axis.",
+          "start": 7.926,
+          "end": 10.232
+        },
+        {
+          "text": "In X_eTaL a subscript after the name picks the axis.",
+          "heard": "in xtl.asubscript after the name picks the axis.",
+          "sent": "In xtl a subscript after the name picks the axis.",
+          "spoken": "In @xtl a subscript after the name picks the axis.",
+          "start": 10.582,
+          "end": 14.949
+        }
+      ]
+    },
+    {
+      "id": "reduce-axis",
+      "narration": "Reduce works along axis one unless told otherwise. Writing the subscript one says so plainly. Both give five, seven, nine, the sums down the columns.",
+      "seconds": 12.1,
+      "sentences": [
+        {
+          "text": "Reduce works along axis one unless told otherwise.",
+          "heard": "Reduce works along axis 1, unless told otherwise.",
+          "sent": "Reduce works along axis one unless told otherwise.",
+          "start": 0.4,
+          "end": 4.539
+        },
+        {
+          "text": "Writing the subscript one says so plainly.",
+          "heard": "Writing the subscript one says so plainly.",
+          "sent": "Writing the subscript one says so plainly.",
+          "start": 4.889,
+          "end": 7.21
+        },
+        {
+          "text": "Both give five, seven, nine, the sums down the columns.",
+          "heard": "both give 5, 7, 9, the sums down the columns.",
+          "sent": "Both give five, seven, nine, the sums down the columns.",
+          "start": 7.56,
+          "end": 11.362
+        }
+      ]
+    },
+    {
+      "id": "reduce-axis-2",
+      "narration": "With subscript two, it sums along each row instead. That gives six and fifteen.",
+      "seconds": 6.6,
+      "sentences": [
+        {
+          "text": "With subscript two, it sums along each row instead.",
+          "heard": "With Subscript 2, it sums along each row instead.",
+          "sent": "With subscript two, it sums along each row instead.",
+          "start": 0.4,
+          "end": 3.84
+        },
+        {
+          "text": "That gives six and fifteen.",
+          "heard": "That gives 6 and 15.",
+          "sent": "That gives six and fifteen.",
+          "start": 4.19,
+          "end": 5.871
+        }
+      ]
+    },
+    {
+      "id": "rotate",
+      "narration": "Rotate shifts items around. Along axis one, the rows trade places. Along axis two, each row shifts left by one.",
+      "seconds": 10.7,
+      "sentences": [
+        {
+          "text": "Rotate shifts items around.",
+          "heard": "Rotate Shift's items around.",
+          "sent": "Rotate shifts items around.",
+          "unverified": true,
+          "start": 0.4,
+          "end": 1.88
+        },
+        {
+          "text": "Along axis one, the rows trade places.",
+          "heard": "Along axis 1, the rows trade places.",
+          "sent": "Along axis one, the rows trade places.",
+          "start": 2.23,
+          "end": 5.615
+        },
+        {
+          "text": "Along axis two, each row shifts left by one.",
+          "heard": "Along axis 2, each row shifts left by one.",
+          "sent": "Along axis two, each row shifts left by one.",
+          "start": 5.965,
+          "end": 9.996
+        }
+      ]
+    },
+    {
+      "id": "reverse",
+      "narration": "Reverse takes a subscript too. Along axis two, each row is reversed.",
+      "seconds": 6.1,
+      "sentences": [
+        {
+          "text": "Reverse takes a subscript too.",
+          "heard": "Reverse takes a subscript too.",
+          "sent": "Reverse takes a subscript too.",
+          "start": 0.4,
+          "end": 1.768
+        },
+        {
+          "text": "Along axis two, each row is reversed.",
+          "heard": "along axis 2, each row is reversed.",
+          "sent": "Along axis two, each row is reversed.",
+          "start": 2.118,
+          "end": 5.33
+        }
+      ]
+    },
+    {
+      "id": "transpose",
+      "narration": "Transpose reverses the order of the {axes|@axes}. Rows become columns. A two by three matrix becomes three by two.",
+      "seconds": 9.5,
+      "sentences": [
+        {
+          "text": "Transpose reverses the order of the axes.",
+          "heard": "Transpose reverses the order of the axes.",
+          "sent": "Transpose reverses the order of the axes.",
+          "spoken": "Transpose reverses the order of the @axes.",
+          "start": 0.4,
+          "end": 3.922
+        },
+        {
+          "text": "Rows become columns.",
+          "heard": "rows become columns.",
+          "sent": "Rows become columns.",
+          "start": 4.272,
+          "end": 5.943
+        },
+        {
+          "text": "A two by three matrix becomes three by two.",
+          "heard": "a 2x3 matrix becomes 3x2.",
+          "sent": "A two by three matrix becomes three by two.",
+          "unverified": true,
+          "start": 6.293,
+          "end": 8.703
+        }
+      ]
+    },
+    {
+      "id": "rank-3-axes",
+      "narration": "The same subscripts work in three dimensions. Reduce along axis one adds the two tables together. The result is three by four.",
+      "seconds": 9.5,
+      "sentences": [
+        {
+          "text": "The same subscripts work in three dimensions.",
+          "heard": "The same subscripts work in three dimensions.",
+          "sent": "The same subscripts work in three dimensions.",
+          "start": 0.4,
+          "end": 2.7
+        },
+        {
+          "text": "Reduce along axis one adds the two tables together.",
+          "heard": "Reduce Along Axis 1 adds the two tables together.",
+          "sent": "Reduce along axis one adds the two tables together.",
+          "start": 3.05,
+          "end": 6.616
+        },
+        {
+          "text": "The result is three by four.",
+          "heard": "The result is three by four.",
+          "sent": "The result is three by four.",
+          "start": 6.966,
+          "end": 8.75
+        }
+      ]
+    },
+    {
+      "id": "rank-3-axes-3",
+      "narration": "Reduce along axis three sums each row. The result is two by three.",
+      "seconds": 6.0,
+      "sentences": [
+        {
+          "text": "Reduce along axis three sums each row.",
+          "heard": "Reduce along axis 3 sums each row.",
+          "sent": "Reduce along axis three sums each row.",
+          "start": 0.4,
+          "end": 3.098
+        },
+        {
+          "text": "The result is two by three.",
+          "heard": "The result is 2x3.",
+          "sent": "The result is two by three.",
+          "unverified": true,
+          "start": 3.448,
+          "end": 5.29
+        }
+      ]
+    },
+    {
+      "id": "rank-3-transpose",
+      "narration": "Transpose reverses all three {axes|@axes}. Two by three by four becomes four by three by two.",
+      "seconds": 10.2,
+      "sentences": [
+        {
+          "text": "Transpose reverses all three axes.",
+          "heard": "Transpose reverses all three. Axes.",
+          "sent": "Transpose reverses all three axes.",
+          "spoken": "Transpose reverses all three @axes.",
+          "start": 0.4,
+          "end": 4.202
+        },
+        {
+          "text": "Two by three by four becomes four by three by two.",
+          "heard": "2 by 3 by 4 becomes 4 by 3 by 2.",
+          "sent": "Two by three by four becomes four by three by two.",
+          "start": 4.552,
+          "end": 9.498
+        }
+      ]
+    },
+    {
+      "id": "rank-3-swap",
+      "narration": "With two subscripts, it swaps just those two {axes|@axes}. A list on the left can put the {axes|@axes} in any order.",
+      "seconds": 10.4,
+      "sentences": [
+        {
+          "text": "With two subscripts, it swaps just those two axes.",
+          "heard": "With two subscripts, it swaps just those two. Axes",
+          "sent": "With two subscripts, it swaps just those two axes.",
+          "spoken": "With two subscripts, it swaps just those two @axes.",
+          "start": 0.4,
+          "end": 4.818
+        },
+        {
+          "text": "A list on the left can put the axes in any order.",
+          "heard": "The list on the left can put axes in any order.",
+          "sent": "A list on the left can put the axes in any order.",
+          "spoken": "A list on the left can put the @axes in any order.",
+          "unverified": true,
+          "start": 5.168,
+          "end": 9.649
+        }
+      ]
+    },
+    {
+      "id": "ravel",
+      "narration": "{Ravel|@ravel} turns any array into a vector. The rank three array becomes a list of twenty four values. Its rank is now one.",
+      "seconds": 9.1,
+      "sentences": [
+        {
+          "text": "Ravel turns any array into a vector.",
+          "heard": "Ravel turns any array into a vector.",
+          "sent": "ravel turns any array into a vector.",
+          "spoken": "@ravel turns any array into a vector.",
+          "start": 0.4,
+          "end": 3.56
+        },
+        {
+          "text": "The rank three array becomes a list of twenty four values.",
+          "heard": "The rank3 array becomes a list of 24 values.",
+          "sent": "The rank three array becomes a list of twenty four values.",
+          "start": 3.91,
+          "end": 6.845
+        },
+        {
+          "text": "Its rank is now one.",
+          "heard": "Its rank is now one.",
+          "sent": "Its rank is now one.",
+          "start": 7.195,
+          "end": 8.364
+        }
+      ]
+    },
+    {
+      "id": "ravel-columns",
+      "narration": "With subscript two, a matrix unrolls column by column instead.",
+      "seconds": 5.8,
+      "sentences": [
+        {
+          "text": "With subscript two, a matrix unrolls column by column instead.",
+          "heard": "with subscript 2, a matrix unrolls column by column instead.",
+          "sent": "With subscript two, a matrix unrolls column by column instead.",
+          "start": 0.4,
+          "end": 5.044
+        }
+      ]
+    },
+    {
+      "id": "challenge-wealth",
+      "narration": "Here is a short coding challenge, from {LeetCode|@leetcode}. Each row is a customer. Each column is a bank account. Find the richest customer. Sum along axis two, for a total for each customer. Then take the largest. The answer is ten.",
+      "seconds": 17.4,
+      "sentences": [
+        {
+          "text": "Here is a short coding challenge, from LeetCode.",
+          "heard": "Here is a short coding challenge from LeetCode.",
+          "sent": "Here is a short coding challenge, from leetcode.",
+          "spoken": "Here is a short coding challenge, from @leetcode.",
+          "start": 0.4,
+          "end": 4.312
+        },
+        {
+          "text": "Each row is a customer.",
+          "heard": "Each row is a customer.",
+          "sent": "Each row is a customer.",
+          "start": 4.662,
+          "end": 5.874
+        },
+        {
+          "text": "Each column is a bank account.",
+          "heard": "Each column is a bank account.",
+          "sent": "Each column is a bank account.",
+          "start": 6.224,
+          "end": 7.694
+        },
+        {
+          "text": "Find the richest customer.",
+          "heard": "Find the richest customer.",
+          "sent": "Find the richest customer.",
+          "start": 8.044,
+          "end": 9.35
+        },
+        {
+          "text": "Sum along axis two, for a total for each customer.",
+          "heard": "Some along axis 2, for a total for each customer.",
+          "sent": "Sum along axis two, for a total for each customer.",
+          "unverified": true,
+          "start": 9.7,
+          "end": 13.337
+        },
+        {
+          "text": "Then take the largest.",
+          "heard": "Then take the largest.",
+          "sent": "Then take the largest.",
+          "start": 13.687,
+          "end": 14.931
+        },
+        {
+          "text": "The answer is ten.",
+          "heard": "The answer is 10.",
+          "sent": "The answer is ten.",
+          "start": 15.281,
+          "end": 16.689
+        }
+      ]
+    },
+    {
+      "id": "challenge-negatives",
+      "narration": "One more. Count the negative numbers in a grid. Compare the grid with zero. That gives a mask of ones and zeros. Then reduce along both {axes|@axes}{,|/} with subscript one two. There are seven.",
+      "seconds": 15.2,
+      "sentences": [
+        {
+          "text": "One more.",
+          "heard": "one more.",
+          "sent": "One more.",
+          "start": 0.4,
+          "end": 1.433
+        },
+        {
+          "text": "Count the negative numbers in a grid.",
+          "heard": "Count the negative numbers in a grid.",
+          "sent": "Count the negative numbers in a grid.",
+          "start": 1.783,
+          "end": 3.866
+        },
+        {
+          "text": "Compare the grid with zero.",
+          "heard": "compare the grid with zero.",
+          "sent": "Compare the grid with zero.",
+          "start": 4.216,
+          "end": 5.773
+        },
+        {
+          "text": "That gives a mask of ones and zeros.",
+          "heard": "That gives a mask of ones and zeros.",
+          "sent": "That gives a mask of ones and zeros.",
+          "start": 6.123,
+          "end": 8.113
+        },
+        {
+          "text": "Then reduce along both axes, with subscript one two.",
+          "heard": "Then reduce along both axes. Left subscript one two.",
+          "sent": "Then reduce along both axes with subscript one two.",
+          "spoken": "Then reduce along both @axes/ with subscript one two.",
+          "unverified": true,
+          "start": 8.463,
+          "end": 12.911
+        },
+        {
+          "text": "There are seven.",
+          "heard": "There are seven.",
+          "sent": "There are seven.",
+          "start": 13.261,
+          "end": 14.433
+        }
+      ]
+    },
+    {
+      "id": "tensors",
+      "narration": "In machine learning, arrays like these are called {tensors|@tensors}. A color image might have shape four eighty by six forty by three. That is height, width, and three color channels. Stack thirty two images and you add an axis. The batch has rank four.",
+      "seconds": 19.9,
+      "sentences": [
+        {
+          "text": "In machine learning, arrays like these are called tensors.",
+          "heard": "In machine learning, arrays like these are called tensors.",
+          "sent": "In machine learning, arrays like these are called tensors.",
+          "spoken": "In machine learning, arrays like these are called @tensors.",
+          "start": 0.4,
+          "end": 3.982
+        },
+        {
+          "text": "A color image might have shape four eighty by six forty by three.",
+          "heard": "A color image might have shape 480 by 6, 40 by 3.",
+          "sent": "A color image might have shape four eighty by six forty by three.",
+          "start": 4.332,
+          "end": 9.63
+        },
+        {
+          "text": "That is height, width, and three color channels.",
+          "heard": "That is height, width, and three color channels.",
+          "sent": "That is height, width, and three color channels.",
+          "start": 9.98,
+          "end": 13.193
+        },
+        {
+          "text": "Stack thirty two images and you add an axis.",
+          "heard": "Stack 32 images and you add an axis.",
+          "sent": "Stack thirty two images and you add an axis.",
+          "start": 13.543,
+          "end": 16.49
+        },
+        {
+          "text": "The batch has rank four.",
+          "heard": "the batch has rank 4.",
+          "sent": "The batch has rank four.",
+          "start": 16.84,
+          "end": 19.123
+        }
+      ]
+    },
+    {
+      "id": "gpus",
+      "narration": "The {GPU|@gpu} works on many values at once. The shape and the {axes|@axes} tell it how a {tensor|@tensor} is laid out. The ideas in this episode are the same ones. We will come back to {tensors|@tensors} in later episodes.",
+      "seconds": 16.9,
+      "sentences": [
+        {
+          "text": "The GPU works on many values at once.",
+          "heard": "The GPU works on many values at once.",
+          "sent": "The gpu works on many values at once.",
+          "spoken": "The @gpu works on many values at once.",
+          "start": 0.4,
+          "end": 3.642
+        },
+        {
+          "text": "The shape and the axes tell it how a tensor is laid out.",
+          "heard": "the shape and the axes. Tell it how a tensor is laid out.",
+          "sent": "The shape and the axes tell it how a tensor is laid out.",
+          "spoken": "The shape and the @axes tell it how a @tensor is laid out.",
+          "start": 3.992,
+          "end": 9.801
+        },
+        {
+          "text": "The ideas in this episode are the same ones.",
+          "heard": "The ideas in this episode are the same ones.",
+          "sent": "The ideas in this episode are the same ones.",
+          "start": 10.151,
+          "end": 12.747
+        },
+        {
+          "text": "We will come back to tensors in later episodes.",
+          "heard": "We will come back to tensors in later episodes.",
+          "sent": "We will come back to tensors in later episodes.",
+          "spoken": "We will come back to @tensors in later episodes.",
+          "start": 13.097,
+          "end": 16.191
+        }
+      ]
+    },
+    {
+      "id": "next",
+      "narration": "The next episode is about broadcasting. That is how an operation combines arrays of different shapes. Here is a short preview.",
+      "seconds": 8.8,
+      "sentences": [
+        {
+          "text": "The next episode is about broadcasting.",
+          "heard": "The next episode is about broadcasting.",
+          "sent": "The next episode is about broadcasting.",
+          "start": 0.4,
+          "end": 2.741
+        },
+        {
+          "text": "That is how an operation combines arrays of different shapes.",
+          "heard": "That is how an operation combines arrays of different shapes.",
+          "sent": "That is how an operation combines arrays of different shapes.",
+          "start": 3.091,
+          "end": 6.464
+        },
+        {
+          "text": "Here is a short preview.",
+          "heard": "Here is a short preview.",
+          "sent": "Here is a short preview.",
+          "start": 6.814,
+          "end": 8.029
+        }
+      ]
+    },
+    {
+      "id": "preview-extension",
+      "narration": "The simplest case is a single value. Ten times a matrix multiplies every item by ten. The single value extends to every item. Two arrays of the same shape combine item by item. That is the whole rule in {X_eTaL|@xtl}. Other shapes are an error.",
+      "seconds": 17.2,
+      "sentences": [
+        {
+          "text": "The simplest case is a single value.",
+          "heard": "The simplest case is a single value.",
+          "sent": "The simplest case is a single value.",
+          "start": 0.4,
+          "end": 2.585
+        },
+        {
+          "text": "Ten times a matrix multiplies every item by ten.",
+          "heard": "Ten times a matrix multiplies every item by ten.",
+          "sent": "Ten times a matrix multiplies every item by ten.",
+          "start": 2.935,
+          "end": 6.386
+        },
+        {
+          "text": "The single value extends to every item.",
+          "heard": "the single value extends to every item.",
+          "sent": "The single value extends to every item.",
+          "start": 6.736,
+          "end": 9.233
+        },
+        {
+          "text": "Two arrays of the same shape combine item by item.",
+          "heard": "Two arrays of the same shape combine item by item.",
+          "sent": "Two arrays of the same shape combine item by item.",
+          "start": 9.583,
+          "end": 12.297
+        },
+        {
+          "text": "That is the whole rule in X_eTaL.",
+          "heard": "That is the whole rule in XTL.",
+          "sent": "That is the whole rule in xtl.",
+          "spoken": "That is the whole rule in @xtl.",
+          "start": 12.647,
+          "end": 14.72
+        },
+        {
+          "text": "Other shapes are an error.",
+          "heard": "Other shapes are an error.",
+          "sent": "Other shapes are an error.",
+          "start": 15.07,
+          "end": 16.423
+        }
+      ]
+    },
+    {
+      "id": "preview-dialects",
+      "narration": "Array languages draw this line in different places. {APL|@apl} extends a single value too. An axis can say how a vector meets a matrix. {J|jay} and {BQN|bee, queue, en}{,|/} match {axes|@axes} from the front. Each item of a vector goes with one row. The language {K|kay} works much the same way. There, a matrix is a list of rows. {NumPy|@numpy}, for Python, matches {axes|@axes} from the back. The next episode puts them side by side.",
+      "seconds": 33.1,
+      "sentences": [
+        {
+          "text": "Array languages draw this line in different places.",
+          "heard": "Array languages draw this line in different places.",
+          "sent": "Array languages draw this line in different places.",
+          "start": 0.4,
+          "end": 3.052
+        },
+        {
+          "text": "APL extends a single value too.",
+          "heard": "APL extends a single value too.",
+          "sent": "apl extends a single value too.",
+          "spoken": "@apl extends a single value too.",
+          "start": 3.402,
+          "end": 6.138
+        },
+        {
+          "text": "An axis can say how a vector meets a matrix.",
+          "heard": "An axis can say how a vector meets a matrix.",
+          "sent": "An axis can say how a vector meets a matrix.",
+          "start": 6.488,
+          "end": 9.286
+        },
+        {
+          "text": "J and BQN, match axes from the front.",
+          "heard": "J and B, Q, N, match axes from the front.",
+          "sent": "jay and bee, queue, en match axes from the front.",
+          "spoken": "jay and bee, queue, en/ match @axes from the front.",
+          "start": 9.636,
+          "end": 16.104
+        },
+        {
+          "text": "Each item of a vector goes with one row.",
+          "heard": "Each item of a vector goes with one row.",
+          "sent": "Each item of a vector goes with one row.",
+          "start": 16.454,
+          "end": 18.546
+        },
+        {
+          "text": "The language K works much the same way.",
+          "heard": "The language K works much the same way.",
+          "sent": "The language kay works much the same way.",
+          "spoken": "The language kay works much the same way.",
+          "start": 18.896,
+          "end": 21.468
+        },
+        {
+          "text": "There, a matrix is a list of rows.",
+          "heard": "There, a matrix is a list of rows.",
+          "sent": "There, a matrix is a list of rows.",
+          "start": 21.818,
+          "end": 24.487
+        },
+        {
+          "text": "NumPy, for Python, matches axes from the back.",
+          "heard": "NumPy for Python matches axes from the back.",
+          "sent": "numpy, for Python, matches axes from the back.",
+          "spoken": "@numpy, for Python, matches @axes from the back.",
+          "start": 24.837,
+          "end": 29.543
+        },
+        {
+          "text": "The next episode puts them side by side.",
+          "heard": "The next episode puts them side by side.",
+          "sent": "The next episode puts them side by side.",
+          "start": 29.893,
+          "end": 32.387
+        }
+      ]
+    },
+    {
+      "id": "exercise",
+      "narration": "Before the next episode, try this. A video clip has three hundred frames. Each frame is four eighty by six forty, with three colors. Work out its shape and its rank. Then count its values.",
+      "seconds": 14.0,
+      "sentences": [
+        {
+          "text": "Before the next episode, try this.",
+          "heard": "Before the next episode, try this.",
+          "sent": "Before the next episode, try this.",
+          "start": 0.4,
+          "end": 2.571
+        },
+        {
+          "text": "A video clip has three hundred frames.",
+          "heard": "A video clip has 300 frames.",
+          "sent": "A video clip has three hundred frames.",
+          "start": 2.921,
+          "end": 4.786
+        },
+        {
+          "text": "Each frame is four eighty by six forty, with three colors.",
+          "heard": "Each frame is 480 by 640 with three colors.",
+          "sent": "Each frame is four eighty by six forty, with three colors.",
+          "start": 5.136,
+          "end": 9.151
+        },
+        {
+          "text": "Work out its shape and its rank.",
+          "heard": "work out its shape and its rank.",
+          "sent": "Work out its shape and its rank.",
+          "start": 9.501,
+          "end": 11.239
+        },
+        {
+          "text": "Then count its values.",
+          "heard": "then count its values.",
+          "sent": "Then count its values.",
+          "start": 11.589,
+          "end": 13.235
+        }
+      ]
+    }
+  ]
+}

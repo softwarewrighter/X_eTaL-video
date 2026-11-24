@@ -77,21 +77,28 @@
         "type": "code",
         "lines": [
           {
+            "xtl": "7"
+          },
+          {
+            "box": "7"
+          },
+          {
             "xtl": "s_hape 7"
           },
           {
-            "code": ""
+            "box": "┌⊖┐\n│ │\n└~┘"
           },
           {
             "xtl": "t_ally s_hape 7"
           },
           {
-            "code": "0"
+            "box": "0"
           }
         ],
         "focus": [
           [
-            0
+            0,
+            1
           ],
           [
             0,
@@ -99,7 +106,9 @@
           ],
           [
             2,
-            3
+            3,
+            4,
+            5
           ]
         ]
       }
@@ -120,13 +129,13 @@
             "xtl": "s_hape v"
           },
           {
-            "code": "5"
+            "box": "┌→┐\n│5│\n└~┘"
           },
           {
             "xtl": "t_ally s_hape v"
           },
           {
-            "code": "1"
+            "box": "1"
           }
         ],
         "focus": [
@@ -142,16 +151,73 @@
             4
           ],
           [
-            3
+            3,
+            4
+          ]
+        ]
+      }
+    },
+    {
+      "id": "rank-of",
+      "seconds": 14,
+      "heading": "Rank, as a function",
+      "narration": "Let us give that idea a name. Here it is called rank of. It is the tally of the shape. The number forty two has rank zero. {Ravel|@ravel} makes it a list of one item. Now its rank is one.",
+      "lines": [],
+      "panel": {
+        "type": "code",
+        "lines": [
+          {
+            "xtl": "u:r_ankOf := { t_ally s_hape _r }"
+          },
+          {
+            "xtl": "u:r_ankOf 42"
+          },
+          {
+            "box": "0"
+          },
+          {
+            "xtl": "s_hape r_avel 42"
+          },
+          {
+            "box": "┌→┐\n│1│\n└~┘"
+          },
+          {
+            "xtl": "u:r_ankOf r_avel 42"
+          },
+          {
+            "box": "1"
+          }
+        ],
+        "focus": [
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            6
           ]
         ]
       }
     },
     {
       "id": "matrix",
-      "seconds": 12,
+      "seconds": 7,
       "heading": "A matrix",
-      "narration": "A matrix has two {axes|@axes}, rows and columns. This one has two rows and three columns. Its shape is two by three. It holds six values, but its rank is two.",
+      "narration": "A matrix has two {axes|@axes}, rows and columns. This one has two rows and three columns.",
       "lines": [],
       "panel": {
         "type": "code",
@@ -163,40 +229,53 @@
             "xtl": "M"
           },
           {
-            "code": "1 2 3"
-          },
-          {
-            "code": "4 5 6"
-          },
-          {
-            "xtl": "s_hape M"
-          },
-          {
-            "code": "2 3"
-          },
-          {
-            "xtl": "t_ally s_hape M"
-          },
-          {
-            "code": "2"
+            "box": "┌→────┐\n↓1 2 3│\n│4 5 6│\n└~────┘"
           }
         ],
         "focus": [
           [
-            0
+            0,
+            1,
+            2
           ],
           [
+            0,
             1,
+            2
+          ]
+        ]
+      }
+    },
+    {
+      "id": "matrix-shape",
+      "seconds": 6,
+      "heading": "A matrix",
+      "narration": "Its shape is two by three. It holds six values, but its rank is two.",
+      "lines": [],
+      "panel": {
+        "type": "code",
+        "lines": [
+          {
+            "xtl": "s_hape M"
+          },
+          {
+            "box": "┌→──┐\n│2 3│\n└~──┘"
+          },
+          {
+            "xtl": "u:r_ankOf M"
+          },
+          {
+            "box": "2"
+          }
+        ],
+        "focus": [
+          [
+            0,
+            1
+          ],
+          [
             2,
             3
-          ],
-          [
-            4,
-            5
-          ],
-          [
-            6,
-            7
           ]
         ]
       }
@@ -211,28 +290,13 @@
         "type": "code",
         "lines": [
           {
-            "xtl": "2 3 4 r_eshape r_ange 24"
+            "xtl": "T := 2 3 4 r_eshape r_ange 24"
           },
           {
-            "code": " 1  2  3  4"
+            "xtl": "T"
           },
           {
-            "code": " 5  6  7  8"
-          },
-          {
-            "code": " 9 10 11 12"
-          },
-          {
-            "code": ""
-          },
-          {
-            "code": "13 14 15 16"
-          },
-          {
-            "code": "17 18 19 20"
-          },
-          {
-            "code": "21 22 23 24"
+            "box": "┌→──────────┐\n↓ 1  2  3  4│\n↓ 5  6  7  8│\n│ 9 10 11 12│\n│           │\n│13 14 15 16│\n│17 18 19 20│\n│21 22 23 24│\n└~──────────┘"
           }
         ],
         "focus": [
@@ -240,24 +304,12 @@
             0
           ],
           [
-            0,
             1,
-            2,
-            3,
-            4,
-            5,
-            6,
-            7
+            2
           ],
           [
-            0,
             1,
-            2,
-            3,
-            4,
-            5,
-            6,
-            7
+            2
           ],
           []
         ]
@@ -323,9 +375,9 @@
     },
     {
       "id": "reduce-axis",
-      "seconds": 16,
+      "seconds": 10,
       "heading": "Reduce along an axis",
-      "narration": "Reduce works along axis one unless told otherwise. Writing the subscript one says so plainly. Both give five, seven, nine, the sums down the columns. With subscript two, it sums along each row instead. That gives six and fifteen.",
+      "narration": "Reduce works along axis one unless told otherwise. Writing the subscript one says so plainly. Both give five, seven, nine, the sums down the columns.",
       "lines": [],
       "panel": {
         "type": "code",
@@ -334,19 +386,13 @@
             "xtl": "'+ r_/ M"
           },
           {
-            "code": "5 7 9"
+            "box": "┌→────┐\n│5 7 9│\n└~────┘"
           },
           {
             "xtl": "'+ r_/_1 M"
           },
           {
-            "code": "5 7 9"
-          },
-          {
-            "xtl": "'+ r_/_2 M"
-          },
-          {
-            "code": "6 15"
+            "box": "┌→────┐\n│5 7 9│\n└~────┘"
           }
         ],
         "focus": [
@@ -363,23 +409,51 @@
             1,
             2,
             3
+          ]
+        ]
+      }
+    },
+    {
+      "id": "reduce-axis-2",
+      "seconds": 6,
+      "heading": "Reduce along an axis",
+      "narration": "With subscript two, it sums along each row instead. That gives six and fifteen.",
+      "lines": [],
+      "panel": {
+        "type": "code",
+        "lines": [
+          {
+            "xtl": "M"
+          },
+          {
+            "box": "┌→────┐\n↓1 2 3│\n│4 5 6│\n└~────┘"
+          },
+          {
+            "xtl": "'+ r_/_2 M"
+          },
+          {
+            "box": "┌→───┐\n│6 15│\n└~───┘"
+          }
+        ],
+        "focus": [
+          [
+            0,
+            1,
+            2,
+            3
           ],
           [
-            4,
-            5
-          ],
-          [
-            4,
-            5
+            2,
+            3
           ]
         ]
       }
     },
     {
       "id": "rotate",
-      "seconds": 16,
-      "heading": "Rotate and reverse",
-      "narration": "Rotate shifts items around. Along axis one, the rows trade places. Along axis two, each row shifts left by one. Reverse takes a subscript too. Along axis two, each row is reversed.",
+      "seconds": 10,
+      "heading": "Rotate",
+      "narration": "Rotate shifts items around. Along axis one, the rows trade places. Along axis two, each row shifts left by one.",
       "lines": [],
       "panel": {
         "type": "code",
@@ -388,51 +462,59 @@
             "xtl": "1 o_-_1 M"
           },
           {
-            "code": "4 5 6"
-          },
-          {
-            "code": "1 2 3"
+            "box": "┌→────┐\n↓4 5 6│\n│1 2 3│\n└~────┘"
           },
           {
             "xtl": "1 o_-_2 M"
           },
           {
-            "code": "2 3 1"
+            "box": "┌→────┐\n↓2 3 1│\n│5 6 4│\n└~────┘"
+          }
+        ],
+        "focus": [
+          [],
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "id": "reverse",
+      "seconds": 6,
+      "heading": "Reverse",
+      "narration": "Reverse takes a subscript too. Along axis two, each row is reversed.",
+      "lines": [],
+      "panel": {
+        "type": "code",
+        "lines": [
+          {
+            "xtl": "M"
           },
           {
-            "code": "5 6 4"
+            "box": "┌→────┐\n↓1 2 3│\n│4 5 6│\n└~────┘"
           },
           {
             "xtl": "r_ev_2 M"
           },
           {
-            "code": "3 2 1"
-          },
-          {
-            "code": "6 5 4"
+            "box": "┌→────┐\n↓3 2 1│\n│6 5 4│\n└~────┘"
           }
         ],
         "focus": [
           [
-            0
+            2
           ],
           [
             0,
             1,
-            2
-          ],
-          [
-            3,
-            4,
-            5
-          ],
-          [
-            6
-          ],
-          [
-            6,
-            7,
-            8
+            2,
+            3
           ]
         ]
       }
@@ -450,19 +532,13 @@
             "xtl": "o_\\ M"
           },
           {
-            "code": "1 4"
-          },
-          {
-            "code": "2 5"
-          },
-          {
-            "code": "3 6"
+            "box": "┌→──┐\n↓1 4│\n│2 5│\n│3 6│\n└~──┘"
           },
           {
             "xtl": "s_hape o_\\ M"
           },
           {
-            "code": "3 2"
+            "box": "┌→──┐\n│3 2│\n└~──┘"
           }
         ],
         "focus": [
@@ -471,13 +547,11 @@
           ],
           [
             0,
-            1,
-            2,
-            3
+            1
           ],
           [
-            4,
-            5
+            2,
+            3
           ]
         ]
       }
@@ -511,9 +585,9 @@
     },
     {
       "id": "rank-3-axes",
-      "seconds": 18,
+      "seconds": 10,
       "heading": "Rank three, along an axis",
-      "narration": "The same subscripts work in three dimensions. Reduce along axis one adds the two tables together. The result is three by four. Reduce along axis three sums each row. The result is two by three.",
+      "narration": "The same subscripts work in three dimensions. Reduce along axis one adds the two tables together. The result is three by four.",
       "lines": [],
       "panel": {
         "type": "code",
@@ -525,22 +599,7 @@
             "xtl": "'+ r_/_1 T"
           },
           {
-            "code": "14 16 18 20"
-          },
-          {
-            "code": "22 24 26 28"
-          },
-          {
-            "code": "30 32 34 36"
-          },
-          {
-            "xtl": "'+ r_/_3 T"
-          },
-          {
-            "code": "10 26 42"
-          },
-          {
-            "code": "58 74 90"
+            "box": "┌→──────────┐\n↓14 16 18 20│\n│22 24 26 28│\n│30 32 34 36│\n└~──────────┘"
           }
         ],
         "focus": [
@@ -548,56 +607,100 @@
             0
           ],
           [
-            0,
             1,
-            2,
-            3
+            2
+          ],
+          [
+            1,
+            2
+          ]
+        ]
+      }
+    },
+    {
+      "id": "rank-3-axes-3",
+      "seconds": 6,
+      "heading": "Rank three, along an axis",
+      "narration": "Reduce along axis three sums each row. The result is two by three.",
+      "lines": [],
+      "panel": {
+        "type": "code",
+        "lines": [
+          {
+            "xtl": "'+ r_/_3 T"
+          },
+          {
+            "box": "┌→───────┐\n↓10 26 42│\n│58 74 90│\n└~───────┘"
+          }
+        ],
+        "focus": [
+          [
+            0,
+            1
           ],
           [
             0,
-            1,
-            2,
-            3
-          ],
-          [
-            4,
-            5,
-            6
-          ],
-          [
-            4,
-            5,
-            6
+            1
           ]
         ]
       }
     },
     {
       "id": "rank-3-transpose",
-      "seconds": 18,
+      "seconds": 8,
       "heading": "Rank three, transposed",
-      "narration": "Transpose reverses all three {axes|@axes}. Two by three by four becomes four by three by two. With two subscripts, it swaps just those two {axes|@axes}. A list on the left can put the {axes|@axes} in any order.",
+      "narration": "Transpose reverses all three {axes|@axes}. Two by three by four becomes four by three by two.",
       "lines": [],
       "panel": {
         "type": "code",
         "lines": [
           {
+            "xtl": "s_hape T"
+          },
+          {
+            "box": "┌→────┐\n│2 3 4│\n└~────┘"
+          },
+          {
             "xtl": "s_hape o_\\ T"
           },
           {
-            "code": "4 3 2"
-          },
+            "box": "┌→────┐\n│4 3 2│\n└~────┘"
+          }
+        ],
+        "focus": [
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "id": "rank-3-swap",
+      "seconds": 9,
+      "heading": "Rank three, transposed",
+      "narration": "With two subscripts, it swaps just those two {axes|@axes}. A list on the left can put the {axes|@axes} in any order.",
+      "lines": [],
+      "panel": {
+        "type": "code",
+        "lines": [
           {
             "xtl": "s_hape o_\\_23 T"
           },
           {
-            "code": "2 4 3"
+            "box": "┌→────┐\n│2 4 3│\n└~────┘"
           },
           {
             "xtl": "s_hape 3 1 2 t_ranspose T"
           },
           {
-            "code": "3 4 2"
+            "box": "┌→────┐\n│3 4 2│\n└~────┘"
           }
         ],
         "focus": [
@@ -606,51 +709,38 @@
             1
           ],
           [
-            0,
-            1
-          ],
-          [
             2,
             3
-          ],
-          [
-            4,
-            5
           ]
         ]
       }
     },
     {
       "id": "ravel",
-      "seconds": 16,
+      "seconds": 10,
       "heading": "Back to rank one",
-      "narration": "{Ravel|@ravel} turns any array into a vector. The rank three array becomes a list of twenty four values. Its rank is now one. With subscript two, a matrix unrolls column by column instead.",
+      "narration": "{Ravel|@ravel} turns any array into a vector. The rank three array becomes a list of twenty four values. Its rank is now one.",
       "lines": [],
       "panel": {
         "type": "code",
         "lines": [
           {
-            "xtl": "r_avel T"
-          },
-          {
-            "code": "1 2 3 ... 22 23 24"
-          },
-          {
             "xtl": "s_hape r_avel T"
           },
           {
-            "code": "24"
+            "box": "┌→─┐\n│24│\n└~─┘"
           },
           {
-            "xtl": "r_avel_2 M"
+            "xtl": "u:r_ankOf r_avel T"
           },
           {
-            "code": "1 4 2 5 3 6"
+            "box": "1"
           }
         ],
         "focus": [
           [
-            0
+            0,
+            1
           ],
           [
             0,
@@ -659,10 +749,38 @@
           [
             2,
             3
-          ],
+          ]
+        ]
+      }
+    },
+    {
+      "id": "ravel-columns",
+      "seconds": 6,
+      "heading": "Back to rank one",
+      "narration": "With subscript two, a matrix unrolls column by column instead.",
+      "lines": [],
+      "panel": {
+        "type": "code",
+        "lines": [
+          {
+            "xtl": "r_avel M"
+          },
+          {
+            "box": "┌→──────────┐\n│1 2 3 4 5 6│\n└~──────────┘"
+          },
+          {
+            "xtl": "r_avel_2 M"
+          },
+          {
+            "box": "┌→──────────┐\n│1 4 2 5 3 6│\n└~──────────┘"
+          }
+        ],
+        "focus": [
           [
-            4,
-            5
+            0,
+            1,
+            2,
+            3
           ]
         ]
       }
@@ -683,13 +801,13 @@
             "xtl": "'+ r_/_2 accounts"
           },
           {
-            "code": "6 10 8"
+            "box": "┌→─────┐\n│6 10 8│\n└~─────┘"
           },
           {
             "xtl": "'m_ax r_/ '+ r_/_2 accounts"
           },
           {
-            "code": "10"
+            "box": "10"
           }
         ],
         "focus": [
@@ -720,54 +838,45 @@
       "id": "challenge-negatives",
       "seconds": 22,
       "heading": "A challenge: count the negatives",
-      "narration": "One more. Count the negative numbers in a grid. Compare the grid with zero. That gives a mask of ones and zeros. Then reduce along both {axes|@axes}, with subscript one two. There are seven.",
+      "narration": "One more. Count the negative numbers in a grid. Compare the grid with zero. That gives a mask of ones and zeros. Then reduce along both {axes|@axes}. The subscript is one two. There are seven.",
       "lines": [],
       "panel": {
         "type": "code",
         "lines": [
           {
-            "xtl": "grid := 3 4 r_eshape 3 2 1 -1 1 1 -1 -2 -1 -1 -2 -3"
-          },
-          {
             "xtl": "grid < 0"
           },
           {
-            "code": "0 0 0 1"
-          },
-          {
-            "code": "0 0 1 1"
-          },
-          {
-            "code": "1 1 1 1"
+            "box": "┌→──────┐\n↓0 0 0 1│\n│0 0 1 1│\n│1 1 1 1│\n└~──────┘"
           },
           {
             "xtl": "'+ r_/_12 grid < 0"
           },
           {
-            "code": "7"
+            "box": "7"
           }
         ],
         "focus": [
+          [],
           [],
           [
             0
           ],
           [
+            0,
             1
           ],
           [
-            1,
             2,
-            3,
-            4
+            3
           ],
           [
-            5,
-            6
+            2,
+            3
           ],
           [
-            5,
-            6
+            2,
+            3
           ]
         ]
       }
@@ -811,19 +920,13 @@
             "xtl": "s_hape images"
           },
           {
-            "code": "32 480 640 3"
+            "box": "┌→───────────┐\n│32 480 640 3│\n└~───────────┘"
           },
           {
-            "xtl": "t_ally s_hape images"
+            "xtl": "u:r_ankOf images"
           },
           {
-            "code": "4"
-          },
-          {
-            "xtl": "'* r_/ s_hape images"
-          },
-          {
-            "code": "29491200"
+            "box": "4"
           }
         ],
         "focus": [
@@ -854,7 +957,7 @@
       "id": "gpus",
       "seconds": 16,
       "heading": "Tensors on a GPU",
-      "narration": "The {GPU|@gpu} works on many values at once. Shape and {axes|@axes} tell it how a {tensor|@tensor} is laid out. The ideas in this episode are the same ones. We will come back to {tensors|@tensors} in later episodes.",
+      "narration": "The {GPU|@gpu} works on many values at once. The shape and the {axes|@axes} tell it how a {tensor|@tensor} is laid out. The ideas in this episode are the same ones. We will come back to {tensors|@tensors} in later episodes.",
       "lines": [],
       "slide": {
         "type": "points",
@@ -900,7 +1003,7 @@
       "id": "preview-extension",
       "seconds": 22,
       "heading": "One value, or the same shape",
-      "narration": "The simplest case is a single value. Ten times a matrix multiplies every item by ten. The single value extends to every item. Two arrays of the same shape combine item by item. In {X_eTaL|@xtl}, that is the whole rule. Other shapes are an error.",
+      "narration": "The simplest case is a single value. Ten times a matrix multiplies every item by ten. The single value extends to every item. Two arrays of the same shape combine item by item. That is the whole rule in {X_eTaL|@xtl}. Other shapes are an error.",
       "lines": [],
       "slide": {
         "type": "points",
@@ -932,7 +1035,7 @@
       "id": "preview-dialects",
       "seconds": 30,
       "heading": "Where languages differ",
-      "narration": "Array languages draw this line in different places. {APL|@apl} extends a single value too. An axis can say how a vector meets a matrix. {J|jay} and {BQN|bee, queue, en}, match {axes|@axes} from the front. Each item of a vector goes with one row. {K|kay} works much the same way. There, a matrix is a list of rows. {NumPy|@numpy}, for Python, matches {axes|@axes} from the back. The next episode puts them side by side.",
+      "narration": "Array languages draw this line in different places. {APL|@apl} extends a single value too. An axis can say how a vector meets a matrix. {J|jay} and {BQN|bee, queue, en}{,|/} match {axes|@axes} from the front. Each item of a vector goes with one row. The language {K|kay} works much the same way. There, a matrix is a list of rows. {NumPy|@numpy}, for Python, matches {axes|@axes} from the back. The next episode puts them side by side.",
       "lines": [],
       "slide": {
         "type": "points",

@@ -11,6 +11,10 @@ Categories: `feat` new capability, `fix` a bug or wrong behavior,
 `chore` agentrail bookkeeping (step complete, saga archive),
 `vendor` a move of the pinned X_eTaL.
 
+## 2026-11-24
+
+- 11:27 `feat` story code panels take a {"box": ...} line: a result as xetal --box draws it (APL2 DISPLAY frames), one block set tight so the frame joins (remotion/src/Panel.tsx, types, schema). `lesson` al-03-shape: every result from the pinned xetal --box (lessons/al-03-shape/lesson.mjs), busy panels split to fit (33 scenes), rank as a function (u:r_ankOf), five flagged sentences reworded or broken into phrases. `docs` the series plan: tacit programming placement (07 a taste, 11 the introduction, a trains episode after 12) and the X_eTaL tools to use.
+
 ## 2026-11-23
 
 - 22:11 `lesson` al-03-shape: word clips for NumPy, LeetCode, tensor, tensors, ravel (each right on its first take), spliced into the narration; recorded in docs/voice-words.json.

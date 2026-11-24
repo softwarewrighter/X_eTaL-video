@@ -10,8 +10,9 @@ Sunburst (music-pipe-rs, the author).
 
 | File | What |
 | ---- | ---- |
-| `lesson.json` | 26 scenes: the title; the recap; scalar, vector, matrix, rank 3; axes; reduce, rotate, reverse and transpose along an axis, the subscript written out; the same on rank 3; ravel back to rank 1; two LeetCode challenges (1672, the richest customer; 1351, count the negatives); tensors in machine learning and on the GPU; the next episode (broadcasting) and its preview; the exercise; call to action; end screen |
-| `data.xtl` | every X_eTaL line the video shows, run at the pin |
+| `lesson.json` | 33 scenes: the title; the recap; scalar, vector, rank as a function (`u:r_ankOf`), matrix, rank 3; axes; reduce, rotate, reverse and transpose along an axis, the subscript written out; the same on rank 3; ravel back to rank 1; two LeetCode challenges (1672, the richest customer; 1351, count the negatives); tensors in machine learning and on the GPU; the next episode (broadcasting) and its preview; the exercise; call to action; end screen |
+| `data.xtl` | every X_eTaL line the video shows, run at the pin; the panels show what `xetal --box` prints for each (APL2 DISPLAY frames), made by `lesson.mjs` from the pinned binary, never typed |
+| `lesson.mjs` | writes `lesson.json`: the scenes, and each result from `bin/xetal --box` |
 | `timing.json` | the schedule X_eTaL computes from the lesson; checked by the gate |
 
 ## Sources
@@ -27,3 +28,4 @@ Sunburst (music-pipe-rs, the author).
 | preview-dialects | APL: scalar extension and an axis on a scalar function; J and BQN: leading-axis agreement; K: a matrix is a list of rows; NumPy: trailing-axis broadcasting | the languages' documentation; to be checked by the author |
 | challenge-wealth | LeetCode 1672, Richest Customer Wealth: the largest row sum, 10 for the example | https://leetcode.com/problems/richest-customer-wealth/ and `data.xtl` |
 | challenge-negatives | LeetCode 1351, Count Negative Numbers in a Sorted Matrix: 7 for a 3 by 4 example; solved on code_report (https://youtu.be/pDbDtGn1PXk) | https://leetcode.com/problems/count-negative-numbers-in-a-sorted-matrix/ and `data.xtl` |
+| rank-of | `u:r_ankOf := { t_ally s_hape _r }`; 42 has rank 0, `r_avel 42` rank 1; a built-in is planned after this episode | the author, 2026-11-24 (the live editor) and `data.xtl` |
