@@ -108,52 +108,66 @@
     },
     {
       "id": "rank-of",
-      "narration": "Let us give that idea a name. Here it is called rank of. It is the tally of the shape. The number forty two has rank zero. {Ravel|@ravel} makes it a list of one item. Now its rank is one.",
-      "seconds": 13.5,
+      "narration": "Rank comes up often, so let us give it a name. This line defines a function called rank of. It is the tally of the shape. A later episode shows how to define your own functions. Soon, {X_eTaL|@xtl} will have rank of built in. Then this line is not needed. A scalar has rank zero. A vector has rank one.",
+      "seconds": 22.4,
       "sentences": [
         {
-          "text": "Let us give that idea a name.",
-          "heard": "Let's give that idea a name.",
-          "sent": "Let us give that idea a name.",
+          "text": "Rank comes up often, so let us give it a name.",
+          "heard": "Rank comes up often, so let us give it a name.",
+          "sent": "Rank comes up often, so let us give it a name.",
           "start": 0.4,
-          "end": 2.254
+          "end": 3.301
         },
         {
-          "text": "Here it is called rank of.",
-          "heard": "Here it is called Rank Of.",
-          "sent": "Here it is called rank of.",
-          "start": 2.604,
-          "end": 4.541
+          "text": "This line defines a function called rank of.",
+          "heard": "This line defines a function called rankOf.",
+          "sent": "This line defines a function called rank of.",
+          "start": 3.651,
+          "end": 6.812
         },
         {
           "text": "It is the tally of the shape.",
           "heard": "It is the tally of the sheep.",
           "sent": "It is the tally of the shape.",
           "unverified": true,
-          "start": 4.891,
-          "end": 6.006
+          "start": 7.162,
+          "end": 8.278
         },
         {
-          "text": "The number forty two has rank zero.",
-          "heard": "The number 42 has rank zero.",
-          "sent": "The number forty two has rank zero.",
-          "start": 6.356,
-          "end": 8.661
+          "text": "A later episode shows how to define your own functions.",
+          "heard": "A later episode shows how to define your own functions.",
+          "sent": "A later episode shows how to define your own functions.",
+          "start": 8.628,
+          "end": 11.711
         },
         {
-          "text": "Ravel makes it a list of one item.",
-          "heard": "Ravel makes it a list of one item.",
-          "sent": "ravel makes it a list of one item.",
-          "spoken": "@ravel makes it a list of one item.",
-          "start": 9.011,
-          "end": 11.419
+          "text": "Soon, X_eTaL will have rank of built in.",
+          "heard": "Soon, XTL will have rank of built-in.",
+          "sent": "Soon, xtl will have rank of built in.",
+          "spoken": "Soon, @xtl will have rank of built in.",
+          "start": 12.061,
+          "end": 15.634
         },
         {
-          "text": "Now its rank is one.",
-          "heard": "Now its rank is one.",
-          "sent": "Now its rank is one.",
-          "start": 11.769,
-          "end": 12.8
+          "text": "Then this line is not needed.",
+          "heard": "then this line is not needed.",
+          "sent": "Then this line is not needed.",
+          "start": 15.984,
+          "end": 17.436
+        },
+        {
+          "text": "A scalar has rank zero.",
+          "heard": "A scalar has rank zero.",
+          "sent": "A scalar has rank zero.",
+          "start": 17.786,
+          "end": 19.683
+        },
+        {
+          "text": "A vector has rank one.",
+          "heard": "A vector has rank one.",
+          "sent": "A vector has rank one.",
+          "start": 20.033,
+          "end": 21.68
         }
       ]
     },
@@ -202,8 +216,8 @@
     },
     {
       "id": "rank-3",
-      "narration": "Add one more axis. Two tables, each three by four, make an array of shape two by three by four. Its rank is three. Higher ranks follow the same rule.",
-      "seconds": 11.0,
+      "narration": "Add one more axis. Two tables, each three by four, make an array of shape two by three by four.",
+      "seconds": 7.5,
       "sentences": [
         {
           "text": "Add one more axis.",
@@ -219,20 +233,27 @@
           "unverified": true,
           "start": 1.826,
           "end": 6.769
-        },
+        }
+      ]
+    },
+    {
+      "id": "rank-3-rank",
+      "narration": "Its rank is three. Higher ranks follow the same rule.",
+      "seconds": 4.3,
+      "sentences": [
         {
           "text": "Its rank is three.",
           "heard": "its rank is three.",
           "sent": "Its rank is three.",
-          "start": 7.119,
-          "end": 8.096
+          "start": 0.4,
+          "end": 1.376
         },
         {
           "text": "Higher ranks follow the same rule.",
           "heard": "Higher ranks follow the same rule.",
           "sent": "Higher ranks follow the same rule.",
-          "start": 8.446,
-          "end": 10.25
+          "start": 1.726,
+          "end": 3.531
         }
       ]
     },
@@ -530,6 +551,27 @@
           "sent": "Its rank is now one.",
           "start": 7.195,
           "end": 8.364
+        }
+      ]
+    },
+    {
+      "id": "ravel-scalar",
+      "narration": "Even a single number becomes a list of one item. Its rank is one.",
+      "seconds": 5.4,
+      "sentences": [
+        {
+          "text": "Even a single number becomes a list of one item.",
+          "heard": "Even a single number becomes a list of one item.",
+          "sent": "Even a single number becomes a list of one item.",
+          "start": 0.4,
+          "end": 3.222
+        },
+        {
+          "text": "Its rank is one.",
+          "heard": "Its rank is one.",
+          "sent": "Its rank is one.",
+          "start": 3.572,
+          "end": 4.637
         }
       ]
     },

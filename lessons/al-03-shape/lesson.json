@@ -69,7 +69,7 @@
       "id": "scalar",
       "seconds": 10,
       "heading": "A scalar",
-      "narration": "A scalar is a single value. It has no {axes|@axes}. Its shape is an empty list, so its rank is zero.",
+      "narration": "{A scalar|A scalar /} is a single value. It has no {axes|@axes}. Its shape is an empty list, so its rank is zero.",
       "lines": [],
       "panel": {
         "type": "code",
@@ -145,7 +145,7 @@
       "id": "rank-of",
       "seconds": 24,
       "heading": "Rank, as a function",
-      "narration": "Rank comes up often, so let us give it a name. This line defines a function called rank of. It is the tally of the shape. A later episode shows how to define your own functions. Soon, {X_eTaL|@xtl} will have rank of built in. Then this line is not needed. A scalar has rank zero. A vector has rank one.",
+      "narration": "Rank comes up often, so let us give it a name. This line defines a function called rank of. It applies tally to the shape of its argument. A later episode shows how to define your own functions. Soon, {X_eTaL|@xtl} will have rank of built in. Then this line is not needed. A scalar has rank zero. A vector has rank one.",
       "lines": [],
       "panel": {
         "type": "code",
@@ -699,7 +699,7 @@
       "id": "rank-3-swap",
       "seconds": 9,
       "heading": "Rank three, transposed",
-      "narration": "With two subscripts, it swaps just those two {axes|@axes}. A list on the left can put the {axes|@axes} in any order.",
+      "narration": "With two subscripts, it swaps just those two {axes|@axes}. {A list on the left|A list on the left /} can put the {axes|@axes} in any order.",
       "lines": [],
       "panel": {
         "type": "code",
