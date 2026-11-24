@@ -1,0 +1,1 @@
+Word clips for al-03-shape: numpy, leetcode, tensor, tensors, ravel, each right first take; spliced; Python left to the sentence check
