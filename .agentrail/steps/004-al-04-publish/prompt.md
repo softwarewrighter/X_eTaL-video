@@ -1,0 +1,1 @@
+After the author's review: fixes, title.txt and description.txt, just youtube al-04-broadcast; after the upload, poster, just link, just pages, just publish; series plan updated.

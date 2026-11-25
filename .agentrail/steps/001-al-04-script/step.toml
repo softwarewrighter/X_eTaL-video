@@ -1,0 +1,8 @@
+number = 1
+slug = "al-04-script"
+status = "in-progress"
+description = "lessons/al-04-broadcast/: a story lesson for episode 04 in the al-03 pattern ..."
+role = "production"
+context_files = []
+created_at = "2026-11-25T14:29:30"
+commits = []
