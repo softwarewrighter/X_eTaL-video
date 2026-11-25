@@ -1,8 +1,9 @@
 number = 3
 slug = "al-03-voice"
-status = "in-progress"
+status = "completed"
 description = "Narrate and render through just produce al-03-shape (voxq); short sentences; ..."
 role = "production"
 context_files = []
 created_at = "2026-11-23T17:31:47"
-commits = []
+completed_at = "2026-11-24T21:18:23"
+commits = ["e5d9c4968138ae72e163a6ebb2778219f6269b86"]

@@ -1,0 +1,1 @@
+al-03-shape narrated and rendered (6:27, 35 scenes): xetal --box results, u:r_ankOf, Sonata Sprint middle phrases; whisper misses fixed except accepted numerals/homophones; review page served
