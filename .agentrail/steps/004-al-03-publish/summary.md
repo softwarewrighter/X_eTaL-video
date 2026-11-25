@@ -1,0 +1,1 @@
+al-03-shape published: https://youtu.be/JbKMtZZT6AY; out/al-03-shape-youtube/ (title, description with chapters, captions, thumbnail); poster 5040, linked, site published to gh-pages
