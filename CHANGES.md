@@ -11,6 +11,10 @@ Categories: `feat` new capability, `fix` a bug or wrong behavior,
 `chore` agentrail bookkeeping (step complete, saga archive),
 `vendor` a move of the pinned X_eTaL.
 
+## 2026-11-25
+
+- Publish: al-03-shape is on YouTube (https://youtu.be/JbKMtZZT6AY): poster frame 5040, linked, the site republished; the series plan marks episode 03 published.
+
 ## 2026-11-24
 
 - Publish: al-03-shape title.txt and description.txt (chapters from the schedule, links to episodes 1 and 2 and code_report); just youtube builds out/al-03-shape-youtube/.

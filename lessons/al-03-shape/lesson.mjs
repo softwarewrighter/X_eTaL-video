@@ -51,5 +51,5 @@ const scenes = [
 ];
 const { scenes: _, youtube, poster, ...h } = l;
 h.music = { file: "/Users/mike/github/softwarewrighter/music-pipe-rs/work/video-beds/sonata-sprint.wav", intro: { seconds: 5, fadeOut: 0.5 }, outro: { seconds: 5, fadeIn: 0.5 }, slides: { volume: 0.3, fade: 0.4, starts: [5, 10, 15] } };
-const out = { ...h, slug: "al-03-shape", title: "Shape, rank, axes and dimensions", summary: "Array languages, episode 3: scalars, vectors, matrices and a rank 3 array; shape, rank and axes; reduce, rotate, reverse and transpose along an axis, the axis written out; ravel back to rank one; tensors in machine learning and on GPUs.", order: 102, brand: "Array Languages: episode 3", scenes };
+const out = { ...h, slug: "al-03-shape", title: "Shape, rank, axes and dimensions", summary: "Array languages, episode 3: scalars, vectors, matrices and a rank 3 array; shape, rank and axes; reduce, rotate, reverse and transpose along an axis, the axis written out; ravel back to rank one; tensors in machine learning and on GPUs.", order: 102, poster: 5040, youtube: "JbKMtZZT6AY", brand: "Array Languages: episode 3", scenes };
 writeFileSync("lessons/al-03-shape/lesson.json", JSON.stringify(out, null, 2) + "\n");
