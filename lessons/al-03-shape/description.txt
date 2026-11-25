@@ -1,0 +1,37 @@
+Array Languages, episode 3. Every array has a shape, a rank and axes. This episode builds up from a scalar to a vector, a matrix and a rank 3 array, and defines rank as a small function. It then works along an axis with the axis written out: reduce, rotate, reverse and transpose, on a matrix and on a rank 3 array, and ravel turns any array back into rank one. Two LeetCode problems (1672, Richest Customer Wealth; 1351, Count Negative Numbers in a Sorted Matrix) are solved in one line each. It ends with tensors in machine learning and on GPUs, and a preview of broadcasting, the topic of the next episode.
+
+Chapters:
+0:00 Shape, rank, axes and dimensions
+0:08 Last time
+0:22 A scalar
+0:32 A vector
+0:41 Rank, as a function
+1:04 A matrix
+1:18 Rank three
+1:35 Axes
+1:51 Reduce along an axis
+2:10 Rotate
+2:20 Reverse
+2:26 Transpose
+2:41 Rank three, along an axis
+2:56 Rank three, transposed
+3:17 Back to rank one
+3:38 Challenge: the richest customer
+3:55 Challenge: count the negatives
+4:15 Tensors
+4:35 Tensors on a GPU
+4:52 Next time: broadcasting
+5:18 Where languages differ
+5:51 Before the next episode
+
+Episode 1, Why another programming language: https://youtu.be/NfdzVWjje2Y
+Episode 2, From scalar loops to array operations: https://youtu.be/YiJYDiD7xqc
+code_report on LeetCode 1351: https://youtu.be/pDbDtGn1PXk
+Try X_eTaL in your browser: https://softwarewrighter.github.io/X_eTaL/
+X_eTaL: https://github.com/softwarewrighter/X_eTaL
+The Array Languages blog series: https://blog.softwarewrighter.com/series/#array-languages
+
+Blog: https://blog.softwarewrighter.com/
+Discord: https://discord.gg/Ctzk5uHggZ
+
+#ArrayProgramming #APL #XeTaL #Programming #Tensors #MachineLearning
