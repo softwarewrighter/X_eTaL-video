@@ -41,9 +41,9 @@ the shorts) stay as they are.
 | 01 | Why another programming language? | 9.5 min | published 2026-11-22: https://youtu.be/NfdzVWjje2Y |
 | 02 | From scalar loops to array operations | 5 min | published 2026-11-23: https://youtu.be/YiJYDiD7xqc |
 | 03 | Shape, rank, axes and dimensions | 6.5 min | published 2026-11-25: https://youtu.be/JbKMtZZT6AY |
-| 04 | Broadcasting and array semantics (moved up, the author, 2026-11-23) | 10 min | later |
-| 05 | Mapping, filtering and reducing (to be decided: episode 02 covered the basics) | 11 min | later |
-| 06 | Array idioms: thinking without loops | 12 min | later |
+| 04 | Broadcasting and array semantics (moved up, the author, 2026-11-23) | 10 min | being made: saga 13 |
+| 05 | Array idioms: thinking without loops (moved up, the author, 2026-11-25) | 12 min | later |
+| 06 | Mapping, filtering and reducing (to be decided: episode 02 covered the basics) | 11 min | later |
 | 07 | APL, J, K, BQN and X_eTaL | 10 min | later |
 | 08 | Reading and writing X_eTaL | 12 min | later |
 | 09 | Bindings, values and immutability | 9 min | later |

@@ -903,14 +903,24 @@
       "id": "next",
       "seconds": 10,
       "heading": "Next time",
-      "narration": "NEXT EPISODE: to be decided with the author.",
+      "narration": "The next episode is about array idioms. That is thinking without loops. We take small problems and solve each one twice. First with a loop, then with whole arrays.",
       "lines": [],
       "slide": {
         "type": "points",
+        "steps": [
+          0,
+          0,
+          1,
+          1
+        ],
         "items": [
           {
             "text": "Episode 5",
-            "sub": "to be decided"
+            "sub": "Array idioms: thinking without loops"
+          },
+          {
+            "text": "Each problem twice",
+            "sub": "a loop, then whole arrays"
           }
         ]
       }
