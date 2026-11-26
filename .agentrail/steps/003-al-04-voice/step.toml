@@ -1,6 +1,6 @@
 number = 3
 slug = "al-04-voice"
-status = "pending"
+status = "in-progress"
 description = "Narrate and render through just produce al-04-broadcast (voxq); short sentenc..."
 role = "production"
 context_files = []
