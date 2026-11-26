@@ -176,7 +176,8 @@ if (lesson.kind === "story") {
       const length = Number(execFileSync("soxi", ["-D", abs(m.file)], { encoding: "utf8" }));
       // Each starts at its own offset from the middle (music.slides.offsets,
       // repeating; else half a second apart), so no two sound the same (the author).
-      const silent = lesson.scenes.map((s, i) => i).filter((i) => lesson.scenes[i].slide && !lesson.scenes[i].narration);
+      // A silent slide, or a silent picture (rendered cubes, the author, 2026-11-25).
+      const silent = lesson.scenes.map((s, i) => i).filter((i) => (lesson.scenes[i].slide || lesson.scenes[i].images) && !lesson.scenes[i].narration);
       silent.forEach((i, k) => {
         const s = lesson.scenes[i];
         const secs = props.timing.durations[i] / fps;

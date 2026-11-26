@@ -72,6 +72,10 @@ draft slug format="landscape":
 frame slug n format="landscape":
     @mkdir -p "work/$1" && scripts/schedule.sh "$1" > "work/$1/schedule.txt" && scripts/frames.mjs "$1" "$3" --frame "$2"
 
+# Arrays as cubes, rendered by Blender from scripts X_eTaL writes (Bpy.xtl of ../X_eTaL-extensions): just cubes [ladder] [broadcast] -> work/cubes/*.png
+cubes *stills:
+    scripts/cubes.sh "$@"
+
 # Render a lesson with Remotion: out/SLUG-FORMAT-remotion.mp4 (needs: cd remotion && npm install)
 render slug format="":
     scripts/render.sh "$1" "$2"

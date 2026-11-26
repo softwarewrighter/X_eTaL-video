@@ -64,6 +64,15 @@
       }
     },
     {
+      "id": "cubes-ladder",
+      "seconds": 6,
+      "heading": "Arrays as cubes",
+      "lines": [],
+      "images": [
+        "work/cubes/ladder-tight.png"
+      ]
+    },
+    {
       "id": "scalar-vector",
       "seconds": 15.1,
       "heading": "A single value",
@@ -844,6 +853,15 @@
           ]
         ]
       }
+    },
+    {
+      "id": "cubes-stretch",
+      "seconds": 6,
+      "heading": "A column plus a row",
+      "lines": [],
+      "images": [
+        "work/cubes/broadcast-tight.png"
+      ]
     },
     {
       "id": "tradeoffs",

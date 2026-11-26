@@ -1,0 +1,87 @@
+## stills.xtl -- the arrays-as-cubes stills of episode 04, written as the
+## Blender scripts that draw them: every cube's place and number is
+## worked out here (Cubes.xtl) and written into the script through
+## Bpy.xtl (X_eTaL-extensions). Blender runs the scripts in the
+## background (scripts/cubes.sh, just cubes); the look -- the navy
+## background, the light, the camera, the fonts -- is look.py.
+##   ladder.py: the rank ladder, a scalar to a rank 4 array, each labeled
+##     with its shape
+##   broadcast.py: a 3 by 1 column plus a 1 by 3 row, the 3 by 3 table
+## Run from the repository root, XETAL_PATH holding scripts/cubes and
+## the blender extension's lib/ (scripts/cubes.sh sets it).
+
+"bp:" u_se< "Bpy"
+"cu:" u_se< "Cubes"
+
+# a label's letters are about this wide for each unit of height (JuliaMono)
+glyph := 0.6
+# how tall the shape labels stand, and how far below the cubes
+labelSize := 0.5
+labelDrop := -1.2
+# the room between two arrays
+gap := 1.3
+
+### The rank ladder
+
+a0 := 7
+a1 := 1 r_eshape 7
+a2 := 10 20 30
+a3 := 2 3 r_eshape r_ange 6
+a4 := 2 3 4 r_eshape r_ange 24
+a5 := 2 2 2 2 r_eshape r_ange 16
+
+# the room an array takes across: its cubes or its label, the wider
+u:f_oot := { a -> (f_loat cu:w_idth a) m_ax glyph * labelSize * f_loat t_ally cu:s_hapeText a }
+ws := (u:f_oot a0) c_at (u:f_oot a1) c_at (u:f_oot a2) c_at (u:f_oot a3) c_at (u:f_oot a4) c_at u:f_oot a5
+# each array's middle, the row of them centered on x 0
+lefts := ('+ s_\ ws + gap) - ws + gap
+xs := (lefts + ws / 2.0) - (('+ r_/ ws) + gap * f_loat (t_ally ws) - 1) / 2.0
+
+# an array, drawn at its place (number k) and turned (look.turn), and
+# its shape under it
+u:s_tep := { (name, a, k) z ->
+  x := k s_elect xs
+  ((name, a, x c_at 0.0) cu:a_rray 0) c_at ("turn(\"" c_at (f_ormat (a, x c_at 0.0) cu:p_iles 0) c_at "\")\n") c_at (cu:s_hapeText a, x c_at -0.6 c_at labelDrop, labelSize) cu:t_ext 0
+}
+
+ladder1 := (("scalar", a0, 1) u:s_tep 0) c_at (("one", a1, 2) u:s_tep 0) c_at ("vector", a2, 3) u:s_tep 0
+ladder2 := (("matrix", a3, 4) u:s_tep 0) c_at (("block", a4, 5) u:s_tep 0) c_at ("piles", a5, 6) u:s_tep 0
+ladder3 := "look_ladder(" c_at (f_ormat 2.4 + ('+ r_/ ws) + gap * 5.0) c_at ")\n"
+ladder := ladder1 c_at ladder2 c_at ladder3 c_at ((1920, 1080, 30) bp:s_etup 0) c_at "finish()\n" c_at bp:s_till "ladder.png"
+
+### Broadcasting: a column plus a row is a table
+
+col := 3 1 r_eshape 1 2 3
+row := 1 3 r_eshape 1 2 3
+# X_eTaL does not stretch a 3 1 and a 1 3 to a common shape (a
+# shape-mismatch error): the table of every pair is said outright
+sum := (r_avel col) '+ t_able r_avel row
+
+# the pieces across: column, plus, row, equals, table
+bw := 1.0 1.0 3.0 1.0 3.0
+bgap := 1.1
+blefts := ('+ s_\ bw + bgap) - bw + bgap
+bxs := (blefts + bw / 2.0) - (('+ r_/ bw) + bgap * 4.0) / 2.0
+signSize := 1.1
+# a sign standing at the middle row's height, its middle at x
+u:s_ign := { (t, x) z -> (t, x c_at -0.5 c_at 1.0 + 0.1, signSize) cu:t_ext 0 }
+# an array's shape under it
+u:u_nder := { (a, x) z -> (cu:s_hapeText a, x c_at -0.6 c_at labelDrop, labelSize) cu:t_ext 0 }
+
+bc1 := (("column", col, (1 s_elect bxs) c_at 0.0) cu:a_rray 0) c_at ("+", 2 s_elect bxs) u:s_ign 0
+bc2 := (("row", row, (3 s_elect bxs) c_at 1.0) cu:a_rray 0) c_at ("=", 4 s_elect bxs) u:s_ign 0
+bc3 := ("sum", sum, (5 s_elect bxs) c_at 0.0) cu:a_rray 0
+bc4 := ((col, 1 s_elect bxs) u:u_nder 0) c_at ((row, 3 s_elect bxs) u:u_nder 0) c_at (sum, 5 s_elect bxs) u:u_nder 0
+bc5 := "look_broadcast(" c_at (f_ormat 1.6 + ('+ r_/ bw) + bgap * 4.0) c_at ")\n"
+broadcast := bc1 c_at bc2 c_at bc3 c_at bc4 c_at bc5 c_at ((1920, 1080, 30) bp:s_etup 0) c_at "finish()\n" c_at bp:s_till "broadcast.png"
+
+### The scripts
+
+# every script starts with Bpy's head, then reads the look (its path the
+# second argument after "--")
+start := bp:head c_at "exec(open(args[1]).read())\n\n"
+_ := (start c_at ladder) []N_PUT "work/cubes/ladder.py"
+_ := (start c_at broadcast) []N_PUT "work/cubes/broadcast.py"
+"the sum, as X_eTaL works it out:"
+sum
+"wrote work/cubes/ladder.py and work/cubes/broadcast.py"

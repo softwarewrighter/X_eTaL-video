@@ -1,0 +1,140 @@
+## Cubes.xtl -- arrays drawn as cubes, the picture of rank: a scalar is
+## a number with no cube, a vector a row of cubes, a matrix rows of
+## cubes on one plane (the first row on top), a rank 3 array matrices
+## one behind another (the first in front), a rank 4 array such blocks
+## side by side. Every place is worked out here as arrays and written as
+## Blender Python through Bpy.xtl (X_eTaL-extensions, on XETAL_PATH);
+## the look (light, camera, fonts) is scripts/cubes/look.py.
+## Import: "cu:" u_se< "Cubes"
+
+"bp:" u_se< "Bpy"
+
+# a cube is this wide, one unit apart, so the gaps between show
+h:w := 0.92
+# the light blue of the slides' accent, linear (Blender's color space)
+h:b_lue := 0.11 0.36 0.95
+# the shape labels: the slides' dim gray
+h:d_im := 0.33 0.37 0.42
+
+# Python reading the numbers of v, k to a row (look.nums)
+h:n_ums := { (v, k) z -> "nums(\"" c_at (f_ormat r_avel f_loat v) c_at "\", " c_at (f_ormat k) c_at ")" }
+# a Python string
+h:q_uote := { t -> "\"" c_at t c_at "\"" }
+
+## cu:s_hape4 a: the shape of a, padded with 1s on the left to rank 4
+## (piles, planes, rows, columns)
+## >> "cu:" u_se< "Cubes"
+## >> cu:s_hape4 2 3 r_eshape r_ange 6
+## 1 1 2 3
+l:s_hape4 := { a -> ((4 - t_ally s_hape a) r_eshape 1) c_at s_hape a }
+
+## cu:w_idth a: how wide a's cubes stand, in units: the piles' columns
+## and a unit between piles (0 for a scalar: its number only)
+## >> "cu:" u_se< "Cubes"
+## >> (cu:w_idth 10 20 30) c_at cu:w_idth 2 2 2 2 r_eshape r_ange 16
+## 3 5
+l:w_idth := { a ->
+  s := l:s_hape4 a
+  ((1 s_elect s) * 4 s_elect s) + (1 s_elect s) - 1
+}
+
+## cu:i_ndices a: each item's place in a's padded shape, one item to a
+## row (n by 4: pile, plane, row, column, 0-based, in ravel order)
+## >> "cu:" u_se< "Cubes"
+## >> cu:i_ndices 2 2 r_eshape r_ange 4
+## 0 0 0 0
+## 0 0 0 1
+## 0 0 1 0
+## 0 0 1 1
+l:i_ndices := { a ->
+  s := l:s_hape4 a
+  2 1 t_ranspose s e_ncode (r_ange '* r_/ s) - 1
+}
+
+## (a, at) cu:c_enters 0: the centers of a's cubes (n by 3, z up, the
+## front -y) for a placed at at (x z): its columns centered on x, its
+## bottom at height z, its first plane at y 0 and the others behind it
+## >> "cu:" u_se< "Cubes"
+## >> (10 20 30, 0.0 0.0) cu:c_enters 0
+## -1.0 0.0 0.5
+##  0.0 0.0 0.5
+##  1.0 0.0 0.5
+l:c_enters := { (a, at) z ->
+  s := f_loat l:s_hape4 a
+  ix := l:i_ndices a
+  p := f_loat r_avel 1 s_elect_2 ix
+  d := f_loat r_avel 2 s_elect_2 ix
+  i := f_loat r_avel 3 s_elect_2 ix
+  j := f_loat r_avel 4 s_elect_2 ix
+  cx := (j + p * 1.0 + 4 s_elect s) + (1 s_elect at) - ((f_loat l:w_idth a) - 1.0) / 2.0
+  cz := (2 s_elect at) + 0.5 + ((3 s_elect s) - 1.0) - i
+  2 1 t_ranspose (3 c_at t_ally p) r_eshape cx c_at d c_at cz
+}
+
+## (a, at) cu:f_ronts 0: where the numbers of a's first plane go (on each
+## front face, just before it) and their values: (places n by 3, values)
+## >> "cu:" u_se< "Cubes"
+## >> (p, v) := (2 2 r_eshape 1 2 3 4, 0.0 0.0) cu:f_ronts 0
+## >> v
+## 1.0 2.0 3.0 4.0
+l:f_ronts := { (a, at) z ->
+  m := 0 = 2 s_elect_2 l:i_ndices a
+  c := m r_eplicate (a, at) l:c_enters 0
+  (c + (('+ r_/ m) c_at 3) r_eshape 0.0 -0.51 0.0, m r_eplicate f_loat r_avel a)
+}
+
+## (a, at) cu:t_ops 0: the numbers the front cannot show -- the top row
+## of each plane behind the first -- on their top faces: (places, values)
+## >> "cu:" u_se< "Cubes"
+## >> (p, v) := (2 2 2 r_eshape r_ange 8, 0.0 0.0) cu:t_ops 0
+## >> v
+## 5.0 6.0
+l:t_ops := { (a, at) z ->
+  ix := l:i_ndices a
+  m := (0 < 2 s_elect_2 ix) & 0 = 3 s_elect_2 ix
+  c := m r_eplicate (a, at) l:c_enters 0
+  (c + (('+ r_/ m) c_at 3) r_eshape 0.0 0.0 0.51, m r_eplicate f_loat r_avel a)
+}
+
+# Python for a set of numbers on one kind of face, at the places
+h:n_umbers := { (at, v, face, size) z ->
+  "numbers(" c_at ((at, 3) h:n_ums 0) c_at ", " c_at ((v, 1) h:n_ums 0) c_at ", " c_at (h:q_uote face) c_at ", " c_at (f_ormat size) c_at ")\n"
+}
+
+## (name, a, at) cu:a_rray 0: Python drawing the array a at at (x z,
+## see cu:c_enters): its cubes as one mesh (bp:c_ubes) and the value of
+## each on its front face, or on its top face when it stands behind the
+## first plane; a scalar is its number alone, standing, a cube tall
+l:a_rray := { (name, a, at) z ->
+  0 = t_ally s_hape a ? ((f_ormat a, (1 s_elect at) c_at -0.5 c_at 0.12 + 2 s_elect at, 1.05, h:b_lue) bp:l_abel 0)
+  (fa, fv) := (a, at) l:f_ronts 0
+  (ta, tv) := (a, at) l:t_ops 0
+  ((name, (a, at) l:c_enters 0, h:w, h:b_lue) bp:c_ubes 0) c_at ((fa, fv, "front", 0.5) h:n_umbers 0) c_at (ta, tv, "top", 0.42) h:n_umbers 0
+}
+
+## (text, at, size) cu:t_ext 0: Python making a label in the slides' dim
+## gray, standing upright facing the front, its middle bottom at at
+## (x y z), that tall (bp:l_abel)
+l:t_ext := { (t, at, size) z -> (t, at, size, h:d_im) bp:l_abel 0 }
+
+## cu:s_hapeText a: the label under an array: its shape ("shape: 2 3"),
+## "shape: empty" for a scalar
+## >> "cu:" u_se< "Cubes"
+## >> (cu:s_hapeText 7) c_at " / " c_at cu:s_hapeText 2 3 r_eshape r_ange 6
+## shape: empty / shape: 2 3
+l:s_hapeText := { a ->
+  0 = t_ally s_hape a ? "shape: empty"
+  "shape: " c_at f_ormat s_hape a
+}
+
+## (a, at) cu:p_iles 0: the middle (x) of each of a's piles, placed at at
+## (x z, see cu:c_enters): one for an array of rank 3 or less
+## >> "cu:" u_se< "Cubes"
+## >> (2 2 2 2 r_eshape r_ange 16, 0.0 0.0) cu:p_iles 0
+## -1.5 1.5
+l:p_iles := { (a, at) z ->
+  s := f_loat l:s_hape4 a
+  j := 4 s_elect s
+  left := (1 s_elect at) - ((f_loat l:w_idth a) - 1.0) / 2.0
+  left + ((j - 1.0) / 2.0) + (j + 1.0) * ((f_loat r_ange 1 s_elect l:s_hape4 a) - 1.0)
+}

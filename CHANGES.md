@@ -13,6 +13,8 @@ Categories: `feat` new capability, `fix` a bug or wrong behavior,
 
 ## 2026-11-25
 
+- Tools: just cubes (scripts/cubes/): arrays as Blender cubes, the geometry from X_eTaL at the pin through ../X_eTaL-extensions Bpy.xtl (read only), into work/cubes/; a silent picture scene gets a middle phrase of the music, as a break does.
+- Lesson: al-04-broadcast gets two cube scenes with music (the rank ladder; a column plus a row); title, description with chapters, out/al-04-broadcast-youtube/ rebuilt (5:45).
 - Lesson: al-04-broadcast narrated and rendered (334.8 s of narration): whisper misses fixed by rewording (the author: "The matrix has a shape of two by three"), Jay and Kay capitalized, and a BQN word clip (bee, queue, enn); one numeral flag left (3x2).
 - Tools: voxq logs every cause of a failed call and sends the voice sample whole with its length; the 2026-11-25 failures ("send failed because receiver is gone") were macOS Local Network permission after iTerm2 updated itself, fixed by running voxq serve from Terminal.app.
 - Lesson: al-04-broadcast drafted (saga 13): X_eTaL rule first, then the languages in one table and one by one; every example notebook style (argument and result boxes from xetal --box); music Ode Arcade.
