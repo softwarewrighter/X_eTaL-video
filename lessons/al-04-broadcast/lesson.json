@@ -855,13 +855,43 @@
       }
     },
     {
-      "id": "cubes-stretch",
-      "seconds": 6,
-      "heading": "A column plus a row",
+      "id": "xetal-pairs",
+      "seconds": 15,
+      "heading": "The same table in X_eTaL",
+      "narration": "In {X_eTaL|@xtl} nothing stretches. A column plus a row is an error, because the shapes differ. To get every pair, ask for it with table. The result is the same three by three, on purpose.",
       "lines": [],
-      "images": [
-        "work/cubes/broadcast-tight.png"
-      ]
+      "panel": {
+        "type": "code",
+        "lines": [
+          {
+            "xtl": "(3 1 r_eshape 1 2 3) + 1 3 r_eshape 1 2 3"
+          },
+          {
+            "code": "error[shape-mismatch]: shapes differ: 3 1 and 1 3"
+          },
+          {
+            "xtl": "1 2 3 '+ t_able 1 2 3"
+          },
+          {
+            "box": "                              ┌→────┐\n┌→────┐           ┌→────┐     ↓2 3 4│\n│1 2 3│  + table  │1 2 3│  =  │3 4 5│\n└~────┘           └~────┘     │4 5 6│\n                              └~────┘"
+          }
+        ],
+        "focus": [
+          [],
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            3
+          ]
+        ]
+      }
     },
     {
       "id": "tradeoffs",
