@@ -4,6 +4,8 @@
   "title": "Broadcasting",
   "summary": "Array languages, episode 4: when arrays of different shapes meet. Scalar extension, the same shape, and the error otherwise in X_eTaL; saying how with reshape, transpose, rank and table; APL, J, BQN, K and NumPy compared.",
   "order": 103,
+  "poster": 774,
+  "youtube": "-te7ZGCdIkE",
   "fps": 30,
   "brand": "Array Languages: episode 4",
   "music": {

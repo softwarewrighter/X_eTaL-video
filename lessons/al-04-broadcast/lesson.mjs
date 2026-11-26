@@ -81,5 +81,5 @@ const scenes = [
 ];
 const { scenes: _, youtube, poster, ...h } = l;
 h.music = { file: "/Users/mike/github/softwarewrighter/music-pipe-rs/work/video-beds/ode-arcade.wav", intro: { seconds: 5, fadeOut: 0.5 }, outro: { seconds: 5, fadeIn: 0.5 }, slides: { volume: 0.3, fade: 0.4, starts: [5, 10, 15] } };
-const out = { ...h, slug: "al-04-broadcast", title: "Broadcasting", summary: "Array languages, episode 4: when arrays of different shapes meet. Scalar extension, the same shape, and the error otherwise in X_eTaL; saying how with reshape, transpose, rank and table; APL, J, BQN, K and NumPy compared.", order: 103, brand: "Array Languages: episode 4", scenes };
+const out = { ...h, slug: "al-04-broadcast", title: "Broadcasting", summary: "Array languages, episode 4: when arrays of different shapes meet. Scalar extension, the same shape, and the error otherwise in X_eTaL; saying how with reshape, transpose, rank and table; APL, J, BQN, K and NumPy compared.", order: 103, poster: 774, youtube: "-te7ZGCdIkE", brand: "Array Languages: episode 4", scenes };
 writeFileSync("lessons/al-04-broadcast/lesson.json", JSON.stringify(out, null, 2) + "\n");
