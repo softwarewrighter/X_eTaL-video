@@ -1,0 +1,21 @@
+## Episode 05, Array idioms: every X_eTaL expression the video runs or draws, at the pin.
+x := 3 1 4 1 5 9
+s := 2 4 6 8
+votes := 2 3 2 1 2 3
+'+ r_/ x
+'+ r_/ x > 3
+r_ev x
+2 o_- x
+'+ s_\ x
+'m_ax s_\ x
+1 d_rop x
+-1 d_rop x
+(1 d_rop x) - -1 d_rop x
+(1 d_rop x) > -1 d_rop x
+('+ r_/ s) / t_ally s
+(f_loat s) - ('+ r_/ s) / t_ally s
+u_nique votes
+(u_nique votes) '= t_able votes
+'+ r_/_2 (u_nique votes) '= t_able votes
+## the type error the video shows:
+## s - ('+ r_/ s) / t_ally s   -> expected Int, found Float

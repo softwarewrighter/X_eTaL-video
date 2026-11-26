@@ -1,0 +1,791 @@
+{
+  "slug": "al-05-idioms",
+  "kind": "story",
+  "title": "Array idioms",
+  "summary": "Array languages, episode 5: thinking without loops. Running totals with a scan, adjacent changes by shifting, normalizing with an aggregate then each item, counting occurrences with unique and a table; each beside the loop it replaces, and what it costs.",
+  "order": 104,
+  "fps": 30,
+  "brand": "Array Languages: episode 5",
+  "music": {
+    "file": "/Users/mike/github/softwarewrighter/music-pipe-rs/work/video-beds/prelude-pulse.wav",
+    "intro": {
+      "seconds": 5,
+      "fadeOut": 0.5
+    },
+    "outro": {
+      "seconds": 5,
+      "fadeIn": 0.5
+    },
+    "slides": {
+      "volume": 0.3,
+      "fade": 0.4,
+      "starts": [
+        5,
+        10,
+        15
+      ]
+    }
+  },
+  "scenes": [
+    {
+      "id": "title",
+      "seconds": 8,
+      "heading": "Array idioms",
+      "lines": [
+        "Thinking without loops"
+      ]
+    },
+    {
+      "id": "recap",
+      "seconds": 12,
+      "heading": "Last time",
+      "narration": "Last time, arrays of different shapes met. Today, we look at idioms. An idiom is a short phrase for a pattern that keeps coming back.",
+      "lines": [],
+      "slide": {
+        "type": "points",
+        "steps": [
+          0,
+          0,
+          1
+        ],
+        "items": [
+          {
+            "text": "Last time",
+            "sub": "when shapes meet"
+          },
+          {
+            "text": "Today: idioms",
+            "sub": "short phrases for common patterns"
+          }
+        ]
+      }
+    },
+    {
+      "id": "pattern",
+      "seconds": 12,
+      "heading": "One pattern for each idiom",
+      "narration": "Each idiom today follows one pattern. First the problem. Then a loop that solves it. Then the idiom, and what it costs.",
+      "lines": [],
+      "slide": {
+        "type": "flow",
+        "steps": [
+          0,
+          0,
+          1,
+          2,
+          3
+        ],
+        "items": [
+          {
+            "text": "The problem"
+          },
+          {
+            "text": "A loop"
+          },
+          {
+            "text": "The idiom"
+          },
+          {
+            "text": "The trade off"
+          }
+        ]
+      }
+    },
+    {
+      "id": "known-sum",
+      "seconds": 12,
+      "heading": "Idioms you have met",
+      "narration": "You have met some idioms already. Plus reduce sums a list. A comparison, then a sum, counts the matches.",
+      "lines": [],
+      "panel": {
+        "type": "code",
+        "lines": [
+          {
+            "xtl": "'+ r_/ x"
+          },
+          {
+            "box": "┌→──────────┐\n│3 1 4 1 5 9│  →  23\n└~──────────┘"
+          },
+          {
+            "xtl": "'+ r_/ x > 3"
+          },
+          {
+            "box": "┌→──────────┐\n│0 0 1 0 1 1│  →  3\n└~──────────┘"
+          }
+        ],
+        "focus": [
+          [],
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "id": "known-order",
+      "seconds": 10,
+      "heading": "Idioms you have met",
+      "narration": "Reverse and rotate rearrange the items. No index appears anywhere.",
+      "lines": [],
+      "panel": {
+        "type": "code",
+        "lines": [
+          {
+            "xtl": "r_ev x"
+          },
+          {
+            "box": "┌→──────────┐     ┌→──────────┐\n│3 1 4 1 5 9│  →  │9 5 1 4 1 3│\n└~──────────┘     └~──────────┘"
+          },
+          {
+            "xtl": "2 o_- x"
+          },
+          {
+            "box": "┌→──────────┐     ┌→──────────┐\n│3 1 4 1 5 9│  →  │4 1 5 9 3 1│\n└~──────────┘     └~──────────┘"
+          }
+        ],
+        "focus": [
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            0,
+            1,
+            2,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "id": "break-1",
+      "seconds": 5,
+      "heading": "Four new idioms",
+      "lines": [],
+      "slide": {
+        "type": "points",
+        "items": [
+          {
+            "text": "Running totals"
+          },
+          {
+            "text": "Adjacent changes"
+          },
+          {
+            "text": "Normalize values"
+          },
+          {
+            "text": "Count occurrences"
+          }
+        ]
+      }
+    },
+    {
+      "id": "running-loop",
+      "seconds": 14,
+      "heading": "Running totals",
+      "narration": "The first new problem is running totals. Each item becomes the sum of everything up to it. A loop keeps a total, and saves it after each step.",
+      "lines": [],
+      "panel": {
+        "type": "code",
+        "lines": [
+          {
+            "code": "let mut total = 0;"
+          },
+          {
+            "code": "for v in &x {"
+          },
+          {
+            "code": "    total += v;"
+          },
+          {
+            "code": "    out.push(total);"
+          },
+          {
+            "code": "}"
+          }
+        ],
+        "focus": [
+          [],
+          [],
+          [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        ]
+      }
+    },
+    {
+      "id": "running-scan",
+      "seconds": 12,
+      "heading": "Running totals: scan",
+      "narration": "In {X_eTaL|@xtl}, this is a scan. Plus scan keeps every running sum. The last one is the whole sum.",
+      "lines": [],
+      "panel": {
+        "type": "code",
+        "lines": [
+          {
+            "xtl": "'+ s_\\ x"
+          },
+          {
+            "box": "┌→──────────┐     ┌→────────────┐\n│3 1 4 1 5 9│  →  │3 4 8 9 14 23│\n└~──────────┘     └~────────────┘"
+          }
+        ],
+        "focus": [
+          [
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "id": "running-max",
+      "seconds": 12,
+      "heading": "Running totals: scan",
+      "narration": "Scan works with any function. Max scan keeps the largest value so far. The trade off is that scan keeps every step, not only the last.",
+      "lines": [],
+      "panel": {
+        "type": "code",
+        "lines": [
+          {
+            "xtl": "'m_ax s_\\ x"
+          },
+          {
+            "box": "┌→──────────┐     ┌→──────────┐\n│3 1 4 1 5 9│  →  │3 3 4 4 5 9│\n└~──────────┘     └~──────────┘"
+          }
+        ],
+        "focus": [
+          [
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "id": "adjacent-loop",
+      "seconds": 14,
+      "heading": "Adjacent changes",
+      "narration": "Next, adjacent changes. We want how much each item differs from the one before it. A loop starts at the second item, and looks back one.",
+      "lines": [],
+      "panel": {
+        "type": "code",
+        "lines": [
+          {
+            "code": "for i in 1..x.len() {"
+          },
+          {
+            "code": "    out.push(x[i] - x[i - 1]);"
+          },
+          {
+            "code": "}"
+          }
+        ],
+        "focus": [
+          [],
+          [],
+          [
+            0,
+            1,
+            2
+          ]
+        ]
+      }
+    },
+    {
+      "id": "adjacent-shift",
+      "seconds": 14,
+      "heading": "Adjacent changes: shift",
+      "narration": "The idiom shifts the list instead of looking back. Drop the first item. Then drop the last. The two lists line up, each item beside the one before it.",
+      "lines": [],
+      "panel": {
+        "type": "code",
+        "lines": [
+          {
+            "xtl": "1 d_rop x"
+          },
+          {
+            "box": "┌→──────────┐     ┌→────────┐\n│3 1 4 1 5 9│  →  │1 4 1 5 9│\n└~──────────┘     └~────────┘"
+          },
+          {
+            "xtl": "-1 d_rop x"
+          },
+          {
+            "box": "┌→──────────┐     ┌→────────┐\n│3 1 4 1 5 9│  →  │3 1 4 1 5│\n└~──────────┘     └~────────┘"
+          }
+        ],
+        "focus": [
+          [],
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            0,
+            1,
+            2,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "id": "adjacent-subtract",
+      "seconds": 14,
+      "heading": "Adjacent changes: subtract",
+      "narration": "Subtract them, item by item. The result has one item fewer than the list. Compare instead, and you find every rise.",
+      "lines": [],
+      "panel": {
+        "type": "code",
+        "lines": [
+          {
+            "xtl": "(1 d_rop x) - -1 d_rop x"
+          },
+          {
+            "box": "┌→────────┐     ┌→────────┐     ┌→──────────┐\n│1 4 1 5 9│  -  │3 1 4 1 5│  =  │-2 3 -3 4 4│\n└~────────┘     └~────────┘     └~──────────┘"
+          },
+          {
+            "xtl": "(1 d_rop x) > -1 d_rop x"
+          },
+          {
+            "box": "┌→────────┐     ┌→────────┐     ┌→────────┐\n│1 4 1 5 9│  >  │3 1 4 1 5│  =  │0 1 0 1 1│\n└~────────┘     └~────────┘     └~────────┘"
+          }
+        ],
+        "focus": [
+          [
+            0,
+            1
+          ],
+          [
+            1
+          ],
+          [
+            2,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "id": "break-2",
+      "seconds": 5,
+      "heading": "Scan and shift",
+      "lines": [],
+      "slide": {
+        "type": "flow",
+        "items": [
+          {
+            "text": "Running totals",
+            "xtl": "'+ s_\\ x"
+          },
+          {
+            "text": "Adjacent changes",
+            "xtl": "(1 d_rop x) - -1 d_rop x"
+          }
+        ]
+      }
+    },
+    {
+      "id": "normalize-loop",
+      "seconds": 16,
+      "heading": "Normalize values",
+      "narration": "Next, normalize values. Subtract the average from every item. A loop needs two passes. The first finds the average. The second subtracts it.",
+      "lines": [],
+      "panel": {
+        "type": "code",
+        "lines": [
+          {
+            "code": "let mean = s.iter().sum::<f64>() / n;"
+          },
+          {
+            "code": "for v in &s {"
+          },
+          {
+            "code": "    out.push(v - mean);"
+          },
+          {
+            "code": "}"
+          }
+        ],
+        "focus": [
+          [],
+          [],
+          [],
+          [
+            0
+          ],
+          [
+            1,
+            2,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "id": "normalize-idiom",
+      "seconds": 16,
+      "heading": "Normalize: aggregate, then each item",
+      "narration": "The idiom is an aggregate, then an item by item step. Reduce and divide give the average, a single value. Scalar extension, from the last episode, does the rest.",
+      "lines": [],
+      "panel": {
+        "type": "code",
+        "lines": [
+          {
+            "xtl": "('+ r_/ s) / t_ally s"
+          },
+          {
+            "box": "┌→──────┐\n│2 4 6 8│  →  5.0\n└~──────┘"
+          },
+          {
+            "xtl": "(f_loat s) - ('+ r_/ s) / t_ally s"
+          },
+          {
+            "box": "┌→──────┐             ┌→────────────────┐\n│2 4 6 8│  -  5.0  =  │-3.0 -1.0 1.0 3.0│\n└~──────┘             └~────────────────┘"
+          }
+        ],
+        "focus": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "id": "normalize-types",
+      "seconds": 14,
+      "heading": "Normalize: the types",
+      "narration": "One detail. Division gives a float, and these items are integers. In {X_eTaL|@xtl}, the two do not mix. Float turns the integers into floats first.",
+      "lines": [],
+      "panel": {
+        "type": "code",
+        "lines": [
+          {
+            "xtl": "s - ('+ r_/ s) / t_ally s"
+          },
+          {
+            "code": "error[type-mismatch]: expected Int, found Float"
+          },
+          {
+            "xtl": "(f_loat s) - ('+ r_/ s) / t_ally s"
+          }
+        ],
+        "focus": [
+          [
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ]
+        ]
+      }
+    },
+    {
+      "id": "count-loop",
+      "seconds": 14,
+      "heading": "Count occurrences",
+      "narration": "Last, count occurrences. We want how many times each value appears. A loop keeps a map from each value to its count.",
+      "lines": [],
+      "panel": {
+        "type": "code",
+        "lines": [
+          {
+            "code": "let mut counts = HashMap::new();"
+          },
+          {
+            "code": "for v in &votes {"
+          },
+          {
+            "code": "    *counts.entry(v).or_insert(0) += 1;"
+          },
+          {
+            "code": "}"
+          }
+        ],
+        "focus": [
+          [],
+          [],
+          [
+            0,
+            1,
+            2,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "id": "count-unique",
+      "seconds": 10,
+      "heading": "Count occurrences: unique",
+      "narration": "The idiom starts with unique. It gives each value once, in the order they first appear.",
+      "lines": [],
+      "panel": {
+        "type": "code",
+        "lines": [
+          {
+            "xtl": "u_nique votes"
+          },
+          {
+            "box": "┌→──────────┐     ┌→────┐\n│2 3 2 1 2 3│  →  │2 3 1│\n└~──────────┘     └~────┘"
+          }
+        ],
+        "focus": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "id": "count-table",
+      "seconds": 12,
+      "heading": "Count occurrences: a table",
+      "narration": "Equals table compares each value with every vote. Each row marks where one value appears.",
+      "lines": [],
+      "panel": {
+        "type": "code",
+        "lines": [
+          {
+            "xtl": "(u_nique votes) '= t_able votes"
+          },
+          {
+            "box": "                                     ┌→──────────┐\n┌→────┐            ┌→──────────┐     ↓1 0 1 0 1 0│\n│2 3 1│  '= table  │2 3 2 1 2 3│  =  │0 1 0 0 0 1│\n└~────┘            └~──────────┘     │0 0 0 1 0 0│\n                                     └~──────────┘"
+          }
+        ],
+        "focus": [
+          [
+            0,
+            1
+          ],
+          [
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "id": "count-sum",
+      "seconds": 10,
+      "heading": "Count occurrences: sum each row",
+      "narration": "Sum along each row, and you have the counts. Three twos, two threes, and one one.",
+      "lines": [],
+      "panel": {
+        "type": "code",
+        "lines": [
+          {
+            "xtl": "'+ r_/_2 (u_nique votes) '= t_able votes"
+          },
+          {
+            "box": "┌→──────────┐\n↓1 0 1 0 1 0│                  ┌→────┐\n│0 1 0 0 0 1│  → sum each row  │3 2 1│\n│0 0 0 1 0 0│                  └~────┘\n└~──────────┘"
+          }
+        ],
+        "focus": [
+          [
+            0,
+            1
+          ],
+          [
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "id": "count-tradeoff",
+      "seconds": 12,
+      "heading": "Count occurrences: the trade off",
+      "narration": "The table has a cell for every value and every vote. That is the trade off. For a long list, it is a lot of cells.",
+      "lines": [],
+      "slide": {
+        "type": "points",
+        "steps": [
+          0,
+          1,
+          1
+        ],
+        "items": [
+          {
+            "text": "One cell for each value and vote",
+            "sub": "3 values, 6 votes: 18 cells"
+          },
+          {
+            "text": "Long lists",
+            "sub": "a lot of cells"
+          }
+        ]
+      }
+    },
+    {
+      "id": "break-3",
+      "seconds": 5,
+      "heading": "Four idioms",
+      "lines": [],
+      "slide": {
+        "type": "points",
+        "items": [
+          {
+            "text": "Running totals",
+            "sub": "scan"
+          },
+          {
+            "text": "Adjacent changes",
+            "sub": "shift and subtract"
+          },
+          {
+            "text": "Normalize values",
+            "sub": "aggregate, then each item"
+          },
+          {
+            "text": "Count occurrences",
+            "sub": "unique, table, reduce"
+          }
+        ]
+      }
+    },
+    {
+      "id": "conclusion",
+      "seconds": 24,
+      "heading": "More than a shorter loop",
+      "narration": "An array idiom is more than a shorter spelling of a loop. It captures a pattern that keeps coming back. Once we see the pattern, we can reason about the whole operation. We can reuse it, and test it. Often we can make it faster, apart from the program that uses it. The goal is not to remove every loop. The goal is to say the problem at the most useful level.",
+      "lines": [],
+      "slide": {
+        "type": "points",
+        "steps": [
+          0,
+          0,
+          1,
+          2,
+          2,
+          3,
+          3
+        ],
+        "items": [
+          {
+            "text": "A pattern",
+            "sub": "not just a shorter loop"
+          },
+          {
+            "text": "Reason about the whole",
+            "sub": "the operation at once"
+          },
+          {
+            "text": "Reuse, test, speed up",
+            "sub": "apart from the program"
+          },
+          {
+            "text": "The most useful level",
+            "sub": "not no loops at any cost"
+          }
+        ]
+      }
+    },
+    {
+      "id": "next",
+      "seconds": 10,
+      "heading": "Next time",
+      "narration": "NEXT EPISODE: to be decided with the author.",
+      "lines": [],
+      "slide": {
+        "type": "points",
+        "items": [
+          {
+            "text": "Episode 6",
+            "sub": "to be decided"
+          }
+        ]
+      }
+    },
+    {
+      "id": "exercise",
+      "seconds": 16,
+      "heading": "Before the next episode",
+      "narration": "Before the next episode, try this. Take three, one, four, one, five, nine. Find its sum and its largest value. Find its running totals. Count the values greater than three. Then find the adjacent differences.",
+      "lines": [
+        "3 1 4 1 5 9",
+        "sum, largest, running totals",
+        "how many above 3, adjacent differences"
+      ]
+    },
+    {
+      "id": "cta",
+      "seconds": 12.8,
+      "heading": "Call to action",
+      "lines": [],
+      "clip": "../video-publishing/reference/epilog/99b-epilog.mp4",
+      "transcript": [
+        {
+          "start": 0,
+          "end": 4.6,
+          "text": "If you found this helpful, please like and subscribe."
+        },
+        {
+          "start": 4.6,
+          "end": 9.5,
+          "text": "Hit the bell for notifications, and leave a comment if you have questions."
+        },
+        {
+          "start": 9.5,
+          "end": 12,
+          "text": "See you in the next one, bye."
+        }
+      ]
+    },
+    {
+      "id": "close",
+      "seconds": 8,
+      "heading": "End screen",
+      "lines": [],
+      "clip": "../video-publishing/reference/epilog/99c-epilog-ext-swing9.mp4",
+      "mute": true
+    }
+  ]
+}
