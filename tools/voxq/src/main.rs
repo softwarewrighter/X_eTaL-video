@@ -127,13 +127,31 @@ fn log(root: &Path, line: &str) {
     }
 }
 
+/// An error and every cause under it, joined: reqwest's own message
+/// hides the cause (a refused connection, a file not read, a reset).
+fn chain(e: &dyn std::error::Error) -> String {
+    let mut out = e.to_string();
+    let mut cause = e.source();
+    while let Some(c) = cause {
+        out.push_str(&format!(": {c}"));
+        cause = c.source();
+    }
+    out
+}
+
 /// One call to the server: upload the voice sample, start generate, read
 /// its event stream to the end, download the audio. Every step under the
 /// one timeout of the HTTP client.
 fn call(http: &reqwest::blocking::Client, server: &str, r: &Request) -> Result<Vec<u8>, String> {
     let api = format!("{server}/gradio_api");
-    let form = reqwest::blocking::multipart::Form::new().file("files", &r.reference).map_err(|e| format!("reference {}: {e}", r.reference.display()))?;
-    let up: Vec<String> = http.post(format!("{api}/upload")).multipart(form).send().and_then(|x| x.error_for_status()).and_then(|x| x.json()).map_err(|e| format!("upload: {e}"))?;
+    // The sample is read whole and sent with its length: streamed from the
+    // file (Form::file), the upload failed before a byte was sent ("send
+    // failed because receiver is gone", 2026-11-25), every request.
+    let bytes = fs::read(&r.reference).map_err(|e| format!("reference {}: {e}", r.reference.display()))?;
+    let name = r.reference.file_name().map(|n| n.to_string_lossy().into_owned()).unwrap_or_else(|| "reference.wav".into());
+    let part = reqwest::blocking::multipart::Part::bytes(bytes).file_name(name).mime_str("audio/wav").map_err(|e| format!("reference: {e}"))?;
+    let form = reqwest::blocking::multipart::Form::new().part("files", part);
+    let up: Vec<String> = http.post(format!("{api}/upload")).multipart(form).send().and_then(|x| x.error_for_status()).and_then(|x| x.json()).map_err(|e| format!("upload: {}", chain(&e)))?;
     let path = up.first().ok_or("upload: no path returned")?;
     let body = serde_json::json!({ "data": [
         r.text,

@@ -37,7 +37,7 @@
     },
     {
       "id": "recap",
-      "seconds": 10,
+      "seconds": 12.4,
       "heading": "Last time",
       "narration": "Last time, every array had a shape, a rank and {axes|@axes}. Today, two arrays meet. This episode asks what happens when their shapes differ.",
       "lines": [],
@@ -65,7 +65,7 @@
     },
     {
       "id": "scalar-vector",
-      "seconds": 12,
+      "seconds": 15.1,
       "heading": "A single value",
       "narration": "Start with a single value and a vector. A single value is a scalar. It has no frame, because it has no {axes|@axes}. One plus the vector adds one to every item. This is called scalar extension.",
       "lines": [],
@@ -103,7 +103,7 @@
     },
     {
       "id": "scalar-matrix",
-      "seconds": 10,
+      "seconds": 9.7,
       "heading": "A single value",
       "narration": "It works with any shape. Ten times a matrix multiplies every item by ten. The result has the shape of the matrix.",
       "lines": [],
@@ -134,7 +134,7 @@
     },
     {
       "id": "same-shape",
-      "seconds": 12,
+      "seconds": 9.8,
       "heading": "The same shape",
       "narration": "Two arrays of the same shape combine item by item. Each item meets the item in the same place. Two by three plus two by three is two by three.",
       "lines": [],
@@ -172,9 +172,9 @@
     },
     {
       "id": "mismatch",
-      "seconds": 12,
+      "seconds": 12.7,
       "heading": "Different shapes",
-      "narration": "Now try a matrix and a vector. The matrix has shape two by three. The vector has shape three. In {X_eTaL|@xtl} this is an error. The message names both shapes.",
+      "narration": "Now try a matrix and a vector. The matrix has a shape of two by three. The vector has a shape of three. In {X_eTaL|@xtl} this is an error. The message names both shapes.",
       "lines": [],
       "panel": {
         "type": "code",
@@ -234,7 +234,7 @@
     },
     {
       "id": "why",
-      "seconds": 14,
+      "seconds": 10.8,
       "heading": "Why an error?",
       "narration": "The rule is short, so a result is easy to predict. A mismatch is often a mistake. An error shows it at once. To combine other shapes, you say how.",
       "lines": [],
@@ -264,7 +264,7 @@
     },
     {
       "id": "rows",
-      "seconds": 12,
+      "seconds": 8.9,
       "heading": "A vector on each row",
       "narration": "To add the vector to each row, say so. Reshape repeats the vector to the shape of the matrix. Now the shapes match.",
       "lines": [],
@@ -299,7 +299,7 @@
     },
     {
       "id": "columns",
-      "seconds": 14,
+      "seconds": 12.7,
       "heading": "A vector down the columns",
       "narration": "Columns take one more step. This vector has two values, one for each row. Reshape it to three by two, then transpose. Now each row holds one value.",
       "lines": [],
@@ -332,7 +332,7 @@
     },
     {
       "id": "columns-add",
-      "seconds": 8,
+      "seconds": 6,
       "heading": "A vector down the columns",
       "narration": "The sum adds one value along each row. Each column gets the same two values.",
       "lines": [],
@@ -360,7 +360,7 @@
     },
     {
       "id": "rank-form",
-      "seconds": 14,
+      "seconds": 12.6,
       "heading": "Each row, with rank",
       "narration": "The rank form says it another way. One means each row of the matrix. The small function in braces adds the vector to its argument. A later episode covers functions like this one.",
       "lines": [],
@@ -394,9 +394,9 @@
     },
     {
       "id": "table",
-      "seconds": 14,
+      "seconds": 11.6,
       "heading": "Every pair",
-      "narration": "Sometimes you want every pair. Table combines each item of one vector with each item of the other. Three values and two values give a three by two result.",
+      "narration": "Sometimes you want every pair. Table combines each item of one vector with each item of the other. With three values and two, the result is three by two.",
       "lines": [],
       "panel": {
         "type": "code",
@@ -450,9 +450,9 @@
     },
     {
       "id": "languages",
-      "seconds": 34,
+      "seconds": 37.2,
       "heading": "Other array languages",
-      "narration": "Other array languages draw this line in different places. Our matrix has two rows and three columns. Three values match its last axis. Two values match its first. {X_eTaL|@xtl} needs the same shape, so both are errors. {APL|@apl} does the same. {J|jay} and {BQN|bee, queue, en}{,|/} match {axes|@axes} from the front. So two values meet the two rows. The language {K|kay} works the same way. {NumPy|@numpy} matches {axes|@axes} from the back. So three values meet each row. Every one of them extends a single value.",
+      "narration": "Other array languages draw this line in different places. Our matrix has two rows and three columns. Three values match its last axis. Two values match its first. {X_eTaL|@xtl} needs the same shape, so both are errors. {APL|@apl} does the same. {J|Jay} and {BQN|@bqn}{,|/} match {axes|@axes} from the front. So two values meet the two rows. The language {K|Kay} works the same way. {NumPy|@numpy} matches {axes|@axes} from the back. So three values meet each row. Every one of them extends a single value.",
       "lines": [],
       "panel": {
         "type": "code",
@@ -526,9 +526,9 @@
     },
     {
       "id": "apl",
-      "seconds": 14,
+      "seconds": 14.3,
       "heading": "APL",
-      "narration": "In {APL|@apl}, both lines are a rank error. The ranks differ, so the shapes cannot match. An axis in brackets says how. Plus on axis two puts the vector on each row.",
+      "narration": "Both lines give a rank error in {APL|@apl}. The ranks differ, so the shapes cannot match. Brackets around an axis number say how. Plus on axis two puts the vector on each row.",
       "lines": [],
       "panel": {
         "type": "code",
@@ -568,7 +568,7 @@
     },
     {
       "id": "apl-more",
-      "seconds": 14,
+      "seconds": 9.9,
       "heading": "APL",
       "narration": "On axis one, two values go down the columns. The rank operator is another way. Rank one pairs the vector with each row.",
       "lines": [],
@@ -606,9 +606,9 @@
     },
     {
       "id": "j",
-      "seconds": 14,
+      "seconds": 11.1,
       "heading": "J",
-      "narration": "{J|jay} matches {axes|@axes} from the front. Two values meet the two rows, one value each. Three values are a length error.",
+      "narration": "{J|Jay} matches {axes|@axes} from the front. Two values meet the two rows, one value each. Three values are a length error.",
       "lines": [],
       "panel": {
         "type": "code",
@@ -644,9 +644,9 @@
     },
     {
       "id": "j-rank",
-      "seconds": 10,
+      "seconds": 6.1,
       "heading": "J",
-      "narration": "To put three values on each row, {J|jay} uses rank. Rank one means each row.",
+      "narration": "To put three values on each row, {J|Jay} uses rank. Rank one means each row.",
       "lines": [],
       "panel": {
         "type": "code",
@@ -672,9 +672,9 @@
     },
     {
       "id": "bqn",
-      "seconds": 12,
+      "seconds": 6.8,
       "heading": "BQN",
-      "narration": "{BQN|bee, queue, en} follows the same rule as {J|jay}. Its rank modifier works the same way too.",
+      "narration": "{BQN|@bqn} follows the same rule as {J|Jay}. Its rank modifier works the same way too.",
       "lines": [],
       "panel": {
         "type": "code",
@@ -706,9 +706,9 @@
     },
     {
       "id": "k",
-      "seconds": 14,
+      "seconds": 9.3,
       "heading": "K",
-      "narration": "In {K|kay}, a matrix is a list of rows. Two values meet the two rows. Each right puts three values on each row.",
+      "narration": "In {K|Kay}, a matrix is a list of rows. Two values meet the two rows. Each right puts three values on each row.",
       "lines": [],
       "panel": {
         "type": "code",
@@ -744,7 +744,7 @@
     },
     {
       "id": "numpy",
-      "seconds": 12,
+      "seconds": 10.7,
       "heading": "NumPy",
       "narration": "{NumPy|@numpy} matches {axes|@axes} from the back. Three values meet each row, with nothing to add. Two values are an error.",
       "lines": [],
@@ -782,7 +782,7 @@
     },
     {
       "id": "numpy-columns",
-      "seconds": 12,
+      "seconds": 9.3,
       "heading": "NumPy",
       "narration": "To go down the columns, add an axis of length one. The two values become a column. That column stretches across the matrix.",
       "lines": [],
@@ -813,7 +813,7 @@
     },
     {
       "id": "numpy-stretch",
-      "seconds": 16,
+      "seconds": 12.7,
       "heading": "NumPy: a length one axis stretches",
       "narration": "That stretching has a cost. A column of three plus a row of three gives a three by three table. If you meant item by item, there is no error. You get an answer of the wrong shape.",
       "lines": [],
@@ -847,7 +847,7 @@
     },
     {
       "id": "tradeoffs",
-      "seconds": 16,
+      "seconds": 13.3,
       "heading": "The trade off",
       "narration": "Each choice has a cost. Automatic rules are short to write. But a wrong shape can still give an answer. A strict rule asks for one more step. In return, a mismatch shows itself.",
       "lines": [],
@@ -901,7 +901,7 @@
     },
     {
       "id": "next",
-      "seconds": 10,
+      "seconds": 11.9,
       "heading": "Next time",
       "narration": "The next episode is about array idioms. That is thinking without loops. We take small problems and solve each one twice. First with a loop, then with whole arrays.",
       "lines": [],
@@ -927,7 +927,7 @@
     },
     {
       "id": "exercise",
-      "seconds": 14,
+      "seconds": 14.6,
       "heading": "Before the next episode",
       "narration": "Before the next episode, try this. Make a times table for one to nine, with table. Then add ten, twenty and thirty to each row of a matrix. Then add one hundred and two hundred to each column.",
       "lines": [

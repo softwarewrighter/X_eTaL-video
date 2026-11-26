@@ -1,0 +1,829 @@
+{
+  "sample": "mike-medium-ref-1.wav",
+  "sampleSha256": "a57fe277f7ce93d5cac4e0e2ed21d770b7d05cab5b20b338dd55aece009d7211",
+  "server": "VoxCPM (Gradio /generate)",
+  "steps": 15,
+  "cfg": 2.0,
+  "scenes": [
+    {
+      "id": "recap",
+      "narration": "Last time, every array had a shape, a rank and {axes|@axes}. Today, two arrays meet. This episode asks what happens when their shapes differ.",
+      "seconds": 12.4,
+      "sentences": [
+        {
+          "text": "Last time, every array had a shape, a rank and axes.",
+          "heard": "Last time, every array had a shape, a rank, and axes.",
+          "sent": "Last time, every array had a shape, a rank and axes.",
+          "spoken": "Last time, every array had a shape, a rank and @axes.",
+          "start": 0.4,
+          "end": 6.13
+        },
+        {
+          "text": "Today, two arrays meet.",
+          "heard": "Today, two arrays meet.",
+          "sent": "Today, two arrays meet.",
+          "start": 6.48,
+          "end": 8.271
+        },
+        {
+          "text": "This episode asks what happens when their shapes differ.",
+          "heard": "This episode asks what happens when their shapes differ.",
+          "sent": "This episode asks what happens when their shapes differ.",
+          "start": 8.621,
+          "end": 11.7
+        }
+      ]
+    },
+    {
+      "id": "scalar-vector",
+      "narration": "Start with a single value and a vector. A single value is a scalar. It has no frame, because it has no {axes|@axes}. One plus the vector adds one to every item. This is called scalar extension.",
+      "seconds": 15.1,
+      "sentences": [
+        {
+          "text": "Start with a single value and a vector.",
+          "heard": "Start with a single value and a vector.",
+          "sent": "Start with a single value and a vector.",
+          "start": 0.4,
+          "end": 2.725
+        },
+        {
+          "text": "A single value is a scalar.",
+          "heard": "A single value is a scalar.",
+          "sent": "A single value is a scalar.",
+          "start": 3.075,
+          "end": 4.594
+        },
+        {
+          "text": "It has no frame, because it has no axes.",
+          "heard": "It has no frame because it has no axes.",
+          "sent": "It has no frame, because it has no axes.",
+          "spoken": "It has no frame, because it has no @axes.",
+          "start": 4.944,
+          "end": 9.13
+        },
+        {
+          "text": "One plus the vector adds one to every item.",
+          "heard": "1 plus the vector adds 1 to every item.",
+          "sent": "One plus the vector adds one to every item.",
+          "start": 9.48,
+          "end": 12.096
+        },
+        {
+          "text": "This is called scalar extension.",
+          "heard": "This is called scalar extension.",
+          "sent": "This is called scalar extension.",
+          "start": 12.446,
+          "end": 14.386
+        }
+      ]
+    },
+    {
+      "id": "scalar-matrix",
+      "narration": "It works with any shape. Ten times a matrix multiplies every item by ten. The result has the shape of the matrix.",
+      "seconds": 9.7,
+      "sentences": [
+        {
+          "text": "It works with any shape.",
+          "heard": "It works with any shape.",
+          "sent": "It works with any shape.",
+          "start": 0.4,
+          "end": 2.011
+        },
+        {
+          "text": "Ten times a matrix multiplies every item by ten.",
+          "heard": "Ten times a matrix multiplies every item by ten.",
+          "sent": "Ten times a matrix multiplies every item by ten.",
+          "start": 2.361,
+          "end": 5.812
+        },
+        {
+          "text": "The result has the shape of the matrix.",
+          "heard": "The result has the shape of the matrix.",
+          "sent": "The result has the shape of the matrix.",
+          "start": 6.162,
+          "end": 8.935
+        }
+      ]
+    },
+    {
+      "id": "same-shape",
+      "narration": "Two arrays of the same shape combine item by item. Each item meets the item in the same place. Two by three plus two by three is two by three.",
+      "seconds": 9.8,
+      "sentences": [
+        {
+          "text": "Two arrays of the same shape combine item by item.",
+          "heard": "Two arrays of the same shape combine item by item.",
+          "sent": "Two arrays of the same shape combine item by item.",
+          "start": 0.4,
+          "end": 3.114
+        },
+        {
+          "text": "Each item meets the item in the same place.",
+          "heard": "Each item meets the item in the same place.",
+          "sent": "Each item meets the item in the same place.",
+          "start": 3.464,
+          "end": 6.416
+        },
+        {
+          "text": "Two by three plus two by three is two by three.",
+          "heard": "2 by 3 plus 2 by 3 is 2 by 3.",
+          "sent": "Two by three plus two by three is two by three.",
+          "start": 6.766,
+          "end": 9.079
+        }
+      ]
+    },
+    {
+      "id": "mismatch",
+      "narration": "Now try a matrix and a vector. The matrix has a shape of two by three. The vector has a shape of three. In {X_eTaL|@xtl} this is an error. The message names both shapes.",
+      "seconds": 12.7,
+      "sentences": [
+        {
+          "text": "Now try a matrix and a vector.",
+          "heard": "Now try a matrix and a vector.",
+          "sent": "Now try a matrix and a vector.",
+          "start": 0.4,
+          "end": 1.807
+        },
+        {
+          "text": "The matrix has a shape of two by three.",
+          "heard": "The matrix has a shape of two by three.",
+          "sent": "The matrix has a shape of two by three.",
+          "start": 2.157,
+          "end": 4.323
+        },
+        {
+          "text": "The vector has a shape of three.",
+          "heard": "The vector has a shape of 3.",
+          "sent": "The vector has a shape of three.",
+          "start": 4.673,
+          "end": 6.321
+        },
+        {
+          "text": "In X_eTaL this is an error.",
+          "heard": "in XTL. This is an error.",
+          "sent": "In xtl this is an error.",
+          "spoken": "In @xtl this is an error.",
+          "start": 6.671,
+          "end": 9.528
+        },
+        {
+          "text": "The message names both shapes.",
+          "heard": "The message names both shapes.",
+          "sent": "The message names both shapes.",
+          "start": 9.878,
+          "end": 11.902
+        }
+      ]
+    },
+    {
+      "id": "why",
+      "narration": "The rule is short, so a result is easy to predict. A mismatch is often a mistake. An error shows it at once. To combine other shapes, you say how.",
+      "seconds": 10.8,
+      "sentences": [
+        {
+          "text": "The rule is short, so a result is easy to predict.",
+          "heard": "The rule is short, so a result is easy to predict.",
+          "sent": "The rule is short, so a result is easy to predict.",
+          "start": 0.4,
+          "end": 3.8
+        },
+        {
+          "text": "A mismatch is often a mistake.",
+          "heard": "A mismatch is often a mistake.",
+          "sent": "A mismatch is often a mistake.",
+          "start": 4.15,
+          "end": 5.845
+        },
+        {
+          "text": "An error shows it at once.",
+          "heard": "An error shows it at once.",
+          "sent": "An error shows it at once.",
+          "start": 6.195,
+          "end": 7.96
+        },
+        {
+          "text": "To combine other shapes, you say how.",
+          "heard": "To combine other shapes you say how.",
+          "sent": "To combine other shapes, you say how.",
+          "start": 8.31,
+          "end": 10.019
+        }
+      ]
+    },
+    {
+      "id": "rows",
+      "narration": "To add the vector to each row, say so. Reshape repeats the vector to the shape of the matrix. Now the shapes match.",
+      "seconds": 8.9,
+      "sentences": [
+        {
+          "text": "To add the vector to each row, say so.",
+          "heard": "to add the vector to each row. Say so.",
+          "sent": "To add the vector to each row, say so.",
+          "start": 0.4,
+          "end": 3.197
+        },
+        {
+          "text": "Reshape repeats the vector to the shape of the matrix.",
+          "heard": "Reshape repeats the vector to the shape of the matrix.",
+          "sent": "Reshape repeats the vector to the shape of the matrix.",
+          "start": 3.547,
+          "end": 6.359
+        },
+        {
+          "text": "Now the shapes match.",
+          "heard": "Now the shapes match.",
+          "sent": "Now the shapes match.",
+          "start": 6.709,
+          "end": 8.111
+        }
+      ]
+    },
+    {
+      "id": "columns",
+      "narration": "Columns take one more step. This vector has two values, one for each row. Reshape it to three by two, then transpose. Now each row holds one value.",
+      "seconds": 12.7,
+      "sentences": [
+        {
+          "text": "Columns take one more step.",
+          "heard": "Columns take one more step.",
+          "sent": "Columns take one more step.",
+          "start": 0.4,
+          "end": 2.265
+        },
+        {
+          "text": "This vector has two values, one for each row.",
+          "heard": "This vector has two values, one for each row.",
+          "sent": "This vector has two values, one for each row.",
+          "start": 2.615,
+          "end": 6.045
+        },
+        {
+          "text": "Reshape it to three by two, then transpose.",
+          "heard": "reshape it to 3x2, then transpose.",
+          "sent": "Reshape it to three by two, then transpose.",
+          "unverified": true,
+          "start": 6.395,
+          "end": 9.257
+        },
+        {
+          "text": "Now each row holds one value.",
+          "heard": "Now each row holds one value.",
+          "sent": "Now each row holds one value.",
+          "start": 9.607,
+          "end": 11.953
+        }
+      ]
+    },
+    {
+      "id": "columns-add",
+      "narration": "The sum adds one value along each row. Each column gets the same two values.",
+      "seconds": 6.0,
+      "sentences": [
+        {
+          "text": "The sum adds one value along each row.",
+          "heard": "The sum adds one value along each row.",
+          "sent": "The sum adds one value along each row.",
+          "start": 0.4,
+          "end": 2.991
+        },
+        {
+          "text": "Each column gets the same two values.",
+          "heard": "Each column gets the same two values.",
+          "sent": "Each column gets the same two values.",
+          "start": 3.341,
+          "end": 5.256
+        }
+      ]
+    },
+    {
+      "id": "rank-form",
+      "narration": "The rank form says it another way. One means each row of the matrix. The small function in braces adds the vector to its argument. A later episode covers functions like this one.",
+      "seconds": 12.6,
+      "sentences": [
+        {
+          "text": "The rank form says it another way.",
+          "heard": "The rank form says it another way.",
+          "sent": "The rank form says it another way.",
+          "start": 0.4,
+          "end": 1.965
+        },
+        {
+          "text": "One means each row of the matrix.",
+          "heard": "One means each row of the matrix.",
+          "sent": "One means each row of the matrix.",
+          "start": 2.315,
+          "end": 4.891
+        },
+        {
+          "text": "The small function in braces adds the vector to its argument.",
+          "heard": "the small function in braces adds the vector to its argument.",
+          "sent": "The small function in braces adds the vector to its argument.",
+          "start": 5.241,
+          "end": 8.563
+        },
+        {
+          "text": "A later episode covers functions like this one.",
+          "heard": "A later episode covers functions like this one.",
+          "sent": "A later episode covers functions like this one.",
+          "start": 8.913,
+          "end": 11.887
+        }
+      ]
+    },
+    {
+      "id": "table",
+      "narration": "Sometimes you want every pair. Table combines each item of one vector with each item of the other. With three values and two, the result is three by two.",
+      "seconds": 11.6,
+      "sentences": [
+        {
+          "text": "Sometimes you want every pair.",
+          "heard": "Sometimes you want every pair.",
+          "sent": "Sometimes you want every pair.",
+          "start": 0.4,
+          "end": 2.442
+        },
+        {
+          "text": "Table combines each item of one vector with each item of the other.",
+          "heard": "Table combines each item of one vector with each item of the other.",
+          "sent": "Table combines each item of one vector with each item of the other.",
+          "start": 2.792,
+          "end": 7.042
+        },
+        {
+          "text": "With three values and two, the result is three by two.",
+          "heard": "With three values and two, the result is three by two.",
+          "sent": "With three values and two, the result is three by two.",
+          "start": 7.392,
+          "end": 10.83
+        }
+      ]
+    },
+    {
+      "id": "languages",
+      "narration": "Other array languages draw this line in different places. Our matrix has two rows and three columns. Three values match its last axis. Two values match its first. {X_eTaL|@xtl} needs the same shape, so both are errors. {APL|@apl} does the same. {J|Jay} and {BQN|@bqn}{,|/} match {axes|@axes} from the front. So two values meet the two rows. The language {K|Kay} works the same way. {NumPy|@numpy} matches {axes|@axes} from the back. So three values meet each row. Every one of them extends a single value.",
+      "seconds": 37.2,
+      "sentences": [
+        {
+          "text": "Other array languages draw this line in different places.",
+          "heard": "Other array languages draw this line in different places.",
+          "sent": "Other array languages draw this line in different places.",
+          "start": 0.4,
+          "end": 2.794
+        },
+        {
+          "text": "Our matrix has two rows and three columns.",
+          "heard": "Our matrix has two rows and three columns.",
+          "sent": "Our matrix has two rows and three columns.",
+          "start": 3.144,
+          "end": 5.345
+        },
+        {
+          "text": "Three values match its last axis.",
+          "heard": "three values match its last axis.",
+          "sent": "Three values match its last axis.",
+          "start": 5.695,
+          "end": 8.159
+        },
+        {
+          "text": "Two values match its first.",
+          "heard": "Two values match its first.",
+          "sent": "Two values match its first.",
+          "start": 8.509,
+          "end": 10.495
+        },
+        {
+          "text": "X_eTaL needs the same shape, so both are errors.",
+          "heard": "XTL. Needs the same shape, so both are errors.",
+          "sent": "xtl needs the same shape, so both are errors.",
+          "spoken": "@xtl needs the same shape, so both are errors.",
+          "start": 10.845,
+          "end": 14.638
+        },
+        {
+          "text": "APL does the same.",
+          "heard": "APL does the same.",
+          "sent": "apl does the same.",
+          "spoken": "@apl does the same.",
+          "start": 14.988,
+          "end": 16.912
+        },
+        {
+          "text": "J and BQN, match axes from the front.",
+          "heard": "J and B, Q, N match axes from the front.",
+          "sent": "Jay and bqn match axes from the front.",
+          "spoken": "Jay and @bqn/ match @axes from the front.",
+          "start": 17.262,
+          "end": 22.773
+        },
+        {
+          "text": "So two values meet the two rows.",
+          "heard": "So two values meet the two rows.",
+          "sent": "So two values meet the two rows.",
+          "start": 23.123,
+          "end": 25.046
+        },
+        {
+          "text": "The language K works the same way.",
+          "heard": "The language K works the same way.",
+          "sent": "The language Kay works the same way.",
+          "spoken": "The language Kay works the same way.",
+          "start": 25.396,
+          "end": 27.376
+        },
+        {
+          "text": "NumPy matches axes from the back.",
+          "heard": "NumPy matches axes from the back.",
+          "sent": "numpy matches axes from the back.",
+          "spoken": "@numpy matches @axes from the back.",
+          "start": 27.726,
+          "end": 31.887
+        },
+        {
+          "text": "So three values meet each row.",
+          "heard": "so three values meet each row.",
+          "sent": "So three values meet each row.",
+          "start": 32.237,
+          "end": 34.065
+        },
+        {
+          "text": "Every one of them extends a single value.",
+          "heard": "Every one of them extends a single value.",
+          "sent": "Every one of them extends a single value.",
+          "start": 34.415,
+          "end": 36.411
+        }
+      ]
+    },
+    {
+      "id": "apl",
+      "narration": "Both lines give a rank error in {APL|@apl}. The ranks differ, so the shapes cannot match. Brackets around an axis number say how. Plus on axis two puts the vector on each row.",
+      "seconds": 14.3,
+      "sentences": [
+        {
+          "text": "Both lines give a rank error in APL.",
+          "heard": "Both lines give a rank error in APL.",
+          "sent": "Both lines give a rank error in apl.",
+          "spoken": "Both lines give a rank error in @apl.",
+          "start": 0.4,
+          "end": 3.497
+        },
+        {
+          "text": "The ranks differ, so the shapes cannot match.",
+          "heard": "The ranks differ, so the shapes cannot match.",
+          "sent": "The ranks differ, so the shapes cannot match.",
+          "start": 3.847,
+          "end": 6.737
+        },
+        {
+          "text": "Brackets around an axis number say how.",
+          "heard": "Brackets around an axis number. Say how.",
+          "sent": "Brackets around an axis number say how.",
+          "start": 7.087,
+          "end": 9.76
+        },
+        {
+          "text": "Plus on axis two puts the vector on each row.",
+          "heard": "Plus on axis 2 puts the vector on each row.",
+          "sent": "Plus on axis two puts the vector on each row.",
+          "start": 10.11,
+          "end": 13.549
+        }
+      ]
+    },
+    {
+      "id": "apl-more",
+      "narration": "On axis one, two values go down the columns. The rank operator is another way. Rank one pairs the vector with each row.",
+      "seconds": 9.9,
+      "sentences": [
+        {
+          "text": "On axis one, two values go down the columns.",
+          "heard": "On axis one, two values go down the columns.",
+          "sent": "On axis one, two values go down the columns.",
+          "start": 0.4,
+          "end": 3.632
+        },
+        {
+          "text": "The rank operator is another way.",
+          "heard": "The rank operator is another way.",
+          "sent": "The rank operator is another way.",
+          "start": 3.982,
+          "end": 6.353
+        },
+        {
+          "text": "Rank one pairs the vector with each row.",
+          "heard": "Rank 1 pairs the vector with each row.",
+          "sent": "Rank one pairs the vector with each row.",
+          "start": 6.703,
+          "end": 9.155
+        }
+      ]
+    },
+    {
+      "id": "j",
+      "narration": "{J|Jay} matches {axes|@axes} from the front. Two values meet the two rows, one value each. Three values are a length error.",
+      "seconds": 11.1,
+      "sentences": [
+        {
+          "text": "J matches axes from the front.",
+          "heard": "J-matches. Axes. From the front.",
+          "sent": "Jay matches axes from the front.",
+          "spoken": "Jay matches @axes from the front.",
+          "start": 0.4,
+          "end": 3.447
+        },
+        {
+          "text": "Two values meet the two rows, one value each.",
+          "heard": "Two values meet the two rows. One value each.",
+          "sent": "Two values meet the two rows, one value each.",
+          "start": 3.797,
+          "end": 7.743
+        },
+        {
+          "text": "Three values are a length error.",
+          "heard": "Three values are a length error.",
+          "sent": "Three values are a length error.",
+          "start": 8.093,
+          "end": 10.386
+        }
+      ]
+    },
+    {
+      "id": "j-rank",
+      "narration": "To put three values on each row, {J|Jay} uses rank. Rank one means each row.",
+      "seconds": 6.1,
+      "sentences": [
+        {
+          "text": "To put three values on each row, J uses rank.",
+          "heard": "To put three values on each row, Jay uses rank.",
+          "sent": "To put three values on each row, Jay uses rank.",
+          "spoken": "To put three values on each row, Jay uses rank.",
+          "start": 0.4,
+          "end": 3.146
+        },
+        {
+          "text": "Rank one means each row.",
+          "heard": "Rank 1 means each row.",
+          "sent": "Rank one means each row.",
+          "start": 3.496,
+          "end": 5.338
+        }
+      ]
+    },
+    {
+      "id": "bqn",
+      "narration": "{BQN|@bqn} follows the same rule as {J|Jay}. Its rank modifier works the same way too.",
+      "seconds": 6.8,
+      "sentences": [
+        {
+          "text": "BQN follows the same rule as J.",
+          "heard": "b, q, n follows the same rule as j.",
+          "sent": "bqn follows the same rule as Jay.",
+          "spoken": "@bqn follows the same rule as Jay.",
+          "start": 0.4,
+          "end": 3.422
+        },
+        {
+          "text": "Its rank modifier works the same way too.",
+          "heard": "Its Rank modifier works the same way too.",
+          "sent": "Its rank modifier works the same way too.",
+          "start": 3.772,
+          "end": 6.059
+        }
+      ]
+    },
+    {
+      "id": "k",
+      "narration": "In {K|Kay}, a matrix is a list of rows. Two values meet the two rows. Each right puts three values on each row.",
+      "seconds": 9.3,
+      "sentences": [
+        {
+          "text": "In K, a matrix is a list of rows.",
+          "heard": "In K, a matrix is a list of rows.",
+          "sent": "In Kay, a matrix is a list of rows.",
+          "spoken": "In Kay, a matrix is a list of rows.",
+          "start": 0.4,
+          "end": 3.606
+        },
+        {
+          "text": "Two values meet the two rows.",
+          "heard": "Two values meet the two rows.",
+          "sent": "Two values meet the two rows.",
+          "start": 3.956,
+          "end": 5.766
+        },
+        {
+          "text": "Each right puts three values on each row.",
+          "heard": "Each right puts three values on each row.",
+          "sent": "Each right puts three values on each row.",
+          "start": 6.116,
+          "end": 8.54
+        }
+      ]
+    },
+    {
+      "id": "numpy",
+      "narration": "{NumPy|@numpy} matches {axes|@axes} from the back. Three values meet each row, with nothing to add. Two values are an error.",
+      "seconds": 10.7,
+      "sentences": [
+        {
+          "text": "NumPy matches axes from the back.",
+          "heard": "NumPy matches axes from the back.",
+          "sent": "numpy matches axes from the back.",
+          "spoken": "@numpy matches @axes from the back.",
+          "start": 0.4,
+          "end": 4.561
+        },
+        {
+          "text": "Three values meet each row, with nothing to add.",
+          "heard": "Three values meet each row, with nothing to add.",
+          "sent": "Three values meet each row, with nothing to add.",
+          "start": 4.911,
+          "end": 8.331
+        },
+        {
+          "text": "Two values are an error.",
+          "heard": "two values are an error.",
+          "sent": "Two values are an error.",
+          "start": 8.681,
+          "end": 9.962
+        }
+      ]
+    },
+    {
+      "id": "numpy-columns",
+      "narration": "To go down the columns, add an axis of length one. The two values become a column. That column stretches across the matrix.",
+      "seconds": 9.3,
+      "sentences": [
+        {
+          "text": "To go down the columns, add an axis of length one.",
+          "heard": "To go down the columns, add an axis of length 1.",
+          "sent": "To go down the columns, add an axis of length one.",
+          "start": 0.4,
+          "end": 4.107
+        },
+        {
+          "text": "The two values become a column.",
+          "heard": "the two values become a column.",
+          "sent": "The two values become a column.",
+          "start": 4.457,
+          "end": 6.146
+        },
+        {
+          "text": "That column stretches across the matrix.",
+          "heard": "That column stretches across the matrix.",
+          "sent": "That column stretches across the matrix.",
+          "start": 6.496,
+          "end": 8.547
+        }
+      ]
+    },
+    {
+      "id": "numpy-stretch",
+      "narration": "That stretching has a cost. A column of three plus a row of three gives a three by three table. If you meant item by item, there is no error. You get an answer of the wrong shape.",
+      "seconds": 12.7,
+      "sentences": [
+        {
+          "text": "That stretching has a cost.",
+          "heard": "that stretching has a cost.",
+          "sent": "That stretching has a cost.",
+          "start": 0.4,
+          "end": 2.033
+        },
+        {
+          "text": "A column of three plus a row of three gives a three by three table.",
+          "heard": "A column of 3 plus a row of 3 gives a 3 by 3 table.",
+          "sent": "A column of three plus a row of three gives a three by three table.",
+          "start": 2.383,
+          "end": 6.045
+        },
+        {
+          "text": "If you meant item by item, there is no error.",
+          "heard": "If you meant item by item, there is no error.",
+          "sent": "If you meant item by item, there is no error.",
+          "start": 6.395,
+          "end": 9.948
+        },
+        {
+          "text": "You get an answer of the wrong shape.",
+          "heard": "you get an answer of the wrong shape.",
+          "sent": "You get an answer of the wrong shape.",
+          "start": 10.298,
+          "end": 11.984
+        }
+      ]
+    },
+    {
+      "id": "tradeoffs",
+      "narration": "Each choice has a cost. Automatic rules are short to write. But a wrong shape can still give an answer. A strict rule asks for one more step. In return, a mismatch shows itself.",
+      "seconds": 13.3,
+      "sentences": [
+        {
+          "text": "Each choice has a cost.",
+          "heard": "Each choice has a cost.",
+          "sent": "Each choice has a cost.",
+          "start": 0.4,
+          "end": 2.215
+        },
+        {
+          "text": "Automatic rules are short to write.",
+          "heard": "Automatic rules are short to write.",
+          "sent": "Automatic rules are short to write.",
+          "start": 2.565,
+          "end": 4.311
+        },
+        {
+          "text": "But a wrong shape can still give an answer.",
+          "heard": "but a wrong shape can still give an answer.",
+          "sent": "But a wrong shape can still give an answer.",
+          "start": 4.661,
+          "end": 7.251
+        },
+        {
+          "text": "A strict rule asks for one more step.",
+          "heard": "A strict rule asks for one more step.",
+          "sent": "A strict rule asks for one more step.",
+          "start": 7.601,
+          "end": 9.7
+        },
+        {
+          "text": "In return, a mismatch shows itself.",
+          "heard": "In return, a mismatch shows itself.",
+          "sent": "In return, a mismatch shows itself.",
+          "start": 10.05,
+          "end": 12.514
+        }
+      ]
+    },
+    {
+      "id": "next",
+      "narration": "The next episode is about array idioms. That is thinking without loops. We take small problems and solve each one twice. First with a loop, then with whole arrays.",
+      "seconds": 11.9,
+      "sentences": [
+        {
+          "text": "The next episode is about array idioms.",
+          "heard": "The next episode is about array idioms.",
+          "sent": "The next episode is about array idioms.",
+          "start": 0.4,
+          "end": 2.673
+        },
+        {
+          "text": "That is thinking without loops.",
+          "heard": "That is, thinking without loops.",
+          "sent": "That is thinking without loops.",
+          "start": 3.023,
+          "end": 5.356
+        },
+        {
+          "text": "We take small problems and solve each one twice.",
+          "heard": "We take small problems and solve each one twice.",
+          "sent": "We take small problems and solve each one twice.",
+          "start": 5.706,
+          "end": 8.492
+        },
+        {
+          "text": "First with a loop, then with whole arrays.",
+          "heard": "First with a loop, then with whole arrays.",
+          "sent": "First with a loop, then with whole arrays.",
+          "start": 8.842,
+          "end": 11.198
+        }
+      ]
+    },
+    {
+      "id": "exercise",
+      "narration": "Before the next episode, try this. Make a times table for one to nine, with table. Then add ten, twenty and thirty to each row of a matrix. Then add one hundred and two hundred to each column.",
+      "seconds": 14.6,
+      "sentences": [
+        {
+          "text": "Before the next episode, try this.",
+          "heard": "Before the next episode, try this.",
+          "sent": "Before the next episode, try this.",
+          "start": 0.4,
+          "end": 2.571
+        },
+        {
+          "text": "Make a times table for one to nine, with table.",
+          "heard": "Make a times table for 1 to 9. With table.",
+          "sent": "Make a times table for one to nine, with table.",
+          "start": 2.921,
+          "end": 6.276
+        },
+        {
+          "text": "Then add ten, twenty and thirty to each row of a matrix.",
+          "heard": "then add 10, 20, and 30 to each row of a matrix.",
+          "sent": "Then add ten, twenty and thirty to each row of a matrix.",
+          "start": 6.626,
+          "end": 10.439
+        },
+        {
+          "text": "Then add one hundred and two hundred to each column.",
+          "heard": "then add 100 and 200 to each column.",
+          "sent": "Then add one hundred and two hundred to each column.",
+          "start": 10.789,
+          "end": 13.857
+        }
+      ]
+    }
+  ]
+}

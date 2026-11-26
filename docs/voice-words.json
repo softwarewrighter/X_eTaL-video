@@ -152,6 +152,15 @@
     },
     {
       "word": "BQN",
+      "use": "@bqn",
+      "said": "bee, queue, enn",
+      "heard": "B-Q-N",
+      "ok": true,
+      "date": "2026-11-25",
+      "note": "made for al-04-broadcast: \"bee, queue, en\" (take 2, heard B-Q-N alone) was heard \"B, Q, and\" inside sentences; \"bee, queue, enn\" (take 3) is heard \"B, Q, N\" in both sentences"
+    },
+    {
+      "word": "BQN",
       "use": "bee, queue, en",
       "heard": "BQN",
       "ok": true,
@@ -174,10 +183,26 @@
     },
     {
       "word": "J",
+      "use": "Jay",
+      "heard": "J",
+      "ok": true,
+      "date": "2026-11-25",
+      "note": "capitalized, as a name (the author): lowercase \"jay\" and \"kay\" were heard \"Jai\" and \"key\" in al-04-broadcast"
+    },
+    {
+      "word": "J",
       "use": "jay",
       "heard": "J",
       "ok": true,
       "date": "2026-11-20"
+    },
+    {
+      "word": "K",
+      "use": "Kay",
+      "heard": "K",
+      "ok": true,
+      "date": "2026-11-25",
+      "note": "capitalized, as a name (the author): lowercase \"jay\" and \"kay\" were heard \"Jai\" and \"key\" in al-04-broadcast"
     },
     {
       "word": "K",
