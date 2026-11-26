@@ -39,7 +39,7 @@
       "id": "recap",
       "seconds": 10,
       "heading": "Last time",
-      "narration": "Last time, every array had a shape, a rank and {axes|@axes}. Today, two arrays meet. What happens when their shapes differ?",
+      "narration": "Last time, every array had a shape, a rank and {axes|@axes}. Today, two arrays meet. This episode asks what happens when their shapes differ.",
       "lines": [],
       "slide": {
         "type": "flow",
@@ -67,7 +67,7 @@
       "id": "scalar-vector",
       "seconds": 12,
       "heading": "A single value",
-      "narration": "Start with a single value and a vector. A single value is a scalar. It has no frame, because it has no axes. One plus the vector adds one to every item. This is called scalar extension.",
+      "narration": "Start with a single value and a vector. A single value is a scalar. It has no frame, because it has no {axes|@axes}. One plus the vector adds one to every item. This is called scalar extension.",
       "lines": [],
       "panel": {
         "type": "code",
@@ -452,7 +452,7 @@
       "id": "languages",
       "seconds": 34,
       "heading": "Other array languages",
-      "narration": "Other array languages draw this line in different places. M has two rows and three columns. Three values match its last axis. Two values match its first. {X_eTaL|@xtl} needs the same shape, so both are errors. {APL|@apl} does the same. {J|jay} and {BQN|bee, queue, en}{,|/} match {axes|@axes} from the front. So two values meet the two rows. The language {K|kay} works the same way. {NumPy|@numpy} matches {axes|@axes} from the back. So three values meet each row. Every one of them extends a single value.",
+      "narration": "Other array languages draw this line in different places. Our matrix has two rows and three columns. Three values match its last axis. Two values match its first. {X_eTaL|@xtl} needs the same shape, so both are errors. {APL|@apl} does the same. {J|jay} and {BQN|bee, queue, en}{,|/} match {axes|@axes} from the front. So two values meet the two rows. The language {K|kay} works the same way. {NumPy|@numpy} matches {axes|@axes} from the back. So three values meet each row. Every one of them extends a single value.",
       "lines": [],
       "panel": {
         "type": "code",
@@ -674,7 +674,7 @@
       "id": "bqn",
       "seconds": 12,
       "heading": "BQN",
-      "narration": "{BQN|bee, queue, en} follows the same rule as J. Its rank modifier works the same way too.",
+      "narration": "{BQN|bee, queue, en} follows the same rule as {J|jay}. Its rank modifier works the same way too.",
       "lines": [],
       "panel": {
         "type": "code",
