@@ -1,8 +1,9 @@
 number = 1
 slug = "al-04-script"
-status = "in-progress"
+status = "completed"
 description = "lessons/al-04-broadcast/: a story lesson for episode 04 in the al-03 pattern ..."
 role = "production"
 context_files = []
 created_at = "2026-11-25T14:29:30"
-commits = []
+completed_at = "2026-11-25T18:53:49"
+commits = ["cda19399265ae66fb23751bbf8ed8acf4cf5798a"]
