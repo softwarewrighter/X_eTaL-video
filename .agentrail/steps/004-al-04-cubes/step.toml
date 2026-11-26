@@ -1,6 +1,6 @@
 number = 4
 slug = "al-04-cubes"
-status = "pending"
+status = "in-progress"
 description = "Blender cubes for episode 04 (the author, 2026-11-25): a scalar is a number w..."
 role = "production"
 context_files = []
