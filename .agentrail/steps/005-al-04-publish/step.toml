@@ -1,8 +1,9 @@
 number = 5
 slug = "al-04-publish"
-status = "in-progress"
+status = "completed"
 description = "After the author's review: fixes, title.txt and description.txt, just youtube..."
 role = "production"
 context_files = []
 created_at = "2026-11-25T14:29:30"
-commits = []
+completed_at = "2026-11-25T22:42:52"
+commits = ["95554404a92893390ae46e248117ee43fb2b4cf1"]
