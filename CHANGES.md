@@ -13,6 +13,7 @@ Categories: `feat` new capability, `fix` a bug or wrong behavior,
 
 ## 2026-11-25
 
+- Lesson: al-04-broadcast: the X_eTaL table step by step (the error; reshape and transpose stretch each; plus; then t_able in one step), the author asked for it; a silent teaser of four idioms for episode 05 (research2); upload folder rebuilt (6:17).
 - Lesson: al-04-broadcast: the repeated column-plus-row cube scene replaced by the same table in X_eTaL (the author: what is the X_eTaL way?): the error, then t_able; upload folder rebuilt (5:54).
 - Tools: just cubes (scripts/cubes/): arrays as Blender cubes, the geometry from X_eTaL at the pin through ../X_eTaL-extensions Bpy.xtl (read only), into work/cubes/; a silent picture scene gets a middle phrase of the music, as a break does.
 - Lesson: al-04-broadcast gets two cube scenes with music (the rank ladder; a column plus a row); title, description with chapters, out/al-04-broadcast-youtube/ rebuilt (5:45).

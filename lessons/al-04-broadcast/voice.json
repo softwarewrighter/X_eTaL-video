@@ -714,40 +714,89 @@
       ]
     },
     {
-      "id": "xetal-pairs",
-      "narration": "In {X_eTaL|@xtl} nothing stretches. A column plus a row is an error, because the shapes differ. To get every pair, ask for it with table. The result is the same three by three, on purpose.",
-      "seconds": 15.0,
+      "id": "xetal-error",
+      "narration": "In {X_eTaL|@xtl} nothing stretches by itself. A column plus a row is an error, because the shapes differ. So we stretch each one ourselves.",
+      "seconds": 11.4,
       "sentences": [
         {
-          "text": "In X_eTaL nothing stretches.",
-          "heard": "In XTEL, nothing stretches.",
-          "sent": "In xtl nothing stretches.",
-          "spoken": "In @xtl nothing stretches.",
+          "text": "In X_eTaL nothing stretches by itself.",
+          "heard": "In XTEL, nothing stretches by itself.",
+          "sent": "In xtl nothing stretches by itself.",
+          "spoken": "In @xtl nothing stretches by itself.",
           "unverified": true,
           "start": 0.4,
-          "end": 3.023
+          "end": 3.582
         },
         {
           "text": "A column plus a row is an error, because the shapes differ.",
           "heard": "A column plus a row is an error, because the shapes differ.",
           "sent": "A column plus a row is an error, because the shapes differ.",
-          "start": 3.373,
-          "end": 7.224
+          "start": 3.932,
+          "end": 7.783
         },
         {
-          "text": "To get every pair, ask for it with table.",
-          "heard": "To get every pair, ask for it with table.",
-          "sent": "To get every pair, ask for it with table.",
-          "start": 7.574,
-          "end": 10.424
+          "text": "So we stretch each one ourselves.",
+          "heard": "So we stretch each one ourselves.",
+          "sent": "So we stretch each one ourselves.",
+          "start": 8.133,
+          "end": 10.623
+        }
+      ]
+    },
+    {
+      "id": "xetal-stretch",
+      "narration": "Reshape repeats the row three times, down the rows. Reshape and transpose repeat the column across. Now both are three by three.",
+      "seconds": 10.2,
+      "sentences": [
+        {
+          "text": "Reshape repeats the row three times, down the rows.",
+          "heard": "Reshape repeats the row three times down the rows.",
+          "sent": "Reshape repeats the row three times, down the rows.",
+          "start": 0.4,
+          "end": 4.169
         },
         {
-          "text": "The result is the same three by three, on purpose.",
-          "heard": "The result is the same 3x3, on purpose.",
-          "sent": "The result is the same three by three, on purpose.",
+          "text": "Reshape and transpose repeat the column across.",
+          "heard": "Reshape and transpose, repeat the column across.",
+          "sent": "Reshape and transpose repeat the column across.",
+          "start": 4.519,
+          "end": 7.582
+        },
+        {
+          "text": "Now both are three by three.",
+          "heard": "Now both are 3x3.",
+          "sent": "Now both are three by three.",
           "unverified": true,
-          "start": 10.774,
-          "end": 14.299
+          "start": 7.932,
+          "end": 9.479
+        }
+      ]
+    },
+    {
+      "id": "xetal-sum",
+      "narration": "Now plus adds them item by item. The result is the same table that NumPy gave. The table function does it in one step.",
+      "seconds": 9.6,
+      "sentences": [
+        {
+          "text": "Now plus adds them item by item.",
+          "heard": "Now plus adds them item by item.",
+          "sent": "Now plus adds them item by item.",
+          "start": 0.4,
+          "end": 2.525
+        },
+        {
+          "text": "The result is the same table that NumPy gave.",
+          "heard": "The result is the same table that NumPy gave.",
+          "sent": "The result is the same table that NumPy gave.",
+          "start": 2.875,
+          "end": 5.871
+        },
+        {
+          "text": "The table function does it in one step.",
+          "heard": "The table function does it in one step.",
+          "sent": "The table function does it in one step.",
+          "start": 6.221,
+          "end": 8.804
         }
       ]
     },
