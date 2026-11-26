@@ -1,0 +1,1 @@
+Script for episode 05 written and approved for narration: 26 scenes, notebook boxes from the pinned xetal, the next scene names the language tour (episode 06, moved up by the author); voice check ok
