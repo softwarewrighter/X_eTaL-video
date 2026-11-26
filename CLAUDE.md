@@ -393,7 +393,11 @@ Read before working:
 10. American spellings only, everywhere (docs, comments, code
     identifiers, lesson text, narration, commit messages): color,
     center, neighbor, gray, modeled, -ize. Docs are ASCII-only
-    markdown (`sw-markdown-checker`, in the gate). User-facing docs
+    markdown (`sw-markdown-checker`, in the gate). The check is mainly for
+    README.md, which GitHub will not render with some characters; where
+    special characters must show (APL, BQN glyphs), put them in a
+    `docs/<name>.pdf` or an `images/<diagram>.{jpg,png,svg}` shown
+    inline (the author, 2026-11-25). User-facing docs
     (README, per-library READMEs) say what and how; saga and step
     talk lives only in `docs/plan.md`.
 11. `CHANGES.md` gets a line for every commit (newest first, grouped

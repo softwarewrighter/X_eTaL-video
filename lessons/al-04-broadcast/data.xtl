@@ -1,0 +1,24 @@
+## Episode 04, Broadcasting: every X_eTaL expression the video runs or draws, at the pin.
+v := 10 20 30
+w := 100 200
+M := 2 3 r_eshape r_ange 6
+M
+M + 2 3 r_eshape v
+M + o_\ 3 2 r_eshape w
+v
+1 + v
+10 * M
+1 2 3
+1 2 3 + v
+M + M
+2 3 r_eshape v
+w
+3 2 r_eshape w
+o_\ 3 2 r_eshape w
+1 '{ _r + v } r_ank M
+v '+ t_able w
+2 1 r_eshape w
+3 1 r_eshape 1 2 3
+1 2 3 '+ t_able 1 2 3
+## errors, as the video shows them:
+## M + v      -> shapes differ: 2 3 and 3
