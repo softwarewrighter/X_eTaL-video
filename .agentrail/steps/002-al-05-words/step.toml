@@ -1,8 +1,9 @@
 number = 2
 slug = "al-05-words"
-status = "in-progress"
+status = "completed"
 description = "Before narration: just voice-preflight al-05-idioms; every risky word a word ..."
 role = "production"
 context_files = []
 created_at = "2026-11-25T22:46:33"
-commits = []
+completed_at = "2026-11-26T10:46:09"
+commits = ["bbe58572b27440c8040cf45acf4359dae82f33ab"]

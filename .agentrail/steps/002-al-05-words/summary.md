@@ -1,0 +1,1 @@
+Preflight: every name handled by an existing clip or tested spelling (@apl, @bqn, @xtl, Jay, Kay); the other 46 flags are ordinary English words from the noisy common-word list, accepted
