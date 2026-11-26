@@ -26,9 +26,9 @@ its first seven episodes are mostly language-neutral. Where they meet:
 | ----------- | -------------------- |
 | 01 Why another programming language? | `why-xetal` (Series 3) |
 | 03 Shape, rank, axes | `t-arrays` (Series 1, #3) |
-| 07 APL, J, K, BQN and X_eTaL | `vs-apl` (Series 3) |
-| 08 Reading and writing X_eTaL | `intro-xetal`, `t-reading`, `t-names` (made or being made) |
-| 10, 11 Functions, pipelines | `t-functions`, `t-operators`, `t-trains` |
+| 06 APL, J, K, BQN and X_eTaL | `vs-apl` (Series 3) |
+| 07 Reading and writing X_eTaL | `intro-xetal`, `t-reading`, `t-names` (made or being made) |
+| 09, 10 Functions, pipelines | `t-functions`, `t-operators`, `t-trains` |
 
 This series replaces the older plan (the author, 2026-11-19): its
 order governs; the videos already made (`intro-xetal`, `t-names`,
@@ -42,19 +42,22 @@ the shorts) stay as they are.
 | 02 | From scalar loops to array operations | 5 min | published 2026-11-23: https://youtu.be/YiJYDiD7xqc |
 | 03 | Shape, rank, axes and dimensions | 6.5 min | published 2026-11-25: https://youtu.be/JbKMtZZT6AY |
 | 04 | Broadcasting and array semantics (moved up, the author, 2026-11-23) | 6.5 min | published 2026-11-25: https://youtu.be/-te7ZGCdIkE |
-| 05 | Array idioms: thinking without loops (moved up, the author, 2026-11-25) | 12 min | later |
-| 06 | Mapping, filtering and reducing (to be decided: episode 02 covered the basics) | 11 min | later |
-| 07 | APL, J, K, BQN and X_eTaL | 10 min | later |
-| 08 | Reading and writing X_eTaL | 12 min | later |
-| 09 | Bindings, values and immutability | 9 min | later |
-| 10 | Functions as values | 11 min | later |
-| 11 | Pipelines and function composition | 11 min | later |
-| 12 | Your first complete X_eTaL program | 14 min | later |
+| 05 | Array idioms: thinking without loops (moved up, the author, 2026-11-25) | 5.5 min | narrating |
+| 06 | APL, J, K, BQN and X_eTaL (moved up, the author, 2026-11-26) | 10 min | later |
+| 07 | Reading and writing X_eTaL | 12 min | later |
+| 08 | Bindings, values and immutability | 9 min | later |
+| 09 | Functions as values | 11 min | later |
+| 10 | Pipelines and function composition | 11 min | later |
+| 11 | Your first complete X_eTaL program | 14 min | later |
+
+research2 Video 04, Mapping, filtering and reducing, is dropped: episode
+02 already covers map, filter (a mask and replicate), reduce, counting
+with a mask and the three composed (the author, 2026-11-26).
 
 research2's later modules (types and functional programming; idioms,
 macros and language design; libraries and extensions; demos and
 games; GPU and FPGA; machine learning; fine-tuning and research) are
-planned when the first twelve are, as research2 itself recommends
+planned when the first eleven are, as research2 itself recommends
 (a pilot first, then the rest only once its pacing, look, voice and
 accuracy are accepted). FPGA goes to the hardwarewrighter channel.
 

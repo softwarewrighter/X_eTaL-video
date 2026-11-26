@@ -11,6 +11,10 @@ Categories: `feat` new capability, `fix` a bug or wrong behavior,
 `chore` agentrail bookkeeping (step complete, saga archive),
 `vendor` a move of the pinned X_eTaL.
 
+## 2026-11-26
+
+- Lesson: al-05-idioms: the next-episode scene names the language tour (APL, J, K, BQN and X_eTaL, from research2); the series plan moves the tour up to 06 and drops mapping, filtering and reducing, which episode 02 covers (the author, 2026-11-26).
+
 ## 2026-11-25
 
 - Publish: al-04-broadcast is on YouTube (https://youtu.be/-te7ZGCdIkE): poster frame 774 (the cube ladder), linked, the site republished; the series plan marks episode 04 published.
