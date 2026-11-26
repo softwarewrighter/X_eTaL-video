@@ -1,1 +1,0 @@
-al-04-broadcast narrated (345.3 s with the cube scenes): whisper 90/91 (3x2 numerals); Jay/Kay capitalized, the author's wording for shapes, BQN clip 'bee, queue, enn'; voxq failure diagnosed (macOS Local Network after iTerm2 update; voxq run from Terminal.app)

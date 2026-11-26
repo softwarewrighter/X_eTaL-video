@@ -1,1 +1,0 @@
-al-04-broadcast script: X_eTaL rule, saying how, languages table and one scene per language (APL, J, BQN, K, NumPy, NumPy stretch), notebook boxes from xetal --box, Ode Arcade music, next episode array idioms; docs/comparing-languages.md for the author to confirm; the author asked to start narration

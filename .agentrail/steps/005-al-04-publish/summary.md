@@ -1,1 +1,0 @@
-al-04-broadcast published: https://youtu.be/-te7ZGCdIkE (6:17); out/al-04-broadcast-youtube/ (title, description with chapters, 103 captions, thumbnail); poster 774 (cube ladder), linked, site published to gh-pages; after the author's review: X_eTaL table step by step, idioms teaser, cube ladder
