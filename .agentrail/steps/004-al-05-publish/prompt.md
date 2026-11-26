@@ -1,0 +1,1 @@
+After the author's review: title.txt and description.txt with chapters, just youtube al-05-idioms; after the upload, poster, just link, just pages, just publish; series plan updated.

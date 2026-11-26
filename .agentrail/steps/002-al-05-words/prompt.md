@@ -1,0 +1,1 @@
+Before narration: just voice-preflight al-05-idioms; every risky word a word clip or tested spelling (Jay, Kay, @bqn, @numpy, @xtl as tested in al-04).

@@ -1,0 +1,1 @@
+Narrate and render through just produce al-05-idioms (voxq served from Terminal.app if iTerm2 lacks Local Network permission); whisper misses fixed by rewording; the review page updated as scenes arrive.
