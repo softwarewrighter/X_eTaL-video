@@ -1,6 +1,6 @@
 number = 3
 slug = "al-05-voice"
-status = "pending"
+status = "in-progress"
 description = "Narrate and render through just produce al-05-idioms (voxq served from Termin..."
 role = "production"
 context_files = []
