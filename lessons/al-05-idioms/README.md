@@ -12,7 +12,7 @@ the opening cell under the title, one middle phrase (cells at 5, 10,
 
 | File | What |
 | ---- | ---- |
-| `lesson.json` | the scenes: the title; the recap; the pattern (problem, loop, idiom, trade off); the idioms already met (sum, count matches, reverse, rotate); running totals (scan, max scan); adjacent changes (drop, then subtract or compare); normalize values (an aggregate, then each item; float for the types); count occurrences (unique, an equality table, a reduce, and its cost); the conclusion; the next episode; the exercise; call to action; end screen. Every example notebook style, with the Rust loop it replaces |
+| `lesson.json` | the scenes: the title; the recap; the pattern (problem, loop, idiom, trade off); the idioms already met (sum, count matches, reverse, rotate); running totals (scan, max scan); adjacent changes (drop, then subtract or compare); normalize values (an aggregate, then each item; float for the types); count occurrences (unique, an equality table, a reduce, and its cost); four more (positions with where and index of, membership, moving windows with n_wise, sorting by a key with grade and select); the conclusion; the next episode; the exercise; call to action; end screen. Every example notebook style, with the Rust loop it replaces |
 | `data.xtl` | every X_eTaL line the video shows, run at the pin; the panels show what `xetal --box` prints for each, made by `lesson.mjs` from the pinned binary, never typed |
 | `lesson.mjs` | writes `lesson.json`: the scenes, and each result from `bin/xetal --box` |
 | `timing.json` | the schedule X_eTaL computes from the lesson; checked by the gate |
@@ -29,6 +29,7 @@ the opening cell under the title, one middle phrase (cells at 5, 10,
 | running-scan, running-max | `s_\` is scan: every running reduce, the last the whole reduce | X_eTaL `docs/reference.md` (Reduce, scan, each and table) |
 | normalize-types | Int and Float do not mix; `f_loat` makes a Float of an Int | the pinned xetal's own error (`data.xtl`) |
 | count-table | `t_able` and `u_nique` | X_eTaL `docs/reference.md` |
+| positions-where to sort-grade | `w_here`, `i_ndexOf` (positions from 1), `m_ember?`, `n_wise`, `g_rade` with `s_elect`; four idioms beyond research2, the author asked for more (2026-11-26) | X_eTaL `docs/reference.md` (Search and order; `n_wise`), every output from the pinned xetal |
 
 ## Image prompt
 

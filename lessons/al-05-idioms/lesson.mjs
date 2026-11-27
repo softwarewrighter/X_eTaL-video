@@ -7,7 +7,7 @@
 import { readFileSync, writeFileSync, mkdtempSync } from "node:fs";
 import { execFileSync } from "node:child_process";
 import { tmpdir } from "node:os";
-const prelude = "x := 3 1 4 1 5 9\ns := 2 4 6 8\nvotes := 2 3 2 1 2 3\n";
+const prelude = "x := 3 1 4 1 5 9\ns := 2 4 6 8\nvotes := 2 3 2 1 2 3\nids := 101 102 103 104\nages := 40 25 33 19\n";
 const dir = mkdtempSync(tmpdir() + "/al05-");
 const run = (expr) => {
   writeFileSync(dir + "/b.xtl", prelude + expr + "\n");
@@ -39,6 +39,7 @@ const err = (e) => run(e).code;
 const scan = "'+ s_\\ x", mscan = "'m_ax s_\\ x";
 const d1 = "1 d_rop x", d2 = "-1 d_rop x", diff = "(1 d_rop x) - -1 d_rop x", rise = "(1 d_rop x) > -1 d_rop x";
 const mean = "('+ r_/ s) / t_ally s", centered = "(f_loat s) - ('+ r_/ s) / t_ally s";
+const where = "w_here x > 3", argmax = "x i_ndexOf 'm_ax r_/ x", member = "x m_ember? 1 5", win = "3 '+ n_wise x", grade = "g_rade ages", byAge = "(g_rade ages) s_elect ids";
 const tab = "(u_nique votes) '= t_able votes", counts = "'+ r_/_2 (u_nique votes) '= t_able votes";
 const scenes = [
   { id: "title", seconds: 8, heading: "Array idioms", lines: ["Thinking without loops"] },
@@ -68,6 +69,17 @@ const scenes = [
   { id: "count-sum", seconds: 10, heading: "Count occurrences: sum each row", narration: "Sum along each row, and you have the counts. Three twos, two threes, and one one.", lines: [], panel: panel([x(counts), H("=" + tab, "→ sum each row", "=" + counts)], [[0, 1], [1]]) },
   { id: "count-tradeoff", seconds: 12, heading: "Count occurrences: the trade off", narration: "The table has a cell for every value and every vote. That is the trade off. For a long list, it is a lot of cells.", lines: [], slide: { type: "points", steps: [0, 1, 1], items: [{ text: "One cell for each value and vote", sub: "3 values, 6 votes: 18 cells" }, { text: "Long lists", sub: "a lot of cells" }] } },
   { id: "break-3", seconds: 5, heading: "Four idioms", lines: [], slide: { type: "points", items: [{ text: "Running totals", sub: "scan" }, { text: "Adjacent changes", sub: "shift and subtract" }, { text: "Normalize values", sub: "aggregate, then each item" }, { text: "Count occurrences", sub: "unique, table, reduce" }] } },
+  // Four more idioms (the author, 2026-11-26: more idioms before the next episode), each from the pinned reference (Search and order; n_wise).
+  { id: "break-4", seconds: 5, heading: "Four more idioms", lines: [], slide: { type: "points", items: [{ text: "Find positions" }, { text: "Membership" }, { text: "Moving windows" }, { text: "Sort by a key" }] } },
+  { id: "positions-loop", seconds: 14, heading: "Find positions", narration: "Four more idioms. First, find the positions of the matches. A loop checks each item, and keeps the index of each match.", lines: [], panel: panel([o("for (i, v) in x.iter().enumerate() {"), o("    if *v > 3 { out.push(i + 1); }"), o("}")], [[], [], [0, 1, 2]]) },
+  { id: "positions-where", seconds: 16, heading: "Find positions: where", narration: "The idiom asks the question of every item first. Where turns the ones into positions. Positions count from one. Index of finds where a value first appears. Here, it finds the largest.", lines: [], panel: panel([x(where), H("=x > 3", "→", "=" + where), x(argmax), H("=x", "→", "=" + argmax)], [[0, 1], [0, 1], [1], [2, 3], [2, 3]]) },
+  { id: "member-loop", seconds: 14, heading: "Membership", narration: "Next, membership. We want to know if each item is one of a few allowed values. A loop checks each item against the whole set.", lines: [], panel: panel([o("for v in &x {"), o("    out.push(allowed.contains(v));"), o("}")], [[], [], [0, 1, 2]]) },
+  { id: "member-idiom", seconds: 14, heading: "Membership: member", narration: "Member asks that of every item at once. The result is a mask of ones and zeros. A mask can count, choose, or find positions.", lines: [], panel: panel([x(member), H("=x", "∈", "=1 5", "=", "=" + member)], [[0, 1], [1], [1]]) },
+  { id: "window-loop", seconds: 14, heading: "Moving windows", narration: "Next, moving windows. We want the sum of every three items in a row. A loop slides a window along the list.", lines: [], panel: panel([o("for i in 0..x.len() - 2 {"), o("    out.push(x[i] + x[i + 1] + x[i + 2]);"), o("}")], [[], [], [0, 1, 2]]) },
+  { id: "window-idiom", seconds: 14, heading: "Moving windows: n wise", narration: "{N-wise|En wise} reduces every window of a given size. Plus, three at a time, adds each group of neighbors. The result is two items shorter.", lines: [], panel: panel([x(win), H("=x", "→", "=" + win)], [[0], [0, 1], [1]]) },
+  { id: "sort-loop", seconds: 14, heading: "Sort by a key", narration: "Last, sort by a key. We have people, and their ages. We want the people in order of age. A loop pairs them, sorts the pairs, and keeps the people.", lines: [], panel: panel([o("let mut p: Vec<_> = ids.iter().zip(&ages).collect();"), o("p.sort_by_key(|(_, age)| **age);"), o("let out: Vec<_> = p.iter().map(|(id, _)| **id).collect();")], [[], [], [0], [0, 1, 2]]) },
+  { id: "sort-grade", seconds: 16, heading: "Sort by a key: grade", narration: "Grade gives the positions that would sort the ages. Select takes the people at those positions. The youngest comes first. One grade can order many lists the same way.", lines: [], panel: panel([x(grade), H("=ages", "→", "=" + grade), x(byAge), H("=" + grade, "select", "=ids", "=", "=" + byAge)], [[0, 1], [2, 3], [3], [2, 3]]) },
+  { id: "break-5", seconds: 5, heading: "Four more idioms", lines: [], slide: { type: "points", items: [{ text: "Find positions", sub: "where, index of" }, { text: "Membership", sub: "member" }, { text: "Moving windows", sub: "n wise" }, { text: "Sort by a key", sub: "grade, then select" }] } },
   // research2's concluding narration, in short sentences.
   { id: "conclusion", seconds: 24, heading: "More than a shorter loop", narration: "An array idiom is more than a shorter spelling of a loop. It captures a pattern that keeps coming back. Once we see the pattern, we can reason about the whole operation. We can reuse it, and test it. Often we can make it faster, apart from the program that uses it. The goal is not to remove every loop. The goal is to say the problem at the most useful level.", lines: [], slide: { type: "points", steps: [0, 0, 1, 2, 2, 3, 3], items: [{ text: "A pattern", sub: "not just a shorter loop" }, { text: "Reason about the whole", sub: "the operation at once" }, { text: "Reuse, test, speed up", sub: "apart from the program" }, { text: "The most useful level", sub: "not no loops at any cost" }] } },
   // The next episode: research2 Video 07 (series 06, moved up, the author, 2026-11-26); a list only, as al-04 next-idioms.
@@ -78,5 +90,5 @@ const scenes = [
 ];
 const { scenes: _, youtube, poster, ...h } = l;
 h.music = { file: "/Users/mike/github/softwarewrighter/music-pipe-rs/work/video-beds/prelude-pulse.wav", intro: { seconds: 5, fadeOut: 0.5 }, outro: { seconds: 5, fadeIn: 0.5 }, slides: { volume: 0.3, fade: 0.4, starts: [5, 10, 15] } };
-const out = { ...h, slug: "al-05-idioms", title: "Array idioms", summary: "Array languages, episode 5: thinking without loops. Running totals with a scan, adjacent changes by shifting, normalizing with an aggregate then each item, counting occurrences with unique and a table; each beside the loop it replaces, and what it costs.", order: 104, brand: "Array Languages: episode 5", scenes };
+const out = { ...h, slug: "al-05-idioms", title: "Array idioms", summary: "Array languages, episode 5: thinking without loops. Running totals with a scan, adjacent changes by shifting, normalizing with an aggregate then each item, counting occurrences with unique and a table; then positions, membership, moving windows and sorting by a key; each beside the loop it replaces, and what it costs.", order: 104, brand: "Array Languages: episode 5", scenes };
 writeFileSync("lessons/al-05-idioms/lesson.json", JSON.stringify(out, null, 2) + "\n");
