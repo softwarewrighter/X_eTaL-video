@@ -522,6 +522,259 @@
       ]
     },
     {
+      "id": "positions-loop",
+      "narration": "Now, some more idioms. First, find the positions of the matches. A loop checks each item, and keeps the index of each match.",
+      "seconds": 9.8,
+      "sentences": [
+        {
+          "text": "Now, some more idioms.",
+          "heard": "Now, some more idioms.",
+          "sent": "Now, some more idioms.",
+          "start": 0.4,
+          "end": 1.408
+        },
+        {
+          "text": "First, find the positions of the matches.",
+          "heard": "First find the positions of the matches.",
+          "sent": "First, find the positions of the matches.",
+          "start": 1.758,
+          "end": 3.619
+        },
+        {
+          "text": "A loop checks each item, and keeps the index of each match.",
+          "heard": "A loop checks each item and keeps the index of each match.",
+          "sent": "A loop checks each item, and keeps the index of each match.",
+          "start": 3.969,
+          "end": 9.031
+        }
+      ]
+    },
+    {
+      "id": "positions-where",
+      "narration": "The idiom asks the question of every item first. Where turns the ones into positions. Positions count from one. Index of finds where a value first appears. Here, it finds the largest.",
+      "seconds": 12.2,
+      "sentences": [
+        {
+          "text": "The idiom asks the question of every item first.",
+          "heard": "The idiom asks the question of every item first.",
+          "sent": "The idiom asks the question of every item first.",
+          "start": 0.4,
+          "end": 3.017
+        },
+        {
+          "text": "Where turns the ones into positions.",
+          "heard": "Where turns the ones into positions?",
+          "sent": "Where turns the ones into positions.",
+          "start": 3.367,
+          "end": 5.079
+        },
+        {
+          "text": "Positions count from one.",
+          "heard": "Positions count from one.",
+          "sent": "Positions count from one.",
+          "start": 5.429,
+          "end": 6.957
+        },
+        {
+          "text": "Index of finds where a value first appears.",
+          "heard": "Index of finds where a value first appears.",
+          "sent": "Index of finds where a value first appears.",
+          "start": 7.307,
+          "end": 9.763
+        },
+        {
+          "text": "Here, it finds the largest.",
+          "heard": "Here it finds the largest",
+          "sent": "Here, it finds the largest.",
+          "start": 10.113,
+          "end": 11.498
+        }
+      ]
+    },
+    {
+      "id": "member-loop",
+      "narration": "Next, membership. We want to know if each item is one of a few allowed values. A loop checks each item against the whole set.",
+      "seconds": 9.8,
+      "sentences": [
+        {
+          "text": "Next, membership.",
+          "heard": "Next membership.",
+          "sent": "Next, membership.",
+          "start": 0.4,
+          "end": 1.72
+        },
+        {
+          "text": "We want to know if each item is one of a few allowed values.",
+          "heard": "We want to know if each item is one of a few allowed values.",
+          "sent": "We want to know if each item is one of a few allowed values.",
+          "start": 2.07,
+          "end": 5.91
+        },
+        {
+          "text": "A loop checks each item against the whole set.",
+          "heard": "A loop checks each item against the whole set.",
+          "sent": "A loop checks each item against the whole set.",
+          "start": 6.26,
+          "end": 9.047
+        }
+      ]
+    },
+    {
+      "id": "member-idiom",
+      "narration": "The member function asks that of every item at once. The result is a mask of ones and zeros. A mask can count, choose, or find positions.",
+      "seconds": 11.3,
+      "sentences": [
+        {
+          "text": "The member function asks that of every item at once.",
+          "heard": "The member function asks that of every item at once.",
+          "sent": "The member function asks that of every item at once.",
+          "start": 0.4,
+          "end": 3.964
+        },
+        {
+          "text": "The result is a mask of ones and zeros.",
+          "heard": "The result is a mask of ones and zeros.",
+          "sent": "The result is a mask of ones and zeros.",
+          "start": 4.314,
+          "end": 6.793
+        },
+        {
+          "text": "A mask can count, choose, or find positions.",
+          "heard": "A mask can count, choose, or find positions.",
+          "sent": "A mask can count, choose, or find positions.",
+          "start": 7.143,
+          "end": 10.529
+        }
+      ]
+    },
+    {
+      "id": "window-loop",
+      "narration": "Next, moving windows. We want the sum of every three items in a row. A loop slides a window along the list.",
+      "seconds": 8.3,
+      "sentences": [
+        {
+          "text": "Next, moving windows.",
+          "heard": "Next, moving windows.",
+          "sent": "Next, moving windows.",
+          "start": 0.4,
+          "end": 2.047
+        },
+        {
+          "text": "We want the sum of every three items in a row.",
+          "heard": "We want the sum of every three items in a row.",
+          "sent": "We want the sum of every three items in a row.",
+          "start": 2.397,
+          "end": 5.114
+        },
+        {
+          "text": "A loop slides a window along the list.",
+          "heard": "A loop slides a window along the list.",
+          "sent": "A loop slides a window along the list.",
+          "start": 5.464,
+          "end": 7.537
+        }
+      ]
+    },
+    {
+      "id": "window-idiom",
+      "narration": "{N-wise|En wise} reduces every window of a given size. Plus, three at a time, adds each group of neighbors. The result is two items shorter.",
+      "seconds": 10.6,
+      "sentences": [
+        {
+          "text": "N-wise reduces every window of a given size.",
+          "heard": "Nwise reduces every window of a given size.",
+          "sent": "En wise reduces every window of a given size.",
+          "spoken": "En wise reduces every window of a given size.",
+          "start": 0.4,
+          "end": 3.596
+        },
+        {
+          "text": "Plus, three at a time, adds each group of neighbors.",
+          "heard": "plus three at a time adds each group of neighbors.",
+          "sent": "Plus, three at a time, adds each group of neighbors.",
+          "start": 3.946,
+          "end": 7.817
+        },
+        {
+          "text": "The result is two items shorter.",
+          "heard": "The result is two items shorter.",
+          "sent": "The result is two items shorter.",
+          "start": 8.167,
+          "end": 9.808
+        }
+      ]
+    },
+    {
+      "id": "sort-loop",
+      "narration": "Last, sort by a key. We have people, and we have their ages. We want the people in order of age. A loop pairs them, sorts the pairs, and keeps the people.",
+      "seconds": 12.6,
+      "sentences": [
+        {
+          "text": "Last, sort by a key.",
+          "heard": "Last, sort by a key.",
+          "sent": "Last, sort by a key.",
+          "start": 0.4,
+          "end": 2.572
+        },
+        {
+          "text": "We have people, and we have their ages.",
+          "heard": "We have people and we have their ages.",
+          "sent": "We have people, and we have their ages.",
+          "start": 2.922,
+          "end": 5.808
+        },
+        {
+          "text": "We want the people in order of age.",
+          "heard": "We want the people in order of age.",
+          "sent": "We want the people in order of age.",
+          "start": 6.158,
+          "end": 8.476
+        },
+        {
+          "text": "A loop pairs them, sorts the pairs, and keeps the people.",
+          "heard": "A loop pairs them, sorts the pairs, and keeps the people.",
+          "sent": "A loop pairs them, sorts the pairs, and keeps the people.",
+          "start": 8.826,
+          "end": 11.839
+        }
+      ]
+    },
+    {
+      "id": "sort-grade",
+      "narration": "Grade gives the positions that would sort the ages. Select takes the people at those positions. The youngest comes first. One grade can order many lists the same way.",
+      "seconds": 12.1,
+      "sentences": [
+        {
+          "text": "Grade gives the positions that would sort the ages.",
+          "heard": "Grade gives the positions that would sort the ages.",
+          "sent": "Grade gives the positions that would sort the ages.",
+          "start": 0.4,
+          "end": 2.838
+        },
+        {
+          "text": "Select takes the people at those positions.",
+          "heard": "Select takes the people at those positions.",
+          "sent": "Select takes the people at those positions.",
+          "start": 3.188,
+          "end": 5.953
+        },
+        {
+          "text": "The youngest comes first.",
+          "heard": "The youngest comes first.",
+          "sent": "The youngest comes first.",
+          "start": 6.303,
+          "end": 8.029
+        },
+        {
+          "text": "One grade can order many lists the same way.",
+          "heard": "One grade can order many lists the same way.",
+          "sent": "One grade can order many lists the same way.",
+          "start": 8.379,
+          "end": 11.354
+        }
+      ]
+    },
+    {
       "id": "conclusion",
       "narration": "An array idiom is more than a shorter spelling of a loop. It captures a pattern that keeps coming back. Once we see the pattern, we can reason about the whole operation. We can reuse it, and test it. Often we can make it faster, apart from the program that uses it. The goal is not to remove every loop. The goal is to say the problem at the most useful level.",
       "seconds": 22.8,

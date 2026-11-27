@@ -37,7 +37,7 @@
     },
     {
       "id": "recap",
-      "seconds": 12,
+      "seconds": 9.9,
       "heading": "Last time",
       "narration": "In the last episode, arrays of different shapes met. Today, we look at idioms. An idiom is a short phrase for a pattern that keeps coming back.",
       "lines": [],
@@ -62,7 +62,7 @@
     },
     {
       "id": "pattern",
-      "seconds": 12,
+      "seconds": 9.9,
       "heading": "One pattern for each idiom",
       "narration": "Each idiom today follows one pattern. First the problem. Next comes a loop that solves it. Then the idiom, and what it costs.",
       "lines": [],
@@ -93,7 +93,7 @@
     },
     {
       "id": "known-sum",
-      "seconds": 12,
+      "seconds": 9.7,
       "heading": "Idioms you have met",
       "narration": "You have met some idioms already. Plus reduce sums a list. A comparison, then a sum, counts the matches.",
       "lines": [],
@@ -128,7 +128,7 @@
     },
     {
       "id": "known-order",
-      "seconds": 10,
+      "seconds": 5.9,
       "heading": "Idioms you have met",
       "narration": "Reverse and rotate rearrange the items. No index appears anywhere.",
       "lines": [],
@@ -189,7 +189,7 @@
     },
     {
       "id": "running-loop",
-      "seconds": 14,
+      "seconds": 10.8,
       "heading": "Running totals",
       "narration": "The first new problem is running totals. Each item becomes the sum of everything up to it. A loop keeps a total, and saves it after each step.",
       "lines": [],
@@ -227,7 +227,7 @@
     },
     {
       "id": "running-scan",
-      "seconds": 12,
+      "seconds": 8.9,
       "heading": "Running totals: scan",
       "narration": "In {X_eTaL|@xtl}, this is a scan. Plus scan keeps every running sum. The last one is the total.",
       "lines": [],
@@ -257,7 +257,7 @@
     },
     {
       "id": "running-max",
-      "seconds": 12,
+      "seconds": 11.2,
       "heading": "Running totals: scan",
       "narration": "Scan works with any function. Max scan keeps the largest value so far. The trade off is that scan keeps every step, not only the last.",
       "lines": [],
@@ -287,7 +287,7 @@
     },
     {
       "id": "adjacent-loop",
-      "seconds": 14,
+      "seconds": 10.1,
       "heading": "Adjacent changes",
       "narration": "Next, adjacent changes. We want how much each item differs from the one before it. A loop starts at the second item, and looks back one.",
       "lines": [],
@@ -317,7 +317,7 @@
     },
     {
       "id": "adjacent-shift",
-      "seconds": 14,
+      "seconds": 12.1,
       "heading": "Adjacent changes: shift",
       "narration": "The idiom shifts the list instead of looking back. Drop the first item. Then drop the last. The two lists line up, each item beside the one before it.",
       "lines": [],
@@ -358,7 +358,7 @@
     },
     {
       "id": "adjacent-subtract",
-      "seconds": 14,
+      "seconds": 10,
       "heading": "Adjacent changes: subtract",
       "narration": "Subtract them, item by item. The result has one item fewer than the list. Compare instead, and you find every rise.",
       "lines": [],
@@ -414,7 +414,7 @@
     },
     {
       "id": "normalize-loop",
-      "seconds": 16,
+      "seconds": 11.7,
       "heading": "Normalize values",
       "narration": "Next, normalize values. Subtract the average from every item. A loop needs two passes. The first finds the average. The second subtracts it.",
       "lines": [],
@@ -451,7 +451,7 @@
     },
     {
       "id": "normalize-idiom",
-      "seconds": 16,
+      "seconds": 15.1,
       "heading": "Normalize: aggregate, then each item",
       "narration": "The idiom is an aggregate, then an item by item step. Reduce and divide give the average, a single value. {Scalar|@scalar} extension, from the last episode, does the rest.",
       "lines": [],
@@ -489,7 +489,7 @@
     },
     {
       "id": "normalize-types",
-      "seconds": 14,
+      "seconds": 11.2,
       "heading": "Normalize: the types",
       "narration": "One detail. Division gives a float, and these items are integers. In {X_eTaL|@xtl}, the two do not mix. Float turns the integers into floats first.",
       "lines": [],
@@ -525,7 +525,7 @@
     },
     {
       "id": "count-loop",
-      "seconds": 14,
+      "seconds": 8.7,
       "heading": "Count occurrences",
       "narration": "Last, count occurrences. We want how many times each value appears. A loop keeps a map from each value to its count.",
       "lines": [],
@@ -559,7 +559,7 @@
     },
     {
       "id": "count-unique",
-      "seconds": 10,
+      "seconds": 6.8,
       "heading": "Count occurrences: unique",
       "narration": "The idiom starts with unique. It gives each value once, in the order they first appear.",
       "lines": [],
@@ -587,7 +587,7 @@
     },
     {
       "id": "count-table",
-      "seconds": 12,
+      "seconds": 7.5,
       "heading": "Count occurrences: a table",
       "narration": "Equals table compares each value with every vote. Each row marks where one value appears.",
       "lines": [],
@@ -614,7 +614,7 @@
     },
     {
       "id": "count-sum",
-      "seconds": 10,
+      "seconds": 8.4,
       "heading": "Count occurrences: sum each row",
       "narration": "Sum along each row, and you have the counts. Three twos, two threes, and one one.",
       "lines": [],
@@ -641,7 +641,7 @@
     },
     {
       "id": "count-tradeoff",
-      "seconds": 12,
+      "seconds": 8.3,
       "heading": "Count occurrences: the trade off",
       "narration": "The table has a cell for every value and every vote. That is the trade off. For a long list, it is a lot of cells.",
       "lines": [],
@@ -716,9 +716,9 @@
     },
     {
       "id": "positions-loop",
-      "seconds": 14,
+      "seconds": 9.8,
       "heading": "Find positions",
-      "narration": "Four more idioms. First, find the positions of the matches. A loop checks each item, and keeps the index of each match.",
+      "narration": "Now, some more idioms. First, find the positions of the matches. A loop checks each item, and keeps the index of each match.",
       "lines": [],
       "panel": {
         "type": "code",
@@ -746,7 +746,7 @@
     },
     {
       "id": "positions-where",
-      "seconds": 16,
+      "seconds": 12.2,
       "heading": "Find positions: where",
       "narration": "The idiom asks the question of every item first. Where turns the ones into positions. Positions count from one. Index of finds where a value first appears. Here, it finds the largest.",
       "lines": [],
@@ -791,7 +791,7 @@
     },
     {
       "id": "member-loop",
-      "seconds": 14,
+      "seconds": 9.8,
       "heading": "Membership",
       "narration": "Next, membership. We want to know if each item is one of a few allowed values. A loop checks each item against the whole set.",
       "lines": [],
@@ -821,9 +821,9 @@
     },
     {
       "id": "member-idiom",
-      "seconds": 14,
+      "seconds": 11.3,
       "heading": "Membership: member",
-      "narration": "Member asks that of every item at once. The result is a mask of ones and zeros. A mask can count, choose, or find positions.",
+      "narration": "The member function asks that of every item at once. The result is a mask of ones and zeros. A mask can count, choose, or find positions.",
       "lines": [],
       "panel": {
         "type": "code",
@@ -851,7 +851,7 @@
     },
     {
       "id": "window-loop",
-      "seconds": 14,
+      "seconds": 8.3,
       "heading": "Moving windows",
       "narration": "Next, moving windows. We want the sum of every three items in a row. A loop slides a window along the list.",
       "lines": [],
@@ -881,7 +881,7 @@
     },
     {
       "id": "window-idiom",
-      "seconds": 14,
+      "seconds": 10.6,
       "heading": "Moving windows: n wise",
       "narration": "{N-wise|En wise} reduces every window of a given size. Plus, three at a time, adds each group of neighbors. The result is two items shorter.",
       "lines": [],
@@ -911,9 +911,9 @@
     },
     {
       "id": "sort-loop",
-      "seconds": 14,
+      "seconds": 12.6,
       "heading": "Sort by a key",
-      "narration": "Last, sort by a key. We have people, and their ages. We want the people in order of age. A loop pairs them, sorts the pairs, and keeps the people.",
+      "narration": "Last, sort by a key. We have people, and we have their ages. We want the people in order of age. A loop pairs them, sorts the pairs, and keeps the people.",
       "lines": [],
       "panel": {
         "type": "code",
@@ -944,7 +944,7 @@
     },
     {
       "id": "sort-grade",
-      "seconds": 16,
+      "seconds": 12.1,
       "heading": "Sort by a key: grade",
       "narration": "Grade gives the positions that would sort the ages. Select takes the people at those positions. The youngest comes first. One grade can order many lists the same way.",
       "lines": [],
@@ -1012,7 +1012,7 @@
     },
     {
       "id": "conclusion",
-      "seconds": 24,
+      "seconds": 22.8,
       "heading": "More than a shorter loop",
       "narration": "An array idiom is more than a shorter spelling of a loop. It captures a pattern that keeps coming back. Once we see the pattern, we can reason about the whole operation. We can reuse it, and test it. Often we can make it faster, apart from the program that uses it. The goal is not to remove every loop. The goal is to say the problem at the most useful level.",
       "lines": [],
@@ -1049,7 +1049,7 @@
     },
     {
       "id": "next",
-      "seconds": 14,
+      "seconds": 16.1,
       "heading": "Next time: the language family",
       "narration": "Next time, we tour the family of array languages. We start with {APL|@apl}. After it come {J|Jay} and {K|Kay}. After that comes {BQN|@bqn}. We end with {X_eTaL|@xtl}. We see what each one chose.",
       "lines": [],
@@ -1089,7 +1089,7 @@
     },
     {
       "id": "exercise",
-      "seconds": 16,
+      "seconds": 15.6,
       "heading": "Before the next episode",
       "narration": "Before the next episode, try this. Take three, one, four, one, five, nine. Find its sum and its largest value. Find its running totals. Count the values greater than three. Then find the adjacent differences.",
       "lines": [

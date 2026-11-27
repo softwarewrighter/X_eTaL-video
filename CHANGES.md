@@ -13,6 +13,7 @@ Categories: `feat` new capability, `fix` a bug or wrong behavior,
 
 ## 2026-11-26
 
+- Lesson: al-05-idioms: the eight new scenes narrated (6.2 min of voice in all); three sentences reworded for whisper (some more idioms, the member function, their ages).
 - Lesson: al-05-idioms: four more idioms before the next episode (the author asked): positions (where, index of), membership, moving windows (n_wise), sorting by a key (grade, select); each with its Rust loop.
 - Lesson: al-05-idioms narrated (4.6 min of voice) and rendered; five sentences reworded for whisper (the recap and pattern openings, the total, the @scalar clip, the language list); the two XTL hearings accepted.
 - Lesson: al-05-idioms: the next-episode scene names the language tour (APL, J, K, BQN and X_eTaL, from research2); the series plan moves the tour up to 06 and drops mapping, filtering and reducing, which episode 02 covers (the author, 2026-11-26).
