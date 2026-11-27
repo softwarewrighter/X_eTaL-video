@@ -1,0 +1,683 @@
+{
+  "sample": "mike-medium-ref-1.wav",
+  "sampleSha256": "a57fe277f7ce93d5cac4e0e2ed21d770b7d05cab5b20b338dd55aece009d7211",
+  "server": "VoxCPM (Gradio /generate)",
+  "steps": 15,
+  "cfg": 2.0,
+  "scenes": [
+    {
+      "id": "recap",
+      "narration": "In the last episode, arrays of different shapes met. Today, we look at idioms. An idiom is a short phrase for a pattern that keeps coming back.",
+      "seconds": 9.9,
+      "sentences": [
+        {
+          "text": "In the last episode, arrays of different shapes met.",
+          "heard": "In the last episode, arrays of different shapes met.",
+          "sent": "In the last episode, arrays of different shapes met.",
+          "start": 0.4,
+          "end": 3.523
+        },
+        {
+          "text": "Today, we look at idioms.",
+          "heard": "Today we look at idioms.",
+          "sent": "Today, we look at idioms.",
+          "start": 3.873,
+          "end": 5.382
+        },
+        {
+          "text": "An idiom is a short phrase for a pattern that keeps coming back.",
+          "heard": "An idiom is a short phrase for a pattern that keeps coming back.",
+          "sent": "An idiom is a short phrase for a pattern that keeps coming back.",
+          "start": 5.732,
+          "end": 9.148
+        }
+      ]
+    },
+    {
+      "id": "pattern",
+      "narration": "Each idiom today follows one pattern. First the problem. Next comes a loop that solves it. Then the idiom, and what it costs.",
+      "seconds": 9.9,
+      "sentences": [
+        {
+          "text": "Each idiom today follows one pattern.",
+          "heard": "Each idiom today follows one pattern.",
+          "sent": "Each idiom today follows one pattern.",
+          "start": 0.4,
+          "end": 2.683
+        },
+        {
+          "text": "First the problem.",
+          "heard": "First, the problem.",
+          "sent": "First the problem.",
+          "start": 3.033,
+          "end": 4.258
+        },
+        {
+          "text": "Next comes a loop that solves it.",
+          "heard": "Next comes a loop that solves it.",
+          "sent": "Next comes a loop that solves it.",
+          "start": 4.608,
+          "end": 6.274
+        },
+        {
+          "text": "Then the idiom, and what it costs.",
+          "heard": "then the idiom and what it costs.",
+          "sent": "Then the idiom, and what it costs.",
+          "start": 6.624,
+          "end": 9.175
+        }
+      ]
+    },
+    {
+      "id": "known-sum",
+      "narration": "You have met some idioms already. Plus reduce sums a list. A comparison, then a sum, counts the matches.",
+      "seconds": 9.7,
+      "sentences": [
+        {
+          "text": "You have met some idioms already.",
+          "heard": "You have met some idioms already.",
+          "sent": "You have met some idioms already.",
+          "start": 0.4,
+          "end": 2.155
+        },
+        {
+          "text": "Plus reduce sums a list.",
+          "heard": "plus reduce sums a list.",
+          "sent": "Plus reduce sums a list.",
+          "start": 2.505,
+          "end": 4.683
+        },
+        {
+          "text": "A comparison, then a sum, counts the matches.",
+          "heard": "A comparison, then a sum, counts the matches.",
+          "sent": "A comparison, then a sum, counts the matches.",
+          "start": 5.033,
+          "end": 8.985
+        }
+      ]
+    },
+    {
+      "id": "known-order",
+      "narration": "Reverse and rotate rearrange the items. No index appears anywhere.",
+      "seconds": 5.9,
+      "sentences": [
+        {
+          "text": "Reverse and rotate rearrange the items.",
+          "heard": "Reverse and rotate, rearrange the items.",
+          "sent": "Reverse and rotate rearrange the items.",
+          "start": 0.4,
+          "end": 3.304
+        },
+        {
+          "text": "No index appears anywhere.",
+          "heard": "No index appears anywhere.",
+          "sent": "No index appears anywhere.",
+          "start": 3.654,
+          "end": 5.172
+        }
+      ]
+    },
+    {
+      "id": "running-loop",
+      "narration": "The first new problem is running totals. Each item becomes the sum of everything up to it. A loop keeps a total, and saves it after each step.",
+      "seconds": 10.8,
+      "sentences": [
+        {
+          "text": "The first new problem is running totals.",
+          "heard": "The first new problem is running totals.",
+          "sent": "The first new problem is running totals.",
+          "start": 0.4,
+          "end": 2.755
+        },
+        {
+          "text": "Each item becomes the sum of everything up to it.",
+          "heard": "Each item becomes the sum of everything up to it.",
+          "sent": "Each item becomes the sum of everything up to it.",
+          "start": 3.105,
+          "end": 6.174
+        },
+        {
+          "text": "A loop keeps a total, and saves it after each step.",
+          "heard": "A loop keeps a total and saves it after each step.",
+          "sent": "A loop keeps a total, and saves it after each step.",
+          "start": 6.524,
+          "end": 10.011
+        }
+      ]
+    },
+    {
+      "id": "running-scan",
+      "narration": "In {X_eTaL|@xtl}, this is a scan. Plus scan keeps every running sum. The last one is the total.",
+      "seconds": 8.9,
+      "sentences": [
+        {
+          "text": "In X_eTaL, this is a scan.",
+          "heard": "XTL. This is a scan.",
+          "sent": "In xtl, this is a scan.",
+          "spoken": "In @xtl, this is a scan.",
+          "unverified": true,
+          "start": 0.4,
+          "end": 3.281
+        },
+        {
+          "text": "Plus scan keeps every running sum.",
+          "heard": "Plus scan keeps every running sum.",
+          "sent": "Plus scan keeps every running sum.",
+          "start": 3.631,
+          "end": 6.119
+        },
+        {
+          "text": "The last one is the total.",
+          "heard": "The last one is the total.",
+          "sent": "The last one is the total.",
+          "start": 6.469,
+          "end": 8.189
+        }
+      ]
+    },
+    {
+      "id": "running-max",
+      "narration": "Scan works with any function. Max scan keeps the largest value so far. The trade off is that scan keeps every step, not only the last.",
+      "seconds": 11.2,
+      "sentences": [
+        {
+          "text": "Scan works with any function.",
+          "heard": "Scan works with any function.",
+          "sent": "Scan works with any function.",
+          "start": 0.4,
+          "end": 2.332
+        },
+        {
+          "text": "Max scan keeps the largest value so far.",
+          "heard": "MaxScan keeps the largest value so far.",
+          "sent": "Max scan keeps the largest value so far.",
+          "start": 2.682,
+          "end": 5.34
+        },
+        {
+          "text": "The trade off is that scan keeps every step, not only the last.",
+          "heard": "The trade-off is that Scan keeps every step, not only the last.",
+          "sent": "The trade off is that scan keeps every step, not only the last.",
+          "start": 5.69,
+          "end": 10.497
+        }
+      ]
+    },
+    {
+      "id": "adjacent-loop",
+      "narration": "Next, adjacent changes. We want how much each item differs from the one before it. A loop starts at the second item, and looks back one.",
+      "seconds": 10.1,
+      "sentences": [
+        {
+          "text": "Next, adjacent changes.",
+          "heard": "Next, adjacent changes.",
+          "sent": "Next, adjacent changes.",
+          "start": 0.4,
+          "end": 2.409
+        },
+        {
+          "text": "We want how much each item differs from the one before it.",
+          "heard": "We want how much each item differs from the one before it.",
+          "sent": "We want how much each item differs from the one before it.",
+          "start": 2.759,
+          "end": 5.588
+        },
+        {
+          "text": "A loop starts at the second item, and looks back one.",
+          "heard": "A loop starts at the second item and looks back one.",
+          "sent": "A loop starts at the second item, and looks back one.",
+          "start": 5.938,
+          "end": 9.301
+        }
+      ]
+    },
+    {
+      "id": "adjacent-shift",
+      "narration": "The idiom shifts the list instead of looking back. Drop the first item. Then drop the last. The two lists line up, each item beside the one before it.",
+      "seconds": 12.1,
+      "sentences": [
+        {
+          "text": "The idiom shifts the list instead of looking back.",
+          "heard": "The idiom shifts the list instead of looking back.",
+          "sent": "The idiom shifts the list instead of looking back.",
+          "start": 0.4,
+          "end": 3.92
+        },
+        {
+          "text": "Drop the first item.",
+          "heard": "drop the first item.",
+          "sent": "Drop the first item.",
+          "start": 4.27,
+          "end": 5.192
+        },
+        {
+          "text": "Then drop the last.",
+          "heard": "then drop the last.",
+          "sent": "Then drop the last.",
+          "start": 5.542,
+          "end": 6.524
+        },
+        {
+          "text": "The two lists line up, each item beside the one before it.",
+          "heard": "The two lists line up, each item beside the one before it.",
+          "sent": "The two lists line up, each item beside the one before it.",
+          "start": 6.874,
+          "end": 11.35
+        }
+      ]
+    },
+    {
+      "id": "adjacent-subtract",
+      "narration": "Subtract them, item by item. The result has one item fewer than the list. Compare instead, and you find every rise.",
+      "seconds": 10.0,
+      "sentences": [
+        {
+          "text": "Subtract them, item by item.",
+          "heard": "subtract them item by item.",
+          "sent": "Subtract them, item by item.",
+          "start": 0.4,
+          "end": 2.642
+        },
+        {
+          "text": "The result has one item fewer than the list.",
+          "heard": "The result has one item fewer than the list.",
+          "sent": "The result has one item fewer than the list.",
+          "start": 2.992,
+          "end": 5.587
+        },
+        {
+          "text": "Compare instead, and you find every rise.",
+          "heard": "Compare instead, and you find every rise.",
+          "sent": "Compare instead, and you find every rise.",
+          "start": 5.937,
+          "end": 9.261
+        }
+      ]
+    },
+    {
+      "id": "normalize-loop",
+      "narration": "Next, normalize values. Subtract the average from every item. A loop needs two passes. The first finds the average. The second subtracts it.",
+      "seconds": 11.7,
+      "sentences": [
+        {
+          "text": "Next, normalize values.",
+          "heard": "Next, normalize values.",
+          "sent": "Next, normalize values.",
+          "start": 0.4,
+          "end": 2.015
+        },
+        {
+          "text": "Subtract the average from every item.",
+          "heard": "Subtract the average from every item.",
+          "sent": "Subtract the average from every item.",
+          "start": 2.365,
+          "end": 4.664
+        },
+        {
+          "text": "A loop needs two passes.",
+          "heard": "A loop needs two passes.",
+          "sent": "A loop needs two passes.",
+          "start": 5.014,
+          "end": 6.521
+        },
+        {
+          "text": "The first finds the average.",
+          "heard": "The first finds the average.",
+          "sent": "The first finds the average.",
+          "start": 6.871,
+          "end": 9.136
+        },
+        {
+          "text": "The second subtracts it.",
+          "heard": "The second subtracts it.",
+          "sent": "The second subtracts it.",
+          "start": 9.486,
+          "end": 10.902
+        }
+      ]
+    },
+    {
+      "id": "normalize-idiom",
+      "narration": "The idiom is an aggregate, then an item by item step. Reduce and divide give the average, a single value. {Scalar|@scalar} extension, from the last episode, does the rest.",
+      "seconds": 15.1,
+      "sentences": [
+        {
+          "text": "The idiom is an aggregate, then an item by item step.",
+          "heard": "The idiom is an aggregate, then an item-by-item step.",
+          "sent": "The idiom is an aggregate, then an item by item step.",
+          "start": 0.4,
+          "end": 5.101
+        },
+        {
+          "text": "Reduce and divide give the average, a single value.",
+          "heard": "Reduce and divide give the average a single value.",
+          "sent": "Reduce and divide give the average, a single value.",
+          "start": 5.451,
+          "end": 9.945
+        },
+        {
+          "text": "Scalar extension, from the last episode, does the rest.",
+          "heard": "Scalar. Extension, from the last episode, does the rest.",
+          "sent": "scalar extension, from the last episode, does the rest.",
+          "spoken": "@scalar extension, from the last episode, does the rest.",
+          "start": 10.295,
+          "end": 14.302
+        }
+      ]
+    },
+    {
+      "id": "normalize-types",
+      "narration": "One detail. Division gives a float, and these items are integers. In {X_eTaL|@xtl}, the two do not mix. Float turns the integers into floats first.",
+      "seconds": 11.2,
+      "sentences": [
+        {
+          "text": "One detail.",
+          "heard": "one detail.",
+          "sent": "One detail.",
+          "start": 0.4,
+          "end": 1.32
+        },
+        {
+          "text": "Division gives a float, and these items are integers.",
+          "heard": "Division gives a float, and these items are integers.",
+          "sent": "Division gives a float, and these items are integers.",
+          "start": 1.67,
+          "end": 5.049
+        },
+        {
+          "text": "In X_eTaL, the two do not mix.",
+          "heard": "XTL. The two do not mix.",
+          "sent": "In xtl, the two do not mix.",
+          "spoken": "In @xtl, the two do not mix.",
+          "unverified": true,
+          "start": 5.399,
+          "end": 7.796
+        },
+        {
+          "text": "Float turns the integers into floats first.",
+          "heard": "float turns the integers into floats first.",
+          "sent": "Float turns the integers into floats first.",
+          "start": 8.146,
+          "end": 10.43
+        }
+      ]
+    },
+    {
+      "id": "count-loop",
+      "narration": "Last, count occurrences. We want how many times each value appears. A loop keeps a map from each value to its count.",
+      "seconds": 8.7,
+      "sentences": [
+        {
+          "text": "Last, count occurrences.",
+          "heard": "last-count occurrences.",
+          "sent": "Last, count occurrences.",
+          "start": 0.4,
+          "end": 1.945
+        },
+        {
+          "text": "We want how many times each value appears.",
+          "heard": "We want how many times each value appears.",
+          "sent": "We want how many times each value appears.",
+          "start": 2.295,
+          "end": 4.682
+        },
+        {
+          "text": "A loop keeps a map from each value to its count.",
+          "heard": "A loop keeps a map from each value to its count.",
+          "sent": "A loop keeps a map from each value to its count.",
+          "start": 5.032,
+          "end": 7.913
+        }
+      ]
+    },
+    {
+      "id": "count-unique",
+      "narration": "The idiom starts with unique. It gives each value once, in the order they first appear.",
+      "seconds": 6.8,
+      "sentences": [
+        {
+          "text": "The idiom starts with unique.",
+          "heard": "The idiom starts with unique.",
+          "sent": "The idiom starts with unique.",
+          "start": 0.4,
+          "end": 1.803
+        },
+        {
+          "text": "It gives each value once, in the order they first appear.",
+          "heard": "It gives each value once in the order they first appear.",
+          "sent": "It gives each value once, in the order they first appear.",
+          "start": 2.153,
+          "end": 6.042
+        }
+      ]
+    },
+    {
+      "id": "count-table",
+      "narration": "Equals table compares each value with every vote. Each row marks where one value appears.",
+      "seconds": 7.5,
+      "sentences": [
+        {
+          "text": "Equals table compares each value with every vote.",
+          "heard": "equals table compares each value with every vote.",
+          "sent": "Equals table compares each value with every vote.",
+          "start": 0.4,
+          "end": 3.92
+        },
+        {
+          "text": "Each row marks where one value appears.",
+          "heard": "each row marks where one value appears.",
+          "sent": "Each row marks where one value appears.",
+          "start": 4.27,
+          "end": 6.778
+        }
+      ]
+    },
+    {
+      "id": "count-sum",
+      "narration": "Sum along each row, and you have the counts. Three twos, two threes, and one one.",
+      "seconds": 8.4,
+      "sentences": [
+        {
+          "text": "Sum along each row, and you have the counts.",
+          "heard": "Sum along each row and you have the counts.",
+          "sent": "Sum along each row, and you have the counts.",
+          "start": 0.4,
+          "end": 4.146
+        },
+        {
+          "text": "Three twos, two threes, and one one.",
+          "heard": "three twos, two threes, and one one.",
+          "sent": "Three twos, two threes, and one one.",
+          "start": 4.496,
+          "end": 7.669
+        }
+      ]
+    },
+    {
+      "id": "count-tradeoff",
+      "narration": "The table has a cell for every value and every vote. That is the trade off. For a long list, it is a lot of cells.",
+      "seconds": 8.3,
+      "sentences": [
+        {
+          "text": "The table has a cell for every value and every vote.",
+          "heard": "The table has a cell for every value and every vote.",
+          "sent": "The table has a cell for every value and every vote.",
+          "start": 0.4,
+          "end": 3.229
+        },
+        {
+          "text": "That is the trade off.",
+          "heard": "That is the trade-off.",
+          "sent": "That is the trade off.",
+          "start": 3.579,
+          "end": 4.863
+        },
+        {
+          "text": "For a long list, it is a lot of cells.",
+          "heard": "For a long list, it is a lot of cells.",
+          "sent": "For a long list, it is a lot of cells.",
+          "start": 5.213,
+          "end": 7.52
+        }
+      ]
+    },
+    {
+      "id": "conclusion",
+      "narration": "An array idiom is more than a shorter spelling of a loop. It captures a pattern that keeps coming back. Once we see the pattern, we can reason about the whole operation. We can reuse it, and test it. Often we can make it faster, apart from the program that uses it. The goal is not to remove every loop. The goal is to say the problem at the most useful level.",
+      "seconds": 22.8,
+      "sentences": [
+        {
+          "text": "An array idiom is more than a shorter spelling of a loop.",
+          "heard": "An array idiom is more than a shorter spelling of a loop.",
+          "sent": "An array idiom is more than a shorter spelling of a loop.",
+          "start": 0.4,
+          "end": 3.756
+        },
+        {
+          "text": "It captures a pattern that keeps coming back.",
+          "heard": "It captures a pattern that keeps coming back.",
+          "sent": "It captures a pattern that keeps coming back.",
+          "start": 4.106,
+          "end": 6.149
+        },
+        {
+          "text": "Once we see the pattern, we can reason about the whole operation.",
+          "heard": "Once we see the pattern, we can reason about the whole operation.",
+          "sent": "Once we see the pattern, we can reason about the whole operation.",
+          "start": 6.499,
+          "end": 9.877
+        },
+        {
+          "text": "We can reuse it, and test it.",
+          "heard": "we can reuse it and test it.",
+          "sent": "We can reuse it, and test it.",
+          "start": 10.227,
+          "end": 12.22
+        },
+        {
+          "text": "Often we can make it faster, apart from the program that uses it.",
+          "heard": "Often we can make it faster apart from the program that uses it.",
+          "sent": "Often we can make it faster, apart from the program that uses it.",
+          "start": 12.57,
+          "end": 15.529
+        },
+        {
+          "text": "The goal is not to remove every loop.",
+          "heard": "The goal is not to remove every loop.",
+          "sent": "The goal is not to remove every loop.",
+          "start": 15.879,
+          "end": 18.881
+        },
+        {
+          "text": "The goal is to say the problem at the most useful level.",
+          "heard": "The goal is to say the problem at the most useful level",
+          "sent": "The goal is to say the problem at the most useful level.",
+          "start": 19.231,
+          "end": 22.084
+        }
+      ]
+    },
+    {
+      "id": "next",
+      "narration": "Next time, we tour the family of array languages. We start with {APL|@apl}. After it come {J|Jay} and {K|Kay}. After that comes {BQN|@bqn}. We end with {X_eTaL|@xtl}. We see what each one chose.",
+      "seconds": 16.1,
+      "sentences": [
+        {
+          "text": "Next time, we tour the family of array languages.",
+          "heard": "Next time, we tour the family of array languages.",
+          "sent": "Next time, we tour the family of array languages.",
+          "start": 0.4,
+          "end": 3.643
+        },
+        {
+          "text": "We start with APL.",
+          "heard": "We start with APL.",
+          "sent": "We start with apl.",
+          "spoken": "We start with @apl.",
+          "start": 3.993,
+          "end": 5.916
+        },
+        {
+          "text": "After it come J and K.",
+          "heard": "After it come, J and K.",
+          "sent": "After it come Jay and Kay.",
+          "spoken": "After it come Jay and Kay.",
+          "start": 6.266,
+          "end": 8.465
+        },
+        {
+          "text": "After that comes BQN.",
+          "heard": "After that comes b, q, n.",
+          "sent": "After that comes bqn.",
+          "spoken": "After that comes @bqn.",
+          "start": 8.815,
+          "end": 11.291
+        },
+        {
+          "text": "We end with X_eTaL.",
+          "heard": "We end with XTL.",
+          "sent": "We end with xtl.",
+          "spoken": "We end with @xtl.",
+          "start": 11.641,
+          "end": 13.516
+        },
+        {
+          "text": "We see what each one chose.",
+          "heard": "we see what each one chose.",
+          "sent": "We see what each one chose.",
+          "start": 13.866,
+          "end": 15.392
+        }
+      ]
+    },
+    {
+      "id": "exercise",
+      "narration": "Before the next episode, try this. Take three, one, four, one, five, nine. Find its sum and its largest value. Find its running totals. Count the values greater than three. Then find the adjacent differences.",
+      "seconds": 15.6,
+      "sentences": [
+        {
+          "text": "Before the next episode, try this.",
+          "heard": "Before the next episode, try this.",
+          "sent": "Before the next episode, try this.",
+          "start": 0.4,
+          "end": 2.571
+        },
+        {
+          "text": "Take three, one, four, one, five, nine.",
+          "heard": "Take three, one four, one five nine.",
+          "sent": "Take three, one, four, one, five, nine.",
+          "start": 2.921,
+          "end": 5.662
+        },
+        {
+          "text": "Find its sum and its largest value.",
+          "heard": "Find its sum and its largest value.",
+          "sent": "Find its sum and its largest value.",
+          "start": 6.012,
+          "end": 8.666
+        },
+        {
+          "text": "Find its running totals.",
+          "heard": "find its running totals.",
+          "sent": "Find its running totals.",
+          "start": 9.016,
+          "end": 10.251
+        },
+        {
+          "text": "Count the values greater than three.",
+          "heard": "Count the values greater than 3.",
+          "sent": "Count the values greater than three.",
+          "start": 10.601,
+          "end": 12.309
+        },
+        {
+          "text": "Then find the adjacent differences.",
+          "heard": "then find the adjacent differences.",
+          "sent": "Then find the adjacent differences.",
+          "start": 12.659,
+          "end": 14.836
+        }
+      ]
+    }
+  ]
+}
