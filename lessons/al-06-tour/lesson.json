@@ -348,7 +348,7 @@
       "id": "train",
       "seconds": 22,
       "heading": "A mean, as a train",
-      "narration": "A train joins functions without naming the argument. Sum, divided by count, is the mean. {APL|@apl}, {J|Jay} and {BQN|@bqn} write it as a train. {X_eTaL|@xtl} writes the same fork in square brackets. {K|Kay} writes a small function instead, with {x|ex} as its argument.",
+      "narration": "A train joins functions without naming the argument. Sum, divided by count, is the mean. {APL|@apl}, {J|Jay} and {BQN|@bqn} write it as a train. {X_eTaL|@xtl} writes the same fork in square brackets. {K|Kay} writes a small function instead, with a named argument.",
       "lines": [],
       "panel": {
         "type": "code",
@@ -554,7 +554,7 @@
       "id": "rendered",
       "seconds": 20,
       "heading": "ASCII in, decorated out",
-      "narration": "Here is the mean as you type it, in plain {ASCII|ass key}. Here it is as {X_eTaL|@xtl} draws it. The underlines mark functions. The slash for divide is drawn as a division sign. The small raised {u|you} says the name belongs to this program.",
+      "narration": "Here is the mean as you type it, in plain {ASCII|ass key}. Here it is as {X_eTaL|@xtl} draws it. The underlines mark functions. The slash for divide is drawn as a division sign. The small mark before the name says it belongs to this program.",
       "lines": [],
       "panel": {
         "type": "code",

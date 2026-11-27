@@ -23,14 +23,18 @@ video beds).
 | reverse | APL rotate-reverse, J `|.`, K `|`: 9 5 1 4 1 3 | GNU APL 2.0, J 9.7.1, Kona |
 | order | `2*3+4` is 14 (right to left, no precedence) | GNU APL 2.0, J 9.7.1, Kona, X_eTaL |
 | train | J `(+/ % #)` gives 3.83333 | J 9.7.1 |
-| train | the APL train: GNU APL 2.0 has no trains (SYNTAX ERROR); a Dyalog feature | to check on tryapl.org |
-| scan, reverse, order, train | BQN lines | to check in CBQN (being built) or the online REPL |
-| train | K has no trains: a small function instead; Kona's `%` on two integers gives 3, not 3.833 | Kona; ngn/k to check |
+| train | the APL train `(+/÷≢)`: GNU APL 2.0 has no trains (SYNTAX ERROR); a Dyalog feature | NOT TESTED: TODO for the author on tryapl.org (expected 3.833333333) |
+| scan, reverse, order, train | BQN lines | CBQN 2bf102f (the blog lab, 2026-11-27), all matching |
+| train | K has no trains: a small function instead; ngn/k gives 3.8333, Kona gives 3 (integer `%`) | Kona; ngn/k b9eeb91 (the blog lab) |
 | types, rendered | `xetal type` prints `u:m_ean : Int -> Float`; a Float argument is a type error; `xetal render` draws `/` as a division sign and `*` as a times sign | the pinned xetal |
 | table | static, inferred (Hindley-Milner) typing; trains as `[F G H]` | X_eTaL `README.md`, versus classic APL |
 
-## For the author to confirm before narration
+## Confirmed by the author (2026-11-27)
 
 - research2's one-line summary of each language (the family scene).
 - "Trains in three of them" (APL in Dyalog, J, BQN; not K, not GNU APL).
 - "The four older languages check types as the program runs."
+
+## Still to test by hand
+
+- TODO (the author): `(+/÷≢)3 1 4 1 5 9` on https://tryapl.org gives 3.833333333.
