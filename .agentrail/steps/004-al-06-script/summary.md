@@ -1,0 +1,1 @@
+Episode 06 script: five languages side by side (scan, reverse, right to left, a mean as a train), types, table, ASCII typed and drawn; claims confirmed by the author; other-language lines checked (GNU APL, J, Kona here; CBQN, ngn/k by the blog lab); the APL train a TODO on tryapl.org

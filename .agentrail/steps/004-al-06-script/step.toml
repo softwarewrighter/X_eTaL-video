@@ -1,8 +1,9 @@
 number = 4
 slug = "al-06-script"
-status = "in-progress"
+status = "completed"
 description = "lessons/al-06-tour/: a story lesson for episode 06, the language tour (resear..."
 role = "production"
 context_files = []
 created_at = "2026-11-26T20:05:59"
-commits = []
+completed_at = "2026-11-27T09:31:31"
+commits = ["bd52b0675d1f601e7c268624c475346c88d7a36d"]
