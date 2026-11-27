@@ -1,6 +1,6 @@
 number = 7
 slug = "al-06-voice"
-status = "pending"
+status = "in-progress"
 description = "Narrate and render through just produce al-06-tour; whisper fixes by rewordin..."
 role = "production"
 context_files = []
