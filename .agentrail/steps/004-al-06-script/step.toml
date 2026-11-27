@@ -1,6 +1,6 @@
-number = 5
+number = 4
 slug = "al-06-script"
-status = "pending"
+status = "in-progress"
 description = "lessons/al-06-tour/: a story lesson for episode 06, the language tour (resear..."
 role = "production"
 context_files = []
