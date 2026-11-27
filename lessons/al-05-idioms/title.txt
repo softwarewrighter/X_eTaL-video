@@ -1,0 +1,1 @@
+Array Idioms: Thinking Without Loops: Array Languages #5

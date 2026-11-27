@@ -13,6 +13,7 @@ Categories: `feat` new capability, `fix` a bug or wrong behavior,
 
 ## 2026-11-26
 
+- Lesson: al-05-idioms: title and description with 17 chapters; full render (6:11) and out/al-05-idioms-youtube/ built (video, captions, narration, thumbnail).
 - Tools: just slides SLUG [ID...] (scripts/slides.sh): a picture-only change on the review page in about 16 s, the changed scenes only, no full render (the author: changing a slide should take seconds).
 - Lesson: al-05-idioms: slide 32 retitled Recap: Four More Idioms Covered (the author).
 - Lesson: al-05-idioms: the two middle slides retitled in the author's words (Recap: Four Idioms Covered So Far; Next: Another Four Idioms...).

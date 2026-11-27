@@ -1,0 +1,33 @@
+Array Languages, episode 5. An idiom is a short phrase for a pattern that keeps coming back. Each idiom here follows one pattern: the problem, the Rust loop that solves it, the X_eTaL idiom, and what it costs. Running totals are a scan (plus scan, max scan). Adjacent changes shift the list by dropping an item from each end, then subtract or compare. Normalizing takes an aggregate, then extends it to every item (and float, since Int and Float do not mix). Counting occurrences uses unique, an equality table and a reduce, at the cost of a cell for every value and item. Then four more: finding positions with where and index of, membership, moving windows with n wise, and sorting one list by another with grade and select. Every argument and result is drawn as a box, so each shape shows.
+
+Chapters:
+0:00 Array idioms
+0:08 Last time
+0:17 One pattern for each idiom
+0:27 Idioms you have met
+0:48 Running totals: scan
+1:19 Adjacent changes: shift and subtract
+1:56 Normalize values: aggregate, then each item
+2:23 Normalize: Int and Float
+2:34 Count occurrences: unique and table
+3:05 Count occurrences: the trade off
+3:24 Find positions: where and index of
+3:46 Membership: member
+4:07 Moving windows: n wise
+4:26 Sort by a key: grade and select
+4:55 More than a shorter loop
+5:18 Next time: the language family
+5:34 Before the next episode
+
+Episode 1, Why another programming language: https://youtu.be/NfdzVWjje2Y
+Episode 2, From scalar loops to array operations: https://youtu.be/YiJYDiD7xqc
+Episode 3, Shape, rank, axes and dimensions: https://youtu.be/JbKMtZZT6AY
+Episode 4, Broadcasting: when array shapes meet: https://youtu.be/-te7ZGCdIkE
+Try X_eTaL in your browser: https://softwarewrighter.github.io/X_eTaL/
+X_eTaL: https://github.com/softwarewrighter/X_eTaL
+The Array Languages blog series: https://blog.softwarewrighter.com/series/#array-languages
+
+Blog: https://blog.softwarewrighter.com/
+Discord: https://discord.gg/Ctzk5uHggZ
+
+#ArrayProgramming #APL #XeTaL #Programming #Idioms
