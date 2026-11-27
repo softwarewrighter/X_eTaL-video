@@ -1,0 +1,1 @@
+Preflight: every name a clip or tested spelling (@apl, @bqn, @xtl, Jay, Kay, ASCII as ass key); combinators, glyph, precedence spell-tested as written; lone letters reworded away
