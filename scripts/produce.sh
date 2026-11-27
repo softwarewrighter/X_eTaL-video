@@ -122,7 +122,7 @@ node scripts/review.mjs "$slug" >/dev/null 2>&1
 scripts/review-follow.sh "$slug" >> "$logs/follow.log" 2>&1
 
 # The pages, recorded again for the narration's lengths (twice if need be).
-if node -e 'process.exit(JSON.parse(require("fs").readFileSync(process.argv[1], "utf8")).scenes.some((s) => s.capture) ? 0 : 1)' "lessons/$slug/lesson.json"; then
+if node -e 'process.exit(JSON.parse(require("fs").readFileSync(process.argv[1], "utf8")).scenes.some((s) => s.capture && !s.cell) ? 0 : 1)' "lessons/$slug/lesson.json"; then
   for t in 1 2; do
     if scripts/capture.mjs "$slug" > "$logs/capture.log" 2>&1; then say "recording: done"; break; fi
     [ "$t" -eq 2 ] && { say "FAILED: recording (see $logs/capture.log)"; exit 1; }

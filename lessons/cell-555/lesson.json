@@ -37,183 +37,253 @@
     },
     {
       "id": "intro",
-      "seconds": 12,
+      "seconds": 24.4,
       "heading": "The assembly cell",
-      "narration": "This is a simulated robot assembly cell. Four arms ring a work zone, with a tray of parts, a turntable, a vise, and a {soldering|soddering} iron. Watch it build a whole blinker circuit, at four times speed.",
+      "narration": "This is a simulated robot assembly bench. It has one arm, a turntable with a vise and pincers, an iron that feeds its own {solder|sodder}, a tool rack, and a tray of parts. The arm brings a {lead|leed} to a {lead|leed}. A pincer holds it, and the turntable brings the joint to the iron. Watch it build a whole blinker circuit, at four times speed.",
       "lines": [],
-      "images": [
-        "work/cell-555/stills/intro.png"
-      ]
+      "cell": {
+        "hold": 0
+      },
+      "capture": {
+        "recorder": "scripts/cell-record.mjs"
+      }
     },
     {
       "id": "chip",
-      "seconds": 6.9,
+      "seconds": 7.2,
+      "atLeast": 6.9,
       "heading": "The chip into the vise",
       "narration": "The arm takes its tweezers. It picks the chip, and sets it in the vise, legs up.",
       "lines": [],
-      "images": [
-        "work/cell-555/stills/chip.png"
-      ]
+      "cell": {
+        "join": "chip"
+      },
+      "capture": {
+        "recorder": "scripts/cell-record.mjs"
+      }
     },
     {
-      "id": "jumper-4-8",
-      "seconds": 13.5,
-      "heading": "Jumper: pin 4 to pin 8",
-      "narration": "First, a jumper from pin four to pin eight. An enameled wire is fed and cut. The arm lays it across the legs, and a pincer holds it. The turntable brings each end to the iron. Touch, feed {solder|sodder}, and cool.",
+      "id": "jumper-8-4",
+      "seconds": 15.9,
+      "atLeast": 13.5,
+      "heading": "Jumper: pin 8 to pin 4",
+      "narration": "First, a jumper from pin eight to pin four. An enameled wire is fed and cut. The arm lays it across the legs, and a pincer holds it. The turntable brings each end to the iron. Touch, feed {solder|sodder}, and cool.",
       "lines": [],
-      "images": [
-        "work/cell-555/stills/jumper-4-8.png"
-      ]
+      "cell": {
+        "join": "jumper-8-4"
+      },
+      "capture": {
+        "recorder": "scripts/cell-record.mjs"
+      }
     },
     {
-      "id": "jumper-2-6",
-      "seconds": 16.3,
-      "heading": "Jumper: pin 2 to pin 6",
-      "narration": "The second jumper joins pin two to pin six, laid over the first. It is pinched, and {soldered|soddered} at both ends. Each joint is inspected as it cools.",
+      "id": "jumper-6-2",
+      "seconds": 18.6,
+      "atLeast": 18.6,
+      "heading": "Jumper: pin 6 to pin 2",
+      "narration": "The second jumper joins pin six to pin two, laid over the first. It is pinched, and {soldered|soddered} at both ends. Each joint is inspected as it cools.",
       "lines": [],
-      "images": [
-        "work/cell-555/stills/jumper-2-6.png"
-      ]
+      "cell": {
+        "join": "jumper-6-2"
+      },
+      "capture": {
+        "recorder": "scripts/cell-record.mjs"
+      }
     },
     {
       "id": "r1",
-      "seconds": 18.9,
+      "seconds": 18.7,
+      "atLeast": 18.7,
       "heading": "The first resistor, on pin 8",
       "narration": "Now the parts. The arm picks the first resistor, and puts it in the rig. The rig bends its {lead|leed} at a right angle, and the shear cuts it short. The {lead|leed} is laid along pin eight, pinched, and {soldered|soddered}. Then the cutter trims the other {lead|leed}.",
       "lines": [],
-      "images": [
-        "work/cell-555/stills/r1.png"
-      ]
-    },
-    {
-      "id": "r2",
-      "seconds": 20.3,
-      "heading": "The second resistor, on pin 6",
-      "narration": "The second resistor follows the same steps. Into the rig, bend, and shear. Lay its {lead|leed} along pin six. Pinch it, {solder|sodder} it, and let it cool. Then trim the free {lead|leed} at the cutter.",
-      "lines": [],
-      "images": [
-        "work/cell-555/stills/r2.png"
-      ]
-    },
-    {
-      "id": "r3",
-      "seconds": 17,
-      "heading": "The third resistor, on pin 3",
-      "narration": "The third resistor goes on pin three, the output. After the trim, a pincer bends its free end straight up, ready for the light.",
-      "lines": [],
-      "images": [
-        "work/cell-555/stills/r3.png"
-      ]
-    },
-    {
-      "id": "c2",
-      "seconds": 11.5,
-      "heading": "The disc capacitor, on pin 5",
-      "narration": "The small disc capacitor needs no bending. Its {lead|leed} is lowered from above onto pin five, and {soldered|soddered}.",
-      "lines": [],
-      "images": [
-        "work/cell-555/stills/c2.png"
-      ]
-    },
-    {
-      "id": "ground-c2",
-      "seconds": 16.6,
-      "heading": "Ground: the disc capacitor to pin 1",
-      "narration": "A ground jumper runs from the disc capacitor, over the chip, to pin one. It goes in before the next capacitor stands over pin two.",
-      "lines": [],
-      "images": [
-        "work/cell-555/stills/ground-c2.png"
-      ]
-    },
-    {
-      "id": "c1",
-      "seconds": 13.5,
-      "heading": "The electrolytic capacitor, on pin 2",
-      "narration": "The electrolytic capacitor is lowered onto pin two. Its {lead|leed} is pinched against the leg, and {soldered|soddered}.",
-      "lines": [],
-      "images": [
-        "work/cell-555/stills/c1.png"
-      ]
+      "cell": {
+        "join": "r1"
+      },
+      "capture": {
+        "recorder": "scripts/cell-record.mjs"
+      }
     },
     {
       "id": "r1-pin7",
-      "seconds": 20.7,
+      "seconds": 24.5,
+      "atLeast": 24.5,
       "heading": "Jumper: the first resistor to pin 7",
-      "narration": "Now jumpers with lapped ends. One runs from the first resistor to pin seven, the discharge pin. It is brought in from the side, so the tweezers clear the {leads|leeds} around it.",
+      "narration": "Next, a jumper with lapped ends runs from the first resistor to pin seven, the discharge pin. It is brought in from the side, so the tweezers clear the {leads|leeds} around it.",
       "lines": [],
-      "images": [
-        "work/cell-555/stills/r1-pin7.png"
-      ]
+      "cell": {
+        "join": "r1-pin7"
+      },
+      "capture": {
+        "recorder": "scripts/cell-record.mjs"
+      }
+    },
+    {
+      "id": "r2",
+      "seconds": 21.6,
+      "atLeast": 21.6,
+      "heading": "The second resistor, on pin 6",
+      "narration": "The second resistor follows the same steps. Into the rig, bend, and shear. Lay its {lead|leed} along pin six. Pinch it, {solder|sodder} it, and let it cool. Then trim the free {lead|leed} at the cutter.",
+      "lines": [],
+      "cell": {
+        "join": "r2"
+      },
+      "capture": {
+        "recorder": "scripts/cell-record.mjs"
+      }
     },
     {
       "id": "r2-pin7",
-      "seconds": 25.8,
+      "seconds": 29.2,
+      "atLeast": 29.2,
       "heading": "Jumper: the second resistor to pin 7",
-      "narration": "A second jumper joins the second resistor to pin seven. Each end is laid along its {lead|leed}, and pinched. The turntable brings it to the iron, and it is {soldered|soddered}. The joint cools before the pincer lets go.",
+      "narration": "Then a jumper joins the second resistor to pin seven. Each end is laid along its {lead|leed}, and pinched. The turntable brings it to the iron, and it is {soldered|soddered}. The joint cools before the pincer lets go.",
       "lines": [],
-      "images": [
-        "work/cell-555/stills/r2-pin7.png"
-      ]
+      "cell": {
+        "join": "r2-pin7"
+      },
+      "capture": {
+        "recorder": "scripts/cell-record.mjs"
+      }
     },
     {
-      "id": "led",
-      "seconds": 16.4,
-      "heading": "The light, onto the third resistor",
-      "narration": "The light goes on next. Its anode is laid along the upturned end of the third resistor, and {soldered|soddered}.",
+      "id": "r3",
+      "seconds": 17.7,
+      "atLeast": 17.7,
+      "heading": "The third resistor, on pin 3",
+      "narration": "The third resistor goes on pin three, the output. After the trim, a pincer bends its free end straight up, ready for the light.",
       "lines": [],
-      "images": [
-        "work/cell-555/stills/led.png"
-      ]
+      "cell": {
+        "join": "r3"
+      },
+      "capture": {
+        "recorder": "scripts/cell-record.mjs"
+      }
+    },
+    {
+      "id": "c2",
+      "seconds": 11.8,
+      "atLeast": 11.8,
+      "heading": "The disc capacitor, on pin 5",
+      "narration": "The small disc capacitor needs no bending. Its {lead|leed} is lowered from above onto pin five, and {soldered|soddered}.",
+      "lines": [],
+      "cell": {
+        "join": "c2"
+      },
+      "capture": {
+        "recorder": "scripts/cell-record.mjs"
+      }
+    },
+    {
+      "id": "ground-c2",
+      "seconds": 17.4,
+      "atLeast": 17.4,
+      "heading": "Ground: the disc capacitor to pin 1",
+      "narration": "A ground jumper runs from the disc capacitor, over the chip, to pin one. It goes in before the next capacitor stands over pin two.",
+      "lines": [],
+      "cell": {
+        "join": "ground-c2"
+      },
+      "capture": {
+        "recorder": "scripts/cell-record.mjs"
+      }
+    },
+    {
+      "id": "c1",
+      "seconds": 13,
+      "atLeast": 13,
+      "heading": "The electrolytic capacitor, on pin 2",
+      "narration": "The electrolytic capacitor is lowered onto pin two. Its {lead|leed} is pinched against the leg, and {soldered|soddered}.",
+      "lines": [],
+      "cell": {
+        "join": "c1"
+      },
+      "capture": {
+        "recorder": "scripts/cell-record.mjs"
+      }
     },
     {
       "id": "ground-c1",
-      "seconds": 15.1,
+      "seconds": 13.8,
+      "atLeast": 13.8,
       "heading": "Ground: the capacitor to pin 1",
       "narration": "Ground again. A jumper runs from the electrolytic capacitor, down to pin one.",
       "lines": [],
-      "images": [
-        "work/cell-555/stills/ground-c1.png"
-      ]
+      "cell": {
+        "join": "ground-c1"
+      },
+      "capture": {
+        "recorder": "scripts/cell-record.mjs"
+      }
     },
     {
-      "id": "led-c1",
-      "seconds": 15.3,
-      "heading": "Jumper: the light to the capacitor",
-      "narration": "Another jumper joins the cathode of the light to the capacitor, higher up its {lead|leed}.",
+      "id": "led",
+      "seconds": 17.1,
+      "atLeast": 17.1,
+      "heading": "The light, onto the third resistor",
+      "narration": "The light goes on next. Its anode is laid along the upturned end of the third resistor, and {soldered|soddered}.",
       "lines": [],
-      "images": [
-        "work/cell-555/stills/led-c1.png"
-      ]
+      "cell": {
+        "join": "led"
+      },
+      "capture": {
+        "recorder": "scripts/cell-record.mjs"
+      }
+    },
+    {
+      "id": "led-ground",
+      "seconds": 15.9,
+      "atLeast": 15.9,
+      "heading": "Ground: the light to pin 1",
+      "narration": "A last ground jumper joins the cathode of the light to pin one.",
+      "lines": [],
+      "cell": {
+        "join": "led-ground"
+      },
+      "capture": {
+        "recorder": "scripts/cell-record.mjs"
+      }
     },
     {
       "id": "battery",
-      "seconds": 22.5,
+      "seconds": 24,
+      "atLeast": 24,
       "heading": "The battery snap, and pin 8",
       "narration": "Last, the battery snap. The arm sets it flat on the turntable, beside the vise. A jumper rises from its first {lead|leed}, past the jaw, to pin eight, the supply.",
       "lines": [],
-      "images": [
-        "work/cell-555/stills/battery.png"
-      ]
+      "cell": {
+        "join": "battery"
+      },
+      "capture": {
+        "recorder": "scripts/cell-record.mjs"
+      }
     },
     {
       "id": "battery-ground",
-      "seconds": 19.7,
+      "seconds": 18.4,
+      "atLeast": 18.4,
       "heading": "The battery to pin 1",
       "narration": "The other {lead|leed} gets a jumper to pin one, the ground. Each end is pinched, {soldered|soddered}, cooled, and inspected.",
       "lines": [],
-      "images": [
-        "work/cell-555/stills/battery-ground.png"
-      ]
+      "cell": {
+        "join": "battery-ground"
+      },
+      "capture": {
+        "recorder": "scripts/cell-record.mjs"
+      }
     },
     {
       "id": "check",
-      "seconds": 10,
+      "seconds": 9.3,
       "heading": "Checked against the netlist",
       "narration": "Finally, the cell inspects for shorts, and checks the work against the netlist. Seven of seven nets are made. Nothing is damaged.",
       "lines": [],
-      "images": [
-        "work/cell-555/stills/check.png"
-      ]
+      "cell": {
+        "hold": 1128.01
+      },
+      "capture": {
+        "recorder": "scripts/cell-record.mjs"
+      }
     },
     {
       "id": "cta",

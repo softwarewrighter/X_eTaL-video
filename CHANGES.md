@@ -13,6 +13,7 @@ Categories: `feat` new capability, `fix` a bug or wrong behavior,
 
 ## 2026-11-27
 
+- Lesson: cell-555: recorded from the running page in real time, driven by pointer (4x, Close up / Whole cell, drags, scrolls), the step list following; joins read again from the page (the program changed: planned by search, 1128 s); narration reordered to it; the intro corrected to the one-arm bench (the cell README); scenes keep their span at 4x (voice.py atLeast). Tools: just cell-live, just cell-track.
 - Lesson: cell-555: draft of the assembly cell building the 555 blinker: one narrated scene a join (16 joins from the live page step list), stills from the page, review page; the recording to follow the narration.
 - Lesson: al-06-tour narrated (224 s of voice) and rendered; nine sentences reworded for whisper (a clip-ending sentence works best: "Reverse is a word in X_eTaL").
 - Fix: al-06-tour README back to ASCII (the gate had failed on two APL glyphs, hidden behind a pipe); the APL train recorded as checked by the author on TryAPL (3.833333333), so every other-language line has now been run.

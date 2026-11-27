@@ -85,6 +85,14 @@ render slug format="":
 slides slug *ids:
     scripts/slides.sh "$1" {{ids}}
 
+# The assembly cell (X_eTaL-extensions) running, recorded in real time as a person drives it (4x, Close up / Whole cell, drags, scrolls): just cell-live cell-555 [SECONDS]
+cell-live slug *secs:
+    scripts/cell-live.mjs "$1" {{secs}}
+
+# Where the cell's action is over its program, for the camera (work/SLUG/track.json): just cell-track cell-555
+cell-track slug:
+    scripts/cell-record.mjs "$1" track
+
 still slug n format="":
     scripts/render.sh "$1" "$3" --still "$2"
 

@@ -773,6 +773,9 @@ def main() -> None:
         tail = END if scene is scenes[-1] else TAIL
         sox(*parts, str(wav), "pad", "0", str(tail), "norm", "-1")
         length = math.ceil(seconds(wav) * 10) / 10
+        # A scene may ask to last at least so long (a recording on a fixed clock: cell-555 plays
+        # each join at four times real speed whatever its narration); the audio then ends early.
+        length = max(length, float(scene.get("atLeast", 0)))
         scene["seconds"] = length
         record["scenes"].append({"id": scene["id"], "narration": text, "seconds": length, "sentences": said})
         print(f"voice: {scene['id']}: {length} s", flush=True)

@@ -1,0 +1,524 @@
+{
+  "sample": "mike-medium-ref-1.wav",
+  "sampleSha256": "a57fe277f7ce93d5cac4e0e2ed21d770b7d05cab5b20b338dd55aece009d7211",
+  "server": "VoxCPM (Gradio /generate)",
+  "steps": 15,
+  "cfg": 2.0,
+  "scenes": [
+    {
+      "id": "intro",
+      "narration": "This is a simulated robot assembly bench. It has one arm, a turntable with a vise and pincers, an iron that feeds its own {solder|sodder}, a tool rack, and a tray of parts. The arm brings a {lead|leed} to a {lead|leed}. A pincer holds it, and the turntable brings the joint to the iron. Watch it build a whole blinker circuit, at four times speed.",
+      "seconds": 24.4,
+      "sentences": [
+        {
+          "text": "This is a simulated robot assembly bench.",
+          "heard": "This is a simulated robot assembly bench.",
+          "sent": "This is a simulated robot assembly bench.",
+          "start": 0.4,
+          "end": 3.268
+        },
+        {
+          "text": "It has one arm, a turntable with a vise and pincers, an iron that feeds its own solder, a tool rack, and a tray of parts.",
+          "heard": "It has one arm, a turntable with a vice and pincers, an iron that feeds its own solder, a tool rack, and a tray of parts.",
+          "sent": "It has one arm, a turntable with a vise and pincers, an iron that feeds its own sodder, a tool rack, and a tray of parts.",
+          "spoken": "It has one arm, a turntable with a vise and pincers, an iron that feeds its own sodder, a tool rack, and a tray of parts.",
+          "unverified": true,
+          "start": 3.618,
+          "end": 12.783
+        },
+        {
+          "text": "The arm brings a lead to a lead.",
+          "heard": "The arm brings a lead to a lead.",
+          "sent": "The arm brings a leed to a leed.",
+          "spoken": "The arm brings a leed to a leed.",
+          "start": 13.133,
+          "end": 14.898
+        },
+        {
+          "text": "A pincer holds it, and the turntable brings the joint to the iron.",
+          "heard": "The pincer holds it and the turntable brings the joint to the iron.",
+          "sent": "A pincer holds it, and the turntable brings the joint to the iron.",
+          "unverified": true,
+          "start": 15.248,
+          "end": 19.33
+        },
+        {
+          "text": "Watch it build a whole blinker circuit, at four times speed.",
+          "heard": "Watch it build a whole blinker circuit at four times speed.",
+          "sent": "Watch it build a whole blinker circuit, at four times speed.",
+          "start": 19.68,
+          "end": 23.665
+        }
+      ]
+    },
+    {
+      "id": "chip",
+      "narration": "The arm takes its tweezers. It picks the chip, and sets it in the vise, legs up.",
+      "seconds": 7.2,
+      "sentences": [
+        {
+          "text": "The arm takes its tweezers.",
+          "heard": "The arm takes its tweezers.",
+          "sent": "The arm takes its tweezers.",
+          "start": 0.4,
+          "end": 2.123
+        },
+        {
+          "text": "It picks the chip, and sets it in the vise, legs up.",
+          "heard": "It picks the chip and sets it in the vice legs up.",
+          "sent": "It picks the chip, and sets it in the vise, legs up.",
+          "unverified": true,
+          "start": 2.473,
+          "end": 6.441
+        }
+      ]
+    },
+    {
+      "id": "jumper-8-4",
+      "narration": "First, a jumper from pin eight to pin four. An enameled wire is fed and cut. The arm lays it across the legs, and a pincer holds it. The turntable brings each end to the iron. Touch, feed {solder|sodder}, and cool.",
+      "seconds": 15.9,
+      "sentences": [
+        {
+          "text": "First, a jumper from pin eight to pin four.",
+          "heard": "First, a jumper from pin 8 to pin 4.",
+          "sent": "First, a jumper from pin eight to pin four.",
+          "start": 0.4,
+          "end": 3.795
+        },
+        {
+          "text": "An enameled wire is fed and cut.",
+          "heard": "An enameled wire is fed and cut.",
+          "sent": "An enameled wire is fed and cut.",
+          "start": 4.145,
+          "end": 6.272
+        },
+        {
+          "text": "The arm lays it across the legs, and a pincer holds it.",
+          "heard": "The arm lays it across the legs and a pincer holds it.",
+          "sent": "The arm lays it across the legs, and a pincer holds it.",
+          "start": 6.622,
+          "end": 9.814
+        },
+        {
+          "text": "The turntable brings each end to the iron.",
+          "heard": "The turntable brings each end to the iron.",
+          "sent": "The turntable brings each end to the iron.",
+          "start": 10.164,
+          "end": 12.615
+        },
+        {
+          "text": "Touch, feed solder, and cool.",
+          "heard": "Touch, feed solder, and cool.",
+          "sent": "Touch, feed sodder, and cool.",
+          "spoken": "Touch, feed sodder, and cool.",
+          "start": 12.965,
+          "end": 15.175
+        }
+      ]
+    },
+    {
+      "id": "jumper-6-2",
+      "narration": "The second jumper joins pin six to pin two, laid over the first. It is pinched, and {soldered|soddered} at both ends. Each joint is inspected as it cools.",
+      "seconds": 18.6,
+      "sentences": [
+        {
+          "text": "The second jumper joins pin six to pin two, laid over the first.",
+          "heard": "The second jumper joins pin 6 to pin 2, laid over the first.",
+          "sent": "The second jumper joins pin six to pin two, laid over the first.",
+          "start": 0.4,
+          "end": 5.208
+        },
+        {
+          "text": "It is pinched, and soldered at both ends.",
+          "heard": "It is pinched and soldered at both ends.",
+          "sent": "It is pinched, and soddered at both ends.",
+          "spoken": "It is pinched, and soddered at both ends.",
+          "start": 5.558,
+          "end": 9.416
+        },
+        {
+          "text": "Each joint is inspected as it cools.",
+          "heard": "Each joint is inspected as it cools.",
+          "sent": "Each joint is inspected as it cools.",
+          "start": 9.766,
+          "end": 12.174
+        }
+      ]
+    },
+    {
+      "id": "r1",
+      "narration": "Now the parts. The arm picks the first resistor, and puts it in the rig. The rig bends its {lead|leed} at a right angle, and the shear cuts it short. The {lead|leed} is laid along pin eight, pinched, and {soldered|soddered}. Then the cutter trims the other {lead|leed}.",
+      "seconds": 18.7,
+      "sentences": [
+        {
+          "text": "Now the parts.",
+          "heard": "Now the parts.",
+          "sent": "Now the parts.",
+          "start": 0.4,
+          "end": 1.178
+        },
+        {
+          "text": "The arm picks the first resistor, and puts it in the rig.",
+          "heard": "The arm picks the first resistor and puts it in the rig.",
+          "sent": "The arm picks the first resistor, and puts it in the rig.",
+          "start": 1.528,
+          "end": 5.393
+        },
+        {
+          "text": "The rig bends its lead at a right angle, and the shear cuts it short.",
+          "heard": "The rig bends its lead at a right angle and the shear cuts it short.",
+          "sent": "The rig bends its leed at a right angle, and the shear cuts it short.",
+          "spoken": "The rig bends its leed at a right angle, and the shear cuts it short.",
+          "start": 5.743,
+          "end": 9.682
+        },
+        {
+          "text": "The lead is laid along pin eight, pinched, and soldered.",
+          "heard": "The lead is laid along pin 8, pinched and soldered.",
+          "sent": "The leed is laid along pin eight, pinched, and soddered.",
+          "spoken": "The leed is laid along pin eight, pinched, and soddered.",
+          "start": 10.032,
+          "end": 13.401
+        },
+        {
+          "text": "Then the cutter trims the other lead.",
+          "heard": "Then the cutter trims the other lead.",
+          "sent": "Then the cutter trims the other leed.",
+          "spoken": "Then the cutter trims the other leed.",
+          "start": 13.751,
+          "end": 16.041
+        }
+      ]
+    },
+    {
+      "id": "r1-pin7",
+      "narration": "Next, a jumper with lapped ends runs from the first resistor to pin seven, the discharge pin. It is brought in from the side, so the tweezers clear the {leads|leeds} around it.",
+      "seconds": 24.5,
+      "sentences": [
+        {
+          "text": "Next, a jumper with lapped ends runs from the first resistor to pin seven, the discharge pin.",
+          "heard": "Next, a jumper with lapped ends runs from the first resistor to pin 7, the discharge pin.",
+          "sent": "Next, a jumper with lapped ends runs from the first resistor to pin seven, the discharge pin.",
+          "start": 0.4,
+          "end": 7.596
+        },
+        {
+          "text": "It is brought in from the side, so the tweezers clear the leads around it.",
+          "heard": "It is brought in from the side so that the tweezers clear the leads around it.",
+          "sent": "It is brought in from the side, so the tweezers clear the leeds around it.",
+          "spoken": "It is brought in from the side, so the tweezers clear the leeds around it.",
+          "unverified": true,
+          "start": 7.946,
+          "end": 11.838
+        }
+      ]
+    },
+    {
+      "id": "r2",
+      "narration": "The second resistor follows the same steps. Into the rig, bend, and shear. Lay its {lead|leed} along pin six. Pinch it, {solder|sodder} it, and let it cool. Then trim the free {lead|leed} at the cutter.",
+      "seconds": 21.6,
+      "sentences": [
+        {
+          "text": "The second resistor follows the same steps.",
+          "heard": "The second resistor follows the same steps.",
+          "sent": "The second resistor follows the same steps.",
+          "start": 0.4,
+          "end": 3.038
+        },
+        {
+          "text": "Into the rig, bend, and shear.",
+          "heard": "into the rig bend and shear.",
+          "sent": "Into the rig, bend, and shear.",
+          "start": 3.388,
+          "end": 4.823
+        },
+        {
+          "text": "Lay its lead along pin six.",
+          "heard": "Lay its lead along pin 6.",
+          "sent": "Lay its leed along pin six.",
+          "spoken": "Lay its leed along pin six.",
+          "start": 5.173,
+          "end": 7.073
+        },
+        {
+          "text": "Pinch it, solder it, and let it cool.",
+          "heard": "Pinch it, solder it, and let it cool.",
+          "sent": "Pinch it, sodder it, and let it cool.",
+          "spoken": "Pinch it, sodder it, and let it cool.",
+          "start": 7.423,
+          "end": 9.426
+        },
+        {
+          "text": "Then trim the free lead at the cutter.",
+          "heard": "Then trim the free lead at the cutter.",
+          "sent": "Then trim the free leed at the cutter.",
+          "spoken": "Then trim the free leed at the cutter.",
+          "start": 9.776,
+          "end": 11.788
+        }
+      ]
+    },
+    {
+      "id": "r2-pin7",
+      "narration": "Then a jumper joins the second resistor to pin seven. Each end is laid along its {lead|leed}, and pinched. The turntable brings it to the iron, and it is {soldered|soddered}. The joint cools before the pincer lets go.",
+      "seconds": 29.2,
+      "sentences": [
+        {
+          "text": "Then a jumper joins the second resistor to pin seven.",
+          "heard": "Then a jumper joins the second resistor to pin 7.",
+          "sent": "Then a jumper joins the second resistor to pin seven.",
+          "start": 0.4,
+          "end": 3.013
+        },
+        {
+          "text": "Each end is laid along its lead, and pinched.",
+          "heard": "Each end is laid along its lead and pinched.",
+          "sent": "Each end is laid along its leed, and pinched.",
+          "spoken": "Each end is laid along its leed, and pinched.",
+          "start": 3.363,
+          "end": 7.534
+        },
+        {
+          "text": "The turntable brings it to the iron, and it is soldered.",
+          "heard": "The turntable brings it to the iron, and it is soldered.",
+          "sent": "The turntable brings it to the iron, and it is soddered.",
+          "spoken": "The turntable brings it to the iron, and it is soddered.",
+          "start": 7.884,
+          "end": 11.557
+        },
+        {
+          "text": "The joint cools before the pincer lets go.",
+          "heard": "The joint cools before the pincer lets go.",
+          "sent": "The joint cools before the pincer lets go.",
+          "start": 11.907,
+          "end": 14.496
+        }
+      ]
+    },
+    {
+      "id": "r3",
+      "narration": "The third resistor goes on pin three, the output. After the trim, a pincer bends its free end straight up, ready for the light.",
+      "seconds": 17.7,
+      "sentences": [
+        {
+          "text": "The third resistor goes on pin three, the output.",
+          "heard": "The third resistor goes on pin 3, the output.",
+          "sent": "The third resistor goes on pin three, the output.",
+          "start": 0.4,
+          "end": 3.628
+        },
+        {
+          "text": "After the trim, a pincer bends its free end straight up, ready for the light.",
+          "heard": "After the trim, a pincer bends its free end straight up, ready for the light.",
+          "sent": "After the trim, a pincer bends its free end straight up, ready for the light.",
+          "start": 3.978,
+          "end": 8.453
+        }
+      ]
+    },
+    {
+      "id": "c2",
+      "narration": "The small disc capacitor needs no bending. Its {lead|leed} is lowered from above onto pin five, and {soldered|soddered}.",
+      "seconds": 11.8,
+      "sentences": [
+        {
+          "text": "The small disc capacitor needs no bending.",
+          "heard": "The small disk capacitor needs no bending.",
+          "sent": "The small disc capacitor needs no bending.",
+          "unverified": true,
+          "start": 0.4,
+          "end": 3.392
+        },
+        {
+          "text": "Its lead is lowered from above onto pin five, and soldered.",
+          "heard": "Its lead is lowered from above onto pin 5 and soldered.",
+          "sent": "Its leed is lowered from above onto pin five, and soddered.",
+          "spoken": "Its leed is lowered from above onto pin five, and soddered.",
+          "start": 3.742,
+          "end": 8.246
+        }
+      ]
+    },
+    {
+      "id": "ground-c2",
+      "narration": "A ground jumper runs from the disc capacitor, over the chip, to pin one. It goes in before the next capacitor stands over pin two.",
+      "seconds": 17.4,
+      "sentences": [
+        {
+          "text": "A ground jumper runs from the disc capacitor, over the chip, to pin one.",
+          "heard": "A ground jumper runs from the disk capacitor over the chip to pin one.",
+          "sent": "A ground jumper runs from the disc capacitor, over the chip, to pin one.",
+          "unverified": true,
+          "start": 0.4,
+          "end": 4.374
+        },
+        {
+          "text": "It goes in before the next capacitor stands over pin two.",
+          "heard": "It goes in before the next capacitor stands over pin 2.",
+          "sent": "It goes in before the next capacitor stands over pin two.",
+          "start": 4.724,
+          "end": 9.229
+        }
+      ]
+    },
+    {
+      "id": "c1",
+      "narration": "The electrolytic capacitor is lowered onto pin two. Its {lead|leed} is pinched against the leg, and {soldered|soddered}.",
+      "seconds": 13.0,
+      "sentences": [
+        {
+          "text": "The electrolytic capacitor is lowered onto pin two.",
+          "heard": "The electrolytic capacitor is lowered onto pin 2.",
+          "sent": "The electrolytic capacitor is lowered onto pin two.",
+          "start": 0.4,
+          "end": 3.72
+        },
+        {
+          "text": "Its lead is pinched against the leg, and soldered.",
+          "heard": "Its lead is pinched against the leg and soldered.",
+          "sent": "Its leed is pinched against the leg, and soddered.",
+          "spoken": "Its leed is pinched against the leg, and soddered.",
+          "start": 4.07,
+          "end": 7.773
+        }
+      ]
+    },
+    {
+      "id": "ground-c1",
+      "narration": "Ground again. A jumper runs from the electrolytic capacitor, down to pin one.",
+      "seconds": 13.8,
+      "sentences": [
+        {
+          "text": "Ground again.",
+          "heard": "ground again.",
+          "sent": "Ground again.",
+          "start": 0.4,
+          "end": 0.986
+        },
+        {
+          "text": "A jumper runs from the electrolytic capacitor, down to pin one.",
+          "heard": "A jumper runs from the electrolytic capacitor down to pin 1.",
+          "sent": "A jumper runs from the electrolytic capacitor, down to pin one.",
+          "start": 1.336,
+          "end": 5.912
+        }
+      ]
+    },
+    {
+      "id": "led",
+      "narration": "The light goes on next. Its anode is laid along the upturned end of the third resistor, and {soldered|soddered}.",
+      "seconds": 17.1,
+      "sentences": [
+        {
+          "text": "The light goes on next.",
+          "heard": "The light goes on next.",
+          "sent": "The light goes on next.",
+          "start": 0.4,
+          "end": 1.614
+        },
+        {
+          "text": "Its anode is laid along the upturned end of the third resistor, and soldered.",
+          "heard": "Its anode is laid along the upturned end of the third resistor and soldered.",
+          "sent": "Its anode is laid along the upturned end of the third resistor, and soddered.",
+          "spoken": "Its anode is laid along the upturned end of the third resistor, and soddered.",
+          "start": 1.964,
+          "end": 6.823
+        }
+      ]
+    },
+    {
+      "id": "led-ground",
+      "narration": "A last ground jumper joins the cathode of the light to pin one.",
+      "seconds": 15.9,
+      "sentences": [
+        {
+          "text": "A last ground jumper joins the cathode of the light to pin one.",
+          "heard": "A last-ground jumper joins the cathode of the light to pin one.",
+          "sent": "A last ground jumper joins the cathode of the light to pin one.",
+          "start": 0.4,
+          "end": 4.056
+        }
+      ]
+    },
+    {
+      "id": "battery",
+      "narration": "Last, the battery snap. The arm sets it flat on the turntable, beside the vise. A jumper rises from its first {lead|leed}, past the jaw, to pin eight, the supply.",
+      "seconds": 24.0,
+      "sentences": [
+        {
+          "text": "Last, the battery snap.",
+          "heard": "Last, the battery snap.",
+          "sent": "Last, the battery snap.",
+          "start": 0.4,
+          "end": 2.356
+        },
+        {
+          "text": "The arm sets it flat on the turntable, beside the vise.",
+          "heard": "The arm sets it flat on the turntable beside the vise.",
+          "sent": "The arm sets it flat on the turntable, beside the vise.",
+          "start": 2.706,
+          "end": 5.655
+        },
+        {
+          "text": "A jumper rises from its first lead, past the jaw, to pin eight, the supply.",
+          "heard": "A jumper rises from its first lead, past the jaw, to pin 8. The supply.",
+          "sent": "A jumper rises from its first leed, past the jaw, to pin eight, the supply.",
+          "spoken": "A jumper rises from its first leed, past the jaw, to pin eight, the supply.",
+          "start": 6.005,
+          "end": 11.65
+        }
+      ]
+    },
+    {
+      "id": "battery-ground",
+      "narration": "The other {lead|leed} gets a jumper to pin one, the ground. Each end is pinched, {soldered|soddered}, cooled, and inspected.",
+      "seconds": 18.4,
+      "sentences": [
+        {
+          "text": "The other lead gets a jumper to pin one, the ground.",
+          "heard": "The other lead gets a jumper to pin one the ground.",
+          "sent": "The other leed gets a jumper to pin one, the ground.",
+          "spoken": "The other leed gets a jumper to pin one, the ground.",
+          "start": 0.4,
+          "end": 3.898
+        },
+        {
+          "text": "Each end is pinched, soldered, cooled, and inspected.",
+          "heard": "Each end is pinched, soldered, cooled, and inspected.",
+          "sent": "Each end is pinched, soddered, cooled, and inspected.",
+          "spoken": "Each end is pinched, soddered, cooled, and inspected.",
+          "start": 4.248,
+          "end": 9.134
+        }
+      ]
+    },
+    {
+      "id": "check",
+      "narration": "Finally, the cell inspects for shorts, and checks the work against the netlist. Seven of seven nets are made. Nothing is damaged.",
+      "seconds": 9.3,
+      "sentences": [
+        {
+          "text": "Finally, the cell inspects for shorts, and checks the work against the netlist.",
+          "heard": "Finally, the cell inspects for shorts and checks the work against the netlist.",
+          "sent": "Finally, the cell inspects for shorts, and checks the work against the netlist.",
+          "start": 0.4,
+          "end": 5.083
+        },
+        {
+          "text": "Seven of seven nets are made.",
+          "heard": "Seven of seven nets are made.",
+          "sent": "Seven of seven nets are made.",
+          "start": 5.433,
+          "end": 6.952
+        },
+        {
+          "text": "Nothing is damaged.",
+          "heard": "Nothing is damaged.",
+          "sent": "Nothing is damaged.",
+          "start": 7.302,
+          "end": 8.56
+        }
+      ]
+    }
+  ]
+}

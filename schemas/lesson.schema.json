@@ -108,6 +108,8 @@
               "mode": { "type": "string", "enum": ["loop", "whole"] }
             }
           },
+          "atLeast": { "description": "The scene lasts at least these seconds whatever its narration (a recording on a fixed clock: the audio then ends early).", "type": "number", "minimum": 0 },
+          "cell": { "description": "What the assembly cell plays in this scene (scripts/cell-live.mjs): a join of lessons/SLUG/joins.json, or one simulated time held.", "type": "object", "additionalProperties": false, "properties": { "join": { "type": "string", "minLength": 1 }, "hold": { "type": "number", "minimum": 0 } } },
           "mute": { "description": "Play the clip without its own audio (a closing slide under this video's music).", "type": "boolean" },
           "transcript": { "description": "A clip's own words, for the captions and the transcript: each sentence with its start and end, seconds into the clip.", "type": "array", "items": { "type": "object", "required": ["start", "end", "text"], "additionalProperties": false, "properties": { "start": { "type": "number", "minimum": 0 }, "end": { "type": "number", "minimum": 0 }, "text": { "type": "string", "minLength": 1 } } } },
           "curves": { "description": "Show the three easing curves as moving dots.", "type": "boolean" },
@@ -117,6 +119,7 @@
             "additionalProperties": false,
             "properties": {
               "url": { "description": "Record this page instead of the lesson's demo (a story's other recordings).", "type": "string", "pattern": "^https://" },
+              "recorder": { "description": "The recording is made by this script instead of scripts/capture.mjs (scripts/cell-live.mjs: the assembly cell, driven in real time).", "type": "string", "minLength": 1 },
               "actions": {
                 "type": "array",
                 "items": {

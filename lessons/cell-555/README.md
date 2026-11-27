@@ -12,10 +12,15 @@ actions each shows. Music: Soldiers Reel (music-pipe-rs video beds).
 | `lesson.mjs` | writes `lesson.json`: one scene a join, its length its span at 4x (the narration then fits it) |
 | `timing.json` | the schedule X_eTaL computes from the lesson |
 
-The draft shows a still of each join (work/cell-555/stills/, from the
-page). The recording is made after the narration: frame by frame
-(window.cell.seek), each join's span played over its scene, the camera
-on the work, the step list scrolled to the current step.
+The recording (just cell-live cell-555, scripts/cell-live.mjs) is the live page running
+in real time, driven as a person drives it: the speed menu set to 4x,
+Play pressed, then Close up while a joint is made at the vise and Whole
+cell while the arm fetches a part (work/cell-555/track.json, from just
+cell-track), drags to turn the view, scrolls to zoom, the step list
+kept on the current step. Each join starts with its scene; a scene
+longer than its span at 4x holds its last moment. The recorder refuses
+a page whose program differs from joins.json (the published page
+changes).
 
 ## Sources
 
