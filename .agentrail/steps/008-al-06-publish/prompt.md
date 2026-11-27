@@ -1,0 +1,1 @@
+After the author uploads: just link al-06-tour URL, pages, publish; series plan updated.

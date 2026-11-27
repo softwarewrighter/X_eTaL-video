@@ -1,0 +1,8 @@
+number = 8
+slug = "al-06-publish"
+status = "pending"
+description = "After the author uploads: just link al-06-tour URL, pages, publish; series pl..."
+role = "production"
+context_files = []
+created_at = "2026-11-26T20:05:59"
+commits = []

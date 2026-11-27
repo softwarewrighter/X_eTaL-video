@@ -1,0 +1,1 @@
+Before narration: just voice-preflight al-06-tour; every name and glyph word a clip or tested spelling (@apl, @bqn, @xtl, Jay, Kay, and new ones).

@@ -1,0 +1,1 @@
+Narrate and render through just produce al-06-tour; whisper fixes by rewording; just slides for picture-only changes; the upload folder (title, description with chapters, captions, thumbnail).
