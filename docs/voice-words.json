@@ -256,6 +256,22 @@
       "ok": true,
       "date": "2026-11-27",
       "note": "spell-tested for al-06-tour: heard \"The next word is ASCII.\""
+    },
+    {
+      "word": "solder",
+      "use": "sodder",
+      "heard": "solder",
+      "ok": true,
+      "date": "2026-11-27",
+      "note": "the American pronunciation; spell-tested for cell-555"
+    },
+    {
+      "word": "soldered",
+      "use": "soddered",
+      "heard": "soldered",
+      "ok": true,
+      "date": "2026-11-27",
+      "note": "the American pronunciation; spell-tested for cell-555"
     }
   ]
 }
