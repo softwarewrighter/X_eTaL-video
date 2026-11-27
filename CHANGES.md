@@ -13,6 +13,7 @@ Categories: `feat` new capability, `fix` a bug or wrong behavior,
 
 ## 2026-11-27
 
+- Lesson: al-06-tour narrated (224 s of voice) and rendered; nine sentences reworded for whisper (a clip-ending sentence works best: "Reverse is a word in X_eTaL").
 - Fix: al-06-tour README back to ASCII (the gate had failed on two APL glyphs, hidden behind a pipe); the APL train recorded as checked by the author on TryAPL (3.833333333), so every other-language line has now been run.
 - Lesson: al-06-tour: claims confirmed by the author; lone letters reworded away; ASCII said "ass key" (spell-tested); README records the blog lab checks (CBQN, ngn/k) and the one line still untested (the APL train, a TODO for the author on tryapl.org).
 - Lesson: al-06-tour: draft of episode 06, the language tour: five languages side by side (scan, reverse, right to left, a mean as a train), types, the family at a glance, ASCII typed and drawn; checked in GNU APL, J and Kona; review page.

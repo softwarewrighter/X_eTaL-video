@@ -1,0 +1,472 @@
+{
+  "sample": "mike-medium-ref-1.wav",
+  "sampleSha256": "a57fe277f7ce93d5cac4e0e2ed21d770b7d05cab5b20b338dd55aece009d7211",
+  "server": "VoxCPM (Gradio /generate)",
+  "steps": 15,
+  "cfg": 2.0,
+  "scenes": [
+    {
+      "id": "recap",
+      "narration": "Last time, we met eight array idioms. Today, we meet the family of languages behind them. Five languages, side by side.",
+      "seconds": 9.7,
+      "sentences": [
+        {
+          "text": "Last time, we met eight array idioms.",
+          "heard": "Last time we met eight array idioms.",
+          "sent": "Last time, we met eight array idioms.",
+          "start": 0.4,
+          "end": 3.349
+        },
+        {
+          "text": "Today, we meet the family of languages behind them.",
+          "heard": "Today we meet the family of languages behind them.",
+          "sent": "Today, we meet the family of languages behind them.",
+          "start": 3.699,
+          "end": 6.718
+        },
+        {
+          "text": "Five languages, side by side.",
+          "heard": "Five languages, side by side.",
+          "sent": "Five languages, side by side.",
+          "start": 7.068,
+          "end": 8.94
+        }
+      ]
+    },
+    {
+      "id": "family",
+      "narration": "{APL|@apl} made arrays and math the basic vocabulary of a language. {J|Jay} explored an {ASCII|ass key} notation, and powerful function composition. {K|Kay} kept a compact vocabulary, and short expressions. After them, {BQN|@bqn} revisited many of these ideas, with a modern notation and combinators. {X_eTaL|@xtl} takes ideas from this family, but makes different choices.",
+      "seconds": 27.2,
+      "sentences": [
+        {
+          "text": "APL made arrays and math the basic vocabulary of a language.",
+          "heard": "APL. Made arrays and math the basic vocabulary of a language.",
+          "sent": "apl made arrays and math the basic vocabulary of a language.",
+          "spoken": "@apl made arrays and math the basic vocabulary of a language.",
+          "start": 0.4,
+          "end": 5.487
+        },
+        {
+          "text": "J explored an ASCII notation, and powerful function composition.",
+          "heard": "Jay explored an ASCII notation and powerful function composition.",
+          "sent": "Jay explored an ass key notation, and powerful function composition.",
+          "spoken": "Jay explored an ass key notation, and powerful function composition.",
+          "start": 5.837,
+          "end": 9.856
+        },
+        {
+          "text": "K kept a compact vocabulary, and short expressions.",
+          "heard": "K kept a compact vocabulary and short expressions.",
+          "sent": "Kay kept a compact vocabulary, and short expressions.",
+          "spoken": "Kay kept a compact vocabulary, and short expressions.",
+          "start": 10.206,
+          "end": 13.921
+        },
+        {
+          "text": "After them, BQN revisited many of these ideas, with a modern notation and combinators.",
+          "heard": "After them, B, Q, N revisited many of these ideas with a modern notation and combinators.",
+          "sent": "After them, bqn revisited many of these ideas, with a modern notation and combinators.",
+          "spoken": "After them, @bqn revisited many of these ideas, with a modern notation and combinators.",
+          "start": 14.271,
+          "end": 21.656
+        },
+        {
+          "text": "X_eTaL takes ideas from this family, but makes different choices.",
+          "heard": "XTL. Takes ideas from this family, but makes different choices.",
+          "sent": "xtl takes ideas from this family, but makes different choices.",
+          "spoken": "@xtl takes ideas from this family, but makes different choices.",
+          "start": 22.006,
+          "end": 26.481
+        }
+      ]
+    },
+    {
+      "id": "not-replacement",
+      "narration": "{X_eTaL|@xtl} is not a replacement for any one of them. It borrows from the family. Then it makes its own choices.",
+      "seconds": 7.5,
+      "sentences": [
+        {
+          "text": "X_eTaL is not a replacement for any one of them.",
+          "heard": "XTL is not a replacement for any one of them.",
+          "sent": "xtl is not a replacement for any one of them.",
+          "spoken": "@xtl is not a replacement for any one of them.",
+          "start": 0.4,
+          "end": 3.274
+        },
+        {
+          "text": "It borrows from the family.",
+          "heard": "it borrows from the family.",
+          "sent": "It borrows from the family.",
+          "start": 3.624,
+          "end": 4.963
+        },
+        {
+          "text": "Then it makes its own choices.",
+          "heard": "then it makes its own choices.",
+          "sent": "Then it makes its own choices.",
+          "start": 5.313,
+          "end": 6.754
+        }
+      ]
+    },
+    {
+      "id": "scan",
+      "narration": "Start with running totals, from the last episode. Every language here has a scan. The spelling differs. The answer is the same.",
+      "seconds": 9.6,
+      "sentences": [
+        {
+          "text": "Start with running totals, from the last episode.",
+          "heard": "Start with running totals from the last episode.",
+          "sent": "Start with running totals, from the last episode.",
+          "start": 0.4,
+          "end": 3.363
+        },
+        {
+          "text": "Every language here has a scan.",
+          "heard": "Every language here has a scan.",
+          "sent": "Every language here has a scan.",
+          "start": 3.713,
+          "end": 5.53
+        },
+        {
+          "text": "The spelling differs.",
+          "heard": "The spelling differs.",
+          "sent": "The spelling differs.",
+          "start": 5.88,
+          "end": 7.108
+        },
+        {
+          "text": "The answer is the same.",
+          "heard": "The answer is the same.",
+          "sent": "The answer is the same.",
+          "start": 7.458,
+          "end": 8.812
+        }
+      ]
+    },
+    {
+      "id": "reverse",
+      "narration": "Reverse shows the notation. In {APL|@apl}, reverse is a glyph, a circle with a bar. {BQN|@bqn} uses the same glyph. The languages {J|Jay} and {K|Kay} use {ASCII|ass key} symbols. Reverse is a word in {X_eTaL|@xtl}. Its first letter is underlined.",
+      "seconds": 20.3,
+      "sentences": [
+        {
+          "text": "Reverse shows the notation.",
+          "heard": "Reverse shows the notation.",
+          "sent": "Reverse shows the notation.",
+          "start": 0.4,
+          "end": 2.178
+        },
+        {
+          "text": "In APL, reverse is a glyph, a circle with a bar.",
+          "heard": "In APL, reverse is a glyph, a circle with a bar.",
+          "sent": "In apl, reverse is a glyph, a circle with a bar.",
+          "spoken": "In @apl, reverse is a glyph, a circle with a bar.",
+          "start": 2.528,
+          "end": 6.488
+        },
+        {
+          "text": "BQN uses the same glyph.",
+          "heard": "b, q, n uses the same glyph.",
+          "sent": "bqn uses the same glyph.",
+          "spoken": "@bqn uses the same glyph.",
+          "start": 6.838,
+          "end": 9.886
+        },
+        {
+          "text": "The languages J and K use ASCII symbols.",
+          "heard": "The languages J and K use ASCII symbols.",
+          "sent": "The languages Jay and Kay use ass key symbols.",
+          "spoken": "The languages Jay and Kay use ass key symbols.",
+          "start": 10.236,
+          "end": 13.628
+        },
+        {
+          "text": "Reverse is a word in X_eTaL.",
+          "heard": "Reverse is a word in XTL.",
+          "sent": "Reverse is a word in xtl.",
+          "spoken": "Reverse is a word in @xtl.",
+          "start": 13.978,
+          "end": 16.62
+        },
+        {
+          "text": "Its first letter is underlined.",
+          "heard": "Its first letter is underlined.",
+          "sent": "Its first letter is underlined.",
+          "start": 16.97,
+          "end": 19.538
+        }
+      ]
+    },
+    {
+      "id": "order",
+      "narration": "All five work from right to left. There is no precedence. So three plus four comes first. Then two times seven gives fourteen. In {J|Jay} and {K|Kay}, times is typed as a star.",
+      "seconds": 13.4,
+      "sentences": [
+        {
+          "text": "All five work from right to left.",
+          "heard": "All five work from right to left.",
+          "sent": "All five work from right to left.",
+          "start": 0.4,
+          "end": 2.077
+        },
+        {
+          "text": "There is no precedence.",
+          "heard": "there is no precedence.",
+          "sent": "There is no precedence.",
+          "start": 2.427,
+          "end": 3.893
+        },
+        {
+          "text": "So three plus four comes first.",
+          "heard": "So three plus four comes first.",
+          "sent": "So three plus four comes first.",
+          "start": 4.243,
+          "end": 6.655
+        },
+        {
+          "text": "Then two times seven gives fourteen.",
+          "heard": "Then 2 times 7 gives 14.",
+          "sent": "Then two times seven gives fourteen.",
+          "start": 7.005,
+          "end": 8.987
+        },
+        {
+          "text": "In J and K, times is typed as a star.",
+          "heard": "In J and K, times is typed as a star.",
+          "sent": "In Jay and Kay, times is typed as a star.",
+          "spoken": "In Jay and Kay, times is typed as a star.",
+          "start": 9.337,
+          "end": 12.663
+        }
+      ]
+    },
+    {
+      "id": "train",
+      "narration": "A train joins functions without naming the argument. Sum, divided by count, is the mean. {APL|@apl}, {J|Jay} and {BQN|@bqn} write it as a train. In {X_eTaL|@xtl}, the same fork goes in square brackets. {K|Kay} writes a small function instead, with a named argument.",
+      "seconds": 20.4,
+      "sentences": [
+        {
+          "text": "A train joins functions without naming the argument.",
+          "heard": "A train joins functions without naming the argument.",
+          "sent": "A train joins functions without naming the argument.",
+          "start": 0.4,
+          "end": 3.355
+        },
+        {
+          "text": "Sum, divided by count, is the mean.",
+          "heard": "Sum divided by count is the mean.",
+          "sent": "Sum, divided by count, is the mean.",
+          "start": 3.705,
+          "end": 6.511
+        },
+        {
+          "text": "APL, J and BQN write it as a train.",
+          "heard": "A P L J and B Q N Write it as a train.",
+          "sent": "apl, Jay and bqn write it as a train.",
+          "spoken": "@apl, Jay and @bqn write it as a train.",
+          "start": 6.861,
+          "end": 11.611
+        },
+        {
+          "text": "In X_eTaL, the same fork goes in square brackets.",
+          "heard": "In XTL, the same fork goes in square brackets.",
+          "sent": "In xtl, the same fork goes in square brackets.",
+          "spoken": "In @xtl, the same fork goes in square brackets.",
+          "start": 11.961,
+          "end": 15.473
+        },
+        {
+          "text": "K writes a small function instead, with a named argument.",
+          "heard": "K writes a small function, instead, with a named argument.",
+          "sent": "Kay writes a small function instead, with a named argument.",
+          "spoken": "Kay writes a small function instead, with a named argument.",
+          "start": 15.823,
+          "end": 19.636
+        }
+      ]
+    },
+    {
+      "id": "types",
+      "narration": "The four older languages check types as the program runs. {X_eTaL|@xtl} infers a type for every function first. The mean takes integers, and gives a float. A program that gives it floats is rejected before it runs.",
+      "seconds": 14.9,
+      "sentences": [
+        {
+          "text": "The four older languages check types as the program runs.",
+          "heard": "The four older languages check types as the program runs.",
+          "sent": "The four older languages check types as the program runs.",
+          "start": 0.4,
+          "end": 3.672
+        },
+        {
+          "text": "X_eTaL infers a type for every function first.",
+          "heard": "XTL. Infers a type for every function first.",
+          "sent": "xtl infers a type for every function first.",
+          "spoken": "@xtl infers a type for every function first.",
+          "start": 4.022,
+          "end": 7.249
+        },
+        {
+          "text": "The mean takes integers, and gives a float.",
+          "heard": "The mean takes integers and gives a float.",
+          "sent": "The mean takes integers, and gives a float.",
+          "start": 7.599,
+          "end": 10.428
+        },
+        {
+          "text": "A program that gives it floats is rejected before it runs.",
+          "heard": "A program that gives it floats is rejected before it runs.",
+          "sent": "A program that gives it floats is rejected before it runs.",
+          "start": 10.778,
+          "end": 14.123
+        }
+      ]
+    },
+    {
+      "id": "table",
+      "narration": "Here is the family at a glance. Glyphs, or {ASCII|ass key}. Right to left, in every one. Trains in three of them. Types checked as it runs, or before. {X_eTaL|@xtl} is the one with static types.",
+      "seconds": 14.4,
+      "sentences": [
+        {
+          "text": "Here is the family at a glance.",
+          "heard": "Here's the family at a glance.",
+          "sent": "Here is the family at a glance.",
+          "start": 0.4,
+          "end": 1.871
+        },
+        {
+          "text": "Glyphs, or ASCII.",
+          "heard": "Glyphs or Ascii?",
+          "sent": "Glyphs, or ass key.",
+          "spoken": "Glyphs, or ass key.",
+          "start": 2.221,
+          "end": 4.05
+        },
+        {
+          "text": "Right to left, in every one.",
+          "heard": "Right to left in every one.",
+          "sent": "Right to left, in every one.",
+          "start": 4.4,
+          "end": 6.08
+        },
+        {
+          "text": "Trains in three of them.",
+          "heard": "Trains in three of them.",
+          "sent": "Trains in three of them.",
+          "start": 6.43,
+          "end": 7.511
+        },
+        {
+          "text": "Types checked as it runs, or before.",
+          "heard": "types checked as it runs or before.",
+          "sent": "Types checked as it runs, or before.",
+          "start": 7.861,
+          "end": 10.863
+        },
+        {
+          "text": "X_eTaL is the one with static types.",
+          "heard": "XTL is the one with static types.",
+          "sent": "xtl is the one with static types.",
+          "spoken": "@xtl is the one with static types.",
+          "start": 11.213,
+          "end": 13.602
+        }
+      ]
+    },
+    {
+      "id": "rendered",
+      "narration": "Here is the mean as you type it, in plain {ASCII|ass key}. Here it is as drawn by {X_eTaL|@xtl}. The underlines mark functions. The slash for divide is drawn as a division sign. The small mark before the name says it belongs to this program.",
+      "seconds": 16.9,
+      "sentences": [
+        {
+          "text": "Here is the mean as you type it, in plain ASCII.",
+          "heard": "Here's the mean as you type it in plain as key.",
+          "sent": "Here is the mean as you type it, in plain ass key.",
+          "spoken": "Here is the mean as you type it, in plain ass key.",
+          "unverified": true,
+          "start": 0.4,
+          "end": 4.089
+        },
+        {
+          "text": "Here it is as drawn by X_eTaL.",
+          "heard": "Here it is, as drawn, XTL.",
+          "sent": "Here it is as drawn by xtl.",
+          "spoken": "Here it is as drawn by @xtl.",
+          "unverified": true,
+          "start": 4.439,
+          "end": 6.979
+        },
+        {
+          "text": "The underlines mark functions.",
+          "heard": "the underlines mark functions.",
+          "sent": "The underlines mark functions.",
+          "start": 7.329,
+          "end": 9.243
+        },
+        {
+          "text": "The slash for divide is drawn as a division sign.",
+          "heard": "The slash for divide is drawn as a division sign.",
+          "sent": "The slash for divide is drawn as a division sign.",
+          "start": 9.593,
+          "end": 12.36
+        },
+        {
+          "text": "The small mark before the name says it belongs to this program.",
+          "heard": "the small mark before the name says it belongs to this program.",
+          "sent": "The small mark before the name says it belongs to this program.",
+          "start": 12.71,
+          "end": 16.137
+        }
+      ]
+    },
+    {
+      "id": "next",
+      "narration": "Next time, we {read|reed} and write programs in {X_eTaL|@xtl}. Names, decorations, and the shapes they promise.",
+      "seconds": 8.6,
+      "sentences": [
+        {
+          "text": "Next time, we read and write programs in X_eTaL.",
+          "heard": "Next time, we read and write programs in XTL.",
+          "sent": "Next time, we reed and write programs in xtl.",
+          "spoken": "Next time, we reed and write programs in @xtl.",
+          "start": 0.4,
+          "end": 4.419
+        },
+        {
+          "text": "Names, decorations, and the shapes they promise.",
+          "heard": "names, decorations, and the shapes they promise.",
+          "sent": "Names, decorations, and the shapes they promise.",
+          "start": 4.769,
+          "end": 7.878
+        }
+      ]
+    },
+    {
+      "id": "exercise",
+      "narration": "Before the next episode, try this. Find the mean of three, one, four, one, five, nine in two of these languages. The links are in the description.",
+      "seconds": 11.3,
+      "sentences": [
+        {
+          "text": "Before the next episode, try this.",
+          "heard": "Before the next episode, try this.",
+          "sent": "Before the next episode, try this.",
+          "start": 0.4,
+          "end": 2.571
+        },
+        {
+          "text": "Find the mean of three, one, four, one, five, nine in two of these languages.",
+          "heard": "Find the mean of 3, 1, 4, 1, 5, 9 in two of these languages.",
+          "sent": "Find the mean of three, one, four, one, five, nine in two of these languages.",
+          "start": 2.921,
+          "end": 8.574
+        },
+        {
+          "text": "The links are in the description.",
+          "heard": "The links are in the description.",
+          "sent": "The links are in the description.",
+          "start": 8.924,
+          "end": 10.517
+        }
+      ]
+    }
+  ]
+}
