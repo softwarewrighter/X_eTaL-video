@@ -13,6 +13,8 @@ Categories: `feat` new capability, `fix` a bug or wrong behavior,
 
 ## 2026-11-26
 
+- Tools: just slides SLUG [ID...] (scripts/slides.sh): a picture-only change on the review page in about 16 s, the changed scenes only, no full render (the author: changing a slide should take seconds).
+- Lesson: al-05-idioms: slide 32 retitled Recap: Four More Idioms Covered (the author).
 - Lesson: al-05-idioms: the two middle slides retitled in the author's words (Recap: Four Idioms Covered So Far; Next: Another Four Idioms...).
 - Lesson: al-05-idioms: the eight new scenes narrated (6.2 min of voice in all); three sentences reworded for whisper (some more idioms, the member function, their ages).
 - Lesson: al-05-idioms: four more idioms before the next episode (the author asked): positions (where, index of), membership, moving windows (n_wise), sorting by a key (grade, select); each with its Rust loop.

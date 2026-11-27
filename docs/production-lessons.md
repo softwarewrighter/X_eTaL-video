@@ -93,6 +93,11 @@ it is tested; the preflight reads it.
 
 ## 4. Review
 
+- **A picture-only change takes seconds: `just slides SLUG [ID...]`**
+  (the author, 2026-11-26: "changing a slide should take seconds"):
+  the still and clip of just the changed scenes, the page rebuilt, in
+  about 16 s; never a full `just produce` (7 minutes) for a heading.
+  The full video in out/ is then stale: produce once before the upload.
 - The review page from the first draft: a still and, for silent scenes,
   a clip with its music, before any voice.
 - For every narrated scene, four parts: the script, what was sent to the

@@ -81,6 +81,10 @@ render slug format="":
     scripts/render.sh "$1" "$2"
 
 # One frame of a lesson through Remotion as a PNG: just still making-of 850 portrait
+# A picture-only change, in seconds: the review still and clip of just the changed scenes (default: those whose lesson entry changed), no full render: just slides al-05-idioms [break-3]
+slides slug *ids:
+    scripts/slides.sh "$1" {{ids}}
+
 still slug n format="":
     scripts/render.sh "$1" "$3" --still "$2"
 
