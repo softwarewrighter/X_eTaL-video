@@ -1,0 +1,251 @@
+{
+  "slug": "cell-555",
+  "kind": "story",
+  "title": "A robot cell builds a 555 blinker",
+  "summary": "The X_eTaL assembly cell, simulated in the browser, builds a whole 555 LED blinker: the chip in the vise, jumpers between its legs, each resistor and capacitor bent, laid along its pin, soldered and trimmed, the light, the battery snap, and a check against the netlist. At about four times speed, the whole UI showing.",
+  "order": 200,
+  "fps": 30,
+  "brand": "X_eTaL extensions: the assembly cell",
+  "music": {
+    "file": "/Users/mike/github/softwarewrighter/music-pipe-rs/work/video-beds/soldiers-reel.wav",
+    "intro": {
+      "seconds": 5,
+      "fadeOut": 0.5
+    },
+    "outro": {
+      "seconds": 5,
+      "fadeIn": 0.5
+    },
+    "slides": {
+      "volume": 0.3,
+      "fade": 0.4,
+      "starts": [
+        5,
+        10,
+        15
+      ]
+    }
+  },
+  "scenes": [
+    {
+      "id": "title",
+      "seconds": 6,
+      "heading": "A robot cell builds a 555 blinker",
+      "lines": [
+        "Simulated in the browser, at four times speed"
+      ]
+    },
+    {
+      "id": "intro",
+      "seconds": 12,
+      "heading": "The assembly cell",
+      "narration": "This is a simulated robot assembly cell. Four arms ring a work zone, with a tray of parts, a turntable, a vise, and a soldering iron. Watch it build a whole blinker circuit, at four times speed.",
+      "lines": [],
+      "images": [
+        "work/cell-555/stills/intro.png"
+      ]
+    },
+    {
+      "id": "chip",
+      "seconds": 6.9,
+      "heading": "The chip into the vise",
+      "narration": "The arm takes its tweezers. It picks the chip, and sets it in the vise, legs up.",
+      "lines": [],
+      "images": [
+        "work/cell-555/stills/chip.png"
+      ]
+    },
+    {
+      "id": "jumper-4-8",
+      "seconds": 13.5,
+      "heading": "Jumper: pin 4 to pin 8",
+      "narration": "First, a jumper from pin four to pin eight. An enameled wire is fed and cut. The arm lays it across the legs, and a pincer holds it. The turntable brings each end to the iron. Touch, feed solder, and cool.",
+      "lines": [],
+      "images": [
+        "work/cell-555/stills/jumper-4-8.png"
+      ]
+    },
+    {
+      "id": "jumper-2-6",
+      "seconds": 16.3,
+      "heading": "Jumper: pin 2 to pin 6",
+      "narration": "The second jumper joins pin two to pin six, laid over the first. It is pinched, and soldered at both ends. Each joint is inspected as it cools.",
+      "lines": [],
+      "images": [
+        "work/cell-555/stills/jumper-2-6.png"
+      ]
+    },
+    {
+      "id": "r1",
+      "seconds": 18.9,
+      "heading": "The first resistor, on pin 8",
+      "narration": "Now the parts. The arm picks the first resistor, and puts it in the rig. The rig bends its {lead|leed} at a right angle, and the shear cuts it short. The {lead|leed} is laid along pin eight, pinched, and soldered. Then the cutter trims the other {lead|leed}.",
+      "lines": [],
+      "images": [
+        "work/cell-555/stills/r1.png"
+      ]
+    },
+    {
+      "id": "r2",
+      "seconds": 20.3,
+      "heading": "The second resistor, on pin 6",
+      "narration": "The second resistor follows the same steps. Into the rig, bend, and shear. Lay its {lead|leed} along pin six. Pinch it, solder it, and let it cool. Then trim the free {lead|leed} at the cutter.",
+      "lines": [],
+      "images": [
+        "work/cell-555/stills/r2.png"
+      ]
+    },
+    {
+      "id": "r3",
+      "seconds": 17,
+      "heading": "The third resistor, on pin 3",
+      "narration": "The third resistor goes on pin three, the output. After the trim, a pincer bends its free end straight up, ready for the light.",
+      "lines": [],
+      "images": [
+        "work/cell-555/stills/r3.png"
+      ]
+    },
+    {
+      "id": "c2",
+      "seconds": 11.5,
+      "heading": "The disc capacitor, on pin 5",
+      "narration": "The small disc capacitor needs no bending. Its {lead|leed} is lowered from above onto pin five, and soldered.",
+      "lines": [],
+      "images": [
+        "work/cell-555/stills/c2.png"
+      ]
+    },
+    {
+      "id": "ground-c2",
+      "seconds": 16.6,
+      "heading": "Ground: the disc capacitor to pin 1",
+      "narration": "A ground jumper runs from the disc capacitor, over the chip, to pin one. It goes in before the next capacitor stands over pin two.",
+      "lines": [],
+      "images": [
+        "work/cell-555/stills/ground-c2.png"
+      ]
+    },
+    {
+      "id": "c1",
+      "seconds": 13.5,
+      "heading": "The electrolytic capacitor, on pin 2",
+      "narration": "The electrolytic capacitor is lowered onto pin two. Its {lead|leed} is pinched against the leg, and soldered.",
+      "lines": [],
+      "images": [
+        "work/cell-555/stills/c1.png"
+      ]
+    },
+    {
+      "id": "r1-pin7",
+      "seconds": 20.7,
+      "heading": "Jumper: the first resistor to pin 7",
+      "narration": "Now jumpers with lapped ends. One runs from the first resistor to pin seven, the discharge pin. It is brought in from the side, so the tweezers clear the {leads|leeds} around it.",
+      "lines": [],
+      "images": [
+        "work/cell-555/stills/r1-pin7.png"
+      ]
+    },
+    {
+      "id": "r2-pin7",
+      "seconds": 25.8,
+      "heading": "Jumper: the second resistor to pin 7",
+      "narration": "A second jumper joins the second resistor to pin seven. Each end is laid along its {lead|leed}, and pinched. The turntable brings it to the iron, and it is soldered. The joint cools before the pincer lets go.",
+      "lines": [],
+      "images": [
+        "work/cell-555/stills/r2-pin7.png"
+      ]
+    },
+    {
+      "id": "led",
+      "seconds": 16.4,
+      "heading": "The light, onto the third resistor",
+      "narration": "The light goes on next. Its anode is laid along the upturned end of the third resistor, and soldered.",
+      "lines": [],
+      "images": [
+        "work/cell-555/stills/led.png"
+      ]
+    },
+    {
+      "id": "ground-c1",
+      "seconds": 15.1,
+      "heading": "Ground: the capacitor to pin 1",
+      "narration": "Ground again. A jumper runs from the electrolytic capacitor, down to pin one.",
+      "lines": [],
+      "images": [
+        "work/cell-555/stills/ground-c1.png"
+      ]
+    },
+    {
+      "id": "led-c1",
+      "seconds": 15.3,
+      "heading": "Jumper: the light to the capacitor",
+      "narration": "Another jumper joins the cathode of the light to the capacitor, higher up its {lead|leed}.",
+      "lines": [],
+      "images": [
+        "work/cell-555/stills/led-c1.png"
+      ]
+    },
+    {
+      "id": "battery",
+      "seconds": 22.5,
+      "heading": "The battery snap, and pin 8",
+      "narration": "Last, the battery snap. The arm sets it flat on the turntable, beside the vise. A jumper rises from its first {lead|leed}, past the jaw, to pin eight, the supply.",
+      "lines": [],
+      "images": [
+        "work/cell-555/stills/battery.png"
+      ]
+    },
+    {
+      "id": "battery-ground",
+      "seconds": 19.7,
+      "heading": "The battery to pin 1",
+      "narration": "The other {lead|leed} gets a jumper to pin one, the ground. Each end is pinched, soldered, cooled, and inspected.",
+      "lines": [],
+      "images": [
+        "work/cell-555/stills/battery-ground.png"
+      ]
+    },
+    {
+      "id": "check",
+      "seconds": 10,
+      "heading": "Checked against the netlist",
+      "narration": "Finally, the cell inspects for shorts, and checks the work against the netlist. Seven of seven nets are made. Nothing is damaged.",
+      "lines": [],
+      "images": [
+        "work/cell-555/stills/check.png"
+      ]
+    },
+    {
+      "id": "cta",
+      "seconds": 12.8,
+      "heading": "Call to action",
+      "lines": [],
+      "clip": "../video-publishing/reference/epilog/99b-epilog.mp4",
+      "transcript": [
+        {
+          "start": 0,
+          "end": 4.6,
+          "text": "If you found this helpful, please like and subscribe."
+        },
+        {
+          "start": 4.6,
+          "end": 9.5,
+          "text": "Hit the bell for notifications, and leave a comment if you have questions."
+        },
+        {
+          "start": 9.5,
+          "end": 12,
+          "text": "See you in the next one, bye."
+        }
+      ]
+    },
+    {
+      "id": "close",
+      "seconds": 8,
+      "heading": "End screen",
+      "lines": [],
+      "clip": "../video-publishing/reference/epilog/99c-epilog-ext-swing9.mp4",
+      "mute": true
+    }
+  ]
+}

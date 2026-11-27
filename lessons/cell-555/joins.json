@@ -1,0 +1,103 @@
+{
+ "source": "https://softwarewrighter.github.io/X_eTaL-extensions/cell/live/?program=blinker",
+ "steps": 366,
+ "duration": 1079.91,
+ "joins": [
+  {
+   "id": "chip",
+   "step": 1,
+   "from": 0,
+   "to": 27.79
+  },
+  {
+   "id": "jumper-4-8",
+   "step": 8,
+   "from": 27.79,
+   "to": 81.59
+  },
+  {
+   "id": "jumper-2-6",
+   "step": 33,
+   "from": 81.59,
+   "to": 146.88
+  },
+  {
+   "id": "r1",
+   "step": 58,
+   "from": 146.88,
+   "to": 222.29
+  },
+  {
+   "id": "r2",
+   "step": 82,
+   "from": 222.29,
+   "to": 303.37
+  },
+  {
+   "id": "r3",
+   "step": 106,
+   "from": 303.37,
+   "to": 371.52
+  },
+  {
+   "id": "c2",
+   "step": 131,
+   "from": 371.52,
+   "to": 417.52
+  },
+  {
+   "id": "ground-c2",
+   "step": 148,
+   "from": 417.52,
+   "to": 483.73
+  },
+  {
+   "id": "c1",
+   "step": 173,
+   "from": 483.73,
+   "to": 537.84
+  },
+  {
+   "id": "r1-pin7",
+   "step": 190,
+   "from": 537.84,
+   "to": 620.66
+  },
+  {
+   "id": "r2-pin7",
+   "step": 215,
+   "from": 620.66,
+   "to": 723.86
+  },
+  {
+   "id": "led",
+   "step": 240,
+   "from": 723.86,
+   "to": 789.55
+  },
+  {
+   "id": "ground-c1",
+   "step": 257,
+   "from": 789.55,
+   "to": 850.13
+  },
+  {
+   "id": "led-c1",
+   "step": 282,
+   "from": 850.13,
+   "to": 911.32
+  },
+  {
+   "id": "battery",
+   "step": 307,
+   "from": 911.32,
+   "to": 1001.13
+  },
+  {
+   "id": "battery-ground",
+   "step": 340,
+   "from": 1001.13,
+   "to": 1079.91
+  }
+ ]
+}
