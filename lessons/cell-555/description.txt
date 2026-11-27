@@ -1,0 +1,33 @@
+A simulated robot assembly bench, running in the browser, builds a whole 555 LED blinker, played at four times speed. One arm, a turntable with a vise and pincers, an iron that feeds its own solder, a tool rack and a tray of parts. The arm brings a lead to a lead, a pincer holds it, and the turntable brings the joint to the iron. The chip goes legs up in the vise; enameled jumpers go between its legs; each resistor is bent in the rig, sheared, laid along its pin, soldered and trimmed; the capacitors are lowered from above; the LED goes onto the third resistor's upturned end; the battery snap goes on the turntable; and the cell checks the work against the netlist: seven of seven nets made, nothing damaged.
+
+The page is driven as you would drive it: the speed menu at 4x, Play, Close up for a joint, Whole cell while the arm fetches a part, drag to turn the view, scroll to zoom, the step list following the program.
+
+Chapters:
+0:00 A robot cell builds a 555 blinker
+0:06 The assembly cell
+0:30 The chip into the vise
+0:37 Jumper: pin 8 to pin 4
+0:53 Jumper: pin 6 to pin 2
+1:12 The first resistor, on pin 8
+1:30 Jumper: the first resistor to pin 7
+1:55 The second resistor, on pin 6
+2:16 Jumper: the second resistor to pin 7
+2:46 The third resistor, on pin 3
+3:03 The disc capacitor, on pin 5
+3:15 Ground: the disc capacitor to pin 1
+3:33 The electrolytic capacitor, on pin 2
+3:46 Ground: the capacitor to pin 1
+3:59 The light, onto the third resistor
+4:16 Ground: the light to pin 1
+4:32 The battery snap, and pin 8
+4:56 The battery to pin 1
+5:15 Checked against the netlist
+
+Try it in your browser: https://softwarewrighter.github.io/X_eTaL-extensions/cell/live/?program=blinker
+X_eTaL extensions: https://github.com/softwarewrighter/X_eTaL-extensions
+X_eTaL: https://github.com/softwarewrighter/X_eTaL
+
+Blog: https://blog.softwarewrighter.com/
+Discord: https://discord.gg/Ctzk5uHggZ
+
+#Robotics #Simulation #Electronics #555Timer #XeTaL #Programming
