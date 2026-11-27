@@ -11,6 +11,10 @@ Categories: `feat` new capability, `fix` a bug or wrong behavior,
 `chore` agentrail bookkeeping (step complete, saga archive),
 `vendor` a move of the pinned X_eTaL.
 
+## 2026-11-27
+
+- Lesson: al-06-tour: draft of episode 06, the language tour: five languages side by side (scan, reverse, right to left, a mean as a train), types, the family at a glance, ASCII typed and drawn; checked in GNU APL, J and Kona; review page.
+
 ## 2026-11-26
 
 - Lesson: al-05-idioms: title and description with 17 chapters; full render (6:11) and out/al-05-idioms-youtube/ built (video, captions, narration, thumbnail).

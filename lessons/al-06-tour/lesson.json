@@ -1,0 +1,658 @@
+{
+  "slug": "al-06-tour",
+  "kind": "story",
+  "title": "The array language family",
+  "summary": "Array languages, episode 6: APL, J, K, BQN and X_eTaL side by side. Running totals, reverse, reading order and a mean as a train in all five; dynamic types against static, inferred ones; and X_eTaL source as typed and as drawn.",
+  "order": 105,
+  "fps": 30,
+  "brand": "Array Languages: episode 6",
+  "music": {
+    "file": "/Users/mike/github/softwarewrighter/music-pipe-rs/work/video-beds/maple-strut.wav",
+    "intro": {
+      "seconds": 5,
+      "fadeOut": 0.5
+    },
+    "outro": {
+      "seconds": 5,
+      "fadeIn": 0.5
+    },
+    "slides": {
+      "volume": 0.3,
+      "fade": 0.4,
+      "starts": [
+        5,
+        10,
+        15
+      ]
+    }
+  },
+  "scenes": [
+    {
+      "id": "title",
+      "seconds": 8,
+      "heading": "The array language family",
+      "lines": [
+        "APL, J, K, BQN and X_eTaL"
+      ]
+    },
+    {
+      "id": "recap",
+      "seconds": 12,
+      "heading": "Last time",
+      "narration": "Last time, we met eight array idioms. Today, we meet the family of languages behind them. Five languages, side by side.",
+      "lines": [],
+      "slide": {
+        "type": "points",
+        "steps": [
+          0,
+          1,
+          1
+        ],
+        "items": [
+          {
+            "text": "Last time",
+            "sub": "eight idioms"
+          },
+          {
+            "text": "Today",
+            "sub": "the array language family"
+          }
+        ]
+      }
+    },
+    {
+      "id": "family",
+      "seconds": 30,
+      "heading": "Five languages",
+      "narration": "{APL|@apl} showed that a language could treat arrays and math as its basic vocabulary. {J|Jay} explored an {ASCII|ass key} notation, and powerful function composition. {K|Kay} kept a compact vocabulary, and short expressions. After them, {BQN|@bqn} revisited many of these ideas, with a modern notation and combinators. {X_eTaL|@xtl} takes ideas from this family, but makes different choices.",
+      "lines": [],
+      "slide": {
+        "type": "points",
+        "steps": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "items": [
+          {
+            "text": "APL",
+            "sub": "arrays and math as the vocabulary"
+          },
+          {
+            "text": "J",
+            "sub": "ASCII notation, function composition"
+          },
+          {
+            "text": "K",
+            "sub": "a compact vocabulary"
+          },
+          {
+            "text": "BQN",
+            "sub": "a modern notation, combinators"
+          },
+          {
+            "text": "X_eTaL",
+            "sub": "checked types, ASCII rendered, composition"
+          }
+        ]
+      }
+    },
+    {
+      "id": "not-replacement",
+      "seconds": 12,
+      "heading": "A family, not a replacement",
+      "narration": "{X_eTaL|@xtl} is not a replacement for any one of them. It borrows from the family. Then it makes its own choices.",
+      "lines": [],
+      "slide": {
+        "type": "points",
+        "steps": [
+          0,
+          1,
+          1
+        ],
+        "items": [
+          {
+            "text": "Not a replacement",
+            "sub": "for any one of them"
+          },
+          {
+            "text": "Borrowed ideas",
+            "sub": "its own choices"
+          }
+        ]
+      }
+    },
+    {
+      "id": "break-1",
+      "seconds": 5,
+      "heading": "One problem, five languages",
+      "lines": [],
+      "slide": {
+        "type": "points",
+        "items": [
+          {
+            "text": "Running totals"
+          },
+          {
+            "text": "Reverse"
+          },
+          {
+            "text": "Right to left"
+          },
+          {
+            "text": "A mean, as a train"
+          }
+        ]
+      }
+    },
+    {
+      "id": "scan",
+      "seconds": 16,
+      "heading": "Running totals in five languages",
+      "narration": "Start with running totals, from the last episode. Every language here has a scan. The spelling differs. The answer is the same.",
+      "lines": [],
+      "panel": {
+        "type": "code",
+        "lines": [
+          {
+            "code": "+\\3 1 4 1 5 9",
+            "label": "APL"
+          },
+          {
+            "code": "+/\\ 3 1 4 1 5 9",
+            "label": "J"
+          },
+          {
+            "code": "+\\3 1 4 1 5 9",
+            "label": "K"
+          },
+          {
+            "code": "+`3‿1‿4‿1‿5‿9",
+            "label": "BQN"
+          },
+          {
+            "xtl": "'+ s_\\ x",
+            "label": "X_eTaL"
+          },
+          {
+            "box": "┌→────────────┐\n│3 4 8 9 14 23│\n└~────────────┘",
+            "label": ""
+          }
+        ],
+        "focus": [
+          [],
+          [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            5
+          ]
+        ]
+      }
+    },
+    {
+      "id": "reverse",
+      "seconds": 18,
+      "heading": "Notation: reverse",
+      "narration": "Reverse shows the notation. {APL|@apl} and {BQN|@bqn} use a glyph, a circle with a bar. {J|Jay} and {K|Kay} use {ASCII|ass key} symbols. {X_eTaL|@xtl} uses a word, with its first letter underlined.",
+      "lines": [],
+      "panel": {
+        "type": "code",
+        "lines": [
+          {
+            "code": "⌽3 1 4 1 5 9",
+            "label": "APL"
+          },
+          {
+            "code": "⌽3‿1‿4‿1‿5‿9",
+            "label": "BQN"
+          },
+          {
+            "code": "|. 3 1 4 1 5 9",
+            "label": "J"
+          },
+          {
+            "code": "|3 1 4 1 5 9",
+            "label": "K"
+          },
+          {
+            "xtl": "r_ev x",
+            "label": "X_eTaL"
+          },
+          {
+            "box": "┌→──────────┐\n│9 5 1 4 1 3│\n└~──────────┘",
+            "label": ""
+          }
+        ],
+        "focus": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            5
+          ]
+        ]
+      }
+    },
+    {
+      "id": "order",
+      "seconds": 18,
+      "heading": "Right to left",
+      "narration": "All five work from right to left. There is no precedence. So three plus four comes first. Then two times seven gives fourteen. In {J|Jay} and {K|Kay}, times is typed as a star.",
+      "lines": [],
+      "panel": {
+        "type": "code",
+        "lines": [
+          {
+            "code": "2×3+4",
+            "label": "APL"
+          },
+          {
+            "code": "2*3+4",
+            "label": "J"
+          },
+          {
+            "code": "2*3+4",
+            "label": "K"
+          },
+          {
+            "code": "2×3+4",
+            "label": "BQN"
+          },
+          {
+            "xtl": "2 * 3 + 4",
+            "label": "X_eTaL"
+          },
+          {
+            "box": "14",
+            "label": ""
+          }
+        ],
+        "focus": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            1,
+            2
+          ]
+        ]
+      }
+    },
+    {
+      "id": "break-2",
+      "seconds": 5,
+      "heading": "Composition",
+      "lines": [],
+      "slide": {
+        "type": "flow",
+        "items": [
+          {
+            "text": "sum"
+          },
+          {
+            "text": "divided by"
+          },
+          {
+            "text": "count"
+          }
+        ]
+      }
+    },
+    {
+      "id": "train",
+      "seconds": 22,
+      "heading": "A mean, as a train",
+      "narration": "A train joins functions without naming the argument. Sum, divided by count, is the mean. {APL|@apl}, {J|Jay} and {BQN|@bqn} write it as a train. {X_eTaL|@xtl} writes the same fork in square brackets. {K|Kay} writes a small function instead, with {x|ex} as its argument.",
+      "lines": [],
+      "panel": {
+        "type": "code",
+        "lines": [
+          {
+            "code": "(+/÷≢)3 1 4 1 5 9",
+            "label": "APL"
+          },
+          {
+            "code": "(+/ % #) 3 1 4 1 5 9",
+            "label": "J"
+          },
+          {
+            "code": "(+´÷≠)3‿1‿4‿1‿5‿9",
+            "label": "BQN"
+          },
+          {
+            "xtl": "['+ r_/ / t_ally] x",
+            "label": "X_eTaL"
+          },
+          {
+            "box": "3.8333333333333335",
+            "label": ""
+          },
+          {
+            "code": "{(+/x)%#x}3 1 4 1 5 9",
+            "label": "K"
+          }
+        ],
+        "focus": [
+          [],
+          [],
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5
+          ]
+        ]
+      }
+    },
+    {
+      "id": "break-3",
+      "seconds": 5,
+      "heading": "Types",
+      "lines": [],
+      "slide": {
+        "type": "points",
+        "items": [
+          {
+            "text": "Dynamic",
+            "sub": "APL, J, K, BQN"
+          },
+          {
+            "text": "Static, inferred",
+            "sub": "X_eTaL"
+          }
+        ]
+      }
+    },
+    {
+      "id": "types",
+      "seconds": 20,
+      "heading": "Types, checked before it runs",
+      "narration": "The four older languages check types as the program runs. {X_eTaL|@xtl} infers a type for every function first. The mean takes integers, and gives a float. A program that gives it floats is rejected before it runs.",
+      "lines": [],
+      "panel": {
+        "type": "code",
+        "lines": [
+          {
+            "xtl": "u:m_ean := ['+ r_/ / t_ally]"
+          },
+          {
+            "code": "u:m_ean : Int -> Float"
+          },
+          {
+            "xtl": "['+ r_/ / t_ally] f_loat x"
+          },
+          {
+            "code": "error[type-mismatch]: expected Int, found Float"
+          }
+        ],
+        "focus": [
+          [],
+          [
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "id": "table",
+      "seconds": 24,
+      "heading": "The family at a glance",
+      "narration": "Here is the family at a glance. Glyphs, or {ASCII|ass key}. Right to left, in every one. Trains in three of them. Types checked as it runs, or before. {X_eTaL|@xtl} is the one with static types.",
+      "lines": [],
+      "panel": {
+        "type": "code",
+        "lines": [
+          {
+            "label": "",
+            "code": "notation      reading order   trains   types"
+          },
+          {
+            "label": "APL",
+            "code": "glyphs        right to left   yes      dynamic"
+          },
+          {
+            "label": "J",
+            "code": "ASCII         right to left   yes      dynamic"
+          },
+          {
+            "label": "K",
+            "code": "ASCII         right to left   no       dynamic"
+          },
+          {
+            "label": "BQN",
+            "code": "glyphs        right to left   yes      dynamic"
+          },
+          {
+            "label": "X_eTaL",
+            "code": "ASCII, drawn  right to left   yes      static"
+          }
+        ],
+        "focus": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            0,
+            1,
+            2,
+            4,
+            5
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            5
+          ]
+        ]
+      }
+    },
+    {
+      "id": "break-4",
+      "seconds": 5,
+      "heading": "Source and rendering",
+      "lines": [],
+      "slide": {
+        "type": "flow",
+        "items": [
+          {
+            "text": "You type ASCII"
+          },
+          {
+            "text": "It is drawn decorated"
+          }
+        ]
+      }
+    },
+    {
+      "id": "rendered",
+      "seconds": 20,
+      "heading": "ASCII in, decorated out",
+      "narration": "Here is the mean as you type it, in plain {ASCII|ass key}. Here it is as {X_eTaL|@xtl} draws it. The underlines mark functions. The slash for divide is drawn as a division sign. The small raised {u|you} says the name belongs to this program.",
+      "lines": [],
+      "panel": {
+        "type": "code",
+        "lines": [
+          {
+            "code": "u:m_ean := ['+ r_/ / t_ally]",
+            "label": "typed"
+          },
+          {
+            "xtl": "u:m_ean := ['+ r_/ / t_ally]",
+            "label": "drawn"
+          }
+        ],
+        "focus": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "id": "next",
+      "seconds": 12,
+      "heading": "Next time: reading and writing X_eTaL",
+      "narration": "Next time, we {read|reed} and write {X_eTaL|@xtl} itself. Names, decorations, and the shapes they promise.",
+      "lines": [],
+      "slide": {
+        "type": "points",
+        "steps": [
+          0,
+          1
+        ],
+        "items": [
+          {
+            "text": "Episode 7",
+            "sub": "reading and writing X_eTaL"
+          },
+          {
+            "text": "Names and decorations",
+            "sub": "what each one says"
+          }
+        ]
+      }
+    },
+    {
+      "id": "exercise",
+      "seconds": 14,
+      "heading": "Before the next episode",
+      "narration": "Before the next episode, try this. Find the mean of three, one, four, one, five, nine in two of these languages. The links are in the description.",
+      "lines": [
+        "the mean of 3 1 4 1 5 9",
+        "in two of the five languages",
+        "links in the description"
+      ]
+    },
+    {
+      "id": "cta",
+      "seconds": 12.8,
+      "heading": "Call to action",
+      "lines": [],
+      "clip": "../video-publishing/reference/epilog/99b-epilog.mp4",
+      "transcript": [
+        {
+          "start": 0,
+          "end": 4.6,
+          "text": "If you found this helpful, please like and subscribe."
+        },
+        {
+          "start": 4.6,
+          "end": 9.5,
+          "text": "Hit the bell for notifications, and leave a comment if you have questions."
+        },
+        {
+          "start": 9.5,
+          "end": 12,
+          "text": "See you in the next one, bye."
+        }
+      ]
+    },
+    {
+      "id": "close",
+      "seconds": 8,
+      "heading": "End screen",
+      "lines": [],
+      "clip": "../video-publishing/reference/epilog/99c-epilog-ext-swing9.mp4",
+      "mute": true
+    }
+  ]
+}
