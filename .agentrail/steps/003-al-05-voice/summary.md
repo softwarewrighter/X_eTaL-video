@@ -1,0 +1,1 @@
+Episode 05 narrated (eight idioms, 371.2 s of voice), whisper flags fixed, full render 6:11; just slides added for picture-only changes; out/al-05-idioms-youtube/ built (title, description with 17 chapters, captions, thumbnail)
