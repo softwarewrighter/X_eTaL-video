@@ -248,6 +248,14 @@
       "ok": false,
       "date": "2026-11-20",
       "note": "at the start of a sentence"
+    },
+    {
+      "word": "ASCII",
+      "use": "ass key",
+      "heard": "ASCII",
+      "ok": true,
+      "date": "2026-11-27",
+      "note": "spell-tested for al-06-tour: heard \"The next word is ASCII.\""
     }
   ]
 }
