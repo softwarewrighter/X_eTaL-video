@@ -1,6 +1,6 @@
 number = 8
 slug = "al-06-publish"
-status = "pending"
+status = "in-progress"
 description = "After the author uploads: just link al-06-tour URL, pages, publish; series pl..."
 role = "production"
 context_files = []

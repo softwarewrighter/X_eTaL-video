@@ -42,8 +42,8 @@ the shorts) stay as they are.
 | 02 | From scalar loops to array operations | 5 min | published 2026-11-23: https://youtu.be/YiJYDiD7xqc |
 | 03 | Shape, rank, axes and dimensions | 6.5 min | published 2026-11-25: https://youtu.be/JbKMtZZT6AY |
 | 04 | Broadcasting and array semantics (moved up, the author, 2026-11-23) | 6.5 min | published 2026-11-25: https://youtu.be/-te7ZGCdIkE |
-| 05 | Array idioms: thinking without loops (moved up, the author, 2026-11-25) | 5.5 min | narrating |
-| 06 | APL, J, K, BQN and X_eTaL (moved up, the author, 2026-11-26) | 10 min | later |
+| 05 | Array idioms: thinking without loops (moved up, the author, 2026-11-25) | 6.2 min | made; upload pending (out/al-05-idioms-youtube/) |
+| 06 | APL, J, K, BQN and X_eTaL (moved up, the author, 2026-11-26) | 6.6 min | published 2026-11-27: https://youtu.be/q1LR7SaIg2g |
 | 07 | Reading and writing X_eTaL | 12 min | later |
 | 08 | Bindings, values and immutability | 9 min | later |
 | 09 | Functions as values | 11 min | later |

@@ -81,5 +81,5 @@ const scenes = [
 ];
 const { scenes: _, youtube, poster, ...h } = l;
 h.music = { file: "/Users/mike/github/softwarewrighter/music-pipe-rs/work/video-beds/maple-strut.wav", intro: { seconds: 5, fadeOut: 0.5 }, outro: { seconds: 5, fadeIn: 0.5 }, slides: { volume: 0.3, fade: 0.4, starts: [5, 10, 15] } };
-const lesson = { ...h, slug: "al-06-tour", title: "The array language family", summary: "Array languages, episode 6: APL, J, K, BQN and X_eTaL side by side. Running totals, reverse, reading order and a mean as a train in all five; dynamic types against static, inferred ones; and X_eTaL source as typed and as drawn.", order: 105, brand: "Array Languages: episode 6", scenes };
+const lesson = { ...h, slug: "al-06-tour", title: "The array language family", summary: "Array languages, episode 6: APL, J, K, BQN and X_eTaL side by side. Running totals, reverse, reading order and a mean as a train in all five; dynamic types against static, inferred ones; and X_eTaL source as typed and as drawn.", order: 105, poster: 7080, youtube: "q1LR7SaIg2g", brand: "Array Languages: episode 6", scenes };
 writeFileSync("lessons/al-06-tour/lesson.json", JSON.stringify(lesson, null, 2) + "\n");
