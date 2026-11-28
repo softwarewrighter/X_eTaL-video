@@ -1,0 +1,1 @@
+al-06-tour linked (https://youtu.be/q1LR7SaIg2g, card frame 7080: the built-ins table), pages built and published to gh-pages, screencapture retaken, series plan updated (05 made and awaiting upload, 06 published)
