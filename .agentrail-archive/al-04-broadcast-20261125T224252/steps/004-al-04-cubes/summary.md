@@ -1,0 +1,1 @@
+Blender cubes: just cubes renders the rank ladder and a column plus a row from X_eTaL arrays (scripts/cubes/, Bpy.xtl read only); two silent scenes with music in al-04-broadcast

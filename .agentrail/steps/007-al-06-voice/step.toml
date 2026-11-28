@@ -1,8 +1,9 @@
 number = 7
 slug = "al-06-voice"
-status = "in-progress"
+status = "completed"
 description = "Narrate and render through just produce al-06-tour; whisper fixes by rewordin..."
 role = "production"
 context_files = []
 created_at = "2026-11-26T20:05:59"
-commits = []
+completed_at = "2026-11-27T19:48:14"
+commits = ["fe32bcca77ec732966de777ed3aa2be3a970eb7c"]

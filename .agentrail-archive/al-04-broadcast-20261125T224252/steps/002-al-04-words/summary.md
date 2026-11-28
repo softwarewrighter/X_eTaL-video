@@ -1,0 +1,1 @@
+preflight: every name handled (APL, axes, NumPy, X_eTaL clips; BQN, J, K tested spellings); the 23 flagged words are ordinary English the common-word list lacks; no new clips

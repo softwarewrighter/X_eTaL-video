@@ -1,6 +1,6 @@
 name = "al-05-idioms"
 status = "active"
-current_step = 7
+current_step = 8
 created_at = "2026-11-25T22:46:33"
 plan_file = ".agentrail/plan.md"
 retroactive = false

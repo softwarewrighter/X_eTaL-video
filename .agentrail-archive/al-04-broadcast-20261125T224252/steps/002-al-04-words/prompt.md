@@ -1,0 +1,1 @@
+Before narration: just voice-preflight al-04-broadcast; every risky word (broadcasting, NumPy, BQN, J, K, APL, outer product, ...) a word clip or tested spelling in docs/voice-words.json.

@@ -1,0 +1,1 @@
+al-06-tour narrated and rendered at 6:37: the language tour plus explicit vs tacit, counting origin, overloading, built-in counts, sourced strengths, where X_eTaL fits, and an episode 7 preview from the syntax poster; BQN lines run in CBQN; whisper fixes by rewording; out/al-06-tour-youtube/ built (fe32bcc)

@@ -1,0 +1,9 @@
+number = 2
+slug = "al-04-words"
+status = "completed"
+description = "Before narration: just voice-preflight al-04-broadcast; every risky word (bro..."
+role = "production"
+context_files = []
+created_at = "2026-11-25T14:29:30"
+completed_at = "2026-11-25T18:54:11"
+commits = ["14bbc94f27f61874fec2198f6a9a8781c7a6104c"]
