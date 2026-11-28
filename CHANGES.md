@@ -13,6 +13,8 @@ Categories: `feat` new capability, `fix` a bug or wrong behavior,
 
 ## 2026-11-27
 
+- Lesson: al-06-tour extended to 6:37: explicit or tacit (a spread both ways in J and X_eTaL, the same type), counting from one or zero, one symbol two meanings, how many built-ins (Dyalog 20, J Dictionary, ngn/k, BQN, the pinned reference), what each does best (sourced), where X_eTaL fits; episode 7 previewed from the syntax poster panel by panel (poster.mjs); BQN lines run in local CBQN (the overload line lowercase m, caught by the blog lab); title, description with 19 chapters, out/al-06-tour-youtube/ built.
+- Build: the review page plays every voice test take (work/voice-spell.json) of the words a lesson says.
 - Lesson: cell-555: title, description with 19 chapters; out/cell-555-youtube/ built (5:45, captions, thumbnail).
 - Lesson: cell-555: recorded from the running page in real time, driven by pointer (4x, Close up / Whole cell, drags, scrolls), the step list following; joins read again from the page (the program changed: planned by search, 1128 s); narration reordered to it; the intro corrected to the one-arm bench (the cell README); scenes keep their span at 4x (voice.py atLeast). Tools: just cell-live, just cell-track.
 - Lesson: cell-555: draft of the assembly cell building the 555 blinker: one narrated scene a join (16 joins from the live page step list), stills from the page, review page; the recording to follow the narration.

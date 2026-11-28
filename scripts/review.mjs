@@ -66,6 +66,21 @@ const words = [...byWord.entries()].filter(mine).map(([word, es]) => {
   return `<tr><td><b>${esc(word)}</b>${variants}</td><td>${now}</td><td class="heard">${best ? esc(best.heard || "") : ""}</td><td class="dim">${failed || ""}${best && best.note ? `<br>${esc(best.note)}` : ""}</td></tr>`;
 }).join("");
 
+// The voice tests (work/voice-spell.json, scripts/voice.sh --spell): every take of each word this
+// lesson says (or would, in a scene heading), to listen to, with what whisper heard.
+const spellFile = join(root, "work", "voice-spell.json");
+const spellAll = existsSync(spellFile) ? JSON.parse(readFileSync(spellFile, "utf8")) : {};
+const shown = (said + " " + lesson.scenes.map((s) => s.heading || "").join(" ")).toLowerCase();
+const spells = Object.entries(spellAll).filter(([w]) => new RegExp(`\\b${w.toLowerCase().replace(/[^a-z0-9]/g, ".")}`).test(shown)).map(([w, e]) => {
+  const tries = (e.tries || []).map((t, k) => {
+    const file = `spell-${w.replace(/[^A-Za-z0-9]+/g, "-")}-${k}.wav`;
+    const player = t.take && link(t.take, `words/${file}`) ? `<audio controls preload="none" src="words/${esc(file)}"></audio>` : `<span class="dim">(no take)</span>`;
+    const ok = String(t.heard || "").toLowerCase().includes(String(e.expect || w).toLowerCase());
+    return `<tr><td>${k ? "" : `<b>${esc(w)}</b>`}</td><td class="sent">${esc(t.say)}</td><td>${player}</td><td class="heard${ok ? "" : " warn"}">${esc(t.heard || "")}</td></tr>`;
+  }).join("");
+  return tries;
+}).join("");
+
 const cards = lesson.scenes.map((s, i) => {
   const start = timing ? timing.starts[i] / timing.fps : at;
   const secs = timing ? timing.durations[i] / timing.fps : s.seconds;
@@ -124,6 +139,7 @@ table { border-collapse: collapse; font-size: .85rem; margin: 8px 0; } td { bord
 ${video ? `<p><a href="video.mp4">The whole video</a></p>` : ""}
 ${video ? `<section><h2>The whole video <span class="dim">${esc(videoFile.split("/").pop())}, rendered ${new Date(statSync(videoFile).mtime).toLocaleString()}</span></h2><video controls preload="metadata" src="video.mp4?${statSync(videoFile).mtime.getTime()}" style="width:960px;max-width:100%;border-radius:6px"></video></section>` : `<p class="warn">No current full render (older than the schedule); it appears here after the next render.</p>`}
 <p class="dim">Each narrated scene in four parts: 1, the script as written (the captions); 2, the text sent to the voice (phonetic, commas and periods only; the voice is given nothing else); 3, the audio it returned; 4, what whisper heard. Sentence by sentence below each.</p>
+${spells ? `<section><h2>Voice tests <span class="dim">each spelling tried for a word (scripts/voice.sh --spell), said as "The next word is ...": listen and pick</span></h2><table><tr class="dim"><td>word</td><td>sent</td><td>take</td><td>whisper heard</td></tr>${spells}</table></section>` : ""}
 ${words ? `<section><h2>Problem words <span class="dim">each word the voice gets wrong, its current best version (a clip made alone and checked, or a spelling), and what failed (docs/voice-words.json)</span></h2><table><tr class="dim"><td>word</td><td>current best</td><td>whisper heard</td><td>failed, notes</td></tr>${words}</table></section>` : ""}
 ${cards.join("\n")}
 </body></html>

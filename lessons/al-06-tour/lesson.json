@@ -403,6 +403,63 @@
       }
     },
     {
+      "id": "tacit",
+      "seconds": 20.7,
+      "heading": "Explicit or tacit: both in X_eTaL",
+      "narration": "One function, written two ways. The spread of a list is its largest value, minus its smallest. Written explicitly, it names its argument. Written as a train, it never does. Like {J|Jay}, {X_eTaL|@xtl} supports both styles. Both get the same type, and both give eight.",
+      "lines": [],
+      "panel": {
+        "type": "code",
+        "lines": [
+          {
+            "code": "3 : '(>./y) - <./y'",
+            "label": "J"
+          },
+          {
+            "code": "(>./ - <./)",
+            "label": "J"
+          },
+          {
+            "xtl": "u:s_pread := { ('m_ax r_/ _r) - 'm_in r_/ _r }",
+            "label": "explicit"
+          },
+          {
+            "xtl": "u:s_pread := ['m_ax r_/ - 'm_in r_/]",
+            "label": "tacit"
+          },
+          {
+            "code": "u:s_pread : Num a => a -> a"
+          },
+          {
+            "box": "8",
+            "label": ""
+          }
+        ],
+        "focus": [
+          [],
+          [],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            4,
+            5
+          ]
+        ]
+      }
+    },
+    {
       "id": "break-3",
       "seconds": 5,
       "heading": "Types",
@@ -540,6 +597,305 @@
       }
     },
     {
+      "id": "break-5",
+      "seconds": 5,
+      "heading": "More differences",
+      "lines": [],
+      "slide": {
+        "type": "points",
+        "items": [
+          {
+            "text": "Counting from one, or zero"
+          },
+          {
+            "text": "One symbol, two meanings"
+          },
+          {
+            "text": "How many built-ins"
+          },
+          {
+            "text": "What each does best"
+          },
+          {
+            "text": "Where X_eTaL fits"
+          }
+        ]
+      }
+    },
+    {
+      "id": "origin",
+      "seconds": 17,
+      "heading": "Counting from one, or zero",
+      "narration": "Ask each language for the first five numbers. Counting in {APL|@apl} starts at one. {J|Jay}, {K|Kay} and {BQN|@bqn} start at zero. Counting in {X_eTaL|@xtl} starts at one, as in {APL|@apl}.",
+      "lines": [],
+      "panel": {
+        "type": "code",
+        "lines": [
+          {
+            "code": "⍳5",
+            "label": "APL"
+          },
+          {
+            "code": "1 2 3 4 5"
+          },
+          {
+            "code": "i.5",
+            "label": "J"
+          },
+          {
+            "code": "!5",
+            "label": "K"
+          },
+          {
+            "code": "↕5",
+            "label": "BQN"
+          },
+          {
+            "code": "0 1 2 3 4"
+          },
+          {
+            "xtl": "r_ange 5",
+            "label": "X_eTaL"
+          },
+          {
+            "box": "┌→────────┐\n│1 2 3 4 5│\n└~────────┘",
+            "label": ""
+          }
+        ],
+        "focus": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            6,
+            7
+          ]
+        ]
+      }
+    },
+    {
+      "id": "overload",
+      "seconds": 23.5,
+      "heading": "One symbol, two meanings",
+      "narration": "In {APL|@apl}, {J|Jay} and {K|Kay}, the same mark often does two jobs. With one argument, it gives a shape in {APL|@apl}. With two, it changes the shape. {K|Kay} counts with one mark, or takes with it. {BQN|@bqn} gives shape and reshape their own glyphs. {X_eTaL|@xtl} gives them two names.",
+      "lines": [],
+      "panel": {
+        "type": "code",
+        "lines": [
+          {
+            "code": "⍴M    2 3⍴⍳6",
+            "label": "APL"
+          },
+          {
+            "code": "$M    2 3$i.6",
+            "label": "J"
+          },
+          {
+            "code": "#v    2#v",
+            "label": "K"
+          },
+          {
+            "code": "≢m    2‿3⥊↕6",
+            "label": "BQN"
+          },
+          {
+            "xtl": "s_hape M",
+            "label": "X_eTaL"
+          },
+          {
+            "xtl": "2 3 r_eshape r_ange 6"
+          }
+        ],
+        "focus": [
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4,
+            5
+          ]
+        ]
+      }
+    },
+    {
+      "id": "counts",
+      "seconds": 33.3,
+      "heading": "How many built-ins",
+      "narration": "How many built-ins does each one have. {APL|@apl} has fifty six function glyphs, and twenty two operators. {J|Jay} spells about a hundred and eighteen, all in {ASCII|ass key}. {K|Kay} has just twenty two verbs and six adverbs, but most mean several things. {BQN|@bqn} has forty four functions, and twenty modifiers. {X_eTaL|@xtl} has seventy five functions, mostly words, and eleven higher order functions in place of operators.",
+      "lines": [],
+      "panel": {
+        "type": "code",
+        "lines": [
+          {
+            "label": "",
+            "code": "functions         modifiers               written as"
+          },
+          {
+            "label": "APL",
+            "code": "56 glyphs         22 operators            glyphs"
+          },
+          {
+            "label": "J",
+            "code": "118 spellings, verbs and modifiers       ASCII, 1 or 2 chars"
+          },
+          {
+            "label": "K",
+            "code": "22 verbs          6 adverbs               ASCII"
+          },
+          {
+            "label": "BQN",
+            "code": "44 functions      20 modifiers            64 glyphs"
+          },
+          {
+            "label": "X_eTaL",
+            "code": "75 functions      11 higher order         13 symbols, 73 words"
+          },
+          {
+            "label": "",
+            "code": "sources: Dyalog 20, J Dictionary, ngn/k, BQN docs, X_eTaL reference"
+          }
+        ],
+        "focus": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            0,
+            5
+          ]
+        ]
+      }
+    },
+    {
+      "id": "strengths",
+      "seconds": 20.4,
+      "heading": "What each does best",
+      "narration": "Each one has its strength. Its inventor saw {APL|@apl} as a tool of thought. The tacit style is central to {J|Jay}. {K|Kay} is small and fast, and popular in finance. {BQN|@bqn} has fewer primitives than {APL|@apl} or {J|Jay}, and less overloading.",
+      "lines": [],
+      "slide": {
+        "type": "points",
+        "steps": [
+          0,
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "items": [
+          {
+            "text": "APL",
+            "sub": "notation as a tool of thought (Iverson, 1979)"
+          },
+          {
+            "text": "J",
+            "sub": "tacit programming, all in ASCII"
+          },
+          {
+            "text": "K",
+            "sub": "small and fast; kdb+ and q are built on it"
+          },
+          {
+            "text": "BQN",
+            "sub": "fewer, less overloaded primitives (Why BQN?)"
+          }
+        ]
+      }
+    },
+    {
+      "id": "xetal-fit",
+      "seconds": 22.8,
+      "heading": "Where X_eTaL fits",
+      "narration": "So where does {X_eTaL|@xtl} fit. Like {J|Jay} and {K|Kay}, you type {ASCII|ass key}. You {read|reed} it drawn, as in {APL|@apl}, and in {BQN|@bqn}. Its built-ins are mostly words, with one meaning each. Functions are passed as values, so it needs no operators. And its types are checked before it runs.",
+      "lines": [],
+      "slide": {
+        "type": "points",
+        "steps": [
+          0,
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "items": [
+          {
+            "text": "Typed in ASCII",
+            "sub": "like J and K"
+          },
+          {
+            "text": "Read drawn",
+            "sub": "like APL and BQN"
+          },
+          {
+            "text": "Words, one meaning each",
+            "sub": "not overloaded symbols"
+          },
+          {
+            "text": "Functions as values",
+            "sub": "no separate operators"
+          },
+          {
+            "text": "Types checked first",
+            "sub": "none of the others"
+          }
+        ]
+      }
+    },
+    {
       "id": "break-4",
       "seconds": 5,
       "heading": "Source and rendering",
@@ -595,27 +951,91 @@
     },
     {
       "id": "next",
-      "seconds": 8.6,
+      "seconds": 7.9,
+      "atLeast": 6,
       "heading": "Next time: reading and writing X_eTaL",
-      "narration": "Next time, we {read|reed} and write programs in {X_eTaL|@xtl}. Names, decorations, and the shapes they promise.",
+      "narration": "Next time, we {read|reed} and write {X_eTaL|@xtl}. Here is the whole language, on one page.",
       "lines": [],
-      "slide": {
-        "type": "points",
-        "steps": [
-          0,
-          1
-        ],
-        "items": [
-          {
-            "text": "Episode 7",
-            "sub": "reading and writing X_eTaL"
-          },
-          {
-            "text": "Names and decorations",
-            "sub": "what each one says"
-          }
-        ]
-      }
+      "images": [
+        "work/al-06-tour/poster/poster.png"
+      ]
+    },
+    {
+      "id": "next-names",
+      "seconds": 4,
+      "atLeast": 4,
+      "heading": "1. Name decorations",
+      "narration": "First, the marks on a name.",
+      "lines": [],
+      "images": [
+        "work/al-06-tour/poster/names.png"
+      ]
+    },
+    {
+      "id": "next-defs",
+      "seconds": 4.2,
+      "atLeast": 4,
+      "heading": "2 and 3. Imports and definitions",
+      "narration": "Then using a library, and naming things.",
+      "lines": [],
+      "images": [
+        "work/al-06-tour/poster/defs.png"
+      ]
+    },
+    {
+      "id": "next-apply",
+      "seconds": 4.6,
+      "atLeast": 4,
+      "heading": "4. Apply or pass",
+      "narration": "Using a function, or using it as a value.",
+      "lines": [],
+      "images": [
+        "work/al-06-tour/poster/apply.png"
+      ]
+    },
+    {
+      "id": "next-axes",
+      "seconds": 5.8,
+      "atLeast": 4,
+      "heading": "5 to 7. Axes, power, lambdas",
+      "narration": "Then the axis of a function, powers, and lambdas.",
+      "lines": [],
+      "images": [
+        "work/al-06-tour/poster/axes.png"
+      ]
+    },
+    {
+      "id": "next-system",
+      "seconds": 4,
+      "atLeast": 4,
+      "heading": "8 and 9. System names, and the guard",
+      "narration": "System names, and the guard.",
+      "lines": [],
+      "images": [
+        "work/al-06-tour/poster/system.png"
+      ]
+    },
+    {
+      "id": "next-ascii",
+      "seconds": 4,
+      "atLeast": 4,
+      "heading": "10. ASCII input, rendered",
+      "narration": "What you type, and what is drawn.",
+      "lines": [],
+      "images": [
+        "work/al-06-tour/poster/ascii.png"
+      ]
+    },
+    {
+      "id": "next-trains",
+      "seconds": 5,
+      "atLeast": 5,
+      "heading": "11. Trains",
+      "narration": "And trains, which we met today.",
+      "lines": [],
+      "images": [
+        "work/al-06-tour/poster/trains.png"
+      ]
     },
     {
       "id": "exercise",

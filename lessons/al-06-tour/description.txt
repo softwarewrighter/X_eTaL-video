@@ -1,0 +1,53 @@
+Array Languages, episode 6. Five array languages side by side: APL, J, K, BQN and X_eTaL. Running totals, reverse, right-to-left reading and a mean as a train in all five; one function written explicitly and tacitly (X_eTaL supports both, as J does); dynamic types against X_eTaL's static, inferred ones; counting from one or zero; one symbol with two meanings; how many built-ins each has; what each does best, in its own sources' words; and where X_eTaL fits. Then a first look at X_eTaL's syntax guide, the subject of episode 7. Every line in another language was run in an interpreter (GNU APL, Dyalog on TryAPL, J, Kona and ngn/k, CBQN).
+
+Chapters:
+0:00 The array language family
+0:08 Last time
+0:17 Five languages
+0:44 A family, not a replacement
+0:52 Running totals in five languages
+1:07 Notation: reverse
+1:27 Right to left
+1:40 A mean, as a train
+2:06 Explicit or tacit: both in X_eTaL
+2:26 Types, checked before it runs
+2:46 The family at a glance
+3:01 Counting from one, or zero
+3:23 One symbol, two meanings
+3:46 How many built-ins
+4:19 What each does best
+4:40 Where X_eTaL fits
+5:03 ASCII in, decorated out
+5:25 Next time: reading and writing X_eTaL
+6:04 Before the next episode
+
+Try them (the exercise: the mean of 3 1 4 1 5 9 in two of the five):
+X_eTaL: https://softwarewrighter.github.io/X_eTaL/
+APL (Dyalog): https://tryapl.org
+J: https://jsoftware.github.io/j-playground/bin/html2/
+K (ngn/k): https://ngn.codeberg.page/k/
+BQN: https://mlochbaum.github.io/BQN/try.html
+
+Sources for the counts and the strengths:
+Dyalog APL 20 primitive functions: https://docs.dyalog.com/20.0/language-reference-guide/primitive-functions/primitive-functions-by-category/
+J Dictionary vocabulary: https://www.jsoftware.com/help/dictionary/vocabul.htm
+ngn/k: https://codeberg.org/ngn/k
+BQN primitives: https://mlochbaum.github.io/BQN/doc/primitive.html
+Notation as a Tool of Thought (Iverson, 1979): https://www.jsoftware.com/papers/tot.htm
+J Dictionary introduction: https://www.jsoftware.com/help/dictionary/intro.htm
+Kona: https://github.com/kevinlawler/kona
+Why BQN?: https://mlochbaum.github.io/BQN/commentary/why.html
+X_eTaL built-in reference: https://github.com/softwarewrighter/X_eTaL/blob/main/docs/reference.md
+X_eTaL syntax poster: https://softwarewrighter.github.io/X_eTaL/poster/
+
+Episode 1, Why another programming language: https://youtu.be/NfdzVWjje2Y
+Episode 2, From scalar loops to array operations: https://youtu.be/YiJYDiD7xqc
+Episode 3, Shape, rank, axes and dimensions: https://youtu.be/JbKMtZZT6AY
+Episode 4, Broadcasting: when array shapes meet: https://youtu.be/-te7ZGCdIkE
+X_eTaL: https://github.com/softwarewrighter/X_eTaL
+The Array Languages blog series: https://blog.softwarewrighter.com/series/#array-languages
+
+Blog: https://blog.softwarewrighter.com/
+Discord: https://discord.gg/Ctzk5uHggZ
+
+#ArrayProgramming #APL #BQN #JLang #XeTaL #Programming

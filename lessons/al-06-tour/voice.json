@@ -286,6 +286,57 @@
       ]
     },
     {
+      "id": "tacit",
+      "narration": "One function, written two ways. The spread of a list is its largest value, minus its smallest. Written explicitly, it names its argument. Written as a train, it never does. Like {J|Jay}, {X_eTaL|@xtl} supports both styles. Both get the same type, and both give eight.",
+      "seconds": 20.7,
+      "sentences": [
+        {
+          "text": "One function, written two ways.",
+          "heard": "One function, written two ways.",
+          "sent": "One function, written two ways.",
+          "start": 0.4,
+          "end": 2.56
+        },
+        {
+          "text": "The spread of a list is its largest value, minus its smallest.",
+          "heard": "The spread of a list is its largest value minus its smallest.",
+          "sent": "The spread of a list is its largest value, minus its smallest.",
+          "start": 2.91,
+          "end": 6.716
+        },
+        {
+          "text": "Written explicitly, it names its argument.",
+          "heard": "Written explicitly, it names its argument.",
+          "sent": "Written explicitly, it names its argument.",
+          "start": 7.066,
+          "end": 10.219
+        },
+        {
+          "text": "Written as a train, it never does.",
+          "heard": "Written as a train, it never does.",
+          "sent": "Written as a train, it never does.",
+          "start": 10.569,
+          "end": 12.766
+        },
+        {
+          "text": "Like J, X_eTaL supports both styles.",
+          "heard": "like J. XTEL supports both styles.",
+          "sent": "Like Jay, xtl supports both styles.",
+          "spoken": "Like Jay, @xtl supports both styles.",
+          "unverified": true,
+          "start": 13.116,
+          "end": 16.68
+        },
+        {
+          "text": "Both get the same type, and both give eight.",
+          "heard": "both get the same type and both give 8.",
+          "sent": "Both get the same type, and both give eight.",
+          "start": 17.03,
+          "end": 19.918
+        }
+      ]
+    },
+    {
       "id": "types",
       "narration": "The four older languages check types as the program runs. {X_eTaL|@xtl} infers a type for every function first. The mean takes integers, and gives a float. A program that gives it floats is rejected before it runs.",
       "seconds": 14.9,
@@ -373,6 +424,252 @@
       ]
     },
     {
+      "id": "origin",
+      "narration": "Ask each language for the first five numbers. Counting in {APL|@apl} starts at one. {J|Jay}, {K|Kay} and {BQN|@bqn} start at zero. Counting in {X_eTaL|@xtl} starts at one, as in {APL|@apl}.",
+      "seconds": 17.0,
+      "sentences": [
+        {
+          "text": "Ask each language for the first five numbers.",
+          "heard": "Ask each language for the first five numbers.",
+          "sent": "Ask each language for the first five numbers.",
+          "start": 0.4,
+          "end": 2.889
+        },
+        {
+          "text": "Counting in APL starts at one.",
+          "heard": "Counting in APL starts at one.",
+          "sent": "Counting in apl starts at one.",
+          "spoken": "Counting in @apl starts at one.",
+          "start": 3.239,
+          "end": 6.687
+        },
+        {
+          "text": "J, K and BQN start at zero.",
+          "heard": "J, K, and B, Q, N, start at zero.",
+          "sent": "Jay, Kay and bqn start at zero.",
+          "spoken": "Jay, Kay and @bqn start at zero.",
+          "start": 7.037,
+          "end": 10.843
+        },
+        {
+          "text": "Counting in X_eTaL starts at one, as in APL.",
+          "heard": "Counting in XTL starts at 1, as in APL.",
+          "sent": "Counting in xtl starts at one, as in apl.",
+          "spoken": "Counting in @xtl starts at one, as in @apl.",
+          "start": 11.193,
+          "end": 16.241
+        }
+      ]
+    },
+    {
+      "id": "overload",
+      "narration": "In {APL|@apl}, {J|Jay} and {K|Kay}, the same mark often does two jobs. With one argument, it gives a shape in {APL|@apl}. With two, it changes the shape. {K|Kay} counts with one mark, or takes with it. {BQN|@bqn} gives shape and reshape their own glyphs. {X_eTaL|@xtl} gives them two names.",
+      "seconds": 23.5,
+      "sentences": [
+        {
+          "text": "In APL, J and K, the same mark often does two jobs.",
+          "heard": "In APL, J and K, the same mark, often does two jobs.",
+          "sent": "In apl, Jay and Kay, the same mark often does two jobs.",
+          "spoken": "In @apl, Jay and Kay, the same mark often does two jobs.",
+          "start": 0.4,
+          "end": 6.052
+        },
+        {
+          "text": "With one argument, it gives a shape in APL.",
+          "heard": "With one argument, it gives a shape in APL.",
+          "sent": "With one argument, it gives a shape in apl.",
+          "spoken": "With one argument, it gives a shape in @apl.",
+          "start": 6.402,
+          "end": 10.054
+        },
+        {
+          "text": "With two, it changes the shape.",
+          "heard": "With 2, it changes the shape.",
+          "sent": "With two, it changes the shape.",
+          "start": 10.404,
+          "end": 12.947
+        },
+        {
+          "text": "K counts with one mark, or takes with it.",
+          "heard": "K counts with one mark, or takes with it.",
+          "sent": "Kay counts with one mark, or takes with it.",
+          "spoken": "Kay counts with one mark, or takes with it.",
+          "start": 13.297,
+          "end": 16.304
+        },
+        {
+          "text": "BQN gives shape and reshape their own glyphs.",
+          "heard": "B, Q, N give shape and reshape their own glyphs.",
+          "sent": "bqn gives shape and reshape their own glyphs.",
+          "spoken": "@bqn gives shape and reshape their own glyphs.",
+          "unverified": true,
+          "start": 16.654,
+          "end": 20.249
+        },
+        {
+          "text": "X_eTaL gives them two names.",
+          "heard": "XTL gives them two names.",
+          "sent": "xtl gives them two names.",
+          "spoken": "@xtl gives them two names.",
+          "start": 20.599,
+          "end": 22.795
+        }
+      ]
+    },
+    {
+      "id": "counts",
+      "narration": "How many built-ins does each one have. {APL|@apl} has fifty six function glyphs, and twenty two operators. {J|Jay} spells about a hundred and eighteen, all in {ASCII|ass key}. {K|Kay} has just twenty two verbs and six adverbs, but most mean several things. {BQN|@bqn} has forty four functions, and twenty modifiers. {X_eTaL|@xtl} has seventy five functions, mostly words, and eleven higher order functions in place of operators.",
+      "seconds": 33.3,
+      "sentences": [
+        {
+          "text": "How many built-ins does each one have.",
+          "heard": "How many built-ins does each one have?",
+          "sent": "How many built ins does each one have.",
+          "start": 0.4,
+          "end": 2.752
+        },
+        {
+          "text": "APL has fifty six function glyphs, and twenty two operators.",
+          "heard": "APL has 56 function glyphs and 22 operators.",
+          "sent": "apl has fifty six function glyphs, and twenty two operators.",
+          "spoken": "@apl has fifty six function glyphs, and twenty two operators.",
+          "start": 3.102,
+          "end": 9.051
+        },
+        {
+          "text": "J spells about a hundred and eighteen, all in ASCII.",
+          "heard": "J spells, about 118, all in ASCII.",
+          "sent": "Jay spells about a hundred and eighteen, all in ass key.",
+          "spoken": "Jay spells about a hundred and eighteen, all in ass key.",
+          "unverified": true,
+          "start": 9.401,
+          "end": 13.979
+        },
+        {
+          "text": "K has just twenty two verbs and six adverbs, but most mean several things.",
+          "heard": "\"K\" has just 22 verbs and 6 adverbs, but most mean several things.",
+          "sent": "Kay has just twenty two verbs and six adverbs, but most mean several things.",
+          "spoken": "Kay has just twenty two verbs and six adverbs, but most mean several things.",
+          "start": 14.329,
+          "end": 20.091
+        },
+        {
+          "text": "BQN has forty four functions, and twenty modifiers.",
+          "heard": "B, Q, N has 44 functions and 20 modifiers.",
+          "sent": "bqn has forty four functions, and twenty modifiers.",
+          "spoken": "@bqn has forty four functions, and twenty modifiers.",
+          "start": 20.441,
+          "end": 25.59
+        },
+        {
+          "text": "X_eTaL has seventy five functions, mostly words, and eleven higher order functions in place of operators.",
+          "heard": "XTL, has 75 functions, mostly words, and 11 higher order functions in place of operators.",
+          "sent": "xtl has seventy five functions, mostly words, and eleven higher order functions in place of operators.",
+          "spoken": "@xtl has seventy five functions, mostly words, and eleven higher order functions in place of operators.",
+          "start": 25.94,
+          "end": 32.549
+        }
+      ]
+    },
+    {
+      "id": "strengths",
+      "narration": "Each one has its strength. Its inventor saw {APL|@apl} as a tool of thought. The tacit style is central to {J|Jay}. {K|Kay} is small and fast, and popular in finance. {BQN|@bqn} has fewer primitives than {APL|@apl} or {J|Jay}, and less overloading.",
+      "seconds": 20.4,
+      "sentences": [
+        {
+          "text": "Each one has its strength.",
+          "heard": "Each one has its strength.",
+          "sent": "Each one has its strength.",
+          "start": 0.4,
+          "end": 2.258
+        },
+        {
+          "text": "Its inventor saw APL as a tool of thought.",
+          "heard": "its inventor saw APL as a tool of thought.",
+          "sent": "Its inventor saw apl as a tool of thought.",
+          "spoken": "Its inventor saw @apl as a tool of thought.",
+          "start": 2.608,
+          "end": 6.369
+        },
+        {
+          "text": "The tacit style is central to J.",
+          "heard": "The tacit style is central to Jay.",
+          "sent": "The tacit style is central to Jay.",
+          "spoken": "The tacit style is central to Jay.",
+          "start": 6.719,
+          "end": 8.77
+        },
+        {
+          "text": "K is small and fast, and popular in finance.",
+          "heard": "K is small and fast and popular in finance.",
+          "sent": "Kay is small and fast, and popular in finance.",
+          "spoken": "Kay is small and fast, and popular in finance.",
+          "start": 9.12,
+          "end": 12.33
+        },
+        {
+          "text": "BQN has fewer primitives than APL or J, and less overloading.",
+          "heard": "B, Q, N, has fewer primitives than A, P, L, or J, and less overloading.",
+          "sent": "bqn has fewer primitives than apl or Jay, and less overloading.",
+          "spoken": "@bqn has fewer primitives than @apl or Jay, and less overloading.",
+          "start": 12.68,
+          "end": 19.6
+        }
+      ]
+    },
+    {
+      "id": "xetal-fit",
+      "narration": "So where does {X_eTaL|@xtl} fit. Like {J|Jay} and {K|Kay}, you type {ASCII|ass key}. You {read|reed} it drawn, as in {APL|@apl}, and in {BQN|@bqn}. Its built-ins are mostly words, with one meaning each. Functions are passed as values, so it needs no operators. And its types are checked before it runs.",
+      "seconds": 22.8,
+      "sentences": [
+        {
+          "text": "So where does X_eTaL fit.",
+          "heard": "So where does XTL fit?",
+          "sent": "So where does xtl fit.",
+          "spoken": "So where does @xtl fit.",
+          "start": 0.4,
+          "end": 2.658
+        },
+        {
+          "text": "Like J and K, you type ASCII.",
+          "heard": "like J and K, you type ASCII.",
+          "sent": "Like Jay and Kay, you type ass key.",
+          "spoken": "Like Jay and Kay, you type ass key.",
+          "start": 3.008,
+          "end": 5.655
+        },
+        {
+          "text": "You read it drawn, as in APL, and in BQN.",
+          "heard": "You read it drawn as in A-P-L and in B-Q-N.",
+          "sent": "You reed it drawn, as in apl, and in bqn.",
+          "spoken": "You reed it drawn, as in @apl, and in @bqn.",
+          "start": 6.005,
+          "end": 11.962
+        },
+        {
+          "text": "Its built-ins are mostly words, with one meaning each.",
+          "heard": "Its built-ins are mostly words, with one meaning each.",
+          "sent": "Its built ins are mostly words, with one meaning each.",
+          "start": 12.312,
+          "end": 15.648
+        },
+        {
+          "text": "Functions are passed as values, so it needs no operators.",
+          "heard": "Functions are passed as values, so it needs no operators.",
+          "sent": "Functions are passed as values, so it needs no operators.",
+          "start": 15.998,
+          "end": 19.283
+        },
+        {
+          "text": "And its types are checked before it runs.",
+          "heard": "and its types are checked before it runs.",
+          "sent": "And its types are checked before it runs.",
+          "start": 19.633,
+          "end": 22.074
+        }
+      ]
+    },
+    {
       "id": "rendered",
       "narration": "Here is the mean as you type it, in plain {ASCII|ass key}. Here it is as drawn by {X_eTaL|@xtl}. The underlines mark functions. The slash for divide is drawn as a division sign. The small mark before the name says it belongs to this program.",
       "seconds": 16.9,
@@ -420,23 +717,122 @@
     },
     {
       "id": "next",
-      "narration": "Next time, we {read|reed} and write programs in {X_eTaL|@xtl}. Names, decorations, and the shapes they promise.",
-      "seconds": 8.6,
+      "narration": "Next time, we {read|reed} and write {X_eTaL|@xtl}. Here is the whole language, on one page.",
+      "seconds": 7.9,
       "sentences": [
         {
-          "text": "Next time, we read and write programs in X_eTaL.",
-          "heard": "Next time, we read and write programs in XTL.",
-          "sent": "Next time, we reed and write programs in xtl.",
-          "spoken": "Next time, we reed and write programs in @xtl.",
+          "text": "Next time, we read and write X_eTaL.",
+          "heard": "Next time we read and write XTL.",
+          "sent": "Next time, we reed and write xtl.",
+          "spoken": "Next time, we reed and write @xtl.",
           "start": 0.4,
-          "end": 4.419
+          "end": 3.888
         },
         {
-          "text": "Names, decorations, and the shapes they promise.",
-          "heard": "names, decorations, and the shapes they promise.",
-          "sent": "Names, decorations, and the shapes they promise.",
-          "start": 4.769,
-          "end": 7.878
+          "text": "Here is the whole language, on one page.",
+          "heard": "Here is the whole language on one page.",
+          "sent": "Here is the whole language, on one page.",
+          "start": 4.238,
+          "end": 7.122
+        }
+      ]
+    },
+    {
+      "id": "next-names",
+      "narration": "First, the marks on a name.",
+      "seconds": 4.0,
+      "sentences": [
+        {
+          "text": "First, the marks on a name.",
+          "heard": "First, the marks on a name.",
+          "sent": "First, the marks on a name.",
+          "start": 0.4,
+          "end": 2.026
+        }
+      ]
+    },
+    {
+      "id": "next-defs",
+      "narration": "Then using a library, and naming things.",
+      "seconds": 4.2,
+      "sentences": [
+        {
+          "text": "Then using a library, and naming things.",
+          "heard": "then using a library and naming things.",
+          "sent": "Then using a library, and naming things.",
+          "start": 0.4,
+          "end": 3.424
+        }
+      ]
+    },
+    {
+      "id": "next-apply",
+      "narration": "Using a function, or using it as a value.",
+      "seconds": 4.6,
+      "sentences": [
+        {
+          "text": "Using a function, or using it as a value.",
+          "heard": "using a function or using it as a value.",
+          "sent": "Using a function, or using it as a value.",
+          "start": 0.4,
+          "end": 3.866
+        }
+      ]
+    },
+    {
+      "id": "next-axes",
+      "narration": "Then the axis of a function, powers, and lambdas.",
+      "seconds": 5.8,
+      "sentences": [
+        {
+          "text": "Then the axis of a function, powers, and lambdas.",
+          "heard": "then the axis of a function powers in lambdas.",
+          "sent": "Then the axis of a function, powers, and lambdas.",
+          "unverified": true,
+          "start": 0.4,
+          "end": 5.005
+        }
+      ]
+    },
+    {
+      "id": "next-system",
+      "narration": "System names, and the guard.",
+      "seconds": 4.0,
+      "sentences": [
+        {
+          "text": "System names, and the guard.",
+          "heard": "system names, and the guard.",
+          "sent": "System names, and the guard.",
+          "start": 0.4,
+          "end": 2.813
+        }
+      ]
+    },
+    {
+      "id": "next-ascii",
+      "narration": "What you type, and what is drawn.",
+      "seconds": 4.0,
+      "sentences": [
+        {
+          "text": "What you type, and what is drawn.",
+          "heard": "what you type and what is drawn.",
+          "sent": "What you type, and what is drawn.",
+          "start": 0.4,
+          "end": 2.925
+        }
+      ]
+    },
+    {
+      "id": "next-trains",
+      "narration": "And trains, which we met today.",
+      "seconds": 5.0,
+      "sentences": [
+        {
+          "text": "And trains, which we met today.",
+          "heard": "and trains, which we met today.",
+          "sent": "And trains, which we met today.",
+          "start": 0.4,
+          "end": 3.135
         }
       ]
     },
